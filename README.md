@@ -61,4 +61,7 @@ Bootstrapped From Starter with:
 - dashboard
 
 ## Inspiration & Tutorials
-- 
+- [leerob.io](https://leerob.io)
+- youtube prisma
+- udemy brad traversy
+- youtube tailwindcss
