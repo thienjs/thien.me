@@ -1,17 +1,21 @@
 module.exports = {
   root: true,
   env: {
+    browser: true,
+    es2021: true,
     node: true,
-    es6: true,
-  },
-  parserOptions: { ecmaVersion: 8 }, // enable features such as async/await
+  }, 
   ignorePatterns: ['node_modules/*', '.next/*', '.out/*', '!.prettierrc.js'], // We don't want to lint generated files nor node_modules, but we want to lint .prettierrc.js (ignored by default by eslint)
   extends: [
     'react-app',
     'plugin:prettier/recommended',
     'plugin:@next/next/recommended',
+    'eslint:recommended',
+    'prettier',
+    'plugin:@typescript-eslint/recommended',
+    'next/core-web-vitals',
   ],
-  plugins: ['prettier'],
+  plugins: ['@typescript-eslint', 'simple-impo-sort'],rt,
   rules: {
     'prettier/prettier': [
       'error',
@@ -36,5 +40,10 @@ module.exports = {
     // ],
     // This rule disables the `Image` component's usage check. Enable if you'd prefer to turn it on for the entire app.
     '@next/next/no-img-element': 'off',
+    "@typescript-eslint/no-explicit-any": ['off'],
+    'no-unused-vars': 'off',
+    'no-console': 'warn',
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
+    'react/no-unescaped-entities': 'off',
   },
 }
