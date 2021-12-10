@@ -1,6 +1,6 @@
 
 import Navigation from "~/components/ui/Navigation"
-import Footer from "./Footer"
+import Footer from "~/components/ui/Footer"
 
 
 export const Layout = ({ children }: { children: React.ReactNode }) => {

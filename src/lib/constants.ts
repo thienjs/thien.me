@@ -104,8 +104,8 @@ export const navigation = {
       },
     ],
     pages: [
-      { name: 'Guestbook', href: '#' },
-      { name: 'Dashboard', href: '#' },
+      { name: 'Blog', href: '/notion' },
+      { name: 'Dashboard', href: '/dashboard' },
     ],
   }
 

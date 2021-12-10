@@ -57,26 +57,29 @@ export default function Navigation() {
                   <span className="sr-only">Close menu</span>
                   <XIcon className="h-6 w-6" aria-hidden="true" />
                 </button>
+                <Link href="/">
+
                 <h1 className='ml-3'>thien.me</h1>
+                </Link>
               </div>
               
               {/* Links */}
               <div className="py-6 px-6 ml-3 text-md mt-5">
                 <div className='flex flex-row mb-2'>
                   <BookmarkIcon className='h-5 w-5 mr-3'/>
-                  <Link href=''>
+                  <Link href='/blog'>
                   <a className='ml-2'>Blog</a>
                   </Link>
                 </div>
                 <div className='flex flex-row mb-2 '>
                   <BookmarkIcon className='h-5 w-5 mr-3'/>
-                  <Link href=''>
+                  <Link href='/notion'>
                   <a className='ml-2'>Notion</a>
                   </Link>
                 </div>
                 <div className='flex flex-row mb-2'>
                   <TerminalIcon className='h-5 w-5 mr-3'/>
-                  <Link href=''>
+                  <Link href='/feedback'>
                   <a className='ml-2'>Feedback</a>
                   </Link>
                 </div>
@@ -88,25 +91,25 @@ export default function Navigation() {
                 </div>
                 <div className='flex flex-row mb-2'>
                   <BookmarkIcon className='h-5 w-5 mr-3'/>
-                  <Link href=''>
+                  <Link href='/dashboard'>
                   <a className='ml-2'>dashboard</a>
                   </Link>
                 </div>
                 <div className='flex flex-row mb-2'>
                   <BookmarkIcon className='h-5 w-5 mr-3'/>
-                  <Link href=''>
+                  <Link href='/projects'>
                   <a className='ml-2'>projects</a>
                   </Link>
                 </div>
                 <div className='flex flex-row mb-2'>
                   <BookmarkIcon className='h-5 w-5 mr-3'/>
-                  <Link href=''>
+                  <Link href='/music'>
                   <a className='ml-2'>music</a>
                   </Link>
                 </div>
                 <div className='flex flex-row mb-2'>
                   <BookmarkIcon className='h-5 w-5 mr-3'/>
-                  <Link href=''>
+                  <Link href='/about'>
                   <a className='ml-2'>about</a>
                   </Link>
                 </div>
@@ -221,9 +224,11 @@ export default function Navigation() {
 
               <div className="ml-auto flex items-center">
                 <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
-                  <a href="#" className="text-sm font-medium text-gray-700 hover:text-gray-800">
-                    Contact
+                <Link href="/feedback">
+                  <a className="text-sm font-medium text-gray-700 hover:text-gray-800">
+                    Feeback
                   </a>
+                  </Link>
                   <span className="h-6 w-px bg-gray-200" aria-hidden="true" />
                   <Link href="/notion">
                   <a className="text-sm font-medium text-gray-700 hover:text-gray-800">
