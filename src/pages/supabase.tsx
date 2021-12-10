@@ -3,7 +3,7 @@ import { FaLock } from 'react-icons/fa'
 import { NextAppPageProps } from '~/types/app'
 import Layout from '~/components/Layout'
 import { useMessage } from '~/lib/message'
-import { useFormFields } from '~/lib/utils'
+
 
 // define the shape of the SignUp form's fields
 type SignUpFieldProps = {
