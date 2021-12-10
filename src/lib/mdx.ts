@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+// @ts-nocheck
 import { readdirSync, readFileSync } from 'fs';
 import matter from 'gray-matter';
 import { bundleMDX } from 'mdx-bundler';
@@ -29,7 +29,7 @@ export async function getFileBySlug(type: ContentType, slug: string) {
         join(process.cwd(), 'src', 'contents', `${type}.mdx`),
         'utf8'
       );
-
+     
   const { code, frontmatter } = await bundleMDX(source, {
     xdmOptions(options) {
       options.remarkPlugins = [...(options?.remarkPlugins ?? []), remarkGfm];
@@ -127,4 +127,3 @@ export function getFeatured<T extends Frontmatter>(
   );
 }
 
-/* eslint-disable @typescript-eslint/no-explicit-any */
