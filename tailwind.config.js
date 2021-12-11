@@ -17,6 +17,5 @@ const { fontFamily } = require('tailwindcss/defaultTheme')
   plugins: [
     require('@tailwindcss/forms'),
     require('@tailwindcss/typography'),
-    require('@tailwindcss/aspect-ratio'),
   ],
 }
