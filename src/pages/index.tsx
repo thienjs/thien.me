@@ -7,12 +7,13 @@ import Projects from '~/components/Projects'
 import Skills from '~/components/Skills'
 import Testimonials from '~/components/Testimonials'
 import Contact from '~/components/Contact'
+import About from '~/components/About'
 const IndexPage: NextPage<NextAppPageProps> = ({}) => {
   const { handleMessage } = useMessage()
 
   return (
     <Layout>
-      <h1>hello</h1>
+      <About />
       <Projects/>
       <Skills/>
     </Layout>

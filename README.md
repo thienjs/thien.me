@@ -65,3 +65,5 @@ Bootstrapped From Starter with:
 - youtube prisma
 - [udemy brad traversy](https://www.udemy.com/share/104pIy3@cLMHuS_W89851Mk22SfqbfgFB3BlHlvH_5F1RZoxbrbpIbnzTU34yDonfY68nnvA/)
 - youtube tailwindcss
+- supabase youtube,tutorials
+- egghead.io
