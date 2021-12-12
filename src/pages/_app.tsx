@@ -10,6 +10,7 @@ import SEO from '../../next-seo.config'
 import { SessionProvider } from 'next-auth/react'
 import { ThemeProvider } from 'next-themes'
 import { MessageProvider } from '~/lib/message'
+import { MdxComponentsProvider } from '../context/MdxComponents';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const pageMeta = (Component as any)?.defaultProps?.meta || {}
@@ -22,9 +23,11 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Head>
       <DefaultSeo {...pageSEO} />
       <ThemeProvider attribute="class">
+      <MdxComponentsProvider>
       <MessageProvider>
         <Component {...pageProps} />
       </MessageProvider>
+      </MdxComponentsProvider>
       </ThemeProvider>
     </SessionProvider>
   )
