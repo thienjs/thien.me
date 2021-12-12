@@ -1,78 +1,41 @@
-import { GetStaticProps } from 'next';
-import Head from 'next/head';
-import { useRouter } from 'next/router';
+import { getAllFilesFrontMatter } from '~/lib/mdx'
+import siteMetadata from '~/data/siteMetadata'
+import ListLayout from '~/layouts/ListLayout'
+import { PageSEO } from '~/components/SEO'
+import { GetStaticProps, InferGetStaticPropsType } from 'next'
+import { ComponentProps } from 'react'
 
-import Layout from '~/components/ui/Layout';
-import NextLink from '~/components/NextLink';
-import Pagination from '~/components/Pagination';
-import Thumbnail from '~/components/Thumbnail';
-import usePagination from '~/hooks/usePagination';
-import { IPost } from '~/types/post';
-import { SITE_NAME } from '~/utils/constants';
-import { getAllPosts } from '~/utils/mdxUtils';
+export const POSTS_PER_PAGE = 5
 
-type Props = {
-  posts: IPost[];
-};
+export const getStaticProps: GetStaticProps<{
+  posts: ComponentProps<typeof ListLayout>['posts']
+  initialDisplayPosts: ComponentProps<typeof ListLayout>['initialDisplayPosts']
+  pagination: ComponentProps<typeof ListLayout>['pagination']
+}> = async () => {
+  const posts = await getAllFilesFrontMatter('blog')
+  const initialDisplayPosts = posts.slice(0, POSTS_PER_PAGE)
+  const pagination = {
+    currentPage: 1,
+    totalPages: Math.ceil(posts.length / POSTS_PER_PAGE),
+  }
 
-const BlogPage: React.FC<Props> = ({ posts }: Props) => {
-  const router = useRouter();
-  const lang = router.locale;
+  return { props: { initialDisplayPosts, posts, pagination } }
+}
 
-  const { currentPage, currentData, maxPage, setElement } = usePagination(
-    posts,
-    2,
-    1.0
-  );
-
-  const currentPosts = currentData();
-
+export default function Blog({
+  posts,
+  initialDisplayPosts,
+  pagination,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
-    <Layout>
-      <Head>
-        <title>{SITE_NAME}</title>
-      </Head>
-
-      <h1 className="text-4xl font-bold mb-4">
-        {lang === 'ja' ? 'レシピ一覧' : 'Recipes'}
-      </h1>
-
-      <div className="space-y-12">
-        {currentPosts.map((post) => (
-          <div key={post.slug}>
-            <div className="mb-4">
-              <Thumbnail
-                slug={post.slug}
-                title={post.title}
-                src={post.thumbnail}
-              />
-            </div>
-
-            <h2 className="text-2xl font-bold mb-4">
-              <NextLink href={`/posts/${post.slug}`}>{post.title}</NextLink>
-            </h2>
-
-            <p className="dark:text-gray-300">{post.description}</p>
-          </div>
-        ))}
-      </div>
-
-      <Pagination
-        currentPage={currentPage}
-        maxPage={maxPage}
-        setElement={setElement}
+    <>
+      <PageSEO title={`Blog - ${siteMetadata.author}`} description={siteMetadata.description} />
+      <ListLayout
+        posts={posts}
+        initialDisplayPosts={initialDisplayPosts}
+        pagination={pagination}
+        title="All Posts"
       />
-    </Layout>
-  );
-};
-
-export default BlogPage;
-
-export const getStaticProps: GetStaticProps = async ({ locale }) => {
-  const posts = getAllPosts(
-    ['slug', 'date', 'thumbnail', 'title', 'description'],
-    locale
-  );
-
-  return { props: { posts } };
-};
+    </>
+  )
+}
