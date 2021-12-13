@@ -1,9 +1,8 @@
-
 import Image from "next/image"
-import profile from "../../public/notion-me.png"
+import profile from '../../public/notion-me.png'
 
-const About = () => {
-    return (
+export default function Hero() {
+  return (
         <div>
             <div className="lg:space-x-5 lg:flex lg:flex-row item-center lg:-mx-4 flex flex-col-reverse text-center lg:text-left">
                 <div className="lg:px-4 lg:mt-12 ">
@@ -30,7 +29,5 @@ const About = () => {
             </div>
             <p>I'm passionate about creating elegant solutions for the modern world through design and technology. </p>
         </div>
-    )
+  )
 }
-
-export default About;
