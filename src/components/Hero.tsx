@@ -9,6 +9,7 @@ export default function Hero() {
                     <h1 className="text-2xl font-bold text-gray-900 lg:text-5xl dark:text-white">
                         Hey there,I'm Thien 
                     </h1>
+                    <p className="wave">👋</p>
                     <div className="mt-6 text-gray-800 dark:text-white">
                         <p className="mb-4">
                           
@@ -27,6 +28,7 @@ export default function Hero() {
                     />
                 </div>
             </div>
+            <p></p>
             <p>I'm passionate about creating elegant solutions for the modern world through design and technology. </p>
         </div>
   )
