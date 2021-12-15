@@ -1,18 +1,14 @@
-import Link from 'next/link'
-import kebabCase from '~/lib/utils/kebabCase'
-
-interface Props {
-  text: string
-}
-
-const Tag = ({ text }: Props) => {
+export default function Tag({ tag, cb, activeTag }) {
   return (
-    <Link href={`/tags/${kebabCase(text)}`}>
-      <a className="mr-3 text-sm font-medium uppercase text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">
-        {text.split(' ').join('-')}
-      </a>
-    </Link>
-  )
+    <button
+      onClick={() => cb()}
+      className={`mr-4 rounded-full px-6 py-1 ${
+        activeTag === tag && 'border border-teal-500 text-teal-500'
+      } hover:border hover:border-gray-300 `}
+    >
+      <span className="text-base font-medium uppercase">
+        {tag === '' ? 'all' : tag}
+      </span>
+    </button>
+  );
 }
-
-export default Tag

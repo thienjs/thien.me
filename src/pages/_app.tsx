@@ -1,4 +1,5 @@
 import '~/styles/globals.css'
+import '~/styles/codeblocks.css';
 
 import React from 'react'
 import { AppProps } from 'next/app'

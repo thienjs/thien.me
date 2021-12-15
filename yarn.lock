@@ -568,7 +568,7 @@
   "resolved" "https://registry.npmjs.org/@next/env/-/env-12.0.7.tgz"
   "version" "12.0.7"
 
-"@next/eslint-plugin-next@^12.0.7":
+"@next/eslint-plugin-next@^12.0.7", "@next/eslint-plugin-next@12.0.7":
   "integrity" "sha512-xk7eMjw4+roWWR/0ETIoToCNs2wdvCGgQUiUO390Rj33/82yxZsh+ODRSaFWkiKp8zHWQN5GCW+U5pfjt/gyQg=="
   "resolved" "https://registry.npmjs.org/@next/eslint-plugin-next/-/eslint-plugin-next-12.0.7.tgz"
   "version" "12.0.7"
@@ -830,6 +830,11 @@
   dependencies:
     "estree-walker" "^2.0.1"
     "picomatch" "^2.2.2"
+
+"@rushstack/eslint-patch@^1.0.8":
+  "integrity" "sha512-JLo+Y592QzIE+q7Dl2pMUtt4q8SKYI5jDrZxrozEQxnGVOyYE+GWK9eLkwTaeN9DDctlaRAQ3TBmzZ1qdLE30A=="
+  "resolved" "https://registry.npmjs.org/@rushstack/eslint-patch/-/eslint-patch-1.1.0.tgz"
+  "version" "1.1.0"
 
 "@sindresorhus/is@^4.0.0":
   "integrity" "sha512-VkE3KLBmJwcCaVARtQpfuKcKv8gcBmUubrfHGF84dXuuW6jgsRYxPtzcIhPyK9WAPpRt2/xY6zkD9MnRaJzSyw=="
@@ -2571,6 +2576,21 @@
   "resolved" "https://registry.npmjs.org/escape-string-regexp/-/escape-string-regexp-5.0.0.tgz"
   "version" "5.0.0"
 
+"eslint-config-next@^12.0.7":
+  "integrity" "sha512-kWOaym5qjyzR190zFKkZMaHetmiRORmzJiKML7Kr9CL213S6SwkrHHCEL58TRdpx0NA+HzrsFR9zgcV2pvV2Yg=="
+  "resolved" "https://registry.npmjs.org/eslint-config-next/-/eslint-config-next-12.0.7.tgz"
+  "version" "12.0.7"
+  dependencies:
+    "@next/eslint-plugin-next" "12.0.7"
+    "@rushstack/eslint-patch" "^1.0.8"
+    "@typescript-eslint/parser" "^5.0.0"
+    "eslint-import-resolver-node" "^0.3.4"
+    "eslint-import-resolver-typescript" "^2.4.0"
+    "eslint-plugin-import" "^2.25.2"
+    "eslint-plugin-jsx-a11y" "^6.5.1"
+    "eslint-plugin-react" "^7.27.0"
+    "eslint-plugin-react-hooks" "^4.3.0"
+
 "eslint-config-prettier@^8.3.0":
   "integrity" "sha512-BgZuLUSeKzvlL/VUjx/Yb787VQ26RU3gGjA3iiFvdsp/2bMfVIWUVP7tjxtjS0e+HP409cPlPvNkQloz8C91ew=="
   "resolved" "https://registry.npmjs.org/eslint-config-prettier/-/eslint-config-prettier-8.3.0.tgz"
@@ -2583,13 +2603,24 @@
   dependencies:
     "confusing-browser-globals" "^1.0.10"
 
-"eslint-import-resolver-node@^0.3.6":
+"eslint-import-resolver-node@^0.3.4", "eslint-import-resolver-node@^0.3.6":
   "integrity" "sha512-0En0w03NRVMn9Uiyn8YRPDKvWjxCWkslUEhGNTdGx15RvPJYQ+lbOlqrlNI2vEAs4pDYK4f/HN2TbDmk5TP0iw=="
   "resolved" "https://registry.npmjs.org/eslint-import-resolver-node/-/eslint-import-resolver-node-0.3.6.tgz"
   "version" "0.3.6"
   dependencies:
     "debug" "^3.2.7"
     "resolve" "^1.20.0"
+
+"eslint-import-resolver-typescript@^2.4.0":
+  "integrity" "sha512-qZ6e5CFr+I7K4VVhQu3M/9xGv9/YmwsEXrsm3nimw8vWaVHRDrQRp26BgCypTxBp3vUp4o5aVEJRiy0F2DFddQ=="
+  "resolved" "https://registry.npmjs.org/eslint-import-resolver-typescript/-/eslint-import-resolver-typescript-2.5.0.tgz"
+  "version" "2.5.0"
+  dependencies:
+    "debug" "^4.3.1"
+    "glob" "^7.1.7"
+    "is-glob" "^4.0.1"
+    "resolve" "^1.20.0"
+    "tsconfig-paths" "^3.9.0"
 
 "eslint-module-utils@^2.7.1":
   "integrity" "sha512-fjoetBXQZq2tSTWZ9yWVl2KuFrTZZH3V+9iD1V1RfpDgxzJR+mPd/KZmMiA8gbPqdBzpNiEHOuT7IYEWxrH0zQ=="
@@ -2608,7 +2639,7 @@
     "lodash" "^4.17.21"
     "string-natural-compare" "^3.0.1"
 
-"eslint-plugin-import@^2.22.0", "eslint-plugin-import@^2.25.3":
+"eslint-plugin-import@*", "eslint-plugin-import@^2.22.0", "eslint-plugin-import@^2.25.2", "eslint-plugin-import@^2.25.3":
   "integrity" "sha512-RzAVbby+72IB3iOEL8clzPLzL3wpDrlwjsTBAQXgyp5SeTqqY+0bFubwuo+y/HLhNZcXV4XqTBO4LGsfyHIDXg=="
   "resolved" "https://registry.npmjs.org/eslint-plugin-import/-/eslint-plugin-import-2.25.3.tgz"
   "version" "2.25.3"
@@ -2657,7 +2688,7 @@
   "resolved" "https://registry.npmjs.org/eslint-plugin-react-hooks/-/eslint-plugin-react-hooks-4.3.0.tgz"
   "version" "4.3.0"
 
-"eslint-plugin-react@^7.20.3", "eslint-plugin-react@^7.27.1":
+"eslint-plugin-react@^7.20.3", "eslint-plugin-react@^7.27.0", "eslint-plugin-react@^7.27.1":
   "integrity" "sha512-meyunDjMMYeWr/4EBLTV1op3iSG3mjT/pz5gti38UzfM4OPpNc2m0t2xvKCOMU5D6FSdd34BIMFOvQbW+i8GAA=="
   "resolved" "https://registry.npmjs.org/eslint-plugin-react/-/eslint-plugin-react-7.27.1.tgz"
   "version" "7.27.1"
@@ -2715,7 +2746,7 @@
   "resolved" "https://registry.npmjs.org/eslint-visitor-keys/-/eslint-visitor-keys-3.1.0.tgz"
   "version" "3.1.0"
 
-"eslint@*", "eslint@^2 || ^3 || ^4 || ^5 || ^6 || ^7.2.0 || ^8", "eslint@^3 || ^4 || ^5 || ^6 || ^7 || ^8", "eslint@^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0", "eslint@^6.0.0 || ^7.0.0 || ^8.0.0", "eslint@^7.5.0", "eslint@^8.1.0", "eslint@^8.4.1", "eslint@>= 4.12.1", "eslint@>=5", "eslint@>=7.0.0", "eslint@>=7.28.0":
+"eslint@*", "eslint@^2 || ^3 || ^4 || ^5 || ^6 || ^7.2.0 || ^8", "eslint@^3 || ^4 || ^5 || ^6 || ^7 || ^8", "eslint@^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0", "eslint@^6.0.0 || ^7.0.0 || ^8.0.0", "eslint@^7.23.0 || ^8.0.0", "eslint@^7.5.0", "eslint@^8.1.0", "eslint@^8.4.1", "eslint@>= 4.12.1", "eslint@>=5", "eslint@>=7.0.0", "eslint@>=7.28.0":
   "integrity" "sha512-TxU/p7LB1KxQ6+7aztTnO7K0i+h0tDi81YRY9VzB6Id71kNz+fFYnf5HD5UOQmxkzcoa0TlVZf9dpMtUv0GpWg=="
   "resolved" "https://registry.npmjs.org/eslint/-/eslint-8.4.1.tgz"
   "version" "8.4.1"
@@ -3162,7 +3193,7 @@
   "resolved" "https://registry.npmjs.org/glob-to-regexp/-/glob-to-regexp-0.4.1.tgz"
   "version" "0.4.1"
 
-"glob@^7.1.3", "glob@7.1.7":
+"glob@^7.1.3", "glob@^7.1.7", "glob@7.1.7":
   "integrity" "sha512-OvD9ENzPLbegENnYP5UUfJIirTg4+XwMWGaQfQTY0JenxNvvIKP3U3/tAQSPIu/lHxXYSZmpXlUHeqAIdKzBLQ=="
   "resolved" "https://registry.npmjs.org/glob/-/glob-7.1.7.tgz"
   "version" "7.1.7"
@@ -5042,7 +5073,7 @@
   "resolved" "https://registry.npmjs.org/next-tick/-/next-tick-1.0.0.tgz"
   "version" "1.0.0"
 
-"next@*", "next@^12", "next@^12.0.7", "next@^8.1.1-canary.54 || >=9.0.0":
+"next@*", "next@^12", "next@^12.0.7", "next@^8.1.1-canary.54 || >=9.0.0", "next@>=10.2.0":
   "integrity" "sha512-sKO8GJJYfuk9c+q+zHSNumvff+wP7ufmOlwT6BuzwiYfFJ61VTTkfTcDLSJ+95ErQJiC54uS4Yg5JEE8H6jXRA=="
   "resolved" "https://registry.npmjs.org/next/-/next-12.0.7.tgz"
   "version" "12.0.7"
@@ -6541,6 +6572,11 @@
     "ansi-styles" "^6.0.0"
     "is-fullwidth-code-point" "^4.0.0"
 
+"slugify@^1.6.3":
+  "integrity" "sha512-1MPyqnIhgiq+/0iDJyqSJHENdnH5MMIlgJIBxmkRMzTNKlS/QsN5dXsB+MdDq4E6w0g9jFA4XOTRkVDjDae/2w=="
+  "resolved" "https://registry.npmjs.org/slugify/-/slugify-1.6.3.tgz"
+  "version" "1.6.3"
+
 "source-map-js@^1.0.1":
   "integrity" "sha512-4+TN2b3tqOCd/kaGRJ/sTYA0tR0mdXx26ipdolxcwtJVqEnqNYvlCAt1q3ypy4QMlYus+Zh34RNtYLoq2oQ4IA=="
   "resolved" "https://registry.npmjs.org/source-map-js/-/source-map-js-1.0.1.tgz"
@@ -6998,7 +7034,7 @@
   "resolved" "https://registry.npmjs.org/ts-pattern/-/ts-pattern-3.3.3.tgz"
   "version" "3.3.3"
 
-"tsconfig-paths@^3.11.0":
+"tsconfig-paths@^3.11.0", "tsconfig-paths@^3.9.0":
   "integrity" "sha512-e5adrnOYT6zqVnWqZu7i/BQ3BnhzvGbjEjejFXO20lKIKpwTaupkCPgEfv4GZK1IBciJUEhYs3J3p75FdaTFVg=="
   "resolved" "https://registry.npmjs.org/tsconfig-paths/-/tsconfig-paths-3.12.0.tgz"
   "version" "3.12.0"
@@ -7079,7 +7115,7 @@
   dependencies:
     "is-typedarray" "^1.0.0"
 
-"typescript@^4.5.3", "typescript@>=2.8.0 || >= 3.2.0-dev || >= 3.3.0-dev || >= 3.4.0-dev || >= 3.5.0-dev || >= 3.6.0-dev || >= 3.6.0-beta || >= 3.7.0-dev || >= 3.7.0-beta":
+"typescript@^4.5.3", "typescript@>=2.8.0 || >= 3.2.0-dev || >= 3.3.0-dev || >= 3.4.0-dev || >= 3.5.0-dev || >= 3.6.0-dev || >= 3.6.0-beta || >= 3.7.0-dev || >= 3.7.0-beta", "typescript@>=3.3.1":
   "integrity" "sha512-eVYaEHALSt+s9LbvgEv4Ef+Tdq7hBiIZgii12xXJnukryt3pMgJf6aKhoCZ3FWQsu6sydEnkg11fYXLzhLBjeQ=="
   "resolved" "https://registry.npmjs.org/typescript/-/typescript-4.5.3.tgz"
   "version" "4.5.3"

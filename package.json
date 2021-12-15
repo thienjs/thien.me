@@ -63,6 +63,7 @@
     "remark-gfm": "^2.0.0",
     "remark-html": "^15.0.1",
     "remark-math": "^5.1.1",
+    "slugify": "^1.6.3",
     "swr": "^1.1.1",
     "yarn": "^1.22.17"
   },
@@ -78,6 +79,7 @@
     "babel-eslint": "^10.1.0",
     "babel-plugin-inline-react-svg": "^2.0.1",
     "eslint": "^8.4.1",
+    "eslint-config-next": "^12.0.7",
     "eslint-config-prettier": "^8.3.0",
     "eslint-config-react-app": "^6.0.0",
     "eslint-plugin-flowtype": "^8.0.3",
