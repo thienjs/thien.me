@@ -4,7 +4,7 @@ import { Client } from '@notionhq/client';
 import siteMetadata from '~/data/siteMetadata';
 import slugify from 'slugify';
 import { useRouter } from 'next/router';
-import { getTwitterProfilePicture } from '~/lib/twitter';
+
 import Layout from "~/components/ui/Layout";
 import { AnchorLink } from "~/components/AnchorLink";
 import Image from "next/image";
@@ -173,8 +173,7 @@ export function renderBlocks(block) {
             loading="lazy"
             allowFullScreen={true}
           >
-            See the Pen <a href={value.url}>Postage from Bag End</a> by Braydon
-            Coyer (<a href="https://codepen.io/thienjs">@thienjs</a>)
+            See the Pen <a href={value.url}></a> by Thien Tran (<a href="https://codepen.io/thienjs">@thienjs</a>)
             on <a href="https://codepen.io">CodePen</a>.
           </iframe>
         </div>
@@ -207,7 +206,6 @@ const ArticlePage = ({
   slug,
   publishedDate,
   lastEditedAt,
-  sponsoredArticleUrl,
   summary,
 }) => {
   const { push } = useRouter();
@@ -274,23 +272,8 @@ const ArticlePage = ({
               <Fragment key={block.id}>{renderBlocks(block)}</Fragment>
             ))}
 
- 
-
-            <div>
-              <hr />
-              <h3>More articles</h3>
-              <p className="mb-12">
-                If you enjoyed this article, you'll find these insightful too!
-              </p>
-            </div>
           </div>
         </article>
-        <aside className="hidden w-full lg:inline-block md:sticky md:top-[175px] md:self-start col-span-3 space-y-8">
-          <h3 className="m-0 text-sm font-semibold tracking-wider text-center uppercase">
-            Article Reactions
-          </h3>
-
-        </aside>
       </div>
     </Layout>
   );
@@ -298,7 +281,7 @@ const ArticlePage = ({
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = [];
-  const data: any = await getPublishedArticles(process.env.BLOG_DATABASE_ID);
+  const data: any = await getPublishedArticles(process.env.NOTION_DATABASE_ID);
 
   data.forEach((result) => {
     if (result.object === 'page') {
@@ -324,23 +307,21 @@ export const getStaticProps: GetStaticProps = async ({ params: { slug } }) => {
   let publishedDate = null;
   let lastEditedAt = null;
   let coverImage = null;
-  let sponsoredArticleUrl = null;
   let summary = null;
 
-  const profilePicture = await getTwitterProfilePicture();
+
 
   const notion = new Client({
-    auth: process.env.NOTION_SECRET
+    auth: process.env.NOTION_TOKEN,
   });
 
-  const data: any = await getPublishedArticles(process.env.BLOG_DATABASE_ID);
+  const data: any = await getPublishedArticles(process.env.NOTION_DATABASE_ID);
 
   const page: any = getArticlePage(data, slug);
 
   articleTitle = page.properties.Name.title[0].plain_text;
   publishedDate = page.properties.Published.date.start;
   lastEditedAt = page.properties.LastEdited.last_edited_time;
-  sponsoredArticleUrl = page.properties.canonicalUrl?.url;
   summary = page.properties.Summary?.rich_text[0]?.plain_text;
   coverImage =
     page.properties?.coverImage?.files[0]?.file?.url ||
@@ -371,10 +352,8 @@ export const getStaticProps: GetStaticProps = async ({ params: { slug } }) => {
       publishedDate,
       lastEditedAt,
       slug,
-      profilePicture,
       coverImage,
       summary,
-      sponsoredArticleUrl
     },
     revalidate: 30
   };
