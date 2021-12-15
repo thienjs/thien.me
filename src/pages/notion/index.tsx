@@ -4,10 +4,15 @@ import { getDatabase } from "~/lib/notion";
 import { Text } from "~/pages/notion/[id]";
 import styles from "./index.module.css";
 import Layout from '~/components/ui/Layout'
+import NotionCard from "~/components/NotionCard";
+import { stringify } from "querystring";
+
 
 export const databaseId = process.env.NOTION_DATABASE_ID;
 
 export default function Home({ posts }) {
+
+
   return (
     <Layout>
       <Head>
@@ -63,6 +68,7 @@ export default function Home({ posts }) {
             );
           })}
         </ol>
+
       </main>
     </Layout>
   );

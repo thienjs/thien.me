@@ -4,6 +4,7 @@ import { getDatabase, getPage, getBlocks } from "~/lib/notion";
 import Link from "next/link";
 import { databaseId } from "~/pages/notion/index";
 import Layout from "~/components/ui/Layout";
+import { CodeBlock } from '~/components/Codeblock';
 
 
 export const Text = ({ text }) => {
@@ -97,6 +98,15 @@ const renderBlock = (block) => {
       return <hr key={id} />;
     case "quote":
       return <blockquote key={id}>{value.text[0].plain_text}</blockquote>;
+    case "code":
+      return (
+        <div>
+          <CodeBlock
+            language={value.language}
+            code={value.text[0].text.content}
+          />
+        </div>
+      );
     default:
       return `❌ Unsupported block (${
         type === "unsupported" ? "unsupported by Notion API" : type

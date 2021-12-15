@@ -21,7 +21,7 @@ export default function Navigation() {
   const [open, setOpen] = useState(false)
 
   return (
-    <div className="bg-white dark:bg-black">
+    <div className="bg-white dark:bg-zinc-900">
       {/* Mobile menu */}
       <Transition.Root show={open} as={Fragment}>
         <Dialog as="div" className="fixed inset-0 flex z-40 lg:hidden" onClose={setOpen}>
@@ -34,7 +34,7 @@ export default function Navigation() {
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <Dialog.Overlay className="fixed inset-0 bg-black bg-opacity-25" />
+            <Dialog.Overlay className="fixed inset-0 bg-zinc-900 bg-opacity-25" />
           </Transition.Child>
 
           <Transition.Child
@@ -47,7 +47,7 @@ export default function Navigation() {
             leaveTo="-translate-x-full"
           >
             {/* Mobile Sidebar */}
-            <div className="relative max-w-xs w-full bg-white dark:bg-black shadow-xl pb-12 flex flex-col overflow-y-auto opacity-95">
+            <div className="relative max-w-xs w-full bg-white dark:bg-zinc-900 shadow-xl pb-12 flex flex-col overflow-y-auto opacity-95">
               <div className="px-4 pt-5 pb-2 flex">
                 <button
                   type="button"
@@ -119,7 +119,7 @@ export default function Navigation() {
         </Dialog>
       </Transition.Root>
 
-      <header className="relative bg-white dark:bg-black">
+      <header className="relative bg-white dark:bg-zinc-900">
 
 
         <nav aria-label="Top" className="max-w-7xl mx-auto px-4 sm:px-4 lg:px-8">
@@ -127,7 +127,7 @@ export default function Navigation() {
             <div className="h-16 flex items-center">
               <button
                 type="button"
-                className="bg-white rounded-md text-gray-400 dark:text-white lg:hidden dark:bg-black "
+                className="bg-white rounded-md text-gray-400 dark:text-white lg:hidden dark:bg-zinc-900 "
                 onClick={() => setOpen(true)}
               >
                 <span className="sr-only">Open menu</span>
@@ -174,7 +174,7 @@ export default function Navigation() {
                               {/* Presentational element used to render the bottom shadow, if we put the shadow on the actual panel it pokes out the top, so we use this shorter element to hide the top of the shadow */}
                               <div className="absolute inset-0 top-1/2 bg-white shadow" aria-hidden="true" />
 
-                              <div className="relative bg-white dark:bg-black">
+                              <div className="relative bg-white dark:bg-zinc-900">
                                 <div className="max-w-5xl mx-auto px-4 py-4">
                                   <div className="">
                                     

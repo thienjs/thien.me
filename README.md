@@ -3,27 +3,22 @@ This is my personal website and portfolio. I use this to experiment with new tec
 
 The page itself will be compose of my favorite web development tool and a showcase of my understanding. I hope to use this as an oppurtinity to land a job as a web developer. thank you. 
 
-Bootstrapped From Starter with:
+## Tech:
 - __Typescript__ as the language choice
 - __Tailwind CSS__ for quick styling without getting out of your HTML
 - __ESLint__ for static code analysis
 - __Prettier__ for code formatting
-- __SEO__ pre-configured
-- __Icons & SVG__ support out of the box
-
 
 ## Stack
 - headlessui
 - supabase
-- strapi
 - notion
-- planetscale
 
 ## front end features/ ideas
 - [x] notes from notion
-- [ ] mdx blog or notion? tbt
+- [ ] mdx blog or notion? tbt, notion has code block support now
 - [ ] feedback page
-- github repo page
+- [ ] github repo page
 
 ## To-do
 
@@ -31,12 +26,12 @@ Bootstrapped From Starter with:
 - [ ] style feedback page
 
 ### Backend
-- [ ] authentication
+- [ ] authentication with supabase
 - [ ] todo app
 - [ ] tweak Layout
 - [x] add notion
 - [x] add supabase
-- [ ] add guestbook with planetscale
+- [ ] add guestbook with -planetscale- supabase
 - [x] add prisma
 - [ ] 
 - [ ] 
@@ -60,10 +55,11 @@ Bootstrapped From Starter with:
 - techstack
 - dashboard
 
-## Inspiration & Tutorials
+## Inspiration & Tutorials & Instructors
 - [leerob.io](https://leerob.io)
 - youtube prisma
 - [udemy brad traversy](https://www.udemy.com/share/104pIy3@cLMHuS_W89851Mk22SfqbfgFB3BlHlvH_5F1RZoxbrbpIbnzTU34yDonfY68nnvA/)
 - youtube tailwindcss
 - supabase youtube,tutorials
-- egghead.io
+- egghead.io tutorials
+- braydonCoyer braydoncoyer.dev
