@@ -1,7 +1,7 @@
 import { GetStaticProps} from 'next'
 import { getPublishedArticles, convertToArticleList } from '~/lib/notion';
 import { useState, useEffect } from 'react';
-import Tag from '~/components/Tag';
+import {Tag} from '~/components/Tag';
 import Layout from '~/components/ui/Layout';
 import { ArticleList } from '~/components/ArticleList';
 

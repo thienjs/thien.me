@@ -1,4 +1,4 @@
-export default function Tag({ tag, cb, activeTag }) {
+export function Tag({ tag, cb, activeTag }) {
   return (
     <button
       onClick={() => cb()}
