@@ -45,6 +45,25 @@ export const getPublishedArticles = async (databaseId) => {
 
   return response.results;
 };
+export const getPublishedSnippets = async (databaseId) => {
+  const response = await notion.databases.query({
+    database_id: databaseId,
+    filter: {
+      property: 'Status',
+      select: {
+        equals: 'published'
+      }
+    },
+    sorts: [
+      {
+        property: 'Date',
+        direction: 'descending'
+      }
+    ]
+  });
+
+  return response.results;
+};
 
 export const getArticlePage = (data, slug) => {
   const response = data.find((result) => {
@@ -82,4 +101,27 @@ export const convertToArticleList = (tableData: any) => {
   });
 
   return { articles, tags };
+};
+export const convertToSnippetList = (tableData: any) => {
+  let tags: string[] = [];
+  const snippets = tableData.map((snippet: any) => {
+    return {
+      title: snippet.properties.Name.title[0].plain_text,
+      tags: snippet.properties.tags.multi_select.map((tag) => {
+        if (!tags.includes(tag.name)) {
+          const newList = [...tags, tag.name];
+          tags = newList;
+        }
+        return { name: tag.name, id: tag.id };
+      }),
+      coverImage:
+        snippet.properties?.coverImage?.files[0]?.file?.url ||
+        snippet.properties.coverImage?.files[0]?.external?.url ||
+        'https://via.placeholder.com/600x400.png',
+      publishedDate: snippet.properties.Date.date.start,
+      summary: snippet.properties?.Description.rich_text[0]?.plain_text
+    };
+  });
+
+  return { snippets, tags };
 };

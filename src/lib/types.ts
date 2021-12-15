@@ -1,7 +1,6 @@
 export type Views = {
   total: number;
 };
-
   export type Song = {
     songUrl: string;
     artist: string;
@@ -27,6 +26,14 @@ export type Views = {
   };
   
   export type Article = {
+    title: string;
+    tags?: string[];
+    coverImage: string;
+    summary: string;
+    publishedDate?: any;
+    lastUpdatedDate?: any;
+  };
+  export type Snippet = {
     title: string;
     tags?: string[];
     coverImage: string;

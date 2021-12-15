@@ -1,86 +1,93 @@
-import Head from "next/head";
-import Link from "next/link";
-import { getDatabase } from "~/lib/notion";
-import { Text } from "~/pages/notion/[id]";
-import styles from "./index.module.css";
-import Layout from '~/components/ui/Layout'
-import NotionCard from "~/components/NotionCard";
-import { stringify } from "querystring";
+import { GetStaticProps} from 'next'
+import { getPublishedArticles, convertToArticleList } from '~/lib/notion';
+import { useState, useEffect } from 'react';
+import {Tag} from '~/components/Tag';
+import Layout from '~/components/ui/Layout';
+import { ArticleList } from '~/components/ArticleList';
 
+export default function Blog({articles, tags}) {
+    const [selectedTag, setSelectedTag] = useState<string>('');
+    const [searchValue, setSearchValue] = useState('');
+  
+    const filteredArticles = articles
+      .sort((a, b) => Number(new Date(b.publishedDate)))
+      .filter((post) => {
+        return (
+          post.title.toLowerCase().includes(searchValue.toLowerCase()) ||
+          post.tags.some((el) => el.name === searchValue.toLocaleLowerCase())
+        );
+      });
+  
+    useEffect(() => {
+      setSearchValue(selectedTag);
+    }, [selectedTag]);
+  
 
-export const databaseId = process.env.NOTION_DATABASE_ID;
-
-export default function Home({ posts }) {
-
-
-  return (
-    <Layout>
-      <Head>
-        <title>Notion blog</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className="">
-        <header className="">
-          <div className="">
-            <svg
-              height="80"
-              width="80"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="12 0.18999999999999906 487.619 510.941"
-            >
-              <path
-                d="M96.085 91.118c15.81 12.845 21.741 11.865 51.43 9.884l279.888-16.806c5.936 0 1-5.922-.98-6.906L379.94 43.686c-8.907-6.915-20.773-14.834-43.516-12.853L65.408 50.6c-9.884.98-11.858 5.922-7.922 9.883zm16.804 65.228v294.491c0 15.827 7.909 21.748 25.71 20.769l307.597-17.799c17.81-.979 19.794-11.865 19.794-24.722V136.57c0-12.836-4.938-19.758-15.84-18.77l-321.442 18.77c-11.863.997-15.82 6.931-15.82 19.776zm303.659 15.797c1.972 8.903 0 17.798-8.92 18.799l-14.82 2.953v217.412c-12.868 6.916-24.734 10.87-34.622 10.87-15.831 0-19.796-4.945-31.654-19.76l-96.944-152.19v147.248l30.677 6.922s0 17.78-24.75 17.78l-68.23 3.958c-1.982-3.958 0-13.832 6.921-15.81l17.805-4.935V210.7l-24.721-1.981c-1.983-8.903 2.955-21.74 16.812-22.736l73.195-4.934 100.889 154.171V198.836l-25.723-2.952c-1.974-10.884 5.927-18.787 15.819-19.767zM42.653 23.919l281.9-20.76c34.618-2.969 43.525-.98 65.283 14.825l89.986 63.247c14.848 10.876 19.797 13.837 19.797 25.693v346.883c0 21.74-7.92 34.597-35.608 36.564L136.64 510.14c-20.785.991-30.677-1.971-41.562-15.815l-66.267-85.978C16.938 392.52 12 380.68 12 366.828V58.495c0-17.778 7.922-32.608 30.653-34.576z"
-                fillRule="evenodd"
-                fill="currentColor"
-              />
-            </svg>
+    return (
+      <Layout>
+      <div className="py-3 my-8 overflow-x-auto border-t border-b border-gray-200 dark:border-gray-600 no-scrollbar">
+      <ul className="flex items-center justify-start w-full">
+        {/* Initial tag for all topics */}
+        <Tag activeTag={selectedTag} tag="" cb={() => setSelectedTag('')} />
+        {tags &&
+          tags.map((tag) => (
+            <Tag
+              activeTag={selectedTag}
+              key={tag}
+              tag={tag}
+              cb={() => setSelectedTag(tag)}
+            />
+          ))}
+      </ul>
+    </div>
+    <div className="min-h-screen space-y-12">
+        {!filteredArticles.length && (
+          <div className="w-full mx-auto rounded-lg bg-[#F8FAFC] dark:bg-midnight p-4">
+            <p className="flex items-center justify-center text-2xl">
+              No articles found{' '}
+              <span>
+                <svg className="ml-3 w-7 h-7" fill="none" viewBox="0 0 24 24">
+                  <path
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="1.5"
+                    d="M8.75 4.75H15.25C17.4591 4.75 19.25 6.54086 19.25 8.75V15.25C19.25 17.4591 17.4591 19.25 15.25 19.25H8.75C6.54086 19.25 4.75 17.4591 4.75 15.25V8.75C4.75 6.54086 6.54086 4.75 8.75 4.75Z"
+                  ></path>
+                  <path
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="1.5"
+                    d="M7.75 15.25C7.75 15.25 9 12.75 12 12.75C15 12.75 16.25 15.25 16.25 15.25"
+                  ></path>
+                  <circle cx="14" cy="10" r="1" fill="currentColor"></circle>
+                  <circle cx="10" cy="10" r="1" fill="currentColor"></circle>
+                </svg>
+              </span>
+            </p>
           </div>
-          <h1>Notes from my Notion</h1>
-        </header>
-
-        <h2 className="">All Notes</h2>
-        <ol className="">
-          {posts.map((post) => {
-            const date = new Date(post.last_edited_time).toLocaleString(
-              "en-US",
-              {
-                month: "short",
-                day: "2-digit",
-                year: "numeric",
-              }
-            );
-            return (
-              <li key={post.id} className="">
-                <h3 className="">
-                  <Link href={`/notion/${post.id}`}>
-                    <a>
-                      <Text text={post.properties.Name.title} />
-                    </a>
-                  </Link>
-                </h3>
-
-                <p className="">{date}</p>
-                <Link href={`/notion/${post.id}`}>
-                  <a> Read Note →</a>
-                </Link>
-              </li>
-            );
-          })}
-        </ol>
-
-      </main>
+        )}
+        <ArticleList articles={filteredArticles} />
+      </div>
     </Layout>
-  );
+    )
 }
 
-export const getStaticProps = async () => {
-  const database = await getDatabase(databaseId);
-
-  return {
-    props: {
-      posts: database,
-    },
-    revalidate: 1,
+export const getStaticProps: GetStaticProps = async () => {
+    const data = await getPublishedArticles(process.env.NOTION_DATABASE_ID);
+    const { articles, tags } = convertToArticleList(data);
+  
+    const featuredArticle = articles[0];
+  
+    return {
+      props: {
+        featuredArticle,
+        articles: articles.slice(1),
+        tags
+      },
+      revalidate: 30
+    };
   };
-};
+
+  
