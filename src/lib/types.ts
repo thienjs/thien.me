@@ -1,3 +1,6 @@
+export type Views = {
+  total: number;
+};
 
   export type Song = {
     songUrl: string;

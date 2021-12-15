@@ -1,5 +1,6 @@
 import { Client } from "@notionhq/client";
 import { QueryDatabaseResponse } from '@notionhq/client/build/src/api-endpoints';
+import slugify from 'slugify';
 
 const notion = new Client({
   auth: process.env.NOTION_TOKEN,
@@ -43,6 +44,20 @@ export const getPublishedArticles = async (databaseId) => {
   });
 
   return response.results;
+};
+
+export const getArticlePage = (data, slug) => {
+  const response = data.find((result) => {
+    if (result.object === 'page') {
+      const resultSlug = slugify(
+        result.properties.Name.title[0].plain_text
+      ).toLowerCase();
+      return resultSlug === slug;
+    }
+    return false;
+  });
+
+  return response;
 };
 
 export const convertToArticleList = (tableData: any) => {
