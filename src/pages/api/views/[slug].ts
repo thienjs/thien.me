@@ -1,35 +1,41 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-
-import { supabase }from '~/lib/supabase';
+import {prisma} from 'lib/prisma';
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  if (req.method === 'POST') {
-    // Call our stored procedure with the page_slug set by the request params slug
-    await supabase.rpc('increment_page_view', {
-      page_slug: req.query.slug
-    });
-    return res.status(200).json({
-      message: `Successfully incremented page: ${req.query.slug}`
-    });
-  }
+  try {
+    const slug = req.query.slug.toString();
 
-  if (req.method === 'GET') {
-    // Query the pages table in the database where slug equals the request params slug.
-    const { data } = await supabase.from('pages')
-      .select('view_count')
-      .filter('slug', 'eq', req.query.slug);
+    if (req.method === 'POST') {
+      const newOrUpdatedViews = await prisma.views.upsert({
+        where: { slug },
+        create: {
+          slug
+        },
+        update: {
+          count: {
+            increment: 1
+          }
+        }
+      });
 
-    if (data) {
       return res.status(200).json({
-        total: data[0]?.view_count || null
+        total: newOrUpdatedViews.count.toString()
       });
     }
-  }
 
-  return res.status(400).json({
-    message: 'Unsupported Request'
-  });
+    if (req.method === 'GET') {
+      const views = await prisma.views.findUnique({
+        where: {
+          slug
+        }
+      });
+
+      return res.status(200).json({ total: views.count.toString() });
+    }
+  } catch (e) {
+    return res.status(500).json({ message: e.message });
+  }
 }

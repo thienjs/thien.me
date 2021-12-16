@@ -5,6 +5,13 @@ import siteMetadata from '~/data/siteMetadata';
 import slugify from 'slugify';
 import { useIsArticleRead } from '~/lib/hooks/useIsArticleRead';
 import { useRouter } from 'next/dist/client/router';
+import Link from 'next/link';
+import useSWR from 'swr';
+import cn from 'classnames';
+
+import {fetcher} from 'lib/fetcher';
+import { Views } from 'lib/types';
+
 
 type Props = {
   article: Article;
@@ -13,7 +20,8 @@ type Props = {
 export function ArticleCard({ article }: Props) {
   const router = useRouter();
   const slug = slugify(article.title).toLowerCase();
-
+  const { data } = useSWR<Views>(`/api/views/${slug}`, fetcher);
+  const views = data?.total;
   const [hasRead] = useIsArticleRead(slug);
 
   return (
@@ -40,10 +48,13 @@ export function ArticleCard({ article }: Props) {
                 siteMetadata.locale,
                 {
                   year: 'numeric',
-                  month: 'long',
+                  month: 'short',
                   day: 'numeric'
                 }
               )}{' '}
+              <span className="ml-2 align-baseline capsize">
+              {views ? new Number(views).toLocaleString() : '–––'}
+            </span>
               {hasRead && (
                 <span className="text-sm inline-flex items-center text-teal-600 dark:text-teal-800 opacity-75 ml-3">
                   <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -55,6 +66,7 @@ export function ArticleCard({ article }: Props) {
                       d="M5.75 12.8665L8.33995 16.4138C9.15171 17.5256 10.8179 17.504 11.6006 16.3715L18.25 6.75"
                     ></path>
                   </svg>
+                  
                   <span>read</span>
                 </span>
               )}
