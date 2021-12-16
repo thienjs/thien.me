@@ -84,7 +84,7 @@ export const getStaticProps: GetStaticProps = async () => {
   return {
     props: {
 
-      snippets: snippets.slice(1),
+      snippets: snippets.slice(0),
       tags
     },
     revalidate: 30

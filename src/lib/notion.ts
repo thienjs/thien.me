@@ -56,7 +56,7 @@ export const getPublishedSnippets = async (databaseId) => {
     },
     sorts: [
       {
-        property: 'Date',
+        property: 'Published',
         direction: 'descending'
       }
     ]
@@ -66,6 +66,19 @@ export const getPublishedSnippets = async (databaseId) => {
 };
 
 export const getArticlePage = (data, slug) => {
+  const response = data.find((result) => {
+    if (result.object === 'page') {
+      const resultSlug = slugify(
+        result.properties.Name.title[0].plain_text
+      ).toLowerCase();
+      return resultSlug === slug;
+    }
+    return false;
+  });
+
+  return response;
+};
+export const getSnippetPage = (data, slug) => {
   const response = data.find((result) => {
     if (result.object === 'page') {
       const resultSlug = slugify(
@@ -118,8 +131,8 @@ export const convertToSnippetList = (tableData: any) => {
         snippet.properties?.coverImage?.files[0]?.file?.url ||
         snippet.properties.coverImage?.files[0]?.external?.url ||
         'https://via.placeholder.com/600x400.png',
-      publishedDate: snippet.properties.Date.date.start,
-      summary: snippet.properties?.Description.rich_text[0]?.plain_text
+      publishedDate: snippet.properties.Published.date.start,
+      summary: snippet.properties?.Summary.rich_text[0]?.plain_text
     };
   });
 
