@@ -230,9 +230,9 @@ export default function Navigation() {
                   </a>
                   </Link>
                   <span className="h-6 w-px bg-gray-200" aria-hidden="true" />
-                  <Link href="/notion">
+                  <Link href="/contact">
                   <a className="text-sm font-medium text-gray-700 hover:text-gray-800">
-                    Notes
+                    Contact
                   </a>
                   </Link>
                 </div>

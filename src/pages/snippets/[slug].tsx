@@ -243,11 +243,10 @@ const SnippetPage = ({
         <article className="col-span-9 mt-12">
           <div className="space-y-12">
             <div>
-              <h1 className="text-3xl text-center md:text-5xl">{title}</h1>
+              <h1 className="text-2xl text-center md:text-5xl">{title}</h1>
               <div className="text-center">
                 <div className="flex items-center justify-center mb-2 space-x-2 text-lg">
                   <p className="m-0 text-lg md:text-xl">{publishedOn}</p>
-                  <p className="m-0">•</p>
 
                 </div>
                 {publishedOn !== modifiedDate && (
@@ -257,17 +256,7 @@ const SnippetPage = ({
                 )}
               </div>
             </div>
-            <div className="my-12">
-              <Image
-                className="rounded-xl"
-                objectFit="fill"
-                src={coverImage}
-                width={1200}
-                height={684}
-                alt={'article cover'}
-                priority
-              />
-            </div>
+
             {content.map((block) => (
               <Fragment key={block.id}>{renderBlocks(block)}</Fragment>
             ))}

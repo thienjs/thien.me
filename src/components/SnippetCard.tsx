@@ -20,22 +20,11 @@ export function SnippetCard({ snippet }: Props) {
     <div>
       <button onClick={() => handleSnippetClicked(slug)}>
         <div className="group">
-          <Image
-            className="rounded-xl group-hover:opacity-75"
-            objectFit="cover"
-            src={snippet.coverImage}
-            placeholder="blur"
-            blurDataURL={snippet.coverImage}
-            width={684}
-            height={800}
-            layout="intrinsic"
-            alt={'Snippet cover'}
-          />
-          <div className="text-left w-full">
-            <h3 className="mt-2 text-2xl">{snippet.title}</h3>
+          <div className="text-left w-full border-2 mx-4 px-4 py-4">
+            <h3 className="text-xl">{snippet.title}</h3>
             {/* {JSON.stringify(Snippet)} */}
             {/* <p>{Snippet.summary}</p> */}
-            <span className="text-base font-semibold flex items-center">
+            <span className="text-base flex items-center">
               {new Date(snippet.publishedDate).toLocaleDateString(
                 siteMetadata.locale,
                 {
