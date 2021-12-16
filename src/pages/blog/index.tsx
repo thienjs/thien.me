@@ -25,6 +25,8 @@ export default function Blog({articles, tags}) {
 
     return (
       <Layout>
+        <h1 className='text-5xl font-semibold py-2 mb-4 '>Blog</h1>
+        <p className=''>This is where i gather my thoughts</p>
       <div className="py-3 my-8 overflow-x-auto border-t border-b border-gray-200 dark:border-gray-600 no-scrollbar">
       <ul className="flex items-center justify-start w-full">
         {/* Initial tag for all topics */}

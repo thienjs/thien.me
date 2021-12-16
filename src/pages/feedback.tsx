@@ -17,6 +17,8 @@ export default function FeedbackPage({ feedback }) {
   };
   return (
     <Layout>
+              <h1 className='text-5xl font-semibold py-2 mb-4 '>Feedback</h1>
+        <p className=''>let me know what you think about the site.</p>
       <main className="my- my-36 h-auto">
         <div className="container mx-auto max-w-screen-lg px-4">
           <h1 className="text-3xl mb-5 font-bold tracking-wide text-white">

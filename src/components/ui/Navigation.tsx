@@ -246,7 +246,7 @@ export default function Navigation() {
                 </Link>
                 <Link href='/snippets'>
                   <a className=" text-gray-400 hover:text-gray-500 ml-3">
-                    <CodeJournalIcon className="w-6 h-6 lg:hidden" aria-hidden="true" />
+                    <CodeJournalIcon className="w-4 h-4 lg:hidden" aria-hidden="true" />
                   </a>
                 </Link>
                 <Link href='/projects'>

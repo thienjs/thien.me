@@ -26,6 +26,8 @@ export default function SnippetsPage({snippets, tags}) {
 
   return (
     <Layout>
+      <h1 className='text-4xl font-semibold mb-4'>Snippets</h1>
+      <p>collection of useful code for reference</p>
       <div className="py-3 my-8 overflow-x-auto border-b border-gray-200 dark:border-gray-600 no-scrollbar">
       <ul className="flex items-center justify-start w-full">
         {/* Initial tag for all topics */}
