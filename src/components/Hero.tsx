@@ -6,13 +6,13 @@ export default function Hero() {
         <div>
             <div className="lg:space-x-5 lg:flex lg:flex-row item-center lg:-mx-4 flex flex-col-reverse text-center lg:text-left">
                 <div className="lg:px-4 lg:mt-12 ">
-                    <h1 className="text-2xl font-bold text-gray-900 lg:text-5xl dark:text-white">
+                    <h1 className="text-2xl font-bold text-gray-900 lg:text-4xl dark:text-white">
                         Hey there,I'm Thien 
+                    <p className="wave"> 👋</p>
                     </h1>
-                    <p className="wave">👋</p>
                     <div className="mt-6 text-gray-800 dark:text-white">
-                        <p className="mb-4">
-                          
+                        <p className="mb-4 pb-6">
+                          Welcome to my personal home on the web. This is where i write about 
                         </p>
                     </div>
                 </div>
@@ -29,7 +29,7 @@ export default function Hero() {
                 </div>
             </div>
             <p></p>
-            <p>I'm passionate about creating elegant solutions for the modern world through design and technology. </p>
+            <p className=" mb-6">I'm passionate about creating elegant solutions for the modern world through design and technology. </p>
         </div>
   )
 }

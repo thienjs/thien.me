@@ -26,7 +26,7 @@ export default function SnippetsPage({snippets, tags}) {
 
   return (
     <Layout>
-      <div className="py-3 my-8 overflow-x-auto border-t border-b border-gray-200 dark:border-gray-600 no-scrollbar">
+      <div className="py-3 my-8 overflow-x-auto border-b border-gray-200 dark:border-gray-600 no-scrollbar">
       <ul className="flex items-center justify-start w-full">
         {/* Initial tag for all topics */}
         <Tag activeTag={selectedTag} tag="" cb={() => setSelectedTag('')} />

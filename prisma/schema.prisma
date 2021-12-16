@@ -29,3 +29,8 @@ enum FeedbackType {
   IDEA
   FEEDBACK
 }
+
+model views {
+  slug          String        @id @db.VarChar(128)
+  count         BigInt         @default(1)
+}
