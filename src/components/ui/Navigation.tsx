@@ -7,6 +7,14 @@ import NotepadIcon from '../icons/notepad'
 import SnippetsIcon from '../icons/snippets'
 import QuillIcon from '~/components/icons/quill'
 import PenIcon from '~/components/icons/pen'
+import IpodIcon from '~/components/icons/ipod'
+import CommentIcon from '../icons/comment'
+import DashboardIcon from '../icons/dashboard'
+import AboutIcon from '../icons/about'
+import FolderHeartIcon from '../icons/folder-heart'
+import JournalIcon from '~/components/icons/journal'
+import CodeJournalIcon from '~/components/icons/code-journal'
+import CodeIcon from '~/components/icons/code'
 import BookmarkNotebookIcon from '~/components/icons/bookmark-notebook'
 import ThemeSwitch from '../ThemeSwitch'
 import { navigation } from '~/lib/constants'
@@ -48,7 +56,7 @@ export default function Navigation() {
           >
             {/* Mobile Sidebar */}
             <div className="relative max-w-xs w-full bg-white dark:bg-zinc-900 shadow-xl pb-12 flex flex-col overflow-y-auto opacity-95">
-              <div className="px-4 pt-5 pb-2 flex">
+              <div className="px-8 pt-6 flex">
                 <button
                   type="button"
                   className="-m-2 p-2 rounded-md inline-flex items-center justify-center text-red-400 dark:text-white"
@@ -59,56 +67,50 @@ export default function Navigation() {
                 </button>
                 <Link href="/">
 
-                <h1 className='ml-3'>thien.me</h1>
+                <h1 className='ml-3 font-semibold text-xl'>thien.me</h1>
                 </Link>
               </div>
               
               {/* Links */}
               <div className="py-6 px-6 ml-3 text-md mt-5">
-                <div className='flex flex-row mb-2'>
-                  <BookmarkIcon className='h-5 w-5 mr-3'/>
+                <div className='flex flex-row mb-2 py-4 text-xl font-semibold lowercase'>
+                  <JournalIcon className='h-6 w-6 mr-3 mt-1'/>
                   <Link href='/blog'>
-                  <a className='ml-2'>Blog</a>
+                  <a className='ml-2 '>Blog</a>
                   </Link>
                 </div>
-                <div className='flex flex-row mb-2 '>
-                  <BookmarkIcon className='h-5 w-5 mr-3'/>
-                  <Link href='/notion'>
-                  <a className='ml-2'>Notion</a>
-                  </Link>
-                </div>
-                <div className='flex flex-row mb-2'>
-                  <TerminalIcon className='h-5 w-5 mr-3'/>
-                  <Link href='/feedback'>
-                  <a className='ml-2'>Feedback</a>
-                  </Link>
-                </div>
-                <div className='flex flex-row mb-2'>
-                  <BookmarkIcon className='h-5 w-5 mr-3'/>
+                <div className='flex flex-row mb-2 py-4 text-xl font-semibold lowercase'>
+                  <CodeJournalIcon className='h-6 w-6 mr-3 mt-1'/>
                   <Link href='/snippets'>
                   <a className='ml-2'>Snippets</a>
                   </Link>
                 </div>
-                <div className='flex flex-row mb-2'>
-                  <BookmarkIcon className='h-5 w-5 mr-3'/>
+                <div className='flex flex-row mb-2 py-4 text-xl font-semibold lowercase'>
+                  <CommentIcon className='h-6 w-6 mr-3 mt-1'/>
+                  <Link href='/feedback'>
+                  <a className='ml-2'>Feedback</a>
+                  </Link>
+                </div>
+                <div className='flex flex-row mb-2 py-4 text-xl font-semibold lowercase'>
+                  <DashboardIcon className='h-6 w-6 mr-3 mt-1'/>
                   <Link href='/dashboard'>
                   <a className='ml-2'>dashboard</a>
                   </Link>
                 </div>
-                <div className='flex flex-row mb-2'>
-                  <BookmarkIcon className='h-5 w-5 mr-3'/>
+                <div className='flex flex-row mb-2 py-4 text-xl font-semibold lowercase'>
+                  <FolderHeartIcon className='h-6 w-6 mr-3 mt-1'/>
                   <Link href='/projects'>
                   <a className='ml-2'>projects</a>
                   </Link>
                 </div>
-                <div className='flex flex-row mb-2'>
-                  <BookmarkIcon className='h-5 w-5 mr-3'/>
+                <div className='flex flex-row mb-2 py-4 text-xl font-semibold lowercase'>
+                  <IpodIcon className='h-6 w-6 mr-3 mt-1'/>
                   <Link href='/music'>
                   <a className='ml-2'>music</a>
                   </Link>
                 </div>
-                <div className='flex flex-row mb-2'>
-                  <BookmarkIcon className='h-5 w-5 mr-3'/>
+                <div className='flex flex-row mb-2 py-4 text-xl font-semibold lowercase'>
+                  <AboutIcon className='h-6 w-6 mr-3 mt-1'/>
                   <Link href='/about'>
                   <a className='ml-2'>about</a>
                   </Link>
@@ -122,12 +124,12 @@ export default function Navigation() {
       <header className="relative bg-white dark:bg-zinc-900">
 
 
-        <nav aria-label="Top" className="max-w-7xl mx-auto px-4 sm:px-4 lg:px-8">
+        <nav aria-label="Top" className="max-w-7xl mx-auto px-4 sm:px-4 lg:px-8 mt-1">
           <div className="">
             <div className="h-16 flex items-center">
               <button
                 type="button"
-                className="bg-white rounded-md text-gray-400 dark:text-white lg:hidden dark:bg-zinc-900 "
+                className="bg-white rounded-md text-gray-400 dark:text-white lg:hidden dark:bg-zinc-900 ml-4"
                 onClick={() => setOpen(true)}
               >
                 <span className="sr-only">Open menu</span>
@@ -239,26 +241,26 @@ export default function Navigation() {
 
                 <Link href='/blog'>
                   <a className=" text-gray-400 hover:text-gray-500 ml-3">
-                    <PenIcon className="w-6 h-6 lg:hidden" aria-hidden="true" />
+                    <JournalIcon className="w-6 h-6 lg:hidden" aria-hidden="true" />
+                  </a>
+                </Link>
+                <Link href='/snippets'>
+                  <a className=" text-gray-400 hover:text-gray-500 ml-3">
+                    <CodeJournalIcon className="w-6 h-6 lg:hidden" aria-hidden="true" />
                   </a>
                 </Link>
                 <Link href='/projects'>
                   <a className=" text-gray-400 hover:text-gray-500 ml-3">
-                    <SnippetsIcon className="w-6 h-6 lg:hidden" aria-hidden="true" />
+                    <FolderHeartIcon className="w-6 h-6 lg:hidden" aria-hidden="true" />
                   </a>
                 </Link>
-                <Link href='/notion'>
+                <Link href='/feedback'>
                   <a className=" text-gray-400 hover:text-gray-500 ml-3">
-                    <BookmarkNotebookIcon className="w-6 h-6 lg:hidden" aria-hidden="true" />
-                  </a>
-                </Link>
-                <Link href='/guestbook'>
-                  <a className=" text-gray-400 hover:text-gray-500 ml-3">
-                    <QuillIcon className="w-6 h-6 lg:hidden" aria-hidden="true" />
+                    <CommentIcon className="w-6 h-6 lg:hidden" aria-hidden="true" />
                   </a>
                 </Link>
 
-                <div className='ml-3 mt-1'>
+                <div className='ml-2 mt-1'>
 
                     <ThemeSwitch/>
                 </div>

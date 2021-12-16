@@ -11,7 +11,7 @@ const ThemeSwitch = () => {
           checked={isDark}
           title="Theme switch"
           onChange={() => setTheme(isDark ? "light" : "dark")}
-          className={`${isDark ? "bg-gray-800" : "bg-white"}
+          className={`${isDark ? "bg-zinc-900" : "bg-white"}
           relative inline-flex flex-shrink-0 h-6 w-6 border-transparent  cursor-pointer  focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75`}
         >
           <span className="sr-only">Use setting</span>
@@ -20,7 +20,7 @@ const ThemeSwitch = () => {
             viewBox="0 0 24 24"
             fill="currentColor"
             stroke="currentColor"
-            className= "w-5 h-5 text-gray-800 dark:text-gray-200 transition-colors ease-in-out duration-200"
+            className= "w-5 h-5 text-zinc-900 dark:text-gray-200 transition-colors ease-in-out duration-200"
           >
             {isDark ? (
               <path

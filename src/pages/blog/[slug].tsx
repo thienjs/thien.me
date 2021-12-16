@@ -4,7 +4,7 @@ import { Client } from '@notionhq/client';
 import siteMetadata from '~/data/siteMetadata';
 import slugify from 'slugify';
 import { useRouter } from 'next/router';
-
+import ViewCounter from "~/components/ViewCounter";
 import Layout from "~/components/ui/Layout";
 import { AnchorLink } from "~/components/AnchorLink";
 import Image from "next/image";
@@ -248,7 +248,7 @@ const ArticlePage = ({
                 <div className="flex items-center justify-center mb-2 space-x-2 text-lg">
                   <p className="m-0 text-lg md:text-xl">{publishedOn}</p>
                   <p className="m-0">•</p>
-                  <PageViews slug={slug} />
+                  <ViewCounter slug={slug} />
                 </div>
                 {publishedOn !== modifiedDate && (
                   <p className="mt-0 text-sm text-slate-500 md:text-base dark:text-slate-500">
