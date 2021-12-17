@@ -1,10 +1,10 @@
 
 import { Sidebar } from "~/components/Sidebar"
+import { SiteLayout } from '~/components/Layouts'
 export default function Hello() {
-    return (
-        <div>
-
-            <Sidebar/>
-        </div>
-    )
+  return (
+    <SiteLayout>
+      <Sidebar />
+    </SiteLayout>
+  )
 }

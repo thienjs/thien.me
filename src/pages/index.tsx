@@ -8,23 +8,32 @@ import Skills from '~/components/Skills'
 import Testimonials from '~/components/Testimonials'
 import Contact from '~/components/Contact'
 import Hero from '~/components/Hero'
+import Tweet from '~/components/Tweet';
+import { getTweets } from 'lib/twitter';
 
 import { convertToArticleList, getPublishedArticles } from '~/lib/notion';
 import { GetStaticProps } from 'next';
 import { ArticleList } from '~/components/ArticleList';
 
+
 export type HomePageProps = {
   recentArticles:any,
+  tweets:any,
 };
-export default function HomePage ({recentArticles}: HomePageProps)  {
+export default function HomePage ({recentArticles, tweets}: HomePageProps,)  {
   const { handleMessage } = useMessage()
 
   return (
     <Layout>
       <Hero />
       <h2 className='text-3xl font-semibold py-4 '>Recent Posts</h2>
+      <div className='mb-10'>
       <ArticleList articles={recentArticles} />
-      <Projects/>
+      </div>
+      <h2 className='text-3xl font-semibold py-4 '>Recent Tweets</h2>
+      {tweets.map((tweet) => (
+          <Tweet key={tweet.id} {...tweet} />
+        ))}
       <Skills/>
     </Layout>
   )
@@ -33,11 +42,15 @@ export default function HomePage ({recentArticles}: HomePageProps)  {
 
 export const getStaticProps: GetStaticProps = async () => {
   const data = await getPublishedArticles(process.env.NOTION_DATABASE_ID);
+  const tweets = await getTweets([
+    '1190125711467655169',
+  ]);
   const { articles } = convertToArticleList(data);
 
   return {
     props: {
-      recentArticles: articles.slice(0, 3)
+      recentArticles: articles.slice(0, 3),
+      tweets
     },
     revalidate: 120
   };
