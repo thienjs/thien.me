@@ -67,3 +67,16 @@ a {
   }
 }
 
+.bg-dots {
+    background: linear-gradient(90deg, #f9fafb 15px, transparent 1%) center,
+      linear-gradient(#f9fafb 15px, transparent 1%) center, rgba(0, 0, 0, 0.35);
+    background-size: 16px 16px;
+  }
+
+
+    .bg-dots-dark {
+      background: linear-gradient(90deg, #18181b 15px, transparent 1%) center,
+        linear-gradient(#18181b 15px, transparent 1%) center,
+        rgba(255, 255, 255, .25);
+      background-size: 16px 16px;
+    }

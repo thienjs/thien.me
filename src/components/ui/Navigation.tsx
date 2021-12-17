@@ -29,10 +29,14 @@ export default function Navigation() {
   const [open, setOpen] = useState(false)
 
   return (
-    <div className="bg-white dark:bg-zinc-900">
+    <div className="bg-dots dark:bg-dots-dark">
       {/* Mobile menu */}
       <Transition.Root show={open} as={Fragment}>
-        <Dialog as="div" className="fixed inset-0 flex z-40 lg:hidden" onClose={setOpen}>
+        <Dialog
+          as="div"
+          className="fixed inset-0 flex z-40 lg:hidden"
+          onClose={setOpen}
+        >
           <Transition.Child
             as={Fragment}
             enter="transition-opacity ease-linear duration-300"
@@ -42,7 +46,7 @@ export default function Navigation() {
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <Dialog.Overlay className="fixed inset-0 bg-zinc-900 bg-opacity-25" />
+            <Dialog.Overlay className="fixed inset-0 bg-dots dark:bg-dots-dark bg-opacity-25" />
           </Transition.Child>
 
           <Transition.Child
@@ -55,7 +59,7 @@ export default function Navigation() {
             leaveTo="-translate-x-full"
           >
             {/* Mobile Sidebar */}
-            <div className="relative max-w-xs w-full bg-white dark:bg-zinc-900 shadow-xl pb-12 flex flex-col overflow-y-auto opacity-95">
+            <div className="relative max-w-xs w-full bg-dots dark:bg-dots-dark shadow-xl pb-12 flex flex-col overflow-y-auto opacity-95">
               <div className="px-8 pt-6 flex">
                 <button
                   type="button"
@@ -66,53 +70,52 @@ export default function Navigation() {
                   <XIcon className="h-6 w-6" aria-hidden="true" />
                 </button>
                 <Link href="/">
-
-                <h1 className='ml-3 font-semibold text-xl'>thien.me</h1>
+                  <h1 className="ml-3 font-semibold text-xl">thien.me</h1>
                 </Link>
               </div>
-              
+
               {/* Links */}
               <div className="py-6 px-6 ml-3 text-md mt-5">
-                <div className='flex flex-row mb-2 py-4 text-xl font-semibold lowercase'>
-                  <JournalIcon className='h-6 w-6 mr-3 mt-1'/>
-                  <Link href='/blog'>
-                  <a className='ml-2 '>Blog</a>
+                <div className="flex flex-row mb-2 py-4 text-xl font-semibold lowercase">
+                  <JournalIcon className="h-6 w-6 mr-3 mt-1" />
+                  <Link href="/blog">
+                    <a className="ml-2 ">Blog</a>
                   </Link>
                 </div>
-                <div className='flex flex-row mb-2 py-4 text-xl font-semibold lowercase'>
-                  <CodeJournalIcon className='h-6 w-6 mr-3 mt-1'/>
-                  <Link href='/snippets'>
-                  <a className='ml-2'>Snippets</a>
+                <div className="flex flex-row mb-2 py-4 text-xl font-semibold lowercase">
+                  <CodeJournalIcon className="h-6 w-6 mr-3 mt-1" />
+                  <Link href="/snippets">
+                    <a className="ml-2">Snippets</a>
                   </Link>
                 </div>
-                <div className='flex flex-row mb-2 py-4 text-xl font-semibold lowercase'>
-                  <CommentIcon className='h-6 w-6 mr-3 mt-1'/>
-                  <Link href='/feedback'>
-                  <a className='ml-2'>Feedback</a>
+                <div className="flex flex-row mb-2 py-4 text-xl font-semibold lowercase">
+                  <CommentIcon className="h-6 w-6 mr-3 mt-1" />
+                  <Link href="/feedback">
+                    <a className="ml-2">Feedback</a>
                   </Link>
                 </div>
-                <div className='flex flex-row mb-2 py-4 text-xl font-semibold lowercase'>
-                  <DashboardIcon className='h-6 w-6 mr-3 mt-1'/>
-                  <Link href='/dashboard'>
-                  <a className='ml-2'>dashboard</a>
+                <div className="flex flex-row mb-2 py-4 text-xl font-semibold lowercase">
+                  <DashboardIcon className="h-6 w-6 mr-3 mt-1" />
+                  <Link href="/dashboard">
+                    <a className="ml-2">dashboard</a>
                   </Link>
                 </div>
-                <div className='flex flex-row mb-2 py-4 text-xl font-semibold lowercase'>
-                  <FolderHeartIcon className='h-6 w-6 mr-3 mt-1'/>
-                  <Link href='/projects'>
-                  <a className='ml-2'>projects</a>
+                <div className="flex flex-row mb-2 py-4 text-xl font-semibold lowercase">
+                  <FolderHeartIcon className="h-6 w-6 mr-3 mt-1" />
+                  <Link href="/projects">
+                    <a className="ml-2">projects</a>
                   </Link>
                 </div>
-                <div className='flex flex-row mb-2 py-4 text-xl font-semibold lowercase'>
-                  <IpodIcon className='h-6 w-6 mr-3 mt-1'/>
-                  <Link href='/music'>
-                  <a className='ml-2'>music</a>
+                <div className="flex flex-row mb-2 py-4 text-xl font-semibold lowercase">
+                  <IpodIcon className="h-6 w-6 mr-3 mt-1" />
+                  <Link href="/music">
+                    <a className="ml-2">music</a>
                   </Link>
                 </div>
-                <div className='flex flex-row mb-2 py-4 text-xl font-semibold lowercase'>
-                  <AboutIcon className='h-6 w-6 mr-3 mt-1'/>
-                  <Link href='/about'>
-                  <a className='ml-2'>about</a>
+                <div className="flex flex-row mb-2 py-4 text-xl font-semibold lowercase">
+                  <AboutIcon className="h-6 w-6 mr-3 mt-1" />
+                  <Link href="/about">
+                    <a className="ml-2">about</a>
                   </Link>
                 </div>
               </div>
@@ -121,10 +124,11 @@ export default function Navigation() {
         </Dialog>
       </Transition.Root>
 
-      <header className="relative bg-white dark:bg-zinc-900">
-
-
-        <nav aria-label="Top" className="max-w-7xl mx-auto px-4 sm:px-4 lg:px-8 mt-1">
+      <header className="relative bg-dots dark:bg-dots-dark">
+        <nav
+          aria-label="Top"
+          className="max-w-7xl mx-auto px-4 sm:px-4 lg:px-8 mt-1"
+        >
           <div className="">
             <div className="h-16 flex items-center">
               <button
@@ -139,7 +143,7 @@ export default function Navigation() {
               {/* Logo */}
               <div className="ml-3">
                 <Link href="/">
-                  <Logo/>
+                  <Logo />
                 </Link>
               </div>
 
@@ -174,16 +178,21 @@ export default function Navigation() {
                           >
                             <Popover.Panel className="absolute top-full inset-x-0 text-sm text-gray-500 dark:text-green-500">
                               {/* Presentational element used to render the bottom shadow, if we put the shadow on the actual panel it pokes out the top, so we use this shorter element to hide the top of the shadow */}
-                              <div className="absolute inset-0 top-1/2 bg-white shadow" aria-hidden="true" />
+                              <div
+                                className="absolute inset-0 top-1/2 bg-white shadow"
+                                aria-hidden="true"
+                              />
 
-                              <div className="relative bg-white dark:bg-zinc-900">
+                              <div className="relative bg-dots dark:bg-dots-dark">
                                 <div className="max-w-5xl mx-auto px-4 py-4">
                                   <div className="">
-                                    
                                     <div className="grid grid-cols-3 gap-y-10 gap-x-8 text-sm">
                                       {category.sections.map((section) => (
                                         <div key={section.name}>
-                                          <p id={`${section.name}-heading`} className="font-medium text-gray-900">
+                                          <p
+                                            id={`${section.name}-heading`}
+                                            className="font-medium text-gray-900"
+                                          >
                                             {section.name}
                                           </p>
                                           <ul
@@ -192,8 +201,14 @@ export default function Navigation() {
                                             className="mt-6 space-y-6 sm:mt-4 sm:space-y-4"
                                           >
                                             {section.items.map((item) => (
-                                              <li key={item.name} className="flex">
-                                                <a href={item.href} className="hover:text-gray-800">
+                                              <li
+                                                key={item.name}
+                                                className="flex"
+                                              >
+                                                <a
+                                                  href={item.href}
+                                                  className="hover:text-gray-800"
+                                                >
                                                   {item.name}
                                                 </a>
                                               </li>
@@ -226,43 +241,54 @@ export default function Navigation() {
 
               <div className="ml-auto flex items-center">
                 <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
-                <Link href="/feedback">
-                  <a className="text-sm font-medium text-gray-700 hover:text-gray-800">
-                    Feeback
-                  </a>
+                  <Link href="/feedback">
+                    <a className="text-sm font-medium text-gray-700 hover:text-gray-800">
+                      Feeback
+                    </a>
                   </Link>
                   <span className="h-6 w-px bg-gray-200" aria-hidden="true" />
                   <Link href="/contact">
-                  <a className="text-sm font-medium text-gray-700 hover:text-gray-800">
-                    Contact
-                  </a>
+                    <a className="text-sm font-medium text-gray-700 hover:text-gray-800">
+                      Contact
+                    </a>
                   </Link>
                 </div>
 
-                <Link href='/blog'>
+                <Link href="/blog">
                   <a className=" text-gray-400 hover:text-gray-500 ml-3">
-                    <JournalIcon className="w-6 h-6 lg:hidden" aria-hidden="true" />
+                    <JournalIcon
+                      className="w-6 h-6 lg:hidden"
+                      aria-hidden="true"
+                    />
                   </a>
                 </Link>
-                <Link href='/snippets'>
+                <Link href="/snippets">
                   <a className=" text-gray-400 hover:text-gray-500 ml-3">
-                    <CodeJournalIcon className="w-4 h-4 lg:hidden" aria-hidden="true" />
+                    <CodeJournalIcon
+                      className="w-4 h-4 lg:hidden"
+                      aria-hidden="true"
+                    />
                   </a>
                 </Link>
-                <Link href='/projects'>
+                <Link href="/projects">
                   <a className=" text-gray-400 hover:text-gray-500 ml-3">
-                    <FolderHeartIcon className="w-6 h-6 lg:hidden" aria-hidden="true" />
+                    <FolderHeartIcon
+                      className="w-6 h-6 lg:hidden"
+                      aria-hidden="true"
+                    />
                   </a>
                 </Link>
-                <Link href='/feedback'>
+                <Link href="/feedback">
                   <a className=" text-gray-400 hover:text-gray-500 ml-3">
-                    <CommentIcon className="w-6 h-6 lg:hidden" aria-hidden="true" />
+                    <CommentIcon
+                      className="w-6 h-6 lg:hidden"
+                      aria-hidden="true"
+                    />
                   </a>
                 </Link>
 
-                <div className='ml-2 mt-1'>
-
-                    <ThemeSwitch/>
+                <div className="ml-2 mt-1">
+                  <ThemeSwitch />
                 </div>
               </div>
             </div>
