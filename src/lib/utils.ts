@@ -1,5 +1,18 @@
 // NOTE The functionality below (incl. TS types) will soon become part of Contentlayer itself. Please don't mind its existence. 😎
 
+import { useState } from 'react'
+
+export function useFormFields<T>(initialValues: T): [T, (event: React.ChangeEvent<HTMLInputElement>) => void] {
+    const [values, setValues] = useState<T>(initialValues)
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+      event.persist();
+      const { target } = event;
+      const { name, value } = target;
+      setValues({ ...values, [name]: value })
+    }
+    return [ values, handleChange]
+}
+
 type ConvertUndefined<T> = OrUndefined<{
   [K in keyof T as undefined extends T[K] ? K : never]-?: T[K];
 }>;

@@ -1,10 +1,10 @@
-import StoreNavigation from "~/components/navigation/StoreNavigation"
-import Hero from "~/components/ui/Hero"
+
+import { Sidebar } from "~/components/Sidebar"
 export default function Hello() {
     return (
         <div>
 
-            <StoreNavigation/>
+            <Sidebar/>
         </div>
     )
 }

@@ -101,7 +101,7 @@ export const CodeBlock = ({ code, language, metastring }: Props) => {
     </button>
   );
   return (
-    <div className='overflow-auto'>
+    <div className='overflow-auto bg-gray-100 dark:bg-gray-800 rounded-md'>
       <Highlight
         {...defaultProps}
         code={code}
@@ -109,9 +109,9 @@ export const CodeBlock = ({ code, language, metastring }: Props) => {
         theme={undefined}
       >
         {({ className, style, tokens, getLineProps, getTokenProps }) => (
-          <div className="relative my-12 language-tab" data-language={language}>
+          <div className="relative my-12 language-tab " data-language={language}>
             {CopyCodeButton}
-            <pre className={className} style={style}>
+            <pre className="">
               {tokens.map((line, i) => {
                 const lineProps = getLineProps({ line, key: i });
 
