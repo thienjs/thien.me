@@ -9,7 +9,7 @@ export function NavigationLink({
     label,
     icon: Icon,
     trailingAccessory: Accessory,
-    trailingAction: Action,
+
     isActive,
     isExternal,
   },
@@ -41,7 +41,7 @@ export function NavigationLink({
           )}
         </a>
       </Link>
-      {Action && <Action />}
+
     </li>
   )
 }

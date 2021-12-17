@@ -34,7 +34,7 @@ export function SidebarNavigation() {
       icon: HomeIcon,
       trailingAccessory: null,
       isActive: router.asPath === '/',
-      trailingAction: null,
+
       isExternal: false,
     },
 
@@ -44,7 +44,7 @@ export function SidebarNavigation() {
       icon: WritingIcon,
       trailingAccessory: null,
       isActive: router.asPath.indexOf('/writing') >= 0,
-      trailingAction: null,
+
       isExternal: false,
     },
     {
@@ -63,7 +63,7 @@ export function SidebarNavigation() {
       isActive:
         router.asPath.indexOf('/ama') >= 0 &&
         !router.asPath.startsWith('/ama/pending'),
-      trailingAction: null,
+
       isExternal: false,
     },
 
@@ -73,7 +73,7 @@ export function SidebarNavigation() {
       icon: StackIcon,
       trailingAccessory: null,
       isActive: router.asPath.indexOf('/stack') >= 0,
-      trailingAction: null,
+
       isExternal: false,
     },
 
@@ -84,7 +84,7 @@ export function SidebarNavigation() {
       icon: PodcastIcon,
       trailingAccessory: ExternalLinkIcon,
       isActive: false,
-      trailingAction: null,
+
       isExternal: true,
     },
 
@@ -96,7 +96,7 @@ export function SidebarNavigation() {
       icon: TwitterIcon,
       trailingAccessory: ExternalLinkIcon,
       isActive: false,
-      trailingAction: null,
+
       isExternal: true,
     },
 
@@ -106,7 +106,7 @@ export function SidebarNavigation() {
       icon: GitHubIcon,
       trailingAccessory: ExternalLinkIcon,
       isActive: false,
-      trailingAction: null,
+
       isExternal: true,
     },
   ]
