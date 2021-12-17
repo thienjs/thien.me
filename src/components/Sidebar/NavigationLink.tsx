@@ -8,7 +8,7 @@ export function NavigationLink({
     href,
     label,
     icon: Icon,
-    trailingAccessory: Accessory,
+
 
     isActive,
     isExternal,
@@ -34,11 +34,6 @@ export function NavigationLink({
             <Icon />
           </span>
           <span className="flex-1">{label}</span>
-          {Accessory && (
-            <span className="flex items-center justify-center w-4 text-black dark:text-white text-opacity-40">
-              <Accessory />
-            </span>
-          )}
         </a>
       </Link>
 

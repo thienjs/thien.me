@@ -32,7 +32,7 @@ export function SidebarNavigation() {
       href: '/',
       label: 'Home',
       icon: HomeIcon,
-      trailingAccessory: null,
+
       isActive: router.asPath === '/',
 
       isExternal: false,
@@ -42,7 +42,7 @@ export function SidebarNavigation() {
       href: '/blog',
       label: 'Blog',
       icon: WritingIcon,
-      trailingAccessory: null,
+
       isActive: router.asPath.indexOf('/writing') >= 0,
 
       isExternal: false,
@@ -51,7 +51,7 @@ export function SidebarNavigation() {
       href: '/bookmarks',
       label: 'Bookmarks',
       icon: BookmarksIcon,
-      trailingAccessory: null,
+
       isActive: router.asPath.indexOf('/bookmarks') >= 0,
       isExternal: false,
     },
@@ -59,10 +59,10 @@ export function SidebarNavigation() {
       href: '/feedback',
       label: 'Feedback',
       icon: AMAIcon,
-      trailingAccessory: null,
+
       isActive:
-        router.asPath.indexOf('/ama') >= 0 &&
-        !router.asPath.startsWith('/ama/pending'),
+        router.asPath.indexOf('/feedback') >= 0 &&
+        !router.asPath.startsWith('/feedback/pending'),
 
       isExternal: false,
     },
@@ -71,8 +71,8 @@ export function SidebarNavigation() {
       href: '/dashboard',
       label: 'Dashboard',
       icon: StackIcon,
-      trailingAccessory: null,
-      isActive: router.asPath.indexOf('/stack') >= 0,
+
+      isActive: router.asPath.indexOf('/dashboard') >= 0,
 
       isExternal: false,
     },
@@ -82,9 +82,7 @@ export function SidebarNavigation() {
       href: '/music',
       label: 'Music',
       icon: PodcastIcon,
-      trailingAccessory: ExternalLinkIcon,
       isActive: false,
-
       isExternal: true,
     },
 
@@ -94,7 +92,6 @@ export function SidebarNavigation() {
       href: 'https://twitter.com/thien_js',
       label: 'Twitter',
       icon: TwitterIcon,
-      trailingAccessory: ExternalLinkIcon,
       isActive: false,
 
       isExternal: true,
@@ -104,7 +101,6 @@ export function SidebarNavigation() {
       href: 'https://github.com/thienjs',
       label: 'GitHub',
       icon: GitHubIcon,
-      trailingAccessory: ExternalLinkIcon,
       isActive: false,
 
       isExternal: true,
