@@ -143,10 +143,11 @@ export function renderBlocks(block) {
       );
     case 'code':
       return (
-        <div>
+        <div className="overscroll-x-contain">
           <CodeBlock
             language={value.language}
             code={value.text[0].text.content}
+            
           />
         </div>
       );

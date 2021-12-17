@@ -101,7 +101,7 @@ export const CodeBlock = ({ code, language, metastring }: Props) => {
     </button>
   );
   return (
-    <div>
+    <div className='overflow-auto'>
       <Highlight
         {...defaultProps}
         code={code}
