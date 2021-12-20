@@ -27,25 +27,26 @@ export function ArticleCard({ article }: Props) {
   return (
     <div>
       <button onClick={() => handleArticleClicked(slug)}>
-        <div className="group">
-          <div className="text-left w-full">
-            <h3 className="mt-2 text-2xl">{article.title}</h3>
+        <div className="">
+          <div className="text-left rounded-lg border border-gray-200 dark:border-gray-800 px-6 py-4 my-4 w-full bg-white dark:bg-gray-900">
+            <h3 className="mt-2 text-xl font-semibold">{article.title}</h3>
             {/* {JSON.stringify(article)} */}
             {/* <p>{article.summary}</p> */}
-            <span className="text-base font-semibold flex items-center px-auto">
+            <p className='text-small font-light'>{article.summary}</p>
+            <span className="text-sm flex items-center px-auto">
               {new Date(article.publishedDate).toLocaleDateString(
                 siteMetadata.locale,
                 {
-                  year: 'numeric',
-                  month: 'short',
-                  day: 'numeric'
+                  year: '2-digit',
+                  month: '2-digit',
+                  day: '2-digit'
                 }
               )}{' '}
               
               <div className="flex items-center text-gray-800 dark:text-gray-200 capsize">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5 ml-4"
+              className="h-4 w-4 ml-4"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -63,7 +64,7 @@ export function ArticleCard({ article }: Props) {
                 d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
               />
             </svg>
-            <span className="ml-2 align-baseline capsize">
+            <span className="ml-2 align-baseline capsize text-sm">
               {views ? new Number(views).toLocaleString() : '–––'}
             </span>
           </div>
@@ -84,8 +85,11 @@ export function ArticleCard({ article }: Props) {
               )}
             </span>
           </div>
+
         </div>
+
       </button>
+      
     </div>
   );
 }
