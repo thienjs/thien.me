@@ -47,7 +47,7 @@ export default function SnippetsPage({snippets, tags}) {
         {!filteredSnippets.length && (
           <div className="w-full mx-auto rounded-lg bg-[#F8FAFC] dark:bg-midnight p-4">
             <p className="flex items-center justify-center text-2xl">
-              No articles found{' '}
+              No snippets found{' '}
               <span>
                 <svg className="ml-3 w-7 h-7" fill="none" viewBox="0 0 24 24">
                   <path
@@ -80,8 +80,6 @@ export default function SnippetsPage({snippets, tags}) {
 export const getStaticProps: GetStaticProps = async () => {
   const data = await getPublishedSnippets(process.env.NOTION_SNIPPETS_DB_ID);
   const { snippets, tags } = convertToSnippetList(data);
-
-
 
   return {
     props: {

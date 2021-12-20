@@ -7,10 +7,10 @@ type Props = {
 
 export function ArticleList({ articles }) {
   return (
-    <div className="flex flex-row">
+    <div className="">
       {articles.map((article) => (
         <ArticleCard key={article.title} article={article} />
       ))}
     </div>
-  );
+  )
 }

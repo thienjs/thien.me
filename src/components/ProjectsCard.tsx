@@ -1,24 +1,19 @@
 
 import Image from "next/image";
-
-import type { Project } from "data/projects";
+import Link from 'next/link'
+import { Project, projects } from 'data/projects'
 
 const ProjectCard = ({ title, live, image }: Project) => {
   return (
-    <a href={live} target="_blank" rel="noopener noreferrer">
-      <div className="max-w-sm my-8 sm:max-w-none sm:my-0 group">
-        <div className="flex lg:transition-all lg:transform lg:hover:scale-105">
-          <Image
-            src={image}
-            alt={title}
-            title={title}
-            quality={50}
-            className="rounded-lg"
-          />
-        </div>
-      </div>
-    </a>
-  );
-};
+    <div className="flex flex-row items-baseline border-b border-gray-200 dark:border-gray-800 max-w-3xl w-full mt-8">
+
+    <div className="">
+      <Link href="/">
+        <a>{title}</a>
+      </Link>
+    </div>
+    </div>
+  )
+}
 
 export default ProjectCard;

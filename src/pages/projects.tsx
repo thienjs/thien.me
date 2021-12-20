@@ -2,12 +2,13 @@ import { projects, tags } from "data/projects";
 import { baseUrl } from "~/lib/constants";
 import ProjectCard from "~/components/ProjectsCard";
 import useTags from "~/lib/hooks/useTags";
+import Layout from '~/components/ui/Layout'
 
 const ProjectsPage = () => {
-  const [data, setCurrentTag] = useTags(projects);
+  const [data, setCurrentTag] = useTags(projects)
 
   return (
-    <>
+    <Layout>
       <section>
         <h1 className="text-3xl font-bold">Projects</h1>
 
@@ -33,8 +34,8 @@ const ProjectsPage = () => {
           )}
         </div>
       </section>
-    </>
-  );
-};
+    </Layout>
+  )
+}
 
 export default ProjectsPage;

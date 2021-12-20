@@ -1,10 +1,10 @@
 import placeholderimage from "/public/nsk.png"
 // Frontend Mentor challenges repository
 const challengesRepo =
-  "https://github.com/imadatyatalah/frontend-mentor-challenges/tree/main";
+  "https://github.com/";
 
 export const tags = [
-  "frontend-mentor",
+  "javascript",
   "front-end",
   "back-end",
   "full-stack",
