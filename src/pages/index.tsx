@@ -26,11 +26,11 @@ export default function HomePage ({recentArticles, tweets}: HomePageProps,)  {
   return (
     <Layout>
       <Hero />
-      <h2 className='text-3xl font-semibold py-4 '>Recent Posts</h2>
+      <h2 className='text-3xl font-semibold py-4 text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500'>Recent Posts</h2>
       <div className='mb-10'>
       <ArticleList articles={recentArticles} />
       </div>
-      <h2 className='text-3xl font-semibold py-4 '>Recent Tweets</h2>
+      <h2 className='text-3xl font-semibold py-4 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600'>Recent Tweets</h2>
       {tweets.map((tweet) => (
           <Tweet key={tweet.id} {...tweet} />
         ))}
@@ -55,3 +55,5 @@ export const getStaticProps: GetStaticProps = async () => {
     revalidate: 120
   };
 };
+
+

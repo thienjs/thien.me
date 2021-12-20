@@ -29,7 +29,7 @@ export default function Navigation() {
   const [open, setOpen] = useState(false)
 
   return (
-    <div className="bg-dots dark:bg-dots-dark">
+    <div className="bg-transparent">
       {/* Mobile menu */}
       <Transition.Root show={open} as={Fragment}>
         <Dialog
@@ -46,7 +46,7 @@ export default function Navigation() {
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <Dialog.Overlay className="fixed inset-0 bg-dots dark:bg-dots-dark bg-opacity-25" />
+            <Dialog.Overlay className="fixed inset-0 bg-transparent" />
           </Transition.Child>
 
           <Transition.Child
@@ -59,7 +59,7 @@ export default function Navigation() {
             leaveTo="-translate-x-full"
           >
             {/* Mobile Sidebar */}
-            <div className="relative max-w-xs w-full bg-dots dark:bg-dots-dark shadow-xl pb-12 flex flex-col overflow-y-auto opacity-95">
+            <div className="relative max-w-xs w-full bg-white dark:bg-zinc-900 shadow-xl pb-12 flex flex-col overflow-y-auto  border-r border-slate-600 dark:border-slate-600">
               <div className="px-8 pt-6 flex">
                 <button
                   type="button"
@@ -75,7 +75,7 @@ export default function Navigation() {
               </div>
 
               {/* Links */}
-              <div className="py-6 px-6 ml-3 text-md mt-5">
+              <div className="py-6 px-6 ml-3 text-md mt-5 ">
                 <div className="flex flex-row mb-2 py-4 text-xl font-semibold lowercase">
                   <JournalIcon className="h-6 w-6 mr-3 mt-1" />
                   <Link href="/blog">
@@ -124,7 +124,7 @@ export default function Navigation() {
         </Dialog>
       </Transition.Root>
 
-      <header className="relative bg-dots dark:bg-dots-dark">
+      <header className="relative bg-transparent">
         <nav
           aria-label="Top"
           className="max-w-7xl mx-auto px-4 sm:px-4 lg:px-8 mt-1"
@@ -183,7 +183,7 @@ export default function Navigation() {
                                 aria-hidden="true"
                               />
 
-                              <div className="relative bg-dots dark:bg-dots-dark">
+                              <div className="relative bg-transparent">
                                 <div className="max-w-5xl mx-auto px-4 py-4">
                                   <div className="">
                                     <div className="grid grid-cols-3 gap-y-10 gap-x-8 text-sm">
