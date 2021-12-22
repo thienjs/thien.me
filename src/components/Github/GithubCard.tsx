@@ -1,7 +1,7 @@
 import { IRepo } from "~/lib/types";
 
 
-const GithubCard = (props:IRepo): JSX.Element => {
+const GithubCard = () => {
     return (
       <div>
         
