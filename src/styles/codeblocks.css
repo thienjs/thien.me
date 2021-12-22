@@ -1,18 +1,18 @@
 .prose pre,
 .language-tab pre[class*='language-']::before {
   /* Large code blocks */
-  @apply bg-gray-100 dark:bg-midnight;
+  @apply bg-gray-100 dark:bg-gray-700;
 }
 
 code[class*='language-'],
 pre[class*='language-'] {
   /* Overall text color */
-  @apply text-blueGray-500 dark:text-gray-300;
+  @apply text-gray-500 dark:text-gray-300;
 }
 
 .prose pre code {
   /* TODO */
-  @apply text-blueGray-500 dark:text-gray-300;
+  @apply text-gray-500 dark:text-gray-300;
 }
 
 .prose code {
@@ -35,11 +35,11 @@ pre[class*='language-'] {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  @apply text-gray-400 dark:text-blueGray-500;
+  @apply text-gray-400 dark:text-gray-500;
 }
 
 .token.punctuation {
-  @apply text-blueGray-500 dark:text-coolGray-300;
+  @apply text-gray-500 dark:text-neutral-300;
 }
 
 .token.property,
@@ -117,7 +117,7 @@ input[type='email'] {
 }
 
 .language-tab pre[class*='language-']::before {
-  @apply absolute right-0 px-4 py-1 text-sm text-right uppercase rounded-t-lg text-blueGray-500 dark:text-gray-300 -top-6;
+  @apply absolute right-0 px-4 py-1 text-sm text-right uppercase rounded-t-lg text-gray-500 dark:text-gray-300 -top-6;
 }
 
 .language-tab pre[class~='language-jsx']::before {

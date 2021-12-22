@@ -18,7 +18,8 @@ The page itself will be compose of my favorite web development tool and a showca
 - [x] notes from notion
 - [ ] mdx blog or notion? tbt, notion has code block support now
 - [ ] feedback page
-- [ ] github repo page
+- [ ] github repo page https://www.youtube.com/watch?v=JUEw1yHJ8Ao
+
 
 ## To-do
 

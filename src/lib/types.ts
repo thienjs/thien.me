@@ -77,4 +77,41 @@ export type Views = {
   | 'wasm'
   | 'yaml';
 
+  export interface IRepo {
+    name: string;
+    html_url: string;
+    description: string;
+    created_at: string;
+    updated_at: string;
+    homepage: string;
+    stargazers_count: number;
+    watchers_count: number;
+    language: string;
+    forks_count: number;
+    license: {
+      spdx_id: string;
+    };
+    owner: {
+      login: string;
+    };
+  }
+  
+  export interface IGithubUser {
+    login: string;
+    avatar_url: string;
+    html_url: string;
+    name: string;
+    company: string;
+    blog: string;
+    location: string;
+    email: string;
+    bio: string;
+    public_repos: number;
+    followers: number;
+    totalStarsAndForks: {
+      stars: number;
+      forks: number;
+    };
+  }
 
+  export type GithubSortOptions = 'stars' | 'forks' | 'upd';
