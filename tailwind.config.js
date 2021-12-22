@@ -9,20 +9,6 @@ const colors = require('tailwindcss/colors');
   darkMode: 'class',
   theme: {
     extend: {
-      colors: {
-        orange: colors.orange,
-        blueGray: colors.slate,
-        coolGray: colors.gray,
-        teal: colors.teal,
-        dark: '#111827',
-        darker: '#0d131f',
-        midnight: '#1e293b',
-        'midnight-hover': '#334155',
-        emerald: colors.emerald,
-        fuchsia: colors.fuchsia,
-        amber: colors.amber,
-        sky: colors.sky
-      },
       typography: (theme) => ({
         DEFAULT: {
           css: {
