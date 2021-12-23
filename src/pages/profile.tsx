@@ -4,10 +4,10 @@ interface Props {
   
 }
 
-export const RepoCard = (props: Props) => {
+export const profile = (props: Props) => {
   return (
     <div>
-      hello world
+      
     </div>
   )
 }
