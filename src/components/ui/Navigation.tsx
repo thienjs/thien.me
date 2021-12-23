@@ -1,8 +1,15 @@
 
 import { Fragment, useState } from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import { Dialog, Popover, Tab, Transition } from '@headlessui/react'
-import { MenuIcon, XIcon, TerminalIcon, LightningBoltIcon, BookmarkIcon } from '@heroicons/react/outline'
+import {
+  MenuIcon,
+  XIcon,
+  TerminalIcon,
+  LightningBoltIcon,
+  BookmarkIcon,
+} from '@heroicons/react/outline'
 import NotepadIcon from '../icons/notepad'
 import SnippetsIcon from '../icons/snippets'
 import QuillIcon from '~/components/icons/quill'
@@ -20,13 +27,13 @@ import ThemeSwitch from '../ThemeSwitch'
 import { navigation } from '~/lib/constants'
 import Logo from '~/components/icons/logo'
 
-
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
 export default function Navigation() {
   const [open, setOpen] = useState(false)
+  const router = useRouter()
 
   return (
     <div className="bg-transparent">
@@ -147,97 +154,21 @@ export default function Navigation() {
                 </Link>
               </div>
 
-              {/* Flyout menus */}
-              <Popover.Group className="hidden lg:ml-8 lg:block lg:self-stretch">
-                <div className="h-full flex space-x-8">
-                  {navigation.categories.map((category) => (
-                    <Popover key={category.name} className="flex">
-                      {({ open }) => (
-                        <>
-                          <div className="relative flex">
-                            <Popover.Button
-                              className={classNames(
-                                open
-                                  ? 'border-indigo-600 text-indigo-600'
-                                  : 'border-transparent text-gray-700 hover:text-gray-800 dark:text-gray-400',
-                                'relative z-10 flex items-center transition-colors ease-out duration-200 text-sm font-medium border-b-2 -mb-px pt-px'
-                              )}
-                            >
-                              {category.name}
-                            </Popover.Button>
-                          </div>
-
-                          <Transition
-                            as={Fragment}
-                            enter="transition ease-out duration-200"
-                            enterFrom="opacity-0"
-                            enterTo="opacity-100"
-                            leave="transition ease-in duration-150"
-                            leaveFrom="opacity-100"
-                            leaveTo="opacity-0"
-                          >
-                            <Popover.Panel className="absolute top-full inset-x-0 text-sm text-gray-500 dark:text-green-500">
-                              {/* Presentational element used to render the bottom shadow, if we put the shadow on the actual panel it pokes out the top, so we use this shorter element to hide the top of the shadow */}
-                              <div
-                                className="absolute inset-0 top-1/2 bg-white shadow"
-                                aria-hidden="true"
-                              />
-
-                              <div className="relative bg-transparent">
-                                <div className="max-w-5xl mx-auto px-4 py-4">
-                                  <div className="">
-                                    <div className="grid grid-cols-3 gap-y-10 gap-x-8 text-sm">
-                                      {category.sections.map((section) => (
-                                        <div key={section.name}>
-                                          <p
-                                            id={`${section.name}-heading`}
-                                            className="font-medium text-gray-900"
-                                          >
-                                            {section.name}
-                                          </p>
-                                          <ul
-                                            role="list"
-                                            aria-labelledby={`${section.name}-heading`}
-                                            className="mt-6 space-y-6 sm:mt-4 sm:space-y-4"
-                                          >
-                                            {section.items.map((item) => (
-                                              <li
-                                                key={item.name}
-                                                className="flex"
-                                              >
-                                                <a
-                                                  href={item.href}
-                                                  className="hover:text-gray-800"
-                                                >
-                                                  {item.name}
-                                                </a>
-                                              </li>
-                                            ))}
-                                          </ul>
-                                        </div>
-                                      ))}
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </Popover.Panel>
-                          </Transition>
-                        </>
-                      )}
-                    </Popover>
-                  ))}
-
-                  {navigation.pages.map((page) => (
+              <div className="flex items-center">
+                {navigation.pages.map((page) => (
+                  <Link href={page.href} key={page.name}>
                     <a
-                      key={page.name}
-                      href={page.href}
-                      className="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800"
+                      className={`hidden lg:flex lg:flex-2 mx-2 px-1 cursor-pointer${
+                        router.asPath === page.href
+                          ? 'text-teal-600 font-semibold dark:text-teal-400'
+                          : 'text-gray-700 dark:text-gray-300'
+                      }`}
                     >
                       {page.name}
                     </a>
-                  ))}
-                </div>
-              </Popover.Group>
+                  </Link>
+                ))}
+              </div>
 
               <div className="ml-auto flex items-center">
                 <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
