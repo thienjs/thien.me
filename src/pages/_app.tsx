@@ -10,9 +10,10 @@ import SEO from '../../next-seo.config'
 
 
 import { ThemeProvider } from 'next-themes'
-import { MessageProvider } from '~/lib/message'
 
-function MyApp({ Component, pageProps }: AppProps) {
+import {motion, AnimatePresence} from 'framer-motion'
+
+function MyApp({ Component, pageProps, router }: AppProps) {
   const pageMeta = (Component as any)?.defaultProps?.meta || {}
   const pageSEO = { ...SEO, ...pageMeta }
 
@@ -23,9 +24,22 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Head>
       <DefaultSeo {...pageSEO} />
       <ThemeProvider attribute="class">
-        <MessageProvider>
+        <AnimatePresence>
+
+        <motion.div key={router.route} initial="pageInitial" animate="pageAnimate" exit="pageExit" variants={{
+          pageInitial: {
+            opacity:0
+          },
+          pageAnimate: {
+            opacity: 1,
+          },
+          pageExit: {
+            opacity: 0,
+          }
+        }} >
           <Component {...pageProps} />
-        </MessageProvider>
+        </motion.div>
+        </AnimatePresence>
       </ThemeProvider>
     </>
   )

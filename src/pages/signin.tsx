@@ -32,7 +32,7 @@ const SignIn = () => {
         provider: 'github',
       },
       {
-        redirectTo: 'https://thien.me/callback',
+        redirectTo: 'http://thien.me/callback/',
       }
     );
 
