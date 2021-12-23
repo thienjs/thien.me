@@ -14,7 +14,7 @@ export default function FeedbackHome() {
 
   const create = async (data) => {
     try {
-      fetch('http://localhost:3000/api/create', {
+      fetch('https://thien.me/api/create', {
         body: JSON.stringify(data),
         headers: {
           'Content-Type': 'application/json',
