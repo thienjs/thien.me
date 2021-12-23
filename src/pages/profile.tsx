@@ -1,13 +1,7 @@
-import React from 'react'
-
-interface Props {
-  
-}
-
-export const profile = (props: Props) => {
+export default function profile() {
   return (
     <div>
-      
+      hello world
     </div>
   )
 }
