@@ -148,7 +148,7 @@ export default function Navigation() {
               </button>
 
               {/* Logo */}
-              <div className="ml-3">
+              <div className="ml-3 cursor-pointer">
                 <Link href="/">
                   <Logo />
                 </Link>

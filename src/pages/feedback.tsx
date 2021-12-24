@@ -60,15 +60,12 @@ export default function FeedbackPage({ feedback }) {
     <Layout>
       <Toaster />
 
-      <h1 className="text-5xl font-semibold py-2 mb-4 ">Feedback</h1>
-      <p className="">let me know what you think about the site.</p>
-      <main className="my- my-36 h-auto">
-        <div className="container mx-auto max-w-screen-lg px-4">
-          <h1 className="text-3xl mb-5 font-bold tracking-wide text-white">
-            Feedback
-          </h1>
+      <h1 className="text-5xl font-bold py-4 text-transparent bg-clip-text mb-4 bg-gradient-to-br from-green-200 via-teal-500 to-purple-700 ">Feedback</h1>
+      <p className="mb-4">let me know what you think about the site.</p>
+      <main className=" h-auto">
+        <div className="container mx-auto max-w-screen-lg ">
           <section className="flex flex-col  ">
-            <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+            <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8 mb-6">
               <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
                 <div className="shadow overflow-hidden border-b border-gray-800 rounded-lg">
                   <table className="min-w-full divide-y divide-gray-800 ">
@@ -132,7 +129,7 @@ export default function FeedbackPage({ feedback }) {
             </div>
           </section>
         </div>
-        <h1 className="font-bold text-3xl md:text-4xl text-white tracking-wide mb-10 text-center">
+        <h1 className=" text-3xl md:text-4xl text-white tracking-wide mb-10 ">
           Submit Your Feedback!
         </h1>
         <form
