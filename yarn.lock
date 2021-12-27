@@ -7096,6 +7096,13 @@
   "resolved" "https://registry.npmjs.org/text-table/-/text-table-0.2.0.tgz"
   "version" "0.2.0"
 
+"thien-ui@^0.2.0":
+  "integrity" "sha512-a3a6tNuvDz+rS7a91mJSzGJQEjOHCmqx7tql7N76m+4HgAJ5ztSFMwcnSvQDYfXMr5FAhbiUPulFvj1A/vAWrw=="
+  "resolved" "https://registry.npmjs.org/thien-ui/-/thien-ui-0.2.0.tgz"
+  "version" "0.2.0"
+  dependencies:
+    "@headlessui/react" "^1.4.2"
+
 "through@^2.3.8":
   "integrity" "sha1-DdTJ/6q8NXlgsbckEV1+Doai4fU="
   "resolved" "https://registry.npmjs.org/through/-/through-2.3.8.tgz"

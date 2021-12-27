@@ -70,6 +70,7 @@
     "remark-math": "^5.1.1",
     "slugify": "^1.6.3",
     "swr": "^1.1.1",
+    "thien-ui": "^0.2.0",
     "yarn": "^1.22.17"
   },
   "devDependencies": {
