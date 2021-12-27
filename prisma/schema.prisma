@@ -1,17 +1,11 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
+generator client {
+  provider = "prisma-client-js"
+  output   = "../node_modules/.prisma/client"
+}
 
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
-}
-
-generator client {
-  provider = "prisma-client-js"
-  output = "../node_modules/.prisma/client"
 }
 
 model Feedback {
@@ -24,13 +18,13 @@ model Feedback {
   name         String
 }
 
+model views {
+  slug  String @id @db.VarChar(128)
+  count BigInt @default(1)
+}
+
 enum FeedbackType {
   ISSUE
   IDEA
   FEEDBACK
-}
-
-model views {
-  slug          String        @id @db.VarChar(128)
-  count         BigInt         @default(1)
 }
