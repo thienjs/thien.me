@@ -20,6 +20,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
   return (
     <>
       <Head>
+      <script async defer data-website-id="8a0b3efe-1e12-4015-ae59-2534188714f6" src="https://thien-unami.vercel.app/umami.js"></script>
         <meta content="width=device-width, initial-scale=1" name="viewport" />
       </Head>
       <DefaultSeo {...pageSEO} />

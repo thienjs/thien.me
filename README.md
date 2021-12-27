@@ -6,6 +6,8 @@ I hope this portfolio can demonstrate my skills and knowlegdge of the current we
 
 Thank you for looking, the site will be live soon with the feedback page.
 
+I love open source projects and many of the techs i used in this portfolio is open source.
+
 ## Modern Standard:
 
 - **Typescript** typed js for easier error handling
@@ -57,7 +59,7 @@ Thank you for looking, the site will be live soon with the feedback page.
 - [x] add supabase
 - [ ] add guestbook with -planetscale- supabase
 - [x] add prisma
-- [ ]
+- [ ] unami analytics
 - [ ]
 - [ ]
 - [ ]
