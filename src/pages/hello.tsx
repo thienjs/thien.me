@@ -1,10 +1,8 @@
-
-
-import { SiteLayout } from '~/components/Layouts'
+import { Layout } from '~/components/ui/Layout'
 export default function Hello() {
   return (
-    <SiteLayout>
+    <Layout>
 
-    </SiteLayout>
+    </Layout>
   )
 }
