@@ -10,6 +10,7 @@ import {
   gql,
 } from '@apollo/client'
 import { setContext } from '@apollo/client/link/context'
+import { LinkIcon } from '@heroicons/react/outline'
 
 export default function ReposPage({ pinnedItems }) {
   return (
@@ -17,11 +18,15 @@ export default function ReposPage({ pinnedItems }) {
     <div className="">
       {pinnedItems.map((item) => {
         return (
-          <a href={item.url}>
-            <a>{item.name}</a>
-            <p>{item.stargazerCount}</p>
-          </a>
-        )
+
+          <div className='border border-cyan-600 p-2 mb-2'>
+
+            <Link href={item.url}>
+              <a>{item.name}</a>
+            </Link>
+              <p>stars {item.stargazerCount}</p>
+          </div>
+          )
       })}
     </div>
   </Layout>
