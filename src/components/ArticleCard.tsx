@@ -25,14 +25,14 @@ export function ArticleCard({ article }: Props) {
   const [hasRead] = useIsArticleRead(slug);
 
   return (
-    <div className=" border-b border-gray-200 dark:border-gray-800 max-w-3xl  mt-8">
+    <div className="border-2 p-4 rounded-md border-opacity-60 dark:border-orange-500 border-gray-200 max-w-3xl  mt-8">
       <button onClick={() => handleArticleClicked(slug)}>
-        <div className="">
+        <div className="flex flex-row ">
           <div className="">
-            <h3 className="mt-2 text-xl font-semibold">{article.title}</h3>
+            <h3 className="text-xl font-semibold text-left mb-2">{article.title}</h3>
             {/* {JSON.stringify(article)} */}
             {/* <p>{article.summary}</p> */}
-            <p className="text-small font-light">{article.summary}</p>
+            <p className="text-small font-light pb-2">{article.summary}</p>
             <span className="text-sm flex">
               {new Date(article.publishedDate).toLocaleDateString(
                 siteMetadata.locale,

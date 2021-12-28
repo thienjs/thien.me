@@ -17,14 +17,14 @@ export function SnippetCard({ snippet }: Props) {
   const [hasRead] = useIsSnippetRead(slug);
 
   return (
-    <div>
+    
       <button onClick={() => handleSnippetClicked(slug)}>
-        <div className="group">
-          <div className="text-left w-full border-2 mx-4 px-4 py-4">
-            <h3 className="text-xl">{snippet.title}</h3>
+        <div className="border-2 p-4 rounded-md border-opacity-60 dark:border-cyan-500 border-gray-200 max-w-3xl  ">
+          <div className="flex flex-col">
+            <h3 className="text-xl text-left">{snippet.title}</h3>
             {/* {JSON.stringify(Snippet)} */}
             {/* <p>{Snippet.summary}</p> */}
-            <span className="text-base flex items-center">
+            <span className="text-left">
               {new Date(snippet.publishedDate).toLocaleDateString(
                 siteMetadata.locale,
                 {
@@ -51,6 +51,6 @@ export function SnippetCard({ snippet }: Props) {
           </div>
         </div>
       </button>
-    </div>
+
   );
 }
