@@ -1,5 +1,6 @@
 import Layout from '~/components/ui/Layout';
 import {useAccordion } from 'thien-ui'
+import Button from '~/components/button/Button';
 
 const accordionData = [
   { title: <>Title 1</>, content: <>content 1</> },
@@ -25,7 +26,7 @@ export default function thien() {
           </div>
         ))}
       </div>
- 
+        <Button label="hello"/>
     </Layout>
   );
 }
