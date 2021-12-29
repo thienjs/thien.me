@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
-import Alert from '../components/Alert';
+import Alert from './ui/Alert';
 import TodoItem from '../components/TodoItem';
 import { useTodoContext } from '../context/TodoContext';
 import { supabase } from '~/lib/supabase';

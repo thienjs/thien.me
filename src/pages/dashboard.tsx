@@ -44,7 +44,7 @@ const Dashboard = () => {
     <div className="h-screen flex items-center justify-center bg-gray-800">
       <div className="max-w-lg w-full text-center">
         <h1 className="text-2xl font-semibold text-white">
-          Welcome, your email is {user.email}
+          Welcome, your email is {user.email} 
         </h1>
 
         <button

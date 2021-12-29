@@ -125,8 +125,8 @@ export function renderBlocks(block) {
       return (
         <figure className="mt-0">
           <Image
-            className="rounded-xl"
-            objectFit="fill"
+            className=""
+            objectFit="cover"
             width={1200}
             height={684}
             alt={
