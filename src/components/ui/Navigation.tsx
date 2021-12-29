@@ -3,6 +3,8 @@ import { Fragment, useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { Dialog, Popover, Tab, Transition } from '@headlessui/react'
+import { motion, AnimateSharedLayout } from 'framer-motion';
+import { cx } from '~/lib/utils';
 import {
   MenuIcon,
   XIcon,
@@ -34,6 +36,7 @@ function classNames(...classes) {
 export default function Navigation() {
   const [open, setOpen] = useState(false)
   const router = useRouter()
+  const [activeIndex, setActiveIndex] = useState(null);
 
   return (
     <div className="bg-transparent">
@@ -80,15 +83,18 @@ export default function Navigation() {
                   <h1 className="ml-3 font-semibold text-xl">thien.me</h1>
                 </Link>
               </div>
+<AnimateSharedLayout>
+  
 
               {/* Links */}
-              <div className="py-6 px-6 ml-3 text-md mt-5 ">
-                <div className="flex flex-row mb-2 py-4 text-xl font-semibold lowercase">
+              <motion.ul className="py-6 px-6 ml-3 text-md mt-5 "
+              onHoverEnd={() => setActiveIndex(null)}>
+                <motion.li onHoverStart={() => setActiveIndex(index)} className="flex flex-row mb-2 py-4 text-xl font-semibold lowercase">
                   <JournalIcon className="h-6 w-6 mr-3 mt-1" />
                   <Link href="/blog">
                     <a className="ml-2 ">Blog</a>
                   </Link>
-                </div>
+                </motion.li>
                 <div className="flex flex-row mb-2 py-4 text-xl font-semibold lowercase">
                   <CodeJournalIcon className="h-6 w-6 mr-3 mt-1" />
                   <Link href="/snippets">
@@ -125,7 +131,10 @@ export default function Navigation() {
                     <a className="ml-2">about</a>
                   </Link>
                 </div>
-              </div>
+              </motion.ul>
+</AnimateSharedLayout>
+
+
             </div>
           </Transition.Child>
         </Dialog>
