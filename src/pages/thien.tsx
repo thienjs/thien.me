@@ -1,3 +1,4 @@
+import  {useState} from 'react'
 import Layout from '~/components/ui/Layout';
 import {useAccordion } from 'thien-ui'
 import Button from '~/components/button/Button';
@@ -7,6 +8,7 @@ import Avatar from '~/components/ui/Avatar'
 import SkillsTable from '~/components/SkillsTable';
 import SnapCarousel from '~/components/ui/SnapCarousel';
 import Experience from '~/components/Experience';
+import Discord from '~/components/Discord'
 const accordionData = [
   { title: <>Title 1</>, content: <>content 1</> },
   { title: <>Title 2</>, content: <>content 2</> },
@@ -16,6 +18,7 @@ export default function thien() {
   const { accordion = [] } = useAccordion({
     data: accordionData,
   })
+  const [presenceActive, setPresenceActive] = useState(false);
   return (
     <Layout>
       <div className="flex flex-col w-full h-6 align-center justify-center">
@@ -35,9 +38,10 @@ export default function thien() {
       <Alert />
       <Timeline />
       <Avatar />
-      <SkillsTable/>
-      <SnapCarousel/>
-      <Experience/>
+      <SkillsTable />
+      <SnapCarousel />
+      <Experience />
+      <Discord setActive={setPresenceActive} />
     </Layout>
   )
 }
