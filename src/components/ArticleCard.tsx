@@ -25,9 +25,9 @@ export function ArticleCard({ article }: Props) {
   const [hasRead] = useIsArticleRead(slug);
 
   return (
-    <div className="border-2 p-4 rounded-md border-opacity-60 dark:border-orange-500 border-gray-200 max-w-3xl  mt-8">
+    <div className="border-2 p-4 rounded-md border-opacity-80 dark:border-gray-500 border-gray-200 max-w-3xl  mt-8 bg-gray-100 dark:bg-zinc-800 bg-opacity-95 ">
       <button onClick={() => handleArticleClicked(slug)}>
-        <div className="flex flex-row ">
+        <div className="flex flex-row">
           <div className="">
             <h3 className="text-xl font-semibold text-left mb-2">{article.title}</h3>
             {/* {JSON.stringify(article)} */}

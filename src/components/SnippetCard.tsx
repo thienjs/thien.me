@@ -19,7 +19,7 @@ export function SnippetCard({ snippet }: Props) {
   return (
     
       <button onClick={() => handleSnippetClicked(slug)}>
-        <div className="border-2 p-4 rounded-md border-opacity-60 dark:border-cyan-500 border-gray-200 max-w-3xl  ">
+        <div className="border-2 p-4 rounded-md border-opacity-60 dark:border-cyan-800 border-gray-200 max-w-3xl  bg-gray-100 dark:bg-zinc-800 bg-opacity-95">
           <div className="flex flex-col">
             <h3 className="text-xl text-left">{snippet.title}</h3>
             {/* {JSON.stringify(Snippet)} */}
