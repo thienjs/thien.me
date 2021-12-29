@@ -3,6 +3,7 @@ import { motion, AnimateSharedLayout } from 'framer-motion';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { cx } from '~/lib/utils';
+import { navigation } from '~/data/nav'
 
 const navData = [
   {

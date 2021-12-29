@@ -26,7 +26,7 @@ import CodeJournalIcon from '~/components/icons/code-journal'
 import CodeIcon from '~/components/icons/code'
 import BookmarkNotebookIcon from '~/components/icons/bookmark-notebook'
 import ThemeSwitch from '../ThemeSwitch'
-import { navigation } from '~/lib/constants'
+import { navigation } from '~/data/nav'
 import Logo from '~/components/icons/logo'
 
 function classNames(...classes) {
@@ -89,7 +89,7 @@ export default function Navigation() {
               {/* Links */}
               <motion.ul className="py-6 px-6 ml-3 text-md mt-5 "
               onHoverEnd={() => setActiveIndex(null)}>
-                <motion.li onHoverStart={() => setActiveIndex(index)} className="flex flex-row mb-2 py-4 text-xl font-semibold lowercase">
+                <motion.li className="flex flex-row mb-2 py-4 text-xl font-semibold lowercase">
                   <JournalIcon className="h-6 w-6 mr-3 mt-1" />
                   <Link href="/blog">
                     <a className="ml-2 ">Blog</a>
