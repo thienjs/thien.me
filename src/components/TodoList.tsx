@@ -82,7 +82,7 @@ export default function TodoList({ user }: Props) {
         </button>
       </div>
 
-      {errorMessage && <Alert message={errorMessage} />}
+      {errorMessage}
 
       <div className="bg-white rounded">
         <ul>
