@@ -20,14 +20,14 @@ export default function ScrollIndicator({ children }) {
 
   const inlineStyle = {
     height: '6px',
-    background: '#4C1D95',
+
     width: scroll,
   }
 
   return (
     <>
-      <div className="top-0 left-0 w-screen h-1.5 fixed z-40 shadow-2xl bg-gray-300">
-        <div style={inlineStyle} />
+      <div className="top-0 left-0 w-screen h-1.5 fixed z-40 shadow-2xl bg-white-300">
+        <div style={inlineStyle} className="bg-cyan-500 dark:bg-teal-500" />
       </div>
       {children}
     </>

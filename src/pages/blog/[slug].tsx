@@ -13,17 +13,17 @@ import { Callout } from "~/components/Callout";
 import { YoutubeEmbed } from "~/components/YoutubeEmbed";
 import PageViews from '~/components/PageViews';
 import { GetStaticPaths, GetStaticProps } from 'next';
-
+import ScrollIndicator from '~/components/ScrollIndicator'
 
 export const Text = ({ text }) => {
   if (!text) {
-    return null;
+    return null
   }
   return text.map((value, index) => {
     const {
       annotations: { bold, code, color, italic, strikethrough, underline },
-      text
-    } = value;
+      text,
+    } = value
     return (
       <span
         key={index}
@@ -34,19 +34,19 @@ export const Text = ({ text }) => {
             ? 'bg-indigo-200 dark:bg-indigo-900 dark:bg-opacity-50 text-indigo-500 dark:text-indigo-200 py-0.5 px-2 rounded mx-1 inline-block align-middle tracking-tight text-base'
             : null,
           strikethrough ? 'line-through' : null,
-          underline ? 'underline' : null
+          underline ? 'underline' : null,
         ].join(' ')}
         style={color !== 'default' ? { color } : {}}
       >
         {text.link ? <a href={text.link.url}>{text.content}</a> : text.content}
       </span>
-    );
-  });
-};
+    )
+  })
+}
 
 export function renderBlocks(block) {
-  const { type, id } = block;
-  const value = block[type];
+  const { type, id } = block
+  const value = block[type]
 
   switch (type) {
     case 'paragraph':
@@ -54,7 +54,7 @@ export function renderBlocks(block) {
         <p>
           <Text text={value.text} />
         </p>
-      );
+      )
     case 'heading_1':
       return (
         <h1>
@@ -62,7 +62,7 @@ export function renderBlocks(block) {
             <Text text={value.text} />
           </AnchorLink>
         </h1>
-      );
+      )
     case 'heading_2':
       return (
         <h2>
@@ -70,7 +70,7 @@ export function renderBlocks(block) {
             <Text text={value.text} />
           </AnchorLink>
         </h2>
-      );
+      )
     case 'heading_3':
       return (
         <h3>
@@ -78,14 +78,14 @@ export function renderBlocks(block) {
             <Text text={value.text} />
           </AnchorLink>
         </h3>
-      );
+      )
     case 'bulleted_list_item':
     case 'numbered_list_item':
       return (
         <li>
           <Text text={value.text} />
         </li>
-      );
+      )
     case 'to_do':
       return (
         <div>
@@ -103,7 +103,7 @@ export function renderBlocks(block) {
             <Text text={value.text} />
           </label>
         </div>
-      );
+      )
     case 'toggle':
       return (
         <details>
@@ -114,14 +114,14 @@ export function renderBlocks(block) {
             <Fragment key={block.id}>{renderBlocks(block)}</Fragment>
           ))}
         </details>
-      );
+      )
     case 'child_page':
-      return <p>{value.title}</p>;
+      return <p>{value.title}</p>
     case 'image':
       const src =
-        value.type === 'external' ? value.external.url : value.file.url;
+        value.type === 'external' ? value.external.url : value.file.url
       const caption =
-        value.caption.length >= 1 ? value.caption[0].plain_text : '';
+        value.caption.length >= 1 ? value.caption[0].plain_text : ''
       return (
         <figure className="mt-0">
           <Image
@@ -140,7 +140,7 @@ export function renderBlocks(block) {
             <figcaption className="text-center">{caption}</figcaption>
           )}
         </figure>
-      );
+      )
     case 'code':
       return (
         <div>
@@ -149,7 +149,7 @@ export function renderBlocks(block) {
             code={value.text[0].text.content}
           />
         </div>
-      );
+      )
     case 'callout':
       return (
         <Callout>
@@ -158,9 +158,9 @@ export function renderBlocks(block) {
             <Text text={value.text} />
           </div>
         </Callout>
-      );
+      )
     case 'embed':
-      const codePenEmbedKey = value.url.slice(value.url.lastIndexOf('/') + 1);
+      const codePenEmbedKey = value.url.slice(value.url.lastIndexOf('/') + 1)
       return (
         <div>
           <iframe
@@ -173,29 +173,30 @@ export function renderBlocks(block) {
             loading="lazy"
             allowFullScreen={true}
           >
-            See the Pen <a href={value.url}></a> by Thien Tran (<a href="https://codepen.io/thienjs">@thienjs</a>)
-            on <a href="https://codepen.io">CodePen</a>.
+            See the Pen <a href={value.url}></a> by Thien Tran (
+            <a href="https://codepen.io/thienjs">@thienjs</a>) on{' '}
+            <a href="https://codepen.io">CodePen</a>.
           </iframe>
         </div>
-      );
+      )
     case 'table_of_contents':
-      return <div>TOC</div>;
+      return <div>TOC</div>
     case 'video':
-      return <YoutubeEmbed url={value.external.url} />;
+      return <YoutubeEmbed url={value.external.url} />
     case 'quote':
       return (
         <blockquote className="p-4 rounded-r-lg">
           <Text text={value.text} />
         </blockquote>
-      );
+      )
     case 'divider':
       return (
         <hr className="my-16 w-full border-none text-center h-10 before:content-['∿∿∿'] before:text-[#D1D5DB] before:text-2xl"></hr>
-      );
+      )
     default:
       return `❌ Unsupported block (${
         type === 'unsupported' ? 'unsupported by Notion API' : type
-      })`;
+      })`
   }
 }
 
@@ -208,76 +209,73 @@ const ArticlePage = ({
   lastEditedAt,
   summary,
 }) => {
-  const { push } = useRouter();
+  const { push } = useRouter()
   const publishedOn = new Date(publishedDate).toLocaleDateString(
     siteMetadata.locale,
     {
       year: 'numeric',
       month: 'long',
-      day: 'numeric'
+      day: 'numeric',
     }
-  );
+  )
 
   const modifiedDate = new Date(lastEditedAt).toLocaleDateString(
     siteMetadata.locale,
     {
       year: 'numeric',
       month: 'long',
-      day: 'numeric'
+      day: 'numeric',
     }
-  );
-
-
+  )
 
   useEffect(() => {
     fetch(`/api/views/${slug}`, {
-      method: 'POST'
-    });
-  }, [slug]);
+      method: 'POST',
+    })
+  }, [slug])
 
   return (
-    <Layout
-
-    >
-      <div className="grid grid-cols-1 lg:grid-cols-12 lg:gap-8">
-        <article className="col-span-9 mt-12">
-          <div className="space-y-12">
-            <div>
-              <h1 className="text-3xl text-center md:text-5xl">{title}</h1>
-              <div className="text-center">
-                <div className="flex items-center justify-center mb-2 space-x-2 text-lg">
-                  <p className="m-0 text-lg md:text-xl">{publishedOn}</p>
-                  <p className="m-0">•</p>
-                  <ViewCounter slug={slug} />
+    <Layout>
+      <ScrollIndicator>
+        <div className="grid grid-cols-1 lg:grid-cols-12 lg:gap-8">
+          <article className="col-span-9 mt-12">
+            <div className="space-y-12">
+              <div>
+                <h1 className="text-3xl text-center md:text-5xl">{title}</h1>
+                <div className="text-center">
+                  <div className="flex items-center justify-center mb-2 space-x-2 text-lg">
+                    <p className="m-0 text-lg md:text-xl">{publishedOn}</p>
+                    <p className="m-0">•</p>
+                    <ViewCounter slug={slug} />
+                  </div>
+                  {publishedOn !== modifiedDate && (
+                    <p className="mt-0 text-sm text-slate-500 md:text-base dark:text-slate-500">
+                      (Updated on {modifiedDate})
+                    </p>
+                  )}
                 </div>
-                {publishedOn !== modifiedDate && (
-                  <p className="mt-0 text-sm text-slate-500 md:text-base dark:text-slate-500">
-                    (Updated on {modifiedDate})
-                  </p>
-                )}
               </div>
+              <div className="my-12">
+                <Image
+                  className="rounded-xl"
+                  objectFit="fill"
+                  src={coverImage}
+                  width={1200}
+                  height={684}
+                  alt={'article cover'}
+                  priority
+                />
+              </div>
+              {content.map((block) => (
+                <Fragment key={block.id}>{renderBlocks(block)}</Fragment>
+              ))}
             </div>
-            <div className="my-12">
-              <Image
-                className="rounded-xl"
-                objectFit="fill"
-                src={coverImage}
-                width={1200}
-                height={684}
-                alt={'article cover'}
-                priority
-              />
-            </div>
-            {content.map((block) => (
-              <Fragment key={block.id}>{renderBlocks(block)}</Fragment>
-            ))}
-
-          </div>
-        </article>
-      </div>
+          </article>
+        </div>
+      </ScrollIndicator>
     </Layout>
-  );
-};
+  )
+}
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = [];
