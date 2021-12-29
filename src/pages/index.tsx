@@ -10,6 +10,7 @@ import Contact from '~/components/Contact'
 import Hero from '~/components/Hero'
 import Tweet from '~/components/Tweet';
 import { getTweets } from 'lib/twitter';
+import SkillsTable from '~/components/SkillsTable'
 
 import { convertToArticleList, getPublishedArticles } from '~/lib/notion';
 import { GetStaticProps } from 'next';
@@ -34,7 +35,7 @@ export default function HomePage ({recentArticles, tweets}: HomePageProps,)  {
       {tweets.map((tweet) => (
           <Tweet key={tweet.id} {...tweet} />
         ))}
-      <Skills/>
+      <SkillsTable/>
     </Layout>
   )
 }

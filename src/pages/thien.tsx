@@ -5,6 +5,7 @@ import Alert from '~/components/ui/Alert'
 import Timeline from '~/components/Timeline'
 import Avatar from '~/components/ui/Avatar'
 import SkillsTable from '~/components/SkillsTable';
+import SnapCarousel from '~/components/ui/SnapCarousel';
 const accordionData = [
   { title: <>Title 1</>, content: <>content 1</> },
   { title: <>Title 2</>, content: <>content 2</> },
@@ -34,6 +35,7 @@ export default function thien() {
       <Timeline />
       <Avatar />
       <SkillsTable/>
+      <SnapCarousel/>
     </Layout>
   )
 }
