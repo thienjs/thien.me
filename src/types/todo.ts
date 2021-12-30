@@ -1,5 +1,5 @@
 export type Todo = {
-  id:string
+  id: number
   task:string
   is_complete:boolean
-}[]
+}
