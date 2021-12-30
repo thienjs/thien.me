@@ -8,7 +8,7 @@ import Avatar from '~/components/ui/Avatar'
 import SkillsTable from '~/components/SkillsTable';
 import SnapCarousel from '~/components/ui/SnapCarousel';
 import Experience from '~/components/Experience';
-import Discord from '~/components/Discord'
+import DiscordStatus from '~/components/DiscordStatus'
 const accordionData = [
   { title: <>Title 1</>, content: <>content 1</> },
   { title: <>Title 2</>, content: <>content 2</> },
@@ -41,7 +41,7 @@ export default function thien() {
       <SkillsTable />
       <SnapCarousel />
       <Experience />
-      <Discord setActive={setPresenceActive} />
+      <DiscordStatus />
     </Layout>
   )
 }

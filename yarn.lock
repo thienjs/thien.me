@@ -6362,6 +6362,14 @@
   dependencies:
     "popper.js" "^1.11.1"
 
+"react-use-lanyard@^0.1.0":
+  "integrity" "sha512-TtOZekhhM58v98eCLe65ZSUHKO8ROyskqx5ojDuBPbUDW1Pl2accanlcYVnlW2eTqiXa4griR1oIkJGSsw60Hg=="
+  "resolved" "https://registry.npmjs.org/react-use-lanyard/-/react-use-lanyard-0.1.0.tgz"
+  "version" "0.1.0"
+  dependencies:
+    "swr" "^1.0.0"
+    "tslib" "^2.3.1"
+
 "react-use-measure@^2.1.1":
   "integrity" "sha512-nocZhN26cproIiIduswYpV5y5lQpSQS1y/4KuvUCjSKmw7ZWIS/+g3aFnX3WdBkyuGUtTLif3UTqnLLhbDoQig=="
   "resolved" "https://registry.npmjs.org/react-use-measure/-/react-use-measure-2.1.1.tgz"
@@ -7306,7 +7314,7 @@
     "csso" "^4.2.0"
     "stable" "^0.1.8"
 
-"swr@^1.1.1":
+"swr@^1.0.0", "swr@^1.1.1":
   "integrity" "sha512-ZpUHyU3N3snj2QGFeE2Fd3BXl1CVS6YQIQGb1ttPAkTmvwZqDyV3GRMNPsaeAYCBM74tfn4XbKx28FVQR0mS7Q=="
   "resolved" "https://registry.npmjs.org/swr/-/swr-1.1.1.tgz"
   "version" "1.1.1"
@@ -7471,6 +7479,11 @@
   "version" "2.1.0"
 
 "tslib@^2.3.0":
+  "integrity" "sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw=="
+  "resolved" "https://registry.npmjs.org/tslib/-/tslib-2.3.1.tgz"
+  "version" "2.3.1"
+
+"tslib@^2.3.1":
   "integrity" "sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw=="
   "resolved" "https://registry.npmjs.org/tslib/-/tslib-2.3.1.tgz"
   "version" "2.3.1"

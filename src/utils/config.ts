@@ -10,7 +10,7 @@ export const config = {
     },
   },
   game: {
-    discordId: '925893331291086880',
+    discordId: '925868267690672208',
     title: {
       hearthstone: 'Hearthstone',
     },

@@ -60,6 +60,7 @@
     "react-lite-youtube-embed": "^2.1.3",
     "react-sketch-canvas": "^6.1.0",
     "react-tippy": "^1.4.0",
+    "react-use-lanyard": "^0.1.0",
     "reading-time": "^1.5.0",
     "rehype-autolink-headings": "^6.1.0",
     "rehype-code-titles": "^1.0.3",
