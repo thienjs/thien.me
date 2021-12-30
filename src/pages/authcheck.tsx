@@ -19,7 +19,7 @@ const FORM_VALUES: SignUpFieldProps = {
 
 const AuthPage: NextPage<NextAppPageProps> = () => {
   const [isSignIn, setIsSignIn] = useState(true)
-  const { loading, signIn, signUp, signInWithProvider } = useAuth()
+  const { loading, signIn, signUp, signInWithProvider, } = useAuth()
   // Now since we have our form ready, what we're gonna need for signing up our users
   // 1. let users provide email and password
   const [values, handleChange, resetFormFields] =
@@ -43,6 +43,7 @@ const AuthPage: NextPage<NextAppPageProps> = () => {
           <h3 className="text-3xl text-gray-600">
             Supa<strong>Auth</strong>&nbsp;
           </h3>
+          
           <small>
             Please provide your <strong>email</strong> and{' '}
             <strong>password</strong> and {isSignIn ? 'Log In' : 'Sign Up'}

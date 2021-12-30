@@ -10,6 +10,7 @@ export type AuthContextProps = {
   signUp: (payload: UserCredentials) => void
   signIn: (payload: UserCredentials) => void
   signInWithProvider: (provider: Provider) => Promise<void>
+  signInWithGithub: (provider: 'github') => void,
   signOut: () => void
   loggedIn: boolean
   loading: boolean
@@ -76,6 +77,11 @@ export const AuthProvider: FunctionComponent = ({ children }) => {
     await supabase.auth.signIn({ provider })
   }
 
+  const signInWithGithub = async (evt) => {
+    evt.preventDefault()
+    await supabase.auth.signIn({ provider: 'github'})
+  }
+
   const signOut = async () => await supabase.auth.signOut()
 
   const setServerSession = async (event: AuthChangeEvent, session: Session) => {
@@ -127,6 +133,7 @@ export const AuthProvider: FunctionComponent = ({ children }) => {
         signUp,
         signIn,
         signInWithProvider,
+        signInWithGithub,
         signOut,
         loggedIn,
         loading,
