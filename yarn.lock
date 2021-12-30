@@ -1194,6 +1194,11 @@
   "resolved" "https://registry.npmjs.org/@trysound/sax/-/sax-0.1.1.tgz"
   "version" "0.1.1"
 
+"@tsndr/cloudflare-worker-jwt@^1.1.5":
+  "integrity" "sha512-+q0siASepCuFboIQrdgykBIESzttfWz3qXQ8Lx36mjMJpaS1XgErRvQ2+BPU8miXlBbslbxThRaMCW2o8nFtug=="
+  "resolved" "https://registry.npmjs.org/@tsndr/cloudflare-worker-jwt/-/cloudflare-worker-jwt-1.1.5.tgz"
+  "version" "1.1.5"
+
 "@types/acorn@^4.0.0":
   "integrity" "sha512-veQTnWP+1D/xbxVrPC3zHnCZRjSrKfhbMUlEA43iMZLu7EsnTtkJklIuwrCPbOi8YkvDQAiW05VQQFvvz9oieQ=="
   "resolved" "https://registry.npmjs.org/@types/acorn/-/acorn-4.0.6.tgz"
