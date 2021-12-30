@@ -16,7 +16,7 @@ export default function Tracks() {
                   <img
                     src={track.albumArtUrl}
                     title={track.album}
-                    className="w-16 h-16 rounded-xl"
+                    className="w-16 h-16 border "
                   />
                   <div className="flex flex-col mt-2 truncate">
                     <a
@@ -25,8 +25,8 @@ export default function Tracks() {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <span className="mr-1 text-yellow-400 font-light">
-                        {track.ranking && `#${track.ranking}`}
+                      <span className="mr-1 text-cyan-500 font-light">
+                        {track.ranking && `#${track.ranking}   `}
                       </span>
                       {track.title}
                     </a>

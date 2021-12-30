@@ -1,58 +1,21 @@
-import clsx from 'clsx';
-import * as React from 'react';
-import { ImSpinner2 } from 'react-icons/im';
+import * as React from 'react'
 
-enum ButtonVariant {
-  'default',
+export interface IButtonProps {
+  label: string
+  href: string
 }
 
-type ButtonProps = {
-  isLoading?: boolean;
-  variant?: keyof typeof ButtonVariant;
-} & React.ComponentPropsWithoutRef<'button'>;
-
-export default function Button({
-  children,
-  className,
-  disabled: buttonDisabled,
-  isLoading,
-  variant = 'default',
-  ...rest
-}: ButtonProps) {
-  const disabled = isLoading || buttonDisabled;
-
+export default function Button({ label, href }: IButtonProps) {
   return (
-    <button
-      {...rest}
-      disabled={disabled}
-      className={clsx(
-        'px-4 py-2 font-bold rounded',
-        'border border-gray-300 shadow-sm dark:border-gray-600',
-        'focus:outline-none focus-visible:ring focus-visible:ring-primary-300',
-        'transform-gpu scale-100 hover:scale-[1.03] active:scale-[0.97]',
-        'transition duration-100',
-        'animate-shadow',
-        {
-          'bg-white disabled:bg-gray-200 text-gray-600 dark:text-gray-300 dark:bg-dark dark:disabled:bg-gray-700':
-            variant === 'default',
-        },
-        'disabled:transform-none disabled:cursor-not-allowed',
-        isLoading &&
-          'relative !text-transparent hover:!text-transparent !cursor-wait transition-none',
-        className
-      )}
+    <a
+      href={href}
+      className="relative inline-block px-4 py-2 font-medium group"
     >
-      {isLoading && (
-        <div
-          className={clsx(
-            'absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2',
-            'text-black dark:text-white'
-          )}
-        >
-          <ImSpinner2 className='animate-spin' />
-        </div>
-      )}
-      {children}
-    </button>
-  );
+      <span className="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-black dark:bg-white group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
+      <span className="absolute inset-0 w-full h-full bg-white dark:bg-black border-2 border-black dark:border-white group-hover:bg-black"></span>
+      <span className="relative text-black dark:text-white group-hover:text-white">
+        {label}
+      </span>
+    </a>
+  )
 }

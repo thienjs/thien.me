@@ -9,6 +9,7 @@ import SkillsTable from '~/components/SkillsTable';
 import SnapCarousel from '~/components/ui/SnapCarousel';
 import Experience from '~/components/Experience';
 import DiscordStatus from '~/components/DiscordStatus'
+import ButtonBox from '~/components/button/Button'
 
 import Tracks from '~/components/Tracks'
 const accordionData = [
@@ -46,6 +47,7 @@ export default function thien() {
       <DiscordStatus />
 
       <Tracks />
+      <ButtonBox label="test" href="/" />
     </Layout>
   )
 }
