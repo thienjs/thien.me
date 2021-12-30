@@ -9,6 +9,8 @@ import SkillsTable from '~/components/SkillsTable';
 import SnapCarousel from '~/components/ui/SnapCarousel';
 import Experience from '~/components/Experience';
 import DiscordStatus from '~/components/DiscordStatus'
+import ThemeChanger from '~/components/ThemeChanger';
+import Tracks from '~/components/Tracks'
 const accordionData = [
   { title: <>Title 1</>, content: <>content 1</> },
   { title: <>Title 2</>, content: <>content 2</> },
@@ -18,7 +20,7 @@ export default function thien() {
   const { accordion = [] } = useAccordion({
     data: accordionData,
   })
-  const [presenceActive, setPresenceActive] = useState(false);
+  const [presenceActive, setPresenceActive] = useState(false)
   return (
     <Layout>
       <div className="flex flex-col w-full h-6 align-center justify-center">
@@ -42,6 +44,8 @@ export default function thien() {
       <SnapCarousel />
       <Experience />
       <DiscordStatus />
+      <ThemeChanger />
+      <Tracks />
     </Layout>
   )
 }

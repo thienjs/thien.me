@@ -18,6 +18,10 @@
   },
   "dependencies": {
     "@apollo/client": "^3.5.6",
+    "@fortawesome/fontawesome-free": "^5.15.4",
+    "@fortawesome/free-regular-svg-icons": "^5.15.4",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@fortawesome/react-fontawesome": "^0.1.16",
     "@headlessui/react": "^1.4.2",
     "@heroicons/react": "^1.0.5",
     "@notionhq/client": "^0.4.9",
