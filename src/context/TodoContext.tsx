@@ -1,7 +1,7 @@
 import { createContext, useContext, useState } from 'react';
 
 import type { Dispatch, ReactElement, ReactNode, SetStateAction } from 'react';
-import type { Todo } from '../types';
+import type { Todo } from '../types/todo';
 
 type ContextProps = {
   todos: Todo[];

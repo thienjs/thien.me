@@ -107,16 +107,16 @@ export const AuthProvider: FunctionComponent = ({ children }) => {
         if (user) {
           setUser(user)
           setLoggedin(true)
-          Router.push(ROUTE_HOME)
+          Router.push(ROUTE_HOME) //redirect to profile page on login
         } else {
-          setUser(null)
-          Router.push(ROUTE_AUTH)
+          setUser(null) //nulify user object
+          Router.push(ROUTE_AUTH) //redirect home
         }
       }
     )
 
     return () => {
-      authListener.unsubscribe()
+      authListener.unsubscribe() //unsubscribe when user leave app
     }
   }, [])
 
