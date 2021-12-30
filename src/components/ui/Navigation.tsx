@@ -3,8 +3,7 @@ import { Fragment, useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { Dialog, Popover, Tab, Transition } from '@headlessui/react'
-import { motion, AnimateSharedLayout } from 'framer-motion';
-import { cx } from '~/lib/utils';
+import { motion, AnimateSharedLayout } from 'framer-motion'
 import {
   MenuIcon,
   XIcon,
