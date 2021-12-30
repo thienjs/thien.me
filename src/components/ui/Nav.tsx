@@ -2,7 +2,7 @@ import * as React from 'react';
 import { motion, AnimateSharedLayout } from 'framer-motion';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { cx } from '~/lib/utils';
+import classnames from 'classnames';
 import { navigation } from '~/data/nav'
 
 const navData = [
@@ -36,7 +36,7 @@ export default function Nav() {
               <motion.li key={index} onHoverStart={() => setActiveIndex(index)}>
                 <Link href={item.path}>
                   <a
-                    className={cx(
+                    className={classnames(
                       'relative block px-2 py-1',
                       ['text-gray-600 hover:text-gray-700'],
                       ['dark:text-gray-300 dark:hover:text-white'],
@@ -50,7 +50,7 @@ export default function Nav() {
                         transition={{
                           duration: 0.2,
                         }}
-                        className={cx(
+                        className={classnames(
                           'absolute inset-0 rounded-md pointer-events-none z-0',
                           ['bg-gray-200'],
                           ['dark:bg-gray-800'],
