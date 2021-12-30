@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-
 import { useRouter } from 'next/router';
-
 import { supabase } from '~/lib/supabase';
+import Layout from '~/components/ui/Layout';
 
 const SignUp = () => {
   const router = useRouter();
@@ -25,29 +24,31 @@ const SignUp = () => {
   };
 
   return (
-    <div className="h-screen flex items-center justify-center bg-gray-800">
+    <Layout>
+
+    <div className="h-screen flex items-center justify-center bg-transparent">
       <div className="max-w-lg w-full">
-        <h1 className="text-3xl font-semibold text-center text-white">
+        <h1 className="text-3xl font-semibold text-center text-black dark:text-white ">
           Create new account
         </h1>
 
         <form className="mt-2 flex flex-col p-6" onSubmit={handleSubmit}>
-          <label htmlFor="email" className="text-gray-200">
+          <label htmlFor="email" className="text-black dark:text-white">
             Email
           </label>
           <input
-            className="py-2 px-4 rounded-md focus:outline-none focus:ring-2"
+            className="py-2 px-4 rounded-md focus:outline-none focus:ring-2 bg-gray-200 dark:bg-zinc-600"
             type="email"
             id="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
 
-          <label htmlFor="password" className="mt-6 text-gray-200">
+          <label htmlFor="password" className="mt-6 text-black dark:text-white ">
             Password
           </label>
           <input
-            className="py-2 px-4 rounded-md focus:outline-none focus:ring-2"
+            className="py-2 px-4 rounded-md focus:outline-none focus:ring-2 bg-gray-200 dark:bg-zinc-600"
             type="password"
             id="password"
             value={password}
@@ -63,6 +64,7 @@ const SignUp = () => {
         </form>
       </div>
     </div>
+    </Layout>
   );
 };
 
