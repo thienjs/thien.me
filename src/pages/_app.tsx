@@ -6,6 +6,7 @@ import { AppProps } from 'next/app'
 import Head from 'next/head'
 import { DefaultSeo } from 'next-seo'
 import { AuthProvider } from '~/lib/auth'
+import { MessageProvider } from '~/lib/message'
 
 import SEO from '../../next-seo.config'
 
@@ -33,6 +34,8 @@ function MyApp({ Component, pageProps, router }: AppProps) {
       </Head>
       <DefaultSeo {...pageSEO} />
       <AnimateCursor />
+      <MessageProvider>
+
       <AuthProvider>
         <ThemeProvider attribute="class">
           <AnimatePresence>
@@ -58,6 +61,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
           </AnimatePresence>
         </ThemeProvider>
       </AuthProvider>
+      </MessageProvider>
     </>
   )
 }
