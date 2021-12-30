@@ -1,5 +1,6 @@
 import NowPlaying from "~/components/music/NowPlaying"
 import TopTracks from "~/components/music/TopTracks"
+import Tracks from '~/components/Tracks'
 import Layout from "~/components/ui/Layout"
 export default function MusicPage() {
     return (
@@ -9,6 +10,7 @@ export default function MusicPage() {
             <h2 className="text-2xl font-semibold mb-3 underline">Currently listening to:</h2>
             <NowPlaying/>
             <h2 className="text-2xl font-semibold">My Top 10 recently:</h2>
+            <Tracks/>
             <TopTracks/>
 
         </Layout>

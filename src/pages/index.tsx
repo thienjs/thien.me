@@ -15,6 +15,9 @@ import SkillsTable from '~/components/SkillsTable'
 import { convertToArticleList, getPublishedArticles } from '~/lib/notion';
 import { GetStaticProps } from 'next';
 import { ArticleList } from '~/components/ArticleList';
+import NowPlaying from '~/components/music/NowPlaying'
+import Tracks from '~/components/Tracks'
+import DiscordStatus from '~/components/DiscordStatus'
 
 
 export type HomePageProps = {
@@ -36,6 +39,10 @@ export default function HomePage ({recentArticles, tweets}: HomePageProps,)  {
           <Tweet key={tweet.id} {...tweet} />
         ))}
       <SkillsTable/>
+      <Tracks/>
+      <NowPlaying/>
+      <DiscordStatus/>
+
     </Layout>
   )
 }
