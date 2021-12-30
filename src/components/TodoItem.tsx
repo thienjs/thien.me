@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useTodoContext } from '../context/TodoContext';
 import { supabase } from '~/lib/supabase';
 
-import type { Todo } from '~/types/index';
+import type { Todo } from '~/types/todo';
 
 type Props = {
   todo: Todo;
