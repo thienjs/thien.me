@@ -12,6 +12,7 @@ import DiscordStatus from '../DiscordStatus'
 import NowPlaying from '../music/NowPlaying'
 
 const Footer = () => {
+  const year = new Date().getFullYear()
   return (
     <div className="flex flex-col items-center z-50 justify-center w-screen mt-20 -ml-6 md:ml-0">
       <div className="flex flex-row">
@@ -36,6 +37,9 @@ const Footer = () => {
             <LinkedinIcon className="h-8 w-8 mx-3" />
           </Link>
         </div>
+      </div>
+      <div>
+        {year}
       </div>
     </div>
   )
