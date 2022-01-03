@@ -241,9 +241,9 @@ const ArticlePage = ({
           <article className="col-span-9 mt-12">
             <div className="space-y-12">
               <div>
-                <h1 className="text-3xl text-center md:text-5xl">{title}</h1>
-                <div className="text-center">
-                  <div className="flex items-center justify-center mb-2 space-x-2 text-lg">
+                <h1 className="text-3xl text-left md:text-5xl mb-6">{title}</h1>
+                <div className="text-left">
+                  <div className="flex mb-2 space-x-2 text-lg">
                     <p className="m-0 text-lg md:text-xl">{publishedOn}</p>
                     <p className="m-0">•</p>
                     <ViewCounter slug={slug} />
@@ -255,17 +255,7 @@ const ArticlePage = ({
                   )}
                 </div>
               </div>
-              <div className="my-12">
-                <Image
-                  className="rounded-xl"
-                  objectFit="fill"
-                  src={coverImage}
-                  width={1200}
-                  height={684}
-                  alt={'article cover'}
-                  priority
-                />
-              </div>
+              <div className="my-12"></div>
               {content.map((block) => (
                 <Fragment key={block.id}>{renderBlocks(block)}</Fragment>
               ))}

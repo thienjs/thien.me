@@ -244,9 +244,9 @@ const SnippetPage = ({
         <article className="col-span-9 mt-12">
           <div className="space-y-12">
             <div>
-              <h1 className="text-2xl text-center md:text-5xl">{title}</h1>
-              <div className="text-center">
-                <div className="flex items-center justify-center mb-2 space-x-2 text-lg">
+              <h1 className="text-2xl text-left md:text-5xl">{title}</h1>
+              <div className="text-left">
+                <div className="flex mb-2 space-x-2 text-lg">
                   <p className="m-0 text-lg md:text-xl">{publishedOn}</p>
 
                 </div>
