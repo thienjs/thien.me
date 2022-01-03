@@ -22,7 +22,7 @@ export default function Hero() {
             }}
           >
             <h1 className="text-2xl font-bold text-gray-900 lg:text-4xl dark:text-white">
-              Hey there,I'm Thien
+              Hey there, I'm Thien 
               <p className="wave"> 👋</p>
             </h1>
           </motion.div>
