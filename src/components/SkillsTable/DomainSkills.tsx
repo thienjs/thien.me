@@ -39,7 +39,7 @@ const skillsContainer = {
 const DomainSkills: FC<Props> = ({ selected }) => {
   const { skills } = useContext(DomainContext).byId[selected];
   return (
-    <motion.div className="flex flex-col border-2 rounded-sm border-black border-t-0 py-2 dark:bg-neutral-700">
+    <motion.div className="flex flex-col border-2 rounded-sm border-black border-t-0 py-2 dark:bg-gray-700">
       <AnimatePresence exitBeforeEnter>
         <motion.div
           key={selected}

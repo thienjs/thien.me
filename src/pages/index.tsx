@@ -49,19 +49,11 @@ export default function HomePage({
       <div className="mb-10">
         <ArticleList articles={recentArticles} />
       </div>
-      <h2 className="text-3xl font-semibold py-4 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
-        Recent Tweets
-      </h2>
-      {tweets.map((tweet) => (
-        <Tweet key={tweet.id} {...tweet} />
-      ))}
-      <SkillsTable />
-      <Tracks />
-      <NowPlaying />
+      <h2>Projects</h2>
       <div className="">
         {pinnedItems.map((item) => {
           return (
-            <div className="border border-cyan-600 p-2 mb-2">
+            <div className="border border-cyan-600 p-2 mb-2 shadow-lg shadow-teal-500/50">
               <Link href={item.url}>
                 <a>{item.name}</a>
               </Link>
@@ -70,6 +62,16 @@ export default function HomePage({
           )
         })}
       </div>
+      <SkillsTable />
+      <h2 className="text-3xl font-semibold py-4 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
+        Recent Tweets
+      </h2>
+      {tweets.map((tweet) => (
+        <Tweet key={tweet.id} {...tweet} />
+      ))}
+      <h2>Music</h2>
+      <Tracks />
+      <NowPlaying />
     </Layout>
   )
 }

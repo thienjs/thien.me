@@ -1,6 +1,7 @@
 import Image from "next/image"
 import profile from '../../public/notion-me.png'
 import { motion } from "framer-motion"
+import Link from 'next/link'
 
 export default function Hero() {
   return (
@@ -21,14 +22,38 @@ export default function Hero() {
               },
             }}
           >
-            <h1 className="text-2xl font-bold text-gray-900 lg:text-4xl dark:text-white">
-              Hey there, I'm Thien 
-              <p className="wave"> 👋</p>
+            <h1 className="text-3xl font-bold text-gray-900 lg:text-4xl dark:text-white">
+              Hello.
+              <p className="text-2xl">My name is Thien.</p>
             </h1>
           </motion.div>
           <div className="mt-6 text-gray-800 dark:text-white">
             <p className="mb-4 pb-6">
-              Full Stack Web Devloper | Site underconstruction.
+              I am a self taught web developer. I am currently focused on
+              typescript, nextjs, and tailwind. Most of my work is open source
+              and publicly available on{' '}
+              <Link href="https://github.com/thienjs">
+                <a className="underline decoration-2 hover:decoration-wavy decoration-cyan-500">
+                  Github
+                </a>
+              </Link>
+              .
+            </p>
+            <p className="mb-4">
+              This site is my personal home on the web. It's my way of
+              experiement with new open source techs and learn through building.
+              If you like what you see, please sign the{' '}
+              <Link href="/guestbook">
+                <a className="underline decoration-2 hover:decoration-wavy decoration-cyan-500">
+                  Guestbook
+                </a>
+              </Link>
+              . I would greatly appreciate your feedback.
+            </p>
+            <p>
+              When I'm not coding, I'm prob walking my dog, Loki. Some of my
+              favorite hobbies are tennis, longboarding, guitar, watch
+              collecting.
             </p>
           </div>
         </div>

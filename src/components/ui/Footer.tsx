@@ -15,10 +15,7 @@ const Footer = () => {
   const year = new Date().getFullYear()
   return (
     <div className="flex flex-col items-center z-50 justify-center w-screen mt-20 -ml-6 md:ml-0">
-      <div className="flex flex-row">
-        <DiscordStatus />
-        <NowPlaying />
-      </div>
+      <div className="flex flex-row"></div>
       <div className="flex flex-col items-center z-50 justify-center w-screen -ml-6 md:ml-0">
         <div className="flex flex-wrap items-center justify-center mx-auto pb-10 ">
           <Link href="https://github.com/thienjs">
@@ -38,9 +35,7 @@ const Footer = () => {
           </Link>
         </div>
       </div>
-      <div>
-        {year}
-      </div>
+      <div className="mb-2">thien {year}</div>
     </div>
   )
 }
