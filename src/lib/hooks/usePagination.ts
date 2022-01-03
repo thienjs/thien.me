@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, Dispatch, SetStateAction } from 'react';
 
-import { IPost } from '../types/post';
+import { IPost } from '../../types/post';
 
 type Props = {
   currentData: () => IPost[];

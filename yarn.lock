@@ -625,9 +625,9 @@
   "resolved" "https://registry.npmjs.org/@next/react-refresh-utils/-/react-refresh-utils-12.0.7.tgz"
   "version" "12.0.7"
 
-"@next/swc-darwin-x64@12.0.7":
-  "integrity" "sha512-km+6Rx6TvbraoQ1f0MXa69ol/x0RxzucFGa2OgZaYJERas0spy0iwW8hpASsGcf597D8VRW1x+R2C7ZdjVBSTw=="
-  "resolved" "https://registry.npmjs.org/@next/swc-darwin-x64/-/swc-darwin-x64-12.0.7.tgz"
+"@next/swc-win32-x64-msvc@12.0.7":
+  "integrity" "sha512-frEWtbf+q8Oz4e2UqKJrNssk6DZ6/NLCQXn5/ORWE9dPAfe9XS6aK5FRZ6DuEPmmKd5gOoRkKJFFz5nYd+TeyQ=="
+  "resolved" "https://registry.npmjs.org/@next/swc-win32-x64-msvc/-/swc-win32-x64-msvc-12.0.7.tgz"
   "version" "12.0.7"
 
 "@nodelib/fs.scandir@2.1.5":
@@ -1589,11 +1589,6 @@
   "integrity" "sha512-yXbYeFy+jUuYd3/CDcg2NkIYE991XYX/bje7LmjJigUciaeO1JR4XxXgCIV1/Zc/dRuFEyw1L0pbA+qynJkW5Q=="
   "resolved" "https://registry.npmjs.org/acorn/-/acorn-8.5.0.tgz"
   "version" "8.5.0"
-
-"add@^2.0.6":
-  "integrity" "sha1-JI8Kn25aUo7yKV2+7DBTITCuIjU="
-  "resolved" "https://registry.npmjs.org/add/-/add-2.0.6.tgz"
-  "version" "2.0.6"
 
 "aggregate-error@^3.0.0":
   "integrity" "sha512-4I7Td01quW/RpocfNayFdFVk1qSuoh0E7JrbRJ16nH01HhKFQ88INq9Sd+nd72zqRySlr9BmDA8xlEJ6vJMrYA=="
@@ -2999,9 +2994,9 @@
     "d" "^1.0.1"
     "ext" "^1.1.2"
 
-"esbuild-darwin-64@0.13.15":
-  "integrity" "sha512-ihOQRGs2yyp7t5bArCwnvn2Atr6X4axqPpEdCFPVp7iUj4cVSdisgvEKdNR7yH3JDjW6aQDw40iQFoTqejqxvQ=="
-  "resolved" "https://registry.npmjs.org/esbuild-darwin-64/-/esbuild-darwin-64-0.13.15.tgz"
+"esbuild-windows-64@0.13.15":
+  "integrity" "sha512-9aMsPRGDWCd3bGjUIKG/ZOJPKsiztlxl/Q3C1XDswO6eNX/Jtwu4M+jb6YDH9hRSUflQWX0XKAfWzgy5Wk54JQ=="
+  "resolved" "https://registry.npmjs.org/esbuild-windows-64/-/esbuild-windows-64-0.13.15.tgz"
   "version" "0.13.15"
 
 "esbuild@*", "esbuild@^0.13.12", "esbuild@0.11.x || 0.12.x || 0.13.x":
@@ -3630,11 +3625,6 @@
   "integrity" "sha1-FQStJSMVjKpA20onh8sBQRmU6k8="
   "resolved" "https://registry.npmjs.org/fs.realpath/-/fs.realpath-1.0.0.tgz"
   "version" "1.0.0"
-
-"fsevents@^2.3.2", "fsevents@~2.3.1", "fsevents@~2.3.2":
-  "integrity" "sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA=="
-  "resolved" "https://registry.npmjs.org/fsevents/-/fsevents-2.3.2.tgz"
-  "version" "2.3.2"
 
 "function-bind@^1.1.1":
   "integrity" "sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A=="
@@ -6388,9 +6378,9 @@
     "postcss-selector-parser" "^6.0.6"
 
 "postcss-selector-parser@^6.0.6":
-  "integrity" "sha512-9LXrvaaX3+mcv5xkg5kFwqSzSH1JIObIx51PrndZwlmznwXRfxMddDvo9gve3gVR8ZTKgoFDdWkbRFmEhT4PMg=="
-  "resolved" "https://registry.npmjs.org/postcss-selector-parser/-/postcss-selector-parser-6.0.6.tgz"
-  "version" "6.0.6"
+  "integrity" "sha512-D5PG53d209Z1Uhcc0qAZ5U3t5HagH3cxu+WLZ22jt3gLUpXM4eXXfiO14jiDWST3NNooX/E8wISfOhZ9eIjGTQ=="
+  "resolved" "https://registry.npmjs.org/postcss-selector-parser/-/postcss-selector-parser-6.0.8.tgz"
+  "version" "6.0.8"
   dependencies:
     "cssesc" "^3.0.0"
     "util-deprecate" "^1.0.2"
