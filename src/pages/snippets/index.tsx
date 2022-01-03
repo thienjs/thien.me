@@ -26,24 +26,49 @@ export default function SnippetsPage({snippets, tags}) {
 
   return (
     <Layout>
-      <h1 className='text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-b from-cyan-400 to-pink-500 mb-4'>Snippets</h1>
+      <h1 className="text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-b from-cyan-400 to-pink-500 mb-4">
+        Snippets
+      </h1>
       <p>collection of useful code for reference</p>
+      <div className="relative w-full mb-4">
+        <input
+          aria-label="Search snippets"
+          type="text"
+          onChange={(e) => setSearchValue(e.target.value)}
+          placeholder="Search snippets"
+          className="block w-full px-4 py-2 text-gray-900 bg-white border border-gray-200 rounded-md dark:border-gray-900 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:text-gray-100"
+        />
+        <svg
+          className="absolute w-5 h-5 text-gray-400 right-3 top-3 dark:text-gray-300"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+          />
+        </svg>
+      </div>
       <div className="py-3 my-8 overflow-x-auto border-gray-200 dark:border-gray-600 no-scrollbar">
-      <ul className="flex items-center justify-start w-full">
-        {/* Initial tag for all topics */}
-        <Tag activeTag={selectedTag} tag="" cb={() => setSelectedTag('')} />
-        {tags &&
-          tags.map((tag) => (
-            <Tag
-              activeTag={selectedTag}
-              key={tag}
-              tag={tag}
-              cb={() => setSelectedTag(tag)}
-            />
-          ))}
-      </ul>
-    </div>
-    <div className="min-h-screen space-y-12">
+        <ul className="flex items-center justify-start w-full">
+          {/* Initial tag for all topics */}
+          <Tag activeTag={selectedTag} tag="" cb={() => setSelectedTag('')} />
+          {tags &&
+            tags.map((tag) => (
+              <Tag
+                activeTag={selectedTag}
+                key={tag}
+                tag={tag}
+                cb={() => setSelectedTag(tag)}
+              />
+            ))}
+        </ul>
+      </div>
+      <div className="min-h-screen space-y-12">
         {!filteredSnippets.length && (
           <div className="w-full mx-auto rounded-lg bg-[#F8FAFC] dark:bg-midnight p-4">
             <p className="flex items-center justify-center text-2xl">
