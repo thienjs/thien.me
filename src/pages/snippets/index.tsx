@@ -29,7 +29,7 @@ export default function SnippetsPage({snippets, tags}) {
       <h1 className="text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-b from-cyan-400 to-pink-500 mb-4">
         Snippets
       </h1>
-      <p>collection of useful code for reference</p>
+      <p className="mb-4">collection of useful code for reference</p>
       <div className="relative w-full mb-4">
         <input
           aria-label="Search snippets"

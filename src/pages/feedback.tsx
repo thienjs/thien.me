@@ -2,7 +2,8 @@ import Head from 'next/head';
 import { prisma } from '~/lib/prisma';
 import { Feedback, FeedbackType } from '@prisma/client';
 import Link from 'next/link';
-
+import { useAuth } from '~/lib/auth' 
+import { SpinnerFullPage } from '~/components/Spinner'
 import { useForm } from 'react-hook-form'
 import { motion } from 'framer-motion'
 import { ExclamationCircleIcon } from '@heroicons/react/solid'
@@ -10,6 +11,15 @@ import toast, { Toaster } from 'react-hot-toast'
 import Layout from '~/components/ui/Layout'
 
 export default function FeedbackPage({ feedback }) {
+  const {
+    user, // The logged-in user object
+    loading, // loading state
+    signOut // and a method to let the logged-in user sign out
+} = useAuth()
+
+if(loading) {
+    return <SpinnerFullPage/>
+}
   const formatFeedbackType = (feedback: FeedbackType) => {
     switch (feedback) {
       case 'FEEDBACK':
@@ -249,6 +259,11 @@ export default function FeedbackPage({ feedback }) {
               Submit
             </motion.button>
           </div>
+          <h2 className="text-3xl my-4">Hello, { user && user.email ? user.email : 'friend.' }!</h2>
+                {!user && <small className="mb-2">Please sign in to write a comment. <Link href="/">log in</Link></small>}
+                {user && <div>
+                    <button onClick={signOut} className="border bg-gray-500 border-gray-600 dark:bg-slate-200 text-white px-3 py-2 rounded w-full text-center transition duration-150 shadow-lg">Sign Out</button>
+                </div> }
         </form>
       </main>
     </Layout>
