@@ -1,7 +1,7 @@
 import  {useState} from 'react'
 import Layout from '~/components/ui/Layout';
 import {useAccordion } from 'thien-ui'
-import Button from '~/components/button/Button';
+import Button from '~/components/button/ButtonBNW';
 import Alert from '~/components/ui/Alert'
 import Timeline from '~/components/Timeline'
 import Avatar from '~/components/ui/Avatar'
@@ -9,7 +9,7 @@ import SkillsTable from '~/components/SkillsTable';
 import SnapCarousel from '~/components/ui/SnapCarousel';
 import Experience from '~/components/Experience';
 import DiscordStatus from '~/components/DiscordStatus'
-import ButtonBox from '~/components/button/Button'
+import ButtonBox from '~/components/button/ButtonBNW'
 
 import Tracks from '~/components/Tracks'
 const accordionData = [
