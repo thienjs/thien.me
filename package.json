@@ -55,6 +55,7 @@
     "react": "^17.0.2",
     "react-animated-cursor": "^2.2.0",
     "react-copy-to-clipboard": "^5.0.4",
+    "react-countdown-circle-timer": "^2.5.4",
     "react-dom": "^17.0.2",
     "react-feather": "^2.0.9",
     "react-hook-form": "^7.21.2",

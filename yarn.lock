@@ -625,9 +625,9 @@
   "resolved" "https://registry.npmjs.org/@next/react-refresh-utils/-/react-refresh-utils-12.0.7.tgz"
   "version" "12.0.7"
 
-"@next/swc-win32-x64-msvc@12.0.7":
-  "integrity" "sha512-frEWtbf+q8Oz4e2UqKJrNssk6DZ6/NLCQXn5/ORWE9dPAfe9XS6aK5FRZ6DuEPmmKd5gOoRkKJFFz5nYd+TeyQ=="
-  "resolved" "https://registry.npmjs.org/@next/swc-win32-x64-msvc/-/swc-win32-x64-msvc-12.0.7.tgz"
+"@next/swc-darwin-x64@12.0.7":
+  "integrity" "sha512-km+6Rx6TvbraoQ1f0MXa69ol/x0RxzucFGa2OgZaYJERas0spy0iwW8hpASsGcf597D8VRW1x+R2C7ZdjVBSTw=="
+  "resolved" "https://registry.npmjs.org/@next/swc-darwin-x64/-/swc-darwin-x64-12.0.7.tgz"
   "version" "12.0.7"
 
 "@nodelib/fs.scandir@2.1.5":
@@ -3006,9 +3006,9 @@
     "d" "^1.0.1"
     "ext" "^1.1.2"
 
-"esbuild-windows-64@0.13.15":
-  "integrity" "sha512-9aMsPRGDWCd3bGjUIKG/ZOJPKsiztlxl/Q3C1XDswO6eNX/Jtwu4M+jb6YDH9hRSUflQWX0XKAfWzgy5Wk54JQ=="
-  "resolved" "https://registry.npmjs.org/esbuild-windows-64/-/esbuild-windows-64-0.13.15.tgz"
+"esbuild-darwin-64@0.13.15":
+  "integrity" "sha512-ihOQRGs2yyp7t5bArCwnvn2Atr6X4axqPpEdCFPVp7iUj4cVSdisgvEKdNR7yH3JDjW6aQDw40iQFoTqejqxvQ=="
+  "resolved" "https://registry.npmjs.org/esbuild-darwin-64/-/esbuild-darwin-64-0.13.15.tgz"
   "version" "0.13.15"
 
 "esbuild@*", "esbuild@^0.13.12", "esbuild@0.11.x || 0.12.x || 0.13.x":
@@ -3637,6 +3637,11 @@
   "integrity" "sha1-FQStJSMVjKpA20onh8sBQRmU6k8="
   "resolved" "https://registry.npmjs.org/fs.realpath/-/fs.realpath-1.0.0.tgz"
   "version" "1.0.0"
+
+"fsevents@^2.3.2", "fsevents@~2.3.1", "fsevents@~2.3.2":
+  "integrity" "sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA=="
+  "resolved" "https://registry.npmjs.org/fsevents/-/fsevents-2.3.2.tgz"
+  "version" "2.3.2"
 
 "function-bind@^1.1.1":
   "integrity" "sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A=="
@@ -6486,7 +6491,7 @@
   "resolved" "https://registry.npmjs.org/progress/-/progress-2.0.3.tgz"
   "version" "2.0.3"
 
-"prop-types@^15.5.8", "prop-types@^15.7.2":
+"prop-types@^15.5.8", "prop-types@^15.7.2", "prop-types@>=15.7.0":
   "integrity" "sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ=="
   "resolved" "https://registry.npmjs.org/prop-types/-/prop-types-15.7.2.tgz"
   "version" "15.7.2"
@@ -6620,7 +6625,14 @@
     "copy-to-clipboard" "^3"
     "prop-types" "^15.5.8"
 
-"react-dom@*", "react-dom@^0.14.0 || ^15.0.0 || ^16 || ^17", "react-dom@^16 || ^17 || ^18", "react-dom@^16.13.1", "react-dom@^16.13.1 || ^17.0.1", "react-dom@^16.8 || ^17.0", "react-dom@^16.8.0 || 17.x", "react-dom@^17.0.2", "react-dom@^17.0.2 || ^18.0.0-0", "react-dom@>=16", "react-dom@>=16.0.0", "react-dom@>=16.0.8", "react-dom@>=16.13", "react-dom@>=16.8 || ^17.0.0", "react-dom@>=16.8.1", "react-dom@>=16.x <=17.x", "react-dom@16.x || 17.x":
+"react-countdown-circle-timer@^2.5.4":
+  "integrity" "sha512-nKGlpS6UzfWI+k66ZVYAjcZZbZeCJuB1Xkcdci+6De1KghHfs5IwjMCdAAcZP1n1m3+tyuhLF+GVB8FRmh27RQ=="
+  "resolved" "https://registry.npmjs.org/react-countdown-circle-timer/-/react-countdown-circle-timer-2.5.4.tgz"
+  "version" "2.5.4"
+  dependencies:
+    "use-elapsed-time" "2.1.8"
+
+"react-dom@*", "react-dom@^0.14.0 || ^15.0.0 || ^16 || ^17", "react-dom@^16 || ^17 || ^18", "react-dom@^16.13.1", "react-dom@^16.13.1 || ^17.0.1", "react-dom@^16.8 || ^17.0", "react-dom@^16.8.0 || 17.x", "react-dom@^17.0.2", "react-dom@^17.0.2 || ^18.0.0-0", "react-dom@>=16", "react-dom@>=16.0.0", "react-dom@>=16.0.8", "react-dom@>=16.13", "react-dom@>=16.8 || ^17.0.0", "react-dom@>=16.8.0", "react-dom@>=16.8.1", "react-dom@>=16.x <=17.x", "react-dom@16.x || 17.x":
   "integrity" "sha512-s4h96KtLDUQlsENhMn1ar8t2bEa+q/YAtj8pPPdIjPDGBDIVNsrD9aXNWqspUe6AzKCIG0C1HZZLqLV7qpOBGA=="
   "resolved" "https://registry.npmjs.org/react-dom/-/react-dom-17.0.2.tgz"
   "version" "17.0.2"
@@ -6768,7 +6780,7 @@
   dependencies:
     "debounce" "^1.2.1"
 
-"react@*", "react@^0.14.0 || ^15.0.0 || ^16 || ^17", "react@^15.3.0 || ^16.0.0 || ^17.0.0", "react@^16 || ^17 || ^18", "react@^16.11.0 || ^17.0.0 || ^18.0.0", "react@^16.13.1", "react@^16.13.1 || ^17.0.0", "react@^16.13.1 || ^17.0.1", "react@^16.8 || ^17.0", "react@^16.8.0 || ^17", "react@^16.8.0 || ^17.0.0", "react@^16.8.0 || 17.x", "react@^16.8.6 || ^17", "react@^16.x || ^17.x", "react@^17.0.2", "react@^17.0.2 || ^18.0.0-0", "react@>= 16", "react@>= 16.8.0 || 17.x.x || 18.x.x", "react@>=0.14.9", "react@>=16", "react@>=16.0.0", "react@>=16.0.8", "react@>=16.13", "react@>=16.8", "react@>=16.8 || ^17.0.0", "react@>=16.8.1", "react@>=16.x <=17.x", "react@16.x || 17.x", "react@17.0.2":
+"react@*", "react@^0.14.0 || ^15.0.0 || ^16 || ^17", "react@^15.3.0 || ^16.0.0 || ^17.0.0", "react@^16 || ^17 || ^18", "react@^16.11.0 || ^17.0.0 || ^18.0.0", "react@^16.13.1", "react@^16.13.1 || ^17.0.0", "react@^16.13.1 || ^17.0.1", "react@^16.8 || ^17.0", "react@^16.8.0 || ^17", "react@^16.8.0 || ^17.0.0", "react@^16.8.0 || 17.x", "react@^16.8.6 || ^17", "react@^16.x || ^17.x", "react@^17.0.2", "react@^17.0.2 || ^18.0.0-0", "react@>= 16", "react@>= 16.8.0 || 17.x.x || 18.x.x", "react@>=0.14.9", "react@>=16", "react@>=16.0.0", "react@>=16.0.8", "react@>=16.13", "react@>=16.8", "react@>=16.8 || ^17.0.0", "react@>=16.8.0", "react@>=16.8.1", "react@>=16.x <=17.x", "react@16.x || 17.x", "react@17.0.2":
   "integrity" "sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA=="
   "resolved" "https://registry.npmjs.org/react/-/react-17.0.2.tgz"
   "version" "17.0.2"
@@ -8183,6 +8195,11 @@
   "integrity" "sha512-gN3vgMISAgacF7sqsLPByqoePooY3n2emTH59Ur5d/M8eg4WTWu1xp8i8DHjohftIyEx0S08RiYxbffr4j8Peg=="
   "resolved" "https://registry.npmjs.org/use-callback-ref/-/use-callback-ref-1.2.5.tgz"
   "version" "1.2.5"
+
+"use-elapsed-time@2.1.8":
+  "integrity" "sha512-lNLTDffKHdHWweQNvnch9tFI2eRP3tXccSLrwE7U6xrfyWFNEgNQZWWsGhQvtwKa0kJ6L+7E5wKbi3jg86opjg=="
+  "resolved" "https://registry.npmjs.org/use-elapsed-time/-/use-elapsed-time-2.1.8.tgz"
+  "version" "2.1.8"
 
 "use-sidecar@^1.0.1":
   "integrity" "sha512-k9jnrjYNwN6xYLj1iaGhonDghfvmeTmYjAiGvOr7clwKfPjMXJf4/HOr7oT5tJwYafgp2tG2l3eZEOfoELiMcA=="

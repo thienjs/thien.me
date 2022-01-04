@@ -10,6 +10,7 @@ import SnapCarousel from '~/components/ui/SnapCarousel';
 import Experience from '~/components/Experience';
 import DiscordStatus from '~/components/DiscordStatus'
 import ButtonBox from '~/components/button/ButtonBNW'
+import Pomodoro from '~/components/clock/Pomodoro'
 
 import Tracks from '~/components/Tracks'
 const accordionData = [
@@ -37,6 +38,7 @@ export default function thien() {
           </div>
         ))}
       </div>
+      <Pomodoro />
 
       <Alert />
       <Timeline />
