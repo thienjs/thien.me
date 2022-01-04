@@ -180,7 +180,7 @@ if(loading) {
             </label>
             <input
               id="email"
-              name="email"
+              name={user.email}
               {...register('email', { required: true })}
               type="email"
               autoComplete="email"
