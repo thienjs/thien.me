@@ -4,7 +4,7 @@ const animations: IAnimations[] = [
   {
     title: 'Underline Left Right',
     editLink:
-      'https://github.com/thienjs/tailwindcss-snippets/blob/main/data/snippets.tsx#L3',
+      'https://github.com/thienjs/thien-me/blob/main/data/snippets.tsx#L3',
     source: (
       <div className="relative after:absolute after:bg-gray-200 after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-left after:scale-x-100 hover:after:origin-bottom-right hover:after:scale-x-0 after:transition-transform after:ease-in-out after:duration-300">
         Hover over me
@@ -14,7 +14,7 @@ const animations: IAnimations[] = [
   {
     title: 'Pulse',
     editLink:
-      'https://github.com/thienjs/tailwindcss-snippets/blob/main/data/snippets.tsx#L12',
+      'https://github.com/thienjs/thien-me/blob/main/data/snippets.tsx#L12',
     source: (
       <div className="flex h-8 w-8 absolute">
         <span className="animate-ping absolute h-8 w-8 -top-4 -left-4 rounded-full bg-gray-200 opacity-75"></span>
@@ -25,7 +25,7 @@ const animations: IAnimations[] = [
   {
     title: 'Keyboard Button',
     editLink:
-      'https://github.com/thienjs/tailwindcss-snippets/blob/main/data/snippets.tsx#L22',
+      'https://github.com/thienjs/thien-me/blob/main/data/snippets.tsx#L22',
     source: (
       <div className="px-6 py-3 bg-gray-200 text-black rounded-lg border-b-4 border-b-gray-400 hover:border-b-0 transition-all ease-in-out duration-100">
         Hover over me
@@ -35,7 +35,7 @@ const animations: IAnimations[] = [
   {
     title: 'Underlay Marker',
     editLink:
-      'https://github.com/thienjs/tailwindcss-snippets/blob/main/data/snippets.tsx#L31',
+      'https://github.com/thienjs/thien-me/blob/main/data/snippets.tsx#L31',
     source: (
       <div className="relative before:absolute before:bg-sky-600 before:bottom-0 before:left-0 before:h-full before:w-full before:origin-bottom before:scale-y-[0.35] hover:before:scale-y-100 before:transition-transform before:ease-in-out before:duration-500">
         <span className="relative">Hover over me</span>
@@ -45,7 +45,7 @@ const animations: IAnimations[] = [
   {
     title: 'Underlay Left',
     editLink:
-      'https://github.com/thienjs/tailwindcss-snippets/blob/main/data/snippets.tsx#L40',
+      'https://github.com/thienjs/thien-me/blob/main/data/snippets.tsx#L40',
     source: (
       <div className="group [transform:translateZ(0)] px-6 py-3 rounded-lg bg-gray-200 overflow-hidden relative before:absolute before:bg-sky-600 before:bottom-0 before:left-0 before:h-full before:w-full before:-translate-x-full hover:before:translate-x-0 before:transition before:ease-in-out before:duration-500">
         <span className="relative z-0 text-black group-hover:text-gray-200 transition ease-in-out duration-500">
@@ -57,7 +57,7 @@ const animations: IAnimations[] = [
   {
     title: 'Spinner',
     editLink:
-      'https://github.com/thienjs/tailwindcss-snippets/blob/main/data/snippets.tsx#L51',
+      'https://github.com/thienjs/thien-me/blob/main/data/snippets.tsx#L51',
     source: (
       <svg
         className="animate-spin h-8 w-8 text-white"
@@ -84,7 +84,7 @@ const animations: IAnimations[] = [
   {
     title: 'Hover & Active Scale Button',
     editLink:
-      'https://github.com/thienjs/tailwindcss-snippets/blob/main/data/snippets.tsx#L70',
+      'https://github.com/thienjs/thien-me/blob/main/data/snippets.tsx#L70',
     source: (
       <div className="px-6 py-3 bg-gray-200 text-black rounded-lg hover:scale-110 active:scale-90 transition-transform ease-in-out duration-200">
         Hover &amp; hold me
@@ -94,7 +94,7 @@ const animations: IAnimations[] = [
   {
     title: 'Swing',
     editLink:
-      'https://github.com/thienjs/tailwindcss-snippets/blob/main/data/snippets.tsx#L79',
+      'https://github.com/thienjs/thien-me/blob/main/data/snippets.tsx#L79',
     source: <div className="hover:animate-swing">Hover over me</div>,
     animation: `keyframes: {
       swing: {
@@ -112,7 +112,7 @@ const animations: IAnimations[] = [
   {
     title: 'Underline Bottom Top',
     editLink:
-      'https://github.com/thienjs/tailwindcss-snippets/blob/main/data/snippets.tsx#L96',
+      'https://github.com/thienjs/thien-me/blob/main/data/snippets.tsx#L96',
     source: (
       <div className="relative after:absolute after:bg-gray-200 after:bottom-0 after:left-0 after:h-[2px] after:w-full after:translate-y-1 after:opacity-0 hover:after:translate-y-0 hover:after:opacity-100 after:transition after:ease-in-out after:duration-200">
         Hover over me
@@ -122,7 +122,7 @@ const animations: IAnimations[] = [
   {
     title: 'Underlay Left Right',
     editLink:
-      'https://github.com/thienjs/tailwindcss-snippets/blob/main/data/snippets.tsx#L105',
+      'https://github.com/thienjs/thien-me/blob/main/data/snippets.tsx#L105',
     source: (
       <div className="group [transform:translateZ(0)] px-6 py-3 rounded-lg bg-gray-200 overflow-hidden relative before:absolute before:bg-sky-600 before:bottom-0 before:left-0 before:h-full before:w-full before:origin-[100%_100%] before:scale-x-0 hover:before:origin-[0_0] hover:before:scale-x-100 before:transition before:ease-in-out before:duration-500">
         <span className="relative z-0 text-black group-hover:text-gray-200 transition ease-in-out duration-500">
@@ -134,7 +134,7 @@ const animations: IAnimations[] = [
   {
     title: 'Text Transform & Color',
     editLink:
-      'https://github.com/thienjs/tailwindcss-snippets/blob/main/data/snippets.tsx#L116',
+      'https://github.com/thienjs/thien-me/blob/main/data/snippets.tsx#L116',
     source: (
       <div className="text-gray-200 translate-x-0 hover:text-sky-600 hover:translate-x-1 transition ease-in-out duration-200">
         Hover over me
@@ -144,7 +144,7 @@ const animations: IAnimations[] = [
   {
     title: 'Shimmer',
     editLink:
-      'https://github.com/thienjs/tailwindcss-snippets/blob/main/data/snippets.tsx#L125',
+      'https://github.com/thienjs/thien-me/blob/main/data/snippets.tsx#L125',
     source: (
       <div className="animate-shimmer bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-[length:400%_100%] h-12 w-40 rounded-lg"></div>
     ),
@@ -161,7 +161,7 @@ const animations: IAnimations[] = [
   {
     title: 'Underlay Expanding Circle',
     editLink:
-      'https://github.com/thienjs/tailwindcss-snippets/blob/main/data/snippets.tsx#L141',
+      'https://github.com/thienjs/thien-me/blob/main/data/snippets.tsx#L141',
     source: (
       <div className="group [transform:translateZ(0)] px-6 py-3 rounded-lg overflow-hidden bg-gray-200 relative before:absolute before:bg-sky-600 before:top-1/2 before:left-1/2 before:h-8 before:w-8 before:-translate-y-1/2 before:-translate-x-1/2 before:rounded-full before:scale-[0] before:opacity-0 hover:before:scale-[6] hover:before:opacity-100 before:transition before:ease-in-out before:duration-500">
         <span className="relative z-0 text-black group-hover:text-gray-200 transition ease-in-out duration-500">
@@ -173,7 +173,7 @@ const animations: IAnimations[] = [
   {
     title: 'Three Dots Loader',
     editLink:
-      'https://github.com/thienjs/tailwindcss-snippets/blob/main/data/snippets.tsx#L152',
+      'https://github.com/thienjs/thien-me/blob/main/data/snippets.tsx#L152',
     source: (
       <div>
         <span className="w-2 h-2 ml-2 rounded-full bg-gray-200 inline-block animate-flash"></span>
@@ -195,7 +195,7 @@ const animations: IAnimations[] = [
   {
     title: 'Hover Scale Button',
     editLink:
-      'https://github.com/thienjs/tailwindcss-snippets/blob/main/data/snippets.tsx#L173',
+      'https://github.com/thienjs/thien-me/blob/main/data/snippets.tsx#L173',
     source: (
       <div className="px-6 py-3 bg-gray-200 text-black rounded-lg hover:scale-110 transition-transform ease-in-out duration-200">
         Hover over me
@@ -205,7 +205,7 @@ const animations: IAnimations[] = [
   {
     title: 'Active Underline Left Right',
     editLink:
-      'https://github.com/thienjs/tailwindcss-snippets/blob/main/data/snippets.tsx#L182',
+      'https://github.com/thienjs/thien-me/blob/main/data/snippets.tsx#L182',
     source: (
       <div className="relative after:absolute after:bg-gray-200 after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 hover:after:origin-bottom-left hover:after:scale-x-100 after:transition-transform after:ease-in-out after:duration-300">
         Hover over me
@@ -215,7 +215,7 @@ const animations: IAnimations[] = [
   {
     title: 'Flick Up',
     editLink:
-      'https://github.com/thienjs/tailwindcss-snippets/blob/main/data/snippets.tsx#L191',
+      'https://github.com/thienjs/thien-me/blob/main/data/snippets.tsx#L191',
     source: (
       <div className="relative overflow-hidden group">
         <span className="invisible">Hover over me</span>
@@ -231,7 +231,7 @@ const animations: IAnimations[] = [
   {
     title: 'Gradient Tilt',
     editLink:
-      'https://github.com/thienjs/tailwindcss-snippets/blob/main/data/snippets.tsx#L206',
+      'https://github.com/thienjs/thien-me/blob/main/data/snippets.tsx#L206',
     source: (
       <div className="relative group">
         <div className="absolute -inset-0.5 bg-gradient-to-r from-pink-600 to-purple-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
