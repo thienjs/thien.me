@@ -11,7 +11,7 @@ import Experience from '~/components/Experience';
 import DiscordStatus from '~/components/DiscordStatus'
 import ButtonBox from '~/components/button/ButtonBNW'
 import Pomodoro from '~/components/clock/Pomodoro'
-
+import TodoList from '~/components/todo/TodoList';
 import Tracks from '~/components/Tracks'
 const accordionData = [
   { title: <>Title 1</>, content: <>content 1</> },
@@ -39,6 +39,7 @@ export default function thien() {
         ))}
       </div>
       <Pomodoro />
+              <TodoList/>
 
       <Alert />
       <Timeline />

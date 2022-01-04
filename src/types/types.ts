@@ -141,3 +141,9 @@ export interface IAnimations {
   source: JSX.Element
   animation?: string
 }
+
+export type Todo = {
+  id: number
+  text: string
+  isCompleted: boolean
+}
