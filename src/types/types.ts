@@ -133,3 +133,11 @@ export type Streamer = {
 export type Streams = {
   streams: Streamer[]
 }
+
+export interface IAnimations {
+  title?: string
+  editLink: string
+  playgroundLink?: string
+  source: JSX.Element
+  animation?: string
+}
