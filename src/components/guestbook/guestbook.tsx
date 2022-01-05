@@ -7,7 +7,7 @@ import {fetcher} from '~/lib/fetcher';
 import { Form, FormState } from '~/types/types';
 import SuccessMessage from '~/components/message/SuccessMessage';
 import ErrorMessage from '~/components/message/ErrorMessage';
-import LoadingSpinner from '~/components/message/LoadingSpinner';
+import Spinner from '~/components/Spinner';
 
 function GuestbookEntry({ entry, user }) {
   const { mutate } = useSWRConfig();
@@ -121,7 +121,7 @@ export default function Guestbook({ fallbackData }) {
               className="flex items-center justify-center absolute right-1 top-1 px-4 pt-1 font-medium h-8 bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-gray-100 rounded w-28"
               type="submit"
             >
-              {form.state === Form.Loading ? <LoadingSpinner /> : 'Sign'}
+              {form.state === Form.Loading ? <Spinner /> : 'Sign'}
             </button>
           </form>
         )}
