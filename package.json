@@ -81,6 +81,7 @@
     "remark-math": "^5.1.1",
     "slugify": "^1.6.3",
     "swr": "^1.1.1",
+    "tailwind-merge": "^1.1.1",
     "thien-ui": "^0.2.0"
   },
   "devDependencies": {
