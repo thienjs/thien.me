@@ -126,3 +126,9 @@ model User {
   posts         Post[]
   @@map(name: "users")
 }
+
+model todo {
+  id            Int       @default(autoincrement()) @id
+  text          String?   
+  isCompleted   Boolean   
+}

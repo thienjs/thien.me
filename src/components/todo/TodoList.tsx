@@ -1,12 +1,22 @@
 import React, { FormEvent, useEffect, useState } from 'react'
 import { TodoNew } from './TodoNew'
-import { TodoItem } from '~/components/todo/TodoItem'
+import { TodoItem } from './todoItem'
 import { Todo } from '~/types/types'
-
+import dynamic from "next/dynamic";
+import { prisma } from '~/lib/prisma';
+import { todo } from '@prisma/client';
 function TodoList() {
   const [todos, setTodos] = useState<Todo[]>(() => {
     let initialValue: Todo[] = []
+    
+
+
+    
     const todoList = window.localStorage.getItem('todos')
+    
+    
+    
+    
     if (todoList && todoList.length > 0) {
       initialValue = JSON.parse(todoList)
     }
