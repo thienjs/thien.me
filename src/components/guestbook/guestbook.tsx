@@ -4,10 +4,10 @@ import { signIn, useSession } from 'next-auth/react';
 import useSWR, { useSWRConfig } from 'swr';
 
 import {fetcher} from '~/lib/fetcher';
-import { Form, FormState } from 'lib/types';
-import SuccessMessage from 'components/SuccessMessage';
-import ErrorMessage from 'components/ErrorMessage';
-import LoadingSpinner from '~/components/LoadingSpinner';
+import { Form, FormState } from '~/types/types';
+import SuccessMessage from '~/components/message/SuccessMessage';
+import ErrorMessage from '~/components/message/ErrorMessage';
+import LoadingSpinner from '~/components/message/LoadingSpinner';
 
 function GuestbookEntry({ entry, user }) {
   const { mutate } = useSWRConfig();

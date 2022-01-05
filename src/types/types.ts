@@ -147,3 +147,15 @@ export type Todo = {
   text: string
   isCompleted: boolean
 }
+
+export enum Form {
+  Initial,
+  Loading,
+  Success,
+  Error
+}
+
+export type FormState = {
+  state: Form;
+  message?: string;
+};

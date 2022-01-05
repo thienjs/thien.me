@@ -17,7 +17,7 @@ export default function Guestbook() {
   return (
     <div>
       <div>
-      {!user && (
+        {user && (
           <div>
             <motion.button
               whileHover={{ scale: 1.05 }}
@@ -33,7 +33,7 @@ export default function Guestbook() {
             </motion.button>
           </div>
         )}
-        {user && (
+        {!user && (
           <div>
             <p>
               Hey <b>{user.email}!</b>
