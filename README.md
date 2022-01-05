@@ -49,6 +49,10 @@ I love open source projects and many of the techs i used in this portfolio is op
 - [ ] style feedback page
 - [ ] style repo page
 - [ ] style repo card
+- [ ] sort option
+- [ ] new nav
+- [ ] accordion
+- [ ] dropdown
 
 ### Backend
 
@@ -59,8 +63,8 @@ I love open source projects and many of the techs i used in this portfolio is op
 - [x] add supabase
 - [ ] add guestbook with -planetscale- supabase
 - [x] add prisma
-- [ ] unami analytics
-- [ ]
+- [x] unami analytics
+- [ ] 
 - [ ]
 - [ ]
 
