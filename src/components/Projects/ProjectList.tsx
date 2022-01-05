@@ -47,7 +47,7 @@ export default function ProjectList() {
       </>
     )
 
-  const filteredProjects = Object(data.repos)
+  const filteredProjects = Object(data)
     .filter(
       (project) =>
         project.name.toLowerCase().includes(searchValue.toLowerCase()) ||
