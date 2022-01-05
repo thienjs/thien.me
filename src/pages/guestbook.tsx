@@ -36,7 +36,7 @@ export default function Guestbook() {
         {!user && (
           <div>
             <p>
-              Hey <b>{user.email}!</b>
+              Hey <b>!</b>
             </p>
             <motion.button
               whileHover={{ scale: 1.05 }}
