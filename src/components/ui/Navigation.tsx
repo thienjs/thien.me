@@ -27,7 +27,7 @@ import BookmarkNotebookIcon from '~/components/icons/bookmark-notebook'
 import ThemeSwitch from '../ThemeSwitch'
 import { navigation } from '~/data/nav'
 import Logo from '~/components/icons/logo'
-import DropdownMenu from '../radix/DropdownMenu'
+
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -155,7 +155,7 @@ export default function Navigation() {
                 <span className="sr-only">Open menu</span>
                 <MenuIcon className="h-6 w-6" aria-hidden="true" />
               </button>
-                <DropdownMenu/>
+
 
               {/* Logo */}
               <div className="ml-3 cursor-pointer">
