@@ -127,6 +127,7 @@ const AuthPage: NextPage<NextAppPageProps> = () => {
             </div>
           </div>
         </form>
+        
         <div className="h-12 w-12 relative">{loading && <Spinner />}</div>
       </div>
     </Layout>

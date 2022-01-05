@@ -8,7 +8,7 @@ const SEO = {
   openGraph: {
     type: 'website',
     locale: 'en_IE',
-    url: '',
+    url: 'https://thien.me',
     title,
     description,
     images: [
