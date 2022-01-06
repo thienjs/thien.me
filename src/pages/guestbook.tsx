@@ -3,6 +3,9 @@ import { prisma } from '~/lib/prisma';
 import { Feedback, FeedbackType } from '@prisma/client';
 import styles from '~/styles/guestbook.module.css'
 import { motion } from 'framer-motion'
+import { GetServerSideProps } from 'next'
+import { NextAppPageServerSideProps } from '~/types/app'
+import { supabase } from '~/lib/supabase'
 
 export default function Guestbook() {
   const {
@@ -10,9 +13,8 @@ export default function Guestbook() {
     loading, // loading state
     signOut, // and a method to let the logged-in user sign out
     signIn,
-    signInWithProvider
-} = useAuth()
-
+    signInWithProvider,
+  } = useAuth()
 
   return (
     <div>
@@ -52,4 +54,27 @@ export default function Guestbook() {
       </div>
     </div>
   )
+}
+
+export const getServerSideProps: GetServerSideProps = async ({
+  req,
+}): Promise<NextAppPageServerSideProps> => {
+  const { user } = await supabase.auth.api.getUserByCookie(req)
+  // We can do a re-direction from the server
+  if (!user) {
+    return {
+      redirect: {
+        destination: '/guestbook',
+        permanent: false,
+      },
+    }
+  }
+  // or, alternatively, can send the same values that client-side context populates to check on the client and redirect
+  // The following lines won't be used as we're redirecting above
+  return {
+    props: {
+      user,
+      loggedIn: !!user,
+    },
+  }
 }

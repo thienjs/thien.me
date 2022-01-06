@@ -23,7 +23,7 @@ const ProfilePage = (props) => {
   }
 
   return (
-    <Layout >
+    <Layout>
       <div className="h-screen flex flex-col justify-center items-center relative">
         <h2 className="text-3xl my-4">
           Howdie, {user && user.email ? user.email : 'Explorer'}!
@@ -31,7 +31,7 @@ const ProfilePage = (props) => {
         {!user && (
           <small>
             You've landed on a protected page. Please{' '}
-            <Link href="/">log in</Link> to view the page's full content{' '}
+            <Link href="/auth">log in</Link> to view the page's full content{' '}
           </small>
         )}
         {user && (

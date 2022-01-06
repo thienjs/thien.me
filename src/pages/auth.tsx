@@ -17,7 +17,7 @@ const FORM_VALUES: SignUpFieldProps = {
   password: '',
 }
 
-const IndexPage: NextPage<NextAppPageProps> = () => {
+const AuthPage: NextPage<NextAppPageProps> = () => {
   const [isSignIn, setIsSignIn] = useState(true)
   const { loading, signIn, signUp, signInWithProvider } = useAuth()
   // Now since we have our form ready, what we're gonna need for signing up our users
@@ -33,7 +33,7 @@ const IndexPage: NextPage<NextAppPageProps> = () => {
   }
 
   return (
-    <Layout >
+    <Layout>
       <div className="h-screen flex flex-col justify-center items-center relative">
         {/* App logo and tagline*/}
         <div className="w-full text-center mb-4 flex  flex-col place-items-center">
@@ -132,9 +132,9 @@ const IndexPage: NextPage<NextAppPageProps> = () => {
   )
 }
 
-export default IndexPage
+export default AuthPage
 
-IndexPage.defaultProps = {
+AuthPage.defaultProps = {
   meta: {
     title: 'Sign In',
   },
