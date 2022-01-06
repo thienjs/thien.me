@@ -25,14 +25,12 @@ export default function Guestbook() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.995 }}
               transition={{ ease: 'easeInOut', duration: 0.015 }}
-              className={styles.loginbutton}
-              onClick={(evt) => {
-                evt.preventDefault()
-                signInWithProvider('github')
-              }}
+              className={styles.button}
+              onClick={() => signOut()}
             >
-              Sign in with Github
+              Sign out
             </motion.button>
+            {user.email}
           </div>
         )}
         {!user && (
@@ -40,14 +38,18 @@ export default function Guestbook() {
             <p>
               Hey <b>!</b>
             </p>
+
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.995 }}
               transition={{ ease: 'easeInOut', duration: 0.015 }}
-              className={styles.button}
-              onClick={() => signOut()}
+              className={styles.loginbutton}
+              onClick={(evt) => {
+                evt.preventDefault()
+                signInWithProvider('github')
+              }}
             >
-              Sign out
+              Sign in with Github
             </motion.button>
           </div>
         )}
