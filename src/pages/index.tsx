@@ -43,17 +43,19 @@ export default function HomePage({
   return (
     <Layout>
       <Hero />
-      <h2 className="text-3xl font-semibold py-4 text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500">
+      <h2 className="text-3xl font-semibold py-4  text-black dark:text-gray-100">
         Recent Posts
       </h2>
       <div className="mb-10">
         <ArticleList articles={recentArticles} />
       </div>
-      <h2>Projects</h2>
+      <h2 className="text-3xl font-semibold py-4  text-black dark:text-gray-100">
+        Projects
+      </h2>
       <div className="">
         {pinnedItems.map((item) => {
           return (
-            <div className="border border-cyan-600 p-2 mb-2 shadow-lg shadow-teal-500/50">
+            <div className="border-b-2 border-cyan-600 p-4 mb-4 shadow-sm shadow-gray-500/20 bg-zinc-100 dark:bg-zinc-700 bg-opcaity-80">
               <Link href={item.url}>
                 <a>{item.name}</a>
               </Link>
@@ -62,16 +64,19 @@ export default function HomePage({
           )
         })}
       </div>
-      <SkillsTable />
-      <h2 className="text-3xl font-semibold py-4 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
-        Recent Tweets
+      <h2 className="text-3xl mt-8 font-semibold py-4 text-gray-900 dark:text-gray-100 mb-2">
+        Skills
       </h2>
+      <SkillsTable />
+      <h2 className="text-3xl font-semibold py-4 mt-8">Recent Tweets</h2>
       {tweets.map((tweet) => (
         <Tweet key={tweet.id} {...tweet} />
       ))}
-      <h2>Music</h2>
-      <Tracks />
+      <h2 className="text-3xl mt-8 font-semibold py-4 text-gray-900 dark:text-gray-100 mb-2">
+        Music
+      </h2>
       <NowPlaying />
+      <Tracks />
     </Layout>
   )
 }

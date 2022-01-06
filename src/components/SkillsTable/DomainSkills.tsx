@@ -39,7 +39,7 @@ const skillsContainer = {
 const DomainSkills: FC<Props> = ({ selected }) => {
   const { skills } = useContext(DomainContext).byId[selected];
   return (
-    <motion.div className="flex flex-col border-2 rounded-sm border-black border-t-0 py-2 dark:bg-gray-700">
+    <motion.div className="flex flex-col border-b-2 dark:border-gray-500 py-2 dark:bg-zinc-700">
       <AnimatePresence exitBeforeEnter>
         <motion.div
           key={selected}
@@ -59,10 +59,14 @@ const DomainSkills: FC<Props> = ({ selected }) => {
               <h3 className="capitalize w-20 mr-16">{skill.name}</h3>
               <motion.div className="flex" variants={container}>
                 {[...Array(5)].map((_, key) => (
-                  <motion.div key={key} className="self-center mr-6" variants={item}>
+                  <motion.div
+                    key={key}
+                    className="self-center mr-6"
+                    variants={item}
+                  >
                     <Icon
                       icon={
-                        key + 1 <= skill.stars ? "circleFill" : "circleEmpty"
+                        key + 1 <= skill.stars ? 'circleFill' : 'circleEmpty'
                       }
                       size="10"
                       className="mr-2"
@@ -75,7 +79,7 @@ const DomainSkills: FC<Props> = ({ selected }) => {
         </motion.div>
       </AnimatePresence>
     </motion.div>
-  );
+  )
 };
 
 export default DomainSkills;

@@ -14,11 +14,9 @@ const Title: React.FC<TitleProps> = ({ num, title }) => {
       data-aos-duration="1000"
       className="flex mt-20 w-full"
     >
-      <h2 className="md:text-4xl text-3xl text-text">
-        {title}
-      </h2>
+      <h2 className="md:text-4xl text-2xl text-text">{title}</h2>
     </div>
-  );
+  )
 };
 
 export default Title;

@@ -18,7 +18,7 @@ const SkillsTable: FC = () => {
   }
   return (
     <DomainContext.Provider value={data}>
-      <div className="flex flex-col tracking-wider bg-white shadow-table rounded-sm">
+      <div className="flex flex-col tracking-wider bg-gray-100 ">
         <DomainsNavigator onChange={handleDomainChange} active={domain} />
         <DomainSkills selected={domain} />
       </div>

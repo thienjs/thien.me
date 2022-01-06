@@ -9,13 +9,15 @@ type Props = {
 const DomainsNavigator: FC<Props> = ({ onChange, active }) => {
   const domains = useContext(DomainContext).allIds;
   return (
-    <div className="flex justify-between flex-wrap border-black border-2 rounded-sm select-none dark:bg-slate-800">
+    <div className="flex justify-between flex-wrap dark:border-zinc-800 border-b-2 select-none dark:bg-zinc-800">
       <div className="flex">
         {domains.map((domain) => (
           <div
             onClick={() => onChange(domain)}
             className={`p-3 cursor-pointer font-bold tracking-wider ${
-              active === domain ? "dark:bg-black dark:text-white bg-zinc-400 text-black" : "hover:bg-gray-200 dark:hover:bg-zinc-700"
+              active === domain
+                ? 'dark:bg-black dark:text-white bg-zinc-300 text-gray-900 border-b-4 border-cyan-600'
+                : 'hover:bg-gray-200 dark:hover:bg-zinc-700'
             }`}
             key={domain}
           >
@@ -24,7 +26,7 @@ const DomainsNavigator: FC<Props> = ({ onChange, active }) => {
         ))}
       </div>
     </div>
-  );
+  )
 };
 
 export default DomainsNavigator;
