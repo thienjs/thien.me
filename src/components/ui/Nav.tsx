@@ -5,6 +5,7 @@ import { useRouter } from 'next/router';
 import classnames from 'classnames';
 import { navigation } from '~/data/nav'
 
+
 const navData = [
   {
     path: '/work',
@@ -27,7 +28,7 @@ export default function Nav() {
     <nav className="relative -mx-2 -my-1">
       <AnimateSharedLayout>
         <motion.ul
-          className="flex flex-col items-end sm:items-start sm:flex-row gap-x-4 gap-y-1"
+          className="flex flex-col items-end sm:items-start sm:flex-row sm:hidden gap-x-4 gap-y-1"
           onHoverEnd={() => setActiveIndex(null)}
         >
           {navData.map((item, index) => {

@@ -83,7 +83,7 @@ export default function Navigation() {
                   <h1 className="ml-3 font-semibold text-xl">thien.me</h1>
                 </Link>
               </div>
-<AnimateSharedLayout>
+            <AnimateSharedLayout>
   
 
               {/* Links */}
@@ -132,7 +132,7 @@ export default function Navigation() {
                   </Link>
                 </div>
               </motion.ul>
-</AnimateSharedLayout>
+            </AnimateSharedLayout>
 
 
             </div>

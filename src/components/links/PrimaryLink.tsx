@@ -16,8 +16,8 @@ export default function PrimaryLink({
       {...rest}
       className={clsxm(
         'inline-flex items-center',
-        'font-medium text-primary-600 hover:text-primary-500',
-        'focus:outline-none focus-visible:rounded focus-visible:ring focus-visible:ring-primary-500 focus-visible:ring-offset-2',
+        'font-medium text-cyan-600 hover:text-cyan-500',
+        'focus:outline-none focus-visible:rounded focus-visible:ring focus-visible:ring-cyan-500 focus-visible:ring-offset-2',
         className
       )}
     >

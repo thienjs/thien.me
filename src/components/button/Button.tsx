@@ -1,29 +1,58 @@
-import cx from "classnames";
-import React from "react";
+import clsx from 'clsx';
+import * as React from 'react';
+import { ImSpinner2 } from 'react-icons/im';
 
-type Props = Omit<React.ComponentProps<"button">, "className"> & {};
+enum ButtonVariant {
+  'default',
+}
 
-const Button = React.forwardRef<HTMLButtonElement, Props>(
-  ({ children, ...props }, ref) => (
+type ButtonProps = {
+  isLoading?: boolean;
+  variant?: keyof typeof ButtonVariant;
+} & React.ComponentPropsWithoutRef<'button'>;
+
+export default function Button({
+  children,
+  className,
+  disabled: buttonDisabled,
+  isLoading,
+  variant = 'default',
+  ...rest
+}: ButtonProps) {
+  const disabled = isLoading || buttonDisabled;
+
+  return (
     <button
-      ref={ref}
-      {...props}
-      className={cx(
-        "inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-md select-none",
-        "bg-white text-gray-700 dark:text-gray-100 dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-900",
-        "hover:bg-gray-50",
-        "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75",
-        // Register all radix states
-        "group",
-        "radix-state-open:bg-gray-50 dark:radix-state-open:bg-gray-900",
-        "radix-state-on:bg-gray-50 dark:radix-state-on:bg-gray-900",
-        "radix-state-instant-open:bg-gray-50 radix-state-delayed-open:bg-gray-50"
+      {...rest}
+      disabled={disabled}
+      className={clsx(
+        'px-4 py-2 font-bold rounded',
+        'border border-gray-300 shadow-sm dark:border-gray-600',
+        'focus:outline-none focus-visible:ring focus-visible:ring-primary-300',
+        'transform-gpu scale-100 hover:scale-[1.03] active:scale-[0.97]',
+        'transition duration-100',
+        'animate-shadow',
+        {
+          'bg-white disabled:bg-gray-200 text-gray-600 dark:text-gray-300 dark:bg-dark dark:disabled:bg-gray-700':
+            variant === 'default',
+        },
+        'disabled:transform-none disabled:cursor-not-allowed',
+        isLoading &&
+          'relative !text-transparent hover:!text-transparent !cursor-wait transition-none',
+        className
       )}
     >
+      {isLoading && (
+        <div
+          className={clsx(
+            'absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2',
+            'text-black dark:text-white'
+          )}
+        >
+          <ImSpinner2 className='animate-spin' />
+        </div>
+      )}
       {children}
     </button>
-  )
-);
-
-Button.displayName = "Button";
-export default Button;
+  );
+}
