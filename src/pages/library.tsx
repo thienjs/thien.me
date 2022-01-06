@@ -11,6 +11,7 @@ import Disclosure from 'components/ui/Disclosure'
 import Tabs from 'components/ui/Tabs'
 import Popover from 'components/ui/Popover'
 import MenuPage from '~/components/ui/Menu'
+import DropdownMenu from "~/components/radix/DropdownMenu"
 
 export default function library() {
   return (
@@ -18,6 +19,7 @@ export default function library() {
       <Nav />
       <MenuPage />
       <Dropdown />
+      <DropdownMenu />
       <Disclosure />
       <Tabs />
 

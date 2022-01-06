@@ -27,6 +27,8 @@ import BookmarkNotebookIcon from '~/components/icons/bookmark-notebook'
 import ThemeSwitch from '../ThemeSwitch'
 import { navigation } from '~/data/nav'
 import Logo from '~/components/icons/logo'
+import DropdownMenu from '../radix/DropdownMenu'
+import MenuPage from './Menu'
 
 
 function classNames(...classes) {
@@ -228,6 +230,7 @@ export default function Navigation() {
                   </a>
                 </Link>
 
+                  <DropdownMenu/>
                 <div className="ml-2 mt-1">
                   <ThemeSwitch />
                 </div>
