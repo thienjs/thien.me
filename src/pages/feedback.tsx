@@ -267,7 +267,7 @@ if(loading) {
             </h2>
           </form>
         )}
-        {user && <div>nothing</div>}
+        {user && <div>{user.email}</div>}
       </main>
     </Layout>
   )
