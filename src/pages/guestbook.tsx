@@ -63,18 +63,12 @@ export const getServerSideProps: GetServerSideProps = async ({
   // We can do a re-direction from the server
   if (!user) {
     return {
-      redirect: {
-        destination: '/guestbook',
-        permanent: false,
+      props: {
+        user,
+        loggedIn: !!user,
       },
     }
   }
   // or, alternatively, can send the same values that client-side context populates to check on the client and redirect
   // The following lines won't be used as we're redirecting above
-  return {
-    props: {
-      user,
-      loggedIn: !!user,
-    },
-  }
 }
