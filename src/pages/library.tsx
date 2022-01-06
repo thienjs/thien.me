@@ -10,24 +10,31 @@ import Dropdown from 'components/ui/Dropdown'
 import Disclosure from 'components/ui/Disclosure'
 import Tabs from 'components/ui/Tabs'
 import Popover from 'components/ui/Popover'
-
-
+import MenuPage from '~/components/ui/Menu'
 
 export default function library() {
   return (
     <Layout>
-      <Nav/>
-      <Dropdown/>
-      <Disclosure/>
-      <Tabs/>
-    
+      <Nav />
+      <MenuPage />
+      <Dropdown />
+      <Disclosure />
+      <Tabs />
+
       <div className="flex flex-col justify-center items-center">
         <ArrowLink href="/">test</ArrowLink>
-        <ButtonLink href="/" className="">test</ButtonLink>
-        <PrimaryLink href="/" className="">test</PrimaryLink>
-        <UnstyledLink href="/" className="">test</UnstyledLink>
-        <UnderlineLink href="/" className="">test</UnderlineLink>
-        
+        <ButtonLink href="/" className="">
+          test
+        </ButtonLink>
+        <PrimaryLink href="/" className="">
+          test
+        </PrimaryLink>
+        <UnstyledLink href="/" className="">
+          test
+        </UnstyledLink>
+        <UnderlineLink href="/" className="">
+          test
+        </UnderlineLink>
       </div>
     </Layout>
   )

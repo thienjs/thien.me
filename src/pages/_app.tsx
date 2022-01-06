@@ -1,6 +1,5 @@
 import '~/styles/globals.css'
 import '~/styles/codeblocks.css';
-import dynamic from 'next/dynamic'
 import React from 'react'
 import { AppProps } from 'next/app'
 import Head from 'next/head'
@@ -13,9 +12,7 @@ import SEO from '../../next-seo.config'
 import { ThemeProvider } from 'next-themes'
 
 import { motion, AnimatePresence } from 'framer-motion'
-const AnimateCursor = dynamic(() => import('../components/Cursor'), {
-  ssr: false,
-})
+
 
 function MyApp({ Component, pageProps, router }: AppProps) {
   const pageMeta = (Component as any)?.defaultProps?.meta || {}
@@ -33,7 +30,6 @@ function MyApp({ Component, pageProps, router }: AppProps) {
         <meta content="width=device-width, initial-scale=1" name="viewport" />
       </Head>
       <DefaultSeo {...pageSEO} />
-      <AnimateCursor />
       <MessageProvider>
 
       <AuthProvider>
