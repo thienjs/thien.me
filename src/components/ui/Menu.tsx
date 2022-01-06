@@ -18,7 +18,7 @@ export default function MenuPage() {
                 initial={{ height: 0, opacity: 0 }}
                 animate={{ height: 'auto', opacity: 1 }}
                 transition={{ duration: 0.15 }}
-                className="absolute right-0 z-10 bg-white border rounded shadow focus:outline-none border-cool-gray-200"
+                className="absolute left-0 z-10 bg-white dark:bg-gray-700 dark:text-white border rounded shadow focus:outline-none border-cool-gray-200"
               >
                 <Menu.Item>
                   {({ active }) => (
