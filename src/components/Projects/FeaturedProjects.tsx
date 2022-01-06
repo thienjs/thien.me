@@ -12,7 +12,7 @@ export default function FeaturedProjects() {
       className={styles.featured}
     >
       <a
-        href="https://nexus-ucr.vercel.app"
+        href="https://thien.vercel.app"
         target="_blank"
         rel="noreferrer noopener"
       >
