@@ -23,13 +23,13 @@ export default function Hero() {
             }}
           >
             <h1 className="text-3xl font-bold text-gray-900 lg:text-4xl dark:text-white">
-              Hello.
-              <p className="text-2xl">My name is Thien.</p>
+              Thien Tran
+              <p className="text-xl">Designer. Developer. Dreamer.</p>
             </h1>
           </motion.div>
           <div className="mt-6 text-gray-800 dark:text-white">
-            <p className="mb-4 pb-6">
-              I am a self taught web developer. I am currently focused on
+            <p className="mb-4 ">
+              Hello! I am a self taught web developer currently focused on
               typescript, nextjs, and tailwind. Most of my work is open source
               and publicly available on{' '}
               <Link href="https://github.com/thienjs">
@@ -40,9 +40,45 @@ export default function Hero() {
               .
             </p>
             <p className="mb-4">
-              This site is my personal home on the web. It's my way of
-              experiement with new open source techs and learn through building.
-              If you like what you see, please sign the{' '}
+              Take a look at my {''}
+              <Link href="/blog">
+                <a className="underline decoration-2 hover:decoration-wavy decoration-cyan-500">
+                  blog
+                </a>
+              </Link>
+              ,{' '}
+              <Link href="/snippets">
+                <a className="underline decoration-2 hover:decoration-wavy decoration-cyan-500">
+                  snippets
+                </a>
+              </Link>
+              , and tailwind animation{' '}
+              <Link href="/animation">
+                <a className="underline decoration-2 hover:decoration-wavy decoration-cyan-500">
+                  library
+                </a>
+              </Link>
+              .
+            </p>
+            <p className="mb-4">
+              I'm currently intrested in a junior developer position. If you're
+              a recruiter, please take a look at my{' '}
+              <Link href="/projects">
+                <a className="underline decoration-2 hover:decoration-wavy decoration-cyan-500">
+                  projects
+                </a>
+              </Link>{' '}
+              and certificates. Feel free to{' '}
+              <Link href="/contact">
+                <a className="underline decoration-2 hover:decoration-wavy decoration-cyan-500">
+                  contact
+                </a>
+              </Link>{' '}
+              me.{' '}
+            </p>
+
+            <p>
+              Thanks for visiting! If you like what you see, please sign the{' '}
               <Link href="/guestbook">
                 <a className="underline decoration-2 hover:decoration-wavy decoration-cyan-500">
                   Guestbook
@@ -50,14 +86,9 @@ export default function Hero() {
               </Link>
               . I would greatly appreciate your feedback.
             </p>
-            <p>
-              When I'm not coding, I'm prob walking my dog, Loki. Some of my
-              favorite hobbies are tennis, longboarding, guitar, watch
-              collecting.
-            </p>
           </div>
         </div>
-        <div className="flex-shrink-0 lg:mt-12 lg:px-4 mb-10 ">
+        <div className="flex-shrink-0 lg:mt-12  mb-10 ">
           <Image
             src="https://github.com/thienjs.png"
             alt="Profile"

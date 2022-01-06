@@ -32,7 +32,7 @@ export function ArticleCard({ article }: Props) {
             <h3 className="text-xl font-semibold text-left mb-2">{article.title}</h3>
             {/* {JSON.stringify(article)} */}
             {/* <p>{article.summary}</p> */}
-            <p className="text-small font-light pb-2">{article.summary}</p>
+            <p className="text-small font-light pb-2 text-left">{article.summary}</p>
             <span className="text-sm flex">
               {new Date(article.publishedDate).toLocaleDateString(
                 siteMetadata.locale,
