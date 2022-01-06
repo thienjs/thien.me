@@ -6,6 +6,7 @@ import { motion } from 'framer-motion'
 import { GetServerSideProps } from 'next'
 import { NextAppPageServerSideProps } from '~/types/app'
 import { supabase } from '~/lib/supabase'
+import Layout from '~/components/ui/Layout';
 
 export default function Guestbook() {
   const {
@@ -17,7 +18,7 @@ export default function Guestbook() {
   } = useAuth()
 
   return (
-    <div>
+    <Layout>
       <div>
         {user && (
           <div>
@@ -36,7 +37,7 @@ export default function Guestbook() {
         {!user && (
           <div>
             <p>
-              Hey <b>!</b>
+              Hey <b>you!</b>
             </p>
 
             <motion.button
@@ -54,7 +55,7 @@ export default function Guestbook() {
           </div>
         )}
       </div>
-    </div>
+    </Layout>
   )
 }
 

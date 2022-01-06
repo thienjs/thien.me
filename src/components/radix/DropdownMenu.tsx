@@ -109,6 +109,7 @@ const socials: Social[] = [
 interface Props {}
 
 const DropdownMenu = (props: Props) => {
+  const [open, setOpen] = useState(false)
   const [showGrid, setShowGrid] = useState(false)
   const [showUi, setShowUi] = useState(false)
 

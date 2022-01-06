@@ -14,12 +14,13 @@ export default function FeedbackPage({ feedback }) {
   const {
     user, // The logged-in user object
     loading, // loading state
-    signOut // and a method to let the logged-in user sign out
-} = useAuth()
+    signOut, // and a method to let the logged-in user sign out
+    signInWithProvider,
+  } = useAuth()
 
-if(loading) {
-    return <SpinnerFullPage/>
-}
+  if (loading) {
+    return <SpinnerFullPage />
+  }
   const formatFeedbackType = (feedback: FeedbackType) => {
     switch (feedback) {
       case 'FEEDBACK':
@@ -144,7 +145,7 @@ if(loading) {
         <h1 className=" text-3xl md:text-4xl text-white tracking-wide mb-10 ">
           Submit Your Feedback!
         </h1>
-        {!user && (
+        {user && (
           <form
             onSubmit={handleSubmit(onSubmit)}
             className="grid grid-cols-1 gap-y-6 shadow-lg p-10 bg-[#131415] rounded-lg"
@@ -262,12 +263,10 @@ if(loading) {
                 Submit
               </motion.button>
             </div>
-            <h2 className="text-3xl my-4">
-              Hello, {user && user.email ? user.email : 'friend.'}!
-            </h2>
+            <h2 className="text-3xl my-4">{!user && <>please sign in</>}</h2>
           </form>
         )}
-        {user && <div>{user.email}</div>}
+        <div>{!user && <>please sign in</>}</div>
       </main>
     </Layout>
   )
