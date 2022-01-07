@@ -230,7 +230,7 @@ export default function Navigation() {
                   </a>
                 </Link>
 
-                  <DropdownMenu/>
+                  <MenuPage/>
                 <div className="ml-2 mt-1">
                   <ThemeSwitch />
                 </div>

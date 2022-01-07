@@ -7,12 +7,10 @@ type Props = {
 
 export function ArticleList({ articles }) {
   return (
-    <div className="flex flex-col w-full ">
-      <div className="">
-        {articles.map((article) => (
-          <ArticleCard key={article.title} article={article} />
-        ))}
-      </div>
+    <div className="sm:grid-cols-2 grid grid-cols-1 ">
+      {articles.map((article) => (
+        <ArticleCard key={article.title} article={article} />
+      ))}
     </div>
   )
 }

@@ -25,7 +25,9 @@ export default function Blog({articles, tags}) {
 
     return (
       <Layout>
-        <h1 className='text-5xl font-bold py-4 text-transparent bg-clip-text bg-gradient-to-b from-cyan-400 to-pink-500'>Blog</h1>
+        <h1 className="text-5xl font-bold py-4 text-transparent bg-clip-text bg-gradient-to-b from-cyan-400 to-pink-500">
+          Blog
+        </h1>
         <p className="mb-4">This is where i gather my thoughts</p>
         <div className="relative w-full mb-4">
           <input
@@ -66,7 +68,7 @@ export default function Blog({articles, tags}) {
               ))}
           </ul>
         </div>
-        <div className="">
+        <div className="max">
           {!filteredArticles.length && (
             <div className="">
               <p className="">
