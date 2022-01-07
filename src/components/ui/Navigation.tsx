@@ -230,9 +230,9 @@ export default function Navigation() {
                   </a>
                 </Link>
 
+                  <ThemeSwitch />
                   <MenuPage/>
                 <div className="ml-2 mt-1">
-                  <ThemeSwitch />
                 </div>
               </div>
             </div>

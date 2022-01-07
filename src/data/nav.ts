@@ -66,8 +66,7 @@ export const navigation = {
           name: 'Current work',
           href: '#',
           imageSrc: 'https://unsplash.com/photos/95YRwf6CNw8',
-          imageAlt:
-            'project 2',
+          imageAlt: 'project 2',
         },
       ],
       sections: [
@@ -112,6 +111,14 @@ export const navigation = {
     { name: 'About', href: '/about' },
     { name: 'Projects', href: '/projects' },
     { name: 'Contact', href: '/contact' },
+  ],
+  footerLinks: [
+    { name: 'Guestbook', href: 'guestbook' },
+    { name: 'Blog', href: '/blog' },
+    { name: 'Dashboard', href: '/dashboard' },
+    { name: 'Snippets', href: '/snippets' },
+    { name: 'About', href: '/about' },
+    { name: 'Projects', href: '/projects' },
   ],
 }
 
