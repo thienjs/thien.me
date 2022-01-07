@@ -47,7 +47,7 @@ export default Footer
 
 function FooterLinks() {
   return (
-    <div className="flex flex-row gap-y-4 gap-x-4 justify-center mb-4 max-w-sm">
+    <div className="flex flex-row gap-y-4 gap-x-4 justify-center mb-4 ">
       {navigation.footerLinks.map(({ href, name }) => (
         <UnstyledLink
           key={href}
