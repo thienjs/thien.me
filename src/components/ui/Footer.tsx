@@ -51,7 +51,7 @@ function FooterLinks() {
       {navigation.footerLinks.map(({ href, name }) => (
         <UnstyledLink
           key={href}
-          className="animated-underline text-sm font-medium rounded-sm dark:text-gray-200 focus:outline-none focus-visible:ring focus-visible:ring-primary-300"
+          className="animated-underline text-sm font-medium rounded-sm dark:text-gray-200 focus:outline-none focus-visible:ring focus-visible:ring-cyan-300"
           href={href}
         >
           {name}

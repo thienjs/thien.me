@@ -5,7 +5,7 @@ import { SunIcon, MoonIcon } from "@heroicons/react/outline";
 const ThemeSwitch = () => {
   const [isDark, mounted, setTheme] = useDarkTheme();
   return (
-    <div className="flex items-center w-12 h-12">
+    <div className="mt-2 mr-2">
       {mounted && (
         <Switch
           checked={isDark}

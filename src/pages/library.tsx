@@ -10,7 +10,7 @@ import Dropdown from 'components/ui/Dropdown'
 import Disclosure from 'components/ui/Disclosure'
 import Tabs from 'components/ui/Tabs'
 import Popover from 'components/ui/Popover'
-import MenuPage from '~/components/ui/Menu'
+import MenuPage from '~/components/ui/DropMenu'
 import DropdownMenu from "~/components/radix/DropdownMenu"
 
 export default function library() {

@@ -28,7 +28,7 @@ import ThemeSwitch from '../ThemeSwitch'
 import { navigation } from '~/data/nav'
 import Logo from '~/components/icons/logo'
 import DropdownMenu from '../radix/DropdownMenu'
-import MenuPage from './Menu'
+import MenuPage from './DropMenu'
 
 
 function classNames(...classes) {

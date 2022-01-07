@@ -29,7 +29,7 @@ import {
   BookmarkIcon,
 } from '@radix-ui/react-icons'
 
-export default function Example() {
+export default function DropMenu() {
   return (
     <Menu as="div" className="relative inline-block text-left z-10">
       <div>

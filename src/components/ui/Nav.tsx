@@ -4,35 +4,21 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import classnames from 'classnames';
 import { navigation } from '~/data/nav'
-
-
-const navData = [
-  {
-    path: '/work',
-    label: 'Work',
-  },
-  {
-    path: '/posts',
-    label: 'Posts',
-  },
-  {
-    path: '/feed',
-    label: 'Feed',
-  },
-];
+import ThemeSwitch from '../ThemeSwitch'
+import DropMenu from './DropMenu'
 
 export default function Nav() {
-  const { pathname } = useRouter();
-  const [activeIndex, setActiveIndex] = React.useState(null);
+  const { pathname } = useRouter()
+  const [activeIndex, setActiveIndex] = React.useState(null)
   return (
-    <nav className="relative -mx-2 -my-1">
+    <nav className="flex flex-row pt-6 px-4 justify-between">
       <AnimateSharedLayout>
         <motion.ul
-          className="flex flex-col items-end sm:items-start sm:flex-row sm:hidden gap-x-4 gap-y-1"
+          className="flex gap-x-4 gap-y-1 dark:text-gray-300"
           onHoverEnd={() => setActiveIndex(null)}
         >
-          {navData.map((item, index) => {
-            const isActive = activeIndex === index;
+          {navigation.navData.map((item, index) => {
+            const isActive = activeIndex === index
             return (
               <motion.li key={index} onHoverStart={() => setActiveIndex(index)}>
                 <Link href={item.path}>
@@ -40,7 +26,7 @@ export default function Nav() {
                     className={classnames(
                       'relative block px-2 py-1',
                       ['text-gray-600 hover:text-gray-700'],
-                      ['dark:text-gray-300 dark:hover:text-white'],
+                      ['dark:text-gray-300 dark:hover:text-white']
                     )}
                     aria-current={pathname === item.path ? 'page' : null}
                   >
@@ -54,17 +40,21 @@ export default function Nav() {
                         className={classnames(
                           'absolute inset-0 rounded-md pointer-events-none z-0',
                           ['bg-gray-200'],
-                          ['dark:bg-gray-800'],
+                          ['dark:bg-gray-800']
                         )}
                       />
                     )}
                   </a>
                 </Link>
               </motion.li>
-            );
+            )
           })}
         </motion.ul>
       </AnimateSharedLayout>
+      <div className=" flex justify-end">
+        <ThemeSwitch />
+        <DropMenu />
+      </div>
     </nav>
-  );
+  )
 }
