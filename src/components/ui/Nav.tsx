@@ -11,7 +11,7 @@ export default function Nav() {
   const { pathname } = useRouter()
   const [activeIndex, setActiveIndex] = React.useState(null)
   return (
-    <nav className="flex flex-row pt-6 px-4 justify-between">
+    <nav className="flex items-center justify-between pt-6 px-4 pb-4 w-full  max-w-2xl">
       <AnimateSharedLayout>
         <motion.ul
           className="flex gap-x-4 gap-y-1 dark:text-gray-300"
@@ -51,7 +51,7 @@ export default function Nav() {
           })}
         </motion.ul>
       </AnimateSharedLayout>
-      <div className=" flex justify-end">
+      <div className="flex">
         <ThemeSwitch />
         <DropMenu />
       </div>
