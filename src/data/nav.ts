@@ -115,10 +115,7 @@ export const navigation = {
   footerLinks: [
     { name: 'Guestbook', href: 'guestbook' },
     { name: 'Blog', href: '/blog' },
-    { name: 'Dashboard', href: '/dashboard' },
     { name: 'Snippets', href: '/snippets' },
-    { name: 'About', href: '/about' },
-    { name: 'Projects', href: '/projects' },
   ],
   navData: [
     {
@@ -130,8 +127,8 @@ export const navigation = {
       label: 'Blog',
     },
     {
-      path: '/snippets',
-      label: 'Snippets',
+      path: '/about',
+      label: 'About',
     },
   ],
 }
