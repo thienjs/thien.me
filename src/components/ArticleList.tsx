@@ -7,7 +7,7 @@ type Props = {
 
 export function ArticleList({ articles }) {
   return (
-    <div className="sm:grid-cols-2 grid grid-cols-1 ">
+    <div className="">
       {articles.map((article) => (
         <ArticleCard key={article.title} article={article} />
       ))}
