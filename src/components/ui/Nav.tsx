@@ -10,6 +10,7 @@ import DropMenu from './DropMenu'
 export default function Nav() {
   const { pathname } = useRouter()
   const [activeIndex, setActiveIndex] = React.useState(null)
+  const [isOpen, setisOpen] = React.useState()
   return (
     <nav className="flex items-center justify-between pt-6 px-4 pb-4 w-full  max-w-2xl">
       <AnimateSharedLayout>
