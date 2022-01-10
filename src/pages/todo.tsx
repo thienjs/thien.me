@@ -11,6 +11,8 @@ import { useAuth } from '~/lib/auth'
 import { SpinnerFullPage } from '~/components/Spinner'
 import { Todo } from '~/types/types'
 import { Divide } from 'react-feather'
+import Layout from '~/components/ui/Layout'
+import ButtonLink from '~/components/links/ButtonLink'
 
 export default function TodoPage({ todolist }) {
   // the absolutely essential methods we'll need from AuthContext
@@ -25,25 +27,33 @@ export default function TodoPage({ todolist }) {
   }
 
   return (
-    <div className="w-full min-h-screen bg-gray-300">
-      {user && (
-        <div>
-          {todolist.map((task: Todo) => (
-            <>
-              <div>{task.id}</div>
-              <div>{task.isCompleted}</div>
-              <div>{task.text}</div>
-            </>
-          ))}
-        </div>
-      )}
-      {!user && (
-        <div>
-          <p>help</p>
-        </div>
-      )}
-      <div className="max-w-sm mx-auto h-full p-4">please sign in</div>
-    </div>
+    <Layout>
+      <div className="bg-white-300">
+        {user && (
+          <div>
+            {todolist.map((task: Todo) => (
+              <>
+                <div>{task.id}</div>
+                <div>{task.isCompleted}</div>
+                <div>{task.text}</div>
+              </>
+            ))}
+          </div>
+        )}
+        {!user && (
+          <div>
+            <p>help</p>
+          </div>
+        )}
+        <ButtonLink
+          href="/signin"
+          openNewTab={false}
+          className="bg-white dark:bg-gray-800"
+        >
+          sign in
+        </ButtonLink>
+      </div>
+    </Layout>
   )
 }
 
