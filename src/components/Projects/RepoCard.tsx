@@ -17,7 +17,7 @@ type Props = {
 };
 
 const RepoCard = (props: Props) => (
-  <div className="w-full p-2 border rounded-sm text-sm ">
+  <div className="w-full text-sm mt-2 mb-5">
     <a
       className="text-md font-semibold"
       href={props.url}

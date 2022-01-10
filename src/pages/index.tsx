@@ -28,6 +28,8 @@ import NowPlaying from '~/components/music/NowPlaying'
 import Tracks from '~/components/Tracks'
 import DiscordStatus from '~/components/DiscordStatus'
 import RepoCard from '~/components/Projects/RepoCard'
+import ArrowLink from '~/components/links/ArrowLink'
+
 export type HomePageProps = {
   recentArticles: any
   tweets: any
@@ -48,21 +50,22 @@ export default function HomePage({
       </h2>
       <div className="mb-10">
         <ArticleList articles={recentArticles} />
+        <ArrowLink href="/blog">see all posts</ArrowLink>
       </div>
       <h2 className="text-3xl font-semibold py-4  text-black dark:text-gray-100">
         Projects
       </h2>
-      <div className="flex items-center justify-start w-full  no-scrollbar">
-        <div className="flex overflow-x-auto w-full scroll-hidden no-scrollbar">
-          <div>
+      <div className="">
+        <div className="">
+          <div className=" w-full border-0 ">
             {repos.map((repo) => (
-              <div key={repo.name} className="flex-grow m-1 w-full">
+              <div key={repo.name} className="border-0">
                 <RepoCard {...repo} />
               </div>
             ))}
           </div>
-          )
         </div>
+        <ArrowLink href="/repo">see all repos</ArrowLink>
       </div>
 
       <h2 className="text-3xl font-semibold py-4 mt-8">Recent Tweets</h2>
@@ -72,7 +75,10 @@ export default function HomePage({
       <h2 className="text-3xl mt-8 font-semibold py-4 text-gray-900 dark:text-gray-100 mb-2">
         Music
       </h2>
-      <NowPlaying />
+      <div>
+        <NowPlaying />
+        <ArrowLink href="/repo">see what i've been listening too</ArrowLink>
+      </div>
     </Layout>
   )
 }
