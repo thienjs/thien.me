@@ -22,9 +22,8 @@ export default function Hero() {
               },
             }}
           >
-            <h1 className="text-3xl font-bold text-gray-900 lg:text-4xl dark:text-white">
+            <h1 className="text-3xl font-bold text-gray-900 lg:text-4xl dark:text-white mt-6">
               Thien Tran
-              <p className="text-xl">Designer. Developer. Dreamer.</p>
             </h1>
           </motion.div>
           <div className="mt-6 text-gray-800 dark:text-white">
@@ -88,7 +87,7 @@ export default function Hero() {
             </p>
           </div>
         </div>
-        <div className="flex-shrink-0 lg:mt-12  mb-10 ">
+        <div className="flex-shrink-0 lg:mt-12  mb-10 hidden">
           <Image
             src="https://github.com/thienjs.png"
             alt="Profile"

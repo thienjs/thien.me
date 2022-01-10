@@ -27,16 +27,18 @@ import { ArticleList } from '~/components/ArticleList'
 import NowPlaying from '~/components/music/NowPlaying'
 import Tracks from '~/components/Tracks'
 import DiscordStatus from '~/components/DiscordStatus'
+import RepoCard from '~/components/Projects/RepoCard'
+import ArrowLink from '~/components/links/ArrowLink'
 
 export type HomePageProps = {
   recentArticles: any
   tweets: any
-  pinnedItems: any
+  repos: any
 }
 export default function HomePage({
   recentArticles,
   tweets,
-  pinnedItems,
+  repos,
 }: HomePageProps) {
   const { handleMessage } = useMessage()
 
@@ -48,28 +50,24 @@ export default function HomePage({
       </h2>
       <div className="mb-10">
         <ArticleList articles={recentArticles} />
+        <ArrowLink href="/blog">see all posts</ArrowLink>
       </div>
       <h2 className="text-3xl font-semibold py-4  text-black dark:text-gray-100">
         Projects
       </h2>
-      <div className="flex items-center justify-start w-full  no-scrollbar">
-        <div className="flex overflow-x-auto w-full scroll-hidden no-scrollbar">
-          {pinnedItems.map((item) => {
-            return (
-              <div className="border-b-2 border-cyan-600 px-14 py-6 mx-10 shadow-sm shadow-gray-500/20 bg-zinc-100 dark:bg-zinc-700 bg-opcaity-80">
-                <Link href={item.url}>
-                  <a>{item.name}</a>
-                </Link>
-                <p>stars {item.stargazerCount}</p>
+      <div className="">
+        <div className="">
+          <div className=" w-full border-0 ">
+            {repos.map((repo) => (
+              <div key={repo.name} className="border-0">
+                <RepoCard {...repo} />
               </div>
-            )
-          })}
+            ))}
+          </div>
         </div>
+        <ArrowLink href="/repo">see all repos</ArrowLink>
       </div>
-      <h2 className="text-3xl mt-8 font-semibold py-4 text-gray-900 dark:text-gray-100 mb-2">
-        Skills
-      </h2>
-      <SkillsTable />
+
       <h2 className="text-3xl font-semibold py-4 mt-8">Recent Tweets</h2>
       {tweets.map((tweet) => (
         <Tweet key={tweet.id} {...tweet} />
@@ -77,8 +75,10 @@ export default function HomePage({
       <h2 className="text-3xl mt-8 font-semibold py-4 text-gray-900 dark:text-gray-100 mb-2">
         Music
       </h2>
-      <NowPlaying />
-      <Tracks />
+      <div>
+        <NowPlaying />
+        <ArrowLink href="/repo">see what i've been listening too</ArrowLink>
+      </div>
     </Layout>
   )
 }
@@ -114,7 +114,14 @@ export const getStaticProps: GetStaticProps = async () => {
                 ... on Repository {
                   name
                   url
+                  description
+                  pushedAt
                   stargazerCount
+                  forkCount
+                  primaryLanguage {
+                    name
+                    color
+                  }
                 }
               }
             }
@@ -125,12 +132,22 @@ export const getStaticProps: GetStaticProps = async () => {
   })
 
   const { user } = data
-  const pinnedItems = user.pinnedItems.edges.map(({ node }) => node)
+
+  const repos = user.pinnedItems.edges.map(({ node: repo }) => ({
+    name: repo.name,
+    url: repo.url,
+    description: repo.description,
+    updatedAt: repo.pushedAt,
+    stars: repo.stargazerCount,
+    forks: repo.forkCount,
+    language: repo.primaryLanguage,
+  }))
+
   return {
     props: {
       recentArticles: articles.slice(0, 3),
       tweets,
-      pinnedItems,
+      repos,
     },
     revalidate: 120,
   }

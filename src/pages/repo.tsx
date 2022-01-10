@@ -7,29 +7,13 @@ const RepoPage = ({ repos }) => (
   <Layout>
     <div>
       {repos.map((repo) => (
-        <div key={repo.name} className="repo_card">
+        <div key={repo.name} className="flex-grow m-1 w-full">
           <RepoCard {...repo} />
         </div>
       ))}
-
-      <style jsx>{`
-        div {
-          display: flex;
-          flex-flow: row wrap;
-          justify-content: space-between;
-          align-items: flex-start;
-          width: 100%;
-        }
-
-        div .repo_card {
-          flex-grow: 1;
-          margin: 0.5em;
-          width: 370px;
-        }
-      `}</style>
     </div>
 
-    <p>
+    <p className="text-center">
       <a
         href="https://github.com/thienjs?tab=repositories"
         target="_blank"
@@ -37,13 +21,6 @@ const RepoPage = ({ repos }) => (
       >
         View more on GitHub...
       </a>
-
-      <style jsx>{`
-        p {
-          text-align: center;
-          margin-bottom: 0;
-        }
-      `}</style>
     </p>
   </Layout>
 )

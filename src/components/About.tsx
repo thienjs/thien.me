@@ -4,32 +4,27 @@ import profile from "../../public/notion-me.png"
 
 const About = () => {
     return (
-        <div>
-            <div className="lg:space-x-5 lg:flex lg:flex-row item-center lg:-mx-4 flex flex-col-reverse text-center lg:text-left">
-                <div className="lg:px-4 lg:mt-12 ">
-                    <h1 className="text-2xl font-bold text-gray-900 lg:text-5xl dark:text-white">
-                        Hey there,I'm Thien 
-                    </h1>
-                    <div className="mt-6 text-gray-800 dark:text-white">
-                        <p className="mb-4">
-                          
-                        </p>
-                    </div>
-                </div>
-                <div className="flex-shrink-0 lg:mt-12 lg:px-4 mb-10">
-                    <Image
-                        src={profile}
-                        alt="Profile"
-                        priority={true}
-                        className="rounded-full"
-                        width={250}
-                        height={250}
-                        placeholder="blur"
-                    />
-                </div>
-            </div>
-            <p>I'm passionate about creating elegant solutions for the modern world through design and technology. </p>
+      <div>
+        <div className="text-left content-start ">
+          <Image
+            src="https://github.com/thienjs.png"
+            alt="Profile"
+            priority={true}
+            className="rounded-full"
+            width={100}
+            height={100}
+          />
         </div>
+        <h2>hello im thien</h2>
+        <p>
+          i have always been around the web. from geocites to myscpace, to
+          tumblr. ive always enjoyed customizing websites. during covid, i
+          decided to finally learn to code. i took udemy courses and read online
+          tutorials on what language to learn. I started with swift and python.
+          but eventually settled with javascript. Javascript always scared me
+          when i was younger. but once i learned it it was really amazing.
+        </p>
+      </div>
     )
 }
 

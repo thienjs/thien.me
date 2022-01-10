@@ -17,9 +17,9 @@ type Props = {
 };
 
 const RepoCard = (props: Props) => (
-  <div className="border p-3 rounded-sm w-full text-sm">
+  <div className="w-full text-sm mt-2 mb-5">
     <a
-      className={styles.name}
+      className="text-md font-semibold"
       href={props.url}
       target="_blank"
       rel="noopener noreferrer"
@@ -28,12 +28,12 @@ const RepoCard = (props: Props) => (
     </a>
 
     {props.description && (
-      <p className={styles.description}>{props.description}</p>
+      <p className="text-xs font-light my-1 pb-1">{props.description}</p>
     )}
 
-    <div className={styles.meta}>
+    <div className="flex flex-wrap ">
       {props.language && (
-        <div className="text-sm mr-2">
+        <div className="text-xs font-light mr-2 ">
           <span className={styles.language_color}>
             <style jsx>{`
               span {
@@ -46,21 +46,22 @@ const RepoCard = (props: Props) => (
       )}
 
       {props.stars > 0 && (
-        <div className="text-sm">
-          <div className="">
-            <a
-              href={`${props.url}/stargazers`}
-              title={`${props.stars.toLocaleString('en-US')} ${
-                props.stars === 1 ? 'star' : 'stars'
-              }`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex flex-row mr-2"
-            >
-              <StarOcticon fill="currentColor" className={styles.octicon} />
-              <span>{props.stars.toLocaleString('en-US')}</span>
-            </a>
-          </div>
+        <div className="pb-0">
+          <a
+            href={`${props.url}/stargazers`}
+            title={`${props.stars.toLocaleString('en-US')} ${
+              props.stars === 1 ? 'star' : 'stars'
+            }`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex flex-row mr-2 text-xs font-light pb-0  "
+          >
+            <StarOcticon
+              fill="currentColor"
+              className="align-text-bottom mr-1 w-4 h-4 text-xs font-light"
+            />
+            <span>{props.stars.toLocaleString('en-US')}</span>
+          </a>
         </div>
       )}
 
@@ -81,7 +82,7 @@ const RepoCard = (props: Props) => (
       )}
 
       <div
-        className={styles.meta_item}
+        className="text-xs font-light"
         title={intlFormat(
           new Date(props.updatedAt),
           {
