@@ -66,10 +66,7 @@ export default function HomePage({
           })}
         </div>
       </div>
-      <h2 className="text-3xl mt-8 font-semibold py-4 text-gray-900 dark:text-gray-100 mb-2">
-        Skills
-      </h2>
-      <SkillsTable />
+
       <h2 className="text-3xl font-semibold py-4 mt-8">Recent Tweets</h2>
       {tweets.map((tweet) => (
         <Tweet key={tweet.id} {...tweet} />
@@ -114,7 +111,13 @@ export const getStaticProps: GetStaticProps = async () => {
                 ... on Repository {
                   name
                   url
+                  description
                   stargazerCount
+                  forkCount
+                  primaryLanguage {
+                    name
+                    color
+                  }
                 }
               }
             }

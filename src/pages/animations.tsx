@@ -55,9 +55,7 @@ function Home(): JSX.Element {
         </header>
 
         <main>
-          <h1 className="mt-8 text-white text-center text-3xl font-semibold sm:text-4xl">
-            Right click the animation <br /> to copy the source
-          </h1>
+
           <hr />
           <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-center">
             {animations.map(({ title, editLink, source, animation }) => (
@@ -70,20 +68,6 @@ function Home(): JSX.Element {
             ))}
           </div>
         </main>
-
-        <footer>
-          <hr />
-          <div className="mt-16 text-center text-gray-500 text-sm font-light">
-            Crafted by{' '}
-            <span className="text-gray-200 font-light">
-              <LinkPreview
-                name="Thien"
-                href="https://twitter.com/thientsx"
-                alt="Thien's Twitter"
-              />
-            </span>
-          </div>
-        </footer>
       </div>
     </Layout>
   )

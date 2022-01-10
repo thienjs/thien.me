@@ -1,22 +1,4 @@
-.card {
-  width: 100%;
-  padding: 1.2em 1.2em 0.8em;
-  border: 1px solid;
-  border-radius: 0.5em;
-  font-size: 0.85em;
-  color: var(--medium-dark);
-  border-color: var(--kinda-light);
-}
 
-.name {
-  font-size: 1.2em;
-  font-weight: 600;
-}
-
-.description {
-  margin: 0.7em 0 0.5em;
-  line-height: 1.7;
-}
 
 .meta {
   display: flex;
