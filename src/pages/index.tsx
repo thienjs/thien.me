@@ -52,8 +52,8 @@ export default function HomePage({
       <h2 className="text-3xl font-semibold py-4  text-black dark:text-gray-100">
         Projects
       </h2>
-      <div className="flex items-center justify-start w-full  ">
-        <div className="flex overflow-x-auto w-full ">
+      <div className="flex items-center justify-start w-full  no-scrollbar">
+        <div className="flex overflow-x-auto w-full scroll-hidden no-scrollbar">
           {pinnedItems.map((item) => {
             return (
               <div className="border-b-2 border-cyan-600 px-14 py-6 mx-10 shadow-sm shadow-gray-500/20 bg-zinc-100 dark:bg-zinc-700 bg-opcaity-80">

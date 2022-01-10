@@ -54,7 +54,7 @@ export default function Blog({articles, tags}) {
         </div>
 
         <div className=" flex items-center justify-start w-full  border-gray-200 dark:border-gray-600 no-scrollbar">
-          <ul className="flex overflow-x-auto w-full">
+          <ul className="flex overflow-x-auto w-full no-scrollbar">
             {/* Initial tag for all topics */}
             <Tag activeTag={selectedTag} tag="" cb={() => setSelectedTag('')} />
             {tags &&
