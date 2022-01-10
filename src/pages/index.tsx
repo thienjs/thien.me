@@ -27,16 +27,16 @@ import { ArticleList } from '~/components/ArticleList'
 import NowPlaying from '~/components/music/NowPlaying'
 import Tracks from '~/components/Tracks'
 import DiscordStatus from '~/components/DiscordStatus'
-
+import RepoCard from '~/components/Projects/RepoCard'
 export type HomePageProps = {
   recentArticles: any
   tweets: any
-  pinnedItems: any
+  repos: any
 }
 export default function HomePage({
   recentArticles,
   tweets,
-  pinnedItems,
+  repos,
 }: HomePageProps) {
   const { handleMessage } = useMessage()
 
@@ -54,16 +54,14 @@ export default function HomePage({
       </h2>
       <div className="flex items-center justify-start w-full  no-scrollbar">
         <div className="flex overflow-x-auto w-full scroll-hidden no-scrollbar">
-          {pinnedItems.map((item) => {
-            return (
-              <div className="border-b-2 border-cyan-600 px-14 py-6 mx-10 shadow-sm shadow-gray-500/20 bg-zinc-100 dark:bg-zinc-700 bg-opcaity-80">
-                <Link href={item.url}>
-                  <a>{item.name}</a>
-                </Link>
-                <p>stars {item.stargazerCount}</p>
+          <div>
+            {repos.map((repo) => (
+              <div key={repo.name} className="flex-grow m-1 w-full">
+                <RepoCard {...repo} />
               </div>
-            )
-          })}
+            ))}
+          </div>
+          )
         </div>
       </div>
 
@@ -75,7 +73,6 @@ export default function HomePage({
         Music
       </h2>
       <NowPlaying />
-      <Tracks />
     </Layout>
   )
 }
@@ -112,6 +109,7 @@ export const getStaticProps: GetStaticProps = async () => {
                   name
                   url
                   description
+                  pushedAt
                   stargazerCount
                   forkCount
                   primaryLanguage {
@@ -128,12 +126,22 @@ export const getStaticProps: GetStaticProps = async () => {
   })
 
   const { user } = data
-  const pinnedItems = user.pinnedItems.edges.map(({ node }) => node)
+
+  const repos = user.pinnedItems.edges.map(({ node: repo }) => ({
+    name: repo.name,
+    url: repo.url,
+    description: repo.description,
+    updatedAt: repo.pushedAt,
+    stars: repo.stargazerCount,
+    forks: repo.forkCount,
+    language: repo.primaryLanguage,
+  }))
+
   return {
     props: {
       recentArticles: articles.slice(0, 3),
       tweets,
-      pinnedItems,
+      repos,
     },
     revalidate: 120,
   }
