@@ -91,7 +91,7 @@ export  function Guestbook({ fallbackData }) {
 
   return (
     <>
-      <div className="border border-blue-200 rounded p-6 my-4 w-full dark:border-gray-800 bg-blue-50 dark:bg-blue-opaque">
+      <div className="border border-blue-200 rounded p-6 my-4 w-full dark:border-gray-800 bg-blue-50  dark:bg-zinc-700">
         <h5 className="text-lg md:text-xl font-bold text-gray-900 dark:text-gray-100">
           Sign the Guestbook
         </h5>

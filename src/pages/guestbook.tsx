@@ -20,7 +20,7 @@ export default function GuestbookPage() {
   return (
     <Layout>
       <div>
-        {user && (
+        {!user && (
           <div>
             <Guestbook fallbackData={undefined} />
             <motion.button
