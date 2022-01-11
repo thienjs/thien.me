@@ -34,8 +34,8 @@ export default function Nav() {
                     <span
                       className={`relative z-50 ${
                         pathname === item.path
-                          ? 'text-gray-900  dark:text-gray-400 font-semibold underline decoration-emerald-500 decoration-2'
-                          : 'text-gray-700 dark:text-gray-300 font-normal'
+                          ? 'text-gray-900  dark:text-gray-200 font-semibold underline decoration-cyan-500 decoration-2 decoration-wavy '
+                          : 'text-gray-700 dark:text-gray-400 font-normal'
                       }`}
                     >
                       {item.label}
