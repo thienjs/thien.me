@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { useAuth } from '~/lib/auth' 
-import {prisma} from '~/lib/prisma';
+import { supabase } from '~/lib/supabase';
+import {prisma} from 'lib/prisma';
 
 export default async function handler(
   req: NextApiRequest,
@@ -23,23 +23,19 @@ export default async function handler(
     );
   }
 
-  const {
-    user, // The logged-in user object
-    loading, // loading state
-    signOut // and a method to let the logged-in user sign out
-} = useAuth()
+  const session = supabase.auth.session()
+  const { email,  } = session.user;
 
-
-  if (!user) {
+  if (!session) {
     return res.status(403).send('Unauthorized');
   }
 
   if (req.method === 'POST') {
     const newEntry = await prisma.guestbook.create({
       data: {
-        email:user.email,
+        email,
         body: (req.body.body || '').slice(0, 500),
-        created_by: user.email
+        created_by: email
       }
     });
 
