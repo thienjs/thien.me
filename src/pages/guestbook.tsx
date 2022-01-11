@@ -7,8 +7,8 @@ import { GetServerSideProps } from 'next'
 import { NextAppPageServerSideProps } from '~/types/app'
 import { supabase } from '~/lib/supabase'
 import Layout from '~/components/ui/Layout';
-
-export default function Guestbook() {
+import { Guestbook } from '~/components/guestbook/guestbook'
+export default function GuestbookPage() {
   const {
     user, // The logged-in user object
     loading, // loading state
@@ -22,6 +22,7 @@ export default function Guestbook() {
       <div>
         {user && (
           <div>
+            <Guestbook fallbackData={undefined} />
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.995 }}
@@ -31,7 +32,6 @@ export default function Guestbook() {
             >
               Sign out
             </motion.button>
-            {user.email}
           </div>
         )}
         {!user && (

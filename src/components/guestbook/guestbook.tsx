@@ -1,6 +1,8 @@
 import { useState, useRef } from 'react';
 import { format } from 'date-fns';
-import { signIn, useSession } from 'next-auth/react';
+
+import { useAuth } from '~/lib/auth'
+import {supabase} from '~/lib/supabase'
 import useSWR, { useSWRConfig } from 'swr';
 
 import {fetcher} from '~/lib/fetcher';
@@ -46,8 +48,9 @@ function GuestbookEntry({ entry, user }) {
   );
 }
 
-export default function Guestbook({ fallbackData }) {
-  const { data: session } = useSession();
+export  function Guestbook({ fallbackData }) {
+  const  session  = supabase.auth.session();
+  const { loading, signIn, signUp, signInWithProvider } = useAuth()
   const { mutate } = useSWRConfig();
   const [form, setForm] = useState<FormState>({ state: Form.Initial });
   const inputEl = useRef(null);
@@ -102,7 +105,7 @@ export default function Guestbook({ fallbackData }) {
             className="flex items-center justify-center my-4 font-bold h-8 bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-gray-100 rounded w-28"
             onClick={(e) => {
               e.preventDefault();
-              signIn('github');
+              signInWithProvider('github');
             }}
           >
             Login
@@ -144,3 +147,5 @@ export default function Guestbook({ fallbackData }) {
     </>
   );
 }
+
+export default Guestbook
