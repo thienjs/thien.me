@@ -31,7 +31,15 @@ export default function Nav() {
                     )}
                     aria-current={pathname === item.path ? 'page' : null}
                   >
-                    <span className="relative z-10">{item.label}</span>
+                    <span
+                      className={`relative z-50 ${
+                        pathname === item.path
+                          ? 'text-gray-900  dark:text-gray-400 font-semibold underline decoration-emerald-500 decoration-2'
+                          : 'text-gray-700 dark:text-gray-300 font-normal'
+                      }`}
+                    >
+                      {item.label}
+                    </span>
                     {isActive && (
                       <motion.span
                         layoutId="shadow"

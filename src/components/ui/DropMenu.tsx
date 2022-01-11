@@ -30,7 +30,7 @@ import {
 } from '@radix-ui/react-icons'
 
 export default function DropMenu() {
-  const [isOpen, setIsOpen] = useState(true)
+  const [isOpen, setIsOpen] = useState(false)
   const toggleIcon = () => {
     setIsOpen(!isOpen)
   }
