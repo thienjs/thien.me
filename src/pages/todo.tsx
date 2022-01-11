@@ -42,7 +42,7 @@ export default function TodoPage({ todolist }) {
         )}
         {!user && (
           <div>
-            <p>help</p>
+            <p>sign in to view todos</p>
           </div>
         )}
         <ButtonLink
