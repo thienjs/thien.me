@@ -36,13 +36,8 @@ const AuthPage: NextPage<NextAppPageProps> = () => {
     <Layout>
       <div className="  ">
         {/* App logo and tagline*/}
-        <div className="w-full text-center mb-4 flex  flex-col place-items-center">
-          <div>
-            <FaLock className="text-gray-600 text-5xl shadow-sm" />
-          </div>
-          <h3 className="text-3xl text-gray-600">
-            Supa<strong>Auth</strong>&nbsp;
-          </h3>
+        <div className="w-full text-center mb-4 flex  flex-col place-items-center mt-24">
+
           <small>
             Please provide your <strong>email</strong> and{' '}
             <strong>password</strong> and {isSignIn ? 'Log In' : 'Sign Up'}

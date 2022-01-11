@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { supabase } from '~/lib/supabase';
+import Layout from '../ui/Layout';
 
 export default function Login() {
   const [loading, setLoading] = useState(false);
@@ -33,7 +34,7 @@ export default function Login() {
   };
 
   return (
-    <div className='container mx-auto grid place-content-center min-h-screen'>
+    <div className='container mx-auto grid place-content-center mt-20 mb-20 py-20'>
       <p className='mb-4'>Sign in via magic link with your email below</p>
       <input
         className='mb-4 border-2 border-gray-500 rounded-xl p-4 w-full'

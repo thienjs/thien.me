@@ -278,7 +278,7 @@ export default function DropMenu() {
             </Menu.Item>
             <Menu.Item>
               {({ active }) => (
-                <Link href="/guestbook">
+                <Link href="/stats">
                   <a
                     className={classNames(
                       active
@@ -296,7 +296,7 @@ export default function DropMenu() {
             </Menu.Item>
             <Menu.Item>
               {({ active }) => (
-                <Link href="/Snippets">
+                <Link href="/auth">
                   <a
                     className={classNames(
                       active
