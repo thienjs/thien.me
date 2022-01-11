@@ -1,13 +1,14 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { getSession } from 'next-auth/react';
 import { useAuth } from '~/lib/auth';
+import {supabase} from '~/lib/supabase'
 import {prisma} from 'lib/prisma';
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const session = await getSession({ req });
+  const session = supabase.auth.session();
 
   const { id } = req.query;
   const { email } = session.user;

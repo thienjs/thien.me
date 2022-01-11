@@ -224,7 +224,7 @@ export default function DropMenu() {
             </Menu.Item>
             <Menu.Item>
               {({ active }) => (
-                <Link href="/feedback">
+                <Link href="/todo">
                   <a
                     className={classNames(
                       active
@@ -234,7 +234,7 @@ export default function DropMenu() {
                     )}
                   >
                     <div className="flex flex-row">
-                      <FaceIcon className="mr-4 mt-0.5" /> Feedback
+                      <FaceIcon className="mr-4 mt-0.5" />todo
                     </div>
                   </a>
                 </Link>
