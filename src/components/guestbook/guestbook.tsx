@@ -12,16 +12,16 @@ import ErrorMessage from '~/components/message/ErrorMessage';
 import Spinner from '~/components/Spinner';
 
 function GuestbookEntry({ entry, user }) {
-  const { mutate } = useSWRConfig();
+  const { mutate } = useSWRConfig()
   const deleteEntry = async (e) => {
-    e.preventDefault();
+    e.preventDefault()
 
-    await fetch(`/api/guestbook/${entry.id}`, {
-      method: 'DELETE'
-    });
+    await fetch(`~/pages/api/guestbook/${entry.id}`, {
+      method: 'DELETE',
+    })
 
-    mutate('/api/guestbook');
-  };
+    mutate('~/pages/api/guestbook')
+  }
 
   return (
     <div className="flex flex-col space-y-2">
@@ -45,49 +45,49 @@ function GuestbookEntry({ entry, user }) {
         )}
       </div>
     </div>
-  );
+  )
 }
 
-export  function Guestbook({ fallbackData }) {
-  const  session  = supabase.auth.session();
+export function Guestbook({ fallbackData }) {
+  const session = supabase.auth.session()
   const { loading, signIn, signUp, signInWithProvider } = useAuth()
-  const { mutate } = useSWRConfig();
-  const [form, setForm] = useState<FormState>({ state: Form.Initial });
-  const inputEl = useRef(null);
+  const { mutate } = useSWRConfig()
+  const [form, setForm] = useState<FormState>({ state: Form.Initial })
+  const inputEl = useRef(null)
   const { data: entries } = useSWR('/api/guestbook', fetcher, {
-    fallbackData
-  });
+    fallbackData,
+  })
 
   const leaveEntry = async (e) => {
-    e.preventDefault();
-    setForm({ state: Form.Loading });
+    e.preventDefault()
+    setForm({ state: Form.Loading })
 
-    const res = await fetch('/api/guestbook', {
+    const res = await fetch('~/pages/api/guestbook', {
       body: JSON.stringify({
-        body: inputEl.current.value
+        body: inputEl.current.value,
       }),
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
       },
-      method: 'POST'
-    });
+      method: 'POST',
+    })
 
-    const { error } = await res.json();
+    const { error } = await res.json()
     if (error) {
       setForm({
         state: Form.Error,
-        message: error
-      });
-      return;
+        message: error,
+      })
+      return
     }
 
-    inputEl.current.value = '';
-    mutate('/api/guestbook');
+    inputEl.current.value = ''
+    mutate('/api/guestbook')
     setForm({
       state: Form.Success,
-      message: `Hooray! Thanks for signing my Guestbook.`
-    });
-  };
+      message: `Hooray! Thanks for signing my Guestbook.`,
+    })
+  }
 
   return (
     <>
@@ -104,8 +104,8 @@ export  function Guestbook({ fallbackData }) {
             href="/api/auth/signin/github"
             className="flex items-center justify-center my-4 font-bold h-8 bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-gray-100 rounded w-28"
             onClick={(e) => {
-              e.preventDefault();
-              signInWithProvider('github');
+              e.preventDefault()
+              signInWithProvider('github')
             }}
           >
             Login
@@ -145,7 +145,7 @@ export  function Guestbook({ fallbackData }) {
         ))}
       </div>
     </>
-  );
+  )
 }
 
 export default Guestbook

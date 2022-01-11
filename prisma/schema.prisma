@@ -128,12 +128,6 @@ model todo {
   isCompleted Boolean
 }
 
-enum FeedbackType {
-  ISSUE
-  IDEA
-  FEEDBACK
-}
-
 model guestbook {
   id         BigInt   @id @default(autoincrement())
   email      String   @db.VarChar(256)
@@ -141,4 +135,10 @@ model guestbook {
   created_by String   @db.VarChar(256)
   created_at DateTime @default(now()) @db.Timestamptz(6)
   updated_at DateTime @default(now()) @db.Timestamptz(6)
+}
+
+enum FeedbackType {
+  ISSUE
+  IDEA
+  FEEDBACK
 }
