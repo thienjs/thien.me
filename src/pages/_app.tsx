@@ -1,11 +1,13 @@
 import '~/styles/globals.css'
 import '~/styles/codeblocks.css';
+import 'styles/nprogress.css'
 import React from 'react'
 import { AppProps } from 'next/app'
 import Head from 'next/head'
 import { DefaultSeo } from 'next-seo'
 import { AuthProvider } from '~/lib/auth'
 import { MessageProvider } from '~/lib/message'
+import Progress from '~/components/NProgress';
 
 import SEO from '../../next-seo.config'
 
@@ -53,6 +55,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
               }}
             >
               <Component {...pageProps} />
+              <Progress/>
             </motion.div>
           </AnimatePresence>
         </ThemeProvider>

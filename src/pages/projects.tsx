@@ -1,41 +1,91 @@
-import { projects, tags } from "data/projects";
-import { baseUrl } from "~/lib/constants";
-import ProjectCard from "~/components/ProjectsCard";
-import useTags from "~/lib/hooks/useTags";
+import { graphql } from '@octokit/graphql'
 import Layout from '~/components/ui/Layout'
+import type { GetStaticProps } from 'next'
+import RepoCard from '~/components/Projects/RepoCard'
 
-const ProjectsPage = () => {
-  const [data, setCurrentTag] = useTags(projects)
-
-  return (
-    <Layout>
-      <section>
-        <h1 className="text-3xl font-bold">Projects</h1>
-
-        <div className="flex flex-wrap my-4">
-          {tags.map((tag) => (
-            <button
-              className="px-2 py-1 mb-3 mr-3 font-semibold rounded-md "
-              onClick={() => setCurrentTag(tag)}
-              key={tag}
-            >
-              {tag}
-            </button>
-          ))}
+const ProjectsPage = ({ repos }) => (
+  <Layout>
+    <h1 className='mb-3 mt-4 font-bold text-2xl'>my github repositories</h1>
+    <div className=' '>
+      {repos.map((repo) => (
+        <div key={repo.name} className="flex flex-col  w-full px-12 mb-4">
+          <RepoCard {...repo} />
         </div>
+      ))}
+    </div>
 
-        <div className="flex flex-col my-4 sm:grid sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
-          {data.length ? (
-            data.map((project: any, index: any) => (
-              <ProjectCard {...project} key={index} />
-            ))
-          ) : (
-            <p className="font-semibold">No projects has been found!</p>
-          )}
-        </div>
-      </section>
-    </Layout>
+    <p className="text-center">
+      <a
+        href="https://github.com/thienjs?tab=repositories"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        View more on GitHub...
+      </a>
+    </p>
+  </Layout>
+)
+
+export const getStaticProps: GetStaticProps = async () => {
+  // https://docs.github.com/en/graphql/reference/objects#repository
+  const { user } = await graphql(
+    `
+      query ($username: String!, $sort: String, $limit: Int) {
+        user(login: $username) {
+          repositories(
+            first: $limit
+            isLocked: false
+            isFork: false
+            ownerAffiliations: OWNER
+            privacy: PUBLIC
+            orderBy: { field: $sort, direction: DESC }
+          ) {
+            edges {
+              node {
+                name
+                url
+                description
+                pushedAt
+                stargazerCount
+                forkCount
+                primaryLanguage {
+                  name
+                  color
+                }
+              }
+            }
+          }
+        }
+      }
+    `,
+    {
+      username: 'thienjs',
+      limit: 12,
+      sort: 'STARGAZERS',
+      headers: {
+        authorization: `token ${process.env.GITHUB_ACCESS_TOKEN}`,
+      },
+    }
   )
+
+  const repos = user.repositories.edges.map(({ node: repo }) => ({
+    name: repo.name,
+    url: repo.url,
+    description: repo.description,
+    updatedAt: repo.pushedAt,
+    stars: repo.stargazerCount,
+    forks: repo.forkCount,
+    language: repo.primaryLanguage,
+  }))
+
+  return {
+    props: {
+      repos,
+    },
+    // fetch updated data and update page every 10 minutes (as needed)
+    // https://nextjs.org/docs/basic-features/data-fetching#incremental-static-regeneration
+    revalidate: 600,
+  }
 }
 
-export default ProjectsPage;
+export default ProjectsPage

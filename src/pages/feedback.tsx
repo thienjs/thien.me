@@ -215,9 +215,9 @@ export default function FeedbackPage({ feedback }) {
                 defaultValue="FEEDBACK"
                 {...register('feedbackType', { required: true })}
               >
-                <option>FEEDBACK</option>
-                <option>ISSUE</option>
-                <option>IDEA</option>
+                <option>feedback</option>
+                <option>issue</option>
+                <option>idea</option>
               </select>
             </div>
             <div className="relative">

@@ -34,7 +34,7 @@ const AuthPage: NextPage<NextAppPageProps> = () => {
 
   return (
     <Layout>
-      <div className="h-screen flex flex-col justify-center items-center relative">
+      <div className="  ">
         {/* App logo and tagline*/}
         <div className="w-full text-center mb-4 flex  flex-col place-items-center">
           <div>
@@ -50,14 +50,14 @@ const AuthPage: NextPage<NextAppPageProps> = () => {
         </div>
 
         {/* Sign Up form --> */}
-        <form className="w-full sm:w-1/2 xl:w-1/3" onSubmit={handleSumbit}>
-          <div className="border-teal p-8 border-t-12 bg-white mb-6 rounded-lg shadow-lg">
+        <form className="w-full " onSubmit={handleSumbit}>
+          <div className="border-teal p-8 border-t-12 bg-white mb-6 rounded-lg shadow-lg  dark:bg-zinc-700">
             <button
               onClick={(evt) => {
                 evt.preventDefault()
                 signInWithProvider('github')
               }}
-              className="flex-1 bg-gray-200 text-green-700 py-3 rounded w-full text-center shadow"
+              className="flex-1 bg-gray-200 dark:bg-zinc-600 text-gray-700 dark:text-gray-200 py-3 rounded w-full text-center shadow"
             >
               <FaGithub className="inline-block text-2xl" />{' '}
               {isSignIn ? 'Log In' : 'Sign Up'} with <strong>Github</strong>
@@ -66,7 +66,7 @@ const AuthPage: NextPage<NextAppPageProps> = () => {
             <div className="mb-4">
               <label
                 htmlFor="email"
-                className="block font-semibold text-gray-800 mb-2"
+                className="block  text-gray-800 mb-2 dark:text-gray-100"
               >
                 Email
               </label>
@@ -84,7 +84,7 @@ const AuthPage: NextPage<NextAppPageProps> = () => {
             <div className="mb-4">
               <label
                 htmlFor="password"
-                className="block font-semibold text-gray-800 mb-2"
+                className="block  text-gray-800 mb-2 dark:text-gray-50"
               >
                 Password
               </label>
@@ -92,8 +92,8 @@ const AuthPage: NextPage<NextAppPageProps> = () => {
                 id="password"
                 name="password"
                 type="password"
-                className="h-12 px-4 py-2 bg-white rounded shadow-inner border-gray-300 w-full border hover:border-gray-400"
-                placeholder="Your password. Leave empty for password-less login"
+                className="h-12 px-4 py-2 bg-white rounded shadow-inner border-gray-300 w-full border hover:border-gray-400 text-xs"
+                placeholder="password. leave empty code email"
                 value={values.password}
                 onChange={handleChange}
               />
@@ -101,19 +101,19 @@ const AuthPage: NextPage<NextAppPageProps> = () => {
 
             {/* <!-- Sign Up & Sign In form: Actions --> */}
 
-            <div className="flex pt-4 gap-2">
+            <div className="flex pt-4 gap-2 bg-white dark:bg-zinc-700">
               <button
                 type="submit"
-                className="flex-1 bg-gray-500 border border-gray-600 text-white py-3 rounded w-full text-center shadow"
+                className="flex-1 bg-gray-300 border border-gray-600 text-gray-700 py-3 rounded w-full text-center shadow font-bold"
               >
                 {isSignIn ? 'Log In' : 'Sign Up'}
               </button>
               <div className="flex-1 text-right">
-                <small className="block text-gray-600">
+                <small className="block text-gray-600 dark:text-gray-100">
                   {isSignIn ? 'Not a member yet?' : 'Already a member?'}{' '}
                 </small>
                 <a
-                  className="block font-semibold"
+                  className="block font-semibold text-gray-700 dark:text-gray-200"
                   href=""
                   onClick={(e) => {
                     e.preventDefault()
