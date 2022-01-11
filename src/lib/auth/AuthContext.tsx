@@ -100,7 +100,7 @@ export const AuthProvider: FunctionComponent = ({ children }) => {
       setUser(user)
       setUserLoading(false)
       setLoggedin(true)
-      Router.push(ROUTE_HOME)
+   //   Router.push(ROUTE_HOME)
     } else {
       setUserLoading(false)
     }
@@ -113,10 +113,10 @@ export const AuthProvider: FunctionComponent = ({ children }) => {
         if (user) {
           setUser(user)
           setLoggedin(true)
-          Router.push(ROUTE_HOME) //redirect to profile page on login
+         // Router.push(ROUTE_HOME) //redirect to profile page on login
         } else {
           setUser(null) //nulify user object
-          Router.push(ROUTE_AUTH) //redirect home
+         // Router.push(ROUTE_AUTH) //redirect home
         }
       }
     )
