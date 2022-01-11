@@ -1,5 +1,6 @@
 import { Layout } from '~/components/ui/Layout'
 import { Guestbook } from '~/components/guestbook'
+import { prisma } from '~/lib/prisma'
 export default function Hello({ fallbackData }) {
   return (
     <Layout>
