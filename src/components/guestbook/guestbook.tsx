@@ -49,7 +49,6 @@ function GuestbookEntry({ entry, user }) {
 }
 
 export function Guestbook({ fallbackData }) {
-  const session = supabase.auth.session()
   const user = supabase.auth.user()
   const { loading, signIn, signUp, signInWithProvider } = useAuth()
   const { mutate } = useSWRConfig()
@@ -99,7 +98,7 @@ export function Guestbook({ fallbackData }) {
         <p className="my-1 text-gray-800 dark:text-gray-200">
           Share a message for a future visitor of my site.
         </p>
-        {!session && (
+        {!user && (
           // eslint-disable-next-line @next/next/no-html-link-for-pages
           <a
             href="/api/auth/signin/github"
@@ -112,7 +111,7 @@ export function Guestbook({ fallbackData }) {
             Login
           </a>
         )}
-        {session?.user && (
+        {user && (
           <form className="relative my-4" onSubmit={leaveEntry}>
             <input
               ref={inputEl}
