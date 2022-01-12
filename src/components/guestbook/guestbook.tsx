@@ -16,11 +16,11 @@ function GuestbookEntry({ entry, user }) {
   const deleteEntry = async (e) => {
     e.preventDefault()
 
-    await fetch(`~/pages/api/guestbook/${entry.id}`, {
+    await fetch(`/api/guestbook/${entry.id}`, {
       method: 'DELETE',
     })
 
-    mutate('~/pages/api/guestbook')
+    mutate('/api/guestbook')
   }
 
   return (
@@ -62,7 +62,7 @@ export function Guestbook({ fallbackData }) {
     e.preventDefault()
     setForm({ state: Form.Loading })
 
-    const res = await fetch('~/pages/api/guestbook', {
+    const res = await fetch('/api/guestbook', {
       body: JSON.stringify({
         body: inputEl.current.value,
       }),

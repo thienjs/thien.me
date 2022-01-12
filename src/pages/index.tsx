@@ -25,8 +25,6 @@ import { convertToArticleList, getPublishedArticles } from '~/lib/notion'
 import { GetStaticProps } from 'next'
 import { ArticleList } from '~/components/ArticleList'
 import NowPlaying from '~/components/music/NowPlaying'
-import Tracks from '~/components/Tracks'
-import DiscordStatus from '~/components/DiscordStatus'
 import RepoCard from '~/components/Projects/RepoCard'
 import ArrowLink from '~/components/links/ArrowLink'
 

@@ -9,7 +9,7 @@ export default async function handler(
     {
       method: 'GET',
       headers: {
-        Authorization: `Bearer ${process.env.PLAUSIBLE_API_TOKEN}`
+        Authorization: `Bearer ${process.env.UNAMI_API_TOKEN}`
       }
     }
   );
