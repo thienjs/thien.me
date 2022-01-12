@@ -8,8 +8,7 @@ import DiscordIcon from "~/components/icons/social-icons/discord";
 import TwitterIcon from "~/components/icons/social-icons/twitter";
 import LinkedinIcon from "~/components/icons/social-icons/linkedin";
 import EmailIcon from "~/components/icons/social-icons/email";
-import DiscordStatus from '../DiscordStatus'
-import NowPlaying from '../music/NowPlaying'
+
 import { navigation } from '~/data/nav'
 import UnstyledLink from '../links/UnstyledLink'
 
