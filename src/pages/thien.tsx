@@ -7,8 +7,7 @@ import Timeline from '~/components/Timeline'
 import Avatar from '~/components/ui/Avatar'
 import SkillsTable from '~/components/SkillsTable';
 import SnapCarousel from '~/components/ui/SnapCarousel';
-import Experience from '~/components/Experience';
-import DiscordStatus from '~/components/DiscordStatus'
+
 import ButtonBox from '~/components/button/ButtonBNW'
 import Pomodoro from '~/components/clock/Pomodoro'
 
@@ -46,8 +45,7 @@ export default function thien() {
       <Avatar />
       <SkillsTable />
       <SnapCarousel />
-      <Experience />
-      <DiscordStatus />
+
 
       <ButtonBox label="test" href="/" />
     </Layout>
