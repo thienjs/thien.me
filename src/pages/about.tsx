@@ -57,7 +57,7 @@ const AboutPage = ({ reviews, currentlyReading }) => {
         settled with javascript. Javascript always scared me when i was younger.
         but once i learned it it was really amazing.
       </p>
-      <AboutSection id="books" title="currently into..." Icon={FaBookOpen}>
+      <AboutSection id="books" title="currently reading" Icon={FaBookOpen}>
         <div className="grid grid-cols-1 md:gap-4 md:grid-cols-2">
           <ul>{currentlyReadingList}</ul>
         </div>
@@ -65,8 +65,8 @@ const AboutPage = ({ reviews, currentlyReading }) => {
 
       <AboutSection
         id="books"
-        title="what i've been reading"
-        subtitle="or listening, whatever, love audiobooks"
+        title="read"
+        subtitle="some of my favorite books"
         Icon={FaBook}
       >
         <div className="grid grid-cols-1 md:gap-4 md:grid-cols-2">
