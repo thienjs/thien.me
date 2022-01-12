@@ -3,11 +3,11 @@ import useSWR from 'swr'
 import StatsCard from 'components/stats/StatsCard'
 export function GithubFollowers() {
   const { data } = useSWR<any>(
-    '/api/stats/github-followers',
+    '/api/stats/github-stats',
     fetcher
   )
 
-  const followers = new Number(data?.githubFollowers)
+  const followers = new Number(data?.followers)
   const link = 'https://github.com/thienjs'
   return (
 
