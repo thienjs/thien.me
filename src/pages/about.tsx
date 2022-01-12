@@ -9,7 +9,6 @@ import Layout from '~/components/ui/Layout'
 import { GetStaticProps } from 'next'
 
 export type AboutProps = {
-  bio: string
   reviews: Awaited<ReturnType<typeof getReviews>>
   currentlyReading: Awaited<ReturnType<typeof getReviews>>
 }
@@ -79,7 +78,7 @@ const AboutPage = ({ reviews, currentlyReading }) => {
   )
 }
 
-export const getStaticProps: GetStaticProps<AboutProps> = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const reviews = await getReviews({ limit: 10 })
   const currentlyReading = await getCurrentlyReading({ limit: 2 })
 
