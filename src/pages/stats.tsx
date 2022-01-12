@@ -1,5 +1,5 @@
 import Layout from "~/components/ui/Layout"
-import { TotalArticles, GithubFollowers, Visitors, TwitterFollowers } from "~/components/stats/"
+import { TotalArticles, GithubFollowers, Visitors, TwitterFollowers, GithubStars } from "~/components/stats/"
 export default function Stats() {
   return (
     <Layout>
@@ -7,6 +7,7 @@ export default function Stats() {
 
       <TotalArticles/>
       <GithubFollowers/>
+      <GithubStars/>
       <TwitterFollowers/>
       <Visitors/>
       </div>
