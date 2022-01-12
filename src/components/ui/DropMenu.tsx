@@ -150,7 +150,7 @@ export default function DropMenu() {
             </Menu.Item>
             <Menu.Item>
               {({ active }) => (
-                <Link href="/animations">
+                <Link href="/hello">
                   <a
                     className={classNames(
                       active
@@ -160,7 +160,8 @@ export default function DropMenu() {
                     )}
                   >
                     <div className="flex flex-row">
-                      <BlendingModeIcon className="mr-4 mt-0.5" /> Animations
+                      <BlendingModeIcon className="mr-4 mt-0.5" />
+                      Hello
                     </div>
                   </a>
                 </Link>

@@ -5,16 +5,16 @@ import RepoCard from '~/components/Projects/RepoCard'
 
 const ProjectsPage = ({ repos }) => (
   <Layout>
-    <h1 className='mb-3 mt-4 font-bold text-2xl'>my github repositories</h1>
-    <div className=' '>
+    <h1 className="mb-3 mt-4 font-bold text-2xl">my github repositories</h1>
+    <div className="flex flex-col w-96 content-start">
       {repos.map((repo) => (
-        <div key={repo.name} className="flex flex-col  w-full px-12 mb-4">
+        <div key={repo.name} className="">
           <RepoCard {...repo} />
         </div>
       ))}
     </div>
 
-    <p className="text-center">
+    <p className="">
       <a
         href="https://github.com/thienjs?tab=repositories"
         target="_blank"

@@ -75,7 +75,7 @@ export default function HomePage({
       </h2>
       <div>
         <NowPlaying />
-        <ArrowLink href="/repo">see what i've been listening too</ArrowLink>
+        <ArrowLink href="/music">see what i've been listening to</ArrowLink>
       </div>
     </Layout>
   )

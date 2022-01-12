@@ -25,10 +25,10 @@ export default function Blog({articles, tags}) {
 
     return (
       <Layout>
-        <h1 className="text-5xl font-bold py-4 text-transparent bg-clip-text bg-gradient-to-b from-cyan-400 to-pink-500">
-          Blog
-        </h1>
-        <p className="mb-4">This is where i gather my thoughts</p>
+        <h1 className="text-5xl font-bold ">Blog</h1>
+        <p className="mb-4 mt-2 text-gray-700 dark:text-gray-400">
+          This is where i gather my thoughts
+        </p>
         <div className="relative w-full mb-4">
           <input
             aria-label="Search articles"

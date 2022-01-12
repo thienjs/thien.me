@@ -33,7 +33,7 @@ export const CodeBlock = ({ code, language, metastring }: Props) => {
 
   const CopyCodeButton = (
     <button
-      className={`absolute right-2 top-[10px] md:inline-block group ${
+      className={`relative left-1 top-1 ${
         isCopied ? 'text-teal-500' : 'text-gray-400'
       }`}
       onClick={() => handleCopy()}
@@ -102,6 +102,7 @@ export const CodeBlock = ({ code, language, metastring }: Props) => {
   )
   return (
     <div className="overflow-auto bg-gray-100 dark:bg-gray-800 rounded-md text-sm">
+      <div className="">{CopyCodeButton}</div>
       <Highlight
         {...defaultProps}
         code={code}
@@ -109,11 +110,7 @@ export const CodeBlock = ({ code, language, metastring }: Props) => {
         theme={undefined}
       >
         {({ className, style, tokens, getLineProps, getTokenProps }) => (
-          <div
-            className="relative my-1 language-tab "
-            data-language={language}
-          >
-            {CopyCodeButton}
+          <div className="relative my-1 language-tab " data-language={language}>
             <pre className="">
               {tokens.map((line, i) => {
                 const lineProps = getLineProps({ line, key: i })

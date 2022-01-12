@@ -27,8 +27,8 @@ export default async function handler(
   const user = supabase.auth.user()
   const email = user.email
 
-  if (!session) {
-    return res.status(403).send('Unauthorized');
+  if (!user) {
+    return res.status(403).send('Unauthorized')
   }
 
   if (req.method === 'POST') {

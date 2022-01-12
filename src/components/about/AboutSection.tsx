@@ -15,8 +15,8 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
   id,
   Icon,
 }) => (
-  <section className="mt-4" id={id}>
-    <h1 className="text-xl font-bold ">
+  <section className="mt-2" id={id}>
+    <h1 className=" font-semibold text-gray-700 dark:text-gray-300">
       <span className="flex">
         {Icon ? (
           <Icon
@@ -27,8 +27,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
         {title}
       </span>
     </h1>
-    <h2 className="text-sm  text-subtitle">{subtitle}</h2>
-
+    <h2 className="text-xs text-gray-400 dark:text-gray-400  ">{subtitle}</h2>
     <div className="pt-2 pb-4">{children}</div>
   </section>
 )

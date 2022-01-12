@@ -25,12 +25,13 @@ export const AboutListElement: React.FC<AboutListElementProps> = ({
         <div className="flex">
           <a href={url} className="text-title" target="_blank">
             <span className="flex">
-              {title} <FaExternalLinkAlt className="ml-1 self-center" size="0.7em" />
+              {title}{' '}
+              <FaExternalLinkAlt className="ml-1 self-center" size="0.7em" />
             </span>
           </a>
           {titleSide}
         </div>
-        <p className="text-subsubtitle">{subtitle}</p>
+        <p className="text-gray-600 dark:text-gray-500">{subtitle}</p>
       </div>
       {rightPanel && <div className="flex flex-row md:ml-2">{rightPanel}</div>}
     </div>

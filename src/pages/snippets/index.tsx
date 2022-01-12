@@ -26,10 +26,10 @@ export default function SnippetsPage({snippets, tags}) {
 
   return (
     <Layout>
-      <h1 className="text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-b from-cyan-400 to-pink-500 mb-4">
+      <h1 className="text-5xl font-bold ">
         Snippets
       </h1>
-      <p className="mb-4">collection of useful code for reference</p>
+      <p className="mb-4 mt-2 text-gray-700 dark:text-gray-400">collection of useful code for reference</p>
       <div className="relative w-full mb-4">
         <input
           aria-label="Search snippets"
@@ -70,7 +70,7 @@ export default function SnippetsPage({snippets, tags}) {
       </div>
       <div className="min-h-screen space-y-12">
         {!filteredSnippets.length && (
-          <div className="w-full mx-auto rounded-lg bg-[#F8FAFC] dark:bg-midnight p-4">
+          <div className="w-full mx-auto  p-4">
             <p className="flex items-center justify-center text-2xl">
               No snippets found{' '}
               <span>
