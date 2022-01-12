@@ -32,7 +32,7 @@ function GuestbookEntry({ entry, user }) {
         <p className="text-sm text-gray-400 dark:text-gray-600">
           {format(new Date(entry.updated_at), "d MMM yyyy 'at' h:mm bb")}
         </p>
-        {user && entry.created_by === user.name && (
+        {user && entry.created_by === user.email && (
           <>
             <span className="text-gray-200 dark:text-gray-800">/</span>
             <button
@@ -50,6 +50,7 @@ function GuestbookEntry({ entry, user }) {
 
 export function Guestbook({ fallbackData }) {
   const session = supabase.auth.session()
+  const user = supabase.auth.user()
   const { loading, signIn, signUp, signInWithProvider } = useAuth()
   const { mutate } = useSWRConfig()
   const [form, setForm] = useState<FormState>({ state: Form.Initial })
@@ -141,7 +142,7 @@ export function Guestbook({ fallbackData }) {
       </div>
       <div className="mt-4 space-y-8">
         {entries?.map((entry) => (
-          <GuestbookEntry key={entry.id} entry={entry} user={session?.user} />
+          <GuestbookEntry key={entry.id} entry={entry} user={user} />
         ))}
       </div>
     </>
