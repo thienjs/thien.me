@@ -142,10 +142,11 @@ export interface IAnimations {
   animation?: string
 }
 
-export type Todo = {
-  id: number
-  text: string
-  isCompleted: boolean
+export interface Todo {
+  id: string;
+  created: string;
+  text: string;
+  completed: boolean;
 }
 
 export enum Form {
