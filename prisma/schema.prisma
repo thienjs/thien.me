@@ -23,104 +23,6 @@ model views {
   count BigInt @default(1)
 }
 
-model account {
-  user_id    Int       @id @default(autoincrement())
-  username   String    @unique @db.VarChar(255)
-  password   String    @db.VarChar(60)
-  is_admin   Boolean   @default(false)
-  created_at DateTime? @default(now()) @db.Timestamptz(6)
-  updated_at DateTime? @default(now()) @db.Timestamptz(6)
-  website    website[]
-}
-
-model event {
-  event_id    Int       @id @default(autoincrement())
-  website_id  Int
-  session_id  Int
-  created_at  DateTime? @default(now()) @db.Timestamptz(6)
-  url         String    @db.VarChar(500)
-  event_type  String    @db.VarChar(50)
-  event_value String    @db.VarChar(50)
-  session     session   @relation(fields: [session_id], references: [session_id], onDelete: Cascade, onUpdate: NoAction)
-  website     website   @relation(fields: [website_id], references: [website_id], onDelete: Cascade, onUpdate: NoAction)
-
-  @@index([created_at])
-  @@index([session_id])
-  @@index([website_id])
-}
-
-model pageview {
-  view_id    Int       @id @default(autoincrement())
-  website_id Int
-  session_id Int
-  created_at DateTime? @default(now()) @db.Timestamptz(6)
-  url        String    @db.VarChar(500)
-  referrer   String?   @db.VarChar(500)
-  session    session   @relation(fields: [session_id], references: [session_id], onDelete: Cascade, onUpdate: NoAction)
-  website    website   @relation(fields: [website_id], references: [website_id], onDelete: Cascade, onUpdate: NoAction)
-
-  @@index([created_at])
-  @@index([session_id])
-  @@index([website_id, created_at])
-  @@index([website_id])
-  @@index([website_id, session_id, created_at])
-}
-
-model session {
-  session_id   Int        @id @default(autoincrement())
-  session_uuid String     @unique @db.Uuid
-  website_id   Int
-  created_at   DateTime?  @default(now()) @db.Timestamptz(6)
-  hostname     String?    @db.VarChar(100)
-  browser      String?    @db.VarChar(20)
-  os           String?    @db.VarChar(20)
-  device       String?    @db.VarChar(20)
-  screen       String?    @db.VarChar(11)
-  language     String?    @db.VarChar(35)
-  country      String?    @db.Char(2)
-  website      website    @relation(fields: [website_id], references: [website_id], onDelete: Cascade, onUpdate: NoAction)
-  event        event[]
-  pageview     pageview[]
-
-  @@index([created_at])
-  @@index([website_id])
-}
-
-model website {
-  website_id   Int        @id @default(autoincrement())
-  website_uuid String     @unique @db.Uuid
-  user_id      Int
-  name         String     @db.VarChar(100)
-  domain       String?    @db.VarChar(500)
-  share_id     String?    @unique @db.VarChar(64)
-  created_at   DateTime?  @default(now()) @db.Timestamptz(6)
-  account      account    @relation(fields: [user_id], references: [user_id], onDelete: Cascade, onUpdate: NoAction)
-  event        event[]
-  pageview     pageview[]
-  session      session[]
-
-  @@index([user_id])
-}
-
-model Post {
-  id        Int     @id @default(autoincrement())
-  title     String
-  content   String?
-  published Boolean @default(false)
-  authorId  Int?
-  author    User?   @relation(fields: [authorId], references: [id])
-}
-
-model User {
-  id        Int      @id @default(autoincrement())
-  name      String?
-  email     String?  @unique
-  createdAt DateTime @default(now()) @map("created_at")
-  updatedAt DateTime @updatedAt @map("updated_at")
-  posts     Post[]
-  @@map("users")
-
-}
 
 
 model guestbook {
@@ -132,14 +34,19 @@ model guestbook {
   updated_at DateTime @default(now()) @db.Timestamptz(6)
 }
 
+
 enum FeedbackType {
   ISSUE
   IDEA
   FEEDBACK
 }
-model todo {
-  id        String   @id @default(uuid())
-  createdAt DateTime @default(now())
-  text      String
-  completed Boolean
+
+enum continents {
+  Africa
+  Antarctica
+  Asia
+  Europe
+  Oceania
+  North_America @map("North America")
+  South_America @map("South America")
 }
