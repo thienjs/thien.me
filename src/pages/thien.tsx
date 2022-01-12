@@ -12,7 +12,7 @@ import DiscordStatus from '~/components/DiscordStatus'
 import ButtonBox from '~/components/button/ButtonBNW'
 import Pomodoro from '~/components/clock/Pomodoro'
 
-import Tracks from '~/components/Tracks'
+
 const accordionData = [
   { title: <>Title 1</>, content: <>content 1</> },
   { title: <>Title 2</>, content: <>content 2</> },
@@ -49,7 +49,6 @@ export default function thien() {
       <Experience />
       <DiscordStatus />
 
-      <Tracks />
       <ButtonBox label="test" href="/" />
     </Layout>
   )
