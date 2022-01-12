@@ -5,7 +5,7 @@ import { AboutListElement } from '../components/about/AboutListElement'
 import { getCurrentlyReading, getReviews } from '../lib/goodreads'
 import { FaBook, FaBookOpen, FaMusic, FaStar } from 'react-icons/fa'
 import Layout from '~/components/ui/Layout'
-
+import Track from '~/components/music/Track'
 import { GetStaticProps } from 'next'
 
 export type AboutProps = {
@@ -57,6 +57,7 @@ const AboutPage = ({ reviews, currentlyReading }) => {
         settled with javascript. Javascript always scared me when i was younger.
         but once i learned it it was really amazing.
       </p>
+      <Track/>
       <AboutSection id="books" title="currently reading" Icon={FaBookOpen}>
         <div className="grid grid-cols-1 md:gap-4 md:grid-cols-2">
           <ul>{currentlyReadingList}</ul>
