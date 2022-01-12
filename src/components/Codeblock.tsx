@@ -102,7 +102,11 @@ export const CodeBlock = ({ code, language, metastring }: Props) => {
   )
   return (
     <div className="overflow-auto bg-gray-100 dark:bg-gray-800 rounded-md text-sm">
-      <div className="">{CopyCodeButton}</div>
+      <div className="flex flex-row justify-between">
+        {CopyCodeButton}
+        {language}
+      </div>
+
       <Highlight
         {...defaultProps}
         code={code}
@@ -110,7 +114,7 @@ export const CodeBlock = ({ code, language, metastring }: Props) => {
         theme={undefined}
       >
         {({ className, style, tokens, getLineProps, getTokenProps }) => (
-          <div className="relative my-1 language-tab " data-language={language}>
+          <div className=" flex" data-language={language}>
             <pre className="">
               {tokens.map((line, i) => {
                 const lineProps = getLineProps({ line, key: i })
