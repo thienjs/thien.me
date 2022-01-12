@@ -9,15 +9,10 @@ export default function Tracks() {
     <>
       {data ? (
         <>
-          {data.tracks.map((track) => (
-            <div className="bg-neutral-100 dark:bg-neutral-900 bg-opacity-50 dark:bg-opacity-50 p-2 space-y-2 rounded-2xl inline animate-scaleCenter">
+          {data.tracks.map((track, index) => (
+            <div className="bg-neutral-100 dark:bg-neutral-900 bg-opacity-50 dark:bg-opacity-50 p-2 space-y-2 rounded-2xl inline">
               <div className="flex flex-col pl-3">
                 <div className="inline-flex space-x-2">
-                  <img
-                    src={track.albumArtUrl}
-                    title={track.album}
-                    className="w-16 h-16 border "
-                  />
                   <div className="flex flex-col mt-2 truncate">
                     <a
                       className="font-medium text-neutral-900 dark:text-neutral-100 truncate w-60 sm:w-96 md:w-full"
@@ -271,5 +266,5 @@ export default function Tracks() {
         </>
       )}
     </>
-  );
+  )
 }

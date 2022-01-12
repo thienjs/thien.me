@@ -14,7 +14,7 @@ export default async function handler(
     title: track.name,
     album: track.album.name,
     albumArtUrl: track.album.images[0].url,
-    ranking: track.popularity,
+    ranking: track.rank,
   }))
 
   res.setHeader(
