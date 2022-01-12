@@ -7,6 +7,7 @@ import Timeline from '~/components/Timeline'
 import Avatar from '~/components/ui/Avatar'
 import SkillsTable from '~/components/SkillsTable';
 import SnapCarousel from '~/components/ui/SnapCarousel';
+import AuthButton from '~/components/supabase/AuthButton';
 
 import ButtonBox from '~/components/button/ButtonBNW'
 import Pomodoro from '~/components/clock/Pomodoro'
@@ -38,7 +39,7 @@ export default function thien() {
         ))}
       </div>
       <Pomodoro />
-
+      <AuthButton/>
 
       <Alert />
       <Timeline />

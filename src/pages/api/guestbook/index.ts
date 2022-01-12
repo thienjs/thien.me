@@ -27,7 +27,7 @@ export default async function handler(
   const user = supabase.auth.user()
   const email = user.email
 
-  if (!user) {
+  if (!session) {
     return res.status(403).send('Unauthorized')
   }
 
@@ -36,7 +36,7 @@ export default async function handler(
       data: {
         email,
         body: (req.body.body || '').slice(0, 500),
-        created_by: email
+        created_by: user.email
       }
     });
 
