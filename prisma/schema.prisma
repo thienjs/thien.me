@@ -118,13 +118,17 @@ model User {
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @updatedAt @map("updated_at")
   posts     Post[]
-
   @@map("users")
+  todo todo[]
 }
 
 model todo {
-  id          Int     @id @default(autoincrement())
-  text        String?
+  id          Int      @id @default(autoincrement())
+  body        String
+  title       String
+  createdAt   DateTime @default(now())
+  User        User?    @relation(fields: [userId], references: [id])
+  userId      Int?
   isCompleted Boolean
 }
 
