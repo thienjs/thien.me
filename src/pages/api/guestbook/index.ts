@@ -1,6 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { supabase } from '~/lib/supabase';
-import {prisma} from 'lib/prisma';
+import { useAuth } from '~/lib/auth'
+import { supabase } from '~/lib/supabase'
+import { prisma } from 'lib/prisma'
 
 export default async function handler(
   req: NextApiRequest,
@@ -9,25 +10,24 @@ export default async function handler(
   if (req.method === 'GET') {
     const entries = await prisma.guestbook.findMany({
       orderBy: {
-        updated_at: 'desc'
-      }
-    });
+        updated_at: 'desc',
+      },
+    })
 
     return res.json(
       entries.map((entry) => ({
         id: entry.id.toString(),
         body: entry.body,
         created_by: entry.created_by,
-        updated_at: entry.updated_at
+        updated_at: entry.updated_at,
       }))
-    );
+    )
   }
+  const { user } = useAuth()
 
-  const session = supabase.auth.session()
-  const user = supabase.auth.user()
   const email = user.email
 
-  if (!session) {
+  if (!user) {
     return res.status(403).send('Unauthorized')
   }
 
@@ -36,17 +36,17 @@ export default async function handler(
       data: {
         email,
         body: (req.body.body || '').slice(0, 500),
-        created_by: user.email
-      }
-    });
+        created_by: user.email,
+      },
+    })
 
     return res.status(200).json({
       id: newEntry.id.toString(),
       body: newEntry.body,
       created_by: newEntry.created_by,
-      updated_at: newEntry.updated_at
-    });
+      updated_at: newEntry.updated_at,
+    })
   }
 
-  return res.send('Method not allowed.');
+  return res.send('Method not allowed.')
 }
