@@ -1,59 +1,19 @@
-import { useAuth } from '~/lib/auth'
-import { prisma } from '~/lib/prisma';
-import { Feedback, FeedbackType } from '@prisma/client';
-import styles from '~/styles/guestbook.module.css'
-import { motion } from 'framer-motion'
-import { GetServerSideProps } from 'next'
-import { NextAppPageServerSideProps } from '~/types/app'
-import { supabase } from '~/lib/supabase'
-import Layout from '~/components/ui/Layout';
-import { Guestbook } from '~/components/guestbook/guestbook'
-export default function GuestbookPage({ fallbackData }) {
-  const {
-    user, // The logged-in user object
-    loading, // loading state
-    signOut, // and a method to let the logged-in user sign out
-    signIn,
-    signInWithProvider,
-  } = useAuth()
+import { prisma } from 'lib/prisma'
+import Layout from '~/components/ui/Layout'
+import Guestbook from 'components/Guestbook'
 
+export default function GuestbookPage({ fallbackData }) {
   return (
     <Layout>
-      <div>
-        {user && (
-          <div>
-            <Guestbook fallbackData={fallbackData} />
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.995 }}
-              transition={{ ease: 'easeInOut', duration: 0.015 }}
-              className={styles.button}
-              onClick={() => signOut()}
-            >
-              Sign out
-            </motion.button>
-          </div>
-        )}
-        {!user && (
-          <div>
-            <p>
-              Hey <b>you!</b>
-            </p>
-
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.995 }}
-              transition={{ ease: 'easeInOut', duration: 0.015 }}
-              className={styles.loginbutton}
-              onClick={(evt) => {
-                evt.preventDefault()
-                signInWithProvider('github')
-              }}
-            >
-              Sign in with Github
-            </motion.button>
-          </div>
-        )}
+      <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16">
+        <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
+          Guestbook
+        </h1>
+        <p className="text-gray-600 dark:text-gray-400 mb-4">
+          Leave a comment below. It could be anything – appreciation,
+          information, wisdom, or even humor. Surprise me!
+        </p>
+        <Guestbook fallbackData={fallbackData} />
       </div>
     </Layout>
   )

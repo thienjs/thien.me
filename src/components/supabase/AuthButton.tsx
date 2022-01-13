@@ -1,12 +1,19 @@
-import { useAuth } from '~/lib/auth'
-import { supabase } from '~/lib/supabase'
+import { useSession, signIn, signOut } from "next-auth/react"
 
-export default function AuthButton() {
-  const {user} = useAuth()
+export default function Component() {
+  const { data: session } = useSession()
+  if (session) {
+    return (
+      <>
+        Signed in as {session.user.email} <br />
+        <button onClick={() => signOut()}>Sign out</button>
+      </>
+    )
+  }
   return (
-    <div>
-      {!user && <>no user</>}
-      {user && <>user</>}
-    </div>
+    <>
+      Not signed in <br />
+      <button onClick={() => signIn()}>Sign in</button>
+    </>
   )
 }

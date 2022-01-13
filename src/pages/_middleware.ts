@@ -1,22 +1,36 @@
-import { NextRequest, NextResponse } from 'next/server'
-import jwt from '@tsndr/cloudflare-worker-jwt'
-import { MW_AUTH, SUPA_TOKEN } from '~/config'
+import type { NextFetchEvent, NextRequest } from 'next/server'
+import { NextResponse } from 'next/server'
 
-/**
- * Verifies the user's JWT token and continues with the chain of middlewares, till the actual route is visited if the user is valid, or redirects to `/` if it's not
- */
-export async function middleware(request: NextRequest) {
-    if(MW_AUTH) await verifyAuth(request)
+export function middleware(req: NextRequest, ev: NextFetchEvent) {
+  const ContentSecurityPolicy = `
+    default-src 'self';
+    script-src 'self' 'unsafe-eval' 'unsafe-inline' *.youtube.com *.twitter.com cdn.usefathom.com;
+    child-src *.youtube.com *.google.com *.twitter.com;
+    style-src 'self' 'unsafe-inline' *.googleapis.com;
+    img-src * blob: data:;
+    media-src 'none';
+    connect-src *;
+    font-src 'self';
+  `
 
-    // continue the middleware chain https://nextjs.org/docs/api-reference/next/server#nextresponse
-    return NextResponse.next()
-}
+  const response = NextResponse.next()
 
-async function verifyAuth(request: NextRequest) {
-    const token = request.cookies[SUPA_TOKEN]
+  response.headers.set(
+    'Content-Security-Policy',
+    ContentSecurityPolicy.replace(/\n/g, '')
+  )
+  response.headers.set('Referrer-Policy', 'origin-when-cross-origin')
+  response.headers.set(
+    'Permissions-Policy',
+    'camera=(), microphone=(), geolocation=()'
+  )
+  response.headers.set(
+    'Strict-Transport-Security',
+    'max-age=31536000; includeSubDomains; preload'
+  )
+  response.headers.set('X-Frame-Options', 'DENY')
+  response.headers.set('X-Content-Type-Options', 'nosniff')
+  response.headers.set('X-DNS-Prefetch-Control', 'on')
 
-    // Obtain JWT Secret from Supabase dashboard - 'Settings' -> 'API' -> 'Config' -> 'JWT Secret' and configure in Vercel as `SUPABASE_JWT_SECRET`
-    if (!token || !(await jwt.verify(token, process.env.SUPABASE_JWT_SECRET!))) {
-        return NextResponse.redirect('/', 302)
-    }
+  return response
 }
