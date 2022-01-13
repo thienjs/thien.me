@@ -8,7 +8,7 @@ import { NextAppPageServerSideProps } from '~/types/app'
 import { supabase } from '~/lib/supabase'
 import Layout from '~/components/ui/Layout';
 import { Guestbook } from '~/components/guestbook/guestbook'
-export default function GuestbookPage() {
+export default function GuestbookPage({ fallbackData }) {
   const {
     user, // The logged-in user object
     loading, // loading state
@@ -20,9 +20,9 @@ export default function GuestbookPage() {
   return (
     <Layout>
       <div>
-        {!user && (
+        {user && (
           <div>
-            <Guestbook fallbackData={undefined} />
+            <Guestbook fallbackData={fallbackData} />
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.995 }}
@@ -59,19 +59,24 @@ export default function GuestbookPage() {
   )
 }
 
-export const getServerSideProps: GetServerSideProps = async ({
-  req,
-}): Promise<NextAppPageServerSideProps> => {
-  const { user } = await supabase.auth.api.getUserByCookie(req)
-  // We can do a re-direction from the server
-  if (!user) {
-    return {
-      props: {
-        user,
-        loggedIn: !!user,
-      },
-    }
+export async function getStaticProps() {
+  const entries = await prisma.guestbook.findMany({
+    orderBy: {
+      updated_at: 'desc',
+    },
+  })
+
+  const fallbackData = entries.map((entry) => ({
+    id: entry.id.toString(),
+    body: entry.body,
+    created_by: entry.created_by.toString(),
+    updated_at: entry.updated_at.toString(),
+  }))
+
+  return {
+    props: {
+      fallbackData,
+    },
+    revalidate: 60,
   }
-  // or, alternatively, can send the same values that client-side context populates to check on the client and redirect
-  // The following lines won't be used as we're redirecting above
 }

@@ -40,7 +40,6 @@ export default function thien() {
       </div>
       <Pomodoro />
       <AuthButton/>
-              <CountryList/>
       <Alert />
       <Timeline />
       <Avatar />
