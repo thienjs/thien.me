@@ -5,8 +5,9 @@ import GoogleProvider from "next-auth/providers/google";
 import SpotifyProvider from 'next-auth/providers/spotify'
 
 
-export default NextAuth({
 
+
+export default NextAuth({
   providers: [
     SpotifyProvider({
       authorization:
@@ -23,4 +24,16 @@ export default NextAuth({
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     }),
   ],
-})
+  callbacks: {
+    async jwt({token, account}) {
+      if (account) {
+        token.accessToken = account.refresh_token;
+      }
+      return token;
+    },
+    async session(session, user) {
+      session.user = user;
+      return session;
+    },
+  },
+});

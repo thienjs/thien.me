@@ -27,6 +27,7 @@ import { ArticleList } from '~/components/ArticleList'
 import NowPlaying from '~/components/music/NowPlaying'
 import RepoCard from '~/components/Projects/RepoCard'
 import ArrowLink from '~/components/links/ArrowLink'
+import {useSession, signIn, signOut} from 'next-auth/react';
 
 export type HomePageProps = {
   recentArticles: any
