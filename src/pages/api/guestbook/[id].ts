@@ -9,9 +9,9 @@ export default async function handler(
   res: NextApiResponse
 ) {
   const session = supabase.auth.session();
-
+  const user = supabase.auth.user()
   const { id } = req.query;
-  const { email } = session.user;
+  const email  = user.email
 
   const entry = await prisma.guestbook.findUnique({
     where: {
