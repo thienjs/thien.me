@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { getSession } from 'next-auth/react';
+
 import { useAuth } from '~/lib/auth';
 import {supabase} from '~/lib/supabase'
 import {prisma} from 'lib/prisma';
@@ -8,10 +8,9 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const session = supabase.auth.session();
-  const user = supabase.auth.user()
+
+  const {user} = useAuth()
   const { id } = req.query;
-  const email  = user.email
 
   const entry = await prisma.guestbook.findUnique({
     where: {
@@ -28,7 +27,7 @@ export default async function handler(
     });
   }
 
-  if (!session || email !== entry.email) {
+  if (!user) {
     return res.status(403).send('Unauthorized');
   }
 
