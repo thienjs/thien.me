@@ -13,7 +13,7 @@ export default async function handler(
 
   const entry = await prisma.guestbook.findUnique({
     where: {
-      id: 
+      id: Number(id)
     }
   });
 

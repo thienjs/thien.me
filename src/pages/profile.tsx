@@ -8,7 +8,7 @@ export default function Home() {
   if (session) {
     return (
       <Layout>
-        Signed in as {session?.token?.email} <br />
+        Signed in as {session?.user.email} <br />
         <button onClick={() => signOut()}>Sign out</button>
       </Layout>
     );
