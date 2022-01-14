@@ -10,29 +10,38 @@ const TestPage: NextPage = () => {
   console.log(session);
   
   return (
-    <div className={styles.container}>
-
-      <main className={styles.main}>
+    <Layout>
+      <main className="">
         {session ? (
           <>
-          <div className={styles.user}>
-          <h1>Signed in as {session.user?.name}</h1>
-          {session.user?.image ? (
-            <img src={session.user.image} alt="" />
-          ):('')}
-          </div>
-          <button className={styles.btn} onClick={()=>signOut()}>Signout</button>
+            <div className="">
+              <h1 className="text-xl mb-4">
+                Signed in as {session.user?.name}
+              </h1>
+              {session.user?.image ? (
+                <img
+                  className="rounded-full h-20 w-20 m-6"
+                  src={session.user.image}
+                  alt=""
+                />
+              ) : (
+                ''
+              )}
+            </div>
+            <button className="text-center" onClick={() => signOut()}>
+              Signout
+            </button>
           </>
-        ):(<>
-        <h1>Sign in to continue</h1>
-        <button className={styles.btn} onClick={()=>signIn()}>Signin</button>
-        </>)}
-        
-        
+        ) : (
+          <>
+            <h1>Sign in to continue</h1>
+            <button className={styles.btn} onClick={() => signIn()}>
+              Signin
+            </button>
+          </>
+        )}
       </main>
-
-      
-    </div>
+    </Layout>
   )
 }
 
