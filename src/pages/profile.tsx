@@ -1,22 +1,38 @@
-import {useSession, signIn, signOut} from 'next-auth/react';
-import Layout from '~/components/ui/Layout';
-import ButtonLink from '~/components/links/ButtonLink';
+import type { NextPage } from 'next'
+import Head from 'next/head'
+import Image from 'next/image'
+import styles from '../styles/Home.module.css'
+import { useSession, signIn, signOut } from "next-auth/react"
 
-export default function Home() {
-  const {data: session} = useSession();
-
-  if (session) {
-    return (
-      <Layout>
-        Signed in as {session?.token?.email} <br />
-        <button onClick={() => signOut()}>Sign out</button>
-      </Layout>
-    );
-  }
+const TestPage: NextPage = () => {
+  const { data: session } = useSession()
+  console.log(session);
+  
   return (
-    <Layout>
-      Not signed in <br />
-      <butto onClick={() => signIn()}>Sign in</butto>
-    </Layout>
-  );
+    <div className={styles.container}>
+
+      <main className={styles.main}>
+        {session ? (
+          <>
+          <div className={styles.user}>
+          <h1>Signed in as {session.user?.name}</h1>
+          {session.user?.image ? (
+            <img src={session.user.image} alt="" />
+          ):('')}
+          </div>
+          <button className={styles.btn} onClick={()=>signOut()}>Signout</button>
+          </>
+        ):(<>
+        <h1>Sign in to continue</h1>
+        <button className={styles.btn} onClick={()=>signIn()}>Signin</button>
+        </>)}
+        
+        
+      </main>
+
+      
+    </div>
+  )
 }
+
+export default TestPage
