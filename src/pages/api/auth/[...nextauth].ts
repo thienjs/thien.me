@@ -9,7 +9,7 @@ const prisma = new PrismaClient()
 
 
 export default NextAuth({
-  adapter: PrismaAdapter(prisma),
+
   providers: [
     SpotifyProvider({
       authorization:
