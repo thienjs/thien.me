@@ -6,6 +6,7 @@ import classnames from 'classnames';
 import { navigation } from '~/data/nav'
 import ThemeSwitch from '../ThemeSwitch'
 import DropMenu from './DropMenu'
+import AuthButton from '../auth/AuthButton'
 
 export default function Nav() {
   const { pathname } = useRouter()
@@ -61,6 +62,7 @@ export default function Nav() {
         </motion.ul>
       </AnimateSharedLayout>
       <div className="flex">
+        <AuthButton />
         <ThemeSwitch />
         <DropMenu />
       </div>
