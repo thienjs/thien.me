@@ -3,6 +3,7 @@ import { Fragment, useState } from 'react'
 import { Menu, Transition } from '@headlessui/react'
 import classNames from '~/lib/classNames'
 import { ChevronDownIcon } from '@heroicons/react/solid'
+import { useSession, signIn, signOut } from 'next-auth/react'
 import Link from 'next/link'
 import {
   CodeIcon,
@@ -28,9 +29,11 @@ import {
   CubeIcon,
   BookmarkIcon,
 } from '@radix-ui/react-icons'
+import AuthButton from '../auth/AuthButton'
 
 export default function DropMenu() {
   const [isOpen, setIsOpen] = useState(false)
+  const { data: session } = useSession()
   const toggleIcon = () => {
     setIsOpen(!isOpen)
   }
@@ -335,7 +338,7 @@ export default function DropMenu() {
             </Menu.Item>
             <Menu.Item>
               {({ active }) => (
-                <Link href="/auth">
+                <>
                   <a
                     className={classNames(
                       active
@@ -345,10 +348,34 @@ export default function DropMenu() {
                     )}
                   >
                     <div className="flex flex-row">
-                      <AvatarIcon className="mr-4 mt-0.5" /> Sign In
+                      {session ? (
+                        <>
+                          <div className="flex flex-row items-center mr-2">
+                            {session.user?.image ? (
+                              <img
+                                className="w-6 h-6 rounded-full"
+                                src={session.user.image}
+                                alt=""
+                              />
+                            ) : (
+                              ''
+                            )}
+                          </div>
+                          <button className="" onClick={() => signOut()}>
+                            Sign Out
+                          </button>
+                        </>
+                      ) : (
+                        <>
+                          <PersonIcon />
+                          <button className="ml-4" onClick={() => signIn()}>
+                            Signin
+                          </button>
+                        </>
+                      )}
                     </div>
                   </a>
-                </Link>
+                </>
               )}
             </Menu.Item>
           </div>

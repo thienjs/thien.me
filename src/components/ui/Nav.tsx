@@ -62,7 +62,6 @@ export default function Nav() {
         </motion.ul>
       </AnimateSharedLayout>
       <div className="flex">
-        <AuthButton />
         <ThemeSwitch />
         <DropMenu />
       </div>
