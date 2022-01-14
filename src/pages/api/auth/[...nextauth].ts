@@ -1,13 +1,15 @@
 import NextAuth from 'next-auth';
 import GithubProvider from 'next-auth/providers/github';
 import GoogleProvider from "next-auth/providers/google";
-
+import { PrismaClient } from "@prisma/client"
 import SpotifyProvider from 'next-auth/providers/spotify'
-
+import { PrismaAdapter } from "@next-auth/prisma-adapter"
+const prisma = new PrismaClient()
 
 
 
 export default NextAuth({
+  adapter: PrismaAdapter(prisma),
   providers: [
     SpotifyProvider({
       authorization:
