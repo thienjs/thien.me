@@ -2,7 +2,7 @@ import Head from 'next/head';
 import { prisma } from '~/lib/prisma';
 import { Feedback, FeedbackType } from '@prisma/client';
 import Link from 'next/link';
-import { useAuth } from '~/lib/auth' 
+
 import { SpinnerFullPage } from '~/components/Spinner'
 import { useForm } from 'react-hook-form'
 import { motion } from 'framer-motion'
@@ -11,16 +11,7 @@ import toast, { Toaster } from 'react-hot-toast'
 import Layout from '~/components/ui/Layout'
 
 export default function FeedbackPage({ feedback }) {
-  const {
-    user, // The logged-in user object
-    loading, // loading state
-    signOut, // and a method to let the logged-in user sign out
-    signInWithProvider,
-  } = useAuth()
 
-  if (loading) {
-    return <SpinnerFullPage />
-  }
   const formatFeedbackType = (feedback: FeedbackType) => {
     switch (feedback) {
       case 'FEEDBACK':
@@ -39,7 +30,7 @@ export default function FeedbackPage({ feedback }) {
 
   const create = async (data) => {
     try {
-      fetch('https://thien.me/api/create', {
+      fetch('./api/create', {
         body: JSON.stringify(data),
         headers: {
           'Content-Type': 'application/json',
@@ -145,7 +136,7 @@ export default function FeedbackPage({ feedback }) {
         <h1 className=" text-3xl md:text-4xl text-white tracking-wide mb-10 ">
           Submit Your Feedback!
         </h1>
-        {user && (
+
           <form
             onSubmit={handleSubmit(onSubmit)}
             className="grid grid-cols-1 gap-y-6 shadow-lg p-10 bg-[#131415] rounded-lg"
@@ -184,7 +175,7 @@ export default function FeedbackPage({ feedback }) {
               </label>
               <input
                 id="email"
-                name={user}
+                name="email"
                 {...register('email', { required: true })}
                 type="email"
                 autoComplete="email"
@@ -263,10 +254,10 @@ export default function FeedbackPage({ feedback }) {
                 Submit
               </motion.button>
             </div>
-            <h2 className="text-3xl my-4">{!user && <>please sign in</>}</h2>
+    
           </form>
-        )}
-        <div>{!user && <>please sign in</>}</div>
+
+
       </main>
     </Layout>
   )
