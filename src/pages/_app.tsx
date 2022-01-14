@@ -16,7 +16,11 @@ import { ThemeProvider } from 'next-themes'
 
 import { motion, AnimatePresence } from 'framer-motion'
 
-function MyApp({ Component, pageProps, router }: AppProps) {
+export default function App({
+  Component,
+  router,
+  pageProps: { session, ...pageProps },
+}) {
   const pageMeta = (Component as any)?.defaultProps?.meta || {}
   const pageSEO = { ...SEO, ...pageMeta }
 
@@ -27,7 +31,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
       </Head>
       <DefaultSeo {...pageSEO} />
       <MessageProvider>
-        <SessionProvider session={pageProps.session}>
+        <SessionProvider session={session}>
           <ThemeProvider attribute="class">
             <AnimatePresence>
               <motion.div
@@ -58,4 +62,3 @@ function MyApp({ Component, pageProps, router }: AppProps) {
   )
 }
 
-export default MyApp
