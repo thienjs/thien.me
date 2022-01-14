@@ -102,7 +102,7 @@ export default function Guestbook({ fallbackData }) {
             className="flex items-center justify-center my-4 font-bold h-8 bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-gray-100 rounded w-28"
             onClick={(e) => {
               e.preventDefault()
-              signIn('google')
+              signIn('github')
             }}
           >
             Login
