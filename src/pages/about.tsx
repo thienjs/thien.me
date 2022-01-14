@@ -53,12 +53,15 @@ const AboutPage = ({ reviews, currentlyReading }) => {
       <div className="px-1 dark:text-gray-200 mb-4">
         <h2 className="text-md">hello im thien</h2>
         <p className="text-sm">
-          i have always been around the web. from geocites to myscpace, to
-          tumblr. ive always enjoyed customizing websites. during covid, i
-          decided to finally learn to code. i took udemy courses and read online
-          tutorials on what language to learn. I started with swift and python.
-          but eventually settled with javascript. Javascript always scared me
-          when i was younger. but once i learned it it was really amazing.
+          I've always loved designing and developing websites ever since I was a
+          kid. Imposter syndrome and my risk adverse nature has prevented me to
+          pursue my goal of becoming a proffessional web developer. This website
+          was made to learn, showcase, and help me find a web developer job.
+        </p>
+        <p>My goals for 2022 is to find a web developer job.</p>
+        <p>
+          My favorite tech stack at the moment is nextjs, tailwindcss, prisma,
+          typescript, and notion.
         </p>
       </div>
       <UnstyledLink href="/music" className="text-2xl font-bold mb-2">
