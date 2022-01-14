@@ -9,7 +9,10 @@ const prisma = new PrismaClient()
 
 
 export default NextAuth({
-
+  session: {
+    strategy: 'jwt',
+  },
+  secret: process.env.NEXT_AUTH_SECRET,
   providers: [
     SpotifyProvider({
       authorization:
@@ -26,5 +29,4 @@ export default NextAuth({
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     }),
   ],
-  secret:process.env.NEXT_AUTH_SECRET
-});
+})
