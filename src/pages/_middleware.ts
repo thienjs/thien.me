@@ -1,36 +1,19 @@
-import type { NextFetchEvent, NextRequest } from 'next/server'
-import { NextResponse } from 'next/server'
+import { getToken } from "next-auth/jwt"
+import { NextResponse } from "next/server"
 
-export function middleware(req: NextRequest, ev: NextFetchEvent) {
-  const ContentSecurityPolicy = `
-    default-src 'self';
-    script-src 'self' 'unsafe-eval' 'unsafe-inline' *.youtube.com *.twitter.com cdn.usefathom.com;
-    child-src *.youtube.com *.google.com *.twitter.com;
-    style-src 'self' 'unsafe-inline' *.googleapis.com;
-    img-src * blob: data:;
-    media-src 'none';
-    connect-src *;
-    font-src 'self';
-  `
-
-  const response = NextResponse.next()
-
-  response.headers.set(
-    'Content-Security-Policy',
-    ContentSecurityPolicy.replace(/\n/g, '')
-  )
-  response.headers.set('Referrer-Policy', 'origin-when-cross-origin')
-  response.headers.set(
-    'Permissions-Policy',
-    'camera=(), microphone=(), geolocation=()'
-  )
-  response.headers.set(
-    'Strict-Transport-Security',
-    'max-age=31536000; includeSubDomains; preload'
-  )
-  response.headers.set('X-Frame-Options', 'DENY')
-  response.headers.set('X-Content-Type-Options', 'nosniff')
-  response.headers.set('X-DNS-Prefetch-Control', 'on')
-
-  return response
+/** @param {import("next/server").NextRequest} req */
+export async function middleware(req) {
+  if (req.nextUrl.pathname === "/middleware-protected") {
+    const session = await getToken({
+      req,
+      secret: process.env.SECRET,
+      secureCookie:
+        process.env.NEXTAUTH_URL?.startsWith("https://") ??
+        !!process.env.VERCEL_URL,
+    })
+    // You could also check for any property on the session object,
+    // like role === "admin" or name === "John Doe", etc.
+    if (!session) return NextResponse.redirect("/api/auth/signin")
+    // If user is authenticated, continue.
+  }
 }
