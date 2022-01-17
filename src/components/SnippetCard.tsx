@@ -17,43 +17,43 @@ export function SnippetCard({ snippet }: Props) {
   const [hasRead] = useIsSnippetRead(slug);
 
   return (
-    
-      <button onClick={() => handleSnippetClicked(slug)}>
-        <div className="max-w-3xl  mt-4 mb-4 bg-white dark:bg-zinc-900 bg-opacity-85 w-full">
-          <div className="flex flex-col">
-            <h3 className="text-md font-semibold text-left mb-1">{snippet.title}</h3>
-            <p className="pb-2 text-left text-gray-800 dark:text-gray-400 font-light text-sm">
+    <button onClick={() => handleSnippetClicked(slug)}>
+      <div className="max-w-3xl bg-white dark:bg-zinc-900 bg-opacity-85 w-full">
+        <div className="flex flex-col">
+          <h3 className="text-md font-semibold text-left mb-1">
+            {snippet.title}
+          </h3>
+          <p className="pb-2 text-left text-gray-800 dark:text-gray-400 font-light text-sm">
             {snippet.summary}
           </p>
-            {/* {JSON.stringify(Snippet)} */}
-            {/* <p>{Snippet.summary}</p> */}
-            <span className="text-xs flex text-gray-800 dark:text-gray-400 font-light">
-              {new Date(snippet.publishedDate).toLocaleDateString(
-                siteMetadata.locale,
-                {
-                  year: 'numeric',
-                  month: 'long',
-                  day: 'numeric'
-                }
-              )}{' '}
-              {hasRead && (
-                <span className="text-sm inline-flex items-center text-gray-800 dark:text-gray-400 opacity-75  ml-6">
-                  <svg width="16" height="16" fill="none" viewBox="0 0 24 24">
-                    <path
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="1"
-                      d="M5.75 12.8665L8.33995 16.4138C9.15171 17.5256 10.8179 17.504 11.6006 16.3715L18.25 6.75"
-                    ></path>
-                  </svg>
-                  <span className='font-extralight text-xs'>read</span>
-                </span>
-              )}
-            </span>
-          </div>
+          {/* {JSON.stringify(Snippet)} */}
+          {/* <p>{Snippet.summary}</p> */}
+          <span className="text-xs flex text-gray-800 dark:text-gray-400 font-light">
+            {new Date(snippet.publishedDate).toLocaleDateString(
+              siteMetadata.locale,
+              {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+              }
+            )}{' '}
+            {hasRead && (
+              <span className="text-sm inline-flex items-center text-gray-800 dark:text-gray-400 opacity-75  ml-6">
+                <svg width="16" height="16" fill="none" viewBox="0 0 24 24">
+                  <path
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="1"
+                    d="M5.75 12.8665L8.33995 16.4138C9.15171 17.5256 10.8179 17.504 11.6006 16.3715L18.25 6.75"
+                  ></path>
+                </svg>
+                <span className="font-extralight text-xs">read</span>
+              </span>
+            )}
+          </span>
         </div>
-      </button>
-
-  );
+      </div>
+    </button>
+  )
 }

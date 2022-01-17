@@ -11,7 +11,13 @@ import AuthButton from '~/components/supabase/AuthButton';
 import CountryList from '~/components/CountryList'
 import ButtonBox from '~/components/button/ButtonBNW'
 import Pomodoro from '~/components/clock/Pomodoro'
+import ProjectCard from '~/components/cards/ProjectCard'
+import UnstyledLink from '~/components/links/UnstyledLink'
+import TechIcons, {
+  TechListType,
+} from '~/components/icons/tech-icons/TechIcons'
 
+const techData = 'react, tailwindcss, nextjs'
 
 const accordionData = [
   { title: <>Title 1</>, content: <>content 1</> },
@@ -39,15 +45,15 @@ export default function thien() {
         ))}
       </div>
       <Pomodoro />
-      <AuthButton/>
+      <AuthButton />
       <Alert />
       <Timeline />
       <Avatar />
       <SkillsTable />
       <SnapCarousel />
 
-
       <ButtonBox label="test" href="/" />
+      <TechIcons techs={techData.split(',') as Array<TechListType>} />
     </Layout>
   )
 }

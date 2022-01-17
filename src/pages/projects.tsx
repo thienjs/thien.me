@@ -14,13 +14,13 @@ const ProjectsPage = ({ repos }) => (
       ))}
     </div>
 
-    <p className="">
+    <p className="text-sm p-2 rounded-md px-4 border-gray-500 bg-gray-200 dark:bg-gray-700 w-max">
       <a
         href="https://github.com/thienjs?tab=repositories"
         target="_blank"
         rel="noopener noreferrer"
       >
-        View more on GitHub...
+        check out my github
       </a>
     </p>
   </Layout>

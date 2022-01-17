@@ -26,11 +26,11 @@ export default function SnippetsPage({snippets, tags}) {
 
   return (
     <Layout>
-      <h1 className="text-5xl font-bold ">
-        Snippets
-      </h1>
-      <p className="mb-4 mt-2 text-gray-700 dark:text-gray-400">collection of useful code for reference</p>
-      <div className="relative w-full mb-4">
+      <h1 className="text-5xl font-bold ">Snippets</h1>
+      <p className="mb-4 mt-2 text-gray-700 dark:text-gray-400">
+        collection of useful code for reference
+      </p>
+      <div className="relative w-full">
         <input
           aria-label="Search snippets"
           type="text"
@@ -53,7 +53,7 @@ export default function SnippetsPage({snippets, tags}) {
           />
         </svg>
       </div>
-      <div className="py-3 my-8 overflow-x-auto border-gray-200 dark:border-gray-600 no-scrollbar">
+      <div className="py-3 my-1 mb-2 overflow-x-auto border-gray-200 dark:border-gray-600 no-scrollbar">
         <ul className="flex items-center justify-start w-full no-scrollbar">
           {/* Initial tag for all topics */}
           <Tag activeTag={selectedTag} tag="" cb={() => setSelectedTag('')} />

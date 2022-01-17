@@ -1,8 +1,7 @@
 import { default as Parser } from "rss-parser"
 
 const baseRss =
-  "https://www.goodreads.com/review/list_rss/8539181?key=eq3J6W26JJ4YyrsS66bxtAbL_MSF4YYoTixsVWDWwH1xoFic&shelf=%23ALL%23"
-
+  'https://www.goodreads.com/review/list_rss/8539181?key=eq3J6W26JJ4YyrsS66bxtAbL_MSF4YYoTixsVWDWwH1xoFic&shelf=%23ALL%23'
 const getHtmlContentField = (html: string | undefined, field: string) => {
   if (!html) {
     return null
