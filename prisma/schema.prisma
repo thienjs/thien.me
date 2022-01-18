@@ -44,7 +44,7 @@ model Post {
   id        Int     @id @default(autoincrement())
   title     String
   content   String?
-  published Boolean @default(false)
+  published Boolean @default(true)
   authorId  Int?
   author    User?   @relation(fields: [authorId], references: [id])
 }

@@ -40,7 +40,7 @@ const Draft: React.FC = () => {
             rows={8}
             value={content}
           />
-          <input disabled={!content || !title} type="submit" value="Create" />
+          <input type="submit" value="Create" />
           <a className="back" href="#" onClick={() => Router.push("/")}>
             or Cancel
           </a>
