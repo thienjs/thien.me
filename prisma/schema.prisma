@@ -37,3 +37,11 @@ enum FeedbackType {
   IDEA
   FEEDBACK
 }
+
+model Contact {
+  id        String @id @default(cuid())
+  firstName String
+  lastName  String
+  email     String
+  avatar    String @default("")
+}
