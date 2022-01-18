@@ -1612,10 +1612,10 @@
   "resolved" "https://registry.npmjs.org/@panva/hkdf/-/hkdf-1.0.1.tgz"
   "version" "1.0.1"
 
-"@prisma/client@^3.8.0", "@prisma/client@>=2.26.0 || >=3":
-  "integrity" "sha512-odYAbzfGvVWpDxhk2Yb03DlcCg6zKgJjt5admcp4xtr7u0f76B2NppC4TSGxvdQUGzPI6G37afu2oZCb/uwGfg=="
-  "resolved" "https://registry.npmjs.org/@prisma/client/-/client-3.8.0.tgz"
-  "version" "3.8.0"
+"@prisma/client@^3.8.1", "@prisma/client@>=2.26.0 || >=3":
+  "integrity" "sha512-NxD1Xbkx1eT1mxSwo1RwZe665mqBETs0VxohuwNfFIxMqcp0g6d4TgugPxwZ4Jb4e5wCu8mQ9quMedhNWIWcZQ=="
+  "resolved" "https://registry.npmjs.org/@prisma/client/-/client-3.8.1.tgz"
+  "version" "3.8.1"
   dependencies:
     "@prisma/engines-version" "3.8.0-43.34df67547cf5598f5a6cd3eb45f14ee70c3fb86f"
 
