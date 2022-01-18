@@ -1,7 +1,7 @@
 interface InputProps {
-  placeholder: string;
-  name: string;
-  formRef: any;
+  placeholder: string
+  name: string
+  formRef: any
 }
 
 export default function Input(props: InputProps) {

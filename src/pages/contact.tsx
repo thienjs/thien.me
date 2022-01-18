@@ -2,36 +2,37 @@ import { useState } from 'react';
 import Head from 'next/head';
 import AddContactForm from './../components/contact/AddContactForm';
 import ContactCard from './../components/contact/ContactCard';
+import Layout from '~/components/ui/Layout'
 
-import { PrismaClient, Contact, Prisma } from '@prisma/client';
+import { PrismaClient, Contact, Prisma } from '@prisma/client'
 
-const prisma = new PrismaClient();
+const prisma = new PrismaClient()
 
 export async function getServerSideProps() {
-  const contacts: Contact[] = await prisma.contact.findMany();
+  const contacts: Contact[] = await prisma.contact.findMany()
   return {
     props: {
-      initialContacts: contacts
-    }
-  };
+      initialContacts: contacts,
+    },
+  }
 }
 
 async function saveContact(contact: Prisma.ContactCreateInput) {
   const response = await fetch('/api/contacts', {
     method: 'POST',
-    body: JSON.stringify(contact)
-  });
+    body: JSON.stringify(contact),
+  })
 
   if (!response.ok) {
-    throw new Error(response.statusText);
+    throw new Error(response.statusText)
   }
-  return await response.json();
+  return await response.json()
 }
 
 export default function Index({ initialContacts }) {
-  const [contacts, setContacts] = useState<Contact[]>(initialContacts);
+  const [contacts, setContacts] = useState<Contact[]>(initialContacts)
   return (
-    <>
+    <Layout>
       <Head>
         <title>Contacts App</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -48,11 +49,11 @@ export default function Index({ initialContacts }) {
           <AddContactForm
             onSubmit={async (data, e) => {
               try {
-                await saveContact(data);
-                setContacts([...contacts, data]);
-                e.target.reset();
+                await saveContact(data)
+                setContacts([...contacts, data])
+                e.target.reset()
               } catch (err) {
-                console.log(err);
+                console.log(err)
               }
             }}
           />
@@ -68,6 +69,6 @@ export default function Index({ initialContacts }) {
           ))}
         </section>
       </div>
-    </>
-  );
+    </Layout>
+  )
 }
