@@ -153,7 +153,7 @@ export default function DropMenu() {
             </Menu.Item>
             <Menu.Item>
               {({ active }) => (
-                <Link href="/hello">
+                <Link href="/feed">
                   <a
                     className={classNames(
                       active
@@ -164,7 +164,7 @@ export default function DropMenu() {
                   >
                     <div className="flex flex-row">
                       <BlendingModeIcon className="mr-4 mt-0.5" />
-                      Hello
+                      Feed
                     </div>
                   </a>
                 </Link>
@@ -265,7 +265,7 @@ export default function DropMenu() {
             </Menu.Item>
             <Menu.Item>
               {({ active }) => (
-                <Link href="/bookmark">
+                <Link href="/create">
                   <a
                     className={classNames(
                       active
@@ -275,7 +275,7 @@ export default function DropMenu() {
                     )}
                   >
                     <div className="flex flex-row">
-                      <BookmarkIcon className="mr-4 mt-0.5" /> Bookmark
+                      <BookmarkIcon className="mr-4 mt-0.5" /> Create
                     </div>
                   </a>
                 </Link>
@@ -301,7 +301,7 @@ export default function DropMenu() {
             </Menu.Item>
             <Menu.Item>
               {({ active }) => (
-                <Link href="/welcome">
+                <Link href="/drafts">
                   <a
                     className={classNames(
                       active
@@ -312,7 +312,7 @@ export default function DropMenu() {
                   >
                     <div className="flex flex-row">
                       <BookmarkIcon className="mr-4 mt-0.5" />
-                      welcome
+                      draft
                     </div>
                   </a>
                 </Link>
