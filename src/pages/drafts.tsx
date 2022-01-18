@@ -4,6 +4,7 @@ import Layout from '~/components/ui/Layout'
 import Post, { PostProps } from '../components/Post'
 import { useSession, getSession } from 'next-auth/react'
 import { prisma } from '../lib/prisma'
+import { basePath } from "~/utils/config";
 
 export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
   const session = await getSession({ req })

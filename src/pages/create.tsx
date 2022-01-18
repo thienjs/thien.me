@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Layout from "../components/ui/Layout";
 import Router from "next/router";
+import { basePath } from "~/utils/config";
 
 const Draft: React.FC = () => {
   const [title, setTitle] = useState("");
@@ -10,7 +11,7 @@ const Draft: React.FC = () => {
     e.preventDefault();
     try {
       const body = { title, content };
-      await fetch(`/api/post`, {
+      await fetch(`${basePath}/api/post`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),

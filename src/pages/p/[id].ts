@@ -7,6 +7,7 @@ import { PostProps } from '~/components/Post'
 import {prisma} from '~/lib/prisma'
 import { useSession } from 'next-auth/react'
 import { DividerHorizontalIcon } from '@radix-ui/react-icons'
+import { basePath } from "~/utils/config";
 
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   const post = await prisma.post.findUnique({
@@ -25,14 +26,14 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
 }
 
 async function publishPost(id: number): Promise<void> {
-  await fetch(`/api/publish/${id}`, {
+  await fetch(`${basePath}/api/publish/${id}`, {
     method: 'PUT',
   })
   await Router.push('/')
 }
 
 async function deletePost(id: number): Promise<void> {
-  await fetch(`/api/post/${id}`, {
+  await fetch(`${basePath}/api/post/${id}`, {
     method: 'DELETE',
   })
   await Router.push('/')
