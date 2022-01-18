@@ -2593,7 +2593,7 @@
   "resolved" "https://registry.npmjs.org/@types/prop-types/-/prop-types-15.7.4.tgz"
   "version" "15.7.4"
 
-"@types/react@^16.8.0 || ^17.0.0", "@types/react@^17.0.37":
+"@types/react@^16.8.0 || ^17.0.0", "@types/react@^17.0.37", "@types/react@>=16":
   "integrity" "sha512-2FS1oTqBGcH/s0E+CjrCCR9+JMpsu9b69RTFO+40ua43ZqP5MmQ4iUde/dMjWR909KxZwmOQIFq6AV6NjEG5xg=="
   "resolved" "https://registry.npmjs.org/@types/react/-/react-17.0.37.tgz"
   "version" "17.0.37"
@@ -9453,7 +9453,7 @@
     "kleur" "^3.0.3"
     "sisteransi" "^1.0.5"
 
-"prop-types@^15.5.8", "prop-types@^15.6.2", "prop-types@^15.7.2", "prop-types@>=15.7.0":
+"prop-types@^15.0.0", "prop-types@^15.5.8", "prop-types@^15.6.2", "prop-types@^15.7.2", "prop-types@>=15.7.0":
   "integrity" "sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ=="
   "resolved" "https://registry.npmjs.org/prop-types/-/prop-types-15.7.2.tgz"
   "version" "15.7.2"
@@ -9675,7 +9675,7 @@
   "resolved" "https://registry.npmjs.org/react-is/-/react-is-16.13.1.tgz"
   "version" "16.13.1"
 
-"react-is@^17.0.1", "react-is@17.0.2":
+"react-is@^17.0.0", "react-is@^17.0.1", "react-is@17.0.2":
   "integrity" "sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w=="
   "resolved" "https://registry.npmjs.org/react-is/-/react-is-17.0.2.tgz"
   "version" "17.0.2"
@@ -9697,6 +9697,26 @@
   "integrity" "sha512-pTWl7bcRnnxj1Tz0zHEn1SG0sW9+ucumF9m8zrm2qx6lYDuSPsLN+GCTuAFHn0KuKV9N3nUIvVwCfC0Zx9tNWA=="
   "resolved" "https://registry.npmjs.org/react-lite-youtube-embed/-/react-lite-youtube-embed-2.1.3.tgz"
   "version" "2.1.3"
+
+"react-markdown@^8.0.0":
+  "integrity" "sha512-qbrWpLny6Ef2xHqnYqtot948LXP+4FtC+MWIuaN1kvSnowM+r1qEeEHpSaU0TDBOisQuj+Qe6eFY15cNL3gLAw=="
+  "resolved" "https://registry.npmjs.org/react-markdown/-/react-markdown-8.0.0.tgz"
+  "version" "8.0.0"
+  dependencies:
+    "@types/hast" "^2.0.0"
+    "@types/unist" "^2.0.0"
+    "comma-separated-tokens" "^2.0.0"
+    "hast-util-whitespace" "^2.0.0"
+    "prop-types" "^15.0.0"
+    "property-information" "^6.0.0"
+    "react-is" "^17.0.0"
+    "remark-parse" "^10.0.0"
+    "remark-rehype" "^10.0.0"
+    "space-separated-tokens" "^2.0.0"
+    "style-to-object" "^0.3.0"
+    "unified" "^10.0.0"
+    "unist-util-visit" "^4.0.0"
+    "vfile" "^5.0.0"
 
 "react-merge-refs@^1.1.0":
   "integrity" "sha512-alTKsjEL0dKH/ru1Iyn7vliS2QRcBp9zZPGoWxUOvRGWPUYgjo+V01is7p04It6KhgrzhJGnIj9GgX8W4bZoCQ=="
@@ -10257,7 +10277,7 @@
     "vfile-location" "^3.0.0"
     "xtend" "^4.0.1"
 
-"remark-rehype@^10.0.1":
+"remark-rehype@^10.0.0", "remark-rehype@^10.0.1":
   "integrity" "sha512-EFmR5zppdBp0WQeDVZ/b66CWJipB2q2VLNFMabzDSGR66Z2fQii83G5gTBbgGEnEEA0QRussvrFHxk1HWGJskw=="
   "resolved" "https://registry.npmjs.org/remark-rehype/-/remark-rehype-10.1.0.tgz"
   "version" "10.1.0"
