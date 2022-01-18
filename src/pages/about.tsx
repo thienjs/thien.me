@@ -9,6 +9,7 @@ import TopTracks from '~/components/music/TopTracks'
 import { GetStaticProps } from 'next'
 import UnstyledLink from '~/components/links/UnstyledLink'
 import NowPlaying from '~/components/music/NowPlaying'
+import TechStack from '~/components/about/TechStack'
 
 export type AboutProps = {
   reviews: Awaited<ReturnType<typeof getReviews>>
@@ -51,19 +52,22 @@ const AboutPage = ({ reviews, currentlyReading }) => {
         />
       </div>
       <div className="px-1 dark:text-gray-200 mb-4">
-        <h2 className="text-md">hello im thien</h2>
+        <h2 className="text-md">Hello, I'm Thien</h2>
         <p className="text-sm">
-          I've always loved designing and developing websites ever since I was a
-          kid. Imposter syndrome and my risk adverse nature has prevented me to
-          pursue my goal of becoming a proffessional web developer. This website
-          was made to learn, showcase, and help me find a web developer job.
+          I'm a self taught developer from Connecticut, USA. After many many
+          years of making websites as a hobby, I decided to follow my dreams of
+          becoming web developer. I studied and read many tutorials online from
+          Udemy, freecodecamp, dev.to, and many other incredible online
+          rescources.
         </p>
-        <p>My goals for 2022 is to find a web developer job.</p>
-        <p>
-          My favorite tech stack at the moment is nextjs, tailwindcss, prisma,
-          typescript, and notion.
+        <p className="text-sm">
+          My goals for 2022 is to find a web developer job.
+        </p>
+        <p className="text-sm">
+          Outside of tech, I love sports, guitar, tennis, longboarding, and collecting gadgets. 
         </p>
       </div>
+      <TechStack />
       <UnstyledLink href="/music" className="text-2xl font-bold mb-2">
         Music
       </UnstyledLink>
