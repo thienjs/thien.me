@@ -26,7 +26,7 @@ type Props = {
   feed: PostProps[];
 };
 
-const TestPage: React.FC<Props> = (props) => {
+const Feed: React.FC<Props> = (props) => {
   return (
     <Layout>
       <div className="page">
@@ -54,7 +54,7 @@ const TestPage: React.FC<Props> = (props) => {
         }
       `}</style>
     </Layout>
-  );
-};
+  )
+}
 
-export default TestPage;
+export default Feed
