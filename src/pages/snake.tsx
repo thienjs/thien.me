@@ -18,9 +18,9 @@ type Velocity = {
 export default function SnakeGame() {
   // Canvas Settings
   const canvasRef = useRef<HTMLCanvasElement | null>(null)
-  const canvasWidth = 500
-  const canvasHeight = 380
-  const canvasGridSize = 20
+  const canvasWidth = 390
+  const canvasHeight = 360
+  const canvasGridSize = 15
 
   // Game Settings
   const minGameSpeed = 10
@@ -334,8 +334,10 @@ export default function SnakeGame() {
     <Layout>
 
       <main>
+        <h1>Snake</h1>
+        <h1>My favorite game on nokia. now online. try to get a highscore</h1>
         <canvas 
-          className='border bg-white dark:bg-slate-700'
+          className='border bg-gray-300 dark:bg-slate-700 my-6'
           ref={canvasRef}
           width={canvasWidth + 1}
           height={canvasHeight + 1}
@@ -363,13 +365,13 @@ export default function SnakeGame() {
           )}
         </section>
         {isLost && (
-          <div className="flex flex-col align-center justify-center flex-wrap absolute top-0 left-0">
+          <div className="flex flex-col align-center justify-center flex-wrap ">
             <p className="">Game Over</p>
             <p className="">
               {newHighscore ? `🎉 New Highscore 🎉` : `You scored: ${score}`}
             </p>
             {!running && isLost && (
-              <button onClick={startGame}>
+              <button className='m-2 px-' onClick={startGame}>
                 {countDown === 4 ? 'Restart Game' : countDown}
               </button>
             )}
