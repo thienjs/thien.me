@@ -52,18 +52,29 @@ const Post: React.FC<PostProps> = (props) => {
 
   return (
     <Layout>
-      <div>
-        <h2>{title}</h2>
-        <p>By {props?.author?.name || 'Unknown author'}</p>
-        <div>{props.content}</div>
+      <div className="w-full px-16">
+        <h2 className="font-semibold text-lg mb-2 mt-20">{title}</h2>
+        <p className="text-sm text-gray-700 dark:text-gray-400 mb-4">
+          By {props?.author?.name || 'Unknown author'}
+        </p>
+        <div className="mb-10">{props.content}</div>
         {!props.published && userHasValidSession && postBelongsToUser && (
-          <button onClick={() => publishPost(props.id)}>Publish</button>
+          <button
+            className="px-4 py-2 border mr-10 mb-10"
+            onClick={() => publishPost(props.id)}
+          >
+            Publish
+          </button>
         )}
         {userHasValidSession && postBelongsToUser && (
-          <button onClick={() => deletePost(props.id)}>Delete</button>
+          <button
+            className="ml-6 px-4 py-2 border "
+            onClick={() => deletePost(props.id)}
+          >
+            Delete
+          </button>
         )}
       </div>
-
     </Layout>
   )
 }

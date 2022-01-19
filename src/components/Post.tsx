@@ -17,14 +17,14 @@ const Post: React.FC<{ post: PostProps }> = ({ post }) => {
   const authorName = post.author ? post.author.name : 'Unknown author'
   return (
     <div
-      className="border-1 border p-2 px-4 my-2 text-black dark:text-white"
+      className="border-1 border p-2 px-4 my-2 text-black dark:text-gray-400 w-96  bg-opacity-80"
       onClick={() => Router.push('/p/[id]', `/p/${post.id}`)}
     >
-      <h2 className="font-semibold text-black dark:text-white">{post.title}</h2>
-      <small className="text-xs mb-2text-black dark:text-white ">
+      <h2 className="font-semibold ">{post.title}</h2>
+      <small className="text-xs mb-2text-black ">
         By {authorName}
       </small>
-      <div className="text-black dark:text-white">{post.content}</div>
+      <div className="">{post.content}</div>
     </div>
   )
 }
