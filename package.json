@@ -88,6 +88,7 @@
     "remark-math": "^5.1.1",
     "rss-parser": "^3.12.0",
     "slugify": "^1.6.3",
+    "superjson": "^1.8.0",
     "swr": "^1.1.1",
     "tailwind-merge": "^1.1.1",
     "thien-ui": "^0.2.0"
