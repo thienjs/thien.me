@@ -1,5 +1,6 @@
 import React from 'react'
 import Router from 'next/router'
+import { format } from 'date-fns'
 import ReactMarkdown from 'react-markdown'
 
 export type PostProps = {
@@ -11,6 +12,8 @@ export type PostProps = {
   } | null
   content: string
   published: boolean
+  updated_at: Date
+  created_at: string
 }
 
 const Post: React.FC<{ post: PostProps }> = ({ post }) => {
@@ -21,10 +24,11 @@ const Post: React.FC<{ post: PostProps }> = ({ post }) => {
       onClick={() => Router.push('/p/[id]', `/p/${post.id}`)}
     >
       <h2 className="font-semibold ">{post.title}</h2>
-      <small className="text-xs mb-2text-black ">
-        By {authorName}
-      </small>
+      <small className="text-xs mb-2text-black ">By {authorName}</small>
       <div className="">{post.content}</div>
+      <div></div>
+      <div className="">{post.created_at}</div>
+      <div className="">{post.updated_at}</div>
     </div>
   )
 }

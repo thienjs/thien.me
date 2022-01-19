@@ -28,14 +28,14 @@ async function publishPost(id: number): Promise<void> {
   await fetch(`/api/publish/${id}`, {
     method: 'PUT',
   })
-  await Router.push('/')
+  await Router.push('/guestbook')
 }
 
 async function deletePost(id: number): Promise<void> {
   await fetch(`/api/post/${id}`, {
     method: 'DELETE',
   })
-  await Router.push('/')
+  await Router.push('/guestbook')
 }
 
 const Post: React.FC<PostProps> = (props) => {

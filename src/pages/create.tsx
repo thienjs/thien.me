@@ -48,7 +48,7 @@ const Draft: React.FC = () => {
             className="text-gray-600 dark:text-gray-100 dark:bg-zinc-400"
           />
           <div className="flex justify-between mt-3">
-            <ButtonLink className="" href="/feed">
+            <ButtonLink className="" href="/guestbook">
               Cancel
             </ButtonLink>
             <input
