@@ -11,7 +11,7 @@ const Draft: React.FC = () => {
     e.preventDefault();
     try {
       const body = { title, content };
-      await fetch(`${basePath}/api/post`, {
+      await fetch(`/api/post`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),
