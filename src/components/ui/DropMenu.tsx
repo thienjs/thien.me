@@ -153,45 +153,6 @@ export default function DropMenu() {
             </Menu.Item>
             <Menu.Item>
               {({ active }) => (
-                <Link href="/feed">
-                  <a
-                    className={classNames(
-                      active
-                        ? 'bg-green-100 text-red-900 dark:bg-cyan-600 dark:text-gray-300'
-                        : 'text-zinc-700 dark:text-gray-200 bg-white dark:bg-zinc-800 hover:bg-gray-300 dark:hover:bg-zinc-700',
-                      'block px-4 py-2 text-sm'
-                    )}
-                  >
-                    <div className="flex flex-row">
-                      <BlendingModeIcon className="mr-4 mt-0.5" />
-                      Feed
-                    </div>
-                  </a>
-                </Link>
-              )}
-            </Menu.Item>
-            <Menu.Item>
-              {({ active }) => (
-                <Link href="/snake">
-                  <a
-                    className={classNames(
-                      active
-                        ? 'bg-green-100 text-red-900 dark:bg-cyan-600 dark:text-gray-300'
-                        : 'text-zinc-700 dark:text-gray-200 bg-white dark:bg-zinc-800 hover:bg-gray-300 dark:hover:bg-zinc-700',
-                      'block px-4 py-2 text-sm'
-                    )}
-                  >
-                    <div className="flex flex-row">
-                      <CubeIcon className="mr-4 mt-0.5" /> Snake
-                    </div>
-                  </a>
-                </Link>
-              )}
-            </Menu.Item>
-          </div>
-          <div className="py-1">
-            <Menu.Item>
-              {({ active }) => (
                 <Link href="/music">
                   <a
                     className={classNames(
@@ -226,9 +187,10 @@ export default function DropMenu() {
                 </Link>
               )}
             </Menu.Item>
+
             <Menu.Item>
               {({ active }) => (
-                <Link href="/todo">
+                <Link href="/snake">
                   <a
                     className={classNames(
                       active
@@ -238,13 +200,14 @@ export default function DropMenu() {
                     )}
                   >
                     <div className="flex flex-row">
-                      <FaceIcon className="mr-4 mt-0.5" />
-                      todo
+                      <CubeIcon className="mr-4 mt-0.5" /> Snake
                     </div>
                   </a>
                 </Link>
               )}
             </Menu.Item>
+          </div>
+          <div className="py-1">
             <Menu.Item>
               {({ active }) => (
                 <Link href="/guestbook">
@@ -275,7 +238,7 @@ export default function DropMenu() {
                     )}
                   >
                     <div className="flex flex-row">
-                      <BookmarkIcon className="mr-4 mt-0.5" /> Create
+                      <RocketIcon className="mr-4 mt-0.5" /> Create
                     </div>
                   </a>
                 </Link>
@@ -293,7 +256,7 @@ export default function DropMenu() {
                     )}
                   >
                     <div className="flex flex-row">
-                      <BookmarkIcon className="mr-4 mt-0.5" /> profile
+                      <AvatarIcon className="mr-4 mt-0.5" /> profile
                     </div>
                   </a>
                 </Link>
@@ -311,8 +274,8 @@ export default function DropMenu() {
                     )}
                   >
                     <div className="flex flex-row">
-                      <BookmarkIcon className="mr-4 mt-0.5" />
-                      draft
+                      <Half2Icon className="mr-4 mt-0.5" />
+                      drafts
                     </div>
                   </a>
                 </Link>
@@ -369,7 +332,7 @@ export default function DropMenu() {
                         <>
                           <PersonIcon />
                           <button className="ml-4" onClick={() => signIn()}>
-                            Signin
+                            Sign In
                           </button>
                         </>
                       )}
