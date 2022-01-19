@@ -35,7 +35,7 @@ const TestPage: NextPage = () => {
         ) : (
           <>
             <h1>Sign in to continue</h1>
-            <button className={styles.btn} onClick={() => signIn()}>
+            <button className='' onClick={() => signIn()}>
               Signin
             </button>
           </>

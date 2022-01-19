@@ -45,15 +45,16 @@ const Post: React.FC<PostProps> = (props) => {
   }
   const userHasValidSession = Boolean(session)
   const postBelongsToUser = session?.user?.email === props.author?.email
-  let title = props.title
+  let draftNumber = props.id.toString()
+
   if (!props.published) {
-    title = `${title} (Draft)`
+    draftNumber = ` Draft #${draftNumber}`
   }
 
   return (
     <Layout>
       <div className="w-full px-16">
-        <h2 className="font-semibold text-lg mb-2 mt-20">{title}</h2>
+        <h2 className="font-semibold text-lg mb-2 mt-20">{draftNumber}</h2>
         <p className="text-sm text-gray-700 dark:text-gray-400 mb-4">
           By {props?.author?.name || 'Unknown author'}
         </p>

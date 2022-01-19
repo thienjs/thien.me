@@ -5,13 +5,13 @@ import { basePath } from "~/utils/config";
 import ButtonLink from '~/components/links/ButtonLink'
 
 const Draft: React.FC = () => {
-  const [title, setTitle] = useState('')
+
   const [content, setContent] = useState('')
 
   const submitData = async (e: React.SyntheticEvent) => {
     e.preventDefault()
     try {
-      const body = { title, content }
+      const body = { content }
       await fetch(`/api/post`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -31,14 +31,7 @@ const Draft: React.FC = () => {
           <p className="text-sm text-gray-700 dark:text-gray-500 mb-4">
             please keep comments friendly. thank you.
           </p>
-          <input
-            autoFocus
-            onChange={(e) => setTitle(e.target.value)}
-            placeholder="Title"
-            type="text"
-            value={title}
-            className="text-gray-600 dark:text-gray-100 dark:bg-zinc-400 mb-3"
-          />
+
           <textarea
             cols={50}
             onChange={(e) => setContent(e.target.value)}
@@ -53,7 +46,7 @@ const Draft: React.FC = () => {
             </ButtonLink>
             <input
               type="submit"
-              value="Create"
+              value="compose draft"
               className="hover:text-cyan-500 px-6 py-2 border rounded-md bg-cyan-600 dark:bg-cyan-800"
             />
           </div>
