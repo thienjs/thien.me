@@ -8,21 +8,22 @@ import { useRouter } from 'next/dist/client/router';
 import Link from 'next/link';
 import useSWR from 'swr';
 import cn from 'classnames';
+import readingTime from 'reading-time'
 
-import {fetcher} from 'lib/fetcher';
-import { Views } from 'lib/types';
-
+import { fetcher } from 'lib/fetcher'
+import { Views } from 'lib/types'
 
 type Props = {
-  article: Article;
-};
+  article: Article
+}
 
 export function ArticleCard({ article }: Props) {
-  const router = useRouter();
-  const slug = slugify(article.title).toLowerCase();
-  const { data } = useSWR<Views>(`/api/views/${slug}`, fetcher);
-  const views = data?.total;
-  const [hasRead] = useIsArticleRead(slug);
+  const router = useRouter()
+  const slug = slugify(article.title).toLowerCase()
+  const { data } = useSWR<Views>(`/api/views/${slug}`, fetcher)
+  const views = data?.total
+  const [hasRead] = useIsArticleRead(slug)
+  const readingTimeStats = readingTime(article.summary)
 
   return (
     <div className="  max-w-3xl  mt-4 mb-4 bg-white dark:bg-zinc-900 bg-opacity-85 w-full">
@@ -70,6 +71,7 @@ export function ArticleCard({ article }: Props) {
                 {views ? new Number(views).toLocaleString() : '–––'}
               </span>
             </div>
+            <div className="ml-6">{readingTimeStats.minutes} mins</div>
             {hasRead && (
               <span className="text-sm inline-flex items-center text-gray-800 dark:text-gray-400 opacity-75  ml-6">
                 <svg width="16" height="16" fill="none" viewBox="0 0 24 24">
