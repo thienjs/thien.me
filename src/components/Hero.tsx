@@ -2,6 +2,7 @@ import Image from "next/image"
 import profile from '../../public/notion-me.png'
 import { motion } from "framer-motion"
 import Link from 'next/link'
+import RiseButton from './button/RiseButton'
 
 export default function Hero() {
   return (
@@ -26,65 +27,23 @@ export default function Hero() {
               Thien Tran
             </h1>
           </motion.div>
-          <div className="mt-6 text-gray-800 dark:text-white">
+          <div className="mt-6 text-gray-800 dark:text-gray-200 text-sm">
             <p className="mb-4 ">
-              Hello! I am a self taught web developer currently focused on
-              typescript, nextjs, and tailwind. Most of my work is open source
-              and publicly available on{' '}
+              Hello! I am web developer currently focused on typescript, nextjs,
+              and tailwind. Most of my work is open source and publicly
+              available on{' '}
               <Link href="https://github.com/thienjs">
-                <a className="underline decoration-2 hover:decoration-wavy decoration-cyan-500">
-                  Github
+                <a className="relative before:absolute before:bg-violet-600 before:opacity-70 before:bottom-0 before:left-0 before:h-full before:w-full before:origin-bottom before:scale-y-[0.35] hover:before:scale-y-100 before:transition-transform before:ease-in-out before:duration-500">
+                  <span className="relative hover:text-gray-800 hover:dark:text-gray-200">
+                    github
+                  </span>
                 </a>
               </Link>
               .
             </p>
-            <p className="mb-4">
-              Take a look at my {''}
-              <Link href="/blog">
-                <a className="underline decoration-2 hover:decoration-wavy decoration-cyan-500">
-                  blog
-                </a>
-              </Link>
-              ,{' '}
-              <Link href="/snippets">
-                <a className="underline decoration-2 hover:decoration-wavy decoration-cyan-500">
-                  snippets
-                </a>
-              </Link>
-              , and tailwind animation{' '}
-              <Link href="/animation">
-                <a className="underline decoration-2 hover:decoration-wavy decoration-cyan-500">
-                  library
-                </a>
-              </Link>
-              .
-            </p>
-            <p className="mb-4">
-              I'm currently intrested in a junior developer position. If you're
-              a recruiter, please take a look at my{' '}
-              <Link href="/projects">
-                <a className="underline decoration-2 hover:decoration-wavy decoration-cyan-500">
-                  projects
-                </a>
-              </Link>{' '}
-              and certificates. Feel free to{' '}
-              <Link href="/contact">
-                <a className="underline decoration-2 hover:decoration-wavy decoration-cyan-500">
-                  contact
-                </a>
-              </Link>{' '}
-              me.{' '}
-            </p>
+            <p className="mb-4"></p>
 
-            <p>
-              Thanks for visiting! If you like what you see, please sign the{' '}
-              <Link href="/guestbook">
-                <a className="underline decoration-2 hover:decoration-wavy decoration-cyan-500">
-                  Guestbook
-                </a>
-              </Link>
-              . I would greatly appreciate your feedback.
-            </p>
+            
           </div>
         </div>
         <div className="flex-shrink-0 lg:mt-12  mb-10 hidden">
