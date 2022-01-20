@@ -15,25 +15,25 @@ import UnstyledLink from '../links/UnstyledLink'
 const Footer = () => {
   const year = new Date().getFullYear()
   return (
-    <div className="flex flex-col items-center justify-center w-screen mt-20 -ml-6 md:ml-0">
+    <div className="flex flex-col items-center justify-center w-screen mt-20 ">
       <div className="flex flex-row"></div>
       <FooterLinks />
-      <div className="flex flex-col items-center  justify-center w-screen -ml-6 md:ml-0">
-        <div className="flex flex-wrap items-center justify-center mx-auto mb-4 mt-1 ">
+      <div className="flex flex-col items-center  justify-center w-screen ">
+        <div className="flex flex-wrap items-center justify-center mx-auto mb-4 mt-1 text-gray-600 dark:text-gray-400 ">
           <Link href="https://github.com/thienjs">
-            <GithubIcon className="h-8 w-8 mx-3" />
+            <GithubIcon className="h-5 w-5 mx-3 hover:text-purple-400" />
           </Link>
           <Link href="https://discord.com/thien#4420">
-            <DiscordIcon className="h-8 w-8 mx-3" />
+            <DiscordIcon className="h-5 w-5 mx-3 hover:text-blue-400" />
           </Link>
           <Link href="https://twitter.com/thientsx">
-            <TwitterIcon className="h-8 w-8 mx-3" />
+            <TwitterIcon className="h-5 w-5 mx-3 hover:text-cyan-400" />
           </Link>
           <Link href="emailto:hi@thien.me">
-            <EmailIcon className="h-8 w-8 mx-3" />
+            <EmailIcon className="h-5 w-5 mx-3 hover:text-emerald-400" />
           </Link>
           <Link href="https://linkedin.com/thienjs">
-            <LinkedinIcon className="h-8 w-8 mx-3" />
+            <LinkedinIcon className="h-5 w-5 mx-3 hover:text-blue-400" />
           </Link>
         </div>
       </div>
@@ -50,7 +50,7 @@ function FooterLinks() {
       {navigation.footerLinks.map(({ href, name }) => (
         <UnstyledLink
           key={href}
-          className="animated-underline text-sm font-medium rounded-sm dark:text-gray-200 focus:outline-none focus-visible:ring focus-visible:ring-cyan-300"
+          className="animated-underline text-sm font-medium rounded-sm dark:text-gray-300 focus:outline-none focus-visible:ring focus-visible:ring-cyan-300"
           href={href}
         >
           {name}
