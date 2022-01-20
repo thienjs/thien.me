@@ -19,7 +19,7 @@ const Footer = () => {
       <div className="flex flex-row"></div>
       <FooterLinks />
       <div className="flex flex-col items-center  justify-center w-screen ">
-        <div className="flex flex-wrap items-center justify-center mx-auto mb-4 mt-1 text-gray-600 dark:text-gray-400 ">
+        <div className="flex flex-wrap items-center justify-center mx-auto mb-4 mt-1 text-gray-700 dark:text-gray-400 ">
           <Link href="https://github.com/thienjs">
             <GithubIcon className="h-5 w-5 mx-3 hover:text-purple-400" />
           </Link>
@@ -37,7 +37,7 @@ const Footer = () => {
           </Link>
         </div>
       </div>
-      <div className="mb-8 text-sm">© Thien Tran {year}</div>
+      <div className="mb-8 text-xs text-gray-600 dark:text-gray-500">© Thien Tran {year}</div>
     </div>
   )
 }
