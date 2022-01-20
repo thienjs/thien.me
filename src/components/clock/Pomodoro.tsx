@@ -146,16 +146,10 @@ function Pomodoro() {
             sessionCount={sessionCount}
           />
         </div>
-        <h3
-          className="flex flex-row justify-center text-2xl uppercase"
-          id="timer-label"
-        >
+        <h3 className="flex flex-row justify-center text-2xl uppercase">
           {currentTimer} Timer:{' '}
         </h3>
-        <h1
-          className="ClockFace flex flex-row justify-center text-8xl"
-          id="time-left"
-        >
+        <h1 className="flex flex-row justify-center text-8xl font-semibold">
           {timeFormatter(remainingTime)}
         </h1>
         <Buttons
@@ -169,8 +163,8 @@ function Pomodoro() {
   }
 
   return (
-    <div className="flex items-center justify-center flex-col space-y-10">
-      <div className=" p-5 md:p-10 card hover:shadow-xl flex flex-col items-center justify-center">
+    <div className="flex items-center justify-center flex-col ">
+      <div className=" py-10 flex flex-col items-center justify-center">
         <CountdownCircleTimer
           isPlaying={isPlaying}
           duration={clockCount}
