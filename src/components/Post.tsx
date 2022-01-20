@@ -2,7 +2,7 @@ import React from 'react'
 import Router from 'next/router'
 import { format } from 'date-fns'
 import ReactMarkdown from 'react-markdown'
-import superjson from 'superjson'
+
 
 export type PostProps = {
   id: number
@@ -22,7 +22,7 @@ const Post: React.FC<{ post: PostProps }> = ({ post }) => {
 
   return (
     <div
-      className="border border-gray-300 dark:border-gray-600 rounded-md p-2 px-4 my-2 text-black dark:text-gray-400 w-96 mb-2  bg-opacity-80"
+      className="py-2 px-4 my-2 text-black dark:text-gray-400 w-96 mb-2  bg-opacity-80"
       onClick={() => Router.push('/p/[id]', `/p/${post.id}`)}
     >
       <div className="text-gray-800 dark:text-gray-300">{post.content}</div>
