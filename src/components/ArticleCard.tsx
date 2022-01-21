@@ -71,7 +71,7 @@ export function ArticleCard({ article }: Props) {
                 {views ? new Number(views).toLocaleString() : '–––'}
               </span>
             </div>
-            <div className="ml-6">{readingTimeStats.minutes} mins</div>
+            <div className="ml-6">{readingTimeStats.words} mins</div>
             {hasRead && (
               <span className="text-sm inline-flex items-center text-gray-800 dark:text-gray-400 opacity-75  ml-6">
                 <svg width="16" height="16" fill="none" viewBox="0 0 24 24">
