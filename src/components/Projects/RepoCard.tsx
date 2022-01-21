@@ -59,7 +59,7 @@ const RepoCard = (props: Props) => (
           >
             <GoStar
               fill="currentColor"
-              className="align-text-bottom mr-1 w-4 h-4 text-xs font-light"
+              className="align-text-bottom mr-1 w-4 h-4 text-xs font-light hover:fill-yellow-400"
             />
             <span>{props.stars.toLocaleString('en-US')}</span>
           </a>
