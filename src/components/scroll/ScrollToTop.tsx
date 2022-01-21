@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { BiArrowFromBottom } from 'react-icons/bi'
+import { IoIosArrowUp } from 'react-icons/io'
 
 import classNames from '~/lib/classNames'
 
@@ -36,10 +36,10 @@ export const ScrollToTop = () => {
         onClick={scrollToTop}
         className={classNames(
           isVisible ? 'opacity-100' : 'opacity-0',
-          'inline-flex items-center p-3 rounded-sm shadow-sm text-white bg-gray-800 bg-opacity-80 transition-opacity hover:bg-zinc-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500'
+          'inline-flex items-center p-2 rounded-md shadow-sm text-gray-800 bg-zinc-400 dark:bg-zinc-800 dark:text-gray-200 bg-opacity-80 transition-opacity hover:bg-zinc-500 hover:text-gray-900 dark:hover:bg-zinc-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500'
         )}
       >
-        <BiArrowFromBottom className="h-6 w-6" aria-hidden="true" />
+        <IoIosArrowUp className="h-6 w-6" aria-hidden="true" />
       </button>
     </div>
   )
