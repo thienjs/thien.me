@@ -1,5 +1,6 @@
 import { intlFormat, formatDistanceToNowStrict } from "date-fns";
-import { StarOcticon, ForkOcticon } from "~/components/icons/octicons";
+
+import { GoRepoForked, GoStar } from 'react-icons/go'
 
 import styles from "./RepoCard.module.css";
 
@@ -56,7 +57,7 @@ const RepoCard = (props: Props) => (
             rel="noopener noreferrer"
             className="flex flex-row mr-2 text-xs font-light pb-0  "
           >
-            <StarOcticon
+            <GoStar
               fill="currentColor"
               className="align-text-bottom mr-1 w-4 h-4 text-xs font-light"
             />
@@ -75,7 +76,7 @@ const RepoCard = (props: Props) => (
             target="_blank"
             rel="noopener noreferrer"
           >
-            <ForkOcticon fill="currentColor" className={styles.octicon} />
+            <GoRepoForked fill="currentColor" className={styles.octicon} />
             <span>{props.forks.toLocaleString('en-US')}</span>
           </a>
         </div>
