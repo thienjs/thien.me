@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import * as React from 'react';
 
 import Image from 'next/image';
-import UnstyledLink from '~/components/links/UnstyledLink';
+import UnstyledLink from '~/components/ui/links/UnstyledLink';
 import TechIcons, { TechListType } from '~/components/icons/tech-icons/TechIcons';
 
 import { ProjectCard } from '~/types/types';

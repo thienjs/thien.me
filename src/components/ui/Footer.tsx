@@ -10,7 +10,7 @@ import LinkedinIcon from "~/components/icons/social-icons/linkedin";
 import EmailIcon from "~/components/icons/social-icons/email";
 
 import { navigation } from '~/data/nav'
-import UnstyledLink from '../links/UnstyledLink'
+import UnstyledLink from './links/UnstyledLink'
 
 const Footer = () => {
   const year = new Date().getFullYear()

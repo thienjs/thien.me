@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Layout from "../components/ui/Layout";
 import Router from "next/router";
 import { basePath } from "~/utils/config";
-import ButtonLink from '~/components/links/ButtonLink'
+import ButtonLink from '~/components/ui/links/ButtonLink'
 
 const Draft: React.FC = () => {
 

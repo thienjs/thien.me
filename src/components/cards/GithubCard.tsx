@@ -6,7 +6,7 @@ import { SiGithub } from 'react-icons/si';
 import useSWR from 'swr';
 
 import Accent from '~/components/Accent';
-import UnstyledLink from '~/components/links/UnstyledLink';
+import UnstyledLink from '~/components/ui/links/UnstyledLink';
 
 interface GithubRepo {
   full_name: string;

@@ -1,7 +1,7 @@
 import  {useState} from 'react'
 import Layout from '~/components/ui/Layout';
 import {useAccordion } from 'thien-ui'
-import Button from '~/components/button/ButtonBNW';
+import Button from '~/components/common/button/ButtonBNW';
 import Alert from '~/components/ui/Alert'
 import Timeline from '~/components/Timeline'
 import Avatar from '~/components/ui/Avatar'
@@ -9,10 +9,10 @@ import SkillsTable from '~/components/SkillsTable';
 import SnapCarousel from '~/components/ui/SnapCarousel';
 import AuthButton from '~/components/supabase/AuthButton';
 import CountryList from '~/components/CountryList'
-import ButtonBox from '~/components/button/ButtonBNW'
+import ButtonBox from '~/components/common/button/ButtonBNW'
 import Pomodoro from '~/components/clock/Pomodoro'
 import ProjectCard from '~/components/cards/ProjectCard'
-import UnstyledLink from '~/components/links/UnstyledLink'
+import UnstyledLink from '~/components/ui/links/UnstyledLink'
 import TechIcons, {
   TechListType,
 } from '~/components/icons/tech-icons/TechIcons'
