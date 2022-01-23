@@ -55,10 +55,9 @@ const AboutPage = ({ reviews, currentlyReading }) => {
       <div className="px-1 dark:text-gray-200 mb-4">
         <h2 className="text-sm mb-2">Hello, I'm Thien</h2>
         <p className="text-sm mb-2">
-          I'm a self taught developer from Connecticut, USA. After many many
+          I'm a self taught developer from Connecticut, USA. After many
           years of making websites as a hobby, I decided to follow my dreams of
-          becoming web developer. Although I can't attend bootcamps, I've found
-          many amazing online teaching tools online. I will be documenting my{' '}
+          becoming web developer. I will be documenting my developer{' '}
           <Link href="/journey">
             <a className="relative before:absolute before:bg-cyan-600 before:opacity-70 before:bottom-0 before:left-0 before:h-full before:w-full before:origin-bottom before:scale-y-[0.35] hover:before:scale-y-100 before:transition-transform before:ease-in-out before:duration-500">
               <span className="relative hover:text-gray-800 hover:dark:text-gray-200">
