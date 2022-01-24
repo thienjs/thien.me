@@ -43,11 +43,14 @@ export default NextAuth({
     }),
     RedditProvider({
       clientId: process.env.REDDIT_CLIENT_ID,
-      clientSecret: process.env.REDDIT_CLIENT_SECRET
+      clientSecret: process.env.REDDIT_CLIENT_SECRET,
     }),
-    DiscordProvider({
-      clientId: process.env.DISCORD_CLIENT_ID,
-      clientSecret: process.env.DISCORD_CLIENT_SECRET
-    })
   ],
 })
+
+{
+  /*  DiscordProvider({
+  clientId: process.env.DISCORD_CLIENT_ID,
+  clientSecret: process.env.DISCORD_CLIENT_SECRET
+}) */
+}

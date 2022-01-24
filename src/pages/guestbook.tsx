@@ -59,7 +59,6 @@ const Guestbook: React.FC<Props> = (props) => {
         {session ? (
           <>
             <form className="flex flex-col" onSubmit={submitData}>
-              <h1 className="mb-2 font-semibold text-lg">New Draft</h1>
               <p className="text-sm text-gray-700 dark:text-gray-500 mb-4">
                 please keep comments friendly. thank you.
               </p>
@@ -97,6 +96,7 @@ const Guestbook: React.FC<Props> = (props) => {
         )}
 
         <main>
+          <h2 className="text-lg font-semibold mt-4">Comments:</h2>
           {props.feed.map((post) => (
             <div key={post.id} className="">
               <Post post={post} />
