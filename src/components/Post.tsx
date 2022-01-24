@@ -22,7 +22,7 @@ const Post: React.FC<{ post: PostProps }> = ({ post }) => {
 
   return (
     <div
-      className="py-2 px-4 my-2 text-black dark:text-gray-400 w-96 mb-2  bg-opacity-80"
+      className="py-2 px-4 my-2 text-black dark:text-gray-400 w-96 mb-2  bg-opacity-80 border-b pb-2 border-gray-200 dark:border-gray-800"
       onClick={() => Router.push('/p/[id]', `/p/${post.id}`)}
     >
       <div className="text-gray-800 dark:text-gray-300">{post.content}</div>

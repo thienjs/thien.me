@@ -26,7 +26,7 @@ export function ArticleCard({ article }: Props) {
   const readingTimeStats = readingTime(article.summary)
 
   return (
-    <div className="  max-w-3xl  mt-4 mb-4 bg-white dark:bg-zinc-900 bg-opacity-85 w-full">
+    <div className="  max-w-3xl  mt-4 mb-4 bg-white dark:bg-zinc-900 bg-opacity-85 w-full  border-b pb-2 border-gray-200 dark:border-gray-800">
       <button onClick={() => handleArticleClicked(slug)}>
         <div className="flex flex-col">
           <h3 className="text-md font-semibold text-left mb-1">
@@ -37,7 +37,7 @@ export function ArticleCard({ article }: Props) {
           <p className="pb-2 text-left text-gray-800 dark:text-gray-400 font-light text-sm">
             {article.summary}
           </p>
-          <span className="text-xs flex text-gray-800 dark:text-gray-400 font-light">
+          <span className="text-xs flex text-gray-700 dark:text-gray-500 font-light">
             {new Date(article.publishedDate).toLocaleDateString(
               siteMetadata.locale,
               {
