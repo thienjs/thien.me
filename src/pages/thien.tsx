@@ -3,7 +3,7 @@ import Layout from '~/components/ui/Layout';
 import {useAccordion } from 'thien-ui'
 import Button from '~/components/common/button/ButtonBNW';
 import Alert from '~/components/ui/Alert'
-import Timeline from '~/components/Timeline'
+import Timeline from '~/components/timeline/Timeline'
 import Avatar from '~/components/ui/Avatar'
 import SkillsTable from '~/components/SkillsTable';
 import SnapCarousel from '~/components/ui/SnapCarousel';
