@@ -47,6 +47,12 @@ model Post {
   authorId  Int?
   author    User?   @relation(fields: [authorId], references: [id])
 }
+model Todo {
+  id        Int     @id @default(autoincrement())
+  task      String?
+  authorId  Int?
+  author    User?   @relation(fields: [authorId], references: [id])
+}
 
 model Account {
   id                Int     @id @default(autoincrement())
@@ -84,6 +90,7 @@ model User {
   image         String?
   accounts      Account[]
   posts         Post[]
+  todos         Todo[]
   sessions      Session[]
 }
 
