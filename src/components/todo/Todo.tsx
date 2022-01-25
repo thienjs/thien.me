@@ -34,7 +34,7 @@ const Todo: React.FC<{ todo: TodoProps }> = ({ todo }) => {
       <div className="text-gray-800 dark:text-gray-300">{todo.task}</div>
       <div className="flex justify-between">
         <div className="text-xs ">{authorName}</div>
-        <div className="text-xs ">{todo.author.email}</div>
+        <div className="text-xs "></div>
 
         <div className="text-xs text-gray-300 dark:text-gray-600">
           date/placeholder

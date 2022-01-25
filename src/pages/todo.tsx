@@ -9,9 +9,6 @@ import { useSession, signIn, signOut } from 'next-auth/react'
 
 export const getServerSideProps: GetServerSideProps = async () => {
   const feed = await prisma.todo.findMany({
-    where: {
-      published: true,
-    },
     include: {
       author: {
         select: {
@@ -31,17 +28,17 @@ type Props = {
 
 const TodoPage: React.FC<Props> = (props) => {
   const { data: session } = useSession()
-  const [content, setContent] = useState('')
+  const [task, setTask] = useState('')
   const submitData = async (e: React.SyntheticEvent) => {
     e.preventDefault()
     try {
-      const body = { content }
+      const body = { task }
       await fetch(`/api/todo`, {
-        method: 'todo',
+        method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(body),
       })
-      await Router.push('/drafts')
+      await Router.push('/todo')
     } catch (error) {
       console.error(error)
     }
@@ -56,16 +53,12 @@ const TodoPage: React.FC<Props> = (props) => {
         {session ? (
           <>
             <form className="flex flex-col" onSubmit={submitData}>
-              <p className="text-sm text-gray-700 dark:text-gray-500 mb-4">
-                please keep comments friendly. thank you.
-              </p>
-
               <textarea
                 cols={50}
-                onChange={(e) => setContent(e.target.value)}
+                onChange={(e) => setTask(e.target.value)}
                 placeholder="comment"
                 rows={2}
-                value={content}
+                value={task}
                 className="text-gray-600 dark:text-gray-100 dark:bg-zinc-400"
               />
               <div className="flex justify-between mt-3 mb-4">
@@ -82,7 +75,7 @@ const TodoPage: React.FC<Props> = (props) => {
           </>
         ) : (
           <>
-            <p className="text-sm mb-1">please sign in to sign the guestbook</p>
+            <p className="text-sm mb-1">please sign in use todo</p>
             <button
               className="dark:bg-gray-600 px-4 py-2 rounded-md mb-2 bg-gray-400"
               onClick={() => signIn()}
@@ -93,7 +86,7 @@ const TodoPage: React.FC<Props> = (props) => {
         )}
 
         <main>
-          <h2 className="text-lg font-semibold mt-4">Comments:</h2>
+          <h2 className="text-lg font-semibold mt-4">Tasks:</h2>
           {props.feed.map((todo) => (
             <div key={todo.id} className="">
               <Todo todo={todo} />
