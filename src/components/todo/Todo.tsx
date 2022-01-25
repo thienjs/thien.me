@@ -4,7 +4,7 @@ import { format } from 'date-fns'
 import ReactMarkdown from 'react-markdown'
 import { useSession, signIn, signOut } from "next-auth/react"
 import { author } from '~/data/siteMetadata'
-
+import useSWR, { useSWRConfig } from 'swr'
 
 export type TodoProps = {
   id: number
@@ -24,7 +24,16 @@ const Todo: React.FC<{ todo: TodoProps }> = ({ todo }) => {
 
   const authorName = todo.author ? todo.author.name : 'Unknown author'
 
+  const { mutate } = useSWRConfig()
+  const deleteEntry = async (e) => {
+    e.preventDefault()
 
+    await fetch(`/api/todo/${todo.id}`, {
+      method: 'DELETE',
+    })
+
+    mutate('/api/todo')
+  }
 
   return (
     <div
@@ -37,8 +46,14 @@ const Todo: React.FC<{ todo: TodoProps }> = ({ todo }) => {
         <div className="text-xs "></div>
 
         <div className="text-xs text-gray-300 dark:text-gray-600">
-          date/placeholder
-       {/*format(new Date(todo.updated_at), "d MMM yyyy 'at' h:mm bb")*/}
+          <button
+            className="text-sm text-red-600 dark:text-red-400"
+            onClick={deleteEntry}
+          >
+            Delete
+          </button>
+          {/* session?.user?.name === todo.author.name && <>delete</> */}
+          {/* format(new Date(todo.updated_at), "d MMM yyyy 'at' h:mm bb") */}
         </div>
       </div>
     </div>

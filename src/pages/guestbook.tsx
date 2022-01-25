@@ -35,6 +35,7 @@ type Props = {
 const Guestbook: React.FC<Props> = (props) => {
   const { data: session } = useSession()
   const [content, setContent] = useState('')
+  
   const submitData = async (e: React.SyntheticEvent) => {
     e.preventDefault()
     try {

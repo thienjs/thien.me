@@ -5,6 +5,7 @@ import Router from 'next/router'
 import Todo, { TodoProps } from '../components/todo/Todo'
 import { prisma } from '../lib/prisma'
 import ButtonLink from '~/components/ui/links/ButtonLink'
+
 import { useSession, signIn, signOut } from 'next-auth/react'
 
 export const getServerSideProps: GetServerSideProps = async () => {
@@ -32,6 +33,7 @@ type Props = {
 const TodoPage: React.FC<Props> = (props) => {
   const { data: session } = useSession()
   const [task, setTask] = useState('')
+  
   const submitData = async (e: React.SyntheticEvent) => {
     e.preventDefault()
     try {
