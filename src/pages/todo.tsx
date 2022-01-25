@@ -63,14 +63,14 @@ const TodoPage: React.FC<Props> = (props) => {
               onSubmit={submitData}
             >
               <textarea
-                cols={50}
+                cols={60}
                 onChange={(e) => setTask(e.target.value)}
                 placeholder="task"
                 rows={1}
                 value={task}
-                className="text-gray-700 dark:text-gray-100 dark:bg-zinc-400 mr-4 rounded-md border-gray-200 bg-gray-300"
+                className="text-gray-700 dark:text-gray-100 dark:bg-zinc-400  rounded-md border-gray-200 bg-gray-300"
               />
-              <div className="flex justify-between mt-3 mb-4">
+              <div className="flex justify-end mt-3 mb-4">
                 <input
                   type="submit"
                   value="add"
