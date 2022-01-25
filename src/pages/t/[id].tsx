@@ -7,6 +7,7 @@ import { TodoProps } from '../../components/todo/Todo'
 import { prisma } from '../../lib/prisma'
 import { useSession } from 'next-auth/react'
 import { basePath } from '~/utils/config'
+import { GoTrashcan } from 'react-icons/go'
 
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   const todo = await prisma.todo.findUnique({
@@ -24,18 +25,11 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   }
 }
 
-async function publishTodo(id: number): Promise<void> {
-  await fetch(`/api/publish/${id}`, {
-    method: 'PUT',
-  })
-  await Router.push('/guestbook')
-}
-
 async function deleteTodo(id: number): Promise<void> {
   await fetch(`/api/todo/${id}`, {
     method: 'DELETE',
   })
-  await Router.push('/guestbook')
+  await Router.push('/todo')
 }
 
 const todo: React.FC<TodoProps> = (props) => {
@@ -46,8 +40,6 @@ const todo: React.FC<TodoProps> = (props) => {
   const userHasValidSession = Boolean(session)
   const todoBelongsToUser = session?.user?.email === props.author?.email
   let draftNumber = props.id.toString()
-
-
 
   return (
     <Layout>
@@ -63,7 +55,7 @@ const todo: React.FC<TodoProps> = (props) => {
             className="ml-6 px-4 py-2 border "
             onClick={() => deleteTodo(props.id)}
           >
-            Delete
+            <GoTrashcan />
           </button>
         )}
       </div>

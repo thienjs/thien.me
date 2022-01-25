@@ -5,6 +5,7 @@ import ReactMarkdown from 'react-markdown'
 import { useSession, signIn, signOut } from "next-auth/react"
 import { author } from '~/data/siteMetadata'
 import useSWR, { useSWRConfig } from 'swr'
+import { GoTrashcan } from 'react-icons/go'
 
 export type TodoProps = {
   id: number
@@ -50,7 +51,7 @@ const Todo: React.FC<{ todo: TodoProps }> = ({ todo }) => {
             className="text-sm text-red-600 dark:text-red-400"
             onClick={deleteEntry}
           >
-            Delete
+            <GoTrashcan/>
           </button>
           {/* session?.user?.name === todo.author.name && <>delete</> */}
           {/* format(new Date(todo.updated_at), "d MMM yyyy 'at' h:mm bb") */}
