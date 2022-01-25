@@ -5,6 +5,7 @@ import Router from 'next/router'
 import Todo, { TodoProps } from '../components/todo/Todo'
 import { prisma } from '../lib/prisma'
 import ButtonLink from '~/components/ui/links/ButtonLink'
+import { GoPlus } from 'react-icons/go'
 
 import { useSession, signIn, signOut } from 'next-auth/react'
 
@@ -33,7 +34,7 @@ type Props = {
 const TodoPage: React.FC<Props> = (props) => {
   const { data: session } = useSession()
   const [task, setTask] = useState('')
-  
+
   const submitData = async (e: React.SyntheticEvent) => {
     e.preventDefault()
     try {
@@ -57,9 +58,12 @@ const TodoPage: React.FC<Props> = (props) => {
 
         {session ? (
           <>
-            <form className="flex flex-row w-full justify-between" onSubmit={submitData}>
+            <form
+              className="flex flex-col w-full justify-between"
+              onSubmit={submitData}
+            >
               <textarea
-                cols={30}
+                cols={50}
                 onChange={(e) => setTask(e.target.value)}
                 placeholder="task"
                 rows={1}
@@ -67,11 +71,10 @@ const TodoPage: React.FC<Props> = (props) => {
                 className="text-gray-700 dark:text-gray-100 dark:bg-zinc-400 mr-4 rounded-md border-gray-200 bg-gray-300"
               />
               <div className="flex justify-between mt-3 mb-4">
-
                 <input
                   type="submit"
-                  value="add todo"
-                  className="hover:text-cyan-500 px-6 py-2 border rounded-md bg-cyan-600 dark:bg-cyan-800"
+                  value="add"
+                  className="hover:text-gray-500 dark:hover:text-gray-100 px-6 py-2 border rounded-md bg-emerald-500  dark:bg-emerald-800 text-white hover:bg-slate-600 dark:hover:bg-emerald-900 dark:border-emerald-900 shadow-lg"
                 />
               </div>
             </form>
