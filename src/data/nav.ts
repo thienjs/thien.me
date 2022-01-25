@@ -127,6 +127,10 @@ export const navigation = {
       label: 'Blog',
     },
     {
+      path: '/snippets',
+      label: 'Snippets',
+    },
+    {
       path: '/about',
       label: 'About',
     },
