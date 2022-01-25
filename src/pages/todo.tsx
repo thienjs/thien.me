@@ -50,11 +50,8 @@ const TodoPage: React.FC<Props> = (props) => {
   return (
     <Layout>
       <div className="">
-        <h1 className="text-3xl font-semibold mt-4">Guestbook</h1>
-        <p className="text-sm mt-2 mb-4">
-          leave a comment, feedback, suggestions for others to see in the
-          future.
-        </p>
+        <h1 className="text-3xl font-semibold mt-4">Todo</h1>
+        <p className="text-sm mt-2 mb-4">my todo list</p>
 
         {session ? (
           <>
