@@ -51,7 +51,7 @@ const Todo: React.FC<{ todo: TodoProps }> = ({ todo }) => {
             className="text-sm text-red-600 dark:text-red-400"
             onClick={deleteEntry}
           >
-            <GoTrashcan/>
+            <GoTrashcan className="z-10" />
           </button>
           {/* session?.user?.name === todo.author.name && <>delete</> */}
           {/* format(new Date(todo.updated_at), "d MMM yyyy 'at' h:mm bb") */}
