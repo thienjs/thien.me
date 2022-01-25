@@ -9,6 +9,9 @@ import { useSession, signIn, signOut } from 'next-auth/react'
 
 export const getServerSideProps: GetServerSideProps = async () => {
   const feed = await prisma.post.findMany({
+    orderBy: {
+      id: 'desc',
+    },
     where: {
       published: true,
     },
