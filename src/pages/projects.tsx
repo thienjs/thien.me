@@ -48,6 +48,7 @@ export const getStaticProps: GetStaticProps = async () => {
                 pushedAt
                 stargazerCount
                 forkCount
+
                 primaryLanguage {
                   name
                   color
@@ -76,6 +77,7 @@ export const getStaticProps: GetStaticProps = async () => {
     stars: repo.stargazerCount,
     forks: repo.forkCount,
     language: repo.primaryLanguage,
+
   }))
 
   return {

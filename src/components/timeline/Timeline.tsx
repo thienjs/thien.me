@@ -80,6 +80,20 @@ export default function Timeline() {
           Bachelor of Arts in Business Finance
         </p>
       </li>
+      <li className="mb-10 ml-6">
+        <span className="absolute flex items-center justify-center w-6 h-6 bg-blue-200 rounded-full -left-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
+          <FaGraduationCap />
+        </span>
+        <h3 className="mb-1 text-lg font-semibold text-gray-900 dark:text-white">
+          Connectected to the Internet
+        </h3>
+        <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+          1999
+        </time>
+        <p className="text-base font-normal text-gray-500 dark:text-gray-400">
+          Still hear that dialup 
+        </p>
+      </li>
     </ol>
   )
 }

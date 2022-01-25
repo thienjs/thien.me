@@ -1,39 +1,46 @@
 import Highlight, { defaultProps } from 'prism-react-renderer';
+import dracula from 'prism-react-renderer/themes/dracula'
+import github from 'prism-react-renderer/themes/github'
+import duotoneDark from 'prism-react-renderer/themes/duotoneDark'
+import palenight from 'prism-react-renderer/themes/palenight'
+import okaidia from 'prism-react-renderer/themes/okaidia'
+import vsDark from 'prism-react-renderer/themes/vsDark'
 
-import { Language } from '~/lib/types';
-import { useCopyToClipboard } from '~/lib/hooks/useCopyToClipboard';
+
+import { Language } from '~/lib/types'
+import { useCopyToClipboard } from '~/lib/hooks/useCopyToClipboard'
 
 type Props = {
-  code: string;
-  language: Language;
-  metastring?: string;
-};
+  code: string
+  language: Language
+  metastring?: string
+}
 
-const RE = /{([\d,-]+)}/;
+const RE = /{([\d,-]+)}/
 
 const calculateLinesToHighlight = (meta) => {
   if (!RE.test(meta)) {
-    return () => false;
+    return () => false
   }
   const lineNumbers = RE.exec(meta)[1]
     .split(`,`)
-    .map((v) => v.split(`-`).map((x) => parseInt(x, 10)));
+    .map((v) => v.split(`-`).map((x) => parseInt(x, 10)))
   return (index) => {
-    const lineNumber = index + 1;
+    const lineNumber = index + 1
     const inRange = lineNumbers.some(([start, end]) =>
       end ? lineNumber >= start && lineNumber <= end : lineNumber === start
-    );
-    return inRange;
-  };
-};
+    )
+    return inRange
+  }
+}
 
 export const CodeBlock = ({ code, language, metastring }: Props) => {
-  const [isCopied, handleCopy] = useCopyToClipboard(1000, code);
-  const shouldHighlightLine = calculateLinesToHighlight(metastring);
+  const [isCopied, handleCopy] = useCopyToClipboard(1000, code)
+  const shouldHighlightLine = calculateLinesToHighlight(metastring)
 
   const CopyCodeButton = (
     <button
-      className={`relative left-1 top-1 ${
+      className={`relative left-1 top-0 ${
         isCopied ? 'text-teal-500' : 'text-gray-400'
       }`}
       onClick={() => handleCopy()}
@@ -101,17 +108,17 @@ export const CodeBlock = ({ code, language, metastring }: Props) => {
     </button>
   )
   return (
-    <div className="overflow-auto bg-gray-100 dark:bg-gray-800 rounded-md text-sm">
-      <div className="flex flex-row justify-between">
+    <div className="overflow-auto bg-gray-200 dark:bg-zinc-800 bg-opacity-60 rounded-md text-sm">
+      <div className="flex flex-row justify-between  items-center border-b mb-1 border-gray-300 dark:border-gray-700 ">
         {CopyCodeButton}
-        {language}
+        <div className="mr-2 text-gray-400 text-xs p-1 ">{language}</div>
       </div>
 
       <Highlight
         {...defaultProps}
         code={code}
         language={language}
-        theme={undefined}
+        theme={vsDark}
       >
         {({ className, style, tokens, getLineProps, getTokenProps }) => (
           <div className=" flex" data-language={language}>
@@ -140,4 +147,4 @@ export const CodeBlock = ({ code, language, metastring }: Props) => {
       </Highlight>
     </div>
   )
-};
+}
