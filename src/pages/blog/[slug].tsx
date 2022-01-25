@@ -228,11 +228,7 @@ const ArticlePage = ({
     }
   )
 
-  useEffect(() => {
-    fetch(`/api/views/${slug}`, {
-      method: 'POST',
-    })
-  }, [slug])
+
 
   return (
     <Layout>
