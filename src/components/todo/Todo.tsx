@@ -29,7 +29,7 @@ const Todo: React.FC<{ todo: TodoProps }> = ({ todo }) => {
   return (
     <div
       className="py-3 px-2 text-black dark:text-gray-400 w-full  bg-opacity-80 border-b pb-2 border-gray-200 dark:border-gray-800 cursor-pointer hover:bg-gray-200 dark:hover:bg-zinc-800"
-      onClick={() => Router.push('/p/[id]', `/p/${todo.id}`)}
+      onClick={() => Router.push('/t/[id]', `/t/${todo.id}`)}
     >
       <div className="text-gray-800 dark:text-gray-300">{todo.task}</div>
       <div className="flex justify-between">
