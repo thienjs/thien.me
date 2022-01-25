@@ -52,22 +52,20 @@ const TodoPage: React.FC<Props> = (props) => {
 
         {session ? (
           <>
-            <form className="flex flex-col" onSubmit={submitData}>
+            <form className="flex flex-row w-full justify-between" onSubmit={submitData}>
               <textarea
-                cols={50}
+                cols={30}
                 onChange={(e) => setTask(e.target.value)}
-                placeholder="comment"
-                rows={2}
+                placeholder="task"
+                rows={1}
                 value={task}
-                className="text-gray-600 dark:text-gray-100 dark:bg-zinc-400"
+                className="text-gray-700 dark:text-gray-100 dark:bg-zinc-400 mr-4 rounded-md border-gray-200 bg-gray-300"
               />
               <div className="flex justify-between mt-3 mb-4">
-                <ButtonLink className="" href="/drafts">
-                  view drafts
-                </ButtonLink>
+
                 <input
                   type="submit"
-                  value="write draft"
+                  value="add todo"
                   className="hover:text-cyan-500 px-6 py-2 border rounded-md bg-cyan-600 dark:bg-cyan-800"
                 />
               </div>
