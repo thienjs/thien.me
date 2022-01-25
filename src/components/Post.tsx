@@ -2,6 +2,8 @@ import React from 'react'
 import Router from 'next/router'
 import { format } from 'date-fns'
 import ReactMarkdown from 'react-markdown'
+import { useSession, signIn, signOut } from "next-auth/react"
+import { author } from '~/data/siteMetadata'
 
 
 export type PostProps = {
@@ -18,19 +20,24 @@ export type PostProps = {
 }
 
 const Post: React.FC<{ post: PostProps }> = ({ post }) => {
+  const { data: session } = useSession()
+
   const authorName = post.author ? post.author.name : 'Unknown author'
+
+
 
   return (
     <div
-      className="py-2 my-2 text-black dark:text-gray-400 w-96 mb-2  bg-opacity-80 border-b pb-2 border-gray-200 dark:border-gray-800"
+      className="py-2 my-2 text-black dark:text-gray-400 w-full mb-2  bg-opacity-80 border-b pb-2 border-gray-200 dark:border-gray-800"
       onClick={() => Router.push('/p/[id]', `/p/${post.id}`)}
     >
       <div className="text-gray-800 dark:text-gray-300">{post.content}</div>
       <div className="flex justify-between">
         <div className="text-xs ">{authorName}</div>
+        <div className="text-xs ">{post.author.email}</div>
 
         <div className="text-xs text-gray-300 dark:text-gray-600">
-          hello
+          date/placeholder
        {/*format(new Date(post.updated_at), "d MMM yyyy 'at' h:mm bb")*/}
         </div>
       </div>
