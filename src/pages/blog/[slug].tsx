@@ -241,15 +241,15 @@ const ArticlePage = ({
           <article className="col-span-9 mt-12">
             <div className="space-y-12">
               <div>
-                <h1 className="text-3xl text-left md:text-5xl mb-6">{title}</h1>
+                <h1 className="text-3xl text-left font-semibold mb-2">{title}</h1>
                 <div className="text-left">
-                  <div className="flex mb-2 space-x-2 text-lg">
-                    <p className="m-0 text-lg md:text-xl">{publishedOn}</p>
-                    <p className="m-0">•</p>
+                  <div className="flex mb-2 text-sm space-x-2 text-slate-500  dark:text-slate-500">
+                    <p className="m-0 tx-sm text-slate-500  dark:text-slate-500">{publishedOn}</p>
+                    <p className="m-0  text-sm text-slate-500  dark:text-slate-500">•</p>
                     <ViewCounter slug={slug} />
                   </div>
                   {publishedOn !== modifiedDate && (
-                    <p className="mt-0 text-sm text-slate-500 md:text-base dark:text-slate-500">
+                    <p className="mt-0 text-xs text-slate-500  dark:text-slate-500">
                       (Updated on {modifiedDate})
                     </p>
                   )}

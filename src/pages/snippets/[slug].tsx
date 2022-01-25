@@ -244,17 +244,17 @@ const SnippetPage = ({
         <article className="col-span-9 mt-12">
           <div className="space-y-12">
             <div>
-              <h1 className="text-2xl text-left md:text-5xl">{title}</h1>
+              <h1 className="text-2xl text-left md:text-3xl font-semibold mb-1">{title}</h1>
               <div className="text-left">
                 <div className="flex mb-2 space-x-2 text-lg">
-                  <p className="m-0 text-lg md:text-xl">{publishedOn}</p>
+                  <p className="m-0  text-sm text-slate-500 ">{publishedOn}</p>
 
-                </div>
                 {publishedOn !== modifiedDate && (
-                  <p className="mt-0 text-sm text-slate-500 md:text-base dark:text-slate-500">
+                  <p className="mt-0 text-sm text-slate-500  dark:text-slate-500">
                     (Updated on {modifiedDate})
                   </p>
                 )}
+                </div>
               </div>
             </div>
 
