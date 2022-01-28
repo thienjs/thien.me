@@ -1,21 +1,24 @@
 import { intlFormat, formatDistanceToNowStrict } from "date-fns";
 
 import { GoRepoForked, GoStar } from 'react-icons/go'
+import { BiLink } from 'react-icons/bi'
 
-import styles from "./RepoCard.module.css";
+import styles from './RepoCard.module.css'
 
 type Props = {
-  name: string;
-  url: string;
-  description?: string;
+  name: string
+  url: string
+  description?: string
   language?: {
-    name: string;
-    color?: string;
-  };
-  stars?: number;
-  forks?: number;
-  updatedAt: string;
-};
+    name: string
+    color?: string
+  }
+  stars?: number
+  forks?: number
+  updatedAt: string
+  deployments?: string
+  homepageUrl: string
+}
 
 const RepoCard = (props: Props) => (
   <div className="w-full text-sm mt-2 mb-5 border-b pb-2 border-gray-300 dark:border-gray-700 cursor-pointer">
@@ -31,6 +34,8 @@ const RepoCard = (props: Props) => (
     {props.description && (
       <p className="text-xs font-light my-1 pb-1">{props.description}</p>
     )}
+
+
 
     <div className="flex flex-wrap ">
       {props.language && (
@@ -106,6 +111,13 @@ const RepoCard = (props: Props) => (
           })}
         </span>
       </div>
+      {props.homepageUrl && (
+    <div className="flex ml-2">
+      <BiLink className="mt-0.5"/>
+        
+        <p className="text-xs font-light ml-2">{props.homepageUrl}</p>
+    </div>
+      )}
     </div>
   </div>
 )

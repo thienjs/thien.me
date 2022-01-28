@@ -113,6 +113,7 @@ export const getStaticProps: GetStaticProps = async () => {
                 ... on Repository {
                   name
                   url
+                  homepageUrl
                   description
                   pushedAt
                   stargazerCount
@@ -140,6 +141,7 @@ export const getStaticProps: GetStaticProps = async () => {
     stars: repo.stargazerCount,
     forks: repo.forkCount,
     language: repo.primaryLanguage,
+    homepageUrl: repo.homepageUrl,
   }))
 
   return {
