@@ -7,7 +7,7 @@ type Props = {
 
 export function SnippetList({ snippets }) {
   return (
-    <div className="list-none grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div className="list-none grid grid-cols-1 md:grid-cols-3 gap-3">
       {snippets.map((snippet) => (
         <SnippetCard key={snippet.title} snippet={snippet} />
       ))}

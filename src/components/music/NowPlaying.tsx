@@ -79,7 +79,7 @@ export default function NowPlaying() {
   const { data } = useSWR<NowPlayingSong>('/api/now-playing', fetcher);
 
   return (
-    <div className="flex flex-row-reverse items-center sm:flex-row mb-8 space-x-0 sm:space-x-2 w-full">
+    <div className="flex flex-row-reverse items-center sm:flex-row mb-8 space-x-0 sm:space-x-2  w-full text-sm  border rounded-md px-4 py-4 bg-gray-100 border-gray-200 dark:border-gray-800 cursor-pointer  dark:bg-zinc-900">
       {data?.songUrl ? (
         <AnimatedBars />
       ) : (

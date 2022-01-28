@@ -21,9 +21,9 @@ type Props = {
 }
 
 const RepoCard = (props: Props) => (
-  <div className="w-full text-sm mt-2 mb-5 border-b pb-2 border-gray-300 dark:border-gray-700 cursor-pointer">
+  <div className="w-full text-sm my-2 border rounded-md px-4 py-4 border-gray-200 dark:border-gray-800 cursor-pointer bg-gray-100 dark:bg-zinc-900">
     <a
-      className="text-md font-semibold"
+      className="text-lg font-semibold "
       href={props.url}
       target="_blank"
       rel="noopener noreferrer"
@@ -32,14 +32,21 @@ const RepoCard = (props: Props) => (
     </a>
 
     {props.description && (
-      <p className="text-xs font-light my-1 pb-1">{props.description}</p>
+      <p className="text-md text-gray-600 dark:text-gray-400 my-1 pb-1">
+        {props.description}
+      </p>
+    )}
+    {props.homepageUrl && (
+      <div className="flex ">
+        <BiLink className="mt-1.5" color="gray"/>
+
+        <p className="text-sm  ml-1 text-md text-gray-600 dark:text-gray-400 my-1 pb-1">{props.homepageUrl}</p>
+      </div>
     )}
 
-
-
-    <div className="flex flex-wrap ">
+    <div className="flex flex-wrap text-gray-600 dark:text-gray-400 ">
       {props.language && (
-        <div className="text-xs font-light mr-2 ">
+        <div className="text-xs mr-2 ">
           <span className={styles.language_color}>
             <style jsx>{`
               span {
@@ -64,7 +71,7 @@ const RepoCard = (props: Props) => (
           >
             <GoStar
               fill="currentColor"
-              className="align-text-bottom mr-1 w-4 h-4 text-xs font-light hover:fill-yellow-400"
+              className="align-text-bottom mr-1 w-4 h-4 text-nm font-light hover:fill-yellow-400"
             />
             <span>{props.stars.toLocaleString('en-US')}</span>
           </a>
@@ -72,7 +79,7 @@ const RepoCard = (props: Props) => (
       )}
 
       {props.forks > 0 && (
-        <div className="text-sm">
+        <div className="text-xs">
           <a
             href={`${props.url}/network/members`}
             title={`${props.forks.toLocaleString('en-US')} ${
@@ -88,7 +95,7 @@ const RepoCard = (props: Props) => (
       )}
 
       <div
-        className="text-xs font-light"
+        className="text-xs "
         title={intlFormat(
           new Date(props.updatedAt),
           {
@@ -111,13 +118,6 @@ const RepoCard = (props: Props) => (
           })}
         </span>
       </div>
-      {props.homepageUrl && (
-    <div className="flex ml-2">
-      <BiLink className="mt-0.5"/>
-        
-        <p className="text-xs font-light ml-2">{props.homepageUrl}</p>
-    </div>
-      )}
     </div>
   </div>
 )

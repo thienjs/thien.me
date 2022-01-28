@@ -29,7 +29,7 @@ export default function Tweet({
     referenced_tweets && referenced_tweets.find((t) => t.type === 'quoted');
 
   return (
-    <div className=" mt-3 w-full bg-white dark:bg-zinc-900">
+    <div className=" max-w-3xl px-4 py-4 bg-gray-100 dark:bg-zinc-900 w-full  border my-2 rounded-md border-gray-200 dark:border-gray-800">
       <div className="flex items-center">
         <a
           className="flex h-12 w-12"
