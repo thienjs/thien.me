@@ -25,9 +25,9 @@ export default function Blog({articles, tags}) {
 
     return (
       <Layout>
-        <h1 className="text-5xl font-bold ">Blog</h1>
+        <h1 className="text-5xl font-bold mb-2 mt-8 ">Blog</h1>
         <p className="mb-4 mt-2 text-gray-700 dark:text-gray-400">
-          This is where i gather my thoughts
+          This is where I write about programming, tech, life, and everything in between. 
         </p>
         <div className="relative w-full mb-4">
           <input
@@ -35,7 +35,7 @@ export default function Blog({articles, tags}) {
             type="text"
             onChange={(e) => setSearchValue(e.target.value)}
             placeholder="Search articles"
-            className="block px-4 py-2 w-full text-gray-900 bg-white border border-gray-200 rounded-md dark:border-gray-900 focus:ring-blue-500 focus:border-blue-500 dark:bg-zinc-800 dark:text-gray-100"
+            className="block px-4 py-2 w-full text-gray-900 bg-white border border-gray-200 rounded-md dark:border-gray-900 focus:ring-cyan-500 focus:border-blue-500 dark:bg-zinc-800 dark:text-gray-100"
           />
           <svg
             className="absolute w-5 h-5 text-gray-400 right-3 top-3 dark:text-gray-300"
@@ -68,7 +68,7 @@ export default function Blog({articles, tags}) {
               ))}
           </ul>
         </div>
-        <div className="">
+        <div className="mt-4">
           {!filteredArticles.length && (
             <div className="">
               <p className="">

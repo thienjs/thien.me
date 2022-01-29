@@ -26,7 +26,7 @@ export default function SnippetsPage({snippets, tags}) {
 
   return (
     <Layout>
-      <h1 className="text-5xl font-bold ">Snippets</h1>
+      <h1 className="text-5xl font-bold mt-8 mb-3 ">Snippets</h1>
       <p className="mb-4 mt-2 text-gray-700 dark:text-gray-400">
         collection of useful code for reference
       </p>
@@ -68,7 +68,7 @@ export default function SnippetsPage({snippets, tags}) {
             ))}
         </ul>
       </div>
-      <div className="min-h-screen space-y-12">
+      <div className="min-h-screen space-y-12 mt-4">
         {!filteredSnippets.length && (
           <div className="w-full mx-auto  p-4">
             <p className="flex items-center justify-center text-2xl">

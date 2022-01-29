@@ -42,7 +42,7 @@ const AboutPage = ({ reviews, currentlyReading }) => {
 
   return (
     <Layout>
-      <div className="text-left content-start ml-4 mb-5 mt-4">
+      <div className="text-left content-start ml-4 mb-5 mt-14">
         <Image
           src="https://github.com/thienjs.png"
           alt="Profile"
