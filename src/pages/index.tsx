@@ -19,7 +19,7 @@ import Contact from '~/components/Contact'
 import Hero from '~/components/Hero'
 import Tweet from '~/components/Tweet'
 import { getTweets } from 'lib/twitter'
-import SkillsTable from '~/components/SkillsTable'
+
 import Link from 'next/link'
 import { convertToArticleList, getPublishedArticles } from '~/lib/notion'
 import { GetStaticProps } from 'next'
@@ -27,7 +27,8 @@ import { ArticleList } from '~/components/ArticleList'
 import NowPlaying from '~/components/music/NowPlaying'
 import RepoCard from '~/components/Projects/RepoCard'
 import ArrowLink from '~/components/ui/links/ArrowLink'
-import {useSession, signIn, signOut} from 'next-auth/react';
+import { useSession, signIn, signOut } from 'next-auth/react'
+import Timeline from 'components/timeline/Timeline'
 
 export type HomePageProps = {
   recentArticles: any
@@ -66,7 +67,7 @@ export default function HomePage({
         </div>
         <ArrowLink href="/repo">all repos</ArrowLink>
       </div>
-
+      <Timeline />
       <h2 className="text-3xl font-semibold py-4 mt-8">Recent Tweets</h2>
       {tweets.map((tweet) => (
         <Tweet key={tweet.id} {...tweet} />

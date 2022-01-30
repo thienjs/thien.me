@@ -1,9 +1,10 @@
 import React from 'react'
 import type { GetStaticProps } from 'next'
 import { useState } from 'react'
-
+import Layout from '~/components/ui/Layout'
 import { getMovies } from '~/lib/notion'
-import { generateKey } from 'crypto'
+import axios from "axios";
+
 
 const MoviesPage = ({ movies }) => {
   const [movie, setMovie] = useState(null)
@@ -11,11 +12,21 @@ const MoviesPage = ({ movies }) => {
     const randomNumber = Math.floor(Math.random() * movies.length)
     setMovie(movies[randomNumber])
   }
+  const handleUpdate = async () => {
+    const { data } = await axios.post("/api/mark-as-watched", {
+      id: movie.id,
+      isWatched: true,
+    });
+  
+    console.log(data);
+  };
+  
   return (
-    <div>
+    <Layout>
       <button onClick={chooseMovie}>choose movie</button>
       {movie && <pre>{JSON.stringify(movie, null, 2)}</pre>}
-    </div>
+      <button onClick={handleUpdate}>Watch!</button>
+    </Layout>
   )
 }
 
