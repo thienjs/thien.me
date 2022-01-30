@@ -1,5 +1,6 @@
 import { Client } from "@notionhq/client";
 import { QueryDatabaseResponse } from '@notionhq/client/build/src/api-endpoints';
+import { equal } from "assert";
 import slugify from 'slugify';
 
 const notion = new Client({
@@ -32,19 +33,33 @@ export const getPublishedArticles = async (databaseId) => {
     filter: {
       property: 'Status',
       select: {
-        equals: '✅ Published'
-      }
+        equals: '✅ Published',
+      },
     },
     sorts: [
       {
         property: 'Published',
-        direction: 'descending'
-      }
-    ]
-  });
+        direction: 'descending',
+      },
+    ],
+  })
 
-  return response.results;
-};
+  return response.results
+}
+export const getMovies = async (databaseId) => {
+  const response = await notion.databases.query({
+    database_id: databaseId,
+    filter: {
+      property: "Watched",
+      checkbox: {
+        equals: false
+      }
+    }
+
+  })
+
+  return response.results
+}
 export const getPublishedSnippets = async (databaseId) => {
   const response = await notion.databases.query({
     database_id: databaseId,
