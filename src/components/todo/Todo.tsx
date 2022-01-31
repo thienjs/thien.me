@@ -34,13 +34,11 @@ const Todo: React.FC<{ todo: TodoProps }> = ({ todo }) => {
     })
 
     mutate('/api/todo')
+    Router.push('/t/[id]', `/t/${todo.id}`)
   }
 
   return (
-    <div
-      className="py-3 px-2 text-black dark:text-gray-400 w-full  bg-opacity-80 border-b pb-2 border-gray-200 dark:border-gray-800 cursor-pointer hover:bg-gray-200 dark:hover:bg-zinc-800"
-
-    >
+    <div className="py-3 px-2 text-black dark:text-gray-400 w-full  bg-opacity-80 border-b pb-2 border-gray-200 dark:border-gray-800  hover:bg-gray-200 dark:hover:bg-zinc-800">
       <div className="text-gray-800 dark:text-gray-300">{todo.task}</div>
       <div className="flex justify-between">
         <div className="text-xs ">{authorName}</div>
@@ -48,7 +46,7 @@ const Todo: React.FC<{ todo: TodoProps }> = ({ todo }) => {
 
         <div className="text-xs text-gray-300 dark:text-gray-600">
           <button
-            className="text-sm text-red-600 dark:text-red-400"
+            className="text-sm text-red-600 dark:text-red-400 cursor-pointer"
             onClick={deleteEntry}
           >
             <GoTrashcan className="z-10" />

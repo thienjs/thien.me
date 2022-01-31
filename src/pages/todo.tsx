@@ -6,13 +6,20 @@ import Todo, { TodoProps } from '../components/todo/Todo'
 import { prisma } from '../lib/prisma'
 import ButtonLink from '~/components/ui/links/ButtonLink'
 import { GoPlus } from 'react-icons/go'
+import { useSession, getSession, signIn } from 'next-auth/react'
 
-import { useSession, signIn, signOut } from 'next-auth/react'
-
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getServerSideProps: GetServerSideProps = async ({req, res}) => {
+  const session = await getSession({ req })
+  if (!session) {
+    res.statusCode = 403
+    return { props: { drafts: [] } }
+  }
   const feed = await prisma.todo.findMany({
     orderBy: {
       id: 'desc',
+    },
+    where: {
+      author: { email: session.user.email },
     },
     include: {
       author: {
@@ -78,6 +85,14 @@ const TodoPage: React.FC<Props> = (props) => {
                 />
               </div>
             </form>
+            <main>
+          <h2 className="text-lg font-semibold mt-4">Tasks:</h2>
+          {props.feed.map((todo) => (
+            <div key={todo.id} className="">
+              <Todo todo={todo} />
+            </div>
+          ))}
+        </main>
           </>
         ) : (
           <>
@@ -91,14 +106,7 @@ const TodoPage: React.FC<Props> = (props) => {
           </>
         )}
 
-        <main>
-          <h2 className="text-lg font-semibold mt-4">Tasks:</h2>
-          {props.feed.map((todo) => (
-            <div key={todo.id} className="">
-              <Todo todo={todo} />
-            </div>
-          ))}
-        </main>
+
       </div>
     </Layout>
   )
