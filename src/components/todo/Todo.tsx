@@ -34,7 +34,7 @@ const Todo: React.FC<{ todo: TodoProps }> = ({ todo }) => {
     })
 
     mutate('/api/todo')
-    Router.push('/t/[id]', `/t/${todo.id}`)
+    Router.push('/todo')
   }
 
   return (
