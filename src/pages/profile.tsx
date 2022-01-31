@@ -14,10 +14,8 @@ const TestPage: NextPage = () => {
       <main className="">
         {session ? (
           <>
-            <div className="">
-              <h1 className="text-xl mb-4">
-                Signed in as {session.user?.name}
-              </h1>
+            <h1 className="text-xl mb-4 ">Signed in</h1>
+            <div className="mb-4 ml-8 px-4 py-4 bg-gray-100 dark:bg-zinc-900  border  rounded-md border-gray-200 dark:border-gray-800 min-w-full mx-80  items-center">
               {session.user?.image ? (
                 <img
                   className="rounded-full h-20 w-20 m-6"
@@ -27,6 +25,7 @@ const TestPage: NextPage = () => {
               ) : (
                 ''
               )}
+              <p className="">{session.user?.name}</p>
             </div>
             <button className="text-center" onClick={() => signOut()}>
               Signout
@@ -35,7 +34,7 @@ const TestPage: NextPage = () => {
         ) : (
           <>
             <h1>Sign in to continue</h1>
-            <button className='' onClick={() => signIn()}>
+            <button className="" onClick={() => signIn()}>
               Signin
             </button>
           </>
