@@ -29,7 +29,7 @@ export default function ArrowLink<C extends React.ElementType>({
         className
       )}
     >
-      <span>{children}</span>
+      <span className='text-sm'>{children}</span>
       <svg
         viewBox='0 0 16 16'
         height='1em'

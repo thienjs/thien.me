@@ -50,7 +50,11 @@ export default function HomePage({
       </h2>
       <div className="mb-10">
         <ArticleList articles={recentArticles} />
-        <ArrowLink href="/blog">all posts</ArrowLink>
+        <div className="flex justify-end mt-4 mr-2">
+          <ArrowLink href="/blog" className="">
+            more posts
+          </ArrowLink>
+        </div>
       </div>
       <h2 className="text-3xl font-semibold py-4  text-black dark:text-gray-100">
         Projects
@@ -65,7 +69,11 @@ export default function HomePage({
             ))}
           </div>
         </div>
-        <ArrowLink href="/repo">all repos</ArrowLink>
+        <div className="flex justify-end mt-4 mr-2">
+          <ArrowLink href="/repo" className="">
+            all repos
+          </ArrowLink>
+        </div>
       </div>
       <Timeline />
       <h2 className="text-3xl font-semibold py-4 mt-8">Recent Tweets</h2>
@@ -77,7 +85,11 @@ export default function HomePage({
       </h2>
       <div>
         <NowPlaying />
-        <ArrowLink href="/music">more music</ArrowLink>
+        <div className="flex justify-end mt-4 mr-2">
+          <ArrowLink href="/music" className="">
+            top songs
+          </ArrowLink>
+        </div>
       </div>
     </Layout>
   )

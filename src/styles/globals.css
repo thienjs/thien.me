@@ -155,7 +155,7 @@ a {
 
   .animated-underline {
     background-image: linear-gradient(#33333300, #33333300),
-      linear-gradient(to right, white, cyan);
+      linear-gradient(to right, teal, cyan);
     background-size: 100% 2px, 0 2px;
     background-position: 100% 100%, 0 100%;
     background-repeat: no-repeat;

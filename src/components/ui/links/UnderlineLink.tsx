@@ -15,13 +15,13 @@ export default function UnderlineLink({
     <UnstyledLink
       {...rest}
       className={clsxm(
-        'animated-underline border-gray-200 hover:border-gray-300 inline-flex items-center font-semibold',
+        'animated-underline border-gray-200 hover:border-gray-300 inline-flex items-center text-md font-semibold text-gray-700 dark:text-zinc-400',
         'focus:outline-none focus-visible:rounded focus-visible:ring focus-visible:ring-cyan-500 focus-visible:ring-offset-2',
-        'border-black border-b border-dotted hover:border-black',
+        '',
         className
       )}
     >
       {children}
     </UnstyledLink>
-  );
+  )
 }
