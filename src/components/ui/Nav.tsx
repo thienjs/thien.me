@@ -15,8 +15,8 @@ export default function Nav() {
   const [activeIndex, setActiveIndex] = React.useState(null)
   const [isOpen, setisOpen] = React.useState()
   return (
-    <Toolbar.Root className='flex items-center justify-between pt-6 px-4 pb-4 w-full  max-w-3xl'>
-      <nav className="flex items-center justify-between pb-4 w-full  max-w-2xl">
+
+      <nav className="flex items-center justify-between pb-4 w-full  max-w-sm md:max-w-2xl px-2 py-2">
         <AnimateSharedLayout>
           <motion.ul
             className="flex gap-x-4 gap-y-1 dark:text-gray-300"
@@ -68,11 +68,11 @@ export default function Nav() {
           </motion.ul>
         </AnimateSharedLayout>
         <div className="flex">
-          <ThemeDropdown />
+
           <ThemeSwitch />
           <DropMenu />
         </div>
       </nav>
-    </Toolbar.Root>
+
   )
 }
