@@ -21,7 +21,7 @@ export default function Nav() {
       <MobileNav />
       <AnimateSharedLayout>
         <motion.ul
-          className="flex gap-x-4 gap-y-1 dark:text-gray-300"
+          className=" gap-x-4 gap-y-1 dark:text-gray-300 hidden md:flex"
           onHoverEnd={() => setActiveIndex(null)}
         >
           {navigation.navData.map((item, index) => {
