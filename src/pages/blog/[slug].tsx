@@ -14,6 +14,7 @@ import { YoutubeEmbed } from "~/components/YoutubeEmbed";
 import PageViews from '~/components/PageViews';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import ScrollIndicator from '~/components/ScrollIndicator'
+import CDbutton from '~/components/CDbutton'
 
 export const Text = ({ text }) => {
   if (!text) {
@@ -31,7 +32,7 @@ export const Text = ({ text }) => {
           bold ? 'font-bold' : null,
           italic ? 'italic' : null,
           code
-            ? 'bg-indigo-200 dark:bg-indigo-900 dark:bg-opacity-50 text-indigo-500 dark:text-indigo-200 py-0.5 px-2 rounded mx-1 inline-block align-middle tracking-tight text-base'
+            ? 'bg-cyan-200 dark:bg-cyan-900 dark:bg-opacity-50 text-indigo-500 dark:text-indigo-200 py-0.5 px-2 rounded-md mx-1 inline-block align-middle tracking-tight text-base'
             : null,
           strikethrough ? 'line-through' : null,
           underline ? 'underline' : null,
@@ -51,13 +52,13 @@ export function renderBlocks(block) {
   switch (type) {
     case 'paragraph':
       return (
-        <p>
+        <p className="text-gray-800 dark:text-gray-300 mb-2">
           <Text text={value.text} />
         </p>
       )
     case 'heading_1':
       return (
-        <h1>
+        <h1 className="text-3xl font-bold mb-2">
           <AnchorLink text={value.text[0].text.content}>
             <Text text={value.text} />
           </AnchorLink>
@@ -65,7 +66,7 @@ export function renderBlocks(block) {
       )
     case 'heading_2':
       return (
-        <h2>
+        <h2 className="text-2xl font-semibold mb-2">
           <AnchorLink text={value.text[0].text.content}>
             <Text text={value.text} />
           </AnchorLink>
@@ -73,13 +74,18 @@ export function renderBlocks(block) {
       )
     case 'heading_3':
       return (
-        <h3>
+        <h3 className="text-xl font-semibold mb-2">
           <AnchorLink text={value.text[0].text.content}>
             <Text text={value.text} />
           </AnchorLink>
         </h3>
       )
     case 'bulleted_list_item':
+      return (
+        <li className="text-md text-gray-800 dark:text-gray-200">
+          <Text text={value.text} />
+        </li>
+      )
     case 'numbered_list_item':
       return (
         <li>
@@ -127,8 +133,8 @@ export function renderBlocks(block) {
           <Image
             className=""
             objectFit="cover"
-            width={1200}
-            height={684}
+            width={500}
+            height={500}
             alt={
               caption
                 ? caption
@@ -228,20 +234,24 @@ const ArticlePage = ({
     }
   )
 
-
-
   return (
     <Layout>
       <ScrollIndicator>
         <div className="grid grid-cols-1 lg:grid-cols-12 lg:gap-8">
           <article className="col-span-9 mt-12">
-            <div className="space-y-12">
+            <div className="space-y-3">
               <div>
-                <h1 className="text-3xl text-left font-semibold mb-2">{title}</h1>
+                <h1 className="text-3xl text-left font-semibold mb-2">
+                  {title}
+                </h1>
                 <div className="text-left">
                   <div className="flex mb-2 text-sm space-x-2 text-slate-500  dark:text-slate-500">
-                    <p className="m-0 tx-sm text-slate-500  dark:text-slate-500">{publishedOn}</p>
-                    <p className="m-0  text-sm text-slate-500  dark:text-slate-500">•</p>
+                    <p className="m-0 tx-sm text-slate-500  dark:text-slate-500">
+                      {publishedOn}
+                    </p>
+                    <p className="m-0  text-sm text-slate-500  dark:text-slate-500">
+                      •
+                    </p>
                     <ViewCounter slug={slug} />
                   </div>
                   {publishedOn !== modifiedDate && (
@@ -251,12 +261,15 @@ const ArticlePage = ({
                   )}
                 </div>
               </div>
-              <div className="my-12"></div>
+
               {content.map((block) => (
                 <Fragment key={block.id}>{renderBlocks(block)}</Fragment>
               ))}
             </div>
           </article>
+          <span className=" mt-4">
+            <CDbutton />
+          </span>
         </div>
       </ScrollIndicator>
     </Layout>

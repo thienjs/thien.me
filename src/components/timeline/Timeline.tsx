@@ -7,8 +7,8 @@ export default function Timeline() {
   return (
     <div className="">
       <h2 className="font-bold text-3xl mt-6 ">My Journey</h2>
-      <ol className="relative border-l border-gray-200 dark:border-gray-700 mt-6 ml-6 ">
-        <li className="mb-4 ml-8 px-4 py-4 bg-gray-100 dark:bg-zinc-900  border  rounded-md border-gray-200 dark:border-gray-800">
+      <ol className="relative border-l border-zinc-400 dark:border-gray-800 mt-6 ml-6 ">
+        <li className="mb-4 ml-8 px-4 py-4 bg-white dark:bg-zinc-900  border  rounded-md border-gray-100 shadow-sm shadow-gray-300 dark:shadow-none dark:border-zinc-900">
           <span className=" animate-pulse absolute flex items-center justify-center w-6 h-6 bg-blue-200 rounded-full -left-3 ring-8 ring-white dark:ring-gray-900 dark:bg-green-900">
             <FaBlackTie className="animate-none" />
           </span>
@@ -26,7 +26,7 @@ export default function Timeline() {
             Feel confident I can work as a junior web developer. Wish me Luck
           </p>
         </li>
-        <li className="mb-4 ml-8 px-4 py-4 bg-gray-100 dark:bg-zinc-900  border  rounded-md border-gray-200 dark:border-gray-800">
+        <li className="mb-4 ml-8 px-4 py-4 bg-white dark:bg-zinc-900  border  rounded-md border-gray-100 shadow-sm shadow-gray-300 dark:shadow-none dark:border-zinc-900">
           <span className="absolute flex items-center justify-center w-6 h-6 bg-red-200 rounded-full -left-3 ring-8 ring-white dark:ring-gray-900 dark:bg-red-900">
             <FaDog />
           </span>
@@ -40,7 +40,7 @@ export default function Timeline() {
             My crazy 4 legged best friend
           </p>
         </li>
-        <li className="mb-4 ml-8 px-4 py-4 bg-gray-100 dark:bg-zinc-900  border  rounded-md border-gray-200 dark:border-gray-800">
+        <li className="mb-4 ml-8 px-4 py-4 bg-white dark:bg-zinc-900  border  rounded-md border-gray-100 shadow-sm shadow-gray-300 dark:shadow-none dark:border-zinc-900">
           <span className="absolute flex items-center justify-center w-6 h-6 bg-blue-200 rounded-full -left-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
             <AiOutlineCode />
           </span>
@@ -56,7 +56,7 @@ export default function Timeline() {
             <p>- colt steele react</p>
           </p>
         </li>
-        <li className="mb-4 ml-8 px-4 py-4 bg-gray-100 dark:bg-zinc-900  border  rounded-md border-gray-200 dark:border-gray-800">
+        <li className="mb-4 ml-8 px-4 py-4 bg-white dark:bg-zinc-900  border  rounded-md border-gray-100 shadow-sm shadow-gray-300 dark:shadow-none dark:border-zinc-900">
           <span className="absolute flex items-center justify-center w-6 h-6 bg-purple-200 rounded-full -left-3 ring-8 ring-white dark:ring-gray-900 dark:bg-purple-900">
             <FaGraduationCap />
           </span>
@@ -70,7 +70,7 @@ export default function Timeline() {
             Bachelor of Arts in Business Finance
           </p>
         </li>
-        <li className="mb-4 ml-8 px-4 py-4 bg-gray-100 dark:bg-zinc-900  border  rounded-md border-gray-200 dark:border-gray-800">
+        <li className="mb-4 ml-8 px-4 py-4 bg-white dark:bg-zinc-900  border  rounded-md border-gray-100 shadow-sm shadow-gray-300 dark:shadow-none dark:border-zinc-900">
           <span className="absolute flex items-center justify-center w-6 h-6 bg-blue-200 rounded-full -left-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
             <SiAol />
           </span>

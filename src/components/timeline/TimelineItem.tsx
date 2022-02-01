@@ -1,6 +1,6 @@
 
 
-type TimelineProps = {};
+type TimelineProps = {}
 
 const TimelineItem = (props: TimelineProps) => {
   return <div></div>;

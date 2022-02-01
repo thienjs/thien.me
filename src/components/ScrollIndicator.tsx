@@ -19,15 +19,18 @@ export default function ScrollIndicator({ children }) {
   }, [])
 
   const inlineStyle = {
-    height: '6px',
+    height: '2px',
 
     width: scroll,
   }
 
   return (
     <>
-      <div className="top-0 left-0 w-screen h-1.5 fixed z-40 shadow-2xl bg-white-300">
-        <div style={inlineStyle} className="bg-cyan-500 dark:bg-teal-500" />
+      <div className="top-0 left-0 w-screen fixed z-40 ">
+        <div
+          style={inlineStyle}
+          className="bg-gradient-to-r from-green-300 via-blue-500 to-purple-600"
+        />
       </div>
       {children}
     </>
