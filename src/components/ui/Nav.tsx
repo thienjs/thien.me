@@ -17,11 +17,11 @@ export default function Nav() {
   const [activeIndex, setActiveIndex] = React.useState(null)
   const [isOpen, setisOpen] = React.useState()
   return (
-    <Toolbar.Root className="flex items-center justify-between pb-4 w-full  max-w-sm md:max-w-2xl px-2 py-2">
+    <nav className="flex items-center justify-between pb-4 w-full  max-w-sm md:max-w-2xl px-2 py-2">
       <MobileNav />
       <AnimateSharedLayout>
         <motion.ul
-          className=" gap-x-4 gap-y-1 dark:text-gray-300 hidden md:flex"
+          className="flex gap-x-4 gap-y-1 dark:text-gray-300"
           onHoverEnd={() => setActiveIndex(null)}
         >
           {navigation.navData.map((item, index) => {
@@ -70,6 +70,6 @@ export default function Nav() {
         <ThemeSwitch />
         <DropMenu />
       </div>
-    </Toolbar.Root>
+    </nav>
   )
 }
