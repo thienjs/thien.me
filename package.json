@@ -24,11 +24,14 @@
     "@notionhq/client": "^0.4.9",
     "@octokit/graphql": "^4.8.0",
     "@prisma/client": "^3.8.1",
+    "@radix-ui/react-accordion": "^0.1.5",
     "@radix-ui/react-checkbox": "^0.1.4",
     "@radix-ui/react-context-menu": "^0.1.4",
+    "@radix-ui/react-dialog": "^0.1.5",
     "@radix-ui/react-dropdown-menu": "^0.1.4",
     "@radix-ui/react-icons": "^1.0.3",
     "@radix-ui/react-radio-group": "^0.1.4",
+    "@radix-ui/react-toolbar": "^0.1.4",
     "@radix-ui/react-tooltip": "^0.1.6",
     "@reach/alert": "^0.16.0",
     "@supabase/supabase-js": "^1.28.5",
@@ -92,7 +95,8 @@
     "superjson": "^1.8.0",
     "swr": "^1.1.1",
     "tailwind-merge": "^1.1.1",
-    "thien-ui": "^0.2.0"
+    "thien-ui": "^0.2.0",
+    "use-delayed-render": "^0.0.7"
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^12.0.7",

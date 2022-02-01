@@ -118,8 +118,8 @@ export default function SnakeGame() {
   }
 
   const drawSnake = (ctx: CanvasRenderingContext2D) => {
-    ctx.fillStyle = '#0170F3'
-    ctx.strokeStyle = '#003779'
+    ctx.fillStyle ='#F4CA64' // '#0170F3'
+    ctx.strokeStyle =' #8C6D1F' //'#003779'
 
     fillRect(
       ctx,
@@ -157,8 +157,8 @@ export default function SnakeGame() {
   }
 
   const drawApple = (ctx: CanvasRenderingContext2D) => {
-    ctx.fillStyle = '#DC3030' // '#38C172' // '#F4CA64'
-    ctx.strokeStyle = '#881A1B' // '#187741' // '#8C6D1F
+    ctx.fillStyle = '#38C172' // '#DC3030'  // '#F4CA64'
+    ctx.strokeStyle = '#187741'//'#881A1B'   // '#8C6D1F
 
     if (
       apple &&
@@ -361,27 +361,27 @@ export default function SnakeGame() {
         <div className="flex justify-center">
           <button onClick={goUp} className="">
             <MdKeyboardArrowUp
-              size={50}
-              className=" border rounded-md border-gray-300 bg-gray-300 dark:bg-gray-800 text-gray-600 dark:text-gray-300 dark:border-gray-700 mb-2"
+              size={60}
+              className=" border rounded-md border-gray-300 bg-gray-300 dark:bg-gray-800 text-gray-600 dark:text-gray-300 dark:border-gray-700 mb-3"
             />
           </button>
         </div>
         <div className="flex justify-center ">
           <button onClick={goLeft}>
             <MdKeyboardArrowLeft
-              size={50}
+              size={60}
               className="border rounded-md border-gray-300 bg-gray-300 dark:bg-gray-800 text-gray-600 dark:text-gray-300 dark:border-gray-700 "
             />
           </button>
           <button onClick={goDown}>
             <MdKeyboardArrowDown
-              size={50}
-              className="border rounded-md border-gray-300 bg-gray-300 dark:bg-gray-800 text-gray-600 dark:text-gray-300 dark:border-gray-700 mx-2 "
+              size={60}
+              className="border rounded-md border-gray-300 bg-gray-300 dark:bg-gray-800 text-gray-600 dark:text-gray-300 dark:border-gray-700 mx-3 "
             />
           </button>
           <button onClick={goRight}>
             <MdKeyboardArrowRight
-              size={50}
+              size={60}
               className="border rounded-md border-gray-300 bg-gray-300 dark:bg-gray-800 text-gray-600 dark:text-gray-300 dark:border-gray-700"
             />
           </button>

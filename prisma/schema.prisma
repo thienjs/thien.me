@@ -55,6 +55,13 @@ model Todo {
   author    User?   @relation(fields: [authorId], references: [id])
 }
 
+model HighScore {
+  id        Int     @id @default(autoincrement())
+  score     Int?
+  playerId  Int?
+  player    User?   @relation(fields: [playerId], references: [id])
+}
+
 model Account {
   id                Int     @id @default(autoincrement())
   type              String
@@ -93,6 +100,7 @@ model User {
   posts         Post[]
   todos         Todo[]
   sessions      Session[]
+  highScore     HighScore[]
 }
 
 model VerificationToken {
