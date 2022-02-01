@@ -7,9 +7,6 @@ import { navigation } from '~/data/nav'
 import ThemeSwitch from '../ThemeSwitch'
 import DropMenu from './DropMenu'
 import AuthButton from '../auth/AuthButton'
-import { ThemeDropdown } from './nav/ThemeDropdown'
-import * as Toolbar from '@radix-ui/react-toolbar'
-import { MobileNav } from './nav/MobileNav'
 
 
 export default function Nav() {
@@ -18,7 +15,7 @@ export default function Nav() {
   const [isOpen, setisOpen] = React.useState()
   return (
     <nav className="flex items-center justify-between pb-4 w-full  max-w-sm md:max-w-2xl px-2 py-2">
-      <MobileNav />
+
       <AnimateSharedLayout>
         <motion.ul
           className="flex gap-x-4 gap-y-1 dark:text-gray-300"
