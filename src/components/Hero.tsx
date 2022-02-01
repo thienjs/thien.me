@@ -27,7 +27,7 @@ export default function Hero() {
               Thien Tran
             </h1>
           </motion.div>
-          <div className="mt-6 text-gray-800 dark:text-gray-200 text-lg">
+          <div className="mt-6 text-gray-800 dark:text-gray-200 text-xl">
             <p className="mb-4 ">
               Hello! I am web developer currently focused on typescript, nextjs,
               and tailwind. Most of my work is open source and publicly

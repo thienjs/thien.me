@@ -25,8 +25,8 @@ const items = [
     delay: '175ms'
   },
   {
-    name: 'NFT gallery',
-    url: '/nft-gallery',
+    name: 'blog',
+    url: '/blog',
     icon: <FiAward aria-hidden className="mx-2" />,
     delay: '200ms'
   }
