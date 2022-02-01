@@ -26,7 +26,7 @@ export function ArticleCard({ article }: Props) {
   const readingTimeStats = readingTime(article.summary)
 
   return (
-    <div className="  max-w-3xl px-4 py-4 bg-gray-100 dark:bg-zinc-900 w-full  border my-2 rounded-md border-gray-200 dark:border-gray-800">
+    <div className="  max-w-3xl px-4 py-4 bg-white dark:bg-zinc-900 w-full  border my-2 rounded-md border-gray-200 dark:border-gray-800">
       <button onClick={() => handleArticleClicked(slug)}>
         <div className="flex flex-col">
           <h3 className="text-md font-semibold text-left mb-1">

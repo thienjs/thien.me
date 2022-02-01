@@ -7,13 +7,13 @@ import { useTheme } from 'next-themes'
 const ThemeSwitch = () => {
   const [isDark, mounted, setTheme] = useDarkTheme()
   return (
-    <div className="mr-2 mt-0.5">
+    <div className="mr-2">
       {mounted && (
         <Switch
           checked={isDark}
           title="Theme switch"
           onChange={() => setTheme(isDark ? 'light' : 'dark')}
-          className={`inline-flex justify-center w-full  shadow-sm px-2 py-2 bg-transparent text-sm font-medium text-gray-700 dark:text-gray-200  `}
+          className={`  rounded-md border border-gray-300 dark:border-gray-700  px-2 py-2 bg-white dark:bg-zinc-800 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500  `}
         >
           <SunMoonIcon />
         </Switch>
@@ -62,8 +62,8 @@ function SunMoonIcon() {
   return (
     <animated.svg
       xmlns="http://www.w3.org/2000/svg"
-      width="14"
-      height="14"
+      width="15"
+      height="15"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"

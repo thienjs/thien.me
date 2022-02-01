@@ -1,6 +1,6 @@
 export default function StatsCard({ header, link, stat, isCurrency }) {
   return (
-    <div className=" bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg p-4 max-w-72 w-full">
+    <div className=" mb-2  bg-white dark:bg-zinc-900 border border-gray-200 dark:border-gray-800 rounded-lg p-4 min-w-90 w-full">
       <a
         aria-label={header}
         target="_blank"
