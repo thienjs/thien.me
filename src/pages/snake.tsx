@@ -1,9 +1,13 @@
 import { useState, useEffect, useRef } from 'react'
 import Layout from '~/components/ui/Layout'
+import {
+  MdKeyboardArrowLeft,
+  MdKeyboardArrowDown,
+  MdKeyboardArrowRight,
+  MdKeyboardArrowUp,
+} from 'react-icons/md'
 
 import useInterval from '~/lib/hooks/useInterval'
-
-
 
 type Apple = {
   x: number
@@ -330,28 +334,62 @@ export default function SnakeGame() {
     }
   }, [previousVelocity])
 
+  const goUp = () => {
+    setVelocity({ dx: 0, dy: -1 })
+  }
+  const goDown = () => {
+    setVelocity({ dx: 0, dy: 1 })
+  }
+  const goLeft = () => {
+    setVelocity({ dx: -1, dy: 0 })
+  }
+  const goRight = () => {
+    setVelocity({ dx: 1, dy: 0 })
+  }
+
   return (
     <Layout>
-
       <main>
         <h1>Snake</h1>
         <h1>My favorite game on nokia. now online. try to get a highscore</h1>
-        <canvas 
-          className='border bg-gray-300 dark:bg-slate-700 my-6'
+        <canvas
+          className="border bg-gray-300 dark:bg-slate-700 my-6"
           ref={canvasRef}
           width={canvasWidth + 1}
           height={canvasHeight + 1}
         />
+        <div className="flex justify-center">
+          <button onClick={goUp} className="">
+            <MdKeyboardArrowUp
+              size={50}
+              className=" border rounded-md border-gray-300 bg-gray-300 dark:bg-gray-800 text-gray-600 dark:text-gray-300 dark:border-gray-700 mb-2"
+            />
+          </button>
+        </div>
+        <div className="flex justify-center ">
+          <button onClick={goLeft}>
+            <MdKeyboardArrowLeft
+              size={50}
+              className="border rounded-md border-gray-300 bg-gray-300 dark:bg-gray-800 text-gray-600 dark:text-gray-300 dark:border-gray-700 "
+            />
+          </button>
+          <button onClick={goDown}>
+            <MdKeyboardArrowDown
+              size={50}
+              className="border rounded-md border-gray-300 bg-gray-300 dark:bg-gray-800 text-gray-600 dark:text-gray-300 dark:border-gray-700 mx-2 "
+            />
+          </button>
+          <button onClick={goRight}>
+            <MdKeyboardArrowRight
+              size={50}
+              className="border rounded-md border-gray-300 bg-gray-300 dark:bg-gray-800 text-gray-600 dark:text-gray-300 dark:border-gray-700"
+            />
+          </button>
+        </div>
         <section>
           <div className="">
-            <p>
-
-              Score: {score}
-            </p>
-            <p>
-
-              Highscore: {highscore > score ? highscore : score}
-            </p>
+            <p>Score: {score}</p>
+            <p>Highscore: {highscore > score ? highscore : score}</p>
           </div>
           {!isLost && countDown > 0 ? (
             <button onClick={startGame}>
@@ -360,7 +398,6 @@ export default function SnakeGame() {
           ) : (
             <div className="">
               <p>How to Play?</p>
-
             </div>
           )}
         </section>
@@ -371,14 +408,13 @@ export default function SnakeGame() {
               {newHighscore ? `🎉 New Highscore 🎉` : `You scored: ${score}`}
             </p>
             {!running && isLost && (
-              <button className='m-2 px-' onClick={startGame}>
+              <button className="m-2 px-" onClick={startGame}>
                 {countDown === 4 ? 'Restart Game' : countDown}
               </button>
             )}
           </div>
         )}
       </main>
-
     </Layout>
   )
 }
