@@ -29,8 +29,7 @@ const GuestBookPage = ({
       </h1>
       <div>
         <p className="mb-4 max-w-lg text-gray-600 dark:text-gray-400">
-          Leave a comment below. It could be anything – appreciation,
-          information, wisdom, or even humor. Surprise me!
+          Thank you for visiting. Say hi!
         </p>
       </div>
       <ContentPopover />
