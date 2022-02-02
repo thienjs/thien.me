@@ -29,6 +29,7 @@ import RepoCard from '~/components/Projects/RepoCard'
 import ArrowLink from '~/components/ui/links/ArrowLink'
 import { useSession, signIn, signOut } from 'next-auth/react'
 import Timeline from 'components/timeline/Timeline'
+import { ContentPopover } from '~/components/guestbook';
 
 export type HomePageProps = {
   recentArticles: any
@@ -91,6 +92,7 @@ export default function HomePage({
           </ArrowLink>
         </div>
       </div>
+      <ContentPopover/>
     </Layout>
   )
 }
