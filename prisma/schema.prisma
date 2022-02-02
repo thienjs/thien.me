@@ -117,3 +117,11 @@ enum FeedbackType {
   IDEA
   FEEDBACK
 }
+model Guestbook {
+  id        Int      @id @default(autoincrement())
+  email     String   @db.VarChar(256)
+  body      String
+  createdBy String   @db.VarChar(256)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
