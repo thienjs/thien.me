@@ -5,7 +5,7 @@ import useSWR, { useSWRConfig } from 'swr';
 import { signOut } from 'next-auth/react';
 import toast from 'react-hot-toast';
 export interface IContentInputProps {
-  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+
 }
 
 export enum Form {
@@ -14,7 +14,7 @@ export enum Form {
 }
 export type FormState = Form;
 
-export function ContentInput({ setIsOpen }: IContentInputProps) {
+export function ContentInput({ }: IContentInputProps) {
   const [form, setForm] = React.useState<FormState>(Form.Initial);
   const inputEl = React.useRef<HTMLTextAreaElement>(null);
   const { mutate } = useSWRConfig();
@@ -41,7 +41,7 @@ export function ContentInput({ setIsOpen }: IContentInputProps) {
       toast.error(res.message);
     }
     setForm(Form.Initial);
-    setIsOpen(false);
+
   };
   return (
     <div className="flex flex-col ">
