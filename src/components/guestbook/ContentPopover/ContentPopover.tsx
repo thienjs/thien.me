@@ -7,6 +7,7 @@ import { useSession } from 'next-auth/react';
 import { getProviders, signIn } from 'next-auth/react';
 export interface IContentPopoverProps {}
 import { Popover } from '@headlessui/react'
+import {RiQuillPenLine} from 'react-icons/ri'
 
 export function ContentPopover(props: IContentPopoverProps) {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -18,19 +19,12 @@ export function ContentPopover(props: IContentPopoverProps) {
       </h5>
 
       <Popover>
-
-        <Popover.Button className="my-4 rounded bg-gray-200  px-4 py-2 font-bold text-gray-900 dark:bg-gray-700 dark:text-gray-100">
-          Sign the Guestbook
+        <Popover.Button className="my-4 rounded bg-gray-300  px-4 py-2 font-bold text-gray-900 dark:bg-gray-700 dark:text-gray-100">
+          <RiQuillPenLine/>
         </Popover.Button>
 
-        <Popover.Panel
-          className="w-80 rounded-md border border-transparent bg-gray-50 p-5 shadow-xl dark:border-gray-700 dark:bg-gray-900"
-        >
-          {status === 'authenticated' ? (
-            <ContentInput  />
-          ) : (
-            <AuthButtons />
-          )}
+        <Popover.Panel className="absolute w-96 rounded-md border border-gray-300 dark:border-zinc-800 bg-gray-50 p-5 shadow-sm dark:shadow-zinc-800  dark:bg-zinc-900">
+          {status === 'authenticated' ? <ContentInput /> : <AuthButtons />}
 
           <Popover.Button
             aria-label="Close"
@@ -39,11 +33,10 @@ export function ContentPopover(props: IContentPopoverProps) {
             <FiX className="h-4 w-4" aria-hidden />
           </Popover.Button>
         </Popover.Panel>
- 
       </Popover>
       <p className="max-w-sm text-sm text-gray-800 dark:text-gray-200">
         Your information is only used to display your name and reply by email.
       </p>
     </div>
-  );
+  )
 }
