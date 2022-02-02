@@ -22,23 +22,20 @@ const GuestBookPage = ({
   entries
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
-    <Layout
-     >
-      <div className="mx-auto mb-16 flex w-full max-w-7xl flex-col items-start justify-center">
-        <h1 className="mb-4 text-3xl font-bold tracking-tight text-gray-800 dark:text-white md:text-5xl">
-          Guestbook
-        </h1>
-        <div>
-          <p className="mb-4 max-w-lg text-gray-600 dark:text-gray-400">
-            Leave a comment below. It could be anything – appreciation,
-            information, wisdom, or even humor. Surprise me!
-          </p>
-        </div>
-        <ContentPopover />
-        <GuestbookContent data={entries} />
+    <Layout>
+      <h1 className="mb-4 text-3xl font-bold tracking-tight text-gray-800 dark:text-white md:text-5xl">
+        Guestbook
+      </h1>
+      <div>
+        <p className="mb-4 max-w-lg text-gray-600 dark:text-gray-400">
+          Leave a comment below. It could be anything – appreciation,
+          information, wisdom, or even humor. Surprise me!
+        </p>
       </div>
+      <ContentPopover />
+      <GuestbookContent data={entries} />
     </Layout>
-  );
+  )
 };
 
 export default GuestBookPage;

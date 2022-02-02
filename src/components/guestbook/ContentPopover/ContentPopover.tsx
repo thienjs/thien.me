@@ -11,7 +11,7 @@ export function ContentPopover(props: IContentPopoverProps) {
   const [isOpen, setIsOpen] = React.useState(false);
   const { data: session, status } = useSession();
   return (
-    <div className="my-4 w-full rounded border-2 border-dashed border-gray-300 p-6 dark:border-gray-700 ">
+    <div className="my-4 w-full rounded border-2  border-gray-300 p-6 dark:border-gray-700 ">
       <h5 className="text-lg font-bold text-gray-900 dark:text-gray-100 md:text-xl ">
         Share a message for a future visitor of my site.
       </h5>
@@ -22,7 +22,7 @@ export function ContentPopover(props: IContentPopoverProps) {
         </PopoverPrimitive.Trigger>
 
         <PopoverPrimitive.Content
-          className="w-64 rounded-md border border-transparent bg-gray-50 p-5 shadow-xl dark:border-gray-700 dark:bg-gray-900"
+          className="w-80 rounded-md border border-transparent bg-gray-50 p-5 shadow-xl dark:border-gray-700 dark:bg-gray-900"
           sideOffset={5}
         >
           {status === 'authenticated' ? (
