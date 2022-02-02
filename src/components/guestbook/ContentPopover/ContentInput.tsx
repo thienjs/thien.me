@@ -80,14 +80,7 @@ export function ContentInput() {
           )}
         </button>
       </form>
-      <button
-        onClick={() => {
-          signOut()
-        }}
-        className="mt-2 w-full rounded bg-red-200 px-3 py-1 font-medium ring-red-300 transition-all hover:ring-2 dark:bg-red-600"
-      >
-        Log out
-      </button>
+
     </div>
   )
 }

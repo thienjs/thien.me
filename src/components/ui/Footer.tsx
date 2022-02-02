@@ -15,7 +15,7 @@ import UnstyledLink from './links/UnstyledLink'
 const Footer = () => {
   const year = new Date().getFullYear()
   return (
-    <div className="flex flex-col items-center justify-center w-screen mt-30 ">
+    <div className="flex flex-col items-center justify-center w-screen mt-40 ">
       <div className="flex flex-row"></div>
       <FooterLinks />
       <div className="flex flex-col items-center  justify-center w-screen ">
