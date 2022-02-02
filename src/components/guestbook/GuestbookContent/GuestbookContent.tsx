@@ -29,12 +29,12 @@ export function GuestbookContent({ data }: IGuestBookContentProps) {
 
   return (
     <div className="mt-4 space-y-8">
-      <div className="grid grid-cols-1 gap-3 md:grid-cols-4">
+      <div className="">
         {entries?.data &&
           entries.data.map((entry) => (
             <div key={entry.id}>
-              <div className="flex min-h-[5rem] space-x-3 border-b border-gray-100 bg-gray-200 py-3 px-3.5 text-sm dark:border-gray-900 dark:bg-gray-800 lg:rounded-lg lg:border-none lg:py-2">
-                <div className="flex flex-col justify-center space-y-1">
+              <div className="">
+                <div className="w-full text-sm my-2 px-4 py-4 bg-white dark:bg-zinc-900  border  rounded-md border-gray-100 shadow-sm shadow-gray-300 dark:shadow-none dark:border-zinc-900">
                   <div className="text-base  font-medium ">{entry.body}</div>
                   <div className="text-gray-600 text-opacity-80 line-clamp-1 dark:text-white">
                     <div className="mb-2 flex items-center space-x-2">

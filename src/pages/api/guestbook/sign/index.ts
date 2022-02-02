@@ -32,7 +32,7 @@ export default async function handler(
     if (!result.success) {
       return res
         .status(400)
-        .json({ success: false, message: result.error.issues[0].message });
+        .json({ success: false, message: 'an error occured' });
     }
 
     try {
