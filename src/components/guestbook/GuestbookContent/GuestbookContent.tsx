@@ -40,7 +40,7 @@ export function GuestbookContent({ data }: IGuestBookContentProps) {
                   <div className="text-gray-600 text-opacity-80 line-clamp-1 dark:text-white">
                     <div className="mb-2 flex items-center space-x-2">
                       <p className="text-sm text-gray-500">
-                        {entry.createdBy} /{' '}
+                        {entry.createdBy} • {' '}
                         {format(
                           new Date(entry.createdAt),
                           "d MMM yyyy 'at' h:mm bb"
