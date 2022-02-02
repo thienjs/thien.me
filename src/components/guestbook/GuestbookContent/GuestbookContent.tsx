@@ -8,6 +8,7 @@ export interface IGuestBookContentProps {
     body: string;
     createdBy: string;
     createdAt: string;
+
   }[];
 }
 

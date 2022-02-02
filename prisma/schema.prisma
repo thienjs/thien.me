@@ -115,5 +115,4 @@ model Guestbook {
   body      String
   createdBy String   @db.VarChar(256)
   createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
 }

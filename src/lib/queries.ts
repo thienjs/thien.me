@@ -6,8 +6,8 @@ export type GuestBookAll = ThenArg<ReturnType<typeof fetchGuestbookEntries>>;
 export const fetchGuestbookEntries = async () => {
   const entries = await prisma.guestbook.findMany({
     orderBy: {
-      updatedAt: 'desc'
-    }
-  });
+      createdAt: 'desc',
+    },
+  })
   return entries;
 };

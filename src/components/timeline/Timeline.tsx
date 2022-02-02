@@ -1,13 +1,27 @@
 import { RiAncientGateFill } from "react-icons/ri";
 import { FaGraduationCap, FaDog, FaBlackTie } from 'react-icons/fa'
 import { AiOutlineCode } from 'react-icons/ai'
-import { SiAol } from 'react-icons/si'
+import { SiAol, SiLeetcode } from 'react-icons/si'
 
 export default function Timeline() {
   return (
     <div className="">
       <h2 className="font-bold text-3xl mt-6 ">My Journey</h2>
       <ol className="relative border-l border-zinc-400 dark:border-gray-800 mt-6 ml-6 ">
+        <li className="mb-4 ml-8 px-4 py-4 bg-white dark:bg-zinc-900  border  rounded-md border-gray-100 shadow-sm shadow-gray-300 dark:shadow-none dark:border-zinc-900">
+          <span className="absolute flex items-center justify-center w-6 h-6 bg-yellow-300 rounded-full -left-3 ring-8 ring-white dark:ring-gray-900 dark:bg-yellow-700">
+            <SiLeetcode />
+          </span>
+          <h3 className="mb-1 text-base font-semibold text-gray-900 dark:text-white">
+            Joined LeetCode
+          </h3>
+          <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+            Feb 2nd, 2022
+          </time>
+          <p className="text-sm font-normal text-gray-500 dark:text-gray-400">
+            Prepare for interviews and show coding ability.
+          </p>
+        </li>
         <li className="mb-4 ml-8 px-4 py-4 bg-white dark:bg-zinc-900  border  rounded-md border-gray-100 shadow-sm shadow-gray-300 dark:shadow-none dark:border-zinc-900">
           <span className=" animate-pulse absolute flex items-center justify-center w-6 h-6 bg-blue-200 rounded-full -left-3 ring-8 ring-white dark:ring-gray-900 dark:bg-green-900">
             <FaBlackTie className="animate-none" />

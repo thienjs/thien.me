@@ -11,8 +11,9 @@ export const getStaticProps = async () => {
     id: entry.id,
     body: entry.body,
     createdBy: entry.createdBy.toString(),
-    createdAt: entry.createdAt.toString()
-  }));
+    createdAt: entry.createdAt.toString(),
+
+  }))
   return {
     props: { entries, revalidate: 60 } //revalidate every minute
   };
