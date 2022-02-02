@@ -15,7 +15,7 @@ export function ContentPopover(props: IContentPopoverProps) {
   return (
     <div className=" max-w-3xl px-4 py-4 bg-white dark:bg-zinc-900 w-full  border my-2 rounded-md border-gray-100 shadow-sm shadow-gray-300 dark:shadow-none dark:border-zinc-900">
       <h5 className="text-lg font-bold text-gray-900 dark:text-gray-100 md:text-xl ">
-        Share a message for a future visitors of my site.
+        Share a message for future visitors of my site.
       </h5>
 
       <Popover>
@@ -34,9 +34,6 @@ export function ContentPopover(props: IContentPopoverProps) {
           </Popover.Button>
         </Popover.Panel>
       </Popover>
-      <p className="max-w-sm text-sm text-gray-800 dark:text-gray-200">
-        Your information is only used to display your name and reply by email.
-      </p>
     </div>
   )
 }

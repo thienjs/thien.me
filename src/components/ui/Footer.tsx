@@ -15,7 +15,7 @@ import UnstyledLink from './links/UnstyledLink'
 const Footer = () => {
   const year = new Date().getFullYear()
   return (
-    <div className="flex flex-col items-center justify-center w-screen mt-20 ">
+    <div className="flex flex-col items-center justify-center w-screen mt-30 ">
       <div className="flex flex-row"></div>
       <FooterLinks />
       <div className="flex flex-col items-center  justify-center w-screen ">
@@ -23,21 +23,23 @@ const Footer = () => {
           <Link href="https://github.com/thienjs">
             <GithubIcon className="h-5 w-5 mx-3 hover:text-purple-400" />
           </Link>
-          <Link href="https://discord.com/thien#4420">
+          <Link href="https://discord.com/thien#0601">
             <DiscordIcon className="h-5 w-5 mx-3 hover:text-blue-400" />
           </Link>
           <Link href="https://twitter.com/thientsx">
             <TwitterIcon className="h-5 w-5 mx-3 hover:text-cyan-400" />
           </Link>
-          <Link href="emailto:hi@thien.me">
+          <Link href="emailto:thienjsx@gmail.com">
             <EmailIcon className="h-5 w-5 mx-3 hover:text-emerald-400" />
           </Link>
-          <Link href="https://linkedin.com/thienjs">
+          <Link href="https://linkedin.com/in/thienjs">
             <LinkedinIcon className="h-5 w-5 mx-3 hover:text-blue-400" />
           </Link>
         </div>
       </div>
-      <div className="mb-8 text-xs text-gray-600 dark:text-gray-500">© Thien Tran {year}</div>
+      <div className="mb-8 text-xs text-gray-600 dark:text-gray-500">
+        © Thien Tran {year}
+      </div>
     </div>
   )
 }
