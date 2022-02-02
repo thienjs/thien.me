@@ -14,11 +14,10 @@ export default function Nav() {
   const [activeIndex, setActiveIndex] = React.useState(null)
   const [isOpen, setisOpen] = React.useState()
   return (
-    <nav className="flex items-center justify-between pb-4 w-full  max-w-sm md:max-w-2xl px-2 py-2">
-
+    <nav className="flex items-center justify-end pb-4 w-full  max-w-sm md:max-w-2xl px-2 py-2 mt-4">
       <AnimateSharedLayout>
         <motion.ul
-          className="flex gap-x-4 gap-y-1 dark:text-gray-300"
+          className="md:flex gap-x-4 gap-y-1 dark:text-gray-300 hidden mr-auto"
           onHoverEnd={() => setActiveIndex(null)}
         >
           {navigation.navData.map((item, index) => {
@@ -64,8 +63,11 @@ export default function Nav() {
         </motion.ul>
       </AnimateSharedLayout>
       <div className="flex ">
-        <ThemeSwitch />
-        <DropMenu />
+        <div className="">
+          <ThemeSwitch />
+        </div>
+        <div className="fixed"></div>
+        <DropMenu/>
       </div>
     </nav>
   )
