@@ -56,6 +56,8 @@ export function ContentInput({ setIsOpen }: IContentInputProps) {
         <textarea
           className="rounded-md border border-gray-300 text-sm shadow-sm focus:border-gray-500 focus:ring-gray-500 dark:bg-gray-800 dark:text-white dark:focus:border-gray-300 dark:focus:ring-gray-300"
           ref={inputEl}
+          rows={2}
+          cols={40}
           aria-label="Your message"
           placeholder="Your message..."
           required
