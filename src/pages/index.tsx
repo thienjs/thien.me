@@ -30,6 +30,7 @@ import ArrowLink from '~/components/ui/links/ArrowLink'
 import { useSession, signIn, signOut } from 'next-auth/react'
 import Timeline from 'components/timeline/Timeline'
 import { ContentPopover } from '~/components/guestbook';
+import Entry from '~/components/guestbook/ContentPopover/Entry'
 
 export type HomePageProps = {
   recentArticles: any
@@ -92,7 +93,13 @@ export default function HomePage({
           </ArrowLink>
         </div>
       </div>
-      <ContentPopover/>
+      <h2 className='text-3xl mt-8 font-semibold py-4 text-gray-900 dark:text-gray-100 mb-2'>Guestbook</h2>
+      <Entry/>
+      <div className="flex justify-end mt-4 mr-2">
+          <ArrowLink href="/guestbook" className="">
+            see what others wrote
+          </ArrowLink>
+        </div>
     </Layout>
   )
 }

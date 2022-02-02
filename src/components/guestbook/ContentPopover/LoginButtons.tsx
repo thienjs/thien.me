@@ -3,7 +3,7 @@ import { FiTwitter, FiGithub } from 'react-icons/fi';
 import { signIn, useSession } from 'next-auth/react';
 export interface IAuthButtonsProps {}
 
-export function AuthButtons(props: IAuthButtonsProps) {
+export function LoginButtons(props: IAuthButtonsProps) {
   const { data: session } = useSession();
   const buttons = React.useMemo(
     () => [
@@ -28,12 +28,12 @@ export function AuthButtons(props: IAuthButtonsProps) {
   );
   return (
     <div className="flex flex-col">
-      <h2 className="text-lg font-bold">Login with</h2>
+      <h2 className="text-md">Login to write a message</h2>
       <div className="mt-2 flex items-center space-x-3">
         {buttons.map(({ label, icon, handler }) => (
           <div
             key={label}
-            className="w-full rounded-lg bg-gray-200 p-2 ring-gray-300 transition-all hover:ring-2 dark:bg-gray-600"
+            className="w-full rounded-lg bg-gray-300 p-2 ring-gray-300 transition-all hover:ring-2 dark:bg-gray-600"
           >
             <button
               className="flex w-full flex-col items-center justify-center font-medium"

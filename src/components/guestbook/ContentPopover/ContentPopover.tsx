@@ -5,10 +5,10 @@ import { AuthButtons } from './AuthButtons';
 import { ContentInput } from './ContentInput';
 import { useSession } from 'next-auth/react';
 import { getProviders, signIn } from 'next-auth/react';
-export interface IContentPopoverProps {}
 import { Popover } from '@headlessui/react'
 import {RiQuillPenLine} from 'react-icons/ri'
 
+export interface IContentPopoverProps {}
 export function ContentPopover(props: IContentPopoverProps) {
   const [isOpen, setIsOpen] = React.useState(false);
   const { data: session, status } = useSession();
