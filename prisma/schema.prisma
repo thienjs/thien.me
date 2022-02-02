@@ -52,6 +52,7 @@ model HighScore {
   score     Int?
   playerId  Int?
   player    User?   @relation(fields: [playerId], references: [id])
+  createdAt DateTime @default(now())
 }
 
 model Account {
