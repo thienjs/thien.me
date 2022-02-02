@@ -4,9 +4,6 @@ import * as React from 'react';
 import useSWR, { useSWRConfig } from 'swr';
 import { signOut } from 'next-auth/react';
 import toast from 'react-hot-toast';
-export interface IContentInputProps {
-
-}
 
 export enum Form {
   Initial,
@@ -14,7 +11,7 @@ export enum Form {
 }
 export type FormState = Form;
 
-export function ContentInput({ }: IContentInputProps) {
+export function ContentInput() {
   const [form, setForm] = React.useState<FormState>(Form.Initial);
   const inputEl = React.useRef<HTMLTextAreaElement>(null);
   const { mutate } = useSWRConfig();
