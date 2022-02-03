@@ -10,7 +10,7 @@ const initialReactionState = {
   loved: false,
   clapped: false,
   partied: false,
-  has_read: true // if reader is on the page, set their read status to true
+
 };
 
 export default function useArticleReactions(slug) {
