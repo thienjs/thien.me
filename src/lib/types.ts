@@ -113,5 +113,11 @@ export type Views = {
       forks: number;
     };
   }
-
+  export type Reactions = {
+    like_count: number
+    love_count: number
+    clap_count: number
+    party_count: number
+  }
+  
   export type GithubSortOptions = 'stars' | 'forks' | 'upd';

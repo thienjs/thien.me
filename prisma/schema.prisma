@@ -23,6 +23,14 @@ model views {
   count BigInt @default(1)
 }
 
+model reactions {
+  slug  String @id @db.VarChar(128)
+  like_count BigInt
+  love_count BigInt
+  clap_count BigInt
+  party_count BigInt
+}
+
 
 model Contact {
   id        String @id @default(cuid())

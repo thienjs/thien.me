@@ -6,6 +6,7 @@ import slugify from 'slugify';
 import { useRouter } from 'next/router';
 import ViewCounter from "~/components/ViewCounter";
 import Layout from "~/components/ui/Layout";
+import Reactions from '~/components/reactions/Reactions';
 import { AnchorLink } from "~/components/AnchorLink";
 import Image from "next/image";
 import { CodeBlock } from '~/components/Codeblock';
@@ -276,6 +277,7 @@ const ArticlePage = ({
                 <Fragment key={block.id}>{renderBlocks(block)}</Fragment>
               ))}
             </div>
+            <Reactions slug={slug} />
           </article>
           <span className=" mt-4">
             <CDbutton />
