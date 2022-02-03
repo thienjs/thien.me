@@ -15,7 +15,7 @@ export default function FeedbackPage({ feedback }) {
   const formatFeedbackType = (feedback: FeedbackType) => {
     switch (feedback) {
       case 'FEEDBACK':
-        return 'bg-green-500 text-green-800'
+        return 'bg-emerald-500 text-green-800'
       case 'IDEA':
         return 'bg-yellow-300 text-yellow-800'
       case 'ISSUE':
