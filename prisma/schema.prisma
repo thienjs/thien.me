@@ -29,6 +29,7 @@ model reactions {
   love_count BigInt
   clap_count BigInt
   party_count BigInt
+  eq String
 }
 
 

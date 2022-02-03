@@ -1,6 +1,4 @@
-import { NextPage } from 'next'
-import { FaLock } from 'react-icons/fa'
-import { NextAppPageProps } from '~/types/app'
+
 import {
   ApolloClient,
   InMemoryCache,
@@ -12,10 +10,8 @@ import {
 import { setContext } from '@apollo/client/link/context'
 import Layout from '~/components/ui/Layout'
 import { useMessage } from '~/lib/message'
-import Projects from '~/components/Projects'
-import Skills from '~/components/Skills'
-import Testimonials from '~/components/Testimonials'
-import Contact from '~/components/Contact'
+
+
 import Hero from '~/components/Hero'
 import Tweet from '~/components/Tweet'
 import { getTweets } from 'lib/twitter'
@@ -29,7 +25,6 @@ import RepoCard from '~/components/Projects/RepoCard'
 import ArrowLink from '~/components/ui/links/ArrowLink'
 import { useSession, signIn, signOut } from 'next-auth/react'
 import Timeline from 'components/timeline/Timeline'
-import { ContentPopover } from '~/components/guestbook';
 import Entry from '~/components/guestbook/ContentPopover/Entry'
 
 export type HomePageProps = {
