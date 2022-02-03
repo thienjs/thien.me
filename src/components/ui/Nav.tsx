@@ -7,6 +7,7 @@ import { navigation } from '~/data/nav'
 import ThemeSwitch from '../ThemeSwitch'
 import DropMenu from './DropMenu'
 import AuthButton from '../auth/AuthButton'
+import { TBoxIcon } from '../icons/t-box';
 
 
 export default function Nav() {
@@ -15,6 +16,9 @@ export default function Nav() {
   const [isOpen, setisOpen] = React.useState()
   return (
     <nav className="flex items-center justify-end pb-4 w-full  max-w-sm md:max-w-2xl px-2 py-2 mt-4">
+      <Link href="/">
+      <TBoxIcon className='w-10 h-10 mr-auto'/>
+      </Link>
       <AnimateSharedLayout>
         <motion.ul
           className="md:flex gap-x-4 gap-y-1 dark:text-gray-300 hidden mr-auto"
@@ -62,6 +66,7 @@ export default function Nav() {
           })}
         </motion.ul>
       </AnimateSharedLayout>
+      
       <div className="flex ">
         <div className="">
           <ThemeSwitch />
