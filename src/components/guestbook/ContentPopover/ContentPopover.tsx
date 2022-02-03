@@ -15,7 +15,7 @@ export function ContentPopover(props: IContentPopoverProps) {
   return (
     <div className=" max-w-3xl min-w-[380px] px-4 py-4 bg-white dark:bg-zinc-900  border my-2 rounded-md border-gray-100 shadow-sm shadow-gray-300 dark:shadow-none dark:border-zinc-900">
       <div>
-        <div className=" w-full rounded-md border border-gray-300 dark:border-zinc-800 bg-gray-50 p-5 shadow-sm dark:shadow-zinc-800  dark:bg-zinc-900">
+        <div className=" w-full">
           {status === 'authenticated' ? <ContentInput /> : <AuthButtons />}
         </div>
       </div>
