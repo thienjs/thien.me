@@ -47,6 +47,7 @@
     "esbuild": "^0.13.12",
     "framer-motion": "^5.4.5",
     "github-slugger": "^1.4.0",
+    "googleapis": "^94.0.0",
     "graphql": "^16.2.0",
     "gray-matter": "^4.0.3",
     "lodash.truncate": "^4.4.2",

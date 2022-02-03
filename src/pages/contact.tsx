@@ -1,74 +1,70 @@
-import { useState } from 'react';
-import Head from 'next/head';
-import AddContactForm from './../components/contact/AddContactForm';
-import ContactCard from './../components/contact/ContactCard';
-import Layout from '~/components/ui/Layout'
+import type { NextPage } from 'next'
+import {FormEvent, useState} from "react";
+import {Layout} from 'components/ui/Layout'
 
-import { PrismaClient, Contact, Prisma } from '@prisma/client'
+const Home: NextPage = () => {
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [phone, setPhone] = useState('');
+    const [message, setMessage] = useState('');
 
-const prisma = new PrismaClient()
+    const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
 
-export async function getServerSideProps() {
-  const contacts: Contact[] = await prisma.contact.findMany()
-  return {
-    props: {
-      initialContacts: contacts,
-    },
-  }
-}
+        let form = {
+            name,
+            email,
+            phone,
+            message
+        }
 
-async function saveContact(contact: Prisma.ContactCreateInput) {
-  const response = await fetch('/api/contacts', {
-    method: 'POST',
-    body: JSON.stringify(contact),
-  })
+        const rawResponse = await fetch('/api/contact/submit', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(form)
+        });
+        const content = await rawResponse.json();
 
-  if (!response.ok) {
-    throw new Error(response.statusText)
-  }
-  return await response.json()
-}
+        // print to screen
+        alert(content.data.tableRange)
 
-export default function Index({ initialContacts }) {
-  const [contacts, setContacts] = useState<Contact[]>(initialContacts)
-  return (
-    <Layout>
-      <Head>
-        <title>Contacts App</title>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <link
-          href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
-          rel="stylesheet"
-        />
-      </Head>
-      <div className="flex">
-        <section className="w-1/3 bg-gray-800 h-screen p-8">
-          <div className="mb-3">
-            <h2 className="text-3xl text-white">Add a Contact</h2>
-          </div>
-          <AddContactForm
-            onSubmit={async (data, e) => {
-              try {
-                await saveContact(data)
-                setContacts([...contacts, data])
-                e.target.reset()
-              } catch (err) {
-                console.log(err)
-              }
-            }}
-          />
-        </section>
-        <section className="w-2/3 h-screen p-8">
-          <div className="mb-3">
-            <h2 className="text-3xl text-gray-700">Contacts</h2>
-          </div>
-          {contacts.map((c, i: number) => (
-            <div className="mb-3" key={i}>
-              <ContactCard contact={c} />
+        // Reset the form fields
+        setMessage('')
+        setPhone('')
+        setName('')
+        setEmail('')
+    }
+
+    return (
+        <Layout >
+            <div className="max-w-5xl mx-auto py-16">
+                <form className="py-4 space-y-4" onSubmit={handleSubmit}>
+                    <div className="flex items-center justify-center">
+                        <label htmlFor="name" className="sr-only">Name</label>
+                        <input value={name} onChange={e => setName(e.target.value)} type="text" name="name" id="name" className="shadow-md focus:ring-indigo-500 focus:border-indigo-500 block w-64 sm:text-md border-gray-300 rounded-md" placeholder="Your Name" />
+                    </div>
+                    <div className="flex items-center justify-center">
+                        <label htmlFor="email" className="sr-only">Email</label>
+                        <input value={email} onChange={e => setEmail(e.target.value)} type="email" name="email" id="email" className="shadow-md focus:ring-indigo-500 focus:border-indigo-500 block w-64 sm:text-md border-gray-300 rounded-md" placeholder="Your Email" />
+                    </div>
+                    <div className="flex items-center justify-center">
+                        <label htmlFor="phone" className="sr-only">Phone</label>
+                        <input value={phone} onChange={e => setPhone(e.target.value)} type="tel" name="phone" id="phone" className="shadow-md focus:ring-indigo-500 focus:border-indigo-500 block w-64 sm:text-md border-gray-300 rounded-md" placeholder="Your Phone" />
+                    </div>
+                    <div className="flex items-center justify-center">
+                        <label htmlFor="message" className="sr-only">Message</label>
+                        <textarea value={message} onChange={e => setMessage(e.target.value)} id="message" className="shadow-md focus:ring-indigo-500 focus:border-indigo-500 block w-64 sm:text-md border-gray-300 rounded-md" placeholder="Your Message" />
+                    </div>
+                    <div className="flex items-center justify-center">
+                        <button type="submit" className="flex items-center justify-center text-sm w-64 rounded-md shadow py-3 px-2 text-white bg-indigo-600">Save</button>
+                    </div>
+                </form>
             </div>
-          ))}
-        </section>
-      </div>
-    </Layout>
-  )
+        </Layout>
+    )
 }
+
+export default Home
