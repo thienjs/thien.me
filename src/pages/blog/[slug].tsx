@@ -156,6 +156,16 @@ export function renderBlocks(block) {
           />
         </div>
       )
+    case 'bookmark':
+      return (
+        <div>
+          {value.url}
+          {value.caption}
+          <>{value.text}</>
+          <Text text={value.text} />
+        </div>
+      )
+
     case 'callout':
       return (
         <Callout>
