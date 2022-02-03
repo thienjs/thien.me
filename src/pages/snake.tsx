@@ -89,6 +89,7 @@ export default function SnakeGame() {
     if (score > highscore) {
       setHighscore(score)
       localStorage.setItem('highscore', score.toString())
+      submitHighscore
       setNewHighscore(true)
     }
     setIsLost(true)
@@ -264,6 +265,21 @@ export default function SnakeGame() {
         : 0
     )
   }, [])
+
+  const submitHighscore = async (e: React.SyntheticEvent) => {
+    e.preventDefault()
+    try {
+      const body = { score }
+      await fetch(`/api/highscore`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body),
+      })
+      await console.log('waiting')
+    } catch (error) {
+      console.error(error)
+    }
+  }
 
   // Score Hook: increase game speed starting at 16
   useEffect(() => {
