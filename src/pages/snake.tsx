@@ -275,7 +275,6 @@ export default function SnakeGame() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(body),
       })
-      await console.log('waiting')
     } catch (error) {
       console.error(error)
     }
