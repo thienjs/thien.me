@@ -7,7 +7,7 @@ export default function StatsCard({ header, link, stat, isCurrency }) {
         rel="noopener noreferrer"
         href={link}
       >
-        <div className="flex items-center text-gray-900 dark:text-gray-100">
+        <div className="flex items-center text-gray-900 dark:text-gray-100 font-semibold">
           {header}
           <svg
             className="h-4 w-4 ml-1"

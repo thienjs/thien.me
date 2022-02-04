@@ -8,6 +8,7 @@ import DiscordIcon from "~/components/icons/social-icons/discord";
 import TwitterIcon from "~/components/icons/social-icons/twitter";
 import LinkedinIcon from "~/components/icons/social-icons/linkedin";
 import EmailIcon from "~/components/icons/social-icons/email";
+import { SiBuymeacoffee } from 'react-icons/si'
 
 import { navigation } from '~/data/nav'
 import UnstyledLink from './links/UnstyledLink'
@@ -34,6 +35,9 @@ const Footer = () => {
           </Link>
           <Link href="https://linkedin.com/in/thienjs">
             <LinkedinIcon className="h-5 w-5 mx-3 hover:text-blue-400" />
+          </Link>
+          <Link href="https://buymecoffee.com/thien">
+            <SiBuymeacoffee className="h-4 w-4 mx-3 hover:text-yellow-400" />
           </Link>
         </div>
       </div>
