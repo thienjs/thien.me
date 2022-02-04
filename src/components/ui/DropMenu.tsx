@@ -58,7 +58,7 @@ export default function DropMenu() {
         afterEnter={toggleIcon}
         afterLeave={toggleIcon}
       >
-        <Menu.Items className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white dark:bg-zinc-800 ring-1 ring-black ring-opacity-5 divide-y divide-gray-100 focus:outline-none ">
+        <Menu.Items className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white dark:bg-zinc-800 ring-1 ring-black ring-opacity-5 divide-y divide-zinc-300 dark:divide-zinc-700 focus:outline-none ">
           <div className="py-1">
             <Menu.Item>
               {({ active }) => (
@@ -151,24 +151,7 @@ export default function DropMenu() {
                 </Link>
               )}
             </Menu.Item>
-            <Menu.Item>
-              {({ active }) => (
-                <Link href="/music">
-                  <a
-                    className={classNames(
-                      active
-                        ? 'bg-green-100 text-red-900 dark:bg-cyan-600 dark:text-gray-300'
-                        : 'text-zinc-700 dark:text-gray-200 bg-white dark:bg-zinc-800 hover:bg-gray-300 dark:hover:bg-zinc-700',
-                      'block px-4 py-2 text-sm'
-                    )}
-                  >
-                    <div className="flex flex-row">
-                      <SpeakerLoudIcon className="mr-4 mt-0.5" /> Music
-                    </div>
-                  </a>
-                </Link>
-              )}
-            </Menu.Item>
+
           </div>
           <div className="py-1">
             <Menu.Item>
@@ -207,43 +190,7 @@ export default function DropMenu() {
                 </Link>
               )}
             </Menu.Item>
-            <Menu.Item>
-              {({ active }) => (
-                <Link href="/profile">
-                  <a
-                    className={classNames(
-                      active
-                        ? 'bg-green-100 text-red-900 dark:bg-cyan-600 dark:text-gray-300'
-                        : 'text-zinc-700 dark:text-gray-200 bg-white dark:bg-zinc-800 hover:bg-gray-300 dark:hover:bg-zinc-700',
-                      'block px-4 py-2 text-sm'
-                    )}
-                  >
-                    <div className="flex flex-row">
-                      <AvatarIcon className="mr-4 mt-0.5" /> profile
-                    </div>
-                  </a>
-                </Link>
-              )}
-            </Menu.Item>
-            <Menu.Item>
-              {({ active }) => (
-                <Link href="/drafts">
-                  <a
-                    className={classNames(
-                      active
-                        ? 'bg-green-100 text-red-900 dark:bg-cyan-600 dark:text-gray-300'
-                        : 'text-zinc-700 dark:text-gray-200 bg-white dark:bg-zinc-800 hover:bg-gray-300 dark:hover:bg-zinc-700',
-                      'block px-4 py-2 text-sm'
-                    )}
-                  >
-                    <div className="flex flex-row">
-                      <Half2Icon className="mr-4 mt-0.5" />
-                      drafts
-                    </div>
-                  </a>
-                </Link>
-              )}
-            </Menu.Item>
+
             <Menu.Item>
               {({ active }) => (
                 <Link href="/stats">
@@ -350,6 +297,43 @@ export default function DropMenu() {
                         >
                           <div className="flex flex-row">
                             <CubeIcon className="mr-4 mt-0.5" /> Snake
+                          </div>
+                        </a>
+                      </Link>
+                    )}
+                  </Menu.Item>
+                  <Menu.Item>
+                    {({ active }) => (
+                      <Link href="/profile">
+                        <a
+                          className={classNames(
+                            active
+                              ? 'bg-green-100 text-red-900 dark:bg-cyan-600 dark:text-gray-300'
+                              : 'text-zinc-700 dark:text-gray-200 bg-white dark:bg-zinc-800 hover:bg-gray-300 dark:hover:bg-zinc-700',
+                            'block px-4 py-2 text-sm'
+                          )}
+                        >
+                          <div className="flex flex-row">
+                            <AvatarIcon className="mr-4 mt-0.5" /> profile
+                          </div>
+                        </a>
+                      </Link>
+                    )}
+                  </Menu.Item>
+                  <Menu.Item>
+                    {({ active }) => (
+                      <Link href="/movies">
+                        <a
+                          className={classNames(
+                            active
+                              ? 'bg-green-100 text-red-900 dark:bg-cyan-600 dark:text-gray-300'
+                              : 'text-zinc-700 dark:text-gray-200 bg-white dark:bg-zinc-800 hover:bg-gray-300 dark:hover:bg-zinc-700',
+                            'block px-4 py-2 text-sm'
+                          )}
+                        >
+                          <div className="flex flex-row">
+                            <Half2Icon className="mr-4 mt-0.5" />
+                            movies
                           </div>
                         </a>
                       </Link>

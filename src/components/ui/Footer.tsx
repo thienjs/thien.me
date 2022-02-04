@@ -36,7 +36,7 @@ const Footer = () => {
           <Link href="https://linkedin.com/in/thienjs">
             <LinkedinIcon className="h-5 w-5 mx-3 hover:text-blue-400" />
           </Link>
-          <Link href="https://buymecoffee.com/thien">
+          <Link href="https://www.buymeacoffee.com/thien">
             <SiBuymeacoffee className="h-4 w-4 mx-3 hover:text-yellow-400" />
           </Link>
         </div>
