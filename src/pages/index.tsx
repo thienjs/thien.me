@@ -86,14 +86,10 @@ export default function HomePage({
             top songs
           </ArrowLink>
         </div>
-        <h2 className="text-3xl mt-8 font-semibold py-4 text-gray-900 dark:text-gray-100 ">
-        Get in Touch
-      </h2>
-      <p>send me a private message, I'll get back to you</p>
-        <Contact/>
+
       </div>
       <h2 className='text-3xl mt-8 font-semibold py-4 text-gray-900 dark:text-gray-100 mb-2'>Guestbook</h2>
-     sign in and write a message for others to see.
+
       <Entry/>
       <div className="flex justify-end mt-4 mr-2">
           <ArrowLink href="/guestbook" className="">
