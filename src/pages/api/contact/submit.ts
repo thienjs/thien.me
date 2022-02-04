@@ -1,17 +1,27 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import {google} from "googleapis";
 import g from '~/data/google-secret.json';
+
+import service from "~/data/service-account.enc.js";
+import useSWR from 'swr'
+import axios from 'axios';
+
+const fetchWithData = (url, encrypt) => axios.post(url, { data: encrypt }).then(res => res.data);
+
 type SheetForm = {
     name: string
     email: string
     phone: string
     message: string
 }
-
+const { data, error } = useSWR(['/api/decrypt', service.encrypted], fetchWithData);
 export default async function handler(
     req: NextApiRequest,
     res: NextApiResponse
 ) {
+ 
+
+
     if (req.method !== 'POST') {
         return res.status(405).send({ message: 'Only POST requests allowed' })
     }
@@ -22,7 +32,7 @@ export default async function handler(
         const auth = new google.auth.GoogleAuth({
             credentials: {
                 client_email: process.env.GOOGLE_CLIENT_EMAIL,
-                private_key: g.private_key
+                private_key: data.private_key
             },
             scopes: [
                 'https://www.googleapis.com/auth/drive',
