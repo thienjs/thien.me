@@ -14,7 +14,10 @@ type SheetForm = {
     phone: string
     message: string
 }
-const { data, error } = useSWR(['/api/decrypt', service.encrypted], fetchWithData);
+const { data, error } = useSWR(
+  ['../decrypt', service.encrypted],
+  fetchWithData
+)
 export default async function handler(
     req: NextApiRequest,
     res: NextApiResponse
