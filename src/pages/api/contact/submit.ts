@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import {google} from "googleapis";
-import g from '~/data/google-secret.json';
+
 
 import service from "~/data/service-account.enc.js";
 import useSWR from 'swr'
