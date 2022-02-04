@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import {google} from "googleapis";
-
+import g from '~/data/google-secret.json';
 type SheetForm = {
     name: string
     email: string
@@ -22,7 +22,7 @@ export default async function handler(
         const auth = new google.auth.GoogleAuth({
             credentials: {
                 client_email: process.env.GOOGLE_CLIENT_EMAIL,
-                private_key: process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, '\n')
+                private_key: g.private_key
             },
             scopes: [
                 'https://www.googleapis.com/auth/drive',
