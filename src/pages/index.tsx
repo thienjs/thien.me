@@ -10,8 +10,6 @@ import {
 import { setContext } from '@apollo/client/link/context'
 import Layout from '~/components/ui/Layout'
 import { useMessage } from '~/lib/message'
-
-
 import Hero from '~/components/Hero'
 import Tweet from '~/components/Tweet'
 import { getTweets } from 'lib/twitter'

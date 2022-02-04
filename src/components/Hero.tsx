@@ -26,6 +26,9 @@ export default function Hero() {
             <h1 className="text-3xl font-bold text-gray-900 lg:text-4xl dark:text-white mt-6">
               Thien Tran
             </h1>
+            <h3 className="text-gray-700 dark:text-gray-400 text-md">
+              (tee-en)
+            </h3>
           </motion.div>
           <div className="mt-6 text-gray-800 dark:text-gray-200 text-xl">
             <p className="mb-4 ">
