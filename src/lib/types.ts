@@ -34,6 +34,7 @@ export type Views = {
     publishedDate?: any;
     lastUpdatedDate?: any;
   };
+  
   export type Snippet = {
     title: string;
     tags?: string[];
@@ -121,3 +122,12 @@ export type Views = {
   }
   
   export type GithubSortOptions = 'stars' | 'forks' | 'upd';
+
+  export type Movie = {
+    title: string;
+    tags?: string[];
+    coverImage: string;
+    summary: string;
+    publishedDate?: any;
+    lastUpdatedDate?: any;
+  };

@@ -36,6 +36,7 @@ import Contact from '~/components/contact/Contact'
 import { useState } from 'react'
 import TopTracks from '~/components/music/TopTracks'
 import { ArticleCard } from '~/components/ArticleCard'
+import { NowReading } from '~/components/hobby/NowReading'
 import { FaStar } from 'react-icons/fa'
 
 export type HomePageProps = {
@@ -71,7 +72,7 @@ export default function HomePage({
     />
   ))
   const currentlyReadingList = currentlyReading.map((r) => (
-    <AboutListElement
+    <NowReading
       key={r.url}
       title={r.title}
       subtitle={r.author}
@@ -194,55 +195,32 @@ export default function HomePage({
           >
             Books
           </Tab>
-          <Tab
-            className={({ selected }) =>
-              classNames(
-                'w-full py-2.5 text-sm leading-5 font-medium text-gray-700 dark:text-gray-200 rounded-lg',
-                'focus:outline-none',
-                selected
-                  ? 'bg-white dark:bg-zinc-900 dark:text-gray-100'
-                  : 'text-gray-600 dark:text-gray-400 hover:bg-white/[0.12] hover:text-white'
-              )
-            }
-          >
-            Movies
-          </Tab>
         </Tab.List>
         <Tab.Panels>
           <Tab.Panel>
-            <div className='mt-6'>
-
-            <TopTracks />
+            <div className="mt-6">
+              <NowPlaying />
+              <TopTracks />
             </div>
           </Tab.Panel>
           <Tab.Panel>
+           
+                <div>{currentlyReadingList}</div>
+              
+            
             <AboutSection id="books" title="" subtitle="">
               <div className="">
                 <ul>{reviewList.slice(0, 10)}</ul>
               </div>
             </AboutSection>
           </Tab.Panel>
-          <Tab.Panel>
-            <Timeline/>
-          </Tab.Panel>
         </Tab.Panels>
-
       </Tab.Group>
       <h2 className="text-3xl font-semibold py-4 mt-8">Recent Tweets</h2>
       {tweets.map((tweet) => (
         <Tweet key={tweet.id} {...tweet} />
       ))}
-      <h2 className="text-3xl mt-8 font-semibold py-4 text-gray-900 dark:text-gray-100 mb-2">
-        Music
-      </h2>
-      <div>
-        <NowPlaying />
-        <div className="flex justify-end mt-4 mr-2">
-          <ArrowLink href="/music" className="">
-            top songs
-          </ArrowLink>
-        </div>
-      </div>
+      
       <h2 className="text-3xl mt-8 font-semibold py-4 text-gray-900 dark:text-gray-100 mb-2">
         Guestbook
       </h2>

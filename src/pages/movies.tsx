@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Layout from '~/components/ui/Layout'
 import { getMovies } from '~/lib/notion'
 import axios from "axios";
+import { MovieCard } from '~/components/hobby/MovieCard'
 
 
 const MoviesPage = ({ movies }) => {
@@ -25,6 +26,7 @@ const MoviesPage = ({ movies }) => {
     <Layout>
       <button onClick={chooseMovie}>choose movie</button>
       {movie && <pre>{JSON.stringify(movie, null, 2)}</pre>}
+
       <button onClick={handleUpdate}>Watch!</button>
     </Layout>
   )

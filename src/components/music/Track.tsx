@@ -1,6 +1,6 @@
 export default function Track(track) {
     return (
-      <div className="flex flex-row border-b border-gray-200 dark:border-gray-800 max-w-3xl w-full mt-4">
+      <div className="flex flex-row border-b border-zinc-300 dark:border-gray-800 max-w-3xl w-full mt-4">
         <p className="text-sm font-bold text-gray-400 dark:text-gray-600 mr-2">
           {track.ranking}
         </p>
