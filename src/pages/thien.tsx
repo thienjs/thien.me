@@ -8,7 +8,7 @@ import Avatar from '~/components/ui/Avatar'
 import SkillsTable from '~/components/SkillsTable';
 import SnapCarousel from '~/components/ui/SnapCarousel';
 import AuthButton from '~/components/supabase/AuthButton';
-import CountryList from '~/components/CountryList'
+
 import ButtonBox from '~/components/common/button/ButtonBNW'
 import Pomodoro from '~/components/clock/Pomodoro'
 
