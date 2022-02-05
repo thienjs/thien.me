@@ -46,6 +46,25 @@ export const getPublishedArticles = async (databaseId) => {
 
   return response.results
 }
+export const getFeaturedArticles = async (databaseId) => {
+  const response = await notion.databases.query({
+    database_id: databaseId,
+    filter: {
+      property: 'Feature',
+      select: {
+        equals: 'Feature',
+      },
+    },
+    sorts: [
+      {
+        property: 'Published',
+        direction: 'descending',
+      },
+    ],
+  })
+
+  return response.results
+}
 export const getMovies = async (databaseId) => {
   const response = await notion.databases.query({
     database_id: databaseId,

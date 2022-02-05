@@ -1,18 +1,18 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import {google} from "googleapis";
+import GoogleSheets from '~/components/contact/GoogleSheets';
 
 
 import service from "~/data/service-account.enc.js";
 import useSWR from 'swr'
 import axios from 'axios';
 
-const fetchWithData = (url, encrypt) => axios.post(url, { data: encrypt }).then(res => res.data);
 
 type SheetForm = {
-    name: string
-    email: string
-    phone: string
-    message: string
+  name: string
+  email: string
+  phone: string
+  message: string
 }
 
 export default async function handler(

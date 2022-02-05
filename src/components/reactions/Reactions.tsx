@@ -18,7 +18,7 @@ const Reactions = ({ slug }) => {
   } = useArticleReactions(slug);
 
   return (
-    <div className="grid grid-cols-4 md:grid-cols-2 gap-6 justify-between items-center">
+    <div className="grid grid-cols-4 md:grid-cols-2 gap-6 justify-between items-center mt-6">
       <ReactionCard
         isActive={hasLiked}
         incrementCB={handleIncrementLike}
@@ -71,9 +71,9 @@ function ReactionCard({ isActive, incrementCB, decrementCB, children }) {
       onClick={isActive ? () => decrementCB() : () => incrementCB()}
       className={`${
         isActive
-          ? 'bg-gray-300 dark:bg-darker'
-          : 'bg-blueGray-100 dark:bg-midnight'
-      } flex-1 py-4 rounded-lg flex flex-col items-center general-ring-state`}
+          ? 'bg-gray-300 dark:bg-gray-800'
+          : 'bg-gray-100 dark:bg-zinc-700'
+      } flex-1 py-4 rounded-md flex flex-col items-center general-ring-state`}
     >
       {children}
     </div>
