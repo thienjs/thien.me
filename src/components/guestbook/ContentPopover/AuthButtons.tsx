@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { FiTwitter, FiGithub } from 'react-icons/fi';
+import { FaGoogle, FaGithub } from 'react-icons/fa';
 import { signIn, useSession } from 'next-auth/react';
 export interface IAuthButtonsProps {}
 
@@ -9,7 +9,7 @@ export function AuthButtons(props: IAuthButtonsProps) {
     () => [
       {
         label: 'Github',
-        icon: <FiGithub aria-hidden className="h-5 w-5" />,
+        icon: <FaGithub aria-hidden className="h-5 w-5" />,
         handler: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
           e.preventDefault();
           signIn('github');
@@ -17,10 +17,10 @@ export function AuthButtons(props: IAuthButtonsProps) {
       },
       {
         label: 'Twitter',
-        icon: <FiTwitter aria-hidden className="h-5 w-5" />,
+        icon: <FaGoogle aria-hidden className="h-5 w-5" />,
         handler: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
           e.preventDefault();
-          signIn('twitter');
+          signIn('google');
         }
       }
     ],
