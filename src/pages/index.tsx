@@ -7,10 +7,12 @@ import {
   useQuery,
   gql,
 } from '@apollo/client'
+import { getCurrentlyReading, getReviews } from '../lib/goodreads'
 import { setContext } from '@apollo/client/link/context'
 import Layout from '~/components/ui/Layout'
 import { useMessage } from '~/lib/message'
 import Hero from '~/components/Hero'
+import { AboutSection } from '../components/about/AboutSection'
 import Tweet from '~/components/Tweet'
 import { getTweets } from 'lib/twitter'
 import classNames from '~/lib/classNames'
@@ -23,6 +25,7 @@ import {
 import { GetStaticProps } from 'next'
 import { ArticleList } from '~/components/ArticleList'
 import NowPlaying from '~/components/music/NowPlaying'
+import { AboutListElement } from '../components/about/AboutListElement'
 import RepoCard from '~/components/Projects/RepoCard'
 import ArrowLink from '~/components/ui/links/ArrowLink'
 import { useSession, signIn, signOut } from 'next-auth/react'
@@ -31,7 +34,9 @@ import Entry from '~/components/guestbook/ContentPopover/Entry'
 import { Tab } from '@headlessui/react'
 import Contact from '~/components/contact/Contact'
 import { useState } from 'react'
+import TopTracks from '~/components/music/TopTracks'
 import { ArticleCard } from '~/components/ArticleCard'
+import { FaStar } from 'react-icons/fa'
 
 export type HomePageProps = {
   recentArticles: any
@@ -39,6 +44,8 @@ export type HomePageProps = {
   tabTwoArticles: any
   tweets: any
   repos: any
+  reviews: Awaited<ReturnType<typeof getReviews>>
+  currentlyReading: Awaited<ReturnType<typeof getReviews>>
 }
 export default function HomePage({
   recentArticles,
@@ -46,9 +53,31 @@ export default function HomePage({
   tabArticles,
   tabTwoArticles,
   repos,
+  reviews,
+  currentlyReading,
 }: HomePageProps) {
   const { handleMessage } = useMessage()
-
+  const reviewList = reviews.map((r) => (
+    <AboutListElement
+      key={r.url}
+      title={r.title}
+      subtitle={r.author}
+      url={r.url}
+      leftPanel={
+        <div className="flex text-xs font-bold leading-6 text-subtitle items-center">
+          {r.rating} <FaStar className="text-yellow-500 ml-1" />
+        </div>
+      }
+    />
+  ))
+  const currentlyReadingList = currentlyReading.map((r) => (
+    <AboutListElement
+      key={r.url}
+      title={r.title}
+      subtitle={r.author}
+      url={r.url}
+    />
+  ))
   return (
     <Layout>
       <Hero />
@@ -134,6 +163,71 @@ export default function HomePage({
         </div>
       </div>
       <Timeline />
+      <h2 className="text-3xl font-semibold py-4  text-black dark:text-gray-100">
+        Hobbies
+      </h2>
+      <Tab.Group>
+        <Tab.List className="flex flex-row p-1 space-x-1 bg-zinc-300 dark:bg-zinc-700 rounded-md">
+          <Tab
+            className={({ selected }) =>
+              classNames(
+                'w-full py-2.5 text-sm leading-5 font-medium text-gray-700 dark:text-gray-200 rounded-lg',
+                'focus:outline-none',
+                selected
+                  ? 'bg-white dark:bg-zinc-900 dark:text-gray-100'
+                  : 'text-gray-600 dark:text-gray-400 hover:bg-white/[0.12] hover:text-white'
+              )
+            }
+          >
+            Music
+          </Tab>
+          <Tab
+            className={({ selected }) =>
+              classNames(
+                'w-full py-2.5 text-sm leading-5 font-medium text-gray-700 dark:text-gray-200 rounded-lg',
+                'focus:outline-none',
+                selected
+                  ? 'bg-white dark:bg-zinc-900 dark:text-gray-100'
+                  : 'text-gray-600 dark:text-gray-400 hover:bg-white/[0.12] hover:text-white'
+              )
+            }
+          >
+            Books
+          </Tab>
+          <Tab
+            className={({ selected }) =>
+              classNames(
+                'w-full py-2.5 text-sm leading-5 font-medium text-gray-700 dark:text-gray-200 rounded-lg',
+                'focus:outline-none',
+                selected
+                  ? 'bg-white dark:bg-zinc-900 dark:text-gray-100'
+                  : 'text-gray-600 dark:text-gray-400 hover:bg-white/[0.12] hover:text-white'
+              )
+            }
+          >
+            Movies
+          </Tab>
+        </Tab.List>
+        <Tab.Panels>
+          <Tab.Panel>
+            <div className='mt-6'>
+
+            <TopTracks />
+            </div>
+          </Tab.Panel>
+          <Tab.Panel>
+            <AboutSection id="books" title="" subtitle="">
+              <div className="">
+                <ul>{reviewList.slice(0, 10)}</ul>
+              </div>
+            </AboutSection>
+          </Tab.Panel>
+          <Tab.Panel>
+            <Timeline/>
+          </Tab.Panel>
+        </Tab.Panels>
+
+      </Tab.Group>
       <h2 className="text-3xl font-semibold py-4 mt-8">Recent Tweets</h2>
       {tweets.map((tweet) => (
         <Tweet key={tweet.id} {...tweet} />
@@ -164,6 +258,8 @@ export default function HomePage({
 }
 
 export const getStaticProps: GetStaticProps = async () => {
+  const reviews = await getReviews({ limit: 10 })
+  const currentlyReading = await getCurrentlyReading({ limit: 2 })
   const notiondata = await getPublishedArticles(process.env.NOTION_DATABASE_ID)
 
   const tweets = await getTweets(['1190125711467655169'])
@@ -234,6 +330,8 @@ export const getStaticProps: GetStaticProps = async () => {
       tabTwoArticles: articles.slice(6, 9),
       tweets,
       repos,
+      reviews,
+      currentlyReading,
     },
     revalidate: 120,
   }
