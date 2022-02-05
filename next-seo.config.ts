@@ -2,15 +2,15 @@ const title = 'Thien Tran'
 const description = 'Full Stack Web Developer'
 
 const SEO = {
-  title,
-  description,
+  title: title,
+  description: description,
   canonical: '',
   openGraph: {
     type: 'website',
     locale: 'en_IE',
     url: 'https://thien.me',
-    title,
-    description,
+    title: title,
+    description: description,
     images: [
       {
         url: '',

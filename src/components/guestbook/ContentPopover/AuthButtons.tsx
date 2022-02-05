@@ -16,7 +16,7 @@ export function AuthButtons(props: IAuthButtonsProps) {
         }
       },
       {
-        label: 'Twitter',
+        label: 'Google',
         icon: <FaGoogle aria-hidden className="h-5 w-5" />,
         handler: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
           e.preventDefault();
