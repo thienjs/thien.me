@@ -36,7 +36,7 @@ export default function Hero() {
               and tailwind. Most of my work is open source and publicly
               available on{' '}
               <Link href="https://github.com/thienjs">
-                <a className="relative before:absolute before:bg-violet-600 before:opacity-70 before:bottom-0 before:left-0 before:h-full before:w-full before:origin-bottom before:scale-y-[0.35] hover:before:scale-y-100 before:transition-transform before:ease-in-out before:duration-500">
+                <a className="relative before:absolute before:bg-cyan-500 before:opacity-70 before:bottom-0 before:left-0 before:h-full before:w-full before:origin-bottom before:scale-y-[0.35] hover:before:scale-y-100 before:transition-transform before:ease-in-out before:duration-500">
                   <span className="relative hover:text-gray-800 hover:dark:text-gray-200">
                     github
                   </span>
