@@ -44,13 +44,17 @@ export default function Hero() {
               </Link>
               .
             </p>
-            <p>I'd appreciate a  <Link href="/journey">
-            <a className="relative before:absolute before:bg-cyan-600 before:opacity-70 before:bottom-0 before:left-0 before:h-full before:w-full before:origin-bottom before:scale-y-[0.35] hover:before:scale-y-100 before:transition-transform before:ease-in-out before:duration-500">
-              <span className="relative hover:text-gray-800 hover:dark:text-gray-200">
-                guestbook
-              </span>
-            </a>
-          </Link>{' '}entry to livin up the site. Thanks.</p>
+            <p>
+              I'd appreciate a{' '}
+              <Link href="/guestbook">
+                <a className="relative before:absolute before:bg-cyan-600 before:opacity-70 before:bottom-0 before:left-0 before:h-full before:w-full before:origin-bottom before:scale-y-[0.35] hover:before:scale-y-100 before:transition-transform before:ease-in-out before:duration-500">
+                  <span className="relative hover:text-gray-800 hover:dark:text-gray-200">
+                    guestbook
+                  </span>
+                </a>
+              </Link>{' '}
+              entry to livin up the site. Thanks.
+            </p>
             <p className="mb-4"></p>
           </div>
         </div>
