@@ -7,17 +7,11 @@ import { FaHeart } from 'react-icons/fa'
 
 export default function LikeButton({ slug }) {
   const [hydrated, setHydrated] = useState(false);
-  const { data, mutate } = useSWR<Likes>(
+  const { data } = useSWR<Likes>(
     `/api/likes/${slug}`,
     fetcher,
-    {
-      refreshInterval: 5000
-    }
-  );
 
-  useEffect(() => {
-    setHydrated(true);
-  }, []);
+  );
 
 
   const likes = new Number(data?.total)
