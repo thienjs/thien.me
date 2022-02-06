@@ -28,11 +28,14 @@ export function ArticleCard({ article }: Props) {
 
   return (
     <div className="w-full text-sm my-2 px-4 py-4 bg-white dark:bg-zinc-900  border  rounded-md border-gray-100 shadow-sm shadow-gray-300 dark:shadow-none dark:border-zinc-900">
-      <button onClick={() => handleArticleClicked(slug)}>
+      <button>
         <div className="flex flex-col">
-          <h3 className="text-md font-semibold text-left mb-1">
+          <button
+            className="text-md font-semibold text-left mb-1 "
+            onClick={() => handleArticleClicked(slug)}
+          >
             {article.title}
-          </h3>
+          </button>
           {/* {JSON.stringify(article)} */}
           {/* <p>{article.summary}</p> */}
           <p className="pb-2 text-left text-gray-600 dark:text-gray-400 font-light text-sm">
@@ -88,11 +91,12 @@ export function ArticleCard({ article }: Props) {
                 <span className="font-extralight text-xs">read</span>
               </span>
             )}
-            
+            <div className="ml-4">
+              <LikeButton slug={slug} />
+            </div>
           </span>
         </div>
       </button>
-      <LikeButton slug={slug} />
     </div>
   )
 }

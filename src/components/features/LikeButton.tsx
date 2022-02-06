@@ -16,10 +16,10 @@ export default function LikeButton({ slug }) {
 
   return (
     <div>
-      <button onClick={registerLike}>
+      <button onClick={registerLike} className='mr-2'>
         <FaHeart />
       </button>
-      {`${likes > 0 ? likes.toLocaleString() : '–––'} likes`}
+      {`${likes > 0 ? likes.toLocaleString() : '0'} likes`}
     </div>
   )
 }
