@@ -22,6 +22,10 @@ model views {
   slug  String @id @db.VarChar(128)
   count BigInt @default(1)
 }
+model likes {
+  slug  String @id @db.VarChar(128)
+  count BigInt @default(1)
+}
 
 model reactions {
   slug  String @id @db.VarChar(128)
