@@ -13,7 +13,7 @@ const SEO = {
     description: description,
     images: [
       {
-        url: '',
+        url: '/puplic/thien-logo.png',
         alt: title,
         width: 1280,
         height: 720,
