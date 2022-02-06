@@ -14,9 +14,22 @@ export default function LikeButton({ slug }) {
       method: 'POST',
     })
 
+  const getLike = () =>
+    fetch(`/api/likes/${slug}`, {
+      method: 'GET',
+    })
+
+  async function handleLike() {
+    registerLike()
+
+    await getLike()
+
+    // expected output: "resolved"
+  }
+
   return (
     <div>
-      <button onClick={registerLike} className='mr-2'>
+      <button onClick={handleLike} className="mr-2">
         <FaHeart />
       </button>
       {`${likes > 0 ? likes.toLocaleString() : '0'} likes`}

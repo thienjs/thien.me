@@ -5,6 +5,7 @@ import siteMetadata from '~/data/siteMetadata';
 import slugify from 'slugify';
 import { useRouter } from 'next/router';
 import ViewCounter from "~/components/ViewCounter";
+import LikeButton from "~/components/features/LikeButton";
 import Layout from "~/components/ui/Layout";
 import Reactions from '~/components/reactions/Reactions';
 import { AnchorLink } from "~/components/AnchorLink";
@@ -12,7 +13,6 @@ import Image from "next/image";
 import { CodeBlock } from '~/components/Codeblock';
 import { Callout } from "~/components/Callout";
 import { YoutubeEmbed } from "~/components/YoutubeEmbed";
-import PageViews from '~/components/PageViews';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import ScrollIndicator from '~/components/ScrollIndicator'
 import CDbutton from '~/components/CDbutton'
@@ -264,6 +264,7 @@ const ArticlePage = ({
                       •
                     </p>
                     <ViewCounter slug={slug} />
+                    <LikeButton slug={slug}/>
                   </div>
                   {publishedOn !== modifiedDate && (
                     <p className="mt-0 text-xs text-slate-500  dark:text-slate-500">
@@ -277,7 +278,6 @@ const ArticlePage = ({
                 <Fragment key={block.id}>{renderBlocks(block)}</Fragment>
               ))}
             </div>
-            <Reactions slug={slug} />
           </article>
           <span className=" mt-4">
             <CDbutton />
