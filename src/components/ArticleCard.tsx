@@ -27,15 +27,15 @@ export function ArticleCard({ article }: Props) {
   const readingTimeStats = readingTime(article.summary)
 
   return (
-    <div className="w-full text-sm my-2 px-4 py-4 bg-white dark:bg-zinc-900  border  rounded-md border-gray-100 shadow-sm shadow-gray-300 dark:shadow-none dark:border-zinc-900">
-      <button>
+    <button className="w-full text-sm my-2 px-4 py-4 bg-white dark:bg-zinc-900  border  rounded-md border-gray-100 shadow-sm shadow-gray-300 dark:shadow-none dark:border-zinc-900" onClick={() => handleArticleClicked(slug)}>
+      
         <div className="flex flex-col">
-          <button
+          <div
             className="text-md font-semibold text-left mb-1 "
-            onClick={() => handleArticleClicked(slug)}
+
           >
             {article.title}
-          </button>
+          </div>
           {/* {JSON.stringify(article)} */}
           {/* <p>{article.summary}</p> */}
           <p className="pb-2 text-left text-gray-600 dark:text-gray-400 font-light text-sm">
@@ -96,7 +96,7 @@ export function ArticleCard({ article }: Props) {
             </div>
           </span>
         </div>
-      </button>
-    </div>
+
+    </button>
   )
 }
