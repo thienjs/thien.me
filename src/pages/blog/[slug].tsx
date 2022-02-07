@@ -14,7 +14,7 @@ import { CodeBlock } from '~/components/Codeblock';
 import { Callout } from "~/components/Callout";
 import { YoutubeEmbed } from "~/components/ui/YoutubeEmbed";
 import { GetStaticPaths, GetStaticProps } from 'next';
-import ScrollIndicator from '~/components/ScrollIndicator'
+import ScrollIndicator from '~/components/ui/ScrollIndicator'
 import CDbutton from '~/components/ui/CDbutton'
 
 export const Text = ({ text }) => {

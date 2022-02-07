@@ -1,6 +1,6 @@
 import { convertToArticleList, getPublishedArticles } from '~/lib/notion';
 import { GetStaticProps } from 'next';
-import { ArticleList } from '~/components/ArticleList';
+import { ArticleList } from '~/components/blog/ArticleList';
 
 export default function RecentPost({ recentArticles }) {
     return (

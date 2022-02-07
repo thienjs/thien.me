@@ -1,5 +1,5 @@
 import { Snippet } from '~/lib/types';
-import { SnippetCard } from '~/components/SnippetCard';
+import { SnippetCard } from '~/components/snippets/SnippetCard';
 
 type Props = {
   snippets: Snippet[];

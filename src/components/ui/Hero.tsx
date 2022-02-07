@@ -2,7 +2,7 @@ import Image from "next/image"
 import profile from '../../public/notion-me.png'
 import { motion } from "framer-motion"
 import Link from 'next/link'
-import RiseButton from './common/button/RiseButton'
+import RiseButton from '../common/button/RiseButton'
 
 export default function Hero() {
   return (
