@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import profile from '../../public/notion-me.png'
+
 import { AboutSection } from '../components/about/AboutSection'
 import { AboutListElement } from '../components/about/AboutListElement'
 import { getCurrentlyReading, getReviews } from '../lib/goodreads'

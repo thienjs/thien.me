@@ -7,7 +7,7 @@ import Head from 'next/head'
 import { DefaultSeo } from 'next-seo'
 
 import { MessageProvider } from '~/lib/message'
-import Progress from '~/components/NProgress'
+import Progress from '~/components/ui/NProgress'
 import { SessionProvider } from 'next-auth/react'
 
 import SEO from '../../next-seo.config'

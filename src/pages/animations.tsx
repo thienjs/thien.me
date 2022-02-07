@@ -1,5 +1,5 @@
 import Card from '~/components/cards/AnimationCard'
-import LinkPreview from '~/components/LinkPreview'
+import LinkPreview from '~/components/ui/LinkPreview'
 import animations from '~/data/tw-animations'
 import Layout from '~/components/ui/Layout'
 
