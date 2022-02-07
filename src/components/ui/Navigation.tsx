@@ -24,7 +24,7 @@ import JournalIcon from '~/components/icons/journal'
 import CodeJournalIcon from '~/components/icons/code-journal'
 import CodeIcon from '~/components/icons/code'
 import BookmarkNotebookIcon from '~/components/icons/bookmark-notebook'
-import ThemeSwitch from '../ThemeSwitch'
+import ThemeSwitch from './ThemeSwitch'
 import { navigation } from '~/data/nav'
 import Logo from '~/components/icons/logo'
 

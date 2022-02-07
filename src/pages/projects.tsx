@@ -1,7 +1,7 @@
 import { graphql } from '@octokit/graphql'
 import Layout from '~/components/ui/Layout'
 import type { GetStaticProps } from 'next'
-import RepoCard from '~/components/Projects/RepoCard'
+import RepoCard from '~/components/cards/Projects/RepoCard'
 
 const ProjectsPage = ({ repos }) => (
   <Layout>

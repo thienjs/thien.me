@@ -1,7 +1,7 @@
 
 import Navigation from "~/components/ui/Navigation"
 import Footer from "~/components/ui/Footer"
-import { ScrollToTop } from '../scroll'
+import { ScrollToTop } from '../features/scroll'
 import Nav from "./Nav"
 import DropMenu from "./DropMenu"
 export const Layout = ({ children }: { children: React.ReactNode }) => {

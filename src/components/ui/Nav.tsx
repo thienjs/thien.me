@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import classnames from 'classnames';
 import { navigation } from '~/data/nav'
-import ThemeSwitch from '../ThemeSwitch'
+import ThemeSwitch from './ThemeSwitch'
 import DropMenu from './DropMenu'
 import AuthButton from '../auth/AuthButton'
 import { TBoxIcon } from '../icons/t-box';

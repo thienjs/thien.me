@@ -10,7 +10,7 @@ import { AnchorLink } from "~/components/AnchorLink";
 import Image from "next/image";
 import { CodeBlock } from '~/components/Codeblock';
 import { Callout } from "~/components/Callout";
-import { YoutubeEmbed } from "~/components/YoutubeEmbed";
+import { YoutubeEmbed } from "~/components/ui/YoutubeEmbed";
 
 import { GetStaticPaths, GetStaticProps } from 'next';
 
