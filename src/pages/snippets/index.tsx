@@ -1,7 +1,7 @@
 import { GetStaticProps} from 'next'
 import { getPublishedSnippets, convertToSnippetList } from '~/lib/notion';
 import { useState, useEffect } from 'react';
-import {Tag} from '~/components/Tag';
+import {Tag} from '~/components/blog/Tag';
 import Layout from '~/components/ui/Layout';
 import { SnippetList } from '~/components/SnippetList';
 

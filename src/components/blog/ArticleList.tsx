@@ -1,5 +1,5 @@
 import { Article } from '~/lib/types';
-import { ArticleCard } from '~/components/ArticleCard';
+import { ArticleCard } from '~/components/blog/ArticleCard';
 
 type Props = {
   articles: Article[];

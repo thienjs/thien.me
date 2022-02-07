@@ -1,9 +1,9 @@
 import { GetStaticProps} from 'next'
 import { getPublishedArticles, convertToArticleList } from '~/lib/notion';
 import { useState, useEffect } from 'react';
-import {Tag} from '~/components/Tag';
+import {Tag} from '~/components/blog/Tag';
 import Layout from '~/components/ui/Layout';
-import { ArticleList } from '~/components/ArticleList';
+import { ArticleList } from '~/components/blog/ArticleList';
 
 export default function Blog({articles, tags}) {
     const [selectedTag, setSelectedTag] = useState<string>('');

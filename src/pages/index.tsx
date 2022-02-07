@@ -23,7 +23,7 @@ import {
   getFeaturedArticles,
 } from '~/lib/notion'
 import { GetStaticProps } from 'next'
-import { ArticleList } from '~/components/ArticleList'
+import { ArticleList } from '~/components/blog/ArticleList'
 import NowPlaying from '~/components/music/NowPlaying'
 import { AboutListElement } from '../components/about/AboutListElement'
 import RepoCard from '~/components/cards/Projects/RepoCard'
@@ -35,7 +35,7 @@ import { Tab } from '@headlessui/react'
 import Contact from '~/components/contact/Contact'
 import { useState } from 'react'
 import TopTracks from '~/components/music/TopTracks'
-import { ArticleCard } from '~/components/ArticleCard'
+import { ArticleCard } from '~/components/blog/ArticleCard'
 import { NowReading } from '~/components/hobby/NowReading'
 import { FaStar } from 'react-icons/fa'
 
