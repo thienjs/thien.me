@@ -1,9 +1,8 @@
 import React from 'react'
 import Router from 'next/router'
-import { format } from 'date-fns'
-import ReactMarkdown from 'react-markdown'
+
 import { useSession, signIn, signOut } from "next-auth/react"
-import { author } from '~/data/siteMetadata'
+
 import useSWR, { useSWRConfig } from 'swr'
 import { GoTrashcan } from 'react-icons/go'
 
