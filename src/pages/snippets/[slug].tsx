@@ -6,10 +6,10 @@ import slugify from 'slugify';
 import { useRouter } from 'next/router';
 
 import Layout from "~/components/ui/Layout";
-import { AnchorLink } from "~/components/AnchorLink";
+import { AnchorLink } from "~/components/ui/links/AnchorLink";
 import Image from "next/image";
 import { CodeBlock } from '~/components/Codeblock';
-import { Callout } from "~/components/Callout";
+import { Callout } from "~/components/ui/Callout";
 import { YoutubeEmbed } from "~/components/ui/YoutubeEmbed";
 
 import { GetStaticPaths, GetStaticProps } from 'next';

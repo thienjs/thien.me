@@ -8,10 +8,10 @@ import ViewCounter from "~/components/ViewCounter";
 import LikeButton from "~/components/features/LikeButton";
 import Layout from "~/components/ui/Layout";
 import Reactions from '~/components/features/reactions/Reactions';
-import { AnchorLink } from "~/components/AnchorLink";
+import { AnchorLink } from "~/components/ui/links/AnchorLink";
 import Image from "next/image";
 import { CodeBlock } from '~/components/Codeblock';
-import { Callout } from "~/components/Callout";
+import { Callout } from "~/components/ui/Callout";
 import { YoutubeEmbed } from "~/components/ui/YoutubeEmbed";
 import { GetStaticPaths, GetStaticProps } from 'next';
 import ScrollIndicator from '~/components/ui/ScrollIndicator'
