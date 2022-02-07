@@ -92,7 +92,7 @@ export function ArticleCard({ article }: Props) {
               </span>
             )}
             <div className="ml-4">
-              <LikeButton slug={slug} />
+             
             </div>
           </span>
         </div>

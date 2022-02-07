@@ -30,6 +30,7 @@ import {
   BookmarkIcon,
 } from '@radix-ui/react-icons'
 import AuthButton from '../auth/AuthButton'
+import { MdDriveFileMoveOutline } from 'react-icons/md'
 
 export default function DropMenu() {
   const [isOpen, setIsOpen] = useState(false)
@@ -41,9 +42,9 @@ export default function DropMenu() {
     <Menu as="div" className="relative inline-block text-left z-10">
       <div>
         <Menu.Button>
-          <button className="  rounded-md border border-gray-300 dark:border-gray-700  px-2 py-2 bg-white dark:bg-zinc-800 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500">
+          <div className="  rounded-md border border-gray-300 dark:border-gray-700  px-2 py-2 bg-white dark:bg-zinc-800 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500">
             {isOpen ? <Cross1Icon /> : <HamburgerMenuIcon />}
-          </button>
+          </div>
         </Menu.Button>
       </div>
 
@@ -234,16 +235,16 @@ export default function DropMenu() {
                               ''
                             )}
                           </div>
-                          <button className="" onClick={() => signOut()}>
+                          <div className="" onClick={() => signOut()}>
                             Sign Out
-                          </button>
+                          </div>
                         </>
                       ) : (
                         <>
                           <PersonIcon />
-                          <button className="ml-4" onClick={() => signIn()}>
+                          <div className="ml-4" onClick={() => signIn()}>
                             Sign In
-                          </button>
+                          </div>
                         </>
                       )}
                     </div>

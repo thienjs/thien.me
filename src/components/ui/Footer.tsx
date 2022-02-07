@@ -21,24 +21,24 @@ const Footer = () => {
       <FooterLinks />
       <div className="flex flex-col items-center  justify-center w-screen ">
         <div className="flex flex-wrap items-center justify-center mx-auto mb-4 mt-1 text-gray-700 dark:text-gray-400 ">
-          <Link href="https://github.com/thienjs">
+          <a href="https://github.com/thienjs" rel="noopener noreferrer">
             <GithubIcon className="h-5 w-5 mx-3 hover:text-purple-400" />
-          </Link>
-          <Link href="https://discord.com/thien#0601">
+          </a>
+          <a href="https://discord.com/thien#0601 " rel="noopener noreferrer">
             <DiscordIcon className="h-5 w-5 mx-3 hover:text-blue-400" />
-          </Link>
-          <Link href="https://twitter.com/thientsx">
+          </a>
+          <a href="https://twitter.com/thientsx" rel="noopener noreferrer">
             <TwitterIcon className="h-5 w-5 mx-3 hover:text-cyan-400" />
-          </Link>
-          <Link href="emailto:thienjsx@gmail.com">
+          </a>
+          <a href="emailto:thienjsx@gmail.com" rel="noopener noreferrer">
             <EmailIcon className="h-5 w-5 mx-3 hover:text-emerald-400" />
-          </Link>
-          <Link href="https://linkedin.com/in/thienjs">
+          </a>
+          <a href="https://linkedin.com/in/thienjs" rel="noopener noreferrer">
             <LinkedinIcon className="h-5 w-5 mx-3 hover:text-blue-400" />
-          </Link>
-          <Link href="https://www.buymeacoffee.com/thien">
+          </a>
+          <a href="https://www.buymeacoffee.com/thien" rel="noopener noreferrer">
             <SiBuymeacoffee className="h-4 w-4 mx-3 hover:text-yellow-400" />
-          </Link>
+          </a>
         </div>
       </div>
       <div className="mb-8 text-xs text-gray-600 dark:text-gray-500">

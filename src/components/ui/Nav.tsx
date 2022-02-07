@@ -15,9 +15,10 @@ export default function Nav() {
   const [activeIndex, setActiveIndex] = React.useState(null)
   const [isOpen, setisOpen] = React.useState()
   return (
-    <nav className="flex items-center justify-end pb-4 w-full  max-w-sm md:max-w-2xl px-2 py-2 mt-4">
-      <Link href="/">
+    <nav className="flex items-center justify-between pb-4 w-full  max-w-sm md:max-w-2xl px-2 py-2 mt-4">
+      <Link href="/"><a >
       <TBoxIcon className='w-10 h-10 mr-auto cursor-pointer'/>
+      </a>
       </Link>
       <AnimateSharedLayout>
         <motion.ul
