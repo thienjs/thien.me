@@ -15,7 +15,7 @@ import { Callout } from "~/components/Callout";
 import { YoutubeEmbed } from "~/components/ui/YoutubeEmbed";
 import { GetStaticPaths, GetStaticProps } from 'next';
 import ScrollIndicator from '~/components/ScrollIndicator'
-import CDbutton from '~/components/CDbutton'
+import CDbutton from '~/components/ui/CDbutton'
 
 export const Text = ({ text }) => {
   if (!text) {

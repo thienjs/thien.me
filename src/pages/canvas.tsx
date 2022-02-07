@@ -4,7 +4,7 @@ import Image from "next/image";
 import dynamic from "next/dynamic";
 import { ReactSketchCanvasProps } from "react-sketch-canvas";
 import Link from "next/link";
-import CanvasControl from "~/components/CanvasControl";
+import CanvasControl from "~/components/other/CanvasControl";
 import NextHead from "next/head";
 import Layout from "~/components/ui/Layout";
 //todo: fix type definition
