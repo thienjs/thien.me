@@ -108,7 +108,7 @@ export const CodeBlock = ({ code, language, metastring }: Props) => {
     </button>
   )
   return (
-    <div className="overflow-auto bg-gray-200 dark:bg-zinc-800 bg-opacity-60 rounded-md text-sm">
+    <div className="overflow-auto bg-zinc-900 dark:bg-zinc-800 bg-opacity-60 rounded-md text-sm">
       <div className="flex flex-row justify-between  items-center border-b mb-1 border-gray-300 dark:border-gray-700 ">
         {CopyCodeButton}
         <div className="mr-2 text-gray-400 text-xs p-1 ">{language}</div>

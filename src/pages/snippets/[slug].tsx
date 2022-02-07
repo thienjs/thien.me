@@ -143,14 +143,11 @@ export function renderBlocks(block) {
       );
     case 'code':
       return (
-        <div className="">
-          <CodeBlock
-            language={value.language}
-            code={value.text[0].text.content}
-            
-          />
-        </div>
-      );
+        <CodeBlock
+          language={value.language}
+          code={value.text[0].text.content}
+        />
+      )
     case 'callout':
       return (
         <Callout>

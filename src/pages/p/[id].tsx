@@ -1,6 +1,6 @@
 import React from 'react'
 import { GetServerSideProps } from 'next'
-import ReactMarkdown from 'react-markdown'
+
 import Layout from '../../components/ui/Layout'
 import Router from 'next/router'
 import { PostProps } from '../../components/Post'
