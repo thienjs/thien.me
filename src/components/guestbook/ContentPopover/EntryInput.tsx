@@ -1,4 +1,4 @@
-import  LoadingSpinner  from '~/components/common/LoadingSpinner';
+import  LoadingSpinner  from '~/components/ui/common/LoadingSpinner';
 import clsx from 'clsx';
 import * as React from 'react';
 import useSWR, { useSWRConfig } from 'swr';
