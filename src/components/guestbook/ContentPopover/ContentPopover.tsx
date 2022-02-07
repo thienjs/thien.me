@@ -1,5 +1,5 @@
 import * as React from 'react';
-import * as PopoverPrimitive from '@radix-ui/react-popover';
+
 import { FiDivide, FiX } from 'react-icons/fi'
 import { AuthButtons } from './AuthButtons'
 import { ContentInput } from './ContentInput'
