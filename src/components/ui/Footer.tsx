@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import ContactButtons from "~/components/ContactButtons";
+
 import data from "~/data/data.json";
 import Link from 'next/link'
 import GithubIcon from "~/components/icons/social-icons/github";
