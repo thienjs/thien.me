@@ -9,7 +9,7 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
     <div className=" flex flex-col items-center  bg-zinc-200 dark:bg-black min-h-screen">
       <Nav />
 
-      <main className="flex flex-col justify-center  bg-zinc-200 dark:bg-black  max-w-sm md:max-w-2xl">
+      <main className="flex flex-col justify-center  bg-zinc-200 dark:bg-black  max-w-sm sm:max-w-5xl">
         {children}
       </main>
       <Footer />
