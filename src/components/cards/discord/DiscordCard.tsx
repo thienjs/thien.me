@@ -21,7 +21,7 @@ const DiscordCard = ({ status, user, activity }: Props) => {
           <div className="font-semibold">{user}#0601</div>
           <div className="font-light text-sm">{status}</div>
         </div>
-      <FaDiscord />
+      <FaDiscord className='text-blue-800 w-6 h-6' />
       </div>
 
       <div className="mt-2  ">{activity}</div>
