@@ -33,7 +33,7 @@ import Timeline from 'components/timeline/Timeline'
 import Entry from '~/components/guestbook/ContentPopover/Entry'
 import { Tab } from '@headlessui/react'
 import Contact from '~/components/contact/Contact'
-import { useState } from 'react'
+import React, { useState } from 'react'
 import TopTracks from '~/components/music/TopTracks'
 import { ArticleCard } from '~/components/blog/ArticleCard'
 import { NowReading } from '~/components/hobby/NowReading'
@@ -217,11 +217,13 @@ export default function HomePage({
           </Tab.Panel>
         </Tab.Panels>
       </Tab.Group>
-      <h2 className="text-3xl font-semibold py-4 mt-8">Recent Tweets</h2>
+      <h2 className="text-3xl font-semibold py-4 mt-8">Status</h2>
       {tweets.map((tweet) => (
         <Tweet key={tweet.id} {...tweet} />
       ))}
       
+      <div className='my-2'></div>
+      <DiscordStatus/>
       <h2 className="text-3xl mt-8 font-semibold py-4 text-gray-900 dark:text-gray-100 mb-2">
         Guestbook
       </h2>
@@ -232,8 +234,6 @@ export default function HomePage({
           see what others wrote
         </ArrowLink>
       </div>
-      <div className='my-4'></div>
-      <DiscordStatus/>
     </Layout>
   )
 }
