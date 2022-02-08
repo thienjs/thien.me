@@ -1,7 +1,7 @@
 import React from 'react'
 import { fetcher } from '~/lib/fetcher'
 import useSWR from 'swr'
-import DiscordCard from './DiscordCard'
+
 import Image from 'next/image'
 import { FaDiscord } from 'react-icons/fa'
 type DiscordCardProps = {}
@@ -25,19 +25,29 @@ const DiscordStatus = (props: DiscordCardProps) => {
           className="rounded-full"
         ></Image>
         <div className="mr-auto ml-4">
-          <div className="font-semibold">{data?.user}#0601</div>
-          <div className="font-light text-sm">{data?.status}</div>
+          <div className="font-semibold">thien#0601</div>
+          <div className="font-light text-sm">
+            {data?.status ? data?.status : 'offline'}
+          </div>
         </div>
         <FaDiscord className="text-blue-800 w-6 h-6" />
       </div>
-      <div className=" my-2 flex">
-        <Image
-          src={linklink}
-          width={50}
-          height={50}
-          className="rounded-md "
-        ></Image>
-        <div className='ml-4'>
+      <div className=" mt-2 flex">
+        {data?.status ? (
+         
+
+            <Image
+              src={linklink}
+              width={50}
+              height={50}
+              className="rounded-md"
+            ></Image>
+         
+        ) : (
+          ''
+        )}
+
+        <div className="ml-4">
           <div className=" ">{data?.activityName}</div>
           <div className=" text-sm ">{data?.activityState}</div>
         </div>
