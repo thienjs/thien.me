@@ -18,9 +18,11 @@ export default async function handler(
   return res.status(200).json({
     status: d.discord_status,
     user: d.discord_user.username,
-    activity: d.activities[0].state,
-    avatar:     `https://cdn.discordapp.com/avatars/${d.discord_user.id}/${
-      d.discord_user.avatar
-  }.png?size=256`
+    activityState: d.activities[0].state,
+    activityName: d.activities[0].name,
+    activityDetails: d.activities[0].details,
+    activityStart: d.activities[0].timestamps.start,
+    activityImg: d.activities[0].assets.large_image,
+    activityId: d.activities[0].application_id,
   })
 }
