@@ -38,6 +38,7 @@ import TopTracks from '~/components/music/TopTracks'
 import { ArticleCard } from '~/components/blog/ArticleCard'
 import { NowReading } from '~/components/hobby/NowReading'
 import { FaStar } from 'react-icons/fa'
+import DiscordStatus from '~/components/cards/discord/DiscordStatus'
 
 export type HomePageProps = {
   recentArticles: any
@@ -231,6 +232,8 @@ export default function HomePage({
           see what others wrote
         </ArrowLink>
       </div>
+      <div className='my-4'></div>
+      <DiscordStatus/>
     </Layout>
   )
 }

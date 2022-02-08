@@ -10,7 +10,7 @@ const DiscordStatus = (props: DiscordCardProps) => {
   const status =data?.status
   const link = 'https://discord.com/thienjs'
 
-  return <DiscordCard status={status} user={data.user}/>
+  return <DiscordCard status={status} user={data?.user} activity={data?.activity} />
 }
 
 export default DiscordStatus

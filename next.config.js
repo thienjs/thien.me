@@ -11,6 +11,7 @@ module.exports = {
     domains: [
       'i.scdn.co', // Spotify Album Art
       'pbs.twimg.com',
+      'cdn.discordapp.com', // discord url
       'avatars.githubusercontent.com',
       'github.com',
       's3.us-west-2.amazonaws.com', // Images coming from Notion
