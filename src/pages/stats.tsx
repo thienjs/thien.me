@@ -9,7 +9,6 @@ export default function Stats() {
         <GithubFollowers />
         <GithubStars />
         <TwitterFollowers />
-        <Visitors />
         <DiscordStatus />
       </div>
     </Layout>
