@@ -10,6 +10,7 @@ export function Visitors() {
   return (
 
     <StatsCard
+    icon='place'
     header="Current Visitors"
     link={link}
     stat={liveVisitors ? liveVisitors?.visitors : '--'}
