@@ -9,6 +9,7 @@ import { DefaultSeo } from 'next-seo'
 import { MessageProvider } from '~/lib/message'
 import Progress from '~/components/ui/NProgress'
 import { SessionProvider } from 'next-auth/react'
+import { useEffect } from 'react'
 
 import SEO from '../../next-seo.config'
 
@@ -23,6 +24,17 @@ export default function App({
 }) {
   const pageMeta = (Component as any)?.defaultProps?.meta || {}
   const pageSEO = { ...SEO, ...pageMeta }
+  useEffect(() => {
+    const handleRouteChange = (url) => {
+      window.gtag('config', 'G-HC6M7Z3EL0', {
+        page_path: url,
+      })
+    }
+    router.events.on('routeChangeComplete', handleRouteChange)
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange)
+    }
+  }, [router.events])
 
   return (
     <>
