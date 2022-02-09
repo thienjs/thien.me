@@ -16,7 +16,7 @@ import { YoutubeEmbed } from "~/components/ui/YoutubeEmbed";
 import { GetStaticPaths, GetStaticProps } from 'next';
 import ScrollIndicator from '~/components/ui/ScrollIndicator'
 import CDbutton from '~/components/ui/CDbutton'
-
+import Link from 'next/link'
 export const Text = ({ text }) => {
   if (!text) {
     return null
@@ -159,11 +159,10 @@ export function renderBlocks(block) {
       )
     case 'bookmark':
       return (
-        <div>
-          {value.url}
-          {value.caption}
-          <>{value.text}</>
-          <Text text={value.text} />
+        <div className="flex flex=col">
+          <Link href={value.url}>
+            <a>{value.url}</a>
+          </Link>
         </div>
       )
 
@@ -264,7 +263,7 @@ const ArticlePage = ({
                       •
                     </p>
                     <ViewCounter slug={slug} />
-                    <LikeButton slug={slug}/>
+                    <LikeButton slug={slug} />
                   </div>
                   {publishedOn !== modifiedDate && (
                     <p className="mt-0 text-xs text-slate-500  dark:text-slate-500">
@@ -279,10 +278,10 @@ const ArticlePage = ({
               ))}
             </div>
           </article>
-          <span className=" mt-4">
-            <CDbutton />
-          </span>
         </div>
+        <span className=" mt-4">
+          <CDbutton />
+        </span>
       </ScrollIndicator>
     </Layout>
   )
