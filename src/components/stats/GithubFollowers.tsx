@@ -11,7 +11,7 @@ export function GithubFollowers() {
 
     
     <StatsCard
-      header="GitHub followers"
+      header="GitHub Followers"
       link={link}
       stat={followers}
       icon={<FaGithub className="h-6 w-6"/>}

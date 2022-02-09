@@ -7,7 +7,7 @@ export function TwitterFollowers() {
     '/api/stats/twitter-followers',
     fetcher
   )
-  const link = 'https://github.com/thienjs'
+  const link = 'https://twitter.com/thientsx'
   return (
     <StatsCard
       header="Twitter Followers"
