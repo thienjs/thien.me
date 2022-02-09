@@ -12,7 +12,7 @@ export function TwitterFollowers() {
     <StatsCard
       header="Twitter Followers"
       link={link}
-      icon={<FaTwitter className='h-6 w-6'/>}
+      icon={<FaTwitter className='h-6 w-6 text-blue-400'/>}
       stat={twitterFollowers ? twitterFollowers.followerCount : '--'}
       isCurrency={false}
     />
