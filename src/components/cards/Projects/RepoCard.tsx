@@ -3,7 +3,7 @@ import { intlFormat, formatDistanceToNowStrict } from "date-fns";
 import { GoRepoForked, GoStar } from 'react-icons/go'
 import { BiLink } from 'react-icons/bi'
 
-import styles from './RepoCard.module.css'
+
 
 type Props = {
   name: string
@@ -38,16 +38,18 @@ const RepoCard = (props: Props) => (
     )}
     {props.homepageUrl && (
       <div className="flex ">
-        <BiLink className="mt-1.5" color="gray"/>
+        <BiLink className="mt-1.5" color="gray" />
 
-        <p className="text-sm  ml-1 text-md text-gray-600 dark:text-gray-400 my-1 pb-1">{props.homepageUrl}</p>
+        <p className="text-sm  ml-1 text-md text-gray-600 dark:text-gray-400 my-1 pb-1">
+          {props.homepageUrl}
+        </p>
       </div>
     )}
 
     <div className="flex flex-wrap text-gray-600 dark:text-gray-400 ">
       {props.language && (
-        <div className="text-xs mr-2 ">
-          <span className={styles.language_color}>
+        <div className="text-xs mr-2 flex">
+          <span className="h-3 w-3 block rounded-full mr-2">
             <style jsx>{`
               span {
                 background-color: ${props.language.color};
@@ -88,7 +90,7 @@ const RepoCard = (props: Props) => (
             target="_blank"
             rel="noopener noreferrer"
           >
-            <GoRepoForked fill="currentColor" className={styles.octicon} />
+            <GoRepoForked fill="currentColor" className="h-3 w-3 mr-1  " />
             <span>{props.forks.toLocaleString('en-US')}</span>
           </a>
         </div>
