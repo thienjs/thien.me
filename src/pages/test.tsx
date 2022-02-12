@@ -6,6 +6,7 @@ const fetchWithData = (url, encrypt) => axios.post(url, { data: encrypt }).then(
 
 export default function Home() {
   const { data, error } = useSWR(['/api/decrypt', service.encrypted], fetchWithData);
+
   if (error) return <div>failed to load</div>
   if (!data) return <div>loading...</div>
   return (

@@ -2,6 +2,7 @@ import { intlFormat, formatDistanceToNowStrict } from "date-fns";
 
 import { GoRepoForked, GoStar } from 'react-icons/go'
 import { BiLink } from 'react-icons/bi'
+import {MdStarOutline} from 'react-icons/md'
 
 
 
@@ -71,9 +72,9 @@ const RepoCard = (props: Props) => (
             rel="noopener noreferrer"
             className="flex flex-row mr-2 text-xs font-light pb-0  "
           >
-            <GoStar
+            <MdStarOutline
               fill="currentColor"
-              className="align-text-bottom mr-1 w-4 h-4 text-nm font-light hover:fill-yellow-400"
+              className="align-text-bottom mr-1 w-4 h-4 text-nm font-light hover:fill-yellow-400 "
             />
             <span>{props.stars.toLocaleString('en-US')}</span>
           </a>
