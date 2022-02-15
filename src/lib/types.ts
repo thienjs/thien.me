@@ -31,7 +31,7 @@ export type Likes = {
   
   export type Article = {
     title: string;
-    tags?: string[];
+    tags?: any;
     name:string;
     coverImage: string;
     summary: string;
