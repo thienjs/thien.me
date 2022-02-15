@@ -26,17 +26,24 @@ export function SnippetCard({ snippet }: Props) {
           <p className="pb-2 text-left text-gray-800 dark:text-gray-400 font-light text-sm">
             {snippet.summary}
           </p>
+          <div className="flex flex-row space-x-3 flex-wrap mb-1">
+          {snippet.tags.map((tag) => (
+            <div className="mt-0.5 rounded-sm bg-zinc-200 dark:bg-zinc-700 px-3 opacity-80 text-xs text-gray-700 dark:text-gray-300">
+              #{tag.name}
+            </div>
+          ))}
+        </div>
           {/* {JSON.stringify(Snippet)} */}
           {/* <p>{Snippet.summary}</p> */}
           <span className="text-xs flex text-gray-800 dark:text-gray-400 font-light">
-            {new Date(snippet.publishedDate).toLocaleDateString(
+            {/*{new Date(snippet.publishedDate).toLocaleDateString(
               siteMetadata.locale,
               {
                 year: 'numeric',
                 month: 'long',
                 day: 'numeric',
               }
-            )}{' '}
+            )}{' '}*/}
             {hasRead && (
               <span className="text-sm inline-flex items-center text-gray-800 dark:text-gray-400 opacity-75  ml-6">
                 <svg width="16" height="16" fill="none" viewBox="0 0 24 24">
