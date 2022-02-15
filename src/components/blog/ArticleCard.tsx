@@ -54,22 +54,24 @@ export function ArticleCard({ article }: Props) {
 
         {/*JSON.stringify(article) */}
         {/* <p>{article.summary}</p> */}
-        <div className="flex flex-row space-x-3 ">
-          {article.tags.map((tag) => (
-            <div className=" rounded-md bg-zinc-300 dark:bg-zinc-400 px-3 opacity-80">
-              {tag.name}
-            </div>
-          ))}
-        </div>
+
         <p className="pb-2 my-1 text-left text-gray-600 dark:text-gray-400  text-sm">
           {article.summary}
         </p>
+        <div className="flex flex-row space-x-3 flex-wrap mb-1">
+          {article.tags.map((tag) => (
+            <div className="mt-0.5 rounded-sm bg-zinc-200 dark:bg-zinc-700 px-3 opacity-80 text-xs text-gray-700 dark:text-gray-300">
+              #{tag.name}
+            </div>
+          ))}
+        </div>
         <span className="text-xs flex text-gray-600 dark:text-gray-400 justify-end space-x-4 ">
           <div className="flex  text-gray-800 dark:text-gray-200 capsize text-xs items-center ">
             <span className=" text-xs text-gray-800 dark:text-gray-400 ">
               {views ? new Number(views).toLocaleString() : '–––'} views.
             </span>
           </div>
+
           <div className="  ">{/* {readingTimeStats.words} mins. */}</div>
           <div>
             {new Date(article.publishedDate).toLocaleDateString('de-AT', {
