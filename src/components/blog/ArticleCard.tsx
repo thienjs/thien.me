@@ -10,7 +10,7 @@ import useSWR from 'swr';
 import cn from 'classnames';
 import readingTime from 'reading-time'
 import { FiClock } from 'react-icons/fi'
-
+import { Tag } from './Tag'
 import { fetcher } from 'lib/fetcher'
 import LikeButton from '~/components/features/LikeButton'
 import { Views } from 'lib/types'
@@ -52,8 +52,15 @@ export function ArticleCard({ article }: Props) {
           )}
         </div>
 
-        {/* {JSON.stringify(article)} */}
+        {/*JSON.stringify(article) */}
         {/* <p>{article.summary}</p> */}
+        <div className="flex flex-row space-x-3 ">
+          {article.tags.map((tag) => (
+            <div className=" rounded-md bg-zinc-300 dark:bg-zinc-400 px-3 opacity-80">
+              {tag.name}
+            </div>
+          ))}
+        </div>
         <p className="pb-2 my-1 text-left text-gray-600 dark:text-gray-400  text-sm">
           {article.summary}
         </p>
@@ -63,9 +70,7 @@ export function ArticleCard({ article }: Props) {
               {views ? new Number(views).toLocaleString() : '–––'} views.
             </span>
           </div>
-          <div className="  ">
-           {/* {readingTimeStats.words} mins. */}
-          </div>
+          <div className="  ">{/* {readingTimeStats.words} mins. */}</div>
           <div>
             {new Date(article.publishedDate).toLocaleDateString('de-AT', {
               year: 'numeric',
@@ -73,7 +78,6 @@ export function ArticleCard({ article }: Props) {
               day: '2-digit',
             })}{' '}
           </div>
-
         </span>
       </div>
     </button>
