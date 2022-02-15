@@ -15,7 +15,6 @@ import SEO from '../../next-seo.config'
 
 import { ThemeProvider } from 'next-themes'
 
-import { motion, AnimatePresence } from 'framer-motion'
 
 export default function App({
   Component,
@@ -24,7 +23,6 @@ export default function App({
 }) {
   const pageMeta = (Component as any)?.defaultProps?.meta || {}
   const pageSEO = { ...SEO, ...pageMeta }
-
 
   return (
     <>
@@ -35,28 +33,8 @@ export default function App({
       <MessageProvider>
         <SessionProvider session={session}>
           <ThemeProvider attribute="class">
-            <AnimatePresence>
-              <motion.div
-                key={router.route}
-                initial="pageInitial"
-                animate="pageAnimate"
-                exit="pageExit"
-                variants={{
-                  pageInitial: {
-                    opacity: 0,
-                  },
-                  pageAnimate: {
-                    opacity: 1,
-                  },
-                  pageExit: {
-                    opacity: 0,
-                  },
-                }}
-              >
-                <Component {...pageProps} />
-                <Progress />
-              </motion.div>
-            </AnimatePresence>
+            <Component {...pageProps} />
+            <Progress />
           </ThemeProvider>
         </SessionProvider>
       </MessageProvider>
