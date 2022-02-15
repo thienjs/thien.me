@@ -18,7 +18,7 @@ export function SnippetCard({ snippet }: Props) {
 
   return (
     <button onClick={() => handleSnippetClicked(slug)}>
-  <div className="w-full text-sm my-2 px-4 py-4 bg-white dark:bg-zinc-900  border  rounded-md border-gray-100 shadow-sm shadow-gray-300 dark:shadow-none dark:border-zinc-900">
+  <div className="w-full text-sm my-2 px-4 py-4 bg-white dark:bg-zinc-900 hover:bg-zinc-300 dark:hover:bg-zinc-800  border  rounded-md border-gray-100 shadow-sm shadow-gray-300 dark:shadow-none dark:border-zinc-900">
         <div className="flex flex-col">
           <h3 className="text-md font-semibold text-left mb-1">
             {snippet.title}

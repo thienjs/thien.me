@@ -57,23 +57,7 @@ class MyDocument extends Document {
           <meta content="#ffffff" name="theme-color" />
           <meta content="#ffffff" name="msapplication-TileColor" />
           <meta content="/browserconfig.xml" name="msapplication-config" />
-          <script
-            async
-            src="https://www.googletagmanager.com/gtag/js?id=G-HC6M7Z3EL0"
-          ></script>
 
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-HC6M7Z3EL0', {
-              page_path: window.location.pathname,
-            });
-          `,
-            }}
-          />
         </Head>
         <body className="font-sans antialiased">
           <Main />
