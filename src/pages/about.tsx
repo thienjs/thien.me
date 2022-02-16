@@ -52,10 +52,10 @@ const AboutPage = ({ reviews, currentlyReading }) => {
           height={100}
         />
         <div className="ml-6 mt-4">
-          <h2 className="text-lg font-semibold dark:text-gray-300">
+          <h2 className="text-lg font-semibold dark:text-gray-300 text-neutral-800">
             Thien Tran
           </h2>
-          <p className="text-gray-700 dark:text-neutral-400 text-sm">
+          <p className="text-gray-600 dark:text-neutral-400 text-sm">
             Web Developer from Connecticut, USA
           </p>
           <p className="text-gray-500 dark:text-neutral-500 text-sm">
@@ -63,38 +63,22 @@ const AboutPage = ({ reviews, currentlyReading }) => {
           </p>
         </div>
       </div>
-      <div className=" dark:text-gray-200 mb-4 border p-4 rounded-lg border-neutral-300 dark:border-neutral-700 bg-zinc-300 dark:bg-zinc-800">
-        <p className="text-sm mb-2">
-          I'm a self taught developer from Connecticut, USA. After many years of
-          making websites as a hobby, I decided to follow my dreams of becoming
-          web developer. I will be documenting my developer{' '}
-          <Link href="/journey">
-            <a className="relative before:absolute before:bg-cyan-600 before:opacity-70 before:bottom-0 before:left-0 before:h-full before:w-full before:origin-bottom before:scale-y-[0.35] hover:before:scale-y-100 before:transition-transform before:ease-in-out before:duration-500">
-              <span className="relative hover:text-gray-800 hover:dark:text-gray-200">
-                journey
-              </span>
-            </a>
-          </Link>{' '}
-          on my blog.
+      <div className=" dark:text-gray-200 mb-4 border p-4 rounded-lg border-neutral-300 dark:border-neutral-700 bg-zinc-300 dark:bg-zinc-900">
+        <p className="text-sm mb-2 text-neutral-600 dark:text-neutral-400">
+          I'm a self taught developer looking for my first job in tech. I have a
+          passion for creating elegant, user friendly solutions using my problem
+          solving abilities and design skills.
         </p>
-        <p className="text-sm mb-2">
-          Outside of tech, I love sports, guitar, tennis, longboarding, and
+        <p className="text-sm mb-2 text-neutral-600 dark:text-neutral-400">
+          I want to create tools that will help users solve problems.
+        </p>
+        <p className="text-sm mb-2 text-neutral-600 dark:text-neutral-400">
+          Outside of tech, I love tennis, guitar, skating, movies, and
           collecting gadgets.
-        </p>
-        <p className="mb-18 text-sm">
-          Thank you for visiting! If you like what you see, please sign the{' '}
-          <Link href="/guestbook">
-            <a className="relative before:absolute before:bg-cyan-600 before:opacity-70 before:bottom-0 before:left-0 before:h-full before:w-full before:origin-bottom before:scale-y-[0.35] hover:before:scale-y-100 before:transition-transform before:ease-in-out before:duration-500">
-              <span className="relative hover:text-gray-800 hover:dark:text-gray-200">
-                guestbook
-              </span>
-            </a>
-          </Link>
-          . I would greatly appreciate your feedback.
         </p>
       </div>
 
-      <div className="text-sm font-semibold text-gray-700 dark:text-gray-300 mt-6">
+      <div className="text-sm font-semibold text-gray-800 dark:text-gray-300 mt-6">
         Contact
       </div>
       <div className="flex mt-6">
@@ -104,7 +88,7 @@ const AboutPage = ({ reviews, currentlyReading }) => {
           <li>Twitter</li>
           <li>Email</li>
         </ul>
-        <ul className="text-sm  text-neutral-600 dark:text-neutral-300 space-y-3 ml-44">
+        <ul className="text-sm  text-neutral-800 dark:text-neutral-300 space-y-3 ml-44">
           <li>
             <a
               href="https://github.com/thienjs"
@@ -130,17 +114,14 @@ const AboutPage = ({ reviews, currentlyReading }) => {
             </a>
           </li>
           <li>
-            <a
-              href="mailto:hi@thien.me"
-              className="hover:text-cyan-500"
-            >
+            <a href="mailto:hi@thien.me" className="hover:text-cyan-500">
               hi@thien.me
             </a>
           </li>
         </ul>
       </div>
 
-      <div className="text-sm font-semibold text-gray-700 dark:text-gray-300 mt-10 mb-6">
+      <div className="text-sm font-semibold text-gray-800 dark:text-gray-300 mt-10 mb-6">
         Stack
       </div>
       <div className="grid grid-cols-2 md:grid-cols-4">
@@ -148,26 +129,28 @@ const AboutPage = ({ reviews, currentlyReading }) => {
           <li>Frontend</li>
         </ul>
         <ul className="text-sm ml-10 text-neutral-600 dark:text-neutral-300 ">
-          <li className="mb-4 flex flex-col ">
+          <li className="mb-4 flex flex-col text-neutral-800 dark:text-neutral-300 ">
             <p>React</p>
             <span className="text-xs text-neutral-500 dark:text-neutral-700">
               3 years
             </span>
           </li>
           <li className="mb-4 flex flex-col">
-            <p>Nextjs</p>
+            <p className="text-neutral-800 dark:text-neutral-300">Nextjs</p>
             <span className="text-xs text-neutral-500 dark:text-neutral-700">
               2 years
             </span>
           </li>
           <li className="mb-4 flex flex-col">
-            <p>Tailwindcss</p>
+            <p className="text-neutral-800 dark:text-neutral-300">
+              Tailwindcss
+            </p>
             <span className="text-xs text-neutral-500 dark:text-neutral-700">
               2 years
             </span>
           </li>
           <li className="mb-4 flex flex-col">
-            <p>Typescript</p>
+            <p className="text-neutral-800 dark:text-neutral-300">Typescript</p>
             <span className="text-xs text-neutral-500 dark:text-neutral-700">
               1 year
             </span>
@@ -178,19 +161,19 @@ const AboutPage = ({ reviews, currentlyReading }) => {
         </ul>
         <ul className="text-sm ml-10 text-neutral-600 dark:text-neutral-300">
           <li className="mb-4 flex flex-col">
-            <p>Postgres</p>
+            <p className="text-neutral-800 dark:text-neutral-300">Postgres</p>
             <span className="text-xs text-neutral-500 dark:text-neutral-700">
               1 year
             </span>
           </li>
           <li className="mb-4 flex flex-col">
-            <p>MySql</p>
+            <p className="text-neutral-800 dark:text-neutral-300">MySql</p>
             <span className="text-xs text-neutral-500 dark:text-neutral-700">
               1 year
             </span>
           </li>
           <li className="mb-4 flex flex-col">
-            <p>MongoDB</p>
+            <p className="text-neutral-800 dark:text-neutral-300">MongoDB</p>
             <span className="text-xs text-neutral-500 dark:text-neutral-700">
               2 years
             </span>
