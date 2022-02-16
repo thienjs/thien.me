@@ -1,10 +1,26 @@
 import React from 'react'
 import { fetcher } from '~/lib/fetcher'
 import useSWR from 'swr'
-
+import { Fragment, ReactNode } from 'react';
 import Image from 'next/image'
 import { FaDiscord } from 'react-icons/fa'
 type DiscordCardProps = {}
+type Avatar =
+	| {
+			icon: boolean;
+	  }
+	| {
+			alt: string;
+			href?: string;
+			url: string;
+	  };
+
+interface Activity {
+	avatar: Avatar;
+	title: string;
+	description: string | Array<string>;
+	icon?: string | ReactNode;
+}
 
 const DiscordStatus = (props: DiscordCardProps) => {
   const { data } = useSWR<any>('/api/discord', fetcher)
@@ -15,6 +31,74 @@ const DiscordStatus = (props: DiscordCardProps) => {
   const id = data?.activityId
   const img = data?.activityImg
   const timeStart = data?.activityStart
+  const activities: Array<Activity> = [
+		/**
+		 * Discord User
+		 */
+		{
+			avatar: {
+				alt: 'Discord Avatar',
+				url: `https://cdn.discordapp.com/avatars/${status?.discord_user?.id}/${status?.discord_user?.avatar}.webp?size=256`,
+			},
+			title: status?.discord_user?.username,
+			description: `#${status?.discord_user?.discriminator}`,
+			icon: (
+				<div
+
+
+				/>
+			),
+		},
+
+		/**
+		 * Spotify
+		 */
+		...(status?.spotify && status?.listening_to_spotify
+			? [
+					{
+						avatar: {
+							alt: `${status?.spotify.song} - ${status?.spotify.artist}`,
+							href: `https://open.spotify.com/track/${status?.spotify.track_id}`,
+							url: status?.spotify.album_art_url,
+						},
+						title: status?.spotify.song,
+						description: status?.spotify.artist,
+						icon: 'feather:music',
+					},
+			  ]
+			: []),
+
+		/**
+		 * All other activities
+		 */
+		...(status?.activities?.length > 0
+			? status?.activities?.map((activity) => {
+					if (activity.id === 'custom' || activity.id.includes('spotify')) return null;
+
+					const hasAsset = activity.assets && activity.assets.large_image ? true : false;
+					const avatar = hasAsset
+						? {
+								alt: activity.details,
+								url: `https://cdn.discordapp.com/app-assets/${activity.application_id}/${activity.assets.large_image}.webp`,
+						  }
+						: {
+								alt: activity.name,
+								icon: true,
+								url: '',
+						  };
+
+					return {
+						avatar,
+						title: activity.name,
+						description: [
+							activity.details,
+							...(activity.state ? [activity.state] : []),
+						],
+					};
+			  })
+			: []),
+	].filter((item) => item !== null);
+
   return (
     <div className=" max-w-3xl px-4 py-4 bg-white dark:bg-zinc-900 w-full  border my-2 rounded-md border-gray-100 shadow-sm shadow-gray-300 dark:shadow-none dark:border-zinc-900">
       <div className="flex justify-between ">
@@ -49,6 +133,7 @@ const DiscordStatus = (props: DiscordCardProps) => {
 
         <div className="ml-4">
           <div className=" ">{data?.activityName}</div>
+          
           <div className=" text-sm ">{data?.activityState}</div>
         </div>
       </div>
