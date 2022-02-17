@@ -39,6 +39,7 @@ import { ArticleCard } from '~/components/blog/ArticleCard'
 import { NowReading } from '~/components/hobby/NowReading'
 import { FaStar } from 'react-icons/fa'
 import DiscordStatus from '~/components/cards/discord/DiscordStatus'
+import Title from '~/components/ui/typography/Title'
 
 export type HomePageProps = {
   recentArticles: any
@@ -73,21 +74,15 @@ export default function HomePage({
     />
   ))
   const currentlyReadingList = currentlyReading.map((r) => (
-    <NowReading
-      key={r.url}
-      title={r.title}
-      subtitle={r.author}
-      url={r.url}
-    />
+    <NowReading key={r.url} title={r.title} subtitle={r.author} url={r.url} />
   ))
   return (
     <Layout>
       <Hero />
-      <h2 className="text-3xl font-semibold py-4  text-black dark:text-gray-100">
-        Blog
-      </h2>
+      <div className="mt-6 mb-20"></div>
+      <Title>Blog</Title>
       <Tab.Group>
-        <Tab.List className="flex p-1 space-x-1 bg-zinc-300 dark:bg-zinc-700 rounded-md">
+        <Tab.List className="flex p-1 space-x-1 bg-zinc-300 dark:bg-zinc-700 rounded-md ">
           <Tab
             className={({ selected }) =>
               classNames(
@@ -145,9 +140,7 @@ export default function HomePage({
           </ArrowLink>
         </div>
       </Tab.Group>
-      <h2 className="text-3xl font-semibold py-4  text-black dark:text-gray-100">
-        Projects
-      </h2>
+      <Title>Projects</Title>
       <div className="">
         <div className="">
           <div className=" w-full border-0 ">
@@ -165,9 +158,7 @@ export default function HomePage({
         </div>
       </div>
       <Timeline />
-      <h2 className="text-3xl font-semibold py-4  text-black dark:text-gray-100">
-        Hobbies
-      </h2>
+      <Title>Hobbies</Title>
       <Tab.Group>
         <Tab.List className="flex flex-row p-1 space-x-1 bg-zinc-300 dark:bg-zinc-700 rounded-md">
           <Tab
@@ -205,10 +196,8 @@ export default function HomePage({
             </div>
           </Tab.Panel>
           <Tab.Panel>
-           
-                <div>{currentlyReadingList}</div>
-              
-            
+            <div>{currentlyReadingList}</div>
+
             <AboutSection id="books" title="" subtitle="">
               <div className="">
                 <ul>{reviewList.slice(0, 10)}</ul>
@@ -217,16 +206,14 @@ export default function HomePage({
           </Tab.Panel>
         </Tab.Panels>
       </Tab.Group>
-      <h2 className="text-3xl font-semibold py-4 mt-8">Status</h2>
+      <Title>Status</Title>
       {tweets.map((tweet) => (
         <Tweet key={tweet.id} {...tweet} />
       ))}
-      
-      <div className='my-2'></div>
-      <DiscordStatus/>
-      <h2 className="text-3xl mt-8 font-semibold py-4 text-gray-900 dark:text-gray-100 mb-2">
-        Guestbook
-      </h2>
+
+      <div className="my-2"></div>
+      <DiscordStatus />
+      <Title>Guestbook</Title>
 
       <Entry />
       <div className="flex justify-end mt-4 mr-2">

@@ -4,11 +4,12 @@ import { AiOutlineCode } from 'react-icons/ai'
 import { SiAol, SiLeetcode } from 'react-icons/si'
 import { Disclosure, Transition } from '@headlessui/react'
 import { ChevronUpIcon } from '@heroicons/react/solid'
+import Title from '~/components/ui/typography/Title'
 
 export default function Timeline() {
   return (
     <div>
-      <h2 className="font-bold text-3xl mt-6 ">My Journey</h2>
+      <Title>My Journey</Title>
       <ol className="relative border-l border-zinc-400 dark:border-gray-800 mt-6 ml-6 ">
         <li className="mb-4 ml-8 px-4 py-4 bg-white dark:bg-zinc-900  border  rounded-md border-gray-100 shadow-sm shadow-gray-300 dark:shadow-none dark:border-zinc-900">
           <span className="absolute flex items-center justify-center w-6 h-6 bg-yellow-300 rounded-full -left-3 ring-8 ring-white dark:ring-gray-900 dark:bg-yellow-700">
