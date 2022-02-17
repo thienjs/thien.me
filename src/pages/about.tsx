@@ -11,6 +11,7 @@ import UnstyledLink from '~/components/ui/links/UnstyledLink'
 import NowPlaying from '~/components/music/NowPlaying'
 import TechStack from '~/components/about/TechStack'
 import Link from 'next/link'
+import Title from '~/components/ui/typography/Title'
 
 export type AboutProps = {
   reviews: Awaited<ReturnType<typeof getReviews>>
@@ -78,9 +79,9 @@ const AboutPage = ({ reviews, currentlyReading }) => {
         </p>
       </div>
 
-      <div className="text-sm font-semibold text-gray-800 dark:text-gray-300 mt-6">
+      <Title>
         Contact
-      </div>
+      </Title>
       <div className="flex mt-6">
         <ul className="text-sm text-neutral-500 dark:text-neutral-400 space-y-3">
           <li>Github</li>
