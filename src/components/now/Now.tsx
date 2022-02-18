@@ -40,11 +40,26 @@ export default function Now() {
           <li>- reading/listening to books when I can</li>
           <li>- staying active by working on my tennis game</li>
           <li>- starting to write meaningful and helpful blog posts</li>
-          <li>- listening to : {data?.title}</li>
+          <li>
+            - listening to :{' '}{data?.songUrl ? (
+              <a
+                className=""
+                href={data.songUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {data.title}
+              </a>
+            ) : (
+              <p className="">
+                a lot of 70's music
+              </p>
+            )}
+          </li>
         </ul>
         <div className="mt-20 text-sm text-neutral-700 dark:text-neutral-400">
           last updated: {month}.{date}.{year}
-          {'   '}@    {hour}:{minute}:{second}
+          {'   '}@ {hour}:{minute}:{second}
         </div>
       </div>
     </>

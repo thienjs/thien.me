@@ -35,11 +35,9 @@ export default function Hero() {
               variants={{
                 hidden: {
                   opacity: 0,
-               
                 },
                 visible: {
                   opacity: 1,
-                  
                 },
               }}
               className="text-gray-500 dark:text-neutral-400 text-sm mb-2"
@@ -79,6 +77,39 @@ export default function Hero() {
             <motion.div
               initial="hidden"
               animate="visible"
+              transition={{ delay: 0.4, duration: 0.8 }}
+              variants={{
+                hidden: {
+                  opacity: 0,
+                  y: 100,
+                },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                },
+              }}
+              className="mb-4 "
+            >
+              Get to know what I'm all{' '}
+              <Link href="/about">
+                <a className="relative before:absolute before:bg-cyan-500 before:opacity-50 before:bottom-0 before:left-0 before:h-full before:w-full before:origin-bottom before:scale-y-[0.35] hover:before:scale-y-100 before:transition-transform before:ease-in-out before:duration-500">
+                  <span className="relative hover:text-gray-800 hover:dark:text-gray-200">
+                    about
+                  </span>
+                </a>
+              </Link>
+             {' '} or what I'm doing{' '}
+              <Link href="/now">
+                <a className="relative before:absolute before:bg-cyan-500 before:opacity-50 before:bottom-0 before:left-0 before:h-full before:w-full before:origin-bottom before:scale-y-[0.35] hover:before:scale-y-100 before:transition-transform before:ease-in-out before:duration-500">
+                  <span className="relative hover:text-gray-800 hover:dark:text-gray-200">
+                    now
+                  </span>
+                </a>
+              </Link>.
+            </motion.div>
+            <motion.div
+              initial="hidden"
+              animate="visible"
               transition={{ delay: 0.6, duration: 0.7 }}
               variants={{
                 hidden: {
@@ -92,13 +123,14 @@ export default function Hero() {
               }}
             >
               I'm open for work or just a chat. Email me at{' '}
-              <Link href="https://github.com/thienjs">
-                <a className="relative before:absolute before:bg-cyan-500 before:opacity-50 before:bottom-0 before:left-0 before:h-full before:w-full before:origin-bottom before:scale-y-[0.35] hover:before:scale-y-100 before:transition-transform before:ease-in-out before:duration-500">
-                  <span className="relative hover:text-gray-800 hover:dark:text-gray-200">
-                    hi@thien.me
-                  </span>
-                </a>
-              </Link>
+              <a
+                href="mailto:hi@thien.me"
+                className="relative before:absolute before:bg-cyan-500 before:opacity-50 before:bottom-0 before:left-0 before:h-full before:w-full before:origin-bottom before:scale-y-[0.35] hover:before:scale-y-100 before:transition-transform before:ease-in-out before:duration-500"
+              >
+                <span className="relative hover:text-gray-800 hover:dark:text-gray-200">
+                  hi@thien.me
+                </span>
+              </a>
               .
             </motion.div>
             <p className="mb-40"></p>
