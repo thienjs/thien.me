@@ -34,7 +34,7 @@ export function LoginButtons(props: IAuthButtonsProps) {
         {buttons.map(({ label, icon, handler }) => (
           <div
             key={label}
-            className="w-full rounded-md bg-gray-300 p-2 ring-gray-300 transition-all hover:ring-2 dark:bg-zinc-800"
+            className="w-full rounded-md bg-neutral-100 p-2 ring-gray-300 transition-all hover:ring-2 dark:bg-zinc-800"
           >
             <button
               className="flex w-full flex-col items-center justify-center py-2"
