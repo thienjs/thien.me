@@ -18,40 +18,36 @@ const Footer = () => {
   const year = new Date().getFullYear()
   const router = useRouter()
   return (
-    <div className="flex flex-col items-center justify-center w-screen mt-40 ">
-      <div className="flex flex-row"></div>
+    <div className="flex flex-col justify-center mt-40 ">
       <FooterLinks />
-      <div className="flex flex-col items-center  justify-center w-screen ">
-        <div className="flex flex-wrap items-center justify-center mx-auto mb-4 mt-1 text-gray-700 dark:text-gray-400 ">
+      <div className="py-6 px-4 justify-between flex flex-row mb-20">
+        <div className="text-sm mr-28 text-gray-600 dark:text-gray-500 ">
+          © Thien Tran {year}
+        </div>
+
+        <div className="flex space-x-1 ml-auto mt-0 text-gray-700 dark:text-gray-400 ">
           <a href="https://github.com/thienjs" rel="noopener noreferrer">
-            <GithubIcon className="h-5 w-5 mx-3 hover:text-purple-400" />
+            <GithubIcon className="h-5 w-5  hover:text-purple-400" />
           </a>
           <a href="https://discord.com/thien#0601 " rel="noopener noreferrer">
-            <DiscordIcon className="h-5 w-5 mx-3 hover:text-blue-400" />
+            <DiscordIcon className="h-5 w-5  hover:text-blue-400" />
           </a>
           <a href="https://twitter.com/thientsx" rel="noopener noreferrer">
-            <TwitterIcon className="h-5 w-5 mx-3 hover:text-cyan-400" />
+            <TwitterIcon className="h-5 w-5  hover:text-cyan-400" />
           </a>
-          <button
-            type="button"
-            onClick={() => router.push('mailto:hi@thien.me')}
-          >
-            <EmailIcon className="h-5 w-5 mx-3 hover:text-emerald-400" />
-          </button>
-
+          <a href="mailto:hi@thien.me" rel="noopener noreferrer">
+            <EmailIcon className="h-5 w-5  hover:text-emerald-400" />
+          </a>
           <a href="https://linkedin.com/in/thienjs" rel="noopener noreferrer">
-            <LinkedinIcon className="h-5 w-5 mx-3 hover:text-blue-400" />
+            <LinkedinIcon className="h-5 w-5  hover:text-blue-400" />
           </a>
           <a
             href="https://www.buymeacoffee.com/thien"
             rel="noopener noreferrer"
           >
-            <SiBuymeacoffee className="h-4 w-4 mx-3 hover:text-yellow-400" />
+            <SiBuymeacoffee className="h-4 w-4 hover:text-yellow-400" />
           </a>
         </div>
-      </div>
-      <div className="mb-8 text-xs text-gray-600 dark:text-gray-500">
-        © Thien Tran {year}
       </div>
     </div>
   )
