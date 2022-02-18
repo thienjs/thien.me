@@ -29,6 +29,7 @@ export default function Now() {
         </h3>
         <ul className="text-sm text-left space-y-3 text-neutral-800 dark:text-neutral-300">
           <li>- applying for my first tech job</li>
+          <li>- taking more risks</li>
           <li>- walking Loki - my 8 month old puppy</li>
 
           <li>
@@ -51,9 +52,9 @@ export default function Now() {
                 {data.title}
               </a>
             ) : (
-              <p className="">
+              <span className="">
                 a lot of 70's music
-              </p>
+              </span>
             )}
           </li>
         </ul>

@@ -82,14 +82,14 @@ export default function HomePage({
       <div className="mt-6 mb-20"></div>
       <Title>Blog</Title>
       <Tab.Group>
-        <Tab.List className="flex p-1 space-x-1  border-b py-2 border-neutral-300 dark:border-neutral-700 mb-3">
+        <Tab.List className="flex p-1 space-x-1   py-2  mb-3">
           <Tab
             className={({ selected }) =>
               classNames(
                 'w-full py-2.5 text-sm leading-5 text-gray-700 dark:text-gray-200',
                 'focus:outline-none',
                 selected
-                  ? ' dark:text-gray-100 font-medium'
+                  ? ' dark:text-gray-100 font-medium  border-b border-neutral-400 dark:border-neutral-700'
                   : 'text-neutral-500 dark:text-neutral-600  hover:text-neutral-700 dark:hover:text-neutral-400'
               )
             }
@@ -99,10 +99,10 @@ export default function HomePage({
           <Tab
             className={({ selected }) =>
               classNames(
-                'w-full py-2.5 text-sm leading-5  text-gray-700 dark:text-gray-200 ',
+                'w-full py-2.5 text-sm leading-5 text-gray-700 dark:text-gray-200',
                 'focus:outline-none',
                 selected
-                ? ' dark:text-gray-100 font-medium'
+                  ? ' dark:text-gray-100 font-medium  border-b border-neutral-400 dark:border-neutral-700'
                   : 'text-neutral-500 dark:text-neutral-600  hover:text-neutral-700 dark:hover:text-neutral-400'
               )
             }
@@ -112,11 +112,11 @@ export default function HomePage({
           <Tab
             className={({ selected }) =>
               classNames(
-                'w-full py-2.5 text-sm leading-5  text-gray-700 dark:text-gray-200 ',
+                'w-full py-2.5 text-sm leading-5 text-gray-700 dark:text-gray-200',
                 'focus:outline-none',
                 selected
-                ? '  dark:text-gray-100 font-medium'
-                : 'text-neutral-500 dark:text-neutral-600  hover:text-neutral-700 dark:hover:text-neutral-400'
+                  ? ' dark:text-gray-100 font-medium  border-b border-neutral-400 dark:border-neutral-700'
+                  : 'text-neutral-500 dark:text-neutral-600  hover:text-neutral-700 dark:hover:text-neutral-400'
               )
             }
           >
@@ -160,15 +160,15 @@ export default function HomePage({
 
       <Title>Hobbies</Title>
       <Tab.Group>
-      <Tab.List className="flex p-1 space-x-1  border-b py-2 border-neutral-300 dark:border-neutral-700 mb-3">
-        <Tab
+        <Tab.List className="flex p-1 space-x-1  py-2  mb-3">
+          <Tab
             className={({ selected }) =>
               classNames(
-                'w-full py-2.5 text-sm leading-5  text-gray-700 dark:text-gray-200 ',
+                'w-full py-2.5 text-sm leading-5 text-gray-700 dark:text-gray-200',
                 'focus:outline-none',
                 selected
-                ? '  dark:text-gray-100 font-medium'
-                : 'text-neutral-500 dark:text-neutral-600  hover:text-neutral-700 dark:hover:text-neutral-400'
+                  ? ' dark:text-gray-100 font-medium  border-b border-neutral-400 dark:border-neutral-700'
+                  : 'text-neutral-500 dark:text-neutral-600  hover:text-neutral-700 dark:hover:text-neutral-400'
               )
             }
           >
@@ -177,11 +177,11 @@ export default function HomePage({
           <Tab
             className={({ selected }) =>
               classNames(
-                'w-full py-2.5 text-sm leading-5  text-gray-700 dark:text-gray-200 ',
+                'w-full py-2.5 text-sm leading-5 text-gray-700 dark:text-gray-200',
                 'focus:outline-none',
                 selected
-                ? '  dark:text-gray-100 font-medium'
-                : 'text-neutral-500 dark:text-neutral-600  hover:text-neutral-700 dark:hover:text-neutral-400'
+                  ? ' dark:text-gray-100 font-medium  border-b border-neutral-400 dark:border-neutral-700'
+                  : 'text-neutral-500 dark:text-neutral-600  hover:text-neutral-700 dark:hover:text-neutral-400'
               )
             }
           >
@@ -209,10 +209,9 @@ export default function HomePage({
       <Title>Status</Title>
       {tweets.map((tweet) => (
         <Tweet key={tweet.id} {...tweet} />
-        ))}
+      ))}
 
       <div className="my-8"></div>
-  
 
       <Title>Guestbook</Title>
 
