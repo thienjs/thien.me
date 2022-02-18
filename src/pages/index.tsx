@@ -135,7 +135,7 @@ export default function HomePage({
           </Tab.Panel>
         </Tab.Panels>
         <div className="flex justify-end mt-4 mr-2">
-          <ArrowLink href="/blog" className="">
+          <ArrowLink href="/blog" className="mb-12">
             more posts
           </ArrowLink>
         </div>
@@ -151,13 +151,13 @@ export default function HomePage({
             ))}
           </div>
         </div>
-        <div className="flex justify-end mt-4 mr-2">
+        <div className="flex justify-end mt-4 mr-2 mb-12">
           <ArrowLink href="/repo" className="">
             all repos
           </ArrowLink>
         </div>
       </div>
-      <Timeline />
+
       <Title>Hobbies</Title>
       <Tab.Group>
       <Tab.List className="flex p-1 space-x-1  border-b py-2 border-neutral-300 dark:border-neutral-700 mb-3">
@@ -188,7 +188,7 @@ export default function HomePage({
             Books
           </Tab>
         </Tab.List>
-        <Tab.Panels>
+        <Tab.Panels className="mb-14">
           <Tab.Panel>
             <div className="mt-6">
               <NowPlaying />
@@ -209,9 +209,10 @@ export default function HomePage({
       <Title>Status</Title>
       {tweets.map((tweet) => (
         <Tweet key={tweet.id} {...tweet} />
-      ))}
+        ))}
 
-      <div className="my-2"></div>
+      <div className="my-8"></div>
+  
 
       <Title>Guestbook</Title>
 
