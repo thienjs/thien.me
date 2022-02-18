@@ -23,20 +23,20 @@ export default function Hero() {
               },
             }}
           >
-            <h1 className="text-3xl font-bold text-gray-900 lg:text-4xl dark:text-white mt-6">
+            <h1 className="text-xl font-semibold text-gray-900 lg:text-4xl dark:text-neutral-200 mt-40">
               Thien Tran
             </h1>
-            <h3 className="text-gray-500 dark:text-gray-400 text-md">
+            <h3 className="text-gray-500 dark:text-neutral-400 text-sm mb-2">
               (tee-en)
             </h3>
           </motion.div>
-          <div className="mt-6 text-gray-800 dark:text-gray-200 text-xl">
+          <div className="mt-8 text-gray-800 dark:text-neutral-400 text-sm">
             <p className="mb-4 ">
-              Hello! I am web developer currently focused on typescript, nextjs,
-              and tailwind. Most of my work is open source and publicly
-              available on{' '}
+              Hello! I am a self taught web developer currently focused on
+              typescript, nextjs, and tailwind. Most of my work is open source
+              and publicly available on{' '}
               <Link href="https://github.com/thienjs">
-                <a className="relative before:absolute before:bg-cyan-500 before:opacity-70 before:bottom-0 before:left-0 before:h-full before:w-full before:origin-bottom before:scale-y-[0.35] hover:before:scale-y-100 before:transition-transform before:ease-in-out before:duration-500">
+                <a className="relative before:absolute before:bg-cyan-500 before:opacity-50 before:bottom-0 before:left-0 before:h-full before:w-full before:origin-bottom before:scale-y-[0.35] hover:before:scale-y-100 before:transition-transform before:ease-in-out before:duration-500">
                   <span className="relative hover:text-gray-800 hover:dark:text-gray-200">
                     github
                   </span>
@@ -44,15 +44,16 @@ export default function Hero() {
               </Link>
               .
             </p>
-              <p>I'm open for work or just a chat. You can reach me at{' '}
+            <p>
+              I'm open for work or just a chat. Email me at{' '}
               <Link href="https://github.com/thienjs">
-                <a className="relative before:absolute before:bg-cyan-500 before:opacity-70 before:bottom-0 before:left-0 before:h-full before:w-full before:origin-bottom before:scale-y-[0.35] hover:before:scale-y-100 before:transition-transform before:ease-in-out before:duration-500">
+                <a className="relative before:absolute before:bg-cyan-500 before:opacity-50 before:bottom-0 before:left-0 before:h-full before:w-full before:origin-bottom before:scale-y-[0.35] hover:before:scale-y-100 before:transition-transform before:ease-in-out before:duration-500">
                   <span className="relative hover:text-gray-800 hover:dark:text-gray-200">
                     hi@thien.me
                   </span>
                 </a>
-              </Link>. </p>
-
+              </Link>.
+            </p>
             <p className="mb-4"></p>
           </div>
         </div>

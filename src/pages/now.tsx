@@ -7,7 +7,7 @@ export default function NowPage() {
       <h2>Now</h2>
       <h3>what i'm up to now</h3>
       <Title>
-        Sorry page is under development
+        Now
       </Title>
     </Layout>
   )
