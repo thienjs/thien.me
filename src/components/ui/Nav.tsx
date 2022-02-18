@@ -22,7 +22,7 @@ export default function Nav() {
       </Link>
       <AnimateSharedLayout>
         <motion.ul
-          className="md:flex gap-x-4 gap-y-1 dark:text-gray-300 hidden mr-auto"
+          className="md:flex gap-x-4 gap-y-1 dark:text-gray-300 hidden "
           onHoverEnd={() => setActiveIndex(null)}
         >
           {navigation.navData.map((item, index) => {

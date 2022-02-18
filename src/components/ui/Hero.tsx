@@ -101,7 +101,7 @@ export default function Hero() {
               </Link>
               .
             </motion.div>
-            <p className="mb-4"></p>
+            <p className="mb-40"></p>
           </div>
         </div>
         <div className="flex-shrink-0 lg:mt-12  mb-10 hidden">
