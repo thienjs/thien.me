@@ -12,14 +12,16 @@ export default function Hero() {
           <motion.div
             initial="hidden"
             animate="visible"
+            transition={{ delay: 0.2,
+            duration:0.8 }}
             variants={{
               hidden: {
-                scale: 0.8,
                 opacity: 0,
+                y: 100,
               },
               visible: {
-                scale: 1,
                 opacity: 1,
+                y: 0,
               },
             }}
           >
@@ -52,7 +54,8 @@ export default function Hero() {
                     hi@thien.me
                   </span>
                 </a>
-              </Link>.
+              </Link>
+              .
             </p>
             <p className="mb-4"></p>
           </div>
