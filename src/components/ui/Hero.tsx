@@ -31,15 +31,15 @@ export default function Hero() {
             <motion.div
               initial="hidden"
               animate="visible"
-              transition={{ delay: 0.2, duration: 0.9 }}
+              transition={{ delay: 1.3, duration: 0.8 }}
               variants={{
                 hidden: {
                   opacity: 0,
-                  y: 100,
+               
                 },
                 visible: {
                   opacity: 1,
-                  y: 0,
+                  
                 },
               }}
               className="text-gray-500 dark:text-neutral-400 text-sm mb-2"
