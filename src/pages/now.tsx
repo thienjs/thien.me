@@ -1,14 +1,11 @@
 import Layout from 'components/ui/Layout'
 import Title from 'components/ui/typography/Title'
+import Now from 'components/now/Now'
 
 export default function NowPage() {
   return (
     <Layout>
-      <h2>Now</h2>
-      <h3>what i'm up to now</h3>
-      <Title>
-        Now
-      </Title>
+      <Now/>
     </Layout>
   )
 }
