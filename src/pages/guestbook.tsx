@@ -3,6 +3,7 @@ import  Layout  from '~/components/ui/Layout';
 import { ContentPopover } from '~/components/guestbook';
 import { fetchGuestbookEntries } from '~/lib/queries';
 import { GuestbookContent } from '~/components/guestbook';
+import Title from '~/components/ui/typography/Title'
 
 export const getStaticProps = async () => {
   const data = await fetchGuestbookEntries();
@@ -24,9 +25,9 @@ const GuestBookPage = ({
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <Layout>
-      <h1 className="mb-4 text-3xl font-bold tracking-tight text-gray-800 dark:text-white md:text-5xl">
+      <Title>
         Guestbook
-      </h1>
+      </Title>
       <div>
         <p className="mb-4 max-w-lg text-gray-600 dark:text-gray-400">
           Thank you for visiting. Say hi!

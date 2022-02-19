@@ -3,12 +3,13 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import { useSession, signIn, signOut } from "next-auth/react"
-import Layout from '~/components/ui/Layout'
+import { Layout } from '~/components/ui'
+import Title from '~/components/ui/typography/Title'
 
 const TestPage: NextPage = () => {
   const { data: session } = useSession()
-  console.log(session);
-  
+  console.log(session)
+
   return (
     <Layout>
       <main className="">
@@ -25,7 +26,7 @@ const TestPage: NextPage = () => {
               ) : (
                 ''
               )}
-              <p className="">{session.user?.name}</p>
+              <Title>{session.user?.name}</Title>
             </div>
             <button className="text-center" onClick={() => signOut()}>
               Signout

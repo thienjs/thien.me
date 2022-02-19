@@ -6,7 +6,7 @@ const Title: FunctionComponent = ({
   children: ReactChildren
 }) => {
   return (
-    <header className="text-sm font-semibold text-gray-800 dark:text-gray-300 mt-12 mb-8">
+    <header className="text-md font-semibold text-gray-800 dark:text-gray-300 mt-20 mb-10">
       {children}
     </header>
   )

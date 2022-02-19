@@ -79,9 +79,9 @@ const AboutPage = ({ reviews, currentlyReading }) => {
         </p>
       </div>
 
-      <Title>
+      <h2 className='text-sm font-semibold text-gray-800 dark:text-gray-300 mt-10 mb-6'>
         Contact
-      </Title>
+      </h2>
       <div className="flex mt-6">
         <ul className="text-sm text-neutral-500 dark:text-neutral-400 space-y-3">
           <li>Github</li>

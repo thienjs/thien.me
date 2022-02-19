@@ -13,7 +13,7 @@ import Layout from '~/components/ui/Layout'
 import { useMessage } from '~/lib/message'
 import Hero from '~/components/ui/Hero'
 import { AboutSection } from '../components/about/AboutSection'
-import Tweet from '~/components/Tweet'
+import Tweet from '~/components/cards/Tweet'
 import { getTweets } from 'lib/twitter'
 import classNames from '~/lib/classNames'
 import Link from 'next/link'
@@ -230,7 +230,7 @@ export const getStaticProps: GetStaticProps = async () => {
   const currentlyReading = await getCurrentlyReading({ limit: 2 })
   const notiondata = await getPublishedArticles(process.env.NOTION_DATABASE_ID)
 
-  const tweets = await getTweets(['1190125711467655169'])
+  const tweets = await getTweets(['1494760832651210754'])
   const { articles } = convertToArticleList(notiondata)
 
   const httpLink = createHttpLink({

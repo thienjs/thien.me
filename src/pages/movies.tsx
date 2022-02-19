@@ -5,7 +5,7 @@ import Layout from '~/components/ui/Layout'
 import { getMovies } from '~/lib/notion'
 import axios from "axios";
 import { MovieCard } from '~/components/hobby/MovieCard'
-
+import Title from '~/components/ui/typography/Title'
 
 const MoviesPage = ({ movies }) => {
   const [movie, setMovie] = useState(null)
@@ -24,6 +24,7 @@ const MoviesPage = ({ movies }) => {
   
   return (
     <Layout>
+      <Title>Movies</Title>
       <button onClick={chooseMovie}>choose movie</button>
       {movie && <pre>{JSON.stringify(movie, null, 2)}</pre>}
 

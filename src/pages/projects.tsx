@@ -2,10 +2,10 @@ import { graphql } from '@octokit/graphql'
 import Layout from '~/components/ui/Layout'
 import type { GetStaticProps } from 'next'
 import RepoCard from '~/components/cards/Projects/RepoCard'
-
+import Title from '~/components/ui/typography/Title'
 const ProjectsPage = ({ repos }) => (
   <Layout>
-    <h1 className="mb-3 mt-4 font-bold text-2xl">my github repositories</h1>
+    <Title>my github repositories</Title>
     <div className="flex flex-col w-96 content-start">
       {repos.map((repo) => (
         <div key={repo.name} className="">

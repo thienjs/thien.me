@@ -1,6 +1,6 @@
 //from leerob.io
 import Layout from '~/components/ui/Layout';
-import Tweet from '~/components/Tweet';
+import Tweet from '~/components/cards/Tweet';
 import { getTweets } from 'lib/twitter';
 
 export default function Tweets({ tweets }) {
@@ -24,7 +24,8 @@ export default function Tweets({ tweets }) {
 
 export async function getStaticProps() {
   const tweets = await getTweets([
-    '1189444653059174401',
+    '1494760832651210754',
+    '1136983176167821313',
   ]);
 
   return { props: { tweets } };

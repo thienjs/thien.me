@@ -11,6 +11,8 @@ import {
   Pencil1Icon,
   StopwatchIcon,
   PersonIcon,
+  DiscIcon,
+  BackpackIcon,
   LightningBoltIcon,
   Half2Icon,
   HamburgerMenuIcon,
@@ -23,6 +25,8 @@ import {
   RocketIcon,
   ArchiveIcon,
   FaceIcon,
+  IdCardIcon,
+
   AvatarIcon,
   BlendingModeIcon,
   SpeakerLoudIcon,
@@ -110,7 +114,7 @@ export default function DropMenu() {
                     )}
                   >
                     <div className="flex flex-row">
-                      <PersonIcon className="mr-4 mt-0.5" /> About
+                      <IdCardIcon className="mr-4 mt-0.5" /> About
                     </div>
                   </a>
                 </Link>
@@ -146,7 +150,7 @@ export default function DropMenu() {
                     )}
                   >
                     <div className="flex flex-row">
-                      <ArchiveIcon className="mr-4 mt-0.5" /> Projects
+                      <BackpackIcon className="mr-4 mt-0.5" /> Projects
                     </div>
                   </a>
                 </Link>
@@ -184,7 +188,7 @@ export default function DropMenu() {
                     )}
                   >
                     <div className="flex flex-row">
-                      <BlendingModeIcon className="mr-4 mt-0.5" /> Now
+                      <DiscIcon className="mr-4 mt-0.5" /> Now
                     </div>
                   </a>
                 </Link>

@@ -1,10 +1,11 @@
 import Timeline from '~/components/timeline/Timeline'
 import Layout from '~/components/ui/Layout'
+import Title from '~/components/ui/typography/Title'
 
 export default function JourneyPage() {
   return (
     <Layout>
-      <h2 className="text-lg font-semibold">My coding journey</h2>
+      <Title>My coding journey</Title>
       <p className="mb-6">
         'dont compare yourself to others. make progress everyday.'
       </p>

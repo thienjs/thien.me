@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import {Tag} from '~/components/blog/Tag';
 import Layout from '~/components/ui/Layout';
 import { ArticleList } from '~/components/blog/ArticleList';
+import Title from '~/components/ui/typography/Title';
 
 export default function Blog({articles, tags}) {
     const [selectedTag, setSelectedTag] = useState<string>('');
@@ -25,7 +26,7 @@ export default function Blog({articles, tags}) {
 
     return (
       <Layout>
-        <h1 className="text-5xl font-bold mb-2 mt-8 ">Blog</h1>
+        <Title>Blog</Title>
         <p className="mb-4 mt-2 text-gray-700 dark:text-gray-400">
           This is where I write about programming, tech, life, and everything in between. 
         </p>

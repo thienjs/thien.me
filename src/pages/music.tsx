@@ -1,10 +1,11 @@
 import NowPlaying from "~/components/music/NowPlaying"
 import TopTracks from "~/components/music/TopTracks"
 import Layout from "~/components/ui/Layout"
+import Title from '~/components/ui/typography/Title'
 export default function MusicPage() {
     return (
         <Layout>
-            <h1 className='text-5xl font-semibold py-2 mb-4 '>Music</h1>
+            <Title>Music</Title>
 
             <h2 className="text-2xl font-semibold mb-2 ">Currently listening to:</h2>
             <NowPlaying/>

@@ -7,6 +7,7 @@ import { prisma } from '../lib/prisma'
 import ButtonLink from '~/components/ui/links/ButtonLink'
 import { GoPlus } from 'react-icons/go'
 import { useSession, getSession, signIn } from 'next-auth/react'
+import Title from '~/components/ui/typography/Title'
 
 export const getServerSideProps: GetServerSideProps = async ({req, res}) => {
   const session = await getSession({ req })
@@ -60,7 +61,7 @@ const TodoPage: React.FC<Props> = (props) => {
   return (
     <Layout>
       <div className="">
-        <h1 className="text-3xl font-semibold mt-4">Todo</h1>
+        <Title>Todo</Title>
         <p className="text-sm mt-2 mb-4">my todo list</p>
 
         {session ? (
