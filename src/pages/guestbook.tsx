@@ -29,7 +29,7 @@ const GuestBookPage = ({
         Guestbook
       </Title>
       <div>
-        <p className="mb-4 max-w-lg text-gray-600 dark:text-gray-400">
+        <p className="text-neutral-600 dark:text-neutral-400 mb-8 text-sm">
           Thank you for visiting. Say hi!
         </p>
       </div>

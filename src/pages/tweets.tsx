@@ -2,16 +2,17 @@
 import Layout from '~/components/ui/Layout';
 import Tweet from '~/components/cards/Tweet';
 import { getTweets } from 'lib/twitter';
+import Title from '~/components/ui/typography/Title';
 
 export default function Tweets({ tweets }) {
   return (
     <Layout
     >
       <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16">
-        <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
+        <Title>
           Tweets
-        </h1>
-        <p className="text-gray-600 dark:text-gray-400 mb-4">
+        </Title>
+        <p className="text-neutral-600 dark:text-neutral-400 mb-8 text-sm">
           A social media platform I want to get back into. 
         </p>
         {tweets.map((tweet) => (

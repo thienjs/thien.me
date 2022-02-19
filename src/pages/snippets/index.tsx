@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import {Tag} from '~/components/blog/Tag';
 import Layout from '~/components/ui/Layout';
 import { SnippetList } from '~/components/snippets/SnippetList';
+import Title from '~/components/ui/typography/Title';
 
 export default function SnippetsPage({snippets, tags}) {
   const [selectedTag, setSelectedTag] = useState<string>('');
@@ -26,8 +27,8 @@ export default function SnippetsPage({snippets, tags}) {
 
   return (
     <Layout>
-      <h1 className="text-5xl font-bold mt-8 mb-3 ">Snippets</h1>
-      <p className="mb-4 mt-2 text-gray-700 dark:text-gray-400">
+      <Title>Snippets</Title>
+      <p className="text-neutral-600 dark:text-neutral-400 mb-8 text-sm">
         collection of useful code for reference
       </p>
       <div className="relative w-full">

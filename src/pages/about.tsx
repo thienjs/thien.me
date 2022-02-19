@@ -43,7 +43,7 @@ const AboutPage = ({ reviews, currentlyReading }) => {
 
   return (
     <Layout>
-      <div className="flex text-left   mb-5 mt-14">
+      <div className="flex text-left   mb-5 mt-20 ">
         <Image
           src="https://github.com/thienjs.png"
           alt="Profile"
@@ -79,7 +79,7 @@ const AboutPage = ({ reviews, currentlyReading }) => {
         </p>
       </div>
 
-      <h2 className='text-sm font-semibold text-gray-800 dark:text-gray-300 mt-10 mb-6'>
+      <h2 className="text-sm font-semibold text-gray-800 dark:text-gray-300 mt-10 mb-6">
         Contact
       </h2>
       <div className="flex mt-6">

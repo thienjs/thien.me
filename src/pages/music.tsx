@@ -7,9 +7,9 @@ export default function MusicPage() {
         <Layout>
             <Title>Music</Title>
 
-            <h2 className="text-2xl font-semibold mb-2 ">Currently listening to:</h2>
+            <p className="text-neutral-600 dark:text-neutral-400 mb-8 text-sm">Currently listening to:</p>
             <NowPlaying/>
-            <h2 className="text-2xl font-semibold">My Top 10 recently:</h2>
+            <p className="text-neutral-600 dark:text-neutral-400 mb-8 text-sm">My Top 10 recently:</p>
 
             <TopTracks/>
 

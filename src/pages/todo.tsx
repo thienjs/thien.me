@@ -62,7 +62,7 @@ const TodoPage: React.FC<Props> = (props) => {
     <Layout>
       <div className="">
         <Title>Todo</Title>
-        <p className="text-sm mt-2 mb-4">my todo list</p>
+        <p className="text-neutral-600 dark:text-neutral-400 mb-8 text-sm">my todo list</p>
 
         {session ? (
           <>
