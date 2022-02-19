@@ -17,12 +17,12 @@ export default function Nav() {
   return (
     <nav className="flex items-center justify-between pb-4 w-full  max-w-sm md:max-w-2xl px-2 py-2 mt-4">
       <Link href="/"><a >
-      <TBoxIcon className='w-10 h-10 mr-auto cursor-pointer'/>
+      <TBoxIcon className='w-6 h-6 mr-auto cursor-pointer'/>
       </a>
       </Link>
       <AnimateSharedLayout>
         <motion.ul
-          className="md:flex gap-x-4 gap-y-1 dark:text-gray-300 hidden "
+          className="flex md:gap-x-4 gap-y-1 dark:text-gray-300  text-sm  "
           onHoverEnd={() => setActiveIndex(null)}
         >
           {navigation.navData.map((item, index) => {
@@ -41,7 +41,7 @@ export default function Nav() {
                     <span
                       className={`relative z-50 ${
                         pathname === item.path
-                          ? 'text-gray-900  dark:text-gray-300 font-semibold underline decoration-cyan-500 underline-offset-1 decoration-2 '
+                          ? 'text-gray-900  dark:text-gray-300 font-semibold underline decoration-cyan-500 underline-offset-4 decoration-1 '
                           : 'text-gray-700 dark:text-gray-400 font-normal'
                       }`}
                     >
@@ -56,7 +56,7 @@ export default function Nav() {
                         className={classnames(
                           'absolute inset-0 rounded-md pointer-events-none z-0',
                           ['bg-zinc-300'],
-                          ['dark:bg-gray-800']
+                          ['dark:bg-zinc-800']
                         )}
                       />
                     )}

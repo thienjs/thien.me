@@ -13,7 +13,7 @@ const ThemeSwitch = () => {
           checked={isDark}
           title="Theme switch"
           onChange={() => setTheme(isDark ? 'light' : 'dark')}
-          className={`  rounded-md border border-gray-300 dark:border-gray-700  px-2 py-2 bg-white dark:bg-zinc-800 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500  `}
+          className={` `}
         >
           <SunMoonIcon />
         </Switch>
@@ -83,7 +83,7 @@ function SunMoonIcon() {
       </mask>
 
       <animated.circle
-        fill="white"
+        fill="currentColor"
         cx="12"
         cy="12"
         r={centerCircleProps.r}
