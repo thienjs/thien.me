@@ -7,7 +7,7 @@ import { useTheme } from 'next-themes'
 const ThemeSwitch = () => {
   const [isDark, mounted, setTheme] = useDarkTheme()
   return (
-    <div className="mr-2">
+    <div className="rounded-md hover:bg-zinc-300 dark:hover:bg-zinc-800 p-0.5 pt-1 px-2 mt-[0.5px]">
       {mounted && (
         <Switch
           checked={isDark}
