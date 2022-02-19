@@ -28,7 +28,8 @@ export default function Blog({articles, tags}) {
       <Layout>
         <Title>Blog</Title>
         <p className="text-neutral-600 dark:text-neutral-400 mb-8 text-sm">
-          This is where I write about programming, tech, life, and everything in between. 
+          This is where I write about programming, tech, life, and everything in
+          between.
         </p>
         <div className="relative w-full mb-4">
           <input
@@ -36,10 +37,10 @@ export default function Blog({articles, tags}) {
             type="text"
             onChange={(e) => setSearchValue(e.target.value)}
             placeholder="Search articles"
-            className="block px-4 py-2 w-full text-gray-900 bg-white border border-gray-200 rounded-md dark:border-gray-900 focus:ring-cyan-500 focus:border-blue-500 dark:bg-zinc-800 dark:text-gray-100"
+            className="text-sm block px-4 py-2 w-full text-gray-900 bg-white border border-gray-200 rounded-md dark:border-gray-900 focus:ring-cyan-500 focus:border-blue-500 dark:bg-zinc-800 dark:text-gray-100"
           />
           <svg
-            className="absolute w-5 h-5 text-gray-400 right-3 top-3 dark:text-gray-300"
+            className="absolute w-4 h-4 text-gray-400 right-3 top-3 dark:text-gray-300"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
@@ -54,8 +55,8 @@ export default function Blog({articles, tags}) {
           </svg>
         </div>
 
-        <div className=" flex items-center justify-start w-full  border-gray-200 dark:border-gray-600 no-scrollbar">
-          <ul className="flex overflow-x-auto w-full no-scrollbar">
+        <div className=" flex items-center justify-start w-full   no-scrollbar">
+          <ul className=" rounded-md bg-zinc-100 py-2 dark:bg-zinc-800 mt-4">
             {/* Initial tag for all topics */}
             <Tag activeTag={selectedTag} tag="" cb={() => setSelectedTag('')} />
             {tags &&

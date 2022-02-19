@@ -2,13 +2,12 @@ export function Tag({ tag, cb, activeTag }) {
   return (
     <button
       onClick={() => cb()}
-      className={`mr-4 px-6 py-1 ${
-        activeTag === tag && ' border-b-2 dark:border-cyan-500 text-cyan-500 dark:text-cyan-500 border-cyan-400 '
-      } hover:border-b-2  hover:border-cyan-400 dark:hover:border-b-2 dark:hover:border-cyan-500 hover:text-cyan-400 dark:hover:text-cyan-500`}
+      className={`px-2 py-0.5 mx-1 ${
+        activeTag === tag &&
+        ' underline font-semibold underline-offset-2 dark:text-neutral-100 text-neutral-800 decoration-cyan-400 '
+      } hover:text-gray-600 dark:text-neutral-400 text-neutral-600 hover:bg-zinc-300 rounded-md`}
     >
-      <span className="font-medium text-sm uppercase">
-        {tag === '' ? 'all' : tag}
-      </span>
+      <span className="text-xs">{tag === '' ? 'all' : tag}</span>
     </button>
-  );
+  )
 }
