@@ -18,23 +18,20 @@ export const navigation = {
   navData: [
     {
       path: '/',
-      label: 'Home',
+      label: 'home',
     },
-    {
-      path: '/blog',
-      label: 'Blog',
-    },
-    {
-      path: '/snippets',
-      label: 'Snippets',
-    },
+    
     {
       path: '/about',
-      label: 'About',
+      label: 'about',
     },
     {
       path: '/now',
-      label: 'Now',
+      label: 'now',
+    },
+    {
+      path: '/blog',
+      label: 'blog',
     },
   ],
 }
