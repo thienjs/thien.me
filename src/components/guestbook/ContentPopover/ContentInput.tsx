@@ -42,7 +42,7 @@ export function ContentInput() {
   }
   return (
     <div className="flex flex-col ">
-      <h2 className="text-lg font-bold">Write a message</h2>
+
       <form
         className="flex flex-col items-center space-y-3"
         onSubmit={onSubmit}
@@ -51,9 +51,9 @@ export function ContentInput() {
           Your Message
         </label>
         <textarea
-          className="w-full rounded-md border border-gray-300 text-sm shadow-sm focus:border-gray-500 focus:ring-gray-500 dark:bg-gray-800 dark:text-white dark:focus:border-gray-300 dark:focus:ring-gray-300"
+          className="w-full rounded-md border dark:border-zinc-600 border-gray-300 text-sm shadow-sm focus:border-gray-500 focus:ring-gray-500 dark:bg-zinc-700 dark:text-white dark:focus:border-gray-700 dark:focus:ring-neutral-600"
           ref={inputEl}
-          rows={1}
+          rows={3}
           aria-label="Your message"
           placeholder="Your message..."
           required
@@ -80,7 +80,6 @@ export function ContentInput() {
           )}
         </button>
       </form>
-
     </div>
   )
 }

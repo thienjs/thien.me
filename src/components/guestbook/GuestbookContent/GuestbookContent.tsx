@@ -35,12 +35,14 @@ export function GuestbookContent({ data }: IGuestBookContentProps) {
           entries.data.map((entry) => (
             <div key={entry.id}>
               <div className="">
-                <div className="w-full text-sm my-2 px-4 py-4 bg-white dark:bg-zinc-900  border  rounded-md border-gray-100 shadow-sm shadow-gray-300 dark:shadow-none dark:border-zinc-900">
-                  <div className="mb-2 text-neutral-900 dark:text-neutral-300  ">{entry.body}</div>
+                <div className="w-full my-2 px-4 py-4 bg-white dark:bg-zinc-900  border  rounded-md border-gray-100 shadow-sm shadow-gray-300 dark:shadow-none dark:border-zinc-900">
+                  <div className="mb-2 text-neutral-900 dark:text-neutral-300 font-serif ">
+                    {entry.body}
+                  </div>
                   <div className="text-gray-600 text-opacity-80 line-clamp-1 dark:text-white">
-                    <div className="mb-2 flex items-center space-x-2">
-                      <p className="text-sm text-gray-500">
-                        {entry.createdBy} • {' '}
+                    <div className="mb-2 flex ">
+                      <p className="text-xs text-gray-500">
+                        {entry.createdBy} •{' '}
                         {format(
                           new Date(entry.createdAt),
                           "d MMM yyyy 'at' h:mm bb"
@@ -65,5 +67,5 @@ export function GuestbookContent({ data }: IGuestBookContentProps) {
           ))}
       </div>
     </div>
-  );
+  )
 }

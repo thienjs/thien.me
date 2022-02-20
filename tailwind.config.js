@@ -11,16 +11,13 @@ const colors = require('tailwindcss/colors');
     darkMode: 'class',
     theme: {
       extend: {
-
         fontFamily: {
           mono: ['JetBrains Mono Web', ...fontFamily.mono],
           sans: ['IBM Plex Sans', ...fontFamily.sans],
+          serif: ['Newsreader', ...fontFamily.serif],
         },
         typography: (theme) => ({
-          DEFAULT: {
-
-          },
-
+          DEFAULT: {},
         }),
       },
     },

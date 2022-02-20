@@ -11,6 +11,15 @@ class MyDocument extends Document {
             rel="stylesheet"
             href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
           />
+
+          <link
+            href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,200;0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap"
+            rel="stylesheet"
+          />
+          <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+          />
           <link href="/favicon.ico" rel="shortcut icon" />
           <link
             rel="apple-touch-icon"
@@ -57,7 +66,6 @@ class MyDocument extends Document {
           <meta content="#ffffff" name="theme-color" />
           <meta content="#ffffff" name="msapplication-TileColor" />
           <meta content="/browserconfig.xml" name="msapplication-config" />
-
         </Head>
         <body className="font-sans antialiased">
           <Main />

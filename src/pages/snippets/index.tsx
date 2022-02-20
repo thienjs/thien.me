@@ -28,7 +28,7 @@ export default function SnippetsPage({snippets, tags}) {
   return (
     <Layout>
       <Title>Snippets</Title>
-      <p className="text-neutral-600 dark:text-neutral-400 mb-8 text-sm">
+      <p className="text-neutral-600 dark:text-neutral-400 mb-8 text-sm font-serif">
         collection of useful code for reference
       </p>
       <div className="relative w-full">

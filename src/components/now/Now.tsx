@@ -23,11 +23,10 @@ export default function Now() {
   return (
     <>
       <div className="min-w-96 text-left">
-        <Title>Now</Title>
-        <h3 className="text-sm mb-8 text-neutral-900 dark:text-neutral-300">
-          what i'm up to now:
+        <h3 className="mt-20 mb-10 text-sm text-neutral-800 dark:text-neutral-300 font-semibold">
+          what I'm doing to now:
         </h3>
-        <ul className="text-sm text-left space-y-3 text-neutral-800 dark:text-neutral-300">
+        <ul className="text-sm text-left space-y-3 text-neutral-800 dark:text-neutral-300 font-serif">
           <li>- applying for my first tech job</li>
           <li>- taking more risks</li>
           <li>- walking Loki - my 8 month old puppy</li>
@@ -42,7 +41,8 @@ export default function Now() {
           <li>- staying active by working on my tennis game</li>
           <li>- starting to write meaningful and helpful blog posts</li>
           <li>
-            - listening to :{' '}{data?.songUrl ? (
+            - listening to :{' '}
+            {data?.songUrl ? (
               <a
                 className=""
                 href={data.songUrl}
@@ -52,9 +52,7 @@ export default function Now() {
                 {data.title}
               </a>
             ) : (
-              <span className="">
-                a lot of 70's music
-              </span>
+              <span className="">a lot of 70's music</span>
             )}
           </li>
         </ul>

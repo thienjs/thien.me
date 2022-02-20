@@ -45,7 +45,7 @@ export default function Hero() {
               (tee-en)
             </motion.div>
           </div>
-          <div className="mt-8 text-gray-800 dark:text-neutral-400 text-sm">
+          <div className="mt-8 text-gray-800 dark:text-neutral-400 text-md font-serif  ">
             <motion.div
               initial="hidden"
               animate="visible"
@@ -97,15 +97,16 @@ export default function Hero() {
                     about
                   </span>
                 </a>
-              </Link>
-             {' '} or what I'm doing{' '}
+              </Link>{' '}
+              or what I'm doing{' '}
               <Link href="/now">
                 <a className="relative before:absolute before:bg-cyan-500 before:opacity-50 before:bottom-0 before:left-0 before:h-full before:w-full before:origin-bottom before:scale-y-[0.35] hover:before:scale-y-100 before:transition-transform before:ease-in-out before:duration-500">
                   <span className="relative hover:text-gray-800 hover:dark:text-gray-200">
                     now
                   </span>
                 </a>
-              </Link>.
+              </Link>
+              .
             </motion.div>
             <motion.div
               initial="hidden"

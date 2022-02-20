@@ -44,15 +44,17 @@ const AboutPage = ({ reviews, currentlyReading }) => {
   return (
     <Layout>
       <div className="flex text-left   mb-5 mt-20 ">
-        <Image
-          src="https://github.com/thienjs.png"
-          alt="Profile"
-          priority={true}
-          className="rounded-full"
-          width={100}
-          height={100}
-        />
-        <div className="ml-6 mt-4">
+        <div className="w-16 h-16 mt-4 mr-4 ml-2 ">
+          <Image
+            src="https://github.com/thienjs.png"
+            alt="Profile"
+            priority={false}
+            className="rounded-md"
+            width={80}
+            height={80}
+          />
+        </div>
+        <div className="ml-2 mt-4">
           <h2 className="text-lg font-semibold dark:text-gray-300 text-neutral-800">
             Thien Tran
           </h2>
@@ -64,16 +66,16 @@ const AboutPage = ({ reviews, currentlyReading }) => {
           </p>
         </div>
       </div>
-      <div className=" dark:text-gray-200 mb-4 border p-4 rounded-lg border-neutral-300 dark:border-neutral-700 bg-zinc-300 dark:bg-zinc-900">
-        <p className="text-sm mb-2 text-neutral-600 dark:text-neutral-400">
+      <div className=" dark:text-gray-200 mb-4 border p-5 rounded-lg border-neutral-300 dark:border-neutral-700 bg-zinc-300 dark:bg-zinc-900 font-serif">
+        <p className=" mb-2 text-neutral-600 dark:text-neutral-400">
           I'm a self taught developer looking for my first job in tech. I have a
           passion for creating elegant, user friendly solutions using my problem
           solving abilities and design skills.
         </p>
-        <p className="text-sm mb-2 text-neutral-600 dark:text-neutral-400">
+        <p className="mb-2 text-neutral-600 dark:text-neutral-400">
           I want to create tools that will help users solve problems.
         </p>
-        <p className="text-sm mb-2 text-neutral-600 dark:text-neutral-400">
+        <p className="mb-2 text-neutral-600 dark:text-neutral-400">
           Outside of tech, I love tennis, guitar, skating, movies, and
           collecting gadgets.
         </p>

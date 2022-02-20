@@ -27,7 +27,7 @@ export default function Blog({articles, tags}) {
     return (
       <Layout>
         <Title>Blog</Title>
-        <p className="text-neutral-600 dark:text-neutral-400 mb-8 text-sm">
+        <p className="text-neutral-600 dark:text-neutral-400 mb-8 text-sm font-serif">
           This is where I write about programming, tech, life, and everything in
           between.
         </p>
