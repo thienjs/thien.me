@@ -16,9 +16,10 @@ export default function Nav() {
   const [isOpen, setisOpen] = React.useState()
   return (
     <nav className="flex items-center justify-between pb-4 w-full  max-w-sm md:max-w-2xl px-2 py-2 mt-4">
-      <Link href="/"><a >
-      <TBoxIcon className='w-6 h-6 mr-auto cursor-pointer'/>
-      </a>
+      <Link href="/">
+        <a>
+          <TBoxIcon className="w-6 h-6 mr-auto cursor-pointer" />
+        </a>
       </Link>
       <AnimateSharedLayout>
         <motion.ul
@@ -67,13 +68,13 @@ export default function Nav() {
           })}
         </motion.ul>
       </AnimateSharedLayout>
-      
-      <div className="flex ">
-        <div className="">
+
+      <div className="flex pt-1.5 ">
+        <div className="mt-1.5">
           <ThemeSwitch />
         </div>
         <div className="fixed"></div>
-        <DropMenu/>
+        <DropMenu />
       </div>
     </nav>
   )
