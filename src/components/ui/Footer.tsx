@@ -19,13 +19,12 @@ const Footer = () => {
   const router = useRouter()
   return (
     <div className="flex flex-col justify-center mt-40 ">
-      <FooterLinks />
-      <div className="py-6 px-4 justify-between flex flex-row mb-20">
-        <div className="text-sm mr-28 text-gray-600 dark:text-gray-500 ">
-          © Thien Tran {year}
+      <div className="py-6 flex flex-col  w-full content-center justify-center">
+        <div className="text-sm text-gray-600 dark:text-gray-500 font-serif mr-auto">
+          © Thien {year}
         </div>
 
-        <div className="flex space-x-1 ml-auto mt-0 text-gray-700 dark:text-gray-400 ">
+        {/* <div className="flex space-x-2 mt-0 text-gray-700 dark:text-gray-400 ">
           <a href="https://github.com/thienjs" rel="noopener noreferrer">
             <GithubIcon className="h-5 w-5  hover:text-purple-400" />
           </a>
@@ -47,7 +46,7 @@ const Footer = () => {
           >
             <SiBuymeacoffee className="h-4 w-4 hover:text-yellow-400" />
           </a>
-        </div>
+  </div>*/}
       </div>
     </div>
   )
