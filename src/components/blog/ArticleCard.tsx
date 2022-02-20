@@ -58,7 +58,7 @@ export function ArticleCard({ article }: Props) {
         <p className="pb-2 my-1 text-left text-gray-600 dark:text-gray-400  text-sm">
           {article.summary}
         </p>
-        <div className="flex flex-row space-x-3 flex-wrap mb-1">
+        <div className="flex flex-row gap-x-3 gap-y-1 flex-wrap mb-1">
           {article.tags.map((tag) => (
             <div className="mt-0.5 rounded-sm bg-zinc-200 dark:bg-zinc-700 px-3 opacity-80 text-xs text-gray-700 dark:text-gray-300">
               #{tag.name}
