@@ -7,7 +7,7 @@ import { useTheme } from 'next-themes'
 const ThemeSwitch = () => {
   const [isDark, mounted, setTheme] = useDarkTheme()
   return (
-    <div className=" ">
+    <div className="">
       {mounted ? (
         <Switch
           checked={isDark}

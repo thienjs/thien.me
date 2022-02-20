@@ -46,8 +46,12 @@ export default function DropMenu() {
     <Menu as="div" className="relative inline-block text-left z-10 ">
       <div>
         <Menu.Button>
-          <div className=" rounded-md hover:bg-zinc-300 dark:hover:bg-zinc-800 p-2">
-            {isOpen ? <Cross1Icon className='h-4 w-4'  /> : <HamburgerMenuIcon className='h-4 w-4'  />}
+          <div className=" rounded-md hover:bg-zinc-300 dark:hover:bg-zinc-800 p-2 -mt-1">
+            {isOpen ? (
+              <Cross1Icon className="h-4 w-4" />
+            ) : (
+              <HamburgerMenuIcon className="h-4 w-4" />
+            )}
           </div>
         </Menu.Button>
       </div>

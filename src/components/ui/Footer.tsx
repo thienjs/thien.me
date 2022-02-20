@@ -13,13 +13,14 @@ import { SiBuymeacoffee } from 'react-icons/si'
 import { navigation } from '~/data/nav'
 import UnstyledLink from './links/UnstyledLink'
 import { useRouter } from 'next/router'
+import ThemeSwitch from './ThemeSwitch'
 
 const Footer = () => {
   const year = new Date().getFullYear()
   const router = useRouter()
   return (
-    <div className="flex flex-col justify-center mt-40 ">
-      <div className="py-6 flex flex-col  w-full content-center justify-center">
+    <div className="w-full mt-20 max-w-sm md:max-w-md lg:max-w-lg mb-6">
+      <div className="flex flex-row  justify-between">
         <div className="text-sm text-gray-600 dark:text-gray-500 font-serif mr-auto">
           © Thien {year}
         </div>
@@ -47,6 +48,9 @@ const Footer = () => {
             <SiBuymeacoffee className="h-4 w-4 hover:text-yellow-400" />
           </a>
   </div>*/}
+        <div>
+          <ThemeSwitch />
+        </div>
       </div>
     </div>
   )
