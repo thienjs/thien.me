@@ -6,14 +6,13 @@ export default function Stats() {
   return (
     <Layout>
       <Title>Stats </Title>
-      <div className="flex flex-col  w-96">
+      <div className="flex flex-col">
         <TotalArticles />
-        <BlogViews/>
-        <TotalSnippets/>
+        <BlogViews />
+        <TotalSnippets />
         <GithubFollowers />
         <GithubStars />
         <TwitterFollowers />
-        <DiscordStatus />
       </div>
     </Layout>
   )
