@@ -19,10 +19,10 @@ const Footer = () => {
   const year = new Date().getFullYear()
   const router = useRouter()
   return (
-    <div className="w-full mt-20 max-w-sm md:max-w-md lg:max-w-lg mb-6">
-      <div className="flex flex-row  justify-between">
+    <div className="w-full mt-20 max-w-sm md:max-w-2xl mb-6">
+      <div className="flex flex-row  justify-between align-baseline">
         <div className="text-sm text-gray-600 dark:text-gray-500 font-serif mr-auto">
-          © Thien {year}
+          Thien © {year}
         </div>
 
         {/* <div className="flex space-x-2 mt-0 text-gray-700 dark:text-gray-400 ">
@@ -48,7 +48,7 @@ const Footer = () => {
             <SiBuymeacoffee className="h-4 w-4 hover:text-yellow-400" />
           </a>
   </div>*/}
-        <div>
+        <div className=" pb-6">
           <ThemeSwitch />
         </div>
       </div>

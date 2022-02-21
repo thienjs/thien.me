@@ -72,7 +72,7 @@ export default function Nav() {
             })}
           </motion.ul>
         </AnimateSharedLayout>
-        <div className="flex mt-1.5">
+        <div className="flex ">
           <DropMenu />
         </div>
       </div>

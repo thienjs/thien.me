@@ -1,7 +1,6 @@
 
 
 export const navigation = {
-
   pages: [
     { name: 'Blog', href: '/blog' },
     { name: 'Dashboard', href: '/dashboard' },
@@ -17,11 +16,6 @@ export const navigation = {
   ],
   navData: [
     {
-      path: '/',
-      label: 'home',
-    },
-    
-    {
       path: '/about',
       label: 'about',
     },
@@ -32,6 +26,10 @@ export const navigation = {
     {
       path: '/blog',
       label: 'blog',
+    },
+    {
+      path: '/guestbook',
+      label: 'guestbook',
     },
   ],
 }

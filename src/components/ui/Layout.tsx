@@ -12,7 +12,6 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
       </main>
       <Footer />
 
-      <ScrollToTop />
     </div>
   )
 }
