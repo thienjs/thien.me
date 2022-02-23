@@ -5,6 +5,7 @@ import {Tag} from '~/components/blog/Tag';
 import Layout from '~/components/ui/Layout';
 import { ArticleList } from '~/components/blog/ArticleList';
 import Title from '~/components/ui/typography/Title';
+import { motion } from 'framer-motion';
 
 export default function Blog({articles, tags}) {
     const [selectedTag, setSelectedTag] = useState<string>('');
@@ -27,11 +28,37 @@ export default function Blog({articles, tags}) {
     return (
       <Layout>
         <Title>Blog</Title>
-        <p className="text-neutral-600 dark:text-neutral-400 mb-8 text-sm font-serif">
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          transition={{ delay: 0.2, duration: 1 }}
+          variants={{
+            hidden: {
+              opacity: .5,
+              y: 10,
+            },
+            visible: {
+              opacity: 1,
+              y: 0,
+            },
+          }} className="text-neutral-600 dark:text-neutral-400 mb-8 text-sm font-serif">
           This is where I write about programming, tech, life, and everything in
           between.
-        </p>
-        <div className="relative w-full mb-4">
+        </motion.div>
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          transition={{ delay: 0.3, duration: 1 }}
+          variants={{
+            hidden: {
+              opacity: 0,
+              y: 30,
+            },
+            visible: {
+              opacity: 1,
+              y: 0,
+            },
+          }} className="relative w-full mb-4">
           <input
             aria-label="Search articles"
             type="text"
@@ -53,9 +80,22 @@ export default function Blog({articles, tags}) {
               d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
             />
           </svg>
-        </div>
+        </motion.div>
 
-        <div className=" flex items-center justify-start w-full   no-scrollbar">
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          transition={{ delay: 0.4, duration: 1 }}
+          variants={{
+            hidden: {
+              opacity: .1,
+              y: 40,
+            },
+            visible: {
+              opacity: 1,
+              y: 0,
+            },
+          }} className=" flex items-center justify-start w-full   no-scrollbar">
           <ul className=" rounded-md bg-zinc-100 py-2 dark:bg-zinc-800 mt-4">
             {/* Initial tag for all topics */}
             <Tag activeTag={selectedTag} tag="" cb={() => setSelectedTag('')} />
@@ -69,8 +109,21 @@ export default function Blog({articles, tags}) {
                 />
               ))}
           </ul>
-        </div>
-        <div className="mt-4">
+        </motion.div>
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          transition={{ delay: 0.5, duration: 1 }}
+          variants={{
+            hidden: {
+              opacity: 0,
+              y: 50,
+            },
+            visible: {
+              opacity: 1,
+              y: 0,
+            },
+          }} className="mt-4">
           {!filteredArticles.length && (
             <div className="">
               <p className="">
@@ -99,7 +152,7 @@ export default function Blog({articles, tags}) {
             </div>
           )}
           <ArticleList articles={filteredArticles} />
-        </div>
+        </motion.div>
       </Layout>
     )
 }

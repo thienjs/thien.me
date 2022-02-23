@@ -4,6 +4,7 @@ import { ContentPopover } from '~/components/guestbook';
 import { fetchGuestbookEntries } from '~/lib/queries';
 import { GuestbookContent } from '~/components/guestbook';
 import Title from '~/components/ui/typography/Title'
+import { motion } from 'framer-motion';
 
 export const getStaticProps = async () => {
   const data = await fetchGuestbookEntries();
@@ -29,9 +30,22 @@ const GuestBookPage = ({
         Guestbook
       </Title>
       <div>
-        <p className="text-neutral-600 dark:text-neutral-400 mb-8 text-sm font-serif">
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          transition={{ delay: 0.2, duration: 1 }}
+          variants={{
+            hidden: {
+              opacity: .5,
+              y: 10,
+            },
+            visible: {
+              opacity: 1,
+              y: 0,
+            },
+          }} className="text-neutral-600 dark:text-neutral-400 mb-8 text-sm font-serif">
           Thank you for visiting. Say hi!
-        </p>
+        </motion.div>
       </div>
       <ContentPopover />
       <GuestbookContent data={entries} />

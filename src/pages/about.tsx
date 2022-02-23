@@ -12,6 +12,7 @@ import NowPlaying from '~/components/music/NowPlaying'
 import TechStack from '~/components/about/TechStack'
 import Link from 'next/link'
 import Title from '~/components/ui/typography/Title'
+import { motion } from 'framer-motion'
 
 export type AboutProps = {
   reviews: Awaited<ReturnType<typeof getReviews>>
@@ -44,7 +45,20 @@ const AboutPage = ({ reviews, currentlyReading }) => {
   return (
     <Layout>
       <div className="flex text-left   mb-5 mt-20 ">
-        <div className="w-16 h-16 mt-4 mr-4 ml-2 ">
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          transition={{ delay: 1, duration: 1.6 }}
+          variants={{
+            hidden: {
+              opacity: 0,
+            },
+            visible: {
+              opacity: 1,
+            },
+          }}
+          className="w-16 h-16 mt-4 mr-4 ml-2 "
+        >
           <Image
             src="https://github.com/thienjs.png"
             alt="Profile"
@@ -53,20 +67,80 @@ const AboutPage = ({ reviews, currentlyReading }) => {
             width={80}
             height={80}
           />
-        </div>
+        </motion.div>
         <div className="ml-2 mt-4">
-          <h2 className="text-lg font-semibold dark:text-gray-300 text-neutral-800">
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            transition={{ delay: 0.1, duration: 1.2 }}
+            variants={{
+              hidden: {
+                opacity: .25,
+                y: 50,
+              },
+              visible: {
+                opacity: 1,
+                y: 0,
+              },
+            }}
+            className="text-lg font-semibold dark:text-gray-300 text-neutral-800"
+          >
             Thien Tran
-          </h2>
-          <p className="text-gray-600 dark:text-neutral-400 text-sm">
+          </motion.div>
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            transition={{ delay: 0.3, duration: 1.2 }}
+            variants={{
+              hidden: {
+                opacity: .25,
+                y: 50,
+              },
+              visible: {
+                opacity: 1,
+                y: 0,
+              },
+            }}
+            className="text-gray-600 dark:text-neutral-400 text-sm"
+          >
             Web Developer from Connecticut, USA
-          </p>
-          <p className="text-gray-500 dark:text-neutral-500 text-sm">
+          </motion.div>
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            transition={{ delay: 0.5, duration: 1.2 }}
+            variants={{
+              hidden: {
+                opacity: .25,
+                y: 50,
+              },
+              visible: {
+                opacity: 1,
+                y: 0,
+              },
+            }}
+            className="text-gray-500 dark:text-neutral-500 text-sm"
+          >
             hi@thien.me
-          </p>
+          </motion.div>
         </div>
       </div>
-      <div className=" dark:text-gray-200 mb-4 border p-5 rounded-lg border-neutral-300 dark:border-neutral-700 bg-zinc-300 dark:bg-zinc-900 font-serif">
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        transition={{ delay: 0.7, duration: 1.2 }}
+        variants={{
+          hidden: {
+            opacity: 0,
+            y: 100,
+          },
+          visible: {
+            opacity: 1,
+            y: 0,
+          },
+        }}
+        className=" dark:text-gray-200 mb-4 border p-5 rounded-lg border-neutral-300 dark:border-neutral-700 bg-zinc-300 dark:bg-zinc-900 font-serif"
+      >
         <p className=" mb-2 text-neutral-600 dark:text-neutral-400">
           I'm a self taught developer looking for my first job in tech. I have a
           passion for creating elegant, user friendly solutions using my problem
@@ -79,7 +153,7 @@ const AboutPage = ({ reviews, currentlyReading }) => {
           Outside of tech, I love tennis, guitar, skating, movies, and
           collecting gadgets.
         </p>
-      </div>
+      </motion.div>
 
       <h2 className="text-sm font-semibold text-gray-800 dark:text-gray-300 mt-10 mb-6">
         Contact

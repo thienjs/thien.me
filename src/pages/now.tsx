@@ -2,6 +2,7 @@ import Layout from 'components/ui/Layout'
 import Title from 'components/ui/typography/Title'
 import { fetcher } from '~/lib/fetcher'
 import { NowPlayingSong } from '~/lib/types'
+import { motion } from 'framer-motion'
 import {
   TotalPosts,
   BlogViews,
@@ -11,6 +12,28 @@ import {
   TwitterFollowers,
 } from '~/components/now'
 import useSWR from 'swr'
+
+export const NowItem = ({ children }) => {
+  return (
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      transition={{ delay: 0.3, duration: 0.7 }}
+      variants={{
+        hidden: {
+          opacity: .1,
+          y: 20,
+        },
+        visible: {
+          opacity: 1,
+          y: 0,
+        },
+      }}
+    >
+      {children}
+    </motion.div>
+  )
+}
 
 export default function NowPage() {
   var year = new Date().getFullYear()
@@ -31,30 +54,63 @@ export default function NowPage() {
   return (
     <Layout>
       <div className="min-w-96 text-left">
-        <h3 className="mt-20 mb-10 text-sm text-neutral-800 dark:text-neutral-300 font-semibold">
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          transition={{ delay: 0.1, duration: 1 }}
+          variants={{
+            hidden: {
+              opacity: 0,
+              y: 20,
+            },
+            visible: {
+              opacity: 1,
+              y: 0,
+            },
+          }}
+          className="mt-20 mb-10 text-sm text-neutral-800 dark:text-neutral-300 font-semibold"
+        >
           What I'm up to now:
-        </h3>
+        </motion.div>
         <ul className="text-sm text-left space-y-3 text-neutral-800 dark:text-neutral-300 font-serif">
-          <li>- applying for my first tech job</li>
-          <li>- taking more risks</li>
-          <li>- walking Loki - my 9 month old puppy</li>
-          <li>
+          <NowItem>- applying for my first tech job</NowItem>
+          <NowItem>- taking more risks</NowItem>
+          <NowItem>- walking Loki - my 9 month old puppy</NowItem>
+          <NowItem>
             - focusing on getting better at React, Nextjs, Typescript, API's
-          </li>
-          <li>- diving deep into typography, fonts, icons, and spacing</li>
-          <li>- learning spanish (slowly)</li>
-          <li>- reading/listening to books when I can</li>
-          <li>- staying active by working on my tennis game</li>
-          <li>- connecting with other developers on github and twitter</li>
-          <p className="ml-6">- github followers: {<GithubFollowers />}</p>
-          <p className="ml-6">- github stars: {<GithubStars />}</p>
-          <p className="ml-6">- twitter followers: {<TwitterFollowers />}</p>
-          <li>- attempting to write more meaningful and helpful blog posts</li>
-          <p className="ml-6">- blog posts: {<TotalPosts />}</p>
-          <p className="ml-6">- blog views: {<BlogViews />} </p>
-          <p className="ml-6">- snippets: {<TotalSnippets />} </p>
-          <li>
-            - listening to:{' '}
+          </NowItem>
+          <NowItem>
+            - diving deep into typography, fonts, icons, and spacing
+          </NowItem>
+          <NowItem>- learning spanish (slowly)</NowItem>
+          <NowItem>- reading/NowItemstening to books when I can</NowItem>
+          <NowItem>- staying active by working on my tennis game</NowItem>
+          <NowItem>
+            - connecting with other developers on github and twitter
+          </NowItem>
+          <NowItem>
+            <p className="ml-6">- github followers: {<GithubFollowers />}</p>
+          </NowItem>
+          <NowItem>
+            <p className="ml-6">- github stars: {<GithubStars />}</p>
+          </NowItem>
+          <NowItem>
+            <p className="ml-6">- twitter followers: {<TwitterFollowers />}</p>
+          </NowItem>
+          <NowItem>
+            - attempting to write more meaningful and helpful blog posts
+          </NowItem>
+          <NowItem>
+            <p className="ml-6">- blog posts: {<TotalPosts />}</p>
+          </NowItem>
+          <NowItem>
+            <p className="ml-6">- blog views: {<BlogViews />} </p>
+          </NowItem>
+          <NowItem>
+            <p className="ml-6">- snippets: {<TotalSnippets />} </p>
+          </NowItem>
+          <NowItem>
+            - NowItemstening to:{' '}
             {data?.songUrl ? (
               <a
                 className=""
@@ -67,7 +123,7 @@ export default function NowPage() {
             ) : (
               <span className="">a lot of 70's music</span>
             )}
-          </li>
+          </NowItem>
         </ul>
         <div className="mt-32 text-xs text-neutral-700 dark:text-neutral-400">
           this page was automatically updated @ {month}.{date}.{year}.{'   '}{' '}

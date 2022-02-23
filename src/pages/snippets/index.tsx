@@ -5,6 +5,7 @@ import {Tag} from '~/components/blog/Tag';
 import Layout from '~/components/ui/Layout';
 import { SnippetList } from '~/components/snippets/SnippetList';
 import Title from '~/components/ui/typography/Title';
+import { motion } from 'framer-motion';
 
 export default function SnippetsPage({snippets, tags}) {
   const [selectedTag, setSelectedTag] = useState<string>('');
@@ -28,9 +29,21 @@ export default function SnippetsPage({snippets, tags}) {
   return (
     <Layout>
       <Title>Snippets</Title>
-      <p className="text-neutral-600 dark:text-neutral-400 mb-8 text-sm font-serif">
+      <motion.div initial="hidden"
+          animate="visible"
+          transition={{ delay: 0.2, duration: 1 }}
+          variants={{
+            hidden: {
+              opacity: .5,
+              y: 10,
+            },
+            visible: {
+              opacity: 1,
+              y: 0,
+            },
+          }} className="text-neutral-600 dark:text-neutral-400 mb-8 text-sm font-serif">
         collection of useful code for reference
-      </p>
+      </motion.div>
       <div className="relative w-full">
         <input
           aria-label="Search snippets"
