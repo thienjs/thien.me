@@ -48,7 +48,7 @@ const Footer = () => {
             <SiBuymeacoffee className="h-4 w-4 hover:text-yellow-400" />
           </a>
   </div>*/}
-        <div className=" pb-6">
+        <div className=" pb-6 mr-2 mb-10">
           <ThemeSwitch />
         </div>
       </div>

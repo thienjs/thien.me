@@ -39,10 +39,9 @@ export default function NowPage() {
           <li>- taking more risks</li>
           <li>- walking Loki - my 9 month old puppy</li>
           <li>
-            - focusing on getting better at React, Nextjs, Typescript, and
-            communicating with backends
+            - focusing on getting better at React, Nextjs, Typescript, API's
           </li>
-          <li>- solidifying my fudamentals of javascript, css, and html</li>
+          <li>- diving deep into typography, fonts, icons, and spacing</li>
           <li>- learning spanish (slowly)</li>
           <li>- reading/listening to books when I can</li>
           <li>- staying active by working on my tennis game</li>
