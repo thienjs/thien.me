@@ -54,7 +54,7 @@ export default function NowPage() {
           <p className="ml-6">- blog views: {<BlogViews />} </p>
           <p className="ml-6">- snippets: {<TotalSnippets />} </p>
           <li>
-            - listening to :{' '}
+            - listening to:{' '}
             {data?.songUrl ? (
               <a
                 className=""
