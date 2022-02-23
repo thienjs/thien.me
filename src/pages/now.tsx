@@ -110,7 +110,7 @@ export default function NowPage() {
             <p className="ml-6">- snippets: {<TotalSnippets />} </p>
           </NowItem>
           <NowItem>
-            - NowItemstening to:{' '}
+            - listening to:{' '}
             {data?.songUrl ? (
               <a
                 className=""
