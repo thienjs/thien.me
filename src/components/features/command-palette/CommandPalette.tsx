@@ -1,10 +1,11 @@
 import { Dialog, Combobox, Transition } from '@headlessui/react'
 import { useState, useEffect, Fragment } from 'react'
 import { SearchIcon } from '@heroicons/react/outline'
-import { projects } from '~/data/projects'
-import { useRouter } from 'next/router'
 
-export default function CommandPalette({ projects: ProjectProp }) {
+import { useRouter } from 'next/router'
+import { navigation } from '~/data/nav'
+
+export default function CommandPalette({ navigation }) {
   const router = useRouter()
   const [isOpen, setIsOpen] = useState(false)
   const [query, setQuery] = useState('')
@@ -21,9 +22,9 @@ export default function CommandPalette({ projects: ProjectProp }) {
     }
   }, [isOpen])
 
-  const filteredProjects = query
-    ? projects.filter((project) =>
-        project.title.toLowerCase().includes(query.toLocaleLowerCase())
+  const filterednavigation = query
+    ? navigation.pages.filter((page) =>
+        page.name.toLowerCase().includes(query.toLocaleLowerCase())
       )
     : []
   return (
@@ -53,9 +54,9 @@ export default function CommandPalette({ projects: ProjectProp }) {
         >
         <Combobox
           value=""
-          onChange={(project: any) => {
+          onChange={(page: any) => {
             setIsOpen(false)
-            router.push(`${project.live}`)
+            router.push(`${page.href}`)
           }}
           as="div"
           className="relative dark:bg-zinc-800 bg-zinc-200 max-w-xl mx-auto rounded-xl shadow-2xl ring-1 ring-black/5 divide-y divide-gray-300 overflow-hidden"
@@ -70,13 +71,13 @@ export default function CommandPalette({ projects: ProjectProp }) {
               placeholder="Search..."
             />
           </div>
-          {filteredProjects.length > 0 && (
+          {filterednavigation.length > 0 && (
             <Combobox.Options
               static
               className="py-4 text-sm max-h-30 overflow-y-auto"
             >
-              {filteredProjects.map((project) => (
-                <Combobox.Option key={project.title} value={project}>
+              {filterednavigation.map((page) => (
+                <Combobox.Option key={page.name} value={page}>
                   {({ active }) => (
                     <div
                       className={`px-4 py-2 space-x-1 ${
@@ -90,7 +91,7 @@ export default function CommandPalette({ projects: ProjectProp }) {
                             : 'text-neutral-900 dark:text-neutral-200'
                         }`}
                       >
-                        {project.title}
+                        {page.name}
                       </span>
                       <span
                         className={`  ${
@@ -99,7 +100,7 @@ export default function CommandPalette({ projects: ProjectProp }) {
                             : 'text-neutral-500 dark:text-neutral-800'
                         }`}
                       >
-                        {project.repo}
+                        {page.repo}
                       </span>
                     </div>
                   )}
@@ -107,7 +108,7 @@ export default function CommandPalette({ projects: ProjectProp }) {
               ))}
             </Combobox.Options>
           )}
-          {query && filteredProjects.length === 0 && (
+          {query && filterednavigation.length === 0 && (
             <p className="p-4 text-sm text-gray-500">no results found</p>
           )}
         </Combobox>

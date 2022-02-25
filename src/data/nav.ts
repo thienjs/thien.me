@@ -2,7 +2,11 @@
 
 export const navigation = {
   pages: [
+    { name: 'Home', href: '/home' },
     { name: 'Blog', href: '/blog' },
+    { name: 'Now', href: '/now' },
+    { name: 'Todo', href: '/todo' },
+    { name: 'Stats', href: '/stats' },
     { name: 'Dashboard', href: '/dashboard' },
     { name: 'Snippets', href: '/snippets' },
     { name: 'About', href: '/about' },

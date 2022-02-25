@@ -10,7 +10,7 @@ import { MessageProvider } from '~/lib/message'
 import Progress from '~/components/ui/NProgress'
 import { SessionProvider } from 'next-auth/react'
 import { useEffect } from 'react'
-import { projects } from '~/data/projects';
+import { navigation } from '~/data/nav';
 import SEO from '../../next-seo.config'
 
 import { ThemeProvider } from 'next-themes'
@@ -35,7 +35,7 @@ export default function App({
         <SessionProvider session={session}>
           <ThemeProvider attribute="class">
             <Component {...pageProps} />
-            <CommandPalette projects={projects}/>
+            <CommandPalette navigation={navigation}/>
             <Progress />
           </ThemeProvider>
         </SessionProvider>
