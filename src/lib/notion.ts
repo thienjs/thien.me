@@ -1,31 +1,31 @@
-import { Client } from "@notionhq/client";
-import { QueryDatabaseResponse } from '@notionhq/client/build/src/api-endpoints';
-import { equal } from "assert";
-import slugify from 'slugify';
+import { Client } from '@notionhq/client'
+import { QueryDatabaseResponse } from '@notionhq/client/build/src/api-endpoints'
+import { equal } from 'assert'
+import slugify from 'slugify'
 
 const notion = new Client({
   auth: process.env.NOTION_TOKEN,
-});
+})
 
 export const getDatabase = async (databaseId) => {
   const response = await notion.databases.query({
     database_id: databaseId,
-  });
-  return response.results;
-};
+  })
+  return response.results
+}
 
 export const getPage = async (pageId) => {
-  const response = await notion.pages.retrieve({ page_id: pageId });
-  return response;
-};
+  const response = await notion.pages.retrieve({ page_id: pageId })
+  return response
+}
 
 export const getBlocks = async (blockId) => {
   const response = await notion.blocks.children.list({
     block_id: blockId,
     page_size: 50,
-  });
-  return response.results;
-};
+  })
+  return response.results
+}
 
 export const getPublishedArticles = async (databaseId) => {
   const response = await notion.databases.query({
@@ -69,12 +69,11 @@ export const getMovies = async (databaseId) => {
   const response = await notion.databases.query({
     database_id: databaseId,
     filter: {
-      property: "Watched",
+      property: 'Watched',
       checkbox: {
-        equals: false
-      }
-    }
-
+        equals: false,
+      },
+    },
   })
 
   return response.results
@@ -85,90 +84,90 @@ export const getPublishedSnippets = async (databaseId) => {
     filter: {
       property: 'Status',
       select: {
-        equals: 'published'
-      }
+        equals: 'published',
+      },
     },
     sorts: [
       {
         property: 'Published',
-        direction: 'descending'
-      }
-    ]
-  });
+        direction: 'descending',
+      },
+    ],
+  })
 
-  return response.results;
-};
+  return response.results
+}
 
 export const getArticlePage = (data, slug) => {
   const response = data.find((result) => {
     if (result.object === 'page') {
       const resultSlug = slugify(
         result.properties.Name.title[0].plain_text
-      ).toLowerCase();
-      return resultSlug === slug;
+      ).toLowerCase()
+      return resultSlug === slug
     }
-    return false;
-  });
+    return false
+  })
 
-  return response;
-};
+  return response
+}
 export const getSnippetPage = (data, slug) => {
   const response = data.find((result) => {
     if (result.object === 'page') {
       const resultSlug = slugify(
         result.properties.Name.title[0].plain_text
-      ).toLowerCase();
-      return resultSlug === slug;
+      ).toLowerCase()
+      return resultSlug === slug
     }
-    return false;
-  });
+    return false
+  })
 
-  return response;
-};
+  return response
+}
 
 export const convertToArticleList = (tableData: any) => {
-  let tags: string[] = [];
+  let tags: string[] = []
   const articles = tableData.map((article: any) => {
     return {
       title: article.properties.Name.title[0].plain_text,
       tags: article.properties.tags.multi_select.map((tag) => {
         if (!tags.includes(tag.name)) {
-          const newList = [...tags, tag.name];
-          tags = newList;
+          const newList = [...tags, tag.name]
+          tags = newList
         }
-        return { name: tag.name, id: tag.id };
+        return { name: tag.name, id: tag.id }
       }),
       coverImage:
         article.properties?.coverImage?.files[0]?.file?.url ||
         article.properties.coverImage?.files[0]?.external?.url ||
         'https://via.placeholder.com/600x400.png',
       publishedDate: article.properties.Published.date.start,
-      summary: article.properties?.Summary.rich_text[0]?.plain_text
-    };
-  });
+      summary: article.properties?.Summary.rich_text[0]?.plain_text,
+    }
+  })
 
-  return { articles, tags };
-};
+  return { articles, tags }
+}
 export const convertToSnippetList = (tableData: any) => {
-  let tags: string[] = [];
+  let tags: string[] = []
   const snippets = tableData.map((snippet: any) => {
     return {
       title: snippet.properties.Name.title[0].plain_text,
       tags: snippet.properties.tags.multi_select.map((tag) => {
         if (!tags.includes(tag.name)) {
-          const newList = [...tags, tag.name];
-          tags = newList;
+          const newList = [...tags, tag.name]
+          tags = newList
         }
-        return { name: tag.name, id: tag.id };
+        return { name: tag.name, id: tag.id }
       }),
       coverImage:
         snippet.properties?.coverImage?.files[0]?.file?.url ||
         snippet.properties.coverImage?.files[0]?.external?.url ||
         'https://via.placeholder.com/600x400.png',
       publishedDate: snippet.properties.Published.date.start,
-      summary: snippet.properties?.Summary.rich_text[0]?.plain_text
-    };
-  });
+      summary: snippet.properties?.Summary.rich_text[0]?.plain_text,
+    }
+  })
 
-  return { snippets, tags };
-};
+  return { snippets, tags }
+}

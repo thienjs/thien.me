@@ -1,27 +1,27 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react'
 
-import copy from 'copy-to-clipboard';
+import copy from 'copy-to-clipboard'
 
 // By default will copy URL to clipboard if text is not passed to the hook.
 export function useCopyToClipboard(resetInterval = 3000, text = null) {
-  const [isCopied, setCopied] = useState(false);
+  const [isCopied, setCopied] = useState(false)
 
   const handleCopy = useCallback(() => {
     if (window !== undefined) {
-      copy(text ?? window.location.href);
-      setCopied(true);
+      copy(text ?? window.location.href)
+      setCopied(true)
     }
-  }, []);
+  }, [])
 
   useEffect(() => {
-    let timeout;
+    let timeout
     if (isCopied && resetInterval) {
-      timeout = setTimeout(() => setCopied(false), resetInterval);
+      timeout = setTimeout(() => setCopied(false), resetInterval)
     }
     return () => {
-      clearTimeout(timeout);
-    };
-  }, [isCopied, resetInterval]);
+      clearTimeout(timeout)
+    }
+  }, [isCopied, resetInterval])
 
-  return [isCopied, handleCopy] as const;
+  return [isCopied, handleCopy] as const
 }

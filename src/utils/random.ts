@@ -1,9 +1,9 @@
 const getRandomInitials = () => {
   return Math.random()
     .toString(36)
-    .replace(/[^a-z]+/g, "")
+    .replace(/[^a-z]+/g, '')
     .substring(0, 2)
-    .toUpperCase();
-};
+    .toUpperCase()
+}
 
-export { getRandomInitials };
+export { getRandomInitials }

@@ -1,4 +1,4 @@
-import useArticleReactions from '~/lib/hooks/useArticleReactions';
+import useArticleReactions from '~/lib/hooks/useArticleReactions'
 
 const Reactions = ({ slug }) => {
   const {
@@ -14,11 +14,11 @@ const Reactions = ({ slug }) => {
     handleIncrementClap,
     handleDecrementClap,
     handleIncrementParty,
-    handleDecrementParty
-  } = useArticleReactions(slug);
+    handleDecrementParty,
+  } = useArticleReactions(slug)
 
   return (
-    <div className="grid grid-cols-4 md:grid-cols-2 gap-6 justify-between items-center mt-6">
+    <div className="mt-6 grid grid-cols-4 items-center justify-between gap-6 md:grid-cols-2">
       <ReactionCard
         isActive={hasLiked}
         incrementCB={handleIncrementLike}
@@ -59,10 +59,10 @@ const Reactions = ({ slug }) => {
         <span className="text-sm uppercase">PARTY</span>
       </ReactionCard>
     </div>
-  );
-};
+  )
+}
 
-export default Reactions;
+export default Reactions
 
 function ReactionCard({ isActive, incrementCB, decrementCB, children }) {
   return (
@@ -73,9 +73,9 @@ function ReactionCard({ isActive, incrementCB, decrementCB, children }) {
         isActive
           ? 'bg-gray-300 dark:bg-gray-800'
           : 'bg-gray-100 dark:bg-zinc-700'
-      } flex-1 py-4 rounded-md flex flex-col items-center general-ring-state`}
+      } general-ring-state flex flex-1 flex-col items-center rounded-md py-4`}
     >
       {children}
     </div>
-  );
+  )
 }

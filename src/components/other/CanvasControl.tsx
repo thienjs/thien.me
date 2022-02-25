@@ -1,22 +1,22 @@
-import { FaCheckCircle, FaTrashAlt } from "react-icons/fa";
+import { FaCheckCircle, FaTrashAlt } from 'react-icons/fa'
 interface ControlProps {
-  clearCanvas: () => void;
-  color: string;
-  setColor: (color: string) => void;
+  clearCanvas: () => void
+  color: string
+  setColor: (color: string) => void
 }
 const colorList = [
-  "rgba(255, 0, 0, 0.5)",
-  "rgba(0, 255, 0, 0.5)",
-  "rgba(0, 0, 255, 0.5)",
-];
+  'rgba(255, 0, 0, 0.5)',
+  'rgba(0, 255, 0, 0.5)',
+  'rgba(0, 0, 255, 0.5)',
+]
 const CanvasControl = ({ clearCanvas, color, setColor }: ControlProps) => {
   return (
-    <div className="flex fixed items-center p-2 z-50 top-[10%] md:top-[unset] bg-gray-100 dark:bg-light rounded-full right-1">
+    <div className="dark:bg-light fixed top-[10%] right-1 z-50 flex items-center rounded-full bg-gray-100 p-2 md:top-[unset]">
       <div className="flex flex-col space-y-2">
         {colorList.map((data, key) => (
           <button
             onClick={() => setColor(data)}
-            className="rounded-full w-8 h-8"
+            className="h-8 w-8 rounded-full"
             key={key}
             style={{ backgroundColor: data }}
             aria-label="Change brush color"
@@ -26,16 +26,16 @@ const CanvasControl = ({ clearCanvas, color, setColor }: ControlProps) => {
         ))}
         <button
           onClick={() => {
-            clearCanvas();
+            clearCanvas()
           }}
-          className="rounded-full w-8 h-8 bg-gray-200 dark:bg-dark"
+          className="dark:bg-dark h-8 w-8 rounded-full bg-gray-200"
           aria-label="Clear doodle"
         >
           <FaTrashAlt className="mx-auto" />
         </button>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default CanvasControl;
+export default CanvasControl

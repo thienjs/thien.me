@@ -3,7 +3,7 @@ import type { GetStaticProps } from 'next'
 import { useState } from 'react'
 import Layout from '~/components/ui/Layout'
 import { getMovies } from '~/lib/notion'
-import axios from "axios";
+import axios from 'axios'
 import { MovieCard } from '~/components/hobby/MovieCard'
 import Title from '~/components/ui/typography/Title'
 
@@ -14,14 +14,14 @@ const MoviesPage = ({ movies }) => {
     setMovie(movies[randomNumber])
   }
   const handleUpdate = async () => {
-    const { data } = await axios.post("/api/mark-as-watched", {
+    const { data } = await axios.post('/api/mark-as-watched', {
       id: movie.id,
       isWatched: true,
-    });
-  
-    console.log(data);
-  };
-  
+    })
+
+    console.log(data)
+  }
+
   return (
     <Layout>
       <Title>Movies</Title>

@@ -1,15 +1,15 @@
 export function classNames(...classes: string[]): string {
-  return classes.filter(Boolean).join(' ');
+  return classes.filter(Boolean).join(' ')
 }
 
 type OpenGraphType = {
-  siteName: string;
-  description: string;
-  templateTitle?: string;
-  logo?: string;
-  banner?: string;
-  isBlog?: boolean;
-};
+  siteName: string
+  description: string
+  templateTitle?: string
+  logo?: string
+  banner?: string
+  isBlog?: boolean
+}
 export function openGraph({
   siteName,
   templateTitle,
@@ -18,22 +18,22 @@ export function openGraph({
   logo = 'https://og.thcl.dev/images/logo.jpg',
   isBlog = false,
 }: OpenGraphType): string {
-  const ogLogo = encodeURIComponent(logo);
-  const ogSiteName = encodeURIComponent(siteName.trim());
+  const ogLogo = encodeURIComponent(logo)
+  const ogSiteName = encodeURIComponent(siteName.trim())
   const ogTemplateTitle = templateTitle
     ? encodeURIComponent(templateTitle.trim())
-    : undefined;
-  const ogDesc = encodeURIComponent(description.trim());
+    : undefined
+  const ogDesc = encodeURIComponent(description.trim())
 
   if (isBlog) {
-    const ogBanner = banner ? encodeURIComponent(banner.trim()) : undefined;
+    const ogBanner = banner ? encodeURIComponent(banner.trim()) : undefined
 
-    return `https://og.thcl.dev/api/blog?templateTitle=${ogTemplateTitle}&banner=${ogBanner}`;
+    return `https://og.thcl.dev/api/blog?templateTitle=${ogTemplateTitle}&banner=${ogBanner}`
   }
 
   return `https://og.thcl.dev/api/gradient?siteName=${ogSiteName}&description=${ogDesc}&logo=${ogLogo}${
     ogTemplateTitle ? `&templateTitle=${ogTemplateTitle}` : ''
-  }`;
+  }`
 }
 
 /**
@@ -41,25 +41,25 @@ export function openGraph({
  */
 export const cleanBlogPrefix = (slug: string) => {
   if (slug.slice(0, 3) === 'id-') {
-    return slug.slice(3);
+    return slug.slice(3)
   } else {
-    return slug;
+    return slug
   }
-};
+}
 
 /**
  * Access session storage on browser
  */
 export function getFromSessionStorage(key: string) {
   if (typeof sessionStorage !== 'undefined') {
-    return sessionStorage.getItem(key);
+    return sessionStorage.getItem(key)
   }
-  return null;
+  return null
 }
 
 export function getFromLocalStorage(key: string) {
   if (typeof localStorage !== 'undefined') {
-    return localStorage.getItem(key);
+    return localStorage.getItem(key)
   }
-  return null;
+  return null
 }

@@ -1,4 +1,3 @@
-
 import {
   ApolloClient,
   InMemoryCache,
@@ -67,8 +66,8 @@ export default function HomePage({
       subtitle={r.author}
       url={r.url}
       leftPanel={
-        <div className="flex text-xs font-bold leading-6 text-subtitle items-center">
-          {r.rating} <FaStar className="text-yellow-500 ml-1" />
+        <div className="text-subtitle flex items-center text-xs font-bold leading-6">
+          {r.rating} <FaStar className="ml-1 text-yellow-500" />
         </div>
       }
     />
@@ -82,15 +81,15 @@ export default function HomePage({
       <div className="mt-6 mb-20"></div>
       <Title>Blog</Title>
       <Tab.Group>
-        <Tab.List className="flex p-1 space-x-1   py-2  mb-3">
+        <Tab.List className="mb-3 flex space-x-1   p-1  py-2">
           <Tab
             className={({ selected }) =>
               classNames(
                 'w-full py-2.5 text-sm leading-5 text-gray-700 dark:text-gray-200',
                 'focus:outline-none',
                 selected
-                  ? ' dark:text-gray-100 font-medium  border-b border-neutral-400 dark:border-neutral-700'
-                  : 'text-neutral-500 dark:text-neutral-600  hover:text-neutral-700 dark:hover:text-neutral-400'
+                  ? ' border-b border-neutral-400  font-medium dark:border-neutral-700 dark:text-gray-100'
+                  : 'text-neutral-500 hover:text-neutral-700  dark:text-neutral-600 dark:hover:text-neutral-400'
               )
             }
           >
@@ -102,8 +101,8 @@ export default function HomePage({
                 'w-full py-2.5 text-sm leading-5 text-gray-700 dark:text-gray-200',
                 'focus:outline-none',
                 selected
-                  ? ' dark:text-gray-100 font-medium  border-b border-neutral-400 dark:border-neutral-700'
-                  : 'text-neutral-500 dark:text-neutral-600  hover:text-neutral-700 dark:hover:text-neutral-400'
+                  ? ' border-b border-neutral-400  font-medium dark:border-neutral-700 dark:text-gray-100'
+                  : 'text-neutral-500 hover:text-neutral-700  dark:text-neutral-600 dark:hover:text-neutral-400'
               )
             }
           >
@@ -115,8 +114,8 @@ export default function HomePage({
                 'w-full py-2.5 text-sm leading-5 text-gray-700 dark:text-gray-200',
                 'focus:outline-none',
                 selected
-                  ? ' dark:text-gray-100 font-medium  border-b border-neutral-400 dark:border-neutral-700'
-                  : 'text-neutral-500 dark:text-neutral-600  hover:text-neutral-700 dark:hover:text-neutral-400'
+                  ? ' border-b border-neutral-400  font-medium dark:border-neutral-700 dark:text-gray-100'
+                  : 'text-neutral-500 hover:text-neutral-700  dark:text-neutral-600 dark:hover:text-neutral-400'
               )
             }
           >
@@ -134,7 +133,7 @@ export default function HomePage({
             <ArticleList articles={tabTwoArticles} />
           </Tab.Panel>
         </Tab.Panels>
-        <div className="flex justify-end mt-4 mr-2">
+        <div className="mt-4 mr-2 flex justify-end">
           <ArrowLink href="/blog" className="mb-12">
             more posts
           </ArrowLink>
@@ -151,7 +150,7 @@ export default function HomePage({
             ))}
           </div>
         </div>
-        <div className="flex justify-end mt-4 mr-2 mb-12">
+        <div className="mt-4 mr-2 mb-12 flex justify-end">
           <ArrowLink href="/repo" className="">
             all repos
           </ArrowLink>
@@ -160,15 +159,15 @@ export default function HomePage({
 
       <Title>Hobbies</Title>
       <Tab.Group>
-        <Tab.List className="flex p-1 space-x-1  py-2  mb-3">
+        <Tab.List className="mb-3 flex space-x-1  p-1  py-2">
           <Tab
             className={({ selected }) =>
               classNames(
                 'w-full py-2.5 text-sm leading-5 text-gray-700 dark:text-gray-200',
                 'focus:outline-none',
                 selected
-                  ? ' dark:text-gray-100 font-medium  border-b border-neutral-400 dark:border-neutral-700'
-                  : 'text-neutral-500 dark:text-neutral-600  hover:text-neutral-700 dark:hover:text-neutral-400'
+                  ? ' border-b border-neutral-400  font-medium dark:border-neutral-700 dark:text-gray-100'
+                  : 'text-neutral-500 hover:text-neutral-700  dark:text-neutral-600 dark:hover:text-neutral-400'
               )
             }
           >
@@ -180,8 +179,8 @@ export default function HomePage({
                 'w-full py-2.5 text-sm leading-5 text-gray-700 dark:text-gray-200',
                 'focus:outline-none',
                 selected
-                  ? ' dark:text-gray-100 font-medium  border-b border-neutral-400 dark:border-neutral-700'
-                  : 'text-neutral-500 dark:text-neutral-600  hover:text-neutral-700 dark:hover:text-neutral-400'
+                  ? ' border-b border-neutral-400  font-medium dark:border-neutral-700 dark:text-gray-100'
+                  : 'text-neutral-500 hover:text-neutral-700  dark:text-neutral-600 dark:hover:text-neutral-400'
               )
             }
           >
@@ -216,7 +215,7 @@ export default function HomePage({
       <Title>Guestbook</Title>
 
       <Entry />
-      <div className="flex justify-end mt-4 mr-2">
+      <div className="mt-4 mr-2 flex justify-end">
         <ArrowLink href="/guestbook" className="">
           see what others wrote
         </ArrowLink>
@@ -304,5 +303,3 @@ export const getStaticProps: GetStaticProps = async () => {
     revalidate: 120,
   }
 }
-
-

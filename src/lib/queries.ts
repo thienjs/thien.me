@@ -1,7 +1,7 @@
-import { prisma } from './prisma';
+import { prisma } from './prisma'
 
-export type ThenArg<T> = T extends PromiseLike<infer U> ? U : T;
-export type GuestBookAll = ThenArg<ReturnType<typeof fetchGuestbookEntries>>;
+export type ThenArg<T> = T extends PromiseLike<infer U> ? U : T
+export type GuestBookAll = ThenArg<ReturnType<typeof fetchGuestbookEntries>>
 
 export const fetchGuestbookEntries = async () => {
   const entries = await prisma.guestbook.findMany({
@@ -9,5 +9,5 @@ export const fetchGuestbookEntries = async () => {
       createdAt: 'desc',
     },
   })
-  return entries;
-};
+  return entries
+}

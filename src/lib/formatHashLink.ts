@@ -1,5 +1,5 @@
 export function formatHashLink(slug: string) {
   if (typeof window !== 'undefined') {
-    return slug.toLowerCase().replace(/ /g, '-');
+    return slug.toLowerCase().replace(/ /g, '-')
   }
 }

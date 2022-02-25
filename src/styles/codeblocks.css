@@ -17,7 +17,7 @@ pre[class*='language-'] {
 
 .prose code {
   /* Inline code blocks */
-  @apply bg-indigo-50 dark:bg-indigo-900 dark:bg-opacity-50 text-indigo-500 dark:text-indigo-200 py-0.5 px-2 rounded mx-1 inline-block align-middle tracking-tight text-base;
+  @apply mx-1 inline-block rounded bg-indigo-50 py-0.5 px-2 align-middle text-base tracking-tight text-indigo-500 dark:bg-indigo-900 dark:bg-opacity-50 dark:text-indigo-200;
 }
 
 .prose img {
@@ -96,7 +96,7 @@ pre {
 }
 
 .highlight-line {
-  @apply block px-4 -mx-4 bg-gray-100 border-l-4 border-blue-500 dark:bg-gray-800;
+  @apply -mx-4 block border-l-4 border-blue-500 bg-gray-100 px-4 dark:bg-gray-800;
 }
 
 /* Remove Safari input shadow on mobile */
@@ -117,7 +117,7 @@ input[type='email'] {
 }
 
 .language-tab pre[class*='language-']::before {
-  @apply absolute right-0 px-4 py-1 text-sm text-right uppercase rounded-t-lg text-gray-500 dark:text-gray-300 -top-6;
+  @apply absolute right-0 -top-6 rounded-t-lg px-4 py-1 text-right text-sm uppercase text-gray-500 dark:text-gray-300;
 }
 
 .language-tab pre[class~='language-jsx']::before {

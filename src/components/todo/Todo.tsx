@@ -1,7 +1,7 @@
 import React from 'react'
 import Router from 'next/router'
 
-import { useSession, signIn, signOut } from "next-auth/react"
+import { useSession, signIn, signOut } from 'next-auth/react'
 
 import useSWR, { useSWRConfig } from 'swr'
 import { GoTrashcan } from 'react-icons/go'
@@ -37,7 +37,7 @@ const Todo: React.FC<{ todo: TodoProps }> = ({ todo }) => {
   }
 
   return (
-    <div className="py-3 px-2 text-black dark:text-gray-400 w-full  bg-opacity-80 border-b pb-2 border-gray-200 dark:border-gray-800  hover:bg-gray-200 dark:hover:bg-zinc-800">
+    <div className="w-full border-b border-gray-200 bg-opacity-80 py-3  px-2 pb-2 text-black hover:bg-gray-200 dark:border-gray-800  dark:text-gray-400 dark:hover:bg-zinc-800">
       <div className="text-gray-800 dark:text-gray-300">{todo.task}</div>
       <div className="flex justify-between">
         <div className="text-xs ">{authorName}</div>
@@ -45,7 +45,7 @@ const Todo: React.FC<{ todo: TodoProps }> = ({ todo }) => {
 
         <div className="text-xs text-gray-300 dark:text-gray-600">
           <button
-            className="text-sm text-red-600 dark:text-red-400 cursor-pointer"
+            className="cursor-pointer text-sm text-red-600 dark:text-red-400"
             onClick={deleteEntry}
           >
             <GoTrashcan className="z-10" />

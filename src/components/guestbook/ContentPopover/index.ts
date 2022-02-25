@@ -1,1 +1,1 @@
-export * from './ContentPopover';
+export * from './ContentPopover'

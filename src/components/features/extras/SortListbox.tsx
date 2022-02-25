@@ -1,20 +1,20 @@
-import { Listbox, Transition } from '@headlessui/react';
-import clsx from 'clsx';
-import * as React from 'react';
-import { HiCheck, HiSelector } from 'react-icons/hi';
-import { IconType } from 'react-icons/lib';
+import { Listbox, Transition } from '@headlessui/react'
+import clsx from 'clsx'
+import * as React from 'react'
+import { HiCheck, HiSelector } from 'react-icons/hi'
+import { IconType } from 'react-icons/lib'
 
 export type SortOption = {
-  id: string;
-  name: string;
-  icon: IconType;
-};
+  id: string
+  name: string
+  icon: IconType
+}
 
 type SortListboxProps = {
-  selected: SortOption;
-  setSelected: React.Dispatch<React.SetStateAction<SortOption>>;
-  options: SortOption[];
-};
+  selected: SortOption
+  setSelected: React.Dispatch<React.SetStateAction<SortOption>>
+  options: SortOption[]
+}
 
 export default function SortListbox({
   selected,
@@ -22,45 +22,45 @@ export default function SortListbox({
   options,
 }: SortListboxProps) {
   return (
-    <div className='max-w-[200px] w-full'>
+    <div className="w-full max-w-[200px]">
       <Listbox value={selected} onChange={setSelected}>
-        <div className='relative'>
+        <div className="relative">
           <Listbox.Button
             className={clsx(
-              'py-2 pr-10 pl-3 w-full font-medium text-left bg-white rounded-md sm:text-sm dark:bg-dark',
-              'focus:outline-none focus-visible:ring focus-visible:ring-primary-300',
+              'dark:bg-dark w-full rounded-md bg-white py-2 pr-10 pl-3 text-left font-medium sm:text-sm',
+              'focus-visible:ring-primary-300 focus:outline-none focus-visible:ring',
               'border border-gray-300 dark:border-gray-600',
-              'transform-gpu scale-100 hover:scale-[1.03] active:scale-[0.97]',
+              'scale-100 transform-gpu hover:scale-[1.03] active:scale-[0.97]',
               'transition duration-100',
               'animate-shadow'
             )}
           >
-            <span className='block truncate'>
-              <span className='inline-flex gap-2 items-center'>
+            <span className="block truncate">
+              <span className="inline-flex items-center gap-2">
                 <selected.icon />
                 {selected.name}
               </span>
             </span>
-            <span className='flex absolute inset-y-0 right-0 items-center pr-2 pointer-events-none'>
+            <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
               <HiSelector
-                className='w-5 h-5 text-gray-400'
-                aria-hidden='true'
+                className="h-5 w-5 text-gray-400"
+                aria-hidden="true"
               />
             </span>
           </Listbox.Button>
           <Transition
             as={React.Fragment}
-            leave='transition ease-in duration-100'
-            leaveFrom='opacity-100'
-            leaveTo='opacity-0'
+            leave="transition ease-in duration-100"
+            leaveFrom="opacity-100"
+            leaveTo="opacity-0"
           >
-            <Listbox.Options className='overflow-auto absolute py-1 mt-1 w-full max-h-60 text-base bg-white rounded-md border border-gray-300 shadow-lg sm:text-sm dark:bg-dark dark:border-gray-600 dark:shadow-none focus:outline-none'>
+            <Listbox.Options className="dark:bg-dark absolute mt-1 max-h-60 w-full overflow-auto rounded-md border border-gray-300 bg-white py-1 text-base shadow-lg focus:outline-none dark:border-gray-600 dark:shadow-none sm:text-sm">
               {options.map((opt) => (
                 <Listbox.Option
                   key={opt.id}
                   className={({ active }) =>
                     clsx(
-                      'relative py-2 pr-4 pl-10 select-none',
+                      'relative select-none py-2 pr-4 pl-10',
                       active
                         ? 'dark:bg-primary-300/25 bg-primary-300/10'
                         : 'text-gray-700 dark:text-gray-300'
@@ -81,10 +81,10 @@ export default function SortListbox({
                       {selected ? (
                         <span
                           className={clsx(
-                            'flex absolute inset-y-0 left-0 items-center pl-3 text-primary-500 dark:text-primary-300'
+                            'text-primary-500 dark:text-primary-300 absolute inset-y-0 left-0 flex items-center pl-3'
                           )}
                         >
-                          <HiCheck className='w-5 h-5' aria-hidden='true' />
+                          <HiCheck className="h-5 w-5" aria-hidden="true" />
                         </span>
                       ) : null}
                     </>
@@ -96,5 +96,5 @@ export default function SortListbox({
         </div>
       </Listbox>
     </div>
-  );
+  )
 }

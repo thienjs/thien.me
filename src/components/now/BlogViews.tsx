@@ -6,10 +6,5 @@ export function BlogViews() {
   const { data } = useSWR<any>('/api/views', fetcher)
   const total = new Number(data?.total)
   const link = 'https://github.com/thienjs'
-  return (
-    <NowStat
-      link={link}
-      stat={total}
-    />
-  )
+  return <NowStat link={link} stat={total} />
 }

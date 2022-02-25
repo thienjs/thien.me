@@ -1,5 +1,3 @@
-
-
 export function Delete() {
   return (
     <svg

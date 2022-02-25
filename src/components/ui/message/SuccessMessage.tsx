@@ -15,5 +15,5 @@ export default function SuccessMessage({ children }) {
       </svg>
       {children}
     </p>
-  );
+  )
 }

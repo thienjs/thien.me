@@ -1,1 +1,1 @@
-export * from './GuestbookContent';
+export * from './GuestbookContent'

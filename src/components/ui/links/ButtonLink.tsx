@@ -1,14 +1,14 @@
-import clsx from 'clsx';
+import clsx from 'clsx'
 
-import UnstyledLink, { UnstyledLinkProps } from './UnstyledLink';
+import UnstyledLink, { UnstyledLinkProps } from './UnstyledLink'
 
 enum ButtonVariant {
   'default',
 }
 
 export type ButtonLinkProps = {
-  variant?: keyof typeof ButtonVariant;
-} & UnstyledLinkProps;
+  variant?: keyof typeof ButtonVariant
+} & UnstyledLinkProps
 
 export default function ButtonLink({
   children,
@@ -20,14 +20,14 @@ export default function ButtonLink({
     <UnstyledLink
       {...rest}
       className={clsx(
-        'inline-flex px-4 py-2 font-bold rounded',
+        'inline-flex rounded px-4 py-2 font-bold',
         'border border-gray-300 shadow-sm dark:border-gray-600',
         'focus:outline-none focus-visible:ring focus-visible:ring-gray-300',
-        'transform-gpu scale-100 hover:scale-[1.03] active:scale-[0.97]',
+        'scale-100 transform-gpu hover:scale-[1.03] active:scale-[0.97]',
         'transition duration-100',
         'animate-shadow',
         {
-          'bg-white disabled:bg-gray-200 text-gray-800 dark:text-gray-100 dark:bg-zinc-700 dark:disabled:bg-gray-700':
+          'bg-white text-gray-800 disabled:bg-gray-200 dark:bg-zinc-700 dark:text-gray-100 dark:disabled:bg-gray-700':
             variant === 'default',
         },
         className
@@ -35,5 +35,5 @@ export default function ButtonLink({
     >
       {children}
     </UnstyledLink>
-  );
+  )
 }

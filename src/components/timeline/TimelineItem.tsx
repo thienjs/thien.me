@@ -1,9 +1,7 @@
-
-
 type TimelineProps = {}
 
 const TimelineItem = (props: TimelineProps) => {
-  return <div></div>;
-};
+  return <div></div>
+}
 
-export default TimelineItem;
+export default TimelineItem

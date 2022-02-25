@@ -8,4 +8,4 @@ export const cacheOnly = {
   refreshWhenOffline: false,
   refreshWhenHidden: false,
   refreshInterval: 0,
-};
+}

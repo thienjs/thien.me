@@ -1,13 +1,13 @@
-import Image from "next/image";
-import React from "react";
+import Image from 'next/image'
+import React from 'react'
 
-import data from "~/data/data.json";
+import data from '~/data/data.json'
 import Link from 'next/link'
-import GithubIcon from "~/components/icons/social-icons/github";
-import DiscordIcon from "~/components/icons/social-icons/discord";
-import TwitterIcon from "~/components/icons/social-icons/twitter";
-import LinkedinIcon from "~/components/icons/social-icons/linkedin";
-import EmailIcon from "~/components/icons/social-icons/email";
+import GithubIcon from '~/components/icons/social-icons/github'
+import DiscordIcon from '~/components/icons/social-icons/discord'
+import TwitterIcon from '~/components/icons/social-icons/twitter'
+import LinkedinIcon from '~/components/icons/social-icons/linkedin'
+import EmailIcon from '~/components/icons/social-icons/email'
 import { SiBuymeacoffee } from 'react-icons/si'
 
 import { navigation } from '~/data/nav'
@@ -19,9 +19,9 @@ const Footer = () => {
   const year = new Date().getFullYear()
   const router = useRouter()
   return (
-    <div className="w-full mt-20 max-w-sm md:max-w-2xl mb-6">
+    <div className="mt-20 mb-6 w-full max-w-sm md:max-w-2xl">
       <div className="flex flex-row  justify-between align-baseline">
-        <div className="text-sm text-gray-600 dark:text-gray-500 font-serif mr-auto">
+        <div className="mr-auto font-serif text-sm text-gray-600 dark:text-gray-500">
           Thien © {year}
         </div>
 
@@ -48,7 +48,7 @@ const Footer = () => {
             <SiBuymeacoffee className="h-4 w-4 hover:text-yellow-400" />
           </a>
   </div>*/}
-        <div className=" pb-6 mr-2 mb-10">
+        <div className=" mr-2 mb-10 pb-6">
           <ThemeSwitch />
         </div>
       </div>
@@ -60,11 +60,11 @@ export default Footer
 
 function FooterLinks() {
   return (
-    <div className="flex flex-row gap-y-4 gap-x-4 justify-center mb-4 ">
+    <div className="mb-4 flex flex-row justify-center gap-y-4 gap-x-4 ">
       {navigation.footerLinks.map(({ href, name }) => (
         <UnstyledLink
           key={href}
-          className="animated-underline text-sm font-medium rounded-sm dark:text-gray-300 focus:outline-none focus-visible:ring focus-visible:ring-cyan-300"
+          className="animated-underline rounded-sm text-sm font-medium focus:outline-none focus-visible:ring focus-visible:ring-cyan-300 dark:text-gray-300"
           href={href}
         >
           {name}
@@ -73,4 +73,3 @@ function FooterLinks() {
     </div>
   )
 }
-

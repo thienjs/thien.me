@@ -6,7 +6,7 @@ import Title from '~/components/ui/typography/Title'
 const ProjectsPage = ({ repos }) => (
   <Layout>
     <Title>my github repositories</Title>
-    <div className="flex flex-col w-96 content-start">
+    <div className="flex w-96 flex-col content-start">
       {repos.map((repo) => (
         <div key={repo.name} className="">
           <RepoCard {...repo} />
@@ -14,7 +14,7 @@ const ProjectsPage = ({ repos }) => (
       ))}
     </div>
 
-    <p className="text-sm p-2 rounded-md px-4 border-gray-500 bg-gray-200 dark:bg-gray-700 w-max">
+    <p className="w-max rounded-md border-gray-500 bg-gray-200 p-2 px-4 text-sm dark:bg-gray-700">
       <a
         href="https://github.com/thienjs?tab=repositories"
         target="_blank"
@@ -77,7 +77,6 @@ export const getStaticProps: GetStaticProps = async () => {
     stars: repo.stargazerCount,
     forks: repo.forkCount,
     language: repo.primaryLanguage,
-
   }))
 
   return {

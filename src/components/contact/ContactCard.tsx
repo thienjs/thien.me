@@ -1,13 +1,13 @@
-import { Contact } from '@prisma/client';
-import Image from 'next/image';
+import { Contact } from '@prisma/client'
+import Image from 'next/image'
 
 interface ContactCardProps {
-  contact: Contact;
+  contact: Contact
 }
 
 export default function ContactCard(props: ContactCardProps) {
   return (
-    <div className="border rounded-lg p-4 flex">
+    <div className="flex rounded-lg border p-4">
       <div className="my-auto">
         <Image
           src={props.contact.avatar}
@@ -24,5 +24,5 @@ export default function ContactCard(props: ContactCardProps) {
         <p className="text-gray-500">{props.contact.email}</p>
       </div>
     </div>
-  );
+  )
 }

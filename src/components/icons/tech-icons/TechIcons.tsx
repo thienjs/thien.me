@@ -1,6 +1,6 @@
-import clsx from 'clsx';
-import * as React from 'react';
-import { IoLogoVercel } from 'react-icons/io5';
+import clsx from 'clsx'
+import * as React from 'react'
+import { IoLogoVercel } from 'react-icons/io5'
 import {
   SiFirebase,
   SiGit,
@@ -17,34 +17,32 @@ import {
   SiSass,
   SiTailwindcss,
   SiTypescript,
-} from 'react-icons/si';
+} from 'react-icons/si'
 
-
-
-export type TechListType = keyof typeof techList;
+export type TechListType = keyof typeof techList
 
 export type TechIconsProps = {
-  techs: Array<TechListType>;
-} & React.ComponentPropsWithoutRef<'ul'>;
+  techs: Array<TechListType>
+} & React.ComponentPropsWithoutRef<'ul'>
 
 export default function TechIcons({ className, techs }: TechIconsProps) {
   return (
     <ul className={clsx(className, 'flex gap-2')}>
       {techs.map((tech) => {
-        if (!techList[tech]) return;
+        if (!techList[tech]) return
 
-        const current = techList[tech];
+        const current = techList[tech]
 
         return (
           <div>
-            <li className='text-xl text-gray-700 dark:text-gray-200'>
+            <li className="text-xl text-gray-700 dark:text-gray-200">
               <current.icon />
             </li>
           </div>
-        );
+        )
       })}
     </ul>
-  );
+  )
 }
 
 const techList = {
@@ -112,4 +110,4 @@ const techList = {
     icon: SiNotion,
     name: 'Notion API',
   },
-};
+}

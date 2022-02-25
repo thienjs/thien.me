@@ -1,8 +1,8 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react'
 
-import { Reactions } from '../types';
-import { fetcher } from '../fetcher';
-import useSWR from 'swr';
+import { Reactions } from '../types'
+import { fetcher } from '../fetcher'
+import useSWR from 'swr'
 
 // State that reflects if the current user has already selected a reaction for a specific blog post
 const initialReactionState = {
@@ -10,182 +10,181 @@ const initialReactionState = {
   loved: false,
   clapped: false,
   partied: false,
-
-};
+}
 
 export default function useArticleReactions(slug) {
   // Flags to indicate if the current user has performed any reactions
-  const [hasLiked, setHasLiked] = useState(false);
-  const [hasLoved, setHasLoved] = useState(false);
-  const [hasClapped, setHasClapped] = useState(false);
-  const [hasPartied, setHasPartied] = useState(false);
-  const [reactions, setReactions] = useState<Reactions>();
+  const [hasLiked, setHasLiked] = useState(false)
+  const [hasLoved, setHasLoved] = useState(false)
+  const [hasClapped, setHasClapped] = useState(false)
+  const [hasPartied, setHasPartied] = useState(false)
+  const [reactions, setReactions] = useState<Reactions>()
 
-  const [hydrated, setHydrated] = useState(false);
+  const [hydrated, setHydrated] = useState(false)
 
   // Reaction count data
   const { data, mutate } = useSWR<Reactions>(
     `/api/reactions/${slug}`,
     fetcher,
     {
-      refreshInterval: 25000
+      refreshInterval: 25000,
     }
-  );
+  )
 
   useEffect(() => {
-    setHydrated(true);
-  }, []);
+    setHydrated(true)
+  }, [])
 
   // Once the page is hydrated, we have access to localStorage.
   // Also call this effect when localStorage is changed to properly update reaction flags
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      const { liked, loved, clapped, partied } = getReactionsFromLocalStorage();
+      const { liked, loved, clapped, partied } = getReactionsFromLocalStorage()
 
       // Set values after grabbing data from localStorage
-      setHasLiked(liked);
-      setHasLoved(loved);
-      setHasClapped(clapped);
-      setHasPartied(partied);
+      setHasLiked(liked)
+      setHasLoved(loved)
+      setHasClapped(clapped)
+      setHasPartied(partied)
     }
-  }, [hydrated, setReactionsToLocalStorage]);
+  }, [hydrated, setReactionsToLocalStorage])
 
   useEffect(() => {
-    setReactions(data);
-  }, [data]);
+    setReactions(data)
+  }, [data])
 
   async function handleIncrementLike() {
-    updateReactions('liked');
+    updateReactions('liked')
 
     await fetch(`/api/reactions/${slug}`, {
       method: 'POST',
       body: JSON.stringify({
         reaction: 'like_count',
-        type: 'increment'
-      })
-    });
+        type: 'increment',
+      }),
+    })
 
-    mutate({ ...data, like_count: data.like_count + 1 });
+    mutate({ ...data, like_count: data.like_count + 1 })
   }
 
   async function handleDecrementLike() {
-    updateReactions('liked');
+    updateReactions('liked')
 
     await fetch(`/api/reactions/${slug}`, {
       method: 'POST',
       body: JSON.stringify({
         reaction: 'like_count',
-        type: 'decrement'
-      })
-    });
+        type: 'decrement',
+      }),
+    })
 
-    mutate({ ...data, like_count: data.like_count - 1 });
+    mutate({ ...data, like_count: data.like_count - 1 })
   }
 
   async function handleIncrementLove() {
-    updateReactions('loved');
+    updateReactions('loved')
 
     await fetch(`/api/reactions/${slug}`, {
       method: 'POST',
       body: JSON.stringify({
         reaction: 'love_count',
-        type: 'increment'
-      })
-    });
+        type: 'increment',
+      }),
+    })
 
-    mutate({ ...data, love_count: data.love_count + 1 });
+    mutate({ ...data, love_count: data.love_count + 1 })
   }
 
   async function handleDecrementLove() {
-    updateReactions('loved');
+    updateReactions('loved')
 
     await fetch(`/api/reactions/${slug}`, {
       method: 'POST',
       body: JSON.stringify({
         reaction: 'love_count',
-        type: 'decrement'
-      })
-    });
+        type: 'decrement',
+      }),
+    })
 
-    mutate({ ...data, love_count: data.love_count - 1 });
+    mutate({ ...data, love_count: data.love_count - 1 })
   }
 
   async function handleIncrementClap() {
-    updateReactions('clapped');
+    updateReactions('clapped')
 
     await fetch(`/api/reactions/${slug}`, {
       method: 'POST',
       body: JSON.stringify({
         reaction: 'clap_count',
-        type: 'increment'
-      })
-    });
+        type: 'increment',
+      }),
+    })
 
-    mutate({ ...data, clap_count: data.clap_count + 1 });
+    mutate({ ...data, clap_count: data.clap_count + 1 })
   }
 
   async function handleDecrementClap() {
-    updateReactions('clapped');
+    updateReactions('clapped')
 
     await fetch(`/api/reactions/${slug}`, {
       method: 'POST',
       body: JSON.stringify({
         reaction: 'clap_count',
-        type: 'decrement'
-      })
-    });
+        type: 'decrement',
+      }),
+    })
 
-    mutate({ ...data, clap_count: data.clap_count - 1 });
+    mutate({ ...data, clap_count: data.clap_count - 1 })
   }
 
   async function handleIncrementParty() {
-    updateReactions('partied');
+    updateReactions('partied')
 
     await fetch(`/api/reactions/${slug}`, {
       method: 'POST',
       body: JSON.stringify({
         reaction: 'party_count',
-        type: 'increment'
-      })
-    });
+        type: 'increment',
+      }),
+    })
 
-    mutate({ ...data, party_count: data.party_count + 1 });
+    mutate({ ...data, party_count: data.party_count + 1 })
   }
 
   async function handleDecrementParty() {
-    updateReactions('partied');
+    updateReactions('partied')
 
     await fetch(`/api/reactions/${slug}`, {
       method: 'POST',
       body: JSON.stringify({
         reaction: 'party_count',
-        type: 'decrement'
-      })
-    });
+        type: 'decrement',
+      }),
+    })
 
-    mutate({ ...data, party_count: data.party_count - 1 });
+    mutate({ ...data, party_count: data.party_count - 1 })
   }
 
   // === HELPER FUNCTIONS ===
 
   function updateReactions(reaction) {
-    const currentReactions = getReactionsFromLocalStorage();
-    let updatedReactionState = { ...currentReactions };
-    const prevValue = updatedReactionState[reaction];
-    updatedReactionState[reaction] = !prevValue;
-    setReactionsToLocalStorage(updatedReactionState);
+    const currentReactions = getReactionsFromLocalStorage()
+    let updatedReactionState = { ...currentReactions }
+    const prevValue = updatedReactionState[reaction]
+    updatedReactionState[reaction] = !prevValue
+    setReactionsToLocalStorage(updatedReactionState)
   }
 
   function getReactionsFromLocalStorage() {
     if (typeof window !== 'undefined') {
-      return JSON.parse(localStorage.getItem(slug)) || initialReactionState;
+      return JSON.parse(localStorage.getItem(slug)) || initialReactionState
     }
-    return null;
+    return null
   }
 
   function setReactionsToLocalStorage(reactions) {
     if (typeof window !== 'undefined') {
-      localStorage.setItem(slug, JSON.stringify(reactions));
+      localStorage.setItem(slug, JSON.stringify(reactions))
     }
   }
 
@@ -202,6 +201,6 @@ export default function useArticleReactions(slug) {
     handleIncrementClap,
     handleDecrementClap,
     handleIncrementParty,
-    handleDecrementParty
-  };
+    handleDecrementParty,
+  }
 }

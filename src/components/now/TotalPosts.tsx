@@ -7,10 +7,5 @@ export function TotalPosts() {
   const { data } = useSWR<any>('/api/stats/total-articles', fetcher)
   const total = new Number(data?.totalArticles)
   const link = 'https://github.com/thienjs'
-  return (
-    <NowStat
-      link={link}
-      stat={total}
-    />
-  )
+  return <NowStat link={link} stat={total} />
 }

@@ -1,30 +1,30 @@
 export default function Track(track) {
-    return (
-      <div className="flex flex-row border-b border-zinc-300 dark:border-gray-800 max-w-3xl w-full mt-4">
-        <p className="text-sm font-bold text-gray-400 dark:text-gray-600 mr-3">
-          {track.ranking}
+  return (
+    <div className="mt-4 flex w-full max-w-3xl flex-row border-b border-zinc-300 dark:border-gray-800">
+      <p className="mr-3 text-sm font-bold text-gray-400 dark:text-gray-600">
+        {track.ranking}
+      </p>
+      <img
+        src={track.albumArtUrl}
+        title={track.album}
+        className="h-12 w-12 rounded-sm shadow-sm "
+      />
+      <div className="flex flex-col pl-3">
+        <a
+          className="w-60 truncate font-medium text-gray-900 dark:text-gray-100 sm:w-96 md:w-full"
+          href={track.songUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {track.title}
+        </a>
+        <p
+          className="mb-4 w-60 truncate text-sm text-gray-500 sm:w-96 md:w-full"
+          color="gray.500"
+        >
+          {track.artist}
         </p>
-        <img
-          src={track.albumArtUrl}
-          title={track.album}
-          className="w-12 h-12 rounded-sm shadow-sm "
-        />
-        <div className="flex flex-col pl-3">
-          <a
-            className="font-medium text-gray-900 dark:text-gray-100 truncate w-60 sm:w-96 md:w-full"
-            href={track.songUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {track.title}
-          </a>
-          <p
-            className="text-gray-500 mb-4 truncate w-60 sm:w-96 md:w-full text-sm"
-            color="gray.500"
-          >
-            {track.artist}
-          </p>
-        </div>
       </div>
-    )
-  }
+    </div>
+  )
+}

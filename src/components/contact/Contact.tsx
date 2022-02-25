@@ -38,8 +38,8 @@ const Contact: NextPage = () => {
   }
 
   return (
-    <div className="max-w-5xl mx-auto py-3">
-      <form className="py-2 space-y-2" onSubmit={handleSubmit}>
+    <div className="mx-auto max-w-5xl py-3">
+      <form className="space-y-2 py-2" onSubmit={handleSubmit}>
         <div className="flex items-center justify-center">
           <label htmlFor="name" className="sr-only">
             Name
@@ -50,7 +50,7 @@ const Contact: NextPage = () => {
             type="text"
             name="name"
             id="name"
-            className="shadow-md focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-md border-gray-300 rounded-md"
+            className="sm:text-md block w-full rounded-md border-gray-300 shadow-md focus:border-indigo-500 focus:ring-indigo-500"
             placeholder="Name"
           />
         </div>
@@ -64,7 +64,7 @@ const Contact: NextPage = () => {
             type="email"
             name="email"
             id="email"
-            className="shadow-md focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-md border-gray-300 rounded-md"
+            className="sm:text-md block w-full rounded-md border-gray-300 shadow-md focus:border-indigo-500 focus:ring-indigo-500"
             placeholder="Email"
           />
         </div>
@@ -78,7 +78,7 @@ const Contact: NextPage = () => {
             type="tel"
             name="phone"
             id="phone"
-            className="shadow-md focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-md border-gray-300 rounded-md"
+            className="sm:text-md block w-full rounded-md border-gray-300 shadow-md focus:border-indigo-500 focus:ring-indigo-500"
             placeholder="Phone (optional)"
           />
         </div>
@@ -90,14 +90,14 @@ const Contact: NextPage = () => {
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             id="message"
-            className="shadow-md focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-md border-gray-300 rounded-md"
+            className="sm:text-md block w-full rounded-md border-gray-300 shadow-md focus:border-indigo-500 focus:ring-indigo-500"
             placeholder="Message"
           />
         </div>
         <div className="flex items-center justify-center">
           <button
             type="submit"
-            className="flex items-center justify-center text-sm w-full rounded-md shadow py-3 px-2 text-white bg-indigo-600"
+            className="flex w-full items-center justify-center rounded-md bg-indigo-600 py-3 px-2 text-sm text-white shadow"
           >
             Send
           </button>

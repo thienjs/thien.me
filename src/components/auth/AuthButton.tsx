@@ -10,7 +10,7 @@ export default function AuthButton() {
             <h1>{session.user?.name}</h1>
             {session.user?.image ? (
               <img
-                className="w-8 h-8 rounded-full"
+                className="h-8 w-8 rounded-full"
                 src={session.user.image}
                 alt=""
               />

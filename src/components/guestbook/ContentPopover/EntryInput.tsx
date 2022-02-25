@@ -1,9 +1,9 @@
-import  LoadingSpinner  from '~/components/ui/common/LoadingSpinner';
-import clsx from 'clsx';
-import * as React from 'react';
-import useSWR, { useSWRConfig } from 'swr';
-import { signOut } from 'next-auth/react';
-import toast from 'react-hot-toast';
+import LoadingSpinner from '~/components/ui/common/LoadingSpinner'
+import clsx from 'clsx'
+import * as React from 'react'
+import useSWR, { useSWRConfig } from 'swr'
+import { signOut } from 'next-auth/react'
+import toast from 'react-hot-toast'
 import { BiFullscreen } from 'react-icons/bi'
 
 export enum Form {
@@ -51,7 +51,7 @@ export function EntryInput() {
           Your Message
         </label>
         <textarea
-          className="w-full rounded-md border dark:border-zinc-800 border-gray-300 text-sm focus:border-gray-500 focus:ring-cyan-500 dark:bg-zinc-900 dark:text-white dark:focus:border-gray-900 dark:focus:ring-cyan-700"
+          className="w-full rounded-md border border-gray-300 text-sm focus:border-gray-500 focus:ring-cyan-500 dark:border-zinc-800 dark:bg-zinc-900 dark:text-white dark:focus:border-gray-900 dark:focus:ring-cyan-700"
           ref={inputEl}
           rows={1}
           aria-label="Your message"
@@ -80,7 +80,6 @@ export function EntryInput() {
           )}
         </button>
       </form>
-
     </div>
   )
 }

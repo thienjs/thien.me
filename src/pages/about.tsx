@@ -27,8 +27,8 @@ const AboutPage = ({ reviews, currentlyReading }) => {
       subtitle={r.author}
       url={r.url}
       leftPanel={
-        <div className="flex text-xs font-bold leading-6 text-subtitle items-center">
-          {r.rating} <FaStar className="text-yellow-500 ml-1" />
+        <div className="text-subtitle flex items-center text-xs font-bold leading-6">
+          {r.rating} <FaStar className="ml-1 text-yellow-500" />
         </div>
       }
     />
@@ -44,7 +44,7 @@ const AboutPage = ({ reviews, currentlyReading }) => {
 
   return (
     <Layout>
-      <div className="flex text-left   mb-5 mt-20 ">
+      <div className="mb-5 mt-20   flex text-left ">
         <motion.div
           initial="hidden"
           animate="visible"
@@ -57,7 +57,7 @@ const AboutPage = ({ reviews, currentlyReading }) => {
               opacity: 1,
             },
           }}
-          className="w-16 h-16 mt-4 mr-4 ml-2 "
+          className="mt-4 mr-4 ml-2 h-16 w-16 "
         >
           <Image
             src="https://github.com/thienjs.png"
@@ -75,7 +75,7 @@ const AboutPage = ({ reviews, currentlyReading }) => {
             transition={{ delay: 0.1, duration: 1.2 }}
             variants={{
               hidden: {
-                opacity: .25,
+                opacity: 0.25,
                 y: 50,
               },
               visible: {
@@ -83,7 +83,7 @@ const AboutPage = ({ reviews, currentlyReading }) => {
                 y: 0,
               },
             }}
-            className="text-lg font-semibold dark:text-gray-300 text-neutral-800"
+            className="text-lg font-semibold text-neutral-800 dark:text-gray-300"
           >
             Thien Tran
           </motion.div>
@@ -93,7 +93,7 @@ const AboutPage = ({ reviews, currentlyReading }) => {
             transition={{ delay: 0.3, duration: 1.2 }}
             variants={{
               hidden: {
-                opacity: .25,
+                opacity: 0.25,
                 y: 50,
               },
               visible: {
@@ -101,7 +101,7 @@ const AboutPage = ({ reviews, currentlyReading }) => {
                 y: 0,
               },
             }}
-            className="text-gray-600 dark:text-neutral-400 text-sm"
+            className="text-sm text-gray-600 dark:text-neutral-400"
           >
             Web Developer from Connecticut, USA
           </motion.div>
@@ -111,7 +111,7 @@ const AboutPage = ({ reviews, currentlyReading }) => {
             transition={{ delay: 0.5, duration: 1.2 }}
             variants={{
               hidden: {
-                opacity: .25,
+                opacity: 0.25,
                 y: 50,
               },
               visible: {
@@ -119,7 +119,7 @@ const AboutPage = ({ reviews, currentlyReading }) => {
                 y: 0,
               },
             }}
-            className="text-gray-500 dark:text-neutral-500 text-sm"
+            className="text-sm text-gray-500 dark:text-neutral-500"
           >
             hi@thien.me
           </motion.div>
@@ -139,7 +139,7 @@ const AboutPage = ({ reviews, currentlyReading }) => {
             y: 0,
           },
         }}
-        className=" dark:text-gray-200 mb-4 border p-5 rounded-lg border-neutral-300 dark:border-neutral-700 bg-zinc-300 dark:bg-zinc-900 font-serif"
+        className=" mb-4 rounded-lg border border-neutral-300 bg-zinc-300 p-5 font-serif dark:border-neutral-700 dark:bg-zinc-900 dark:text-gray-200"
       >
         <p className=" mb-2 text-neutral-600 dark:text-neutral-400">
           I'm a self taught developer looking for my first job in tech. I have a
@@ -155,17 +155,17 @@ const AboutPage = ({ reviews, currentlyReading }) => {
         </p>
       </motion.div>
 
-      <h2 className="text-sm font-semibold text-gray-800 dark:text-gray-300 mt-10 mb-6">
+      <h2 className="mt-10 mb-6 text-sm font-semibold text-gray-800 dark:text-gray-300">
         Contact
       </h2>
-      <div className="flex mt-6">
-        <ul className="text-sm text-neutral-500 dark:text-neutral-400 space-y-3">
+      <div className="mt-6 flex">
+        <ul className="space-y-3 text-sm text-neutral-500 dark:text-neutral-400">
           <li>Github</li>
           <li>Linkedin</li>
           <li>Twitter</li>
           <li>Email</li>
         </ul>
-        <ul className="text-sm  text-neutral-800 dark:text-neutral-300 space-y-3 ml-44">
+        <ul className="ml-44  space-y-3 text-sm text-neutral-800 dark:text-neutral-300">
           <li>
             <a
               href="https://github.com/thienjs"
@@ -198,14 +198,14 @@ const AboutPage = ({ reviews, currentlyReading }) => {
         </ul>
       </div>
 
-      <div className="text-sm font-semibold text-gray-800 dark:text-gray-300 mt-10 mb-6">
+      <div className="mt-10 mb-6 text-sm font-semibold text-gray-800 dark:text-gray-300">
         Stack
       </div>
       <div className="grid grid-cols-2 md:grid-cols-4">
         <ul className="text-sm text-neutral-500 dark:text-neutral-400 ">
           <li>Frontend</li>
         </ul>
-        <ul className="text-sm ml-10 text-neutral-600 dark:text-neutral-300 ">
+        <ul className="ml-10 text-sm text-neutral-600 dark:text-neutral-300 ">
           <li className="mb-4 flex flex-col text-neutral-800 dark:text-neutral-300 ">
             <p>React</p>
             <span className="text-xs text-neutral-500 dark:text-neutral-700">
@@ -236,7 +236,7 @@ const AboutPage = ({ reviews, currentlyReading }) => {
         <ul className="text-sm text-neutral-500 dark:text-neutral-400 ">
           <li>Backend</li>
         </ul>
-        <ul className="text-sm ml-10 text-neutral-600 dark:text-neutral-300">
+        <ul className="ml-10 text-sm text-neutral-600 dark:text-neutral-300">
           <li className="mb-4 flex flex-col">
             <p className="text-neutral-800 dark:text-neutral-300">Postgres</p>
             <span className="text-xs text-neutral-500 dark:text-neutral-700">

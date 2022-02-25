@@ -1,15 +1,15 @@
-import { GetStaticProps} from 'next'
-import { getPublishedSnippets, convertToSnippetList } from '~/lib/notion';
-import { useState, useEffect } from 'react';
-import {Tag} from '~/components/blog/Tag';
-import Layout from '~/components/ui/Layout';
-import { SnippetList } from '~/components/snippets/SnippetList';
-import Title from '~/components/ui/typography/Title';
-import { motion } from 'framer-motion';
+import { GetStaticProps } from 'next'
+import { getPublishedSnippets, convertToSnippetList } from '~/lib/notion'
+import { useState, useEffect } from 'react'
+import { Tag } from '~/components/blog/Tag'
+import Layout from '~/components/ui/Layout'
+import { SnippetList } from '~/components/snippets/SnippetList'
+import Title from '~/components/ui/typography/Title'
+import { motion } from 'framer-motion'
 
-export default function SnippetsPage({snippets, tags}) {
-  const [selectedTag, setSelectedTag] = useState<string>('');
-  const [searchValue, setSearchValue] = useState('');
+export default function SnippetsPage({ snippets, tags }) {
+  const [selectedTag, setSelectedTag] = useState<string>('')
+  const [searchValue, setSearchValue] = useState('')
 
   const filteredSnippets = snippets
     .sort((a, b) => Number(new Date(b.publishedDate)))
@@ -17,31 +17,32 @@ export default function SnippetsPage({snippets, tags}) {
       return (
         post.title.toLowerCase().includes(searchValue.toLowerCase()) ||
         post.tags.some((el) => el.name === searchValue.toLocaleLowerCase())
-      );
-    });
+      )
+    })
 
   useEffect(() => {
-    setSearchValue(selectedTag);
-  }, [selectedTag]);
-
-
+    setSearchValue(selectedTag)
+  }, [selectedTag])
 
   return (
     <Layout>
       <Title>Snippets</Title>
-      <motion.div initial="hidden"
-          animate="visible"
-          transition={{ delay: 0.2, duration: 1 }}
-          variants={{
-            hidden: {
-              opacity: .5,
-              y: 10,
-            },
-            visible: {
-              opacity: 1,
-              y: 0,
-            },
-          }} className="text-neutral-600 dark:text-neutral-400 mb-8 text-sm font-serif">
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        transition={{ delay: 0.2, duration: 1 }}
+        variants={{
+          hidden: {
+            opacity: 0.5,
+            y: 10,
+          },
+          visible: {
+            opacity: 1,
+            y: 0,
+          },
+        }}
+        className="mb-8 font-serif text-sm text-neutral-600 dark:text-neutral-400"
+      >
         collection of useful code for reference
       </motion.div>
       <div className="relative w-full">
@@ -50,10 +51,10 @@ export default function SnippetsPage({snippets, tags}) {
           type="text"
           onChange={(e) => setSearchValue(e.target.value)}
           placeholder="Search snippets"
-          className="block w-full px-4 py-2 text-gray-900 bg-white border border-gray-200 rounded-md dark:border-gray-900 focus:ring-blue-500 focus:border-blue-500 dark:bg-zinc-800 dark:text-gray-100"
+          className="block w-full rounded-md border border-gray-200 bg-white px-4 py-2 text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-900 dark:bg-zinc-800 dark:text-gray-100"
         />
         <svg
-          className="absolute w-5 h-5 text-gray-400 right-3 top-3 dark:text-gray-300"
+          className="absolute right-3 top-3 h-5 w-5 text-gray-400 dark:text-gray-300"
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
@@ -67,8 +68,8 @@ export default function SnippetsPage({snippets, tags}) {
           />
         </svg>
       </div>
-      <div className="py-3 my-1 mb-2 overflow-x-auto border-gray-200 dark:border-gray-600 no-scrollbar">
-        <ul className="flex items-center justify-start w-full no-scrollbar">
+      <div className="no-scrollbar my-1 mb-2 overflow-x-auto border-gray-200 py-3 dark:border-gray-600">
+        <ul className="no-scrollbar flex w-full items-center justify-start">
           {/* Initial tag for all topics */}
           <Tag activeTag={selectedTag} tag="" cb={() => setSelectedTag('')} />
           {tags &&
@@ -82,13 +83,13 @@ export default function SnippetsPage({snippets, tags}) {
             ))}
         </ul>
       </div>
-      <div className="min-h-screen space-y-12 mt-4">
+      <div className="mt-4 min-h-screen space-y-12">
         {!filteredSnippets.length && (
-          <div className="w-full mx-auto  p-4">
+          <div className="mx-auto w-full  p-4">
             <p className="flex items-center justify-center text-2xl">
               No snippets found{' '}
               <span>
-                <svg className="ml-3 w-7 h-7" fill="none" viewBox="0 0 24 24">
+                <svg className="ml-3 h-7 w-7" fill="none" viewBox="0 0 24 24">
                   <path
                     stroke="currentColor"
                     strokeLinecap="round"
@@ -117,15 +118,14 @@ export default function SnippetsPage({snippets, tags}) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const data = await getPublishedSnippets(process.env.NOTION_SNIPPETS_DB_ID);
-  const { snippets, tags } = convertToSnippetList(data);
+  const data = await getPublishedSnippets(process.env.NOTION_SNIPPETS_DB_ID)
+  const { snippets, tags } = convertToSnippetList(data)
 
   return {
     props: {
-
       snippets: snippets.slice(0),
-      tags
+      tags,
     },
-    revalidate: 30
-  };
-};
+    revalidate: 30,
+  }
+}

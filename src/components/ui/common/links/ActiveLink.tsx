@@ -24,7 +24,7 @@ const ActiveLink: FC<ActiveLinkProps> = ({
       {!isNode && React.cloneElement(children, { ...props })}
       {isNode && (
         <Link href={props.href} {...props}>
-           {children}
+          {children}
         </Link>
       )}
     </li>

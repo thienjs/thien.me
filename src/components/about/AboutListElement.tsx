@@ -1,5 +1,5 @@
-import { ReactNode } from "react"
-import { FaExternalLinkAlt } from "react-icons/fa"
+import { ReactNode } from 'react'
+import { FaExternalLinkAlt } from 'react-icons/fa'
 
 export type AboutListElementProps = {
   title: string
@@ -18,9 +18,9 @@ export const AboutListElement: React.FC<AboutListElementProps> = ({
   rightPanel,
   titleSide,
 }) => (
-  <li className="flex py-4 text-sm border-b border-gray-100 dark:border-gray-800 md:last:border-b-0">
+  <li className="flex border-b border-gray-100 py-4 text-sm dark:border-gray-800 md:last:border-b-0">
     {leftPanel && <div className="pr-2">{leftPanel}</div>}
-    <div className="flex flex-row justify-between w-full md:justify-start">
+    <div className="flex w-full flex-row justify-between md:justify-start">
       <div className="flex flex-col">
         <div className="flex">
           <a href={url} className="text-title" target="_blank">

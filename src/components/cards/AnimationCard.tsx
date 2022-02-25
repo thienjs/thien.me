@@ -69,12 +69,12 @@ export default function AnimationCard({
       }}
     >
       <ContextMenu.Trigger>
-        <div className="bg-gray-800/40 backdrop-blur ring-1 ring-inset ring-gray-500/20 h-28 w-full rounded-lg flex cursor-context-menu">
+        <div className="flex h-28 w-full cursor-context-menu rounded-lg bg-gray-800/40 ring-1 ring-inset ring-gray-500/20 backdrop-blur">
           <div className="m-auto text-gray-200">{source}</div>
         </div>
       </ContextMenu.Trigger>
       {isContextMenuOpen && (
-        <ContextMenu.Content className="radix-state-open:animate-fade-in radix-state-closed:animate-fade-out origin-top-left w-52 px-1.5 py-1.5 rounded-lg bg-gray-900/95 backdrop-blur ring-1 ring-inset ring-gray-500/30">
+        <ContextMenu.Content className="radix-state-open:animate-fade-in radix-state-closed:animate-fade-out w-52 origin-top-left rounded-lg bg-gray-900/95 px-1.5 py-1.5 ring-1 ring-inset ring-gray-500/30 backdrop-blur">
           <ContextMenu.Item
             className={itemStyle}
             onSelect={() => handleCopySource()}
@@ -91,7 +91,7 @@ export default function AnimationCard({
             <span className={itemTextStyle}>Copy Keyframes</span>
             <kbd>K</kbd>
           </ContextMenu.Item>
-          <ContextMenu.Separator className="h-px m-1 bg-gray-500/30" />
+          <ContextMenu.Separator className="m-1 h-px bg-gray-500/30" />
           <ContextMenu.Item
             className={itemStyle}
             onSelect={() => handleOpenInGithub()}

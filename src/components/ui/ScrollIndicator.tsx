@@ -26,7 +26,7 @@ export default function ScrollIndicator({ children }) {
 
   return (
     <>
-      <div className="top-0 left-0 w-screen fixed z-40 ">
+      <div className="fixed top-0 left-0 z-40 w-screen ">
         <div
           style={inlineStyle}
           className="bg-gradient-to-r from-green-300 via-blue-500 to-purple-600"

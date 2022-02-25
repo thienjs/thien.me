@@ -8,13 +8,11 @@ export function GithubFollowers() {
   const followers = new Number(data?.followers)
   const link = 'https://github.com/thienjs'
   return (
-
-    
     <StatsCard
       header="GitHub Followers"
       link={link}
       stat={followers}
-      icon={<FaGithub className="h-6 w-6"/>}
+      icon={<FaGithub className="h-6 w-6" />}
       isCurrency={false}
     />
   )

@@ -6,7 +6,7 @@ export default function JourneyPage() {
   return (
     <Layout>
       <Title>My coding journey</Title>
-      <p className="text-neutral-600 dark:text-neutral-400 mb-8 text-sm">
+      <p className="mb-8 text-sm text-neutral-600 dark:text-neutral-400">
         'dont compare yourself to others. make progress everyday.'
       </p>
       <Timeline />

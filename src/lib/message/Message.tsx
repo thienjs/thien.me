@@ -7,7 +7,7 @@ import { MessageProps } from './message.types'
 const Message: FunctionComponent<MessageProps> = ({ message, type }) => (
   <Alert
     className={classNames(
-      'app-message shadow-md rounded px-3 py-2 text-shadow transition-all mt-2',
+      'app-message text-shadow mt-2 rounded px-3 py-2 shadow-md transition-all',
       type === 'error'
         ? 'bg-red-500 text-white'
         : type === 'success'

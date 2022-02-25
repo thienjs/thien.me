@@ -1,13 +1,13 @@
-import Link from 'next/link';
+import Link from 'next/link'
 
 type Props = {
-  href: string;
-  locale?: string | false;
-  className?: string;
-  'aria-label'?: string;
-  onClick?: () => void;
-  children?: React.ReactNode;
-};
+  href: string
+  locale?: string | false
+  className?: string
+  'aria-label'?: string
+  onClick?: () => void
+  children?: React.ReactNode
+}
 
 const NextLink: React.FC<Props> = ({
   href,
@@ -19,7 +19,7 @@ const NextLink: React.FC<Props> = ({
     <Link href={href} locale={locale}>
       <a {...rest}>{children}</a>
     </Link>
-  );
-};
+  )
+}
 
-export default NextLink;
+export default NextLink

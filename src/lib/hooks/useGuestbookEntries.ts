@@ -1,12 +1,12 @@
-import useSWR from 'swr';
-import { fetcher } from '~/lib/utils';
+import useSWR from 'swr'
+import { fetcher } from '~/lib/utils'
 
 type Fallbackdata = {
-  id: number;
-  body: string;
-  createdBy: string;
-  createdAt: string;
-}[];
+  id: number
+  body: string
+  createdBy: string
+  createdAt: string
+}[]
 
 export function useGuestbookEntries(fallbackData: Fallbackdata) {
   const { data, mutate } = useSWR<{ data: Fallbackdata; success: boolean }>(
@@ -15,10 +15,10 @@ export function useGuestbookEntries(fallbackData: Fallbackdata) {
     {
       fallbackData: {
         data: fallbackData,
-        success: true
-      }
+        success: true,
+      },
     }
-  );
+  )
 
-  return { data, mutate };
+  return { data, mutate }
 }

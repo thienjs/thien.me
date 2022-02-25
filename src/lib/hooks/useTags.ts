@@ -1,5 +1,5 @@
-import { useState, useEffect, useMemo } from "react";
-import { useRouter } from "next/router";
+import { useState, useEffect, useMemo } from 'react'
+import { useRouter } from 'next/router'
 
 /**
  *
@@ -8,25 +8,25 @@ import { useRouter } from "next/router";
  */
 
 const useTags = (data: any): [any, (text: string) => void] => {
-  const [currentTag, setCurrentTag] = useState("");
+  const [currentTag, setCurrentTag] = useState('')
 
-  const { query } = useRouter();
+  const { query } = useRouter()
 
   useEffect(() => {
     if (query.tag !== undefined) {
-      setCurrentTag(query.tag as string);
+      setCurrentTag(query.tag as string)
     }
-  }, [query.tag]);
+  }, [query.tag])
 
   const memoizedData = useMemo(() => {
     if (currentTag) {
-      return data.filter((item: any) => item.tags.includes(currentTag));
+      return data.filter((item: any) => item.tags.includes(currentTag))
     }
 
-    return data;
-  }, [currentTag, data]);
+    return data
+  }, [currentTag, data])
 
-  return [memoizedData, (text) => setCurrentTag(text)];
-};
+  return [memoizedData, (text) => setCurrentTag(text)]
+}
 
-export default useTags;
+export default useTags

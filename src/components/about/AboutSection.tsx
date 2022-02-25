@@ -1,5 +1,5 @@
-import { ReactNode } from "react"
-import { IconType } from "react-icons"
+import { ReactNode } from 'react'
+import { IconType } from 'react-icons'
 
 export type AboutSectionProps = {
   title: string
@@ -20,7 +20,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
       <span className="">
         {Icon ? (
           <Icon
-            className="self-center md:self-end  md:p-1 md:mr-1 mr-0.5 p-0.5"
+            className="mr-0.5 self-center  p-0.5 md:mr-1 md:self-end md:p-1"
             size="1em"
           />
         ) : null}

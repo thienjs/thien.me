@@ -143,33 +143,33 @@ export interface IAnimations {
 }
 
 export interface Todo {
-  id: string;
-  created: string;
-  text: string;
-  completed: boolean;
+  id: string
+  created: string
+  text: string
+  completed: boolean
 }
 
 export enum Form {
   Initial,
   Loading,
   Success,
-  Error
+  Error,
 }
 
 export type FormState = {
-  state: Form;
-  message?: string;
-};
+  state: Form
+  message?: string
+}
 export type ProjectCard = {
-  slug: string;
-  title: string;
-  publishedAt: string;
-  lastUpdated?: string;
-  description: string;
-  category?: string;
-  techs: string;
-  banner: string;
-  link?: string;
-  github?: string;
-  youtube?: string;
-};
+  slug: string
+  title: string
+  publishedAt: string
+  lastUpdated?: string
+  description: string
+  category?: string
+  techs: string
+  banner: string
+  link?: string
+  github?: string
+  youtube?: string
+}

@@ -21,7 +21,7 @@ export const NowItem = ({ children }) => {
       transition={{ delay: 0.3, duration: 0.7 }}
       variants={{
         hidden: {
-          opacity: .1,
+          opacity: 0.1,
           y: 20,
         },
         visible: {
@@ -68,11 +68,11 @@ export default function NowPage() {
               y: 0,
             },
           }}
-          className="mt-20 mb-10 text-sm text-neutral-800 dark:text-neutral-300 font-semibold"
+          className="mt-20 mb-10 text-sm font-semibold text-neutral-800 dark:text-neutral-300"
         >
           What I'm up to now:
         </motion.div>
-        <ul className="text-sm text-left space-y-3 text-neutral-800 dark:text-neutral-300 font-serif">
+        <ul className="space-y-3 text-left font-serif text-sm text-neutral-800 dark:text-neutral-300">
           <NowItem>- applying for my first tech job</NowItem>
           <NowItem>- taking more risks</NowItem>
           <NowItem>- walking Loki - my 9 month old puppy</NowItem>

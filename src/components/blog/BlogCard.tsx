@@ -1,13 +1,13 @@
-import { Article } from '~/lib/types';
-import Image from 'next/image';
-import { handleArticleClicked } from '~/lib/handleArticleClick';
-import siteMetadata from '~/data/siteMetadata';
-import slugify from 'slugify';
-import { useIsArticleRead } from '~/lib/hooks/useIsArticleRead';
-import { useRouter } from 'next/dist/client/router';
-import Link from 'next/link';
-import useSWR from 'swr';
-import cn from 'classnames';
+import { Article } from '~/lib/types'
+import Image from 'next/image'
+import { handleArticleClicked } from '~/lib/handleArticleClick'
+import siteMetadata from '~/data/siteMetadata'
+import slugify from 'slugify'
+import { useIsArticleRead } from '~/lib/hooks/useIsArticleRead'
+import { useRouter } from 'next/dist/client/router'
+import Link from 'next/link'
+import useSWR from 'swr'
+import cn from 'classnames'
 import readingTime from 'reading-time'
 import { FiClock } from 'react-icons/fi'
 import { Tag } from './Tag'
@@ -29,14 +29,14 @@ export function BlogCard({ article }: Props) {
 
   return (
     <button
-      className="w-full text-sm my-2 mb- px-4 py-4  hover:bg-zinc-300 dark:hover:bg-zinc-800    mb-12 border-b"
+      className="mb- my-2 mb-12 w-full border-b px-4  py-4 text-sm    hover:bg-zinc-300 dark:hover:bg-zinc-800"
       onClick={() => handleArticleClicked(slug)}
     >
       <div className="flex flex-col">
-        <div className="flex text-md font-semibold text-left mb-1 justify-between ">
+        <div className="text-md mb-1 flex justify-between text-left font-semibold ">
           {article.title}
           {hasRead && (
-            <span className="text-sm inline-flex items-center text-gray-800 dark:text-gray-400 opacity-75  ml-6">
+            <span className="ml-6 inline-flex items-center text-sm text-gray-800 opacity-75  dark:text-gray-400">
               <svg width="16" height="16" fill="none" viewBox="0 0 24 24">
                 <path
                   stroke="currentColor"
@@ -47,13 +47,13 @@ export function BlogCard({ article }: Props) {
                 ></path>
               </svg>
 
-              <span className="font-extralight text-xs">read</span>
+              <span className="text-xs font-extralight">read</span>
             </span>
           )}
         </div>
-        <div className="flex flex-row space-x-3 flex-wrap mb-1">
+        <div className="mb-1 flex flex-row flex-wrap space-x-3">
           {article.tags.map((tag) => (
-            <div className="mt-0.5 rounded-sm bg-zinc-200 dark:bg-zinc-700 px-3 opacity-80 text-xs text-gray-700 dark:text-gray-300">
+            <div className="mt-0.5 rounded-sm bg-zinc-200 px-3 text-xs text-gray-700 opacity-80 dark:bg-zinc-700 dark:text-gray-300">
               #{tag.name}
             </div>
           ))}
@@ -61,12 +61,12 @@ export function BlogCard({ article }: Props) {
         {/*JSON.stringify(article) */}
         {/* <p>{article.summary}</p> */}
 
-        <p className="pb-2 my-1 text-left text-gray-600 dark:text-gray-400  text-sm">
+        <p className="my-1 pb-2 text-left text-sm text-gray-600  dark:text-gray-400">
           {article.summary}
         </p>
 
-        <span className="text-xs flex text-gray-600 dark:text-gray-400 justify-end space-x-4 ">
-          <div className="flex  text-gray-800 dark:text-gray-200 capsize text-xs items-center ">
+        <span className="flex justify-end space-x-4 text-xs text-gray-600 dark:text-gray-400 ">
+          <div className="capsize  flex items-center text-xs text-gray-800 dark:text-gray-200 ">
             <span className=" text-xs text-gray-800 dark:text-gray-400 ">
               {views ? new Number(views).toLocaleString() : '–––'} views.
             </span>

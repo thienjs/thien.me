@@ -44,15 +44,15 @@ const todo: React.FC<TodoProps> = (props) => {
   return (
     <Layout>
       <div className="w-full px-16">
-        <h2 className="font-semibold text-lg mb-2 mt-20">{draftNumber}</h2>
-        <p className="text-sm text-gray-700 dark:text-gray-400 mb-4">
+        <h2 className="mb-2 mt-20 text-lg font-semibold">{draftNumber}</h2>
+        <p className="mb-4 text-sm text-gray-700 dark:text-gray-400">
           By {props?.author?.name || 'Unknown author'}
         </p>
         <div className="mb-10">{props.task}</div>
 
         {userHasValidSession && todoBelongsToUser && (
           <button
-            className="ml-6 px-4 py-2 border "
+            className="ml-6 border px-4 py-2 "
             onClick={() => deleteTodo(props.id)}
           >
             <GoTrashcan />

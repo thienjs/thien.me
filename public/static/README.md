@@ -1,1 +1,1 @@
-Directory for images associated with  site content
+Directory for images associated with site content

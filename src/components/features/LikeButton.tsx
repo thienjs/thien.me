@@ -6,16 +6,11 @@ import { Likes } from 'lib/types'
 import { FaHeart } from 'react-icons/fa'
 
 export default function LikeButton({ slug }) {
-  const [hydrated, setHydrated] = useState(false);
-  const { data } = useSWR<Likes>(
-    `/api/likes/${slug}`,
-    fetcher,
-
-  );
-
+  const [hydrated, setHydrated] = useState(false)
+  const { data } = useSWR<Likes>(`/api/likes/${slug}`, fetcher)
 
   const likes = new Number(data?.total)
-  const [hasLiked, setHasLiked] = useState(false);
+  const [hasLiked, setHasLiked] = useState(false)
 
   const registerLike = () =>
     fetch(`/api/likes/${slug}`, {

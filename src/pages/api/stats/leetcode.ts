@@ -1,19 +1,19 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
+import type { NextApiRequest, NextApiResponse } from 'next'
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const userResponse = await fetch('https://api.github.com/users/thienjs');
+  const userResponse = await fetch('https://api.github.com/users/thienjs')
 
-  const user = await userResponse.json();
+  const user = await userResponse.json()
 
   res.setHeader(
     'Cache-Control',
     'public, s-maxage=1200, stale-while-revalidate=600'
-  );
+  )
 
   return res.status(200).json({
-    followers: user.followers
-  });
+    followers: user.followers,
+  })
 }

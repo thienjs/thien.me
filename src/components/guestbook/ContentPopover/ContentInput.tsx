@@ -1,9 +1,9 @@
-import  LoadingSpinner  from '~/components/ui/common/LoadingSpinner';
-import clsx from 'clsx';
-import * as React from 'react';
-import useSWR, { useSWRConfig } from 'swr';
-import { signOut } from 'next-auth/react';
-import toast from 'react-hot-toast';
+import LoadingSpinner from '~/components/ui/common/LoadingSpinner'
+import clsx from 'clsx'
+import * as React from 'react'
+import useSWR, { useSWRConfig } from 'swr'
+import { signOut } from 'next-auth/react'
+import toast from 'react-hot-toast'
 import { BiFullscreen } from 'react-icons/bi'
 
 export enum Form {
@@ -42,7 +42,6 @@ export function ContentInput() {
   }
   return (
     <div className="flex flex-col ">
-
       <form
         className="flex flex-col items-center space-y-3"
         onSubmit={onSubmit}
@@ -51,7 +50,7 @@ export function ContentInput() {
           Your Message
         </label>
         <textarea
-          className="w-full rounded-md border dark:border-zinc-600 border-gray-300 text-sm shadow-sm focus:border-gray-500 focus:ring-gray-500 dark:bg-zinc-700 dark:text-white dark:focus:border-gray-700 dark:focus:ring-neutral-600"
+          className="w-full rounded-md border border-gray-300 text-sm shadow-sm focus:border-gray-500 focus:ring-gray-500 dark:border-zinc-600 dark:bg-zinc-700 dark:text-white dark:focus:border-gray-700 dark:focus:ring-neutral-600"
           ref={inputEl}
           rows={3}
           aria-label="Your message"

@@ -1,12 +1,12 @@
-import { useForm } from 'react-hook-form';
-import Input from './Input';
-import InputSpacer from './InputSpacer';
+import { useForm } from 'react-hook-form'
+import Input from './Input'
+import InputSpacer from './InputSpacer'
 import toast, { Toaster } from 'react-hot-toast'
 
 import { ExclamationCircleIcon } from '@heroicons/react/solid'
 
 const FormError = ({ errorMessage }) => {
-  return <p className="text-red-300 mt-1">{errorMessage}</p>
+  return <p className="mt-1 text-red-300">{errorMessage}</p>
 }
 
 interface AddContactFormProps {
@@ -16,7 +16,6 @@ type FormValues = {
   key1: string
   key2: number
 }
-
 
 export default function AddContactForm(props: AddContactFormProps) {
   const {
@@ -57,15 +56,9 @@ export default function AddContactForm(props: AddContactFormProps) {
   }
   return (
     <form className="flex flex-col" onSubmit={handleSubmit(props.onSubmit)}>
-      <InputSpacer>
-
-      </InputSpacer>
-      <InputSpacer>
-
-      </InputSpacer>
-      <InputSpacer>
-
-      </InputSpacer>
+      <InputSpacer></InputSpacer>
+      <InputSpacer></InputSpacer>
+      <InputSpacer></InputSpacer>
       <InputSpacer>
         <div className="relative">
           <input
@@ -74,15 +67,15 @@ export default function AddContactForm(props: AddContactFormProps) {
             name="name"
             id="name"
             autoComplete="name"
-            className={`block w-full shadow-sm py-3 text-white px-4 mb-2 bg-[#131415] placeholder-gray-500  border-gray-700 rounded-md ${
+            className={`mb-2 block w-full rounded-md border-gray-700 bg-[#131415] py-3 px-4 text-white  placeholder-gray-500 shadow-sm ${
               errors.name
-                ? 'focus:ring-red-500 border-red-500'
-                : 'focus:ring-blue-500 focus:border-blue-500'
+                ? 'border-red-500 focus:ring-red-500'
+                : 'focus:border-blue-500 focus:ring-blue-500'
             }`}
             placeholder="Full name"
           />
           {errors.name && (
-            <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
               <ExclamationCircleIcon
                 className="h-5 w-5 text-red-600"
                 aria-hidden="true"
@@ -93,7 +86,7 @@ export default function AddContactForm(props: AddContactFormProps) {
       </InputSpacer>
 
       <button
-        className="bg-blue-500 rounded-md p-4 text-blue-100"
+        className="rounded-md bg-blue-500 p-4 text-blue-100"
         type="submit"
       >
         Submit

@@ -4,11 +4,9 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-
   const headers = {
     Authorization: 'Token ' + process.env.GITHUB_AUTH_TOKEN,
   }
-
 
   // projects
   const url = 'https://api.github.com/users/thienjs/repos?per_page=10'
@@ -28,5 +26,4 @@ export default async function handler(
   })
 
   //return
-
 }

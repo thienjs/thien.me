@@ -1,5 +1,3 @@
-
-
 export const navigation = {
   pages: [
     { name: 'Home', href: '/home' },
@@ -37,4 +35,3 @@ export const navigation = {
     },
   ],
 }
-

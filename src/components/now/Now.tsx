@@ -1,8 +1,8 @@
 import Layout from 'components/ui/Layout'
 import Title from 'components/ui/typography/Title'
-import {fetcher} from '~/lib/fetcher';
-import { NowPlayingSong } from '~/lib/types';
-import useSWR from 'swr';
+import { fetcher } from '~/lib/fetcher'
+import { NowPlayingSong } from '~/lib/types'
+import useSWR from 'swr'
 
 export default function Now() {
   var year = new Date().getFullYear()
@@ -18,15 +18,15 @@ export default function Now() {
   var age = year - birthDate.getFullYear()
   var lokimonth = birthDate.getMonth() - month
 
-  const { data } = useSWR<NowPlayingSong>('/api/now-playing', fetcher);
+  const { data } = useSWR<NowPlayingSong>('/api/now-playing', fetcher)
 
   return (
     <>
       <div className="min-w-96 text-left">
-        <h3 className="mt-20 mb-10 text-sm text-neutral-800 dark:text-neutral-300 font-semibold">
+        <h3 className="mt-20 mb-10 text-sm font-semibold text-neutral-800 dark:text-neutral-300">
           what I'm doing to now:
         </h3>
-        <ul className="text-sm text-left space-y-3 text-neutral-800 dark:text-neutral-300 font-serif">
+        <ul className="space-y-3 text-left font-serif text-sm text-neutral-800 dark:text-neutral-300">
           <li>- applying for my first tech job</li>
           <li>- taking more risks</li>
           <li>- walking Loki - my 8 month old puppy</li>

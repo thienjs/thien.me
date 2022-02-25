@@ -1,10 +1,8 @@
-import { intlFormat, formatDistanceToNowStrict } from "date-fns";
+import { intlFormat, formatDistanceToNowStrict } from 'date-fns'
 
 import { GoRepoForked, GoStar } from 'react-icons/go'
 import { BiLink } from 'react-icons/bi'
-import {MdStarOutline} from 'react-icons/md'
-
-
+import { MdStarOutline } from 'react-icons/md'
 
 type Props = {
   name: string
@@ -22,7 +20,7 @@ type Props = {
 }
 
 const RepoCard = (props: Props) => (
-  <div className="w-full text-sm my-2 px-4 py-4 bg-white dark:bg-zinc-900 hover:bg-zinc-300 dark:hover:bg-zinc-800  border  rounded-md border-gray-100 shadow-sm shadow-gray-300 dark:shadow-none dark:border-zinc-900">
+  <div className="my-2 w-full rounded-md border border-gray-100 bg-white px-4 py-4 text-sm  shadow-sm  shadow-gray-300 hover:bg-zinc-300 dark:border-zinc-900 dark:bg-zinc-900 dark:shadow-none dark:hover:bg-zinc-800">
     <a
       className="text-lg font-semibold "
       href={props.url}
@@ -33,7 +31,7 @@ const RepoCard = (props: Props) => (
     </a>
 
     {props.description && (
-      <p className="text-md text-gray-600 dark:text-gray-400 my-1 pb-1">
+      <p className="text-md my-1 pb-1 text-gray-600 dark:text-gray-400">
         {props.description}
       </p>
     )}
@@ -41,7 +39,7 @@ const RepoCard = (props: Props) => (
       <div className="flex ">
         <BiLink className="mt-1.5" color="gray" />
 
-        <p className="text-sm  ml-1 text-md text-gray-600 dark:text-gray-400 my-1 pb-1">
+        <p className="text-md  my-1 ml-1 pb-1 text-sm text-gray-600 dark:text-gray-400">
           {props.homepageUrl}
         </p>
       </div>
@@ -49,8 +47,8 @@ const RepoCard = (props: Props) => (
 
     <div className="flex flex-wrap text-gray-600 dark:text-gray-400 ">
       {props.language && (
-        <div className="text-xs mr-2 flex">
-          <span className="h-3 w-3 block rounded-full mr-2">
+        <div className="mr-2 flex text-xs">
+          <span className="mr-2 block h-3 w-3 rounded-full">
             <style jsx>{`
               span {
                 background-color: ${props.language.color};
@@ -70,11 +68,11 @@ const RepoCard = (props: Props) => (
             }`}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex flex-row mr-2 text-xs font-light pb-0  "
+            className="mr-2 flex flex-row pb-0 text-xs font-light  "
           >
             <MdStarOutline
               fill="currentColor"
-              className="align-text-bottom mr-1 w-4 h-4 text-nm font-light hover:fill-yellow-400 "
+              className="text-nm mr-1 h-4 w-4 align-text-bottom font-light hover:fill-yellow-400 "
             />
             <span>{props.stars.toLocaleString('en-US')}</span>
           </a>
@@ -91,7 +89,7 @@ const RepoCard = (props: Props) => (
             target="_blank"
             rel="noopener noreferrer"
           >
-            <GoRepoForked fill="currentColor" className="h-3 w-3 mr-1  " />
+            <GoRepoForked fill="currentColor" className="mr-1 h-3 w-3  " />
             <span>{props.forks.toLocaleString('en-US')}</span>
           </a>
         </div>
@@ -125,4 +123,4 @@ const RepoCard = (props: Props) => (
   </div>
 )
 
-export default RepoCard;
+export default RepoCard

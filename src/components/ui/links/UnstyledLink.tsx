@@ -1,14 +1,14 @@
-import Link, { LinkProps } from 'next/link';
+import Link, { LinkProps } from 'next/link'
 
-import clsxm from '~/lib/clsxm';
+import clsxm from '~/lib/clsxm'
 
 export type UnstyledLinkProps = {
-  href: string;
-  children: React.ReactNode;
-  openNewTab?: boolean;
-  className?: string;
-  nextLinkProps?: Omit<LinkProps, 'href'>;
-} & React.ComponentPropsWithoutRef<'a'>;
+  href: string
+  children: React.ReactNode
+  openNewTab?: boolean
+  className?: string
+  nextLinkProps?: Omit<LinkProps, 'href'>
+} & React.ComponentPropsWithoutRef<'a'>
 
 export default function UnstyledLink({
   children,
@@ -21,7 +21,7 @@ export default function UnstyledLink({
   const isNewTab =
     openNewTab !== undefined
       ? openNewTab
-      : href && !href.startsWith('/') && !href.startsWith('#');
+      : href && !href.startsWith('/') && !href.startsWith('#')
 
   if (!isNewTab) {
     return (
@@ -30,18 +30,18 @@ export default function UnstyledLink({
           {children}
         </a>
       </Link>
-    );
+    )
   }
 
   return (
     <a
-      target='_blank'
-      rel='noopener noreferrer'
+      target="_blank"
+      rel="noopener noreferrer"
       href={href}
       {...rest}
       className={clsxm('cursor-newtab', className)}
     >
       {children}
     </a>
-  );
+  )
 }

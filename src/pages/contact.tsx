@@ -1,13 +1,13 @@
-import NextLink from "next/link";
+import NextLink from 'next/link'
 import Layout from '~/components/ui/Layout'
 import ContactLink from '~/components/contact/ContactLink'
-import { FaTwitter } from "react-icons/fa";
+import { FaTwitter } from 'react-icons/fa'
 import Title from '~/components/ui/typography/Title'
 const Contact = () => {
   return (
     <Layout>
       <Title>Contact</Title>
-      <ul className="flex flex-col font-semi-bold ">
+      <ul className="font-semi-bold flex flex-col ">
         <ContactLink
           href="mailto:thienjsx@gmail.com"
           title="gmail"
@@ -28,5 +28,4 @@ const Contact = () => {
   )
 }
 
-
-export default Contact;
+export default Contact

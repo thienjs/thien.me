@@ -9,7 +9,7 @@ import { GoPlus } from 'react-icons/go'
 import { useSession, getSession, signIn } from 'next-auth/react'
 import Title from '~/components/ui/typography/Title'
 
-export const getServerSideProps: GetServerSideProps = async ({req, res}) => {
+export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
   const session = await getSession({ req })
   if (!session) {
     res.statusCode = 403
@@ -62,12 +62,14 @@ const TodoPage: React.FC<Props> = (props) => {
     <Layout>
       <div className="">
         <Title>Todo</Title>
-        <p className="text-neutral-600 dark:text-neutral-400 mb-8 text-sm">my todo list</p>
+        <p className="mb-8 text-sm text-neutral-600 dark:text-neutral-400">
+          my todo list
+        </p>
 
         {session ? (
           <>
             <form
-              className="flex flex-col w-full justify-between"
+              className="flex w-full flex-col justify-between"
               onSubmit={submitData}
             >
               <textarea
@@ -76,38 +78,36 @@ const TodoPage: React.FC<Props> = (props) => {
                 placeholder="task"
                 rows={1}
                 value={task}
-                className="text-gray-700 dark:text-gray-100 dark:bg-zinc-400  rounded-md border-gray-200 bg-gray-300"
+                className="rounded-md border-gray-200 bg-gray-300  text-gray-700 dark:bg-zinc-400 dark:text-gray-100"
               />
-              <div className="flex justify-end mt-3 mb-4">
+              <div className="mt-3 mb-4 flex justify-end">
                 <input
                   type="submit"
                   value="add"
-                  className="hover:text-gray-500 dark:hover:text-gray-100 px-6 py-2 border rounded-md bg-emerald-500  dark:bg-emerald-800 text-white hover:bg-slate-600 dark:hover:bg-emerald-900 dark:border-emerald-900 shadow-lg"
+                  className="rounded-md border bg-emerald-500 px-6 py-2 text-white shadow-lg  hover:bg-slate-600 hover:text-gray-500 dark:border-emerald-900 dark:bg-emerald-800 dark:hover:bg-emerald-900 dark:hover:text-gray-100"
                 />
               </div>
             </form>
             <main>
-          <h2 className="text-lg font-semibold mt-4">Tasks:</h2>
-          {props.feed.map((todo) => (
-            <div key={todo.id} className="">
-              <Todo todo={todo} />
-            </div>
-          ))}
-        </main>
+              <h2 className="mt-4 text-lg font-semibold">Tasks:</h2>
+              {props.feed.map((todo) => (
+                <div key={todo.id} className="">
+                  <Todo todo={todo} />
+                </div>
+              ))}
+            </main>
           </>
         ) : (
           <>
-            <p className="text-sm mb-1">please sign in use todo</p>
+            <p className="mb-1 text-sm">please sign in use todo</p>
             <button
-              className="dark:bg-gray-600 px-4 py-2 rounded-md mb-2 bg-gray-400"
+              className="mb-2 rounded-md bg-gray-400 px-4 py-2 dark:bg-gray-600"
               onClick={() => signIn()}
             >
               Sign In
             </button>
           </>
         )}
-
-
       </div>
     </Layout>
   )

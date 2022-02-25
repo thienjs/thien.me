@@ -1,11 +1,11 @@
-import { Client } from "@notionhq/client";
+import { Client } from '@notionhq/client'
 
 const handler = async (req, res) => {
-  const { id, isWatched } = req.body;
+  const { id, isWatched } = req.body
 
   const notion = new Client({
     auth: process.env.NOTION_TOKEN,
-  });
+  })
 
   const data = await notion.pages.update({
     page_id: id,
@@ -14,9 +14,9 @@ const handler = async (req, res) => {
         checkbox: isWatched,
       },
     },
-  });
+  })
 
-  res.send(data);
-};
+  res.send(data)
+}
 
-export default handler;
+export default handler

@@ -1,11 +1,10 @@
-import Highlight, { defaultProps } from 'prism-react-renderer';
+import Highlight, { defaultProps } from 'prism-react-renderer'
 import dracula from 'prism-react-renderer/themes/dracula'
 import github from 'prism-react-renderer/themes/github'
 import duotoneDark from 'prism-react-renderer/themes/duotoneDark'
 import palenight from 'prism-react-renderer/themes/palenight'
 import okaidia from 'prism-react-renderer/themes/okaidia'
 import vsDark from 'prism-react-renderer/themes/vsDark'
-
 
 import { Language } from '~/lib/types'
 import { useCopyToClipboard } from '~/lib/hooks/useCopyToClipboard'
@@ -52,7 +51,7 @@ export const CodeBlock = ({ code, language, metastring }: Props) => {
         height="32"
         viewBox="0 0 32 32"
         fill="none"
-        className="stroke-current transform group-hover:rotate-[-4deg] transition"
+        className="transform stroke-current transition group-hover:rotate-[-4deg]"
       >
         <path
           d="M12.9975 10.7499L11.7475 10.7499C10.6429 10.7499 9.74747 11.6453 9.74747 12.7499L9.74747 21.2499C9.74747 22.3544 10.6429 23.2499 11.7475 23.2499L20.2475 23.2499C21.352 23.2499 22.2475 22.3544 22.2475 21.2499L22.2475 12.7499C22.2475 11.6453 21.352 10.7499 20.2475 10.7499L18.9975 10.7499"
@@ -81,7 +80,7 @@ export const CodeBlock = ({ code, language, metastring }: Props) => {
         <g
           className={`transition-opacity ${
             isCopied
-              ? 'opacity-100 transform rotate-[-4deg] transition'
+              ? 'rotate-[-4deg] transform opacity-100 transition'
               : 'opacity-0'
           }`}
         >
@@ -108,10 +107,10 @@ export const CodeBlock = ({ code, language, metastring }: Props) => {
     </button>
   )
   return (
-    <div className="overflow-auto bg-zinc-900 dark:bg-zinc-800 bg-opacity-60 rounded-md text-sm">
-      <div className="flex flex-row justify-between  items-center border-b mb-1 border-gray-300 dark:border-gray-700 ">
+    <div className="overflow-auto rounded-md bg-zinc-900 bg-opacity-60 text-sm dark:bg-zinc-800">
+      <div className="mb-1 flex flex-row  items-center justify-between border-b border-gray-300 dark:border-gray-700 ">
         {CopyCodeButton}
-        <div className="mr-2 text-gray-400 text-xs p-1 ">{language}</div>
+        <div className="mr-2 p-1 text-xs text-gray-400 ">{language}</div>
       </div>
 
       <Highlight
@@ -132,7 +131,7 @@ export const CodeBlock = ({ code, language, metastring }: Props) => {
 
                 return (
                   <div key={i} {...lineProps}>
-                    <span className="inline-block w-8 py-0.5 ml-4 select-none opacity-30">
+                    <span className="ml-4 inline-block w-8 select-none py-0.5 opacity-30">
                       {i + 1}
                     </span>
                     {line.map((token, key) => (

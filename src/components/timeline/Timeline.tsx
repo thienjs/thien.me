@@ -1,4 +1,4 @@
-import { RiAncientGateFill } from "react-icons/ri";
+import { RiAncientGateFill } from 'react-icons/ri'
 import { FaGraduationCap, FaDog, FaBlackTie } from 'react-icons/fa'
 import { AiOutlineCode } from 'react-icons/ai'
 import { SiAol, SiLeetcode } from 'react-icons/si'
@@ -10,9 +10,9 @@ export default function Timeline() {
   return (
     <div>
       <Title>My Journey</Title>
-      <ol className="relative border-l border-zinc-400 dark:border-gray-800 mt-6 ml-6 ">
-        <li className="mb-4 ml-8 px-4 py-4 bg-white dark:bg-zinc-900  border  rounded-md border-gray-100 shadow-sm shadow-gray-300 dark:shadow-none dark:border-zinc-900">
-          <span className="absolute flex items-center justify-center w-6 h-6 bg-yellow-300 rounded-full -left-3 ring-8 ring-white dark:ring-gray-900 dark:bg-yellow-700">
+      <ol className="relative mt-6 ml-6 border-l border-zinc-400 dark:border-gray-800 ">
+        <li className="mb-4 ml-8 rounded-md border border-gray-100 bg-white  px-4  py-4 shadow-sm shadow-gray-300 dark:border-zinc-900 dark:bg-zinc-900 dark:shadow-none">
+          <span className="absolute -left-3 flex h-6 w-6 items-center justify-center rounded-full bg-yellow-300 ring-8 ring-white dark:bg-yellow-700 dark:ring-gray-900">
             <SiLeetcode />
           </span>
           <h3 className="mb-1 text-base font-semibold text-gray-900 dark:text-white">
@@ -25,14 +25,14 @@ export default function Timeline() {
             Prepare for interviews and show coding ability.
           </p>
         </li>
-        <li className="mb-4 ml-8 px-4 py-4 bg-white dark:bg-zinc-900  border  rounded-md border-gray-100 shadow-sm shadow-gray-300 dark:shadow-none dark:border-zinc-900">
-          <span className=" animate-pulse absolute flex items-center justify-center w-6 h-6 bg-blue-200 rounded-full -left-3 ring-8 ring-white dark:ring-gray-900 dark:bg-green-900">
+        <li className="mb-4 ml-8 rounded-md border border-gray-100 bg-white  px-4  py-4 shadow-sm shadow-gray-300 dark:border-zinc-900 dark:bg-zinc-900 dark:shadow-none">
+          <span className=" absolute -left-3 flex h-6 w-6 animate-pulse items-center justify-center rounded-full bg-blue-200 ring-8 ring-white dark:bg-green-900 dark:ring-gray-900">
             <FaBlackTie className="animate-none" />
           </span>
 
           <h3 className="flex items-center text-base  font-semibold text-gray-900 dark:text-white">
             Applying for Jobs
-            <span className="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-3">
+            <span className="mr-2 ml-3 rounded bg-blue-100 px-2.5 py-0.5 text-sm font-medium text-blue-800 dark:bg-blue-200 dark:text-blue-800">
               Present
             </span>
           </h3>
@@ -43,8 +43,8 @@ export default function Timeline() {
             Feel confident I can work as a junior web developer. Wish me Luck
           </p>
         </li>
-        <li className=" ml-8  px-4 py-4 bg-white dark:bg-zinc-900  border  rounded-md border-gray-100 shadow-sm shadow-gray-300 dark:shadow-none dark:border-zinc-900">
-          <span className="absolute flex items-center justify-center w-6 h-6 bg-red-200 rounded-full -left-3 ring-8 ring-white dark:ring-gray-900 dark:bg-red-900">
+        <li className=" ml-8  rounded-md border border-gray-100 bg-white  px-4  py-4 shadow-sm shadow-gray-300 dark:border-zinc-900 dark:bg-zinc-900 dark:shadow-none">
+          <span className="absolute -left-3 flex h-6 w-6 items-center justify-center rounded-full bg-red-200 ring-8 ring-white dark:bg-red-900 dark:ring-gray-900">
             <FaDog />
           </span>
           <h3 className="mb-1 text-base font-semibold text-gray-900 dark:text-white">
@@ -64,10 +64,10 @@ export default function Timeline() {
                 {/*
               Use the `open` render prop to rotate the icon when the panel is open
             */}
-                <div className="flex text-small ml-1.5">
+                <div className="text-small ml-1.5 flex">
                   <ChevronUpIcon
-                    className={`text-gray-600 h-6 w-6  ${
-                      open ? 'transform rotate-180 ' : ''
+                    className={`h-6 w-6 text-gray-600  ${
+                      open ? 'rotate-180 transform ' : ''
                     }`}
                   />
                 </div>
@@ -83,8 +83,8 @@ export default function Timeline() {
               >
                 <Disclosure.Panel>
                   {' '}
-                  <li className="mb-4 ml-8 px-4 py-4 bg-white dark:bg-zinc-900  border  rounded-md border-gray-100 shadow-sm shadow-gray-300 dark:shadow-none dark:border-zinc-900">
-                    <span className="absolute flex items-center justify-center w-6 h-6 bg-blue-200 rounded-full -left-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
+                  <li className="mb-4 ml-8 rounded-md border border-gray-100 bg-white  px-4  py-4 shadow-sm shadow-gray-300 dark:border-zinc-900 dark:bg-zinc-900 dark:shadow-none">
+                    <span className="absolute -left-3 flex h-6 w-6 items-center justify-center rounded-full bg-blue-200 ring-8 ring-white dark:bg-blue-900 dark:ring-gray-900">
                       <AiOutlineCode />
                     </span>
                     <h3 className="mb-1 text-base font-semibold text-gray-900 dark:text-white">
@@ -99,8 +99,8 @@ export default function Timeline() {
                       <p>- colt steele react</p>
                     </p>
                   </li>
-                  <li className="mb-4 ml-8 px-4 py-4 bg-white dark:bg-zinc-900  border  rounded-md border-gray-100 shadow-sm shadow-gray-300 dark:shadow-none dark:border-zinc-900">
-                    <span className="absolute flex items-center justify-center w-6 h-6 bg-purple-200 rounded-full -left-3 ring-8 ring-white dark:ring-gray-900 dark:bg-purple-900">
+                  <li className="mb-4 ml-8 rounded-md border border-gray-100 bg-white  px-4  py-4 shadow-sm shadow-gray-300 dark:border-zinc-900 dark:bg-zinc-900 dark:shadow-none">
+                    <span className="absolute -left-3 flex h-6 w-6 items-center justify-center rounded-full bg-purple-200 ring-8 ring-white dark:bg-purple-900 dark:ring-gray-900">
                       <FaGraduationCap />
                     </span>
                     <h3 className="mb-1 text-base font-semibold text-gray-900 dark:text-white">
@@ -113,8 +113,8 @@ export default function Timeline() {
                       Bachelor of Arts in Business Finance
                     </p>
                   </li>
-                  <li className="mb-4 ml-8 px-4 py-4 bg-white dark:bg-zinc-900  border  rounded-md border-gray-100 shadow-sm shadow-gray-300 dark:shadow-none dark:border-zinc-900">
-                    <span className="absolute flex items-center justify-center w-6 h-6 bg-blue-200 rounded-full -left-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
+                  <li className="mb-4 ml-8 rounded-md border border-gray-100 bg-white  px-4  py-4 shadow-sm shadow-gray-300 dark:border-zinc-900 dark:bg-zinc-900 dark:shadow-none">
+                    <span className="absolute -left-3 flex h-6 w-6 items-center justify-center rounded-full bg-blue-200 ring-8 ring-white dark:bg-blue-900 dark:ring-gray-900">
                       <SiAol />
                     </span>
                     <h3 className="mb-1 text-base font-semibold text-gray-900 dark:text-white">

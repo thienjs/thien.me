@@ -1,6 +1,6 @@
-import { useDarkTheme } from "~/lib/hooks/useDarkTheme";
-import { Switch } from "@headlessui/react";
-import { SunIcon, MoonIcon } from "@heroicons/react/outline";
+import { useDarkTheme } from '~/lib/hooks/useDarkTheme'
+import { Switch } from '@headlessui/react'
+import { SunIcon, MoonIcon } from '@heroicons/react/outline'
 import { animated, useSpring } from 'react-spring'
 import { useTheme } from 'next-themes'
 

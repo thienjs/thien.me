@@ -1,21 +1,21 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react'
 
-import { formatHashLink } from '~/lib/formatHashLink';
+import { formatHashLink } from '~/lib/formatHashLink'
 
 type Props = {
-  children: JSX.Element;
-  text: string;
-};
+  children: JSX.Element
+  text: string
+}
 
 export function AnchorLink({ children, text }: Props) {
-  const [hashLink, setHashLink] = useState<string>();
+  const [hashLink, setHashLink] = useState<string>()
 
   useEffect(() => {
-    setHashLink(formatHashLink(text));
-  }, [text]);
+    setHashLink(formatHashLink(text))
+  }, [text])
 
   return (
-    <div className="group flex justify-start items-center space-x-2">
+    <div className="group flex items-center justify-start space-x-2">
       {children}
       <div className="opacity-10 group-hover:opacity-50">
         <a
@@ -24,7 +24,7 @@ export function AnchorLink({ children, text }: Props) {
           href={`#${hashLink}`}
         >
           <svg
-            className="w-7 h-7 hidden md:block"
+            className="hidden h-7 w-7 md:block"
             fill="none"
             viewBox="0 0 24 24"
           >
@@ -53,5 +53,5 @@ export function AnchorLink({ children, text }: Props) {
         </a>
       </div>
     </div>
-  );
+  )
 }

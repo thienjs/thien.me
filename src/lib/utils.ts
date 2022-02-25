@@ -1,6 +1,5 @@
 import { useState } from 'react'
 
-
 export function useFormFields<T>(
   initialValues: T
 ): [T, (event: React.ChangeEvent<HTMLInputElement>) => void, () => void] {

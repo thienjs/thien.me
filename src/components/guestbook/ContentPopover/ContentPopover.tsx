@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from 'react'
 
 import { FiDivide, FiX } from 'react-icons/fi'
 import { AuthButtons } from './AuthButtons'
@@ -13,7 +13,7 @@ export function ContentPopover(props: IContentPopoverProps) {
   const [isOpen, setIsOpen] = React.useState(false)
   const { data: session, status } = useSession()
   return (
-    <div className=" max-w-3xl min-w-[380px] px-4 py-4 bg-white dark:bg-zinc-900  border my-2 rounded-md border-gray-100 shadow-sm shadow-gray-300 dark:shadow-none dark:border-zinc-900">
+    <div className=" my-2 min-w-[380px] max-w-3xl rounded-md border border-gray-100  bg-white px-4 py-4 shadow-sm shadow-gray-300 dark:border-zinc-900 dark:bg-zinc-900 dark:shadow-none">
       <div>
         <div className=" w-full">
           {status === 'authenticated' ? <ContentInput /> : <AuthButtons />}

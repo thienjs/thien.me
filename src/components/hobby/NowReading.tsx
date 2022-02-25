@@ -18,9 +18,9 @@ export const NowReading: React.FC<NowReadingProps> = ({
   rightPanel,
   titleSide,
 }) => (
-  <li className="flex flex-row-reverse items-center sm:flex-row mb-4 mt-6 space-x-0 sm:space-x-2  w-full text-sm  border rounded-md px-4 py-4 bg-white border-zinc-200 shadow-sm dark:border-zinc-900 dark:shadow-none cursor-pointer  dark:bg-zinc-900">
+  <li className="mb-4 mt-6 flex w-full cursor-pointer flex-row-reverse items-center space-x-0  rounded-md border  border-zinc-200 bg-white px-4 py-4 text-sm shadow-sm dark:border-zinc-900 dark:bg-zinc-900 dark:shadow-none sm:flex-row  sm:space-x-2">
     {leftPanel && <div className="pr-2">{leftPanel}</div>}
-    <div className="flex flex-row justify-between w-full md:justify-start">
+    <div className="flex w-full flex-row justify-between md:justify-start">
       <div className="flex flex-col">
         <div className="flex">
           <a href={url} className="text-title" target="_blank">

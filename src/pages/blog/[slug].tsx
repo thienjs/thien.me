@@ -1,19 +1,19 @@
-import { getPublishedArticles, getArticlePage } from "~/lib/notion";
-import { Fragment, useEffect } from 'react';
-import { Client } from '@notionhq/client';
-import siteMetadata from '~/data/siteMetadata';
-import slugify from 'slugify';
-import { useRouter } from 'next/router';
-import ViewCounter from "~/components/ViewCounter";
-import LikeButton from "~/components/features/LikeButton";
-import Layout from "~/components/ui/Layout";
-import Reactions from '~/components/features/reactions/Reactions';
-import { AnchorLink } from "~/components/ui/links/AnchorLink";
-import Image from "next/image";
-import { CodeBlock } from '~/components/blog/Codeblock';
-import { Callout } from "~/components/ui/Callout";
-import { YoutubeEmbed } from "~/components/blog/YoutubeEmbed";
-import { GetStaticPaths, GetStaticProps } from 'next';
+import { getPublishedArticles, getArticlePage } from '~/lib/notion'
+import { Fragment, useEffect } from 'react'
+import { Client } from '@notionhq/client'
+import siteMetadata from '~/data/siteMetadata'
+import slugify from 'slugify'
+import { useRouter } from 'next/router'
+import ViewCounter from '~/components/ViewCounter'
+import LikeButton from '~/components/features/LikeButton'
+import Layout from '~/components/ui/Layout'
+import Reactions from '~/components/features/reactions/Reactions'
+import { AnchorLink } from '~/components/ui/links/AnchorLink'
+import Image from 'next/image'
+import { CodeBlock } from '~/components/blog/Codeblock'
+import { Callout } from '~/components/ui/Callout'
+import { YoutubeEmbed } from '~/components/blog/YoutubeEmbed'
+import { GetStaticPaths, GetStaticProps } from 'next'
 import ScrollIndicator from '~/components/ui/ScrollIndicator'
 import CDbutton from '~/components/ui/CDbutton'
 import Link from 'next/link'
@@ -33,7 +33,7 @@ export const Text = ({ text }) => {
           bold ? 'font-bold' : null,
           italic ? 'italic' : null,
           code
-            ? 'bg-cyan-200 dark:bg-cyan-900 dark:bg-opacity-50 text-indigo-500 dark:text-indigo-200 py-0.5 px-2 rounded-md mx-1 inline-block align-middle tracking-tight text-base'
+            ? 'mx-1 inline-block rounded-md bg-cyan-200 py-0.5 px-2 align-middle text-base tracking-tight text-indigo-500 dark:bg-cyan-900 dark:bg-opacity-50 dark:text-indigo-200'
             : null,
           strikethrough ? 'line-through' : null,
           underline ? 'underline' : null,
@@ -53,13 +53,13 @@ export function renderBlocks(block) {
   switch (type) {
     case 'paragraph':
       return (
-        <p className="text-gray-800 dark:text-gray-300 mb-2">
+        <p className="mb-2 text-gray-800 dark:text-gray-300">
           <Text text={value.text} />
         </p>
       )
     case 'heading_1':
       return (
-        <h1 className="text-3xl font-bold mb-2">
+        <h1 className="mb-2 text-3xl font-bold">
           <AnchorLink text={value.text[0].text.content}>
             <Text text={value.text} />
           </AnchorLink>
@@ -67,7 +67,7 @@ export function renderBlocks(block) {
       )
     case 'heading_2':
       return (
-        <h2 className="text-2xl font-semibold mb-2">
+        <h2 className="mb-2 text-2xl font-semibold">
           <AnchorLink text={value.text[0].text.content}>
             <Text text={value.text} />
           </AnchorLink>
@@ -75,7 +75,7 @@ export function renderBlocks(block) {
       )
     case 'heading_3':
       return (
-        <h3 className="text-xl font-semibold mb-2">
+        <h3 className="mb-2 text-xl font-semibold">
           <AnchorLink text={value.text[0].text.content}>
             <Text text={value.text} />
           </AnchorLink>
@@ -105,7 +105,7 @@ export function renderBlocks(block) {
               aria-describedby={value.text}
               name={id}
               type="checkbox"
-              className="w-4 h-4 text-teal-500 border-gray-300 rounded focus:ring-teal-500"
+              className="h-4 w-4 rounded border-gray-300 text-teal-500 focus:ring-teal-500"
             />
             <Text text={value.text} />
           </label>
@@ -159,7 +159,7 @@ export function renderBlocks(block) {
       )
     case 'bookmark':
       return (
-        <div className="flex flex=col">
+        <div className="flex=col flex">
           <Link href={value.url}>
             <a>{value.url}</a>
           </Link>
@@ -201,13 +201,13 @@ export function renderBlocks(block) {
       return <YoutubeEmbed url={value.external.url} />
     case 'quote':
       return (
-        <blockquote className="p-4 rounded-r-lg">
+        <blockquote className="rounded-r-lg p-4">
           <Text text={value.text} />
         </blockquote>
       )
     case 'divider':
       return (
-        <hr className="my-16 w-full border-none text-center h-10 before:content-['∿∿∿'] before:text-[#D1D5DB] before:text-2xl"></hr>
+        <hr className="my-16 h-10 w-full border-none text-center before:text-2xl before:text-[#D1D5DB] before:content-['∿∿∿']"></hr>
       )
     default:
       return `❌ Unsupported block (${
@@ -251,12 +251,12 @@ const ArticlePage = ({
           <article className="col-span-9 mt-12">
             <div className="space-y-3">
               <div>
-                <h1 className="text-3xl text-left font-semibold mb-2">
+                <h1 className="mb-2 text-left text-3xl font-semibold">
                   {title}
                 </h1>
                 <div className="text-left">
-                  <div className="flex mb-2 text-sm space-x-2 text-slate-500  dark:text-slate-500">
-                    <p className="m-0 tx-sm text-slate-500  dark:text-slate-500">
+                  <div className="mb-2 flex space-x-2 text-sm text-slate-500  dark:text-slate-500">
+                    <p className="tx-sm m-0 text-slate-500  dark:text-slate-500">
                       {publishedOn}
                     </p>
                     <p className="m-0  text-sm text-slate-500  dark:text-slate-500">
@@ -288,8 +288,8 @@ const ArticlePage = ({
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = [];
-  const data: any = await getPublishedArticles(process.env.NOTION_DATABASE_ID);
+  const paths = []
+  const data: any = await getPublishedArticles(process.env.NOTION_DATABASE_ID)
 
   data.forEach((result) => {
     if (result.object === 'page') {
@@ -297,60 +297,56 @@ export const getStaticPaths: GetStaticPaths = async () => {
         params: {
           slug: slugify(
             result.properties.Name.title[0].plain_text
-          ).toLowerCase()
-        }
-      });
+          ).toLowerCase(),
+        },
+      })
     }
-  });
+  })
 
   return {
     paths,
-    fallback: 'blocking'
-  };
-};
+    fallback: 'blocking',
+  }
+}
 
 export const getStaticProps: GetStaticProps = async ({ params: { slug } }) => {
-  let content = [];
-  let articleTitle = '';
-  let publishedDate = null;
-  let lastEditedAt = null;
-  let coverImage = null;
-  let summary = null;
-
-
+  let content = []
+  let articleTitle = ''
+  let publishedDate = null
+  let lastEditedAt = null
+  let coverImage = null
+  let summary = null
 
   const notion = new Client({
     auth: process.env.NOTION_TOKEN,
-  });
+  })
 
-  const data: any = await getPublishedArticles(process.env.NOTION_DATABASE_ID);
+  const data: any = await getPublishedArticles(process.env.NOTION_DATABASE_ID)
 
-  const page: any = getArticlePage(data, slug);
+  const page: any = getArticlePage(data, slug)
 
-  articleTitle = page.properties.Name.title[0].plain_text;
-  publishedDate = page.properties.Published.date.start;
-  lastEditedAt = page.properties.LastEdited.last_edited_time;
-  summary = page.properties.Summary?.rich_text[0]?.plain_text;
+  articleTitle = page.properties.Name.title[0].plain_text
+  publishedDate = page.properties.Published.date.start
+  lastEditedAt = page.properties.LastEdited.last_edited_time
+  summary = page.properties.Summary?.rich_text[0]?.plain_text
   coverImage =
     page.properties?.coverImage?.files[0]?.file?.url ||
     page.properties.coverImage?.files[0]?.external?.url ||
-    'https://via.placeholder.com/600x400.png';
-
-
+    'https://via.placeholder.com/600x400.png'
 
   let blocks = await notion.blocks.children.list({
-    block_id: page.id
-  });
+    block_id: page.id,
+  })
 
-  content = [...blocks.results];
+  content = [...blocks.results]
 
   while (blocks.has_more) {
     blocks = await notion.blocks.children.list({
       block_id: page.id,
-      start_cursor: blocks.next_cursor
-    });
+      start_cursor: blocks.next_cursor,
+    })
 
-    content = [...content, ...blocks.results];
+    content = [...content, ...blocks.results]
   }
 
   return {
@@ -363,8 +359,8 @@ export const getStaticProps: GetStaticProps = async ({ params: { slug } }) => {
       coverImage,
       summary,
     },
-    revalidate: 30
-  };
-};
+    revalidate: 30,
+  }
+}
 
-export default ArticlePage;
+export default ArticlePage

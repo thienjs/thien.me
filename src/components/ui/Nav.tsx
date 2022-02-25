@@ -1,30 +1,29 @@
-import * as React from 'react';
-import { motion, AnimateSharedLayout } from 'framer-motion';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-import classnames from 'classnames';
+import * as React from 'react'
+import { motion, AnimateSharedLayout } from 'framer-motion'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import classnames from 'classnames'
 import { navigation } from '~/data/nav'
 import ThemeSwitch from './ThemeSwitch'
 import DropMenu from './DropMenu'
 import AuthButton from '../auth/AuthButton'
-import { TBoxIcon } from '../icons/t-box';
-
+import { TBoxIcon } from '../icons/t-box'
 
 export default function Nav() {
   const { pathname } = useRouter()
   const [activeIndex, setActiveIndex] = React.useState(null)
   const [isOpen, setisOpen] = React.useState()
   return (
-    <nav className="flex flex-col  pb-4 w-full  max-w-sm md:max-w-2xl mt-4 pt-2">
+    <nav className="mt-4 flex  w-full max-w-sm  flex-col pb-4 pt-2 md:max-w-2xl">
       <div className="flex flex-row justify-between ">
         <Link href="/">
           <a>
-            <TBoxIcon className="w-8 h-8 ml-2 mr-auto cursor-pointer" />
+            <TBoxIcon className="ml-2 mr-auto h-8 w-8 cursor-pointer" />
           </a>
         </Link>
         <AnimateSharedLayout>
           <motion.ul
-            className="flex md:gap-x-4 gap-y-1 dark:text-gray-300  text-sm  "
+            className="flex gap-y-1 text-sm dark:text-gray-300  md:gap-x-4  "
             onHoverEnd={() => setActiveIndex(null)}
           >
             {navigation.navData.map((item, index) => {
@@ -46,8 +45,8 @@ export default function Nav() {
                       <span
                         className={`relative z-50 ${
                           pathname === item.path
-                            ? 'text-gray-900  dark:text-gray-300 font-semibold underline decoration-cyan-500 underline-offset-4 decoration-1 '
-                            : 'text-gray-700 dark:text-gray-400 font-normal'
+                            ? 'font-semibold  text-gray-900 underline decoration-cyan-500 decoration-1 underline-offset-4 dark:text-gray-300 '
+                            : 'font-normal text-gray-700 dark:text-gray-400'
                         }`}
                       >
                         {item.label}
@@ -59,7 +58,7 @@ export default function Nav() {
                             duration: 0.2,
                           }}
                           className={classnames(
-                            'absolute inset-0 rounded-md pointer-events-none z-0',
+                            'pointer-events-none absolute inset-0 z-0 rounded-md',
                             ['bg-zinc-300'],
                             ['dark:bg-zinc-800']
                           )}

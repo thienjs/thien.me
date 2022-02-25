@@ -1,14 +1,14 @@
-import Image from "next/image"
+import Image from 'next/image'
 import profile from '../../public/notion-me.png'
-import { motion } from "framer-motion"
+import { motion } from 'framer-motion'
 import Link from 'next/link'
 import RiseButton from './common/button/RiseButton'
 
 export default function Hero() {
   return (
     <div>
-      <div className="lg:space-x-5 lg:flex lg:flex-row item-center lg:-mx-4 flex flex-col-reverse lg:text-left">
-        <div className="lg:px-4 lg:mt-12 ">
+      <div className="item-center flex flex-col-reverse lg:-mx-4 lg:flex lg:flex-row lg:space-x-5 lg:text-left">
+        <div className="lg:mt-12 lg:px-4 ">
           <div>
             <motion.div
               initial="hidden"
@@ -24,7 +24,7 @@ export default function Hero() {
                   y: 0,
                 },
               }}
-              className="text-xl font-semibold text-gray-900 lg:text-4xl dark:text-neutral-200 mt-40"
+              className="mt-40 text-xl font-semibold text-gray-900 dark:text-neutral-200 lg:text-4xl"
             >
               Thien Tran
             </motion.div>
@@ -40,12 +40,12 @@ export default function Hero() {
                   opacity: 1,
                 },
               }}
-              className="text-gray-500 dark:text-neutral-400 text-sm mb-2"
+              className="mb-2 text-sm text-gray-500 dark:text-neutral-400"
             >
               (tee-en)
             </motion.div>
           </div>
-          <div className="mt-8 text-gray-800 dark:text-neutral-400 text-md font-serif  ">
+          <div className="text-md mt-8 font-serif text-gray-800 dark:text-neutral-400  ">
             <motion.div
               initial="hidden"
               animate="visible"
@@ -66,7 +66,7 @@ export default function Hero() {
               typescript, nextjs, and tailwind. Most of my work is open source
               and publicly available on{' '}
               <Link href="https://github.com/thienjs">
-                <a className="relative before:absolute before:bg-cyan-500 before:opacity-50 before:bottom-0 before:left-0 before:h-full before:w-full before:origin-bottom before:scale-y-[0.35] hover:before:scale-y-100 before:transition-transform before:ease-in-out before:duration-500">
+                <a className="relative before:absolute before:bottom-0 before:left-0 before:h-full before:w-full before:origin-bottom before:scale-y-[0.35] before:bg-cyan-500 before:opacity-50 before:transition-transform before:duration-500 before:ease-in-out hover:before:scale-y-100">
                   <span className="relative hover:text-gray-800 hover:dark:text-gray-200">
                     github
                   </span>
@@ -92,7 +92,7 @@ export default function Hero() {
             >
               Get to know what I'm all{' '}
               <Link href="/about">
-                <a className="relative before:absolute before:bg-cyan-500 before:opacity-50 before:bottom-0 before:left-0 before:h-full before:w-full before:origin-bottom before:scale-y-[0.35] hover:before:scale-y-100 before:transition-transform before:ease-in-out before:duration-500">
+                <a className="relative before:absolute before:bottom-0 before:left-0 before:h-full before:w-full before:origin-bottom before:scale-y-[0.35] before:bg-cyan-500 before:opacity-50 before:transition-transform before:duration-500 before:ease-in-out hover:before:scale-y-100">
                   <span className="relative hover:text-gray-800 hover:dark:text-gray-200">
                     about
                   </span>
@@ -100,7 +100,7 @@ export default function Hero() {
               </Link>{' '}
               or what I'm doing{' '}
               <Link href="/now">
-                <a className="relative before:absolute before:bg-cyan-500 before:opacity-50 before:bottom-0 before:left-0 before:h-full before:w-full before:origin-bottom before:scale-y-[0.35] hover:before:scale-y-100 before:transition-transform before:ease-in-out before:duration-500">
+                <a className="relative before:absolute before:bottom-0 before:left-0 before:h-full before:w-full before:origin-bottom before:scale-y-[0.35] before:bg-cyan-500 before:opacity-50 before:transition-transform before:duration-500 before:ease-in-out hover:before:scale-y-100">
                   <span className="relative hover:text-gray-800 hover:dark:text-gray-200">
                     now
                   </span>
@@ -126,7 +126,7 @@ export default function Hero() {
               I'm open for work or just a chat. Email me at{' '}
               <a
                 href="mailto:hi@thien.me"
-                className="relative before:absolute before:bg-cyan-500 before:opacity-50 before:bottom-0 before:left-0 before:h-full before:w-full before:origin-bottom before:scale-y-[0.35] hover:before:scale-y-100 before:transition-transform before:ease-in-out before:duration-500"
+                className="relative before:absolute before:bottom-0 before:left-0 before:h-full before:w-full before:origin-bottom before:scale-y-[0.35] before:bg-cyan-500 before:opacity-50 before:transition-transform before:duration-500 before:ease-in-out hover:before:scale-y-100"
               >
                 <span className="relative hover:text-gray-800 hover:dark:text-gray-200">
                   hi@thien.me
@@ -137,7 +137,7 @@ export default function Hero() {
             <p className="mb-40"></p>
           </div>
         </div>
-        <div className="flex-shrink-0 lg:mt-12  mb-10 hidden">
+        <div className="mb-10 hidden  flex-shrink-0 lg:mt-12">
           <Image
             src="https://github.com/thienjs.png"
             alt="Profile"

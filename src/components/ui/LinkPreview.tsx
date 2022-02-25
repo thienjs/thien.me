@@ -31,8 +31,8 @@ export default function LinkPreview({
       <Tooltip.Trigger asChild>
         <a
           className={classNames(
-            'text-gray-200 tracking-wide font-normal',
-            'relative after:absolute after:bottom-[-2px] after:left-0 after:h-[2px] after:w-0 hover:after:w-full after:bg-gray-200 after:rounded-full after:transition-[width] after:ease-out after:duration-200'
+            'font-normal tracking-wide text-gray-200',
+            'relative after:absolute after:bottom-[-2px] after:left-0 after:h-[2px] after:w-0 after:rounded-full after:bg-gray-200 after:transition-[width] after:duration-200 after:ease-out hover:after:w-full'
           )}
           href={href}
           target="_blank"
@@ -44,7 +44,7 @@ export default function LinkPreview({
       <Tooltip.Content
         side="top"
         sideOffset={16}
-        className="p-2 h-40 w-64 rounded-lg bg-gray-900/95 backdrop-blur ring-1 ring-inset ring-gray-500/30 radix-side-top:animate-slide-in radix-state-closed:animate-slide-out"
+        className="radix-side-top:animate-slide-in radix-state-closed:animate-slide-out h-40 w-64 rounded-lg bg-gray-900/95 p-2 ring-1 ring-inset ring-gray-500/30 backdrop-blur"
       >
         <Image
           src={
@@ -52,7 +52,7 @@ export default function LinkPreview({
             `https://api.microlink.io?url=${href}&screenshot=true&meta=false&colorScheme=dark&embed=screenshot.url`
           }
           alt={alt}
-          className="rounded-md overflow-hidden p-2"
+          className="overflow-hidden rounded-md p-2"
           width={240}
           height={144}
           placeholder="blur"
