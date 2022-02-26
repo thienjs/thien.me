@@ -14,6 +14,7 @@ import { CodeBlock } from '~/components/blog/Codeblock'
 import { Callout } from '~/components/ui/Callout'
 import { YoutubeEmbed } from '~/components/blog/YoutubeEmbed'
 import { GetStaticPaths, GetStaticProps } from 'next'
+import Title from '~/components/ui/typography/Title'
 import ScrollIndicator from '~/components/ui/ScrollIndicator'
 import CDbutton from '~/components/ui/CDbutton'
 import Link from 'next/link'
@@ -53,13 +54,13 @@ export function renderBlocks(block) {
   switch (type) {
     case 'paragraph':
       return (
-        <p className="mb-2 text-gray-800 dark:text-gray-300">
+        <p className="text-sm text-neutral-800 dark:text-neutral-300">
           <Text text={value.text} />
         </p>
       )
     case 'heading_1':
       return (
-        <h1 className="mb-2 text-3xl font-bold">
+        <h1 className="mb-2 text-3xl font-bold text-neutral-800 dark:text-neutral-300">
           <AnchorLink text={value.text[0].text.content}>
             <Text text={value.text} />
           </AnchorLink>
@@ -67,7 +68,7 @@ export function renderBlocks(block) {
       )
     case 'heading_2':
       return (
-        <h2 className="mb-2 text-2xl font-semibold">
+        <h2 className="pb-6 text-lg font-semibold text-neutral-800 dark:text-neutral-300">
           <AnchorLink text={value.text[0].text.content}>
             <Text text={value.text} />
           </AnchorLink>
@@ -75,7 +76,7 @@ export function renderBlocks(block) {
       )
     case 'heading_3':
       return (
-        <h3 className="mb-2 text-xl font-semibold">
+        <h3 className="mb-2 text-xl font-semibold text-neutral-800 dark:text-neutral-300">
           <AnchorLink text={value.text[0].text.content}>
             <Text text={value.text} />
           </AnchorLink>
@@ -83,13 +84,13 @@ export function renderBlocks(block) {
       )
     case 'bulleted_list_item':
       return (
-        <li className="text-md text-gray-800 dark:text-gray-200">
+        <li className="ml-4 text-sm text-neutral-800 dark:text-neutral-300">
           <Text text={value.text} />
         </li>
       )
     case 'numbered_list_item':
       return (
-        <li>
+        <li >
           <Text text={value.text} />
         </li>
       )
@@ -247,14 +248,12 @@ const ArticlePage = ({
   return (
     <Layout>
       <ScrollIndicator>
-        <div className="grid grid-cols-1 lg:grid-cols-12 lg:gap-8">
+        <div className="text-neutral-800 dark:text-neutral-400">
           <article className="col-span-9 mt-12">
-            <div className="space-y-3">
-              <div>
-                <h1 className="mb-2 text-left text-3xl font-semibold">
-                  {title}
-                </h1>
-                <div className="text-left">
+            <div className="">
+              <div className=''>
+                <Title>{title}</Title>
+                <div className="mb-10 text-left">
                   <div className="mb-2 flex space-x-2 text-sm text-slate-500  dark:text-slate-500">
                     <p className="tx-sm m-0 text-slate-500  dark:text-slate-500">
                       {publishedOn}
@@ -272,14 +271,15 @@ const ArticlePage = ({
                   )}
                 </div>
               </div>
-
-              {content.map((block) => (
-                <Fragment key={block.id}>{renderBlocks(block)}</Fragment>
-              ))}
+              <div className=" w-full min-w-full space-y-6">
+                {content.map((block) => (
+                  <Fragment key={block.id}>{renderBlocks(block)}</Fragment>
+                ))}
+              </div>
             </div>
           </article>
         </div>
-        <span className=" mt-4">
+        <span className=" mt-12">
           <CDbutton />
         </span>
       </ScrollIndicator>

@@ -56,9 +56,9 @@ export default function AddContactForm(props: AddContactFormProps) {
   }
   return (
     <form className="flex flex-col" onSubmit={handleSubmit(props.onSubmit)}>
-      <InputSpacer></InputSpacer>
-      <InputSpacer></InputSpacer>
-      <InputSpacer></InputSpacer>
+      <InputSpacer>{}</InputSpacer>
+      <InputSpacer>{}</InputSpacer>
+      <InputSpacer>{}</InputSpacer>
       <InputSpacer>
         <div className="relative">
           <input

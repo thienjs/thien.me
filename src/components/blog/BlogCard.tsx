@@ -29,7 +29,7 @@ export function BlogCard({ article }: Props) {
 
   return (
     <button
-      className="mb- my-2 mb-12 w-full border-b px-4  py-4 text-sm    hover:bg-zinc-300 dark:hover:bg-zinc-800"
+      className="my-2 mb-12 w-full border-b px-4  py-4 text-sm    hover:bg-zinc-300 dark:hover:bg-zinc-800"
       onClick={() => handleArticleClicked(slug)}
     >
       <div className="flex flex-col">
