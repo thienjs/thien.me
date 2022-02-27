@@ -18,6 +18,10 @@ export const navigation = {
   ],
   navData: [
     {
+      path: '/',
+      label: 'home',
+    },
+    {
       path: '/about',
       label: 'about',
     },

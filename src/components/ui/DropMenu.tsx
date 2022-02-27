@@ -199,6 +199,42 @@ export default function DropMenu() {
             </Menu.Item>
             <Menu.Item>
               {({ active }) => (
+                <Link href="/bookmarks">
+                  <a
+                    className={classNames(
+                      active
+                        ? 'bg-green-100 text-red-900 dark:bg-cyan-600 dark:text-gray-300'
+                        : 'bg-white text-zinc-700 hover:bg-gray-300 dark:bg-zinc-800 dark:text-gray-200 dark:hover:bg-zinc-700',
+                      'block px-4 py-2 text-sm'
+                    )}
+                  >
+                    <div className="flex flex-row">
+                      <BookmarkIcon className="mr-4 mt-0.5" /> Bookmarks
+                    </div>
+                  </a>
+                </Link>
+              )}
+            </Menu.Item>
+            <Menu.Item>
+              {({ active }) => (
+                <Link href="/quotes">
+                  <a
+                    className={classNames(
+                      active
+                        ? 'bg-green-100 text-red-900 dark:bg-cyan-600 dark:text-gray-300'
+                        : 'bg-white text-zinc-700 hover:bg-gray-300 dark:bg-zinc-800 dark:text-gray-200 dark:hover:bg-zinc-700',
+                      'block px-4 py-2 text-sm'
+                    )}
+                  >
+                    <div className="flex flex-row">
+                      <Half2Icon className="mr-4 mt-0.5" /> Quotes
+                    </div>
+                  </a>
+                </Link>
+              )}
+            </Menu.Item>
+            <Menu.Item>
+              {({ active }) => (
                 <Link href="/todo">
                   <a
                     className={classNames(

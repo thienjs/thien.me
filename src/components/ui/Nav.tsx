@@ -14,7 +14,7 @@ export default function Nav() {
   const [activeIndex, setActiveIndex] = React.useState(null)
   const [isOpen, setisOpen] = React.useState()
   return (
-    <nav className="mt-4 flex  w-full max-w-sm  flex-col pb-4 pt-2 md:max-w-2xl">
+    <nav className="mt-4 flex  w-full max-w-sm  flex-col pb-4 pt-2 md:max-w-2xl ">
       <div className="flex flex-row justify-between ">
         <Link href="/">
           <a>
@@ -23,7 +23,7 @@ export default function Nav() {
         </Link>
         <AnimateSharedLayout>
           <motion.ul
-            className="flex gap-y-1 text-sm dark:text-gray-300  md:gap-x-4  "
+            className="flex gap-y-1 text-sm dark:text-gray-300  md:gap-x-4 font-serif "
             onHoverEnd={() => setActiveIndex(null)}
           >
             {navigation.navData.map((item, index) => {
@@ -45,7 +45,7 @@ export default function Nav() {
                       <span
                         className={`relative z-50 ${
                           pathname === item.path
-                            ? 'font-semibold  text-gray-900 underline decoration-cyan-500 decoration-1 underline-offset-4 dark:text-gray-300 '
+                            ? 'font-semibold  text-gray-900 underline decoration-cyan-500 decoration-2 underline-offset-1 dark:text-gray-300 '
                             : 'font-normal text-gray-700 dark:text-gray-400'
                         }`}
                       >
