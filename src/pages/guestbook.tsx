@@ -46,8 +46,24 @@ const GuestBookPage = ({
           Thank you for visiting. Say hi!
         </motion.div>
       </div>
+      <motion.div
+       initial="hidden"
+       animate="visible"
+       transition={{ delay: 0.4, duration: 0.8 }}
+       variants={{
+         hidden: {
+           opacity: 0.5,
+           y: 10,
+         },
+         visible: {
+           opacity: 1,
+           y: 0,
+         },
+       }}>
+
       <ContentPopover />
       <GuestbookContent data={entries} />
+      </motion.div>
     </Layout>
   )
 }

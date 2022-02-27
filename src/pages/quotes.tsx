@@ -28,7 +28,22 @@ export default function QuotesPage() {
         {description}
       </motion.div>
 
-      <ul className="flex flex-col gap-y-10 pb-20">
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        transition={{ delay: 0.3, duration: 0.9 }}
+        variants={{
+          hidden: {
+            opacity: 0.5,
+            y: 10,
+          },
+          visible: {
+            opacity: 1,
+            y: 0,
+          },
+        }}
+        className="flex flex-col gap-y-10 pb-20"
+      >
         {quotes.map((item) => (
           <li key={item.quote} className="flex flex-col gap-y-4">
             <blockquote className="border-l-4 border-gray-400 py-3 dark:border-gray-600">
@@ -42,7 +57,7 @@ export default function QuotesPage() {
             </p>
           </li>
         ))}
-      </ul>
+      </motion.div>
     </Layout>
   )
 }
