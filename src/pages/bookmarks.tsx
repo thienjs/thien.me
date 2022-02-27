@@ -15,56 +15,55 @@ export default function BookmarksPage() {
       <Title>{title}</Title>
 
       <motion.div
-          initial="hidden"
-          animate="visible"
-          transition={{ delay: 0.2, duration: 1 }}
-          variants={{
-            hidden: {
-              opacity: 0.5,
-              y: 10,
-            },
-            visible: {
-              opacity: 1,
-              y: 0,
-            },
-          }}
-          className="mb-8 font-serif text-sm text-neutral-600 dark:text-neutral-400"
-        >
-          {description}
-        </motion.div>
-
+        initial="hidden"
+        animate="visible"
+        transition={{ delay: 0.2, duration: 1 }}
+        variants={{
+          hidden: {
+            opacity: 0.5,
+            y: 10,
+          },
+          visible: {
+            opacity: 1,
+            y: 0,
+          },
+        }}
+        className="mb-8 font-serif text-sm text-neutral-600 dark:text-neutral-400"
+      >
+        {description}
+      </motion.div>
 
       <ul className="flex flex-col gap-y-5">
         {bookmarks.map((item) => (
           <li key={item.title} className="flex flex-col items-start">
-            <h3 className="pb-3 font-semibold text-neutral-800 dark:text-neutral-200">
+            <h3 className="tex-sm pb-3 font-semibold text-neutral-800 dark:text-neutral-200">
               {item.title}
             </h3>
 
-            <ul className="flex list-disc flex-col justify-start gap-y-2 px-5">
+            <div className="justify-baseline ml-5 flex flex-col gap-y-4">
               {item.list.map((subItem, index) => (
-                <li key={subItem + index.toString()}>
-                  <div className="text-sm flex flex-wrap gap-y-2 sm:flex-nowrap text-neutral-700 dark:text-neutral-300">
-                    <Link
-                      href={subItem.link}
-                    >
-                      {subItem.title}
+                <div key={subItem + index.toString()}>
+                  <div className="flex flex-wrap gap-y-2 text-sm text-neutral-700 dark:text-neutral-300 sm:flex-nowrap ">
+                    <Link href={subItem.link}>
+                      <div className="cursor-pointer font-semibold underline decoration-dashed decoration-1 underline-offset-1 hover:decoration-wavy">
+                        {subItem.title}
+                      </div>
                     </Link>
 
                     {subItem.description && (
-                      <>
+                      <div className="flex ">
                         <span className="px-2 text-gray-600 dark:text-gray-400">
                           -
                         </span>
-                        <p className="text-gray-600 dark:text-gray-400">
+                        <p className="mt-0.5 text-xs text-gray-600 dark:text-gray-400 ">
                           {subItem.description}
                         </p>
-                      </>
+                      </div>
                     )}
                   </div>
-                </li>
+                </div>
               ))}
-            </ul>
+            </div>
           </li>
         ))}
       </ul>
