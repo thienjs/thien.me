@@ -15,7 +15,17 @@ const ThemeSwitch = () => {
           onChange={() => setTheme(isDark ? 'light' : 'dark')}
           className={` `}
         >
-          <SunMoonIcon />
+          {isDark ? (
+            <div className="text-sm font-serif">
+              <span className="font-semibold ">dark </span>
+              <span className="font-light">/ light</span>
+            </div>
+          ) : (
+            <div className="text-sm font-serif">
+              <span className="font-light">dark /</span>
+              <span className="font-semibold"> light</span>
+            </div>
+          )}
         </Switch>
       ) : (
         <div className="w-15 h-15"></div>
