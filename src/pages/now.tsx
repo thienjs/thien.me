@@ -83,7 +83,7 @@ export default function NowPage() {
             - diving deep into typography, fonts, icons, and spacing
           </NowItem>
           <NowItem>- learning spanish (slowly)</NowItem>
-          <NowItem>- reading/NowItemstening to books when I can</NowItem>
+          <NowItem>- reading/listening to books when I can</NowItem>
           <NowItem>- staying active by working on my tennis game</NowItem>
           <NowItem>
             - connecting with other developers on github and twitter
