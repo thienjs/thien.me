@@ -1,9 +1,8 @@
 import type { InferGetStaticPropsType } from 'next'
-import Layout from '~/components/ui/Layout'
 import { ContentPopover } from '~/components/guestbook'
 import { fetchGuestbookEntries } from '~/lib/queries'
 import { GuestbookContent } from '~/components/guestbook'
-import Title from '~/components/ui/typography/Title'
+import { Title } from '~/components/ui/typography'
 import { motion } from 'framer-motion'
 
 export const getStaticProps = async () => {
@@ -47,22 +46,22 @@ const GuestBookPage = ({
         </motion.div>
       </div>
       <motion.div
-       initial="hidden"
-       animate="visible"
-       transition={{ delay: 0.4, duration: 0.8 }}
-       variants={{
-         hidden: {
-           opacity: 0.5,
-           y: 10,
-         },
-         visible: {
-           opacity: 1,
-           y: 0,
-         },
-       }}>
-
-      <ContentPopover />
-      <GuestbookContent data={entries} />
+        initial="hidden"
+        animate="visible"
+        transition={{ delay: 0.4, duration: 0.8 }}
+        variants={{
+          hidden: {
+            opacity: 0.5,
+            y: 10,
+          },
+          visible: {
+            opacity: 1,
+            y: 0,
+          },
+        }}
+      >
+        <ContentPopover />
+        <GuestbookContent data={entries} />
       </motion.div>
     </>
   )

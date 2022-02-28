@@ -2,7 +2,7 @@ import { graphql } from '@octokit/graphql'
 
 import type { GetStaticProps } from 'next'
 import RepoCard from '~/components/cards/Projects/RepoCard'
-import Title from '~/components/ui/typography/Title'
+import { Title } from '~/components/ui/typography'
 const ProjectsPage = ({ repos }) => (
   <>
     <Title>my github repositories</Title>

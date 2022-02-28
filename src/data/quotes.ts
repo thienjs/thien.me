@@ -1,8 +1,7 @@
 export const quotes = [
   {
     author: 'Steve Jobs',
-    quote:
-      `Your time is limited, so don't waste it living someone else's life.`,
+    quote: `Your time is limited, so don't waste it living someone else's life.`,
   },
   {
     author: 'Angela Yu',
@@ -10,7 +9,6 @@ export const quotes = [
   },
   {
     author: 'Wayne Gretzky - Micheal Scott',
-    quote:`You miss 100% of the shots you don't take.`,
+    quote: `You miss 100% of the shots you don't take.`,
   },
-];
-
+]

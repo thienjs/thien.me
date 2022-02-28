@@ -1,6 +1,6 @@
 import NextLink from 'next/link'
 import ContactLink from '~/components/contact/ContactLink'
-import Title from '~/components/ui/typography/Title'
+import { Title } from '~/components/ui/typography'
 const Contact = () => {
   return (
     <>

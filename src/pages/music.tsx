@@ -1,6 +1,6 @@
 import NowPlaying from '~/components/music/NowPlaying'
 import TopTracks from '~/components/music/TopTracks'
-import Title from '~/components/ui/typography/Title'
+import { Title } from '~/components/ui/typography'
 export default function MusicPage() {
   return (
     <>

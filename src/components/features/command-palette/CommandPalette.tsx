@@ -21,7 +21,6 @@ export default function CommandPalette({ navigation }) {
     return () => window.removeEventListener('keydown', handleKeyDown)
   }, [isOpen])
 
-
   const filterednavigation = query
     ? navigation.pages.filter((page) =>
         page.name.toLowerCase().includes(query.toLocaleLowerCase())

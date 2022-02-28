@@ -1,6 +1,5 @@
 import Image from 'next/image'
 
-
 import { AboutListElement } from '../components/about/AboutListElement'
 import { getCurrentlyReading, getReviews } from '../lib/goodreads'
 import { FaBook, FaBookOpen, FaMusic, FaStar } from 'react-icons/fa'
@@ -10,7 +9,7 @@ import UnstyledLink from '~/components/ui/links/UnstyledLink'
 import NowPlaying from '~/components/music/NowPlaying'
 import TechStack from '~/components/about/TechStack'
 import Link from 'next/link'
-import Title from '~/components/ui/typography/Title'
+import { Title } from '~/components/ui/typography'
 import { motion } from 'framer-motion'
 
 export type AboutProps = {

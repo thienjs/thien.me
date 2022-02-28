@@ -90,7 +90,7 @@ export function renderBlocks(block) {
       )
     case 'numbered_list_item':
       return (
-        <li >
+        <li>
           <Text text={value.text} />
         </li>
       )
@@ -251,7 +251,7 @@ const ArticlePage = ({
         <div className="text-neutral-800 dark:text-neutral-400">
           <article className="col-span-9 mt-12">
             <div className="">
-              <div className=''>
+              <div className="">
                 <Title>{title}</Title>
                 <div className="mb-10 text-left">
                   <div className="mb-2 flex space-x-2 text-sm text-slate-500  dark:text-slate-500">

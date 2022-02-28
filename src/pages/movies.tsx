@@ -5,7 +5,7 @@ import { useState } from 'react'
 import { getMovies } from '~/lib/notion'
 import axios from 'axios'
 import { MovieCard } from '~/components/hobby/MovieCard'
-import Title from '~/components/ui/typography/Title'
+import { Title } from '~/components/ui/typography'
 
 const MoviesPage = ({ movies }) => {
   const [movie, setMovie] = useState(null)

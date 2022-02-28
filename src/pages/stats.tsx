@@ -7,7 +7,7 @@ import {
   BlogViews,
   TotalSnippets,
 } from '~/components/stats/'
-import Title from '~/components/ui/typography/Title'
+import { Title } from '~/components/ui/typography'
 export default function Stats() {
   return (
     <>

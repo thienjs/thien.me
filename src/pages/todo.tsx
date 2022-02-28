@@ -5,7 +5,7 @@ import Router from 'next/router'
 import Todo, { TodoProps } from '../components/todo/Todo'
 import { prisma } from '../lib/prisma'
 import { useSession, getSession, signIn } from 'next-auth/react'
-import Title from '~/components/ui/typography/Title'
+import { Title } from '~/components/ui/typography'
 
 export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
   const session = await getSession({ req })

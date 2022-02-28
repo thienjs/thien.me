@@ -14,7 +14,7 @@ export default function ThemeSwitch() {
 
   return (
     <button
-      className="flex h-8 w-8 p-2 mx-1 cursor-pointer items-center justify-center rounded-md bg-zinc-300 ring-neutral-400 transition duration-200 ease-in-out hover:ring-2 dark:bg-zinc-700 hover:bg-zinc-300 dark:hover:bg-zinc-800 "
+      className="mx-1 flex h-8 w-8 cursor-pointer items-center justify-center rounded-md bg-zinc-300 p-2 ring-neutral-400 transition duration-200 ease-in-out hover:bg-zinc-300 hover:ring-2 dark:bg-zinc-700 dark:hover:bg-zinc-800 "
       type="button"
       aria-label={`switch to ${isDarkTheme ? 'light' : 'dark'} mode`}
       onClick={toggleTheme}

@@ -2,9 +2,8 @@ import { GetStaticProps } from 'next'
 import { getPublishedArticles, convertToArticleList } from '~/lib/notion'
 import { useState, useEffect } from 'react'
 import { Tag } from '~/components/blog/Tag'
-import Layout from '~/components/ui/Layout'
 import { ArticleList } from '~/components/blog/ArticleList'
-import Title from '~/components/ui/typography/Title'
+import { Title } from '~/components/ui/typography'
 import { motion } from 'framer-motion'
 
 export default function Blog({ articles, tags }) {
