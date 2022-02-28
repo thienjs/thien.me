@@ -11,7 +11,7 @@ const TestPage: NextPage = () => {
   console.log(session)
 
   return (
-    <Layout>
+    <>
       <main className="">
         {session ? (
           <>
@@ -41,7 +41,7 @@ const TestPage: NextPage = () => {
           </>
         )}
       </main>
-    </Layout>
+    </>
   )
 }
 

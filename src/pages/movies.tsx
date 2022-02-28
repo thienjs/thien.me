@@ -1,7 +1,7 @@
 import React from 'react'
 import type { GetStaticProps } from 'next'
 import { useState } from 'react'
-import Layout from '~/components/ui/Layout'
+
 import { getMovies } from '~/lib/notion'
 import axios from 'axios'
 import { MovieCard } from '~/components/hobby/MovieCard'
@@ -23,13 +23,13 @@ const MoviesPage = ({ movies }) => {
   }
 
   return (
-    <Layout>
+    <>
       <Title>Movies</Title>
       <button onClick={chooseMovie}>choose movie</button>
       {movie && <pre>{JSON.stringify(movie, null, 2)}</pre>}
 
       <button onClick={handleUpdate}>Watch!</button>
-    </Layout>
+    </>
   )
 }
 

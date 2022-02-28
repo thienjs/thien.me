@@ -24,7 +24,7 @@ const GuestBookPage = ({
   entries,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
-    <Layout>
+    <>
       <Title>Guestbook</Title>
       <div>
         <motion.div
@@ -64,7 +64,7 @@ const GuestBookPage = ({
       <ContentPopover />
       <GuestbookContent data={entries} />
       </motion.div>
-    </Layout>
+    </>
   )
 }
 

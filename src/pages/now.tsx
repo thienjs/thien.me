@@ -1,5 +1,3 @@
-import Layout from 'components/ui/Layout'
-import Title from 'components/ui/typography/Title'
 import { fetcher } from '~/lib/fetcher'
 import { NowPlayingSong } from '~/lib/types'
 import { motion } from 'framer-motion'
@@ -52,7 +50,7 @@ export default function NowPage() {
   const { data } = useSWR<NowPlayingSong>('/api/now-playing', fetcher)
 
   return (
-    <Layout>
+    <>
       <div className="min-w-96 text-left">
         <motion.div
           initial="hidden"
@@ -130,6 +128,6 @@ export default function NowPage() {
           {hour}:{minute}:{second}
         </div>
       </div>
-    </Layout>
+    </>
   )
 }

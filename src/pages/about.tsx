@@ -1,10 +1,9 @@
 import Image from 'next/image'
 
-import { AboutSection } from '../components/about/AboutSection'
+
 import { AboutListElement } from '../components/about/AboutListElement'
 import { getCurrentlyReading, getReviews } from '../lib/goodreads'
 import { FaBook, FaBookOpen, FaMusic, FaStar } from 'react-icons/fa'
-import Layout from '~/components/ui/Layout'
 import TopTracks from '~/components/music/TopTracks'
 import { GetStaticProps } from 'next'
 import UnstyledLink from '~/components/ui/links/UnstyledLink'
@@ -43,7 +42,7 @@ const AboutPage = ({ reviews, currentlyReading }) => {
   ))
 
   return (
-    <Layout>
+    <>
       <div className="mb-5 mt-20   flex text-left ">
         <motion.div
           initial="hidden"
@@ -284,7 +283,7 @@ const AboutPage = ({ reviews, currentlyReading }) => {
           <ul>{reviewList.slice(5, 10)}</ul>
         </div>
     </AboutSection> */}
-    </Layout>
+    </>
   )
 }
 

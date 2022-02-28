@@ -1,11 +1,9 @@
 import NextLink from 'next/link'
-import Layout from '~/components/ui/Layout'
 import ContactLink from '~/components/contact/ContactLink'
-import { FaTwitter } from 'react-icons/fa'
 import Title from '~/components/ui/typography/Title'
 const Contact = () => {
   return (
-    <Layout>
+    <>
       <Title>Contact</Title>
       <ul className="font-semi-bold flex flex-col ">
         <ContactLink
@@ -24,7 +22,7 @@ const Contact = () => {
           icon="thientsx"
         />
       </ul>
-    </Layout>
+    </>
   )
 }
 

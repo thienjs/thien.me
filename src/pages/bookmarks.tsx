@@ -1,6 +1,5 @@
 import { bookmarks} from '~/data'
 import Link from 'next/link'
-import { Layout } from '~/components/ui';
 import Title from '~/components/ui/typography/Title';
 import { motion } from 'framer-motion';
 
@@ -11,7 +10,7 @@ const description = `useful web tools`
 
 export default function BookmarksPage() {
   return (
-    <Layout>
+    <>
       <Title>{title}</Title>
 
       <motion.div
@@ -81,6 +80,6 @@ export default function BookmarksPage() {
           </li>
         ))}
       </motion.div>
-    </Layout>
+    </>
   )
 }

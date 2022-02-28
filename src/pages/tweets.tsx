@@ -1,12 +1,10 @@
-//from leerob.io
-import Layout from '~/components/ui/Layout'
 import Tweet from '~/components/cards/Tweet'
 import { getTweets } from 'lib/twitter'
 import Title from '~/components/ui/typography/Title'
 
 export default function Tweets({ tweets }) {
   return (
-    <Layout>
+    <>
       <div className="mx-auto mb-16 flex max-w-2xl flex-col items-start justify-center">
         <Title>Tweets</Title>
         <p className="mb-8 text-sm text-neutral-600 dark:text-neutral-400">
@@ -16,7 +14,7 @@ export default function Tweets({ tweets }) {
           <Tweet key={tweet.id} {...tweet} />
         ))}
       </div>
-    </Layout>
+    </>
   )
 }
 

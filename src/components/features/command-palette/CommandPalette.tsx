@@ -11,16 +11,16 @@ export default function CommandPalette({ navigation }) {
   const [query, setQuery] = useState('')
 
   useEffect(() => {
-    function onKeydown(event) {
-      if (event.key === 't' && (event.shiftKey || event.altKey)) {
+    const handleKeyDown = (event) => {
+      if (event.key === 'k' && (event.metaKey || event.ctrlKey)) {
         setIsOpen(!isOpen)
       }
     }
-    window.addEventListener('keydown', onKeydown)
-    return () => {
-      window.removeEventListener('keydown', onKeydown)
-    }
+    window.addEventListener('keydown', handleKeyDown)
+
+    return () => window.removeEventListener('keydown', handleKeyDown)
   }, [isOpen])
+
 
   const filterednavigation = query
     ? navigation.pages.filter((page) =>

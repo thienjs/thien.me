@@ -76,7 +76,7 @@ export default function HomePage({
     <NowReading key={r.url} title={r.title} subtitle={r.author} url={r.url} />
   ))
   return (
-    <Layout>
+    <>
       <Hero />
       <div className="mt-6 mb-20"></div>
       <Title>Blog</Title>
@@ -220,7 +220,7 @@ export default function HomePage({
           see what others wrote
         </ArrowLink>
       </div>
-    </Layout>
+    </>
   )
 }
 

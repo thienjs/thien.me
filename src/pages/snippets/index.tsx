@@ -25,7 +25,7 @@ export default function SnippetsPage({ snippets, tags }) {
   }, [selectedTag])
 
   return (
-    <Layout>
+    <>
       <Title>Snippets</Title>
       <motion.div
         initial="hidden"
@@ -113,7 +113,7 @@ export default function SnippetsPage({ snippets, tags }) {
         )}
         <SnippetList snippets={filteredSnippets} />
       </div>
-    </Layout>
+    </>
   )
 }
 

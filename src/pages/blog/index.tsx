@@ -25,7 +25,7 @@ export default function Blog({ articles, tags }) {
   }, [selectedTag])
 
   return (
-    <Layout>
+    <>
       <Title>Blog</Title>
       <motion.div
         initial="hidden"
@@ -160,7 +160,7 @@ export default function Blog({ articles, tags }) {
         )}
         <ArticleList articles={filteredArticles} />
       </motion.div>
-    </Layout>
+    </>
   )
 }
 

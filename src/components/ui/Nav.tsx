@@ -16,11 +16,11 @@ export default function Nav() {
   return (
     <nav className="mt-4 flex  w-full max-w-sm  flex-col pb-4 pt-2 md:max-w-2xl ">
       <div className="flex flex-row justify-between ">
-        <Link href="/">
+        {/* <Link href="/">
           <a>
             <TBoxIcon className="ml-2 mr-auto h-8 w-8 cursor-pointer" />
           </a>
-        </Link>
+  </Link>*/}
         <AnimateSharedLayout>
           <motion.ul
             className="flex gap-y-1 text-sm dark:text-gray-300  md:gap-x-4 font-serif "
@@ -72,6 +72,7 @@ export default function Nav() {
           </motion.ul>
         </AnimateSharedLayout>
         <div className="flex ">
+          <ThemeSwitch />
           <DropMenu />
         </div>
       </div>

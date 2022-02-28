@@ -1,10 +1,10 @@
 import { graphql } from '@octokit/graphql'
-import Layout from '~/components/ui/Layout'
+
 import type { GetStaticProps } from 'next'
 import RepoCard from '~/components/cards/Projects/RepoCard'
 import Title from '~/components/ui/typography/Title'
 const ProjectsPage = ({ repos }) => (
-  <Layout>
+  <>
     <Title>my github repositories</Title>
     <div className="flex w-96 flex-col content-start">
       {repos.map((repo) => (
@@ -23,7 +23,7 @@ const ProjectsPage = ({ repos }) => (
         check out my github
       </a>
     </p>
-  </Layout>
+  </>
 )
 
 export const getStaticProps: GetStaticProps = async () => {

@@ -1,11 +1,9 @@
 import React, { useState } from 'react'
 import { GetStaticProps, GetServerSideProps } from 'next'
-import Layout from '../components/ui/Layout'
+
 import Router from 'next/router'
 import Todo, { TodoProps } from '../components/todo/Todo'
 import { prisma } from '../lib/prisma'
-import ButtonLink from '~/components/ui/links/ButtonLink'
-import { GoPlus } from 'react-icons/go'
 import { useSession, getSession, signIn } from 'next-auth/react'
 import Title from '~/components/ui/typography/Title'
 
@@ -59,7 +57,7 @@ const TodoPage: React.FC<Props> = (props) => {
   }
 
   return (
-    <Layout>
+    <>
       <div className="">
         <Title>Todo</Title>
         <p className="mb-8 text-sm text-neutral-600 dark:text-neutral-400">
@@ -109,7 +107,7 @@ const TodoPage: React.FC<Props> = (props) => {
           </>
         )}
       </div>
-    </Layout>
+    </>
   )
 }
 

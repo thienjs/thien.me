@@ -7,7 +7,7 @@ const description = `some of my favorite quotes`
 
 export default function QuotesPage() {
   return (
-    <Layout>
+    <>
       <Title>{title}</Title>
       <motion.div
         initial="hidden"
@@ -58,6 +58,6 @@ export default function QuotesPage() {
           </li>
         ))}
       </motion.div>
-    </Layout>
+    </>
   )
 }
