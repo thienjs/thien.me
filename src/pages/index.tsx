@@ -8,7 +8,6 @@ import {
 } from '@apollo/client'
 import { getCurrentlyReading, getReviews } from '../lib/goodreads'
 import { setContext } from '@apollo/client/link/context'
-import { useMessage } from '~/lib/message'
 import Hero from '~/components/ui/Hero'
 import { AboutSection } from '../components/about/AboutSection'
 import Tweet from '~/components/cards/Tweet'
@@ -54,7 +53,6 @@ export default function HomePage({
   reviews,
   currentlyReading,
 }: HomePageProps) {
-  const { handleMessage } = useMessage()
   const reviewList = reviews.map((r) => (
     <AboutListElement
       key={r.url}
