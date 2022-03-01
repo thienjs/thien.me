@@ -8,7 +8,7 @@ const description = `useful web tools`
 
 export default function BookmarksPage() {
   return (
-    <>
+    <div className=''>
       <Title>{title}</Title>
 
       <Description>{description}</Description>
@@ -30,12 +30,12 @@ export default function BookmarksPage() {
         className="flex flex-col gap-y-5"
       >
         {bookmarks.map((item) => (
-          <li key={item.title} className="flex flex-col items-start">
-            <h3 className="tex-sm pb-3 font-semibold text-neutral-800 dark:text-neutral-200">
+          <li key={item.title} className="flex flex-col items-start ">
+            <h3 className="text-sm pb-2 font-semibold text-neutral-800 dark:text-neutral-200 mb-3 border-b border-neutral-300 dark:border-neutral-700 w-full">
               {item.title}
             </h3>
 
-            <div className="justify-baseline ml-5 flex flex-col gap-y-4">
+            <div className="justify-baseline ml-5 flex flex-col gap-y-4 mb-10">
               {item.list.map((subItem, index) => (
                 <div key={subItem + index.toString()}>
                   <div className="flex flex-wrap gap-y-2 text-sm text-neutral-700 dark:text-neutral-300 sm:flex-nowrap ">
@@ -46,7 +46,7 @@ export default function BookmarksPage() {
                     </Link>
 
                     {subItem.description && (
-                      <div className="flex ">
+                      <div className="flex  ">
                         <span className="px-2 text-gray-600 dark:text-gray-400">
                           -
                         </span>
@@ -62,6 +62,6 @@ export default function BookmarksPage() {
           </li>
         ))}
       </motion.div>
-    </>
+    </div>
   )
 }
