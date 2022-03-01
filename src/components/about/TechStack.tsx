@@ -10,13 +10,13 @@ import {
   SiNodedotjs,
   SiNotion,
   SiPrettier,
+  SiPrisma,
   SiReact,
   SiRedux,
   SiSass,
+  SiSupabase,
   SiTailwindcss,
   SiTypescript,
-  SiPrisma,
-  SiSupabase,
 } from 'react-icons/si'
 
 export default function TechStack() {

@@ -1,5 +1,5 @@
 import Timeline from '~/components/timeline/Timeline'
-import { Title, Description } from '~/components/ui/typography'
+import { Description, Title } from '~/components/ui/typography'
 
 export default function JourneyPage() {
   return (

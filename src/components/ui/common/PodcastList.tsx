@@ -1,4 +1,5 @@
 import { IPodcast } from '~/types/podcast'
+
 import { Podcast } from './Podcast'
 
 export interface PodcastListProps {

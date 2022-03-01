@@ -24,7 +24,7 @@ export type GoodReadsReview = {
 
 const parseFeed = async (
   shelf: string,
-  limit: number = 10
+  limit = 10
 ): Promise<GoodReadsReview[]> => {
   const parser = new Parser()
   const feed = await parser.parseURL(

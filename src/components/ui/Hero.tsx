@@ -1,7 +1,8 @@
-import Image from 'next/image'
-import profile from '../../public/notion-me.png'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import Link from 'next/link'
+
+import profile from '../../public/notion-me.png'
 
 export default function Hero() {
   return (

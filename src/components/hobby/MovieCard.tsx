@@ -1,17 +1,15 @@
-import { Movie } from '~/lib/types'
-import Image from 'next/image'
-
-import siteMetadata from '~/data/siteMetadata'
-import slugify from 'slugify'
-
-import { useRouter } from 'next/dist/client/router'
-import Link from 'next/link'
-import useSWR from 'swr'
 import cn from 'classnames'
-import readingTime from 'reading-time'
-
 import { fetcher } from 'lib/fetcher'
 import { Views } from 'lib/types'
+import { useRouter } from 'next/dist/client/router'
+import Image from 'next/image'
+import Link from 'next/link'
+import readingTime from 'reading-time'
+import slugify from 'slugify'
+import useSWR from 'swr'
+
+import siteMetadata from '~/data/siteMetadata'
+import { Movie } from '~/lib/types'
 
 type Props = {
   movie: Movie

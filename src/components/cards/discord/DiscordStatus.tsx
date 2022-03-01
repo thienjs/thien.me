@@ -1,9 +1,10 @@
-import React from 'react'
-import { fetcher } from '~/lib/fetcher'
-import useSWR from 'swr'
-import { Fragment, ReactNode } from 'react'
 import Image from 'next/image'
+import React from 'react'
+import { Fragment, ReactNode } from 'react'
 import { FaDiscord } from 'react-icons/fa'
+import useSWR from 'swr'
+
+import { fetcher } from '~/lib/fetcher'
 type DiscordCardProps = {}
 type Avatar =
   | {

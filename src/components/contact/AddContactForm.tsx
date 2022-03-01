@@ -1,9 +1,9 @@
+import { ExclamationCircleIcon } from '@heroicons/react/solid'
 import { useForm } from 'react-hook-form'
-import Input from './Input'
-import InputSpacer from './InputSpacer'
 import toast, { Toaster } from 'react-hot-toast'
 
-import { ExclamationCircleIcon } from '@heroicons/react/solid'
+import Input from './Input'
+import InputSpacer from './InputSpacer'
 
 const FormError = ({ errorMessage }) => {
   return <p className="mt-1 text-red-300">{errorMessage}</p>

@@ -1,6 +1,6 @@
-import { IPodcast } from '~/types/podcast'
-
 import Image from 'next/image'
+
+import { IPodcast } from '~/types/podcast'
 
 const Podcast = ({ name, imagePath, url }: IPodcast) => {
   return (

@@ -1,16 +1,16 @@
-import { getPublishedSnippets, getSnippetPage } from '~/lib/notion'
-import { Fragment, useEffect } from 'react'
 import { Client } from '@notionhq/client'
-import siteMetadata from '~/data/siteMetadata'
-import slugify from 'slugify'
-import { useRouter } from 'next/router'
-import { AnchorLink } from '~/components/ui/links/AnchorLink'
-import Image from 'next/image'
-import { CodeBlock } from '~/components/blog/Codeblock'
-import { Callout } from '~/components/ui/Callout'
-import { YoutubeEmbed } from '~/components/blog/YoutubeEmbed'
-
 import { GetStaticPaths, GetStaticProps } from 'next'
+import Image from 'next/image'
+import { useRouter } from 'next/router'
+import { Fragment, useEffect } from 'react'
+import slugify from 'slugify'
+
+import { CodeBlock } from '~/components/blog/Codeblock'
+import { YoutubeEmbed } from '~/components/blog/YoutubeEmbed'
+import { Callout } from '~/components/ui/Callout'
+import { AnchorLink } from '~/components/ui/links/AnchorLink'
+import siteMetadata from '~/data/siteMetadata'
+import { getPublishedSnippets, getSnippetPage } from '~/lib/notion'
 
 export const Text = ({ text }) => {
   if (!text) {

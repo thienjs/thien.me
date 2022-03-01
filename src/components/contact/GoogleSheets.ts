@@ -1,7 +1,8 @@
-import service from '~/data/service-account.enc.js'
-import useSWR from 'swr'
 import axios from 'axios'
 import { datacatalog } from 'googleapis/build/src/apis/datacatalog'
+import useSWR from 'swr'
+
+import service from '~/data/service-account.enc.js'
 
 const fetchWithData = (url, encrypt) =>
   axios.post(url, { data: encrypt }).then((res) => res.data)

@@ -1,16 +1,17 @@
+import { motion } from 'framer-motion'
+import { GetStaticProps } from 'next'
 import Image from 'next/image'
+import Link from 'next/link'
+import { FaBook, FaBookOpen, FaMusic, FaStar } from 'react-icons/fa'
+
+import TechStack from '~/components/about/TechStack'
+import NowPlaying from '~/components/music/NowPlaying'
+import TopTracks from '~/components/music/TopTracks'
+import UnstyledLink from '~/components/ui/links/UnstyledLink'
+import { Title } from '~/components/ui/typography'
 
 import { AboutListElement } from '../components/about/AboutListElement'
 import { getCurrentlyReading, getReviews } from '../lib/goodreads'
-import { FaBook, FaBookOpen, FaMusic, FaStar } from 'react-icons/fa'
-import TopTracks from '~/components/music/TopTracks'
-import { GetStaticProps } from 'next'
-import UnstyledLink from '~/components/ui/links/UnstyledLink'
-import NowPlaying from '~/components/music/NowPlaying'
-import TechStack from '~/components/about/TechStack'
-import Link from 'next/link'
-import { Title } from '~/components/ui/typography'
-import { motion } from 'framer-motion'
 
 export type AboutProps = {
   reviews: Awaited<ReturnType<typeof getReviews>>

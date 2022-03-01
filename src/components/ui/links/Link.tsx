@@ -12,7 +12,7 @@ export function Link({
   const router = useRouter()
 
   let currentClassName = className
-  let isActive = router.pathname === href
+  const isActive = router.pathname === href
   if (isActive) {
     currentClassName += ` ${activeClassName}`
   } else {

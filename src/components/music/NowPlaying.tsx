@@ -1,7 +1,7 @@
 //from leerob.io
-import useSWR from 'swr'
-import { useEffect } from 'react'
 import { animate } from 'motion'
+import { useEffect } from 'react'
+import useSWR from 'swr'
 
 import { fetcher } from '~/lib/fetcher'
 import { NowPlayingSong } from '~/lib/types'

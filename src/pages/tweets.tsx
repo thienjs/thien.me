@@ -1,6 +1,7 @@
-import Tweet from '~/components/cards/Tweet'
 import { getTweets } from 'lib/twitter'
-import { Title, Description } from '~/components/ui/typography'
+
+import Tweet from '~/components/cards/Tweet'
+import { Description, Title } from '~/components/ui/typography'
 
 export default function Tweets({ tweets }) {
   return (

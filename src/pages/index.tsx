@@ -1,39 +1,41 @@
 import {
   ApolloClient,
-  InMemoryCache,
   ApolloProvider,
   createHttpLink,
-  useQuery,
   gql,
+  InMemoryCache,
+  useQuery,
 } from '@apollo/client'
-import { getCurrentlyReading, getReviews } from '../lib/goodreads'
 import { setContext } from '@apollo/client/link/context'
-import Hero from '~/components/ui/Hero'
-import { AboutSection } from '../components/about/AboutSection'
-import Tweet from '~/components/cards/Tweet'
+import { Tab } from '@headlessui/react'
 import { getTweets } from 'lib/twitter'
-import classNames from '~/lib/classNames'
+import { GetStaticProps } from 'next'
 import Link from 'next/link'
+import { signIn, signOut, useSession } from 'next-auth/react'
+import React, { useState } from 'react'
+import { FaStar } from 'react-icons/fa'
+
+import { ArticleCard } from '~/components/blog/ArticleCard'
+import { ArticleList } from '~/components/blog/ArticleList'
+import RepoCard from '~/components/cards/Projects/RepoCard'
+import Tweet from '~/components/cards/Tweet'
+import Entry from '~/components/guestbook/ContentPopover/Entry'
+import { NowReading } from '~/components/hobby/NowReading'
+import NowPlaying from '~/components/music/NowPlaying'
+import TopTracks from '~/components/music/TopTracks'
+import Hero from '~/components/ui/Hero'
+import ArrowLink from '~/components/ui/links/ArrowLink'
+import Title from '~/components/ui/typography/Title'
+import classNames from '~/lib/classNames'
 import {
   convertToArticleList,
-  getPublishedArticles,
   getFeaturedArticles,
+  getPublishedArticles,
 } from '~/lib/notion'
-import { GetStaticProps } from 'next'
-import { ArticleList } from '~/components/blog/ArticleList'
-import NowPlaying from '~/components/music/NowPlaying'
+
 import { AboutListElement } from '../components/about/AboutListElement'
-import RepoCard from '~/components/cards/Projects/RepoCard'
-import ArrowLink from '~/components/ui/links/ArrowLink'
-import { useSession, signIn, signOut } from 'next-auth/react'
-import Entry from '~/components/guestbook/ContentPopover/Entry'
-import { Tab } from '@headlessui/react'
-import React, { useState } from 'react'
-import TopTracks from '~/components/music/TopTracks'
-import { ArticleCard } from '~/components/blog/ArticleCard'
-import { NowReading } from '~/components/hobby/NowReading'
-import { FaStar } from 'react-icons/fa'
-import Title from '~/components/ui/typography/Title'
+import { AboutSection } from '../components/about/AboutSection'
+import { getCurrentlyReading, getReviews } from '../lib/goodreads'
 
 export type HomePageProps = {
   recentArticles: any

@@ -1,22 +1,23 @@
 import Layout from 'components/ui/Layout'
 import Title from 'components/ui/typography/Title'
-import { fetcher } from '~/lib/fetcher'
-import { NowPlayingSong } from '~/lib/types'
 import useSWR from 'swr'
 
+import { fetcher } from '~/lib/fetcher'
+import { NowPlayingSong } from '~/lib/types'
+
 export default function Now() {
-  var year = new Date().getFullYear()
-  var date = new Date().getDate()
-  var month = new Date().getMonth()
-  var time = new Date().getTime()
-  var hour = new Date().getHours()
-  var minute = new Date().getMinutes()
-  var second = new Date().getSeconds()
-  var lokibday = '2021-05-10'
-  var birthDate = new Date(lokibday)
-  var today = new Date()
-  var age = year - birthDate.getFullYear()
-  var lokimonth = birthDate.getMonth() - month
+  const year = new Date().getFullYear()
+  const date = new Date().getDate()
+  const month = new Date().getMonth()
+  const time = new Date().getTime()
+  const hour = new Date().getHours()
+  const minute = new Date().getMinutes()
+  const second = new Date().getSeconds()
+  const lokibday = '2021-05-10'
+  const birthDate = new Date(lokibday)
+  const today = new Date()
+  const age = year - birthDate.getFullYear()
+  const lokimonth = birthDate.getMonth() - month
 
   const { data } = useSWR<NowPlayingSong>('/api/now-playing', fetcher)
 

@@ -1,9 +1,10 @@
-import Footer from '~/components/ui/Footer'
-import { ScrollToTop } from '../features/scroll'
-import Nav from './Nav'
-import DropMenu from './DropMenu'
 import CommandPalette from '~/components/features/command-palette/CommandPalette'
+import Footer from '~/components/ui/Footer'
 import { navigation } from '~/data/nav'
+
+import { ScrollToTop } from '../features/scroll'
+import DropMenu from './DropMenu'
+import Nav from './Nav'
 export const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className=" flex min-h-screen flex-col  items-center bg-zinc-200 dark:bg-black">

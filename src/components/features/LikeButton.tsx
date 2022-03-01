@@ -1,9 +1,8 @@
-import { useEffect, useState } from 'react'
-import useSWR from 'swr'
-
 import { fetcher } from 'lib/fetcher'
 import { Likes } from 'lib/types'
+import { useEffect, useState } from 'react'
 import { FaHeart } from 'react-icons/fa'
+import useSWR from 'swr'
 
 export function LikeButton({ slug }) {
   const [hydrated, setHydrated] = useState(false)

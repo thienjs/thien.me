@@ -1,9 +1,10 @@
-import type { InferGetStaticPropsType } from 'next'
-import { ContentPopover } from '~/components/guestbook'
-import { fetchGuestbookEntries } from '~/lib/queries'
-import { GuestbookContent } from '~/components/guestbook'
-import { Title, Description } from '~/components/ui/typography'
 import { motion } from 'framer-motion'
+import type { InferGetStaticPropsType } from 'next'
+
+import { ContentPopover } from '~/components/guestbook'
+import { GuestbookContent } from '~/components/guestbook'
+import { Description, Title } from '~/components/ui/typography'
+import { fetchGuestbookEntries } from '~/lib/queries'
 
 export const getStaticProps = async () => {
   const data = await fetchGuestbookEntries()

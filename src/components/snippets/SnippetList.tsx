@@ -1,5 +1,5 @@
-import { Snippet } from '~/lib/types'
 import { SnippetCard } from '~/components/snippets/SnippetCard'
+import { Snippet } from '~/lib/types'
 
 type Props = {
   snippets: Snippet[]

@@ -1,11 +1,12 @@
-import React, { useState } from 'react'
-import { GetStaticProps, GetServerSideProps } from 'next'
-
+import { GetServerSideProps, GetStaticProps } from 'next'
 import Router from 'next/router'
+import { getSession, signIn, useSession } from 'next-auth/react'
+import React, { useState } from 'react'
+
+import { Description, Title } from '~/components/ui/typography'
+
 import Todo, { TodoProps } from '../components/todo/Todo'
 import { prisma } from '../lib/prisma'
-import { useSession, getSession, signIn } from 'next-auth/react'
-import { Title, Description } from '~/components/ui/typography'
 
 export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
   const session = await getSession({ req })

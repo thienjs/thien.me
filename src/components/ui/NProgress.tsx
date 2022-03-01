@@ -1,5 +1,5 @@
-import NProgress from 'nprogress'
 import { useRouter } from 'next/router'
+import NProgress from 'nprogress'
 import { useEffect } from 'react'
 
 export default function Progress() {

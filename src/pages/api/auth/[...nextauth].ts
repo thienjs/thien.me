@@ -1,15 +1,15 @@
+import { PrismaAdapter } from '@next-auth/prisma-adapter'
+import { PrismaClient } from '@prisma/client'
+import { NextApiHandler } from 'next'
 import NextAuth from 'next-auth'
+import BattleNetProvider from 'next-auth/providers/battlenet'
+import DiscordProvider from 'next-auth/providers/discord'
+import EmailProvider from 'next-auth/providers/email'
 import GithubProvider from 'next-auth/providers/github'
 import GoogleProvider from 'next-auth/providers/google'
-import BattleNetProvider from 'next-auth/providers/battlenet'
-import TwitterProvider from 'next-auth/providers/twitter'
 import RedditProvider from 'next-auth/providers/reddit'
-import DiscordProvider from 'next-auth/providers/discord'
-import { PrismaClient } from '@prisma/client'
 import SpotifyProvider from 'next-auth/providers/spotify'
-import { PrismaAdapter } from '@next-auth/prisma-adapter'
-import EmailProvider from 'next-auth/providers/email'
-import { NextApiHandler } from 'next'
+import TwitterProvider from 'next-auth/providers/twitter'
 
 export default NextAuth({
   session: {

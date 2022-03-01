@@ -1,9 +1,10 @@
-import { RiAncientGateFill } from 'react-icons/ri'
-import { FaGraduationCap, FaDog, FaBlackTie } from 'react-icons/fa'
-import { AiOutlineCode } from 'react-icons/ai'
-import { SiAol, SiLeetcode } from 'react-icons/si'
 import { Disclosure, Transition } from '@headlessui/react'
 import { ChevronUpIcon } from '@heroicons/react/solid'
+import { AiOutlineCode } from 'react-icons/ai'
+import { FaBlackTie, FaDog, FaGraduationCap } from 'react-icons/fa'
+import { RiAncientGateFill } from 'react-icons/ri'
+import { SiAol, SiLeetcode } from 'react-icons/si'
+
 import Title from '~/components/ui/typography/Title'
 
 export default function Timeline() {

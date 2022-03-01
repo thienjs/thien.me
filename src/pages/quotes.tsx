@@ -1,6 +1,7 @@
-import { quotes } from '~/data'
-import { Title, Description } from '~/components/ui/typography'
 import { motion } from 'framer-motion'
+
+import { Description, Title } from '~/components/ui/typography'
+import { quotes } from '~/data'
 const title = `Quotes`
 const description = `some of my favorite quotes`
 

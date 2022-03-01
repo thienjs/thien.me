@@ -1,39 +1,41 @@
 /* This example requires Tailwind CSS v2.0+ */
-import { Fragment, useState } from 'react'
-import { Menu, Transition, Disclosure } from '@headlessui/react'
-import classNames from '~/lib/classNames'
+import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/solid'
-import { useSession, signIn, signOut } from 'next-auth/react'
-import Link from 'next/link'
 import {
-  CodeIcon,
-  HomeIcon,
-  Pencil1Icon,
-  StopwatchIcon,
-  PersonIcon,
-  DiscIcon,
+  ArchiveIcon,
+  AvatarIcon,
   BackpackIcon,
-  LightningBoltIcon,
+  BlendingModeIcon,
+  BookmarkIcon,
+  ChatBubbleIcon,
+  CodeIcon,
+  Cross1Icon,
+  CubeIcon,
+  DiscIcon,
+  EnvelopeClosedIcon,
+  FaceIcon,
+  GitHubLogoIcon,
   Half2Icon,
   HamburgerMenuIcon,
-  Cross1Icon,
-  TwitterLogoIcon,
-  GitHubLogoIcon,
-  NotionLogoIcon,
-  EnvelopeClosedIcon,
-  ChatBubbleIcon,
-  RocketIcon,
-  ArchiveIcon,
-  FaceIcon,
+  HomeIcon,
   IdCardIcon,
-  AvatarIcon,
-  BlendingModeIcon,
+  LightningBoltIcon,
+  NotionLogoIcon,
+  Pencil1Icon,
+  PersonIcon,
+  RocketIcon,
   SpeakerLoudIcon,
-  CubeIcon,
-  BookmarkIcon,
+  StopwatchIcon,
+  TwitterLogoIcon,
 } from '@radix-ui/react-icons'
-import AuthButton from '../auth/AuthButton'
+import Link from 'next/link'
+import { signIn, signOut, useSession } from 'next-auth/react'
+import { Fragment, useState } from 'react'
 import { MdDriveFileMoveOutline } from 'react-icons/md'
+
+import classNames from '~/lib/classNames'
+
+import AuthButton from '../auth/AuthButton'
 
 export default function DropMenu() {
   const [isOpen, setIsOpen] = useState(false)
@@ -299,7 +301,7 @@ export default function DropMenu() {
                         </>
                       ) : (
                         <>
-                          <PersonIcon />
+                          <PersonIcon className="mt-0.5" />
                           <div className="ml-4" onClick={() => signIn()}>
                             Sign In
                           </div>

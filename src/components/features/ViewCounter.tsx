@@ -1,8 +1,7 @@
-import { useEffect } from 'react'
-import useSWR from 'swr'
-
 import { fetcher } from 'lib/fetcher'
 import { Views } from 'lib/types'
+import { useEffect } from 'react'
+import useSWR from 'swr'
 
 export function ViewCounter({ slug }) {
   const { data } = useSWR<Views>(`/api/views/${slug}`, fetcher)

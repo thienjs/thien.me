@@ -1,7 +1,8 @@
-import { bookmarks } from '~/data'
-import Link from 'next/link'
-import { Title, Description } from '~/components/ui/typography'
 import { motion } from 'framer-motion'
+import Link from 'next/link'
+
+import { Description, Title } from '~/components/ui/typography'
+import { bookmarks } from '~/data'
 
 const title = `Bookmarks`
 const description = `useful web tools`

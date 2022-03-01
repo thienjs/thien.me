@@ -1,12 +1,12 @@
-import { useState } from 'react'
 import { Tab } from '@headlessui/react'
+import { useState } from 'react'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
 export default function Example() {
-  let [categories] = useState({
+  const [categories] = useState({
     Recent: [
       {
         id: 1,

@@ -1,5 +1,5 @@
-import { ReactChildren, FunctionComponent } from 'react'
 import { motion } from 'framer-motion'
+import { FunctionComponent, ReactChildren } from 'react'
 
 export const Description: FunctionComponent = ({
   children,
@@ -21,7 +21,7 @@ export const Description: FunctionComponent = ({
           y: 0,
         },
       }}
-      className="mb-8 text-sm text-neutral-600 dark:text-neutral-400 font-serif"
+      className="mb-8 font-serif text-sm text-neutral-600 dark:text-neutral-400"
     >
       {children}
     </motion.div>

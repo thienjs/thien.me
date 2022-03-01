@@ -1,5 +1,7 @@
-import { fetcher } from '~/lib/fetcher'
 import useSWR from 'swr'
+
+import { fetcher } from '~/lib/fetcher'
+
 import NowStat from './NowStat'
 
 export function TotalSnippets() {

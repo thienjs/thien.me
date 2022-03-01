@@ -1,10 +1,11 @@
-import { GetStaticProps } from 'next'
-import { getPublishedArticles, convertToArticleList } from '~/lib/notion'
-import { useState, useEffect } from 'react'
-import { Tag } from '~/components/blog/Tag'
-import { ArticleList } from '~/components/blog/ArticleList'
-import { Title, Description } from '~/components/ui/typography'
 import { motion } from 'framer-motion'
+import { GetStaticProps } from 'next'
+import { useEffect, useState } from 'react'
+
+import { ArticleList } from '~/components/blog/ArticleList'
+import { Tag } from '~/components/blog/Tag'
+import { Description, Title } from '~/components/ui/typography'
+import { convertToArticleList, getPublishedArticles } from '~/lib/notion'
 
 export default function Blog({ articles, tags }) {
   const [selectedTag, setSelectedTag] = useState<string>('')
@@ -26,8 +27,7 @@ export default function Blog({ articles, tags }) {
   return (
     <>
       <Title>Blog</Title>
-      <Description
-      >
+      <Description>
         This is where I write about programming, tech, life, and everything in
         between.
       </Description>

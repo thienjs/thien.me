@@ -1,6 +1,8 @@
-import React from 'react'
 import { Tab } from '@headlessui/react'
+import React from 'react'
+
 import classNames from '~/lib/classNames'
+
 import Tracks from '../music/TopTracks'
 
 export default function MediaTabs() {

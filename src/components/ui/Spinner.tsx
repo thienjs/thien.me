@@ -1,4 +1,5 @@
 import classNames from 'classnames'
+
 import styles from '~/styles/gg-spinner.module.css'
 
 type SpinnerSize = 'lg' | 'xl' | 'xxl'

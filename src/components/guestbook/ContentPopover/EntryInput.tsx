@@ -1,10 +1,11 @@
-import LoadingSpinner from '~/components/ui/common/LoadingSpinner'
 import clsx from 'clsx'
-import * as React from 'react'
-import useSWR, { useSWRConfig } from 'swr'
 import { signOut } from 'next-auth/react'
+import * as React from 'react'
 import toast from 'react-hot-toast'
 import { BiFullscreen } from 'react-icons/bi'
+import useSWR, { useSWRConfig } from 'swr'
+
+import LoadingSpinner from '~/components/ui/common/LoadingSpinner'
 
 export enum Form {
   Initial,

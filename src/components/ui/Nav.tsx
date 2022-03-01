@@ -1,14 +1,16 @@
-import * as React from 'react'
-import { motion, AnimateSharedLayout } from 'framer-motion'
-import CommandPalette from '~/components/features/command-palette/CommandPalette'
+import classnames from 'classnames'
+import { AnimateSharedLayout, motion } from 'framer-motion'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import classnames from 'classnames'
+import * as React from 'react'
+
+import CommandPalette from '~/components/features/command-palette/CommandPalette'
 import { navigation } from '~/data/nav'
-import ThemeSwitch from './ThemeSwitch'
-import DropMenu from './DropMenu'
+
 import AuthButton from '../auth/AuthButton'
 import { TBoxIcon } from '../icons/t-box'
+import DropMenu from './DropMenu'
+import ThemeSwitch from './ThemeSwitch'
 
 export default function Nav() {
   const { pathname } = useRouter()
