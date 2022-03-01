@@ -6,7 +6,6 @@ import { AppProps } from 'next/app'
 import Head from 'next/head'
 import { DefaultSeo } from 'next-seo'
 import { Layout } from '~/components/ui'
-import { MessageProvider } from '~/lib/message'
 import Progress from '~/components/ui/NProgress'
 import { SessionProvider } from 'next-auth/react'
 import { useEffect } from 'react'
@@ -29,17 +28,14 @@ export default function App({
         <meta content="width=device-width, initial-scale=1" name="viewport" />
       </Head>
       <DefaultSeo {...pageSEO} />
-      <MessageProvider>
-        <SessionProvider session={session}>
-          <ThemeProvider attribute="class">
-            <Layout>
-              <Component {...pageProps} />
-            </Layout>
-
-            <Progress />
-          </ThemeProvider>
-        </SessionProvider>
-      </MessageProvider>
+      <SessionProvider session={session}>
+        <ThemeProvider attribute="class">
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+          <Progress />
+        </ThemeProvider>
+      </SessionProvider>
     </>
   )
 }
