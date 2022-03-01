@@ -5,8 +5,8 @@ import RepoCard from '~/components/cards/Projects/RepoCard'
 import { Title } from '~/components/ui/typography'
 const ProjectsPage = ({ repos }) => (
   <>
-    <Title>my github repositories</Title>
-    <div className="flex w-96 flex-col content-start">
+    <Title>Projects</Title>
+    <div className="grid grid-rows-1 xl:grid-cols-2 gap-x-2 gap-y-1 ">
       {repos.map((repo) => (
         <div key={repo.name} className="">
           <RepoCard {...repo} />

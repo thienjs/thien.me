@@ -153,8 +153,8 @@ a {
 
 .animated-underline {
   background-image: linear-gradient(#33333300, #33333300),
-    linear-gradient(to right, teal, cyan);
-  background-size: 100% 2px, 0 2px;
+  linear-gradient(to right, cyan, cyan);
+  background-size: 100% 1px, 0 1px;
   background-position: 100% 100%, 0 100%;
   background-repeat: no-repeat;
   transition: 0.3s ease;
@@ -164,5 +164,5 @@ a {
 .animated-underline:focus-visible,
 .project-card:hover .animated-underline,
 .project-card:focus-visible .animated-underline {
-  background-size: 0 2px, 100% 2px;
+  background-size: 0 1px, 100% 1px;
 }
