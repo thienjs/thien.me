@@ -5,7 +5,7 @@ import Router from 'next/router'
 import Todo, { TodoProps } from '../components/todo/Todo'
 import { prisma } from '../lib/prisma'
 import { useSession, getSession, signIn } from 'next-auth/react'
-import { Title } from '~/components/ui/typography'
+import { Title, Description } from '~/components/ui/typography'
 
 export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
   const session = await getSession({ req })
@@ -60,9 +60,7 @@ const TodoPage: React.FC<Props> = (props) => {
     <>
       <div className="">
         <Title>Todo</Title>
-        <p className="mb-8 text-sm text-neutral-600 dark:text-neutral-400">
-          my todo list
-        </p>
+        <Description>my todo list</Description>
 
         {session ? (
           <>

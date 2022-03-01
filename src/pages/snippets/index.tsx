@@ -3,7 +3,7 @@ import { getPublishedSnippets, convertToSnippetList } from '~/lib/notion'
 import { useState, useEffect } from 'react'
 import { Tag } from '~/components/blog/Tag'
 import { SnippetList } from '~/components/snippets/SnippetList'
-import { Title } from '~/components/ui/typography'
+import { Title, Description } from '~/components/ui/typography'
 import { motion } from 'framer-motion'
 
 export default function SnippetsPage({ snippets, tags }) {
@@ -26,24 +26,7 @@ export default function SnippetsPage({ snippets, tags }) {
   return (
     <>
       <Title>Snippets</Title>
-      <motion.div
-        initial="hidden"
-        animate="visible"
-        transition={{ delay: 0.2, duration: 1 }}
-        variants={{
-          hidden: {
-            opacity: 0.5,
-            y: 10,
-          },
-          visible: {
-            opacity: 1,
-            y: 0,
-          },
-        }}
-        className="mb-8 font-serif text-sm text-neutral-600 dark:text-neutral-400"
-      >
-        collection of useful code for reference
-      </motion.div>
+      <Description>collection of useful code for reference</Description>
       <div className="relative w-full">
         <input
           aria-label="Search snippets"

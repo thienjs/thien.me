@@ -1,15 +1,15 @@
 import Tweet from '~/components/cards/Tweet'
 import { getTweets } from 'lib/twitter'
-import { Title } from '~/components/ui/typography'
+import { Title, Description } from '~/components/ui/typography'
 
 export default function Tweets({ tweets }) {
   return (
     <>
       <div className="mx-auto mb-16 flex max-w-2xl flex-col items-start justify-center">
         <Title>Tweets</Title>
-        <p className="mb-8 text-sm text-neutral-600 dark:text-neutral-400">
+        <Description>
           A social media platform I want to get back into.
-        </p>
+        </Description>
         {tweets.map((tweet) => (
           <Tweet key={tweet.id} {...tweet} />
         ))}

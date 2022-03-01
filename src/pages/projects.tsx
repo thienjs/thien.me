@@ -2,10 +2,11 @@ import { graphql } from '@octokit/graphql'
 
 import type { GetStaticProps } from 'next'
 import RepoCard from '~/components/cards/Projects/RepoCard'
-import { Title } from '~/components/ui/typography'
+import { Title, Description  } from '~/components/ui/typography'
 const ProjectsPage = ({ repos }) => (
   <>
     <Title>Projects</Title>
+    <Description>what i've worked on</Description>
     <div className="grid grid-rows-1 xl:grid-cols-2 gap-x-2 gap-y-1 ">
       {repos.map((repo) => (
         <div key={repo.name} className="">
@@ -20,7 +21,7 @@ const ProjectsPage = ({ repos }) => (
         target="_blank"
         rel="noopener noreferrer"
       >
-        check out my github
+        more on github
       </a>
     </p>
   </>

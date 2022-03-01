@@ -1,5 +1,5 @@
 import { quotes } from '~/data'
-import { Title } from '~/components/ui/typography'
+import { Title, Description } from '~/components/ui/typography'
 import { motion } from 'framer-motion'
 const title = `Quotes`
 const description = `some of my favorite quotes`
@@ -8,24 +8,7 @@ export default function QuotesPage() {
   return (
     <>
       <Title>{title}</Title>
-      <motion.div
-        initial="hidden"
-        animate="visible"
-        transition={{ delay: 0.2, duration: 1 }}
-        variants={{
-          hidden: {
-            opacity: 0.5,
-            y: 10,
-          },
-          visible: {
-            opacity: 1,
-            y: 0,
-          },
-        }}
-        className="mb-8 font-serif text-sm text-neutral-600 dark:text-neutral-400"
-      >
-        {description}
-      </motion.div>
+      <Description>{description}</Description>
 
       <motion.div
         initial="hidden"

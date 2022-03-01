@@ -3,7 +3,7 @@ import { getPublishedArticles, convertToArticleList } from '~/lib/notion'
 import { useState, useEffect } from 'react'
 import { Tag } from '~/components/blog/Tag'
 import { ArticleList } from '~/components/blog/ArticleList'
-import { Title } from '~/components/ui/typography'
+import { Title, Description } from '~/components/ui/typography'
 import { motion } from 'framer-motion'
 
 export default function Blog({ articles, tags }) {
@@ -26,25 +26,11 @@ export default function Blog({ articles, tags }) {
   return (
     <>
       <Title>Blog</Title>
-      <motion.div
-        initial="hidden"
-        animate="visible"
-        transition={{ delay: 0.2, duration: 1 }}
-        variants={{
-          hidden: {
-            opacity: 0.5,
-            y: 10,
-          },
-          visible: {
-            opacity: 1,
-            y: 0,
-          },
-        }}
-        className="mb-8 font-serif text-sm text-neutral-600 dark:text-neutral-400"
+      <Description
       >
         This is where I write about programming, tech, life, and everything in
         between.
-      </motion.div>
+      </Description>
       <motion.div
         initial="hidden"
         animate="visible"

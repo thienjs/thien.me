@@ -1,6 +1,41 @@
 export const bookmarks = [
   {
-    title: 'Dev',
+    title: 'Around the Web',
+    list: [
+      {
+        title: 'uses',
+        description: 'A list of /uses pages detailing developer setups, gear, software and configs.',
+        link: 'https://uses.tech/',
+      },
+      {
+        title: 'nownownow',
+        description: 'list of now pages',
+        link: 'https://nownownow.com/',
+      },
+    ],
+  },
+  {
+    title: 'Blog Communities',
+    list: [
+      {
+        title: 'Dev.to',
+        description: 'dev.to',
+        link: 'https://dev.to/',
+      },
+      {
+        title: 'Hashnode',
+        description: 'hashnode',
+        link: 'https://hasnode.com/',
+      },
+      {
+        title: 'Showwwcase',
+        description: 'showwwcase',
+        link: 'https://showwwcase.com/',
+      },
+    ],
+  },
+  {
+    title: 'Dev Tools',
     list: [
       {
         title: 'Regex 101',
