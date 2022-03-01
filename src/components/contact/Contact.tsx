@@ -10,7 +10,7 @@ const Contact: NextPage = () => {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
-    const form = {
+    let form = {
       name,
       email,
       phone,

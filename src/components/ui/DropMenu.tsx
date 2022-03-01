@@ -1,41 +1,39 @@
 /* This example requires Tailwind CSS v2.0+ */
-import { Disclosure, Menu, Transition } from '@headlessui/react'
+import { Fragment, useState } from 'react'
+import { Menu, Transition, Disclosure } from '@headlessui/react'
+import classNames from '~/lib/classNames'
 import { ChevronDownIcon } from '@heroicons/react/solid'
+import { useSession, signIn, signOut } from 'next-auth/react'
+import Link from 'next/link'
 import {
-  ArchiveIcon,
-  AvatarIcon,
-  BackpackIcon,
-  BlendingModeIcon,
-  BookmarkIcon,
-  ChatBubbleIcon,
   CodeIcon,
-  Cross1Icon,
-  CubeIcon,
+  HomeIcon,
+  Pencil1Icon,
+  StopwatchIcon,
+  PersonIcon,
   DiscIcon,
-  EnvelopeClosedIcon,
-  FaceIcon,
-  GitHubLogoIcon,
+  BackpackIcon,
+  LightningBoltIcon,
   Half2Icon,
   HamburgerMenuIcon,
-  HomeIcon,
-  IdCardIcon,
-  LightningBoltIcon,
-  NotionLogoIcon,
-  Pencil1Icon,
-  PersonIcon,
-  RocketIcon,
-  SpeakerLoudIcon,
-  StopwatchIcon,
+  Cross1Icon,
   TwitterLogoIcon,
+  GitHubLogoIcon,
+  NotionLogoIcon,
+  EnvelopeClosedIcon,
+  ChatBubbleIcon,
+  RocketIcon,
+  ArchiveIcon,
+  FaceIcon,
+  IdCardIcon,
+  AvatarIcon,
+  BlendingModeIcon,
+  SpeakerLoudIcon,
+  CubeIcon,
+  BookmarkIcon,
 } from '@radix-ui/react-icons'
-import Link from 'next/link'
-import { signIn, signOut, useSession } from 'next-auth/react'
-import { Fragment, useState } from 'react'
-import { MdDriveFileMoveOutline } from 'react-icons/md'
-
-import classNames from '~/lib/classNames'
-
 import AuthButton from '../auth/AuthButton'
+import { MdDriveFileMoveOutline } from 'react-icons/md'
 
 export default function DropMenu() {
   const [isOpen, setIsOpen] = useState(false)
@@ -301,7 +299,7 @@ export default function DropMenu() {
                         </>
                       ) : (
                         <>
-                          <PersonIcon className="mt-0.5" />
+                          <PersonIcon />
                           <div className="ml-4" onClick={() => signIn()}>
                             Sign In
                           </div>

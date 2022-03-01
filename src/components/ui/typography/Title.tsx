@@ -1,5 +1,5 @@
+import { ReactChildren, FunctionComponent } from 'react'
 import { motion } from 'framer-motion'
-import { FunctionComponent, ReactChildren } from 'react'
 
 export const Title: FunctionComponent = ({
   children,

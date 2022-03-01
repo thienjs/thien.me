@@ -1,5 +1,4 @@
 import useSWR, { mutate } from 'swr'
-
 import { Todo } from '~/types/types'
 
 const todoPath = '/api/todos'

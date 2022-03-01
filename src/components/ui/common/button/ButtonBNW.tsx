@@ -1,5 +1,5 @@
-import Link from 'next/link'
 import * as React from 'react'
+import Link from 'next/link'
 
 export interface IButtonProps {
   label: string

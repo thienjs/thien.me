@@ -1,14 +1,13 @@
-import { GetServerSideProps } from 'next'
-import Router from 'next/router'
-import { useSession } from 'next-auth/react'
 import React from 'react'
-import { GoTrashcan } from 'react-icons/go'
+import { GetServerSideProps } from 'next'
 
-import { basePath } from '~/utils/config'
-
-import { TodoProps } from '../../components/todo/Todo'
 import Layout from '../../components/ui/Layout'
+import Router from 'next/router'
+import { TodoProps } from '../../components/todo/Todo'
 import { prisma } from '../../lib/prisma'
+import { useSession } from 'next-auth/react'
+import { basePath } from '~/utils/config'
+import { GoTrashcan } from 'react-icons/go'
 
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   const todo = await prisma.todo.findUnique({
@@ -40,7 +39,7 @@ const todo: React.FC<TodoProps> = (props) => {
   }
   const userHasValidSession = Boolean(session)
   const todoBelongsToUser = session?.user?.email === props.author?.email
-  const draftNumber = props.id.toString()
+  let draftNumber = props.id.toString()
 
   return (
     <Layout>

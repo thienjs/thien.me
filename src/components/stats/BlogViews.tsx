@@ -1,11 +1,9 @@
-import StatsCard from 'components/stats/StatsCard'
-import { FaEye } from 'react-icons/fa'
-import GoEye from 'react-icons/go'
-import useSWR from 'swr'
-
 import { fetcher } from '~/lib/fetcher'
-
+import useSWR from 'swr'
+import StatsCard from 'components/stats/StatsCard'
 import { TBoxIcon } from '../icons'
+import GoEye from 'react-icons/go'
+import { FaEye } from 'react-icons/fa'
 
 export function BlogViews() {
   const { data } = useSWR<any>('/api/views', fetcher)

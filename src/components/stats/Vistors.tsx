@@ -1,7 +1,6 @@
-import StatsCard from 'components/stats/StatsCard'
-import useSWR from 'swr'
-
 import { fetcher } from '~/lib/fetcher'
+import useSWR from 'swr'
+import StatsCard from 'components/stats/StatsCard'
 export function Visitors() {
   const { data: liveVisitors } = useSWR<any>(
     '/api/statistics/visitors',

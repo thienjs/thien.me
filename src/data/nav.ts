@@ -13,6 +13,7 @@ export const navigation = {
     { name: 'Music', href: '/music' },
     { name: 'Movies', href: '/movies' },
     { name: 'Uses', href: '/uses' },
+
   ],
   footerLinks: [
     { name: 'Guestbook', href: 'guestbook' },

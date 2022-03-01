@@ -1,11 +1,11 @@
-import axios from 'axios'
-import type { GetStaticProps } from 'next'
 import React from 'react'
+import type { GetStaticProps } from 'next'
 import { useState } from 'react'
 
-import { MovieCard } from '~/components/hobby/MovieCard'
-import { Description, Title } from '~/components/ui/typography'
 import { getMovies } from '~/lib/notion'
+import axios from 'axios'
+import { MovieCard } from '~/components/hobby/MovieCard'
+import { Title, Description  } from '~/components/ui/typography'
 
 const MoviesPage = ({ movies }) => {
   const [movie, setMovie] = useState(null)

@@ -1,6 +1,6 @@
-import { signIn, useSession } from 'next-auth/react'
 import * as React from 'react'
-import { FaGithub, FaGoogle } from 'react-icons/fa'
+import { FaGoogle, FaGithub } from 'react-icons/fa'
+import { signIn, useSession } from 'next-auth/react'
 export interface IAuthButtonsProps {}
 
 export function AuthButtons(props: IAuthButtonsProps) {

@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, Dispatch, SetStateAction } from 'react'
 
 import { IPost } from '../../types/post'
 

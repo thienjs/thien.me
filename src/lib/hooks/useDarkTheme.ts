@@ -1,5 +1,5 @@
-import { useTheme } from 'next-themes'
 import { useEffect, useState } from 'react'
+import { useTheme } from 'next-themes'
 
 export function useDarkTheme() {
   const [mounted, setMounted] = useState(false)

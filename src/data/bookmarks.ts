@@ -4,8 +4,7 @@ export const bookmarks = [
     list: [
       {
         title: 'uses',
-        description:
-          'A list of /uses pages detailing developer setups, gear, software and configs.',
+        description: 'A list of /uses pages detailing developer setups, gear, software and configs.',
         link: 'https://uses.tech/',
       },
       {

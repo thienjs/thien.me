@@ -1,11 +1,10 @@
-import { motion } from 'framer-motion'
 import { GetStaticProps } from 'next'
-import { useEffect, useState } from 'react'
-
+import { getPublishedSnippets, convertToSnippetList } from '~/lib/notion'
+import { useState, useEffect } from 'react'
 import { Tag } from '~/components/blog/Tag'
 import { SnippetList } from '~/components/snippets/SnippetList'
-import { Description, Title } from '~/components/ui/typography'
-import { convertToSnippetList, getPublishedSnippets } from '~/lib/notion'
+import { Title, Description } from '~/components/ui/typography'
+import { motion } from 'framer-motion'
 
 export default function SnippetsPage({ snippets, tags }) {
   const [selectedTag, setSelectedTag] = useState<string>('')

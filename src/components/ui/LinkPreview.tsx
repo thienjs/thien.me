@@ -1,6 +1,5 @@
-import * as Tooltip from '@radix-ui/react-tooltip'
 import Image from 'next/image'
-
+import * as Tooltip from '@radix-ui/react-tooltip'
 import classNames from '~/lib/classNames'
 
 interface ILinkPreview {

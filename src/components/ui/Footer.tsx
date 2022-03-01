@@ -1,18 +1,18 @@
 import Image from 'next/image'
-import Link from 'next/link'
-import { useRouter } from 'next/router'
 import React from 'react'
+
+import data from '~/data/data.json'
+import Link from 'next/link'
+import GithubIcon from '~/components/icons/social-icons/github'
+import DiscordIcon from '~/components/icons/social-icons/discord'
+import TwitterIcon from '~/components/icons/social-icons/twitter'
+import LinkedinIcon from '~/components/icons/social-icons/linkedin'
+import EmailIcon from '~/components/icons/social-icons/email'
 import { SiBuymeacoffee } from 'react-icons/si'
 
-import DiscordIcon from '~/components/icons/social-icons/discord'
-import EmailIcon from '~/components/icons/social-icons/email'
-import GithubIcon from '~/components/icons/social-icons/github'
-import LinkedinIcon from '~/components/icons/social-icons/linkedin'
-import TwitterIcon from '~/components/icons/social-icons/twitter'
-import data from '~/data/data.json'
 import { navigation } from '~/data/nav'
-
 import UnstyledLink from './links/UnstyledLink'
+import { useRouter } from 'next/router'
 import ThemeSwitch from './ThemeSwitch'
 
 const Footer = () => {

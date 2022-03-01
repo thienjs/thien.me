@@ -1,11 +1,10 @@
-import { useRouter } from 'next/dist/client/router'
-import Image from 'next/image'
-import slugify from 'slugify'
-
-import siteMetadata from '~/data/siteMetadata'
-import { handleSnippetClicked } from '~/lib/handleSnippetClick'
-import { useIsSnippetRead } from '~/lib/hooks/useIsSnippetRead'
 import { Snippet } from '~/lib/types'
+import Image from 'next/image'
+import { handleSnippetClicked } from '~/lib/handleSnippetClick'
+import siteMetadata from '~/data/siteMetadata'
+import slugify from 'slugify'
+import { useIsSnippetRead } from '~/lib/hooks/useIsSnippetRead'
+import { useRouter } from 'next/dist/client/router'
 
 type Props = {
   snippet: Snippet

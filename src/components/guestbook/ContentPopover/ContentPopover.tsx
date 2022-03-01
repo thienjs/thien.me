@@ -1,12 +1,12 @@
-import { Popover } from '@headlessui/react'
-import { useSession } from 'next-auth/react'
-import { getProviders, signIn } from 'next-auth/react'
 import * as React from 'react'
-import { FiDivide, FiX } from 'react-icons/fi'
-import { RiQuillPenLine } from 'react-icons/ri'
 
+import { FiDivide, FiX } from 'react-icons/fi'
 import { AuthButtons } from './AuthButtons'
 import { ContentInput } from './ContentInput'
+import { useSession } from 'next-auth/react'
+import { getProviders, signIn } from 'next-auth/react'
+import { Popover } from '@headlessui/react'
+import { RiQuillPenLine } from 'react-icons/ri'
 
 export interface IContentPopoverProps {}
 export function ContentPopover(props: IContentPopoverProps) {
