@@ -5623,3 +5623,8 @@
   "integrity" "sha512-PQ2PC7R9rslx84ndNBZB/Dkv8V8fZEpk83RLgXtYd0fwUgEjseMn1Dgajh2x6S8QbZAFa9p2qVCEuYZNgve0dQ=="
   "resolved" "https://registry.npmjs.org/zen-observable/-/zen-observable-0.8.15.tgz"
   "version" "0.8.15"
+
+"zod@^3.12.0":
+  "integrity" "sha512-w+mmntgEL4hDDL5NLFdN6Fq2DSzxfmlSoJqiYE1/CApO8EkOCxvJvRYEVf8Vr/lRs3i6gqoiyFM6KRcWqqdBzQ=="
+  "resolved" "https://registry.npmjs.org/zod/-/zod-3.12.0.tgz"
+  "version" "3.12.0"
