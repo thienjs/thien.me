@@ -4,17 +4,14 @@ import { Client } from '@notionhq/client'
 import siteMetadata from '~/data/siteMetadata'
 import slugify from 'slugify'
 import { useRouter } from 'next/router'
-import ViewCounter from '~/components/ViewCounter'
-import LikeButton from '~/components/features/LikeButton'
-import Layout from '~/components/ui/Layout'
-import Reactions from '~/components/features/reactions/Reactions'
+import {ViewCounter, LikeButton} from '~/components/features'
 import { AnchorLink } from '~/components/ui/links/AnchorLink'
 import Image from 'next/image'
 import { CodeBlock } from '~/components/blog/Codeblock'
 import { Callout } from '~/components/ui/Callout'
 import { YoutubeEmbed } from '~/components/blog/YoutubeEmbed'
 import { GetStaticPaths, GetStaticProps } from 'next'
-import Title from '~/components/ui/typography/Title'
+import {Title} from '~/components/ui/typography'
 import ScrollIndicator from '~/components/ui/ScrollIndicator'
 import CDbutton from '~/components/ui/CDbutton'
 import Link from 'next/link'
@@ -246,7 +243,7 @@ const ArticlePage = ({
   )
 
   return (
-    <Layout>
+    <>
       <ScrollIndicator>
         <div className="text-neutral-800 dark:text-neutral-400">
           <article className="col-span-9 mt-12">
@@ -283,7 +280,7 @@ const ArticlePage = ({
           <CDbutton />
         </span>
       </ScrollIndicator>
-    </Layout>
+    </>
   )
 }
 

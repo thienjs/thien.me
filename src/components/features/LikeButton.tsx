@@ -5,7 +5,7 @@ import { fetcher } from 'lib/fetcher'
 import { Likes } from 'lib/types'
 import { FaHeart } from 'react-icons/fa'
 
-export default function LikeButton({ slug }) {
+export function LikeButton({ slug }) {
   const [hydrated, setHydrated] = useState(false)
   const { data } = useSWR<Likes>(`/api/likes/${slug}`, fetcher)
 
@@ -26,3 +26,5 @@ export default function LikeButton({ slug }) {
     </div>
   )
 }
+
+export default LikeButton

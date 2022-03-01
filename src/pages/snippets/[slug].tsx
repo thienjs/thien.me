@@ -4,8 +4,6 @@ import { Client } from '@notionhq/client'
 import siteMetadata from '~/data/siteMetadata'
 import slugify from 'slugify'
 import { useRouter } from 'next/router'
-
-import Layout from '~/components/ui/Layout'
 import { AnchorLink } from '~/components/ui/links/AnchorLink'
 import Image from 'next/image'
 import { CodeBlock } from '~/components/blog/Codeblock'
@@ -232,7 +230,7 @@ const SnippetPage = ({
   }, [slug])
 
   return (
-    <Layout>
+    <>
       <div className="grid grid-cols-1 lg:grid-cols-12 lg:gap-8">
         <article className="col-span-9 mt-12">
           <div className="space-y-12">
@@ -259,7 +257,7 @@ const SnippetPage = ({
           </div>
         </article>
       </div>
-    </Layout>
+    </>
   )
 }
 
