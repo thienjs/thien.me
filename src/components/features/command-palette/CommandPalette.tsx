@@ -44,7 +44,7 @@ export default function CommandPalette({ navigation }) {
       >
         <Dialog
           onClose={setIsOpen}
-          className="fixed inset-0 overflow-y-auto bg-zinc-600 p-4 pt-[25vh]"
+          className="fixed inset-0 overflow-y-auto bg-zinc-600 p-12 pt-[20vh]"
         >
           <Transition.Child
             enter="duration-300 ease-out"
@@ -71,28 +71,28 @@ export default function CommandPalette({ navigation }) {
                 router.push(`${page.href}`)
               }}
               as="div"
-              className="relative mx-auto max-w-xl max-h-[50vh] divide-y divide-gray-300 overflow-hidden overflow-y-scroll rounded-xl bg-zinc-200 shadow-2xl ring-1 ring-black/5 dark:bg-zinc-800"
+              className="relative mx-auto max-w-xl max-h-[50vh] divide-y divide-gray-300 dark:divide-zinc-700 overflow-hidden overflow-y-scroll rounded-xl bg-zinc-200 shadow-2xl ring-1 ring-black/5 dark:bg-zinc-800"
             >
               <div className="flex items-center px-4">
-                <SearchIcon className="h-6 w-6 text-gray-500" />
+                <SearchIcon className="h-6 w-6" />
                 <Combobox.Input
                   onChange={(event) => {
                     setQuery(event.target.value)
                   }}
-                  className="h-12 w-full border-0 bg-transparent text-sm text-gray-800 placeholder-gray-400 focus:ring-0 dark:text-neutral-400"
+                  className="h-12 border-0 bg-transparent  text-sm text-gray-800 placeholder-gray-400 focus:ring-0 dark:text-neutral-400"
                   placeholder="Search..."
                 />
               </div>
               {filterednavigation.length > 0 && (
                 <Combobox.Options
                   static
-                  className="max-h-30 text-s overflow-y-auto py-4"
+                  className="max-h-30 text-s overflow-y-auto py-4  "
                 >
                   {filterednavigation.map((page) => (
                     <Combobox.Option key={page.name} value={page}>
                       {({ active }) => (
                         <div
-                          className={`space-x-1 px-4 py-2 ${
+                          className={`space-x-1 px-14 py-2 ${
                             active
                               ? 'bg-zinc-300 dark:bg-zinc-600'
                               : 'bg-zinc-200 dark:bg-zinc-800'
@@ -123,7 +123,7 @@ export default function CommandPalette({ navigation }) {
                 </Combobox.Options>
               )}
               {query && filterednavigation.length === 0 && (
-                <p className="p-4 text-sm text-gray-500">no results found</p>
+                <p className="p-4 text-sm text-gray-500  mt-12">no results found</p>
               )}
             </Combobox>
           </Transition.Child>
