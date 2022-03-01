@@ -1,15 +1,19 @@
 export const navigation = {
   pages: [
-    { name: 'Home', href: '/home' },
+    { name: 'Home', href: '/' },
     { name: 'Blog', href: '/blog' },
     { name: 'Now', href: '/now' },
     { name: 'Todo', href: '/todo' },
     { name: 'Stats', href: '/stats' },
-    { name: 'Dashboard', href: '/dashboard' },
+    { name: 'Bookmarks', href: '/bookmarks' },
     { name: 'Snippets', href: '/snippets' },
     { name: 'About', href: '/about' },
     { name: 'Projects', href: '/projects' },
     { name: 'Contact', href: '/contact' },
+    { name: 'Music', href: '/music' },
+    { name: 'Movies', href: '/movies' },
+    { name: 'Uses', href: '/uses' },
+
   ],
   footerLinks: [
     { name: 'Guestbook', href: 'guestbook' },

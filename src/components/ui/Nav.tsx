@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { motion, AnimateSharedLayout } from 'framer-motion'
+import CommandPalette from '~/components/features/command-palette/CommandPalette'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import classnames from 'classnames'
@@ -72,6 +73,7 @@ export default function Nav() {
           </motion.ul>
         </AnimateSharedLayout>
         <div className="flex ">
+          <CommandPalette navigation={navigation} />
           <ThemeSwitch />
           <DropMenu />
         </div>
