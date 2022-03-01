@@ -81,7 +81,6 @@ export default function NowPage() {
             - diving deep into typography, fonts, icons, and spacing
           </NowItem>
           <NowItem>- learning spanish (slowly)</NowItem>
-          <NowItem>- reading/listening to books when I can</NowItem>
           <NowItem>- staying active by working on my tennis game</NowItem>
           <NowItem>
             - connecting with other developers on github and twitter
@@ -107,6 +106,7 @@ export default function NowPage() {
           <NowItem>
             <p className="ml-6">- snippets: {<TotalSnippets />} </p>
           </NowItem>
+          <NowItem>- reading: Open - Andre Agassi</NowItem>
           <NowItem>
             - listening to:{' '}
             {data?.songUrl ? (
@@ -116,7 +116,7 @@ export default function NowPage() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {data.title}
+                {data.title} - {data?.artist}
               </a>
             ) : (
               <span className="">a lot of 70's music</span>
