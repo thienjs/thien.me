@@ -12,6 +12,21 @@ export const uses = [
         description: '32GB ram | Dual Acer monitors',
         link: '',
       },
+      {
+        title: 'Keychron K6',
+        description: '',
+        link: '',
+      },
+      {
+        title: 'Logitech MX Ergo Plus',
+        description: '',
+        link: '',
+      },
+      {
+        title: 'Airpod Pro',
+        description: '',
+        link: '',
+      },
     ],
   },
   {
@@ -40,6 +55,31 @@ export const uses = [
       {
         title: 'Notion',
         description: '',
+        link: '',
+      },
+    ],
+  },
+  {
+    title: 'EDC',
+    list: [
+      {
+        title: 'Casio Calulator Watch',
+        description: '',
+        link: '',
+      },
+      {
+        title: 'Rotring 600 1st edition',
+        description: 'my favorite pen',
+        link: '',
+      },
+      {
+        title: 'Benchmade Bugout',
+        description: 'desert sand gray',
+        link: '',
+      },
+      {
+        title: 'Moleskin pocket notebook',
+        description: 'dotted',
         link: '',
       },
     ],
