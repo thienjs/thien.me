@@ -30,12 +30,57 @@ export const uses = [
     ],
   },
   {
+    title: 'Tech Stack',
+    list: [
+      {
+        title: 'React',
+        description: '3 years',
+        link: 'https://react.com',
+      },
+      {
+        title: 'Nextjs',
+        description: '2 years',
+        link: 'https://react.com',
+      },
+      {
+        title: 'Tailwind CSS',
+        description: '2 years',
+        link: 'https://tailwindcss.com',
+      },
+      {
+        title: 'Typescript',
+        description: '1 year',
+        link: 'https://typescript.com',
+      },
+      {
+        title: 'PostgreSQL',
+        description: '1 year',
+        link: 'https://react.com',
+      },
+      {
+        title: 'MySql',
+        description: '1 year',
+        link: 'https://react.com',
+      },
+      {
+        title: 'Prisma',
+        description: '1 year',
+        link: 'https://prismaorm.com',
+      },
+    ],
+  },
+  {
     title: 'Development',
     list: [
       {
         title: 'VSCode',
         description: '',
         link: '',
+      },
+      {
+        title: 'Supabase',
+        description: 'my db',
+        link: 'https://supabase.io',
       },
     ],
   },
