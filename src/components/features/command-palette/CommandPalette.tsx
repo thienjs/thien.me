@@ -44,7 +44,7 @@ export default function CommandPalette({ navigation }) {
       >
         <Dialog
           onClose={setIsOpen}
-          className="fixed inset-0 overflow-y-auto bg-zinc-600 p-12 pt-[20vh]"
+          className="fixed inset-0 overflow-y-auto bg-zinc-600 p-12 pt-[20vh] z-20"
         >
           <Transition.Child
             enter="duration-300 ease-out"
@@ -86,7 +86,7 @@ export default function CommandPalette({ navigation }) {
               {filterednavigation.length > 0 && (
                 <Combobox.Options
                   static
-                  className="max-h-30 text-s overflow-y-auto py-4  "
+                  className="max-h-30 text-sm overflow-y-auto py-4  "
                 >
                   {filterednavigation.map((page) => (
                     <Combobox.Option key={page.name} value={page}>
@@ -123,7 +123,7 @@ export default function CommandPalette({ navigation }) {
                 </Combobox.Options>
               )}
               {query && filterednavigation.length === 0 && (
-                <p className="p-4 text-sm text-gray-500  mt-12">no results found</p>
+                <p className="py-4 px-12 text-sm text-gray-500 ">no results found</p>
               )}
             </Combobox>
           </Transition.Child>

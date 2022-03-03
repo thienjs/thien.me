@@ -10,10 +10,12 @@ import {
   TwitterFollowers,
 } from '~/components/now'
 import useSWR from 'swr'
+import { Description, H2, Title } from '~/components/ui/typography'
 
 export const NowItem = ({ children }) => {
   return (
     <motion.div
+    className='text-neutral-800 dark:text-neutral-300'
       initial="hidden"
       animate="visible"
       transition={{ delay: 0.3, duration: 0.7 }}
@@ -66,20 +68,19 @@ export default function NowPage() {
               y: 0,
             },
           }}
-          className="mt-20 mb-10 text-sm font-semibold text-neutral-800 dark:text-neutral-300"
+          className="mt-20 mb-10 text-sm font-semibold text-neutral-900 dark:text-neutral-300"
         >
-          What I'm up to now:
+          <Title>
+
+         Now
+          </Title>
+          <Description>what I'm up to:</Description>
         </motion.div>
-        <ul className="space-y-3 text-left font-serif text-sm text-neutral-800 dark:text-neutral-300">
+        <ul className="space-y-5 text-left text-sm font-serif text-neutral-800 dark:text-neutral-300">
           <NowItem>- applying for my first tech job</NowItem>
           <NowItem>- taking more risks</NowItem>
           <NowItem>- walking Loki - my 9 month old puppy</NowItem>
-          <NowItem>
-            - focusing on getting better at React, Nextjs, Typescript, API's
-          </NowItem>
-          <NowItem>
-            - diving deep into typography, fonts, icons, and spacing
-          </NowItem>
+
           <NowItem>- learning spanish (slowly)</NowItem>
           <NowItem>- staying active by working on my tennis game</NowItem>
           <NowItem>

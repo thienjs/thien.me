@@ -18,7 +18,7 @@ export function SnippetCard({ snippet }: Props) {
 
   return (
     <button onClick={() => handleSnippetClicked(slug)}>
-      <div className="my-2 w-full rounded-md border border-gray-100 bg-white px-4 py-4 text-sm  shadow-sm  shadow-gray-300 hover:bg-zinc-300 dark:border-zinc-900 dark:bg-zinc-900 dark:shadow-none dark:hover:bg-zinc-800">
+      <div className=" w-full rounded-md border border-gray-100 bg-white px-4 py-4 text-sm  shadow-sm  shadow-gray-300 hover:bg-zinc-300 dark:border-zinc-900 dark:bg-zinc-900 dark:shadow-none dark:hover:bg-zinc-800">
         <div className="flex flex-col">
           <h3 className="text-md mb-1 text-left font-semibold">
             {snippet.title}
@@ -44,7 +44,7 @@ export function SnippetCard({ snippet }: Props) {
                 day: 'numeric',
               }
             )}{' '}*/}
-            {hasRead && (
+            {/*          {hasRead && (
               <span className="ml-6 inline-flex items-center text-sm text-gray-800 opacity-75  dark:text-gray-400">
                 <svg width="16" height="16" fill="none" viewBox="0 0 24 24">
                   <path
@@ -57,7 +57,7 @@ export function SnippetCard({ snippet }: Props) {
                 </svg>
                 <span className="text-xs font-extralight">read</span>
               </span>
-            )}
+)} */}
           </span>
         </div>
       </div>
