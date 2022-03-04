@@ -5,7 +5,7 @@ export const uses = [
       {
         title: 'Macbook Air 2018',
         description: '',
-        link: '',
+        link: 'https://apple.com',
       },
       {
         title: 'Custom PC',
@@ -15,17 +15,22 @@ export const uses = [
       {
         title: 'Keychron K6',
         description: '',
-        link: '',
+        link: 'https://keychron.com/k6',
       },
       {
         title: 'Logitech MX Ergo Plus',
         description: '',
-        link: '',
+        link: 'https://logitch.com',
+      },
+      {
+        title: 'Stream Deck',
+        description: '',
+        link: 'https://streamdeck.com',
       },
       {
         title: 'Airpod Pro',
         description: '',
-        link: '',
+        link: 'https://apple.com',
       },
     ],
   },
@@ -35,7 +40,37 @@ export const uses = [
       {
         title: 'VSCode',
         description: '',
-        link: '',
+        link: 'https://vscode.com',
+      },
+      {
+        title: 'Figma',
+        description: '',
+        link: 'https://figma.com',
+      },
+    ],
+  },
+  {
+    title: 'Stack',
+    list: [
+      {
+        title: 'React',
+        description: '',
+        link: 'https://react.com',
+      },
+      {
+        title: 'Tailwind CSS',
+        description: '',
+        link: 'https://tailwindcss.com',
+      },
+      {
+        title: 'Nextjs',
+        description: '',
+        link: 'https://nextjs.com',
+      },
+      {
+        title: 'Prisma',
+        description: '',
+        link: 'https://prisma.com',
       },
     ],
   },
@@ -55,7 +90,7 @@ export const uses = [
       {
         title: 'Notion',
         description: '',
-        link: '',
+        link: 'https://notion.so',
       },
     ],
   },

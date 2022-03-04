@@ -234,6 +234,76 @@ export const bookmarks = [
         description: 'domain register',
         link: 'https://namecheap.com',
       },
+      {
+        title: 'namecheap',
+        description: 'domain market',
+        link: 'https://dan.com',
+      },
+      {
+        title: 'sedo',
+        description: 'domain aution',
+        link: 'https://sedo.com',
+      },
+    ],
+  },
+  {
+    title: 'Tailwind Components',
+    list: [
+      {
+        title: 'gustui',
+        description: '',
+        link: 'https://www.gustui.com/',
+      },
+      {
+        title: 'Float UI',
+        description: '',
+        link: 'https://www.floatui.com/',
+      },
+      {
+        title: 'Tailwind Awesome',
+        description: '',
+        link: 'https://www.tailwindawesome.com/',
+      },
+      {
+        title: 'hyperui',
+        description: '',
+        link: 'https://hyperui.dev/',
+      },
+      {
+        title: 'tailwind components',
+        description: '',
+        link: 'https://tailwindcomponents.com/',
+      },
+      {
+        title: 'headless ui',
+        description: '',
+        link: 'https://headlessui.com/',
+      },
+      {
+        title: 'tail-kit',
+        description: '',
+        link: 'https://tailwind-kit.com/',
+      },
+      {
+        title: 'meraki',
+        description: '',
+        link: 'https://merakiui.com/',
+      },
+      {
+        title: 'mamba ui',
+        description: '',
+        link: 'https://mambaui.com/',
+      },
+      {
+        title: 'Flowbite',
+        description: '',
+        link: 'https://flowbite.com/',
+      },
+      {
+        title: 'Tailblocks',
+        description: '',
+        link: 'https://tailblocks.cc/',
+      },
     ],
   },
 ]
