@@ -72,6 +72,11 @@ export const uses = [
         description: '1 year',
         link: 'https://prismaorm.com',
       },
+      {
+        title: 'Supabase',
+        description: '1 year',
+        link: 'https://supabase.io',
+      },
     ],
   },
   {
@@ -89,36 +94,7 @@ export const uses = [
       },
     ],
   },
-  {
-    title: 'Stack',
-    list: [
-      {
-        title: 'React',
-        description: '',
-        link: 'https://react.com',
-      },
-      {
-        title: 'Tailwind CSS',
-        description: '',
-        link: 'https://tailwindcss.com',
-      },
-      {
-        title: 'Nextjs',
-        description: '',
-        link: 'https://nextjs.com',
-      },
-      {
-        title: 'Prisma',
-        description: '',
-        link: 'https://prisma.com',
-      },
-      {
-        title: 'Supabase',
-        description: 'my db',
-        link: 'https://supabase.io',
-      },
-    ],
-  },
+ 
   {
     title: 'Browsing',
     list: [
