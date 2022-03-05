@@ -145,8 +145,8 @@ export const uses = [
     list: [
       {
         title: 'Yonex Ezone 98',
-        description: '305g | 16x19 | 98 sq in',
-        link: 'https://yonex.com/ezone',
+        description: '305g | 16x19 | 98 sq in | 6th gen',
+        link: 'https://www.yonex.com/tennis/racquets/ezone/ezone-98-07ez98',
       }
     ]
   }

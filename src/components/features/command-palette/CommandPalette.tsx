@@ -86,13 +86,13 @@ export default function CommandPalette({ navigation }) {
               {filterednavigation.length > 0 && (
                 <Combobox.Options
                   static
-                  className="max-h-30 text-sm overflow-y-auto py-4  "
+                  className="max-h-30 text-sm overflow-y-auto py-4"
                 >
                   {filterednavigation.map((page) => (
                     <Combobox.Option key={page.name} value={page}>
                       {({ active }) => (
                         <div
-                          className={`space-x-1 px-14 py-2 ${
+                          className={`space-x-1 px-14 py-2  cursor-pointer  ${
                             active
                               ? 'bg-zinc-300 dark:bg-zinc-600'
                               : 'bg-zinc-200 dark:bg-zinc-800'
