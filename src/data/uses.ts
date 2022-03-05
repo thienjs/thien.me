@@ -119,7 +119,7 @@ export const uses = [
     title: 'EDC',
     list: [
       {
-        title: 'Casio Calulator Watch',
+        title: 'Casio G-Shock DW-5600E',
         description: '',
         link: '',
       },
@@ -140,6 +140,16 @@ export const uses = [
       },
     ],
   },
+  {
+    title: 'Tennis',
+    list: [
+      {
+        title: 'Yonex Ezone 98',
+        description: '305g | 16x19 | 98 sq in',
+        link: 'https://yonex.com/ezone',
+      }
+    ]
+  }
   
   
 ]
