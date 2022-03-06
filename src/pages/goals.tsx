@@ -10,6 +10,7 @@ export default function GoalsPage() {
       <Title>{title}</Title>
       <Description>{description}</Description>
       <p>find developer job</p>
+      <p>reach 4.5 in tennis</p>
      
     </>
   )
