@@ -15,12 +15,12 @@ export const uses = [
       {
         title: 'Keychron K6',
         description: '',
-        link: 'https://keychron.com/k6',
+        link: 'https://www.keychron.com/products/keychron-k6-wireless-mechanical-keyboard',
       },
       {
         title: 'Logitech MX Ergo Plus',
         description: '',
-        link: 'https://logitch.com',
+        link: 'https://www.logitech.com/en-us/products/mice/mx-ergo-wireless-trackball-mouse.910-005178.html',
       },
       {
         title: 'Stream Deck',
@@ -60,7 +60,7 @@ export const uses = [
       {
         title: 'PostgreSQL',
         description: '1 year',
-        link: 'https://react.com',
+        link: 'https://www.postgresql.org/',
       },
       {
         title: 'MySql',
@@ -70,7 +70,7 @@ export const uses = [
       {
         title: 'Prisma',
         description: '1 year',
-        link: 'https://prismaorm.com',
+        link: 'https://prisma.io',
       },
       {
         title: 'Supabase',
