@@ -24,19 +24,19 @@ export default function QuotesPage() {
             y: 0,
           },
         }}
-        className="flex flex-col gap-y-10 pb-20"
+        className="flex flex-col gap-y-14"
       >
         {quotes.map((item) => (
-          <li key={item.quote} className="flex flex-col gap-y-4">
-            <blockquote className="border-l-4 border-gray-400 py-3 dark:border-gray-600">
+          <li key={item.quote} className="flex flex-col gap-y-2 cursor-default">
+            <blockquote className="border-l-4 border-gray-400 py-3 dark:border-gray-600 dark:hover:border-cyan-600 hover:border-cyan-500">
               <p className="px-4  font-serif text-neutral-800 dark:text-neutral-200">
-                {item.quote}
+                {item.quote} 
               </p>
             </blockquote>
-
-            <p className="ml-72 font-serif text-sm text-neutral-700 dark:text-neutral-300">
+            <p className="ml-auto  font-serif text-sm text-neutral-700 dark:text-neutral-300">
               - {item.author}
             </p>
+
           </li>
         ))}
       </motion.div>
