@@ -3,7 +3,6 @@ import { GetStaticProps } from "next";
 import Airtable from "airtable";
 
 import { Book as BookType } from "~/types/book";
-import Book from "~/components/book";
 import Suggest from "~/components/book/suggest";
 
 type Props = {
