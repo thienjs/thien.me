@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 
-import useBookSuggestions from "src/hooks/use-book-suggestions";
+import useBookSuggestions from "~/lib/hooks/useBookSuggestions";
 import { FiSend } from "react-icons/fi";
 
 const Suggest = () => {
