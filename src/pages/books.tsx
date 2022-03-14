@@ -28,7 +28,7 @@ const Books = ({ reading, favorites, completed, wishing }: Props) => {
         <div>Currently reading</div>
         <div>
           {reading.map((book) => (
-            <Book key={book.id} book={book} />
+            <p>{book.id}</p>
           ))}
         </div>
       </div>
