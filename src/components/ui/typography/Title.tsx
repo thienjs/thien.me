@@ -21,7 +21,7 @@ export const Title: FunctionComponent = ({
           y: 0,
         },
       }}
-      className="text-lg mt-20 mb-10  font-semibold text-gray-800 dark:text-gray-300"
+      className="text-4xl mt-20 mb-10 font-serif font-extrabold text-gray-800 dark:text-gray-300"
     >
       {children}
     </motion.div>
