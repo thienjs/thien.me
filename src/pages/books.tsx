@@ -35,29 +35,17 @@ const Books = ({ reading, favorites, completed, wishing }: Props) => {
 
       <div>
         <div>Favorites</div>
-        <div>
-          {favorites.map((book) => (
-            <Book key={book.id} book={book} />
-          ))}
-        </div>
+
       </div>
 
       <div>
         <div>Wishlist</div>
-        <div>
-          {wishing.map((book) => (
-            <Book key={book.id} book={book} />
-          ))}
-        </div>
+
       </div>
 
       <div>
         <div>Read</div>
-        <div>
-          {completed.map((book) => (
-            <Book key={book.id} book={book} />
-          ))}
-        </div>
+
       </div>
     </div>
   );
