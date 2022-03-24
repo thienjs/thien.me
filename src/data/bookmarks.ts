@@ -235,11 +235,6 @@ export const bookmarks = [
         link: 'https://namecheap.com',
       },
       {
-        title: 'namecheap',
-        description: 'domain market',
-        link: 'https://dan.com',
-      },
-      {
         title: 'sedo',
         description: 'domain aution',
         link: 'https://sedo.com',
