@@ -39,4 +39,8 @@ export const quotes = [
     author: 'Roger Federer',
     quote: `I've practiced so much.`,
   },
+  {
+    author: 'Michael Jordan',
+    quote: `limits, like fears, are often just illusions`,
+  },
 ]
