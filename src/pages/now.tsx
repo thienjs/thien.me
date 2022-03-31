@@ -82,7 +82,7 @@ export default function NowPage() {
           <NowItem>- walking Loki - my 10 month old puppy</NowItem>
 
           <NowItem>- learning spanish (slowly)</NowItem>
-          <NowItem>- staying active by working on my tennis game</NowItem>
+          <NowItem>- playing USTA 3.5 men's tennis</NowItem>
           <NowItem>
             - connecting with other developers on github and twitter
           </NowItem>
