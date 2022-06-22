@@ -46,23 +46,24 @@ export default function CommandPalette({ navigation }) {
           onClose={setIsOpen}
           className="fixed inset-0 overflow-y-auto bg-zinc-600 p-10 pt-[20vh]"
         >
-          <Transition.Child
-            enter="duration-300 ease-out"
-            enterFrom="opacity-0"
-            enterTo="opacity-100"
-            leave="duration-200 ease-in"
-            leaveFrom="opacity-100"
-            leaveTo="opacity-0"
-          >
-            <Dialog.Overlay className="fixed inset-0 bg-zinc-500/75 " />
-          </Transition.Child>
-          <Transition.Child
-            enter="duration-300 ease-out"
-            enterFrom="opacity-0 scale-95"
-            enterTo="opacity-100 scale-100"
-            leave="duration-200 ease-in"
-            leaveFrom="opacity-100 scale-100"
-            leaveTo="opacity-0 scale-95"
+          <Dialog.Overlay className="fixed inset-0 bg-zinc-500/75 " />
+        </Transition.Child>
+        <Transition.Child
+          enter="duration-300 ease-out"
+          enterFrom="opacity-0 scale-95"
+          enterTo="opacity-100 scale-100"
+          leave="duration-200 ease-in"
+          leaveFrom="opacity-100 scale-100"
+          leaveTo="opacity-0 scale-95"
+        >
+          <Combobox
+            value=""
+            onChange={(page: any) => {
+              setIsOpen(false)
+              router.push(`${page.href}`)
+            }}
+            as="div"
+            className="relative mx-auto max-w-xl divide-y divide-gray-300 overflow-hidden rounded-xl bg-zinc-200 shadow-2xl ring-1 ring-black/5 dark:bg-zinc-800"
           >
             <Combobox
               value=""
@@ -94,8 +95,8 @@ export default function CommandPalette({ navigation }) {
                         <div
                           className={`cursor-pointer space-x-1 px-12 py-2 text-sm font-semibold ${
                             active
-                              ? 'bg-zinc-300 dark:bg-zinc-600'
-                              : 'bg-zinc-200 dark:bg-zinc-800'
+                              ? 'text-neutral-700 dark:text-neutral-600'
+                              : 'text-neutral-500 dark:text-neutral-800'
                           }`}
                         >
                           <span

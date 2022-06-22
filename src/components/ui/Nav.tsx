@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 import classnames from 'classnames'
 import { AnimateSharedLayout, motion } from 'framer-motion'
+=======
+import * as React from 'react'
+import { motion, AnimateSharedLayout } from 'framer-motion'
+>>>>>>> parent of d8ea6f9 (command palette)
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import * as React from 'react'
@@ -75,7 +80,6 @@ export default function Nav() {
           </motion.ul>
         </AnimateSharedLayout>
         <div className="flex ">
-          <CommandPalette navigation={navigation} />
           <ThemeSwitch />
           <DropMenu />
         </div>
