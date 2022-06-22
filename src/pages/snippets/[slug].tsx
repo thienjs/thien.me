@@ -1,16 +1,17 @@
-import { Client } from '@notionhq/client'
-import { GetStaticPaths, GetStaticProps } from 'next'
-import Image from 'next/image'
-import { useRouter } from 'next/router'
-import { Fragment, useEffect } from 'react'
-import slugify from 'slugify'
-
-import { CodeBlock } from '~/components/blog/Codeblock'
-import { YoutubeEmbed } from '~/components/blog/YoutubeEmbed'
-import { Callout } from '~/components/ui/Callout'
-import { AnchorLink } from '~/components/ui/links/AnchorLink'
-import siteMetadata from '~/data/siteMetadata'
 import { getPublishedSnippets, getSnippetPage } from '~/lib/notion'
+import { Fragment, useEffect } from 'react'
+import { Client } from '@notionhq/client'
+import siteMetadata from '~/data/siteMetadata'
+import slugify from 'slugify'
+import { useRouter } from 'next/router'
+import { AnchorLink } from '~/components/ui/links/AnchorLink'
+import Image from 'next/image'
+import { CodeBlock } from '~/components/blog/Codeblock'
+import { Callout } from '~/components/ui/Callout'
+import { YoutubeEmbed } from '~/components/blog/YoutubeEmbed'
+
+import { GetStaticPaths, GetStaticProps } from 'next'
+import { Title } from '~/components/ui/typography'
 
 export const Text = ({ text }) => {
   if (!text) {
@@ -235,15 +236,15 @@ const SnippetPage = ({
         <article className="col-span-9 mt-12">
           <div className="space-y-12">
             <div>
-              <h1 className="mb-1 text-left text-2xl font-semibold md:text-3xl">
+              <Title>
                 {title}
-              </h1>
+              </Title>
               <div className="text-left">
-                <div className="mb-2 flex space-x-2 text-lg">
-                  <p className="m-0  text-sm text-slate-500 ">{publishedOn}</p>
+                <div className="mb-2 flex space-x-2 text-xs text-neutral-500">
+                  <p className="m-0   ">{publishedOn}</p>
 
                   {publishedOn !== modifiedDate && (
-                    <p className="mt-0 text-sm text-slate-500  dark:text-slate-500">
+                    <p className="mt-0   ">
                       (Updated on {modifiedDate})
                     </p>
                   )}

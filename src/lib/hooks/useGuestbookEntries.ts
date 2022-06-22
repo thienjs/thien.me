@@ -1,5 +1,4 @@
 import useSWR from 'swr'
-
 import { fetcher } from '~/lib/utils'
 
 type Fallbackdata = {

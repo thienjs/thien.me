@@ -23,7 +23,7 @@ export const NowReading: React.FC<NowReadingProps> = ({
     <div className="flex w-full flex-row justify-between md:justify-start">
       <div className="flex flex-col">
         <div className="flex">
-          <a href={url} className="text-title" target="_blank" rel="noreferrer">
+          <a href={url} className="text-title" target="_blank">
             <span className="flex">
               {title}{' '}
               <FaExternalLinkAlt className="ml-1 self-center" size="0.7em" />

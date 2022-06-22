@@ -1,8 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { getSession } from 'next-auth/react'
-import { z } from 'zod'
-
 import { prisma } from '~/lib/prisma'
+import { z } from 'zod'
 
 const GuestBookEntryDeleteSchema = z.object({
   id: z

@@ -1,6 +1,5 @@
-import { MoonIcon, SunIcon } from '@heroicons/react/outline'
 import { useTheme } from 'next-themes'
-
+import { SunIcon, MoonIcon } from '@heroicons/react/outline'
 import useHasMounted from '~/lib/hooks/useHasMounted'
 
 export default function ThemeSwitch() {
@@ -23,9 +22,9 @@ export default function ThemeSwitch() {
       {hasMounted && (
         <>
           {isDarkTheme ? (
-            <SunIcon className="h-4 w-4 text-neutral-700 dark:text-neutral-300" />
+            <SunIcon className="h-4 w-4" />
           ) : (
-            <MoonIcon className="h-4 w-4 text-neutral-700 dark:text-neutral-300" />
+            <MoonIcon className="h-4 w-4" />
           )}
         </>
       )}

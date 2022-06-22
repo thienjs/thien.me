@@ -1,8 +1,9 @@
-import StatsCard from 'components/stats/StatsCard'
+import useSWR from 'swr'
+
 import { fetcher } from 'lib/fetcher'
 import { GitHub } from 'lib/types'
+import StatsCard from 'components/stats/StatsCard'
 import { FaGithub } from 'react-icons/fa'
-import useSWR from 'swr'
 
 export function GithubStars() {
   const { data } = useSWR<GitHub>('/api/github-stats', fetcher)

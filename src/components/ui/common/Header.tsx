@@ -1,4 +1,4 @@
-import { FunctionComponent, ReactChildren } from 'react'
+import { ReactChildren, FunctionComponent } from 'react'
 
 const Header: FunctionComponent = ({
   children,

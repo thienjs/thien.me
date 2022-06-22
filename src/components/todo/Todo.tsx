@@ -1,8 +1,10 @@
-import Router from 'next/router'
-import { signIn, signOut, useSession } from 'next-auth/react'
 import React from 'react'
-import { GoTrashcan } from 'react-icons/go'
+import Router from 'next/router'
+
+import { useSession, signIn, signOut } from 'next-auth/react'
+
 import useSWR, { useSWRConfig } from 'swr'
+import { GoTrashcan } from 'react-icons/go'
 
 export type TodoProps = {
   id: number

@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
-import useSWR from 'swr'
 
-import { fetcher } from '../fetcher'
 import { Reactions } from '../types'
+import { fetcher } from '../fetcher'
+import useSWR from 'swr'
 
 // State that reflects if the current user has already selected a reaction for a specific blog post
 const initialReactionState = {
@@ -169,7 +169,7 @@ export default function useArticleReactions(slug) {
 
   function updateReactions(reaction) {
     const currentReactions = getReactionsFromLocalStorage()
-    const updatedReactionState = { ...currentReactions }
+    let updatedReactionState = { ...currentReactions }
     const prevValue = updatedReactionState[reaction]
     updatedReactionState[reaction] = !prevValue
     setReactionsToLocalStorage(updatedReactionState)

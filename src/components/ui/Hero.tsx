@@ -1,154 +1,150 @@
-import { motion } from 'framer-motion'
 import Image from 'next/image'
-import Link from 'next/link'
-
 import profile from '../../public/notion-me.png'
+import { motion } from 'framer-motion'
+import Link from 'next/link'
 
 export default function Hero() {
   return (
     <div>
-      <div className="item-center flex flex-col-reverse lg:-mx-4 lg:flex lg:flex-row lg:space-x-5 lg:text-left">
-        <div className="lg:mt-12 lg:px-4 ">
-          <div>
-            <motion.div
-              initial="hidden"
-              animate="visible"
-              transition={{ delay: 0.1, duration: 1 }}
-              variants={{
-                hidden: {
-                  opacity: 0,
-                  y: 100,
-                },
-                visible: {
-                  opacity: 1,
-                  y: 0,
-                },
-              }}
-              className="mt-40 text-xl font-semibold text-gray-900 dark:text-neutral-200 lg:text-4xl"
-            >
-              Thien Tran
-            </motion.div>
-            <motion.div
-              initial="hidden"
-              animate="visible"
-              transition={{ delay: 1.3, duration: 0.8 }}
-              variants={{
-                hidden: {
-                  opacity: 0,
-                },
-                visible: {
-                  opacity: 1,
-                },
-              }}
-              className="mb-2 text-sm text-gray-500 dark:text-neutral-400"
-            >
-              (tee-en)
-            </motion.div>
-          </div>
-          <div className="text-md mt-8 font-serif text-gray-800 dark:text-neutral-400  ">
-            <motion.div
-              initial="hidden"
-              animate="visible"
-              transition={{ delay: 0.4, duration: 0.8 }}
-              variants={{
-                hidden: {
-                  opacity: 0,
-                  y: 100,
-                },
-                visible: {
-                  opacity: 1,
-                  y: 0,
-                },
-              }}
-              className="mb-4 "
-            >
-              Hello! I am a self taught web developer currently focused on
-              typescript, nextjs, and tailwind. Most of my work is open source
-              and publicly available on{' '}
-              <Link href="https://github.com/thienjs">
-                <a className="relative before:absolute before:bottom-0 before:left-0 before:h-full before:w-full before:origin-bottom before:scale-y-[0.35] before:bg-cyan-500 before:opacity-50 before:transition-transform before:duration-500 before:ease-in-out hover:before:scale-y-100">
-                  <span className="relative hover:text-gray-800 hover:dark:text-gray-200">
-                    github
-                  </span>
-                </a>
-              </Link>
-              .
-            </motion.div>
-            <motion.div
-              initial="hidden"
-              animate="visible"
-              transition={{ delay: 0.4, duration: 0.8 }}
-              variants={{
-                hidden: {
-                  opacity: 0,
-                  y: 100,
-                },
-                visible: {
-                  opacity: 1,
-                  y: 0,
-                },
-              }}
-              className="mb-4 "
-            >
-              Get to know what I'm all{' '}
-              <Link href="/about">
-                <a className="relative before:absolute before:bottom-0 before:left-0 before:h-full before:w-full before:origin-bottom before:scale-y-[0.35] before:bg-cyan-500 before:opacity-50 before:transition-transform before:duration-500 before:ease-in-out hover:before:scale-y-100">
-                  <span className="relative hover:text-gray-800 hover:dark:text-gray-200">
-                    about
-                  </span>
-                </a>
-              </Link>{' '}
-              or what I'm doing{' '}
-              <Link href="/now">
-                <a className="relative before:absolute before:bottom-0 before:left-0 before:h-full before:w-full before:origin-bottom before:scale-y-[0.35] before:bg-cyan-500 before:opacity-50 before:transition-transform before:duration-500 before:ease-in-out hover:before:scale-y-100">
-                  <span className="relative hover:text-gray-800 hover:dark:text-gray-200">
-                    now
-                  </span>
-                </a>
-              </Link>
-              .
-            </motion.div>
-            <motion.div
-              initial="hidden"
-              animate="visible"
-              transition={{ delay: 0.6, duration: 0.7 }}
-              variants={{
-                hidden: {
-                  opacity: 0,
-                  y: 100,
-                },
-                visible: {
-                  opacity: 1,
-                  y: 0,
-                },
-              }}
-            >
-              I'm open for work or just a chat. Email me at{' '}
-              <a
-                href="mailto:hi@thien.me"
-                className="relative before:absolute before:bottom-0 before:left-0 before:h-full before:w-full before:origin-bottom before:scale-y-[0.35] before:bg-cyan-500 before:opacity-50 before:transition-transform before:duration-500 before:ease-in-out hover:before:scale-y-100"
-              >
+      <div className="flex flex-col min-h-screen justify-center lg:mt-12 lg:px-4 pb-[25vh]">
+        <div className=''>
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            transition={{ delay: 0.1, duration: 1 }}
+            variants={{
+              hidden: {
+                opacity: 0,
+                y: 100,
+              },
+              visible: {
+                opacity: 1,
+                y: 0,
+              },
+            }}
+            className=" text-xl font-semibold text-gray-900 dark:text-neutral-200 lg:text-4xl"
+          >
+            Thien Tran
+          </motion.div>
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            transition={{ delay: 1.3, duration: 0.8 }}
+            variants={{
+              hidden: {
+                opacity: 0,
+              },
+              visible: {
+                opacity: 1,
+              },
+            }}
+            className="mb-2 text-sm text-gray-500 dark:text-neutral-400"
+          >
+            (tee-en)
+          </motion.div>
+        </div>
+        <div className="text-md mt-8 font-serif text-gray-800 dark:text-neutral-400  ">
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            transition={{ delay: 0.4, duration: 0.8 }}
+            variants={{
+              hidden: {
+                opacity: 0,
+                y: 100,
+              },
+              visible: {
+                opacity: 1,
+                y: 0,
+              },
+            }}
+            className="mb-4 "
+          >
+            Hello! I am a self taught web developer currently focused on
+            typescript, nextjs, and tailwind. Most of my work is open source and
+            publicly available on{' '}
+            <Link href="https://github.com/thienjs">
+              <a className="relative before:absolute before:bottom-0 before:left-0 before:h-full before:w-full before:origin-bottom before:scale-y-[0.35] before:bg-cyan-500 before:opacity-50 before:transition-transform before:duration-500 before:ease-in-out hover:before:scale-y-100">
                 <span className="relative hover:text-gray-800 hover:dark:text-gray-200">
-                  hi@thien.me
+                  github
                 </span>
               </a>
-              .
-            </motion.div>
-            <p className="mb-40"></p>
-          </div>
-        </div>
-        <div className="mb-10 hidden  flex-shrink-0 lg:mt-12">
-          <Image
-            src="https://github.com/thienjs.png"
-            alt="Profile"
-            priority={true}
-            className="rounded-full border border-white"
-            width={150}
-            height={150}
-          />
+            </Link>
+            .
+          </motion.div>
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            transition={{ delay: 0.4, duration: 0.8 }}
+            variants={{
+              hidden: {
+                opacity: 0,
+                y: 100,
+              },
+              visible: {
+                opacity: 1,
+                y: 0,
+              },
+            }}
+            className="mb-4 "
+          >
+            Get to know what I'm all{' '}
+            <Link href="/about">
+              <a className="relative before:absolute before:bottom-0 before:left-0 before:h-full before:w-full before:origin-bottom before:scale-y-[0.35] before:bg-cyan-500 before:opacity-50 before:transition-transform before:duration-500 before:ease-in-out hover:before:scale-y-100">
+                <span className="relative hover:text-gray-800 hover:dark:text-gray-200">
+                  about
+                </span>
+              </a>
+            </Link>{' '}
+            or what I'm doing{' '}
+            <Link href="/now">
+              <a className="relative before:absolute before:bottom-0 before:left-0 before:h-full before:w-full before:origin-bottom before:scale-y-[0.35] before:bg-cyan-500 before:opacity-50 before:transition-transform before:duration-500 before:ease-in-out hover:before:scale-y-100">
+                <span className="relative hover:text-gray-800 hover:dark:text-gray-200">
+                  now
+                </span>
+              </a>
+            </Link>
+            .
+          </motion.div>
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            transition={{ delay: 0.6, duration: 0.7 }}
+            variants={{
+              hidden: {
+                opacity: 0,
+                y: 100,
+              },
+              visible: {
+                opacity: 1,
+                y: 0,
+              },
+            }}
+          >
+            I'm open for work or just a chat. Email me at{' '}
+            <a
+              href="mailto:hi@thien.me"
+              className="relative before:absolute before:bottom-0 before:left-0 before:h-full before:w-full before:origin-bottom before:scale-y-[0.35] before:bg-cyan-500 before:opacity-50 before:transition-transform before:duration-500 before:ease-in-out hover:before:scale-y-100"
+            >
+              <span className="relative hover:text-gray-800 hover:dark:text-gray-200">
+                hi@thien.me
+              </span>
+            </a>
+            .
+          </motion.div>
+          <p className=""></p>
         </div>
       </div>
-      <p></p>
+      <div className="mb-10 hidden  flex-shrink-0 lg:mt-12">
+        <Image
+          src="https://github.com/thienjs.png"
+          alt="Profile"
+          priority={true}
+          className="rounded-full border border-white"
+          width={150}
+          height={150}
+        />
+      </div>
     </div>
   )
 }

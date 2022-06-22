@@ -5,8 +5,8 @@ import { HiOutlineStar } from 'react-icons/hi'
 import { SiGithub } from 'react-icons/si'
 import useSWR from 'swr'
 
+import {Accent} from '~/components/ui/typography'
 import UnstyledLink from '~/components/ui/links/UnstyledLink'
-import { Accent } from '~/components/ui/typography'
 
 interface GithubRepo {
   full_name: string

@@ -7,8 +7,8 @@ const getLatestRepos = async (data) => {
       `https://api.github.com/search/repositories?q=user:thienjs+sort:author-date-asc`
     )
 
-    const repos = res.data.items
-    const latestSixRepos = repos.splice(0, 6)
+    let repos = res.data.items
+    let latestSixRepos = repos.splice(0, 6)
     return latestSixRepos
   } catch (err) {
     console.log(err)

@@ -1,20 +1,21 @@
-import { motion } from 'framer-motion'
-import useSWR from 'swr'
-
-import {
-  BlogViews,
-  GithubFollowers,
-  GithubStars,
-  TotalPosts,
-  TotalSnippets,
-  TwitterFollowers,
-} from '~/components/now'
 import { fetcher } from '~/lib/fetcher'
 import { NowPlayingSong } from '~/lib/types'
+import { motion } from 'framer-motion'
+import {
+  TotalPosts,
+  BlogViews,
+  TotalSnippets,
+  GithubFollowers,
+  GithubStars,
+  TwitterFollowers,
+} from '~/components/now'
+import useSWR from 'swr'
+import { Description, H2, Title } from '~/components/ui/typography'
 
 export const NowItem = ({ children }) => {
   return (
     <motion.div
+    className='text-neutral-800 dark:text-neutral-300'
       initial="hidden"
       animate="visible"
       transition={{ delay: 0.3, duration: 0.7 }}
@@ -35,18 +36,18 @@ export const NowItem = ({ children }) => {
 }
 
 export default function NowPage() {
-  const year = new Date().getFullYear()
-  const date = new Date().getDate()
-  const month = new Date().getMonth()
-  const time = new Date().getTime()
-  const hour = new Date().getHours()
-  const minute = new Date().getMinutes()
-  const second = new Date().getSeconds()
-  const lokibday = '2021-05-10'
-  const birthDate = new Date(lokibday)
-  const today = new Date()
-  const age = year - birthDate.getFullYear()
-  const lokimonth = birthDate.getMonth() - month
+  var year = new Date().getFullYear()
+  var date = new Date().getDate()
+  var month = new Date().getMonth()
+  var time = new Date().getTime()
+  var hour = new Date().getHours()
+  var minute = new Date().getMinutes()
+  var second = new Date().getSeconds()
+  var lokibday = '2021-05-10'
+  var birthDate = new Date(lokibday)
+  var today = new Date()
+  var age = year - birthDate.getFullYear()
+  var lokimonth = birthDate.getMonth() - month
 
   const { data } = useSWR<NowPlayingSong>('/api/now-playing', fetcher)
 
@@ -67,22 +68,21 @@ export default function NowPage() {
               y: 0,
             },
           }}
-          className="mt-20 mb-10 text-sm font-semibold text-neutral-800 dark:text-neutral-300"
+          className="mt-20 mb-10 text-sm font-semibold text-neutral-900 dark:text-neutral-300"
         >
-          What I'm up to now:
+          <Title>
+
+         Now
+          </Title>
+          <Description>what I'm up to:</Description>
         </motion.div>
-        <ul className="space-y-3 text-left font-serif text-sm text-neutral-800 dark:text-neutral-300">
-          <NowItem>- applying for my first tech job</NowItem>
+        <ul className="space-y-5 text-left text-sm font-serif text-neutral-800 dark:text-neutral-300">
+          <NowItem>- working on tennis.so</NowItem>
           <NowItem>- taking more risks</NowItem>
-          <NowItem>- walking Loki - my 9 month old puppy</NowItem>
-          <NowItem>
-            - focusing on getting better at React, Nextjs, Typescript, API's
-          </NowItem>
-          <NowItem>
-            - diving deep into typography, fonts, icons, and spacing
-          </NowItem>
+          <NowItem>- walking Loki - my 10 month old puppy</NowItem>
+
           <NowItem>- learning spanish (slowly)</NowItem>
-          <NowItem>- staying active by working on my tennis game</NowItem>
+          <NowItem>- playing USTA 3.5 men's tennis</NowItem>
           <NowItem>
             - connecting with other developers on github and twitter
           </NowItem>

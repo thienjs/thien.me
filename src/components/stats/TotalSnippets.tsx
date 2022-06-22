@@ -1,8 +1,6 @@
-import StatsCard from 'components/stats/StatsCard'
-import useSWR from 'swr'
-
 import { fetcher } from '~/lib/fetcher'
-
+import useSWR from 'swr'
+import StatsCard from 'components/stats/StatsCard'
 import { TBoxIcon } from '../icons'
 
 export function TotalSnippets() {

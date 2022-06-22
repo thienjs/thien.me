@@ -1,9 +1,10 @@
 import * as React from 'react'
 
+import clsxm from '~/lib/clsxm'
+
 import UnstyledLink, {
   UnstyledLinkProps,
 } from '~/components/ui/links/UnstyledLink'
-import clsxm from '~/lib/clsxm'
 
 export default function PrimaryLink({
   className,

@@ -1,13 +1,13 @@
 import Highlight, { defaultProps } from 'prism-react-renderer'
 import dracula from 'prism-react-renderer/themes/dracula'
-import duotoneDark from 'prism-react-renderer/themes/duotoneDark'
 import github from 'prism-react-renderer/themes/github'
-import okaidia from 'prism-react-renderer/themes/okaidia'
+import duotoneDark from 'prism-react-renderer/themes/duotoneDark'
 import palenight from 'prism-react-renderer/themes/palenight'
+import okaidia from 'prism-react-renderer/themes/okaidia'
 import vsDark from 'prism-react-renderer/themes/vsDark'
 
-import { useCopyToClipboard } from '~/lib/hooks/useCopyToClipboard'
 import { Language } from '~/lib/types'
+import { useCopyToClipboard } from '~/lib/hooks/useCopyToClipboard'
 
 type Props = {
   code: string

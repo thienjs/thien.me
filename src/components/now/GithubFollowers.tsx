@@ -1,7 +1,5 @@
-import useSWR from 'swr'
-
 import { fetcher } from '~/lib/fetcher'
-
+import useSWR from 'swr'
 import NowStat from './NowStat'
 export function GithubFollowers() {
   const { data } = useSWR<any>('/api/github-stats', fetcher)

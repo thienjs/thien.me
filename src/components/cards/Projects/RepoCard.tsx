@@ -1,6 +1,7 @@
-import { formatDistanceToNowStrict, intlFormat } from 'date-fns'
-import { BiLink } from 'react-icons/bi'
+import { intlFormat, formatDistanceToNowStrict } from 'date-fns'
+
 import { GoRepoForked, GoStar } from 'react-icons/go'
+import { BiLink } from 'react-icons/bi'
 import { MdStarOutline } from 'react-icons/md'
 
 type Props = {
@@ -21,7 +22,7 @@ type Props = {
 const RepoCard = (props: Props) => (
   <div className="my-2 w-full rounded-md border border-gray-100 bg-white px-4 py-4 text-sm  shadow-sm  shadow-gray-300 hover:bg-zinc-100 dark:border-zinc-900 dark:bg-zinc-900 dark:shadow-none dark:hover:bg-zinc-800">
     <a
-      className="animated-underline text-lg font-semibold "
+      className="text-lg font-semibold animated-underline "
       href={props.url}
       target="_blank"
       rel="noopener noreferrer"

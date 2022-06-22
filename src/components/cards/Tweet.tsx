@@ -1,5 +1,5 @@
-import { format } from 'date-fns'
 import Image from 'next/image'
+import { format } from 'date-fns'
 
 /**
  * Supports plain text, images, quote tweets.

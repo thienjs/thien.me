@@ -1,11 +1,11 @@
 import {
-  BlogViews,
-  GithubFollowers,
-  GithubStars,
   TotalArticles,
-  TotalSnippets,
-  TwitterFollowers,
+  GithubFollowers,
   Visitors,
+  TwitterFollowers,
+  GithubStars,
+  BlogViews,
+  TotalSnippets,
 } from '~/components/stats/'
 import { Title } from '~/components/ui/typography'
 export default function Stats() {

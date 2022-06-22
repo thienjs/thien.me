@@ -1,17 +1,16 @@
-import { motion } from 'framer-motion'
-import { GetStaticProps } from 'next'
 import Image from 'next/image'
-import Link from 'next/link'
-import { FaBook, FaBookOpen, FaMusic, FaStar } from 'react-icons/fa'
-
-import TechStack from '~/components/about/TechStack'
-import NowPlaying from '~/components/music/NowPlaying'
-import TopTracks from '~/components/music/TopTracks'
-import UnstyledLink from '~/components/ui/links/UnstyledLink'
-import { Title } from '~/components/ui/typography'
 
 import { AboutListElement } from '../components/about/AboutListElement'
 import { getCurrentlyReading, getReviews } from '../lib/goodreads'
+import { FaBook, FaBookOpen, FaMusic, FaStar } from 'react-icons/fa'
+import TopTracks from '~/components/music/TopTracks'
+import { GetStaticProps } from 'next'
+import UnstyledLink from '~/components/ui/links/UnstyledLink'
+import NowPlaying from '~/components/music/NowPlaying'
+import TechStack from '~/components/about/TechStack'
+import Link from 'next/link'
+import { Title, H2 } from '~/components/ui/typography'
+import { motion } from 'framer-motion'
 
 export type AboutProps = {
   reviews: Awaited<ReturnType<typeof getReviews>>
@@ -138,7 +137,7 @@ const AboutPage = ({ reviews, currentlyReading }) => {
             y: 0,
           },
         }}
-        className=" mb-4 rounded-lg border border-neutral-300 bg-zinc-300 p-5 font-serif dark:border-neutral-700 dark:bg-zinc-900 dark:text-gray-200"
+        className=" mb-12 rounded-lg border border-neutral-300 bg-zinc-300 p-5 font-serif dark:border-neutral-700 dark:bg-zinc-900 dark:text-gray-200"
       >
         <p className=" mb-2 text-neutral-600 dark:text-neutral-400">
           I'm a self taught developer looking for my first job in tech. I have a
@@ -154,17 +153,17 @@ const AboutPage = ({ reviews, currentlyReading }) => {
         </p>
       </motion.div>
 
-      <h2 className="mt-10 mb-6 text-sm font-semibold text-gray-800 dark:text-gray-300">
+      <H2>
         Contact
-      </h2>
-      <div className="mt-6 flex">
-        <ul className="space-y-3 text-sm text-neutral-500 dark:text-neutral-400">
+      </H2>
+      <div className="mt-6 grid grid-cols-2 max-w-full">
+        <ul className="space-y-6 text-sm text-neutral-500 dark:text-neutral-400">
           <li>Github</li>
           <li>Linkedin</li>
           <li>Twitter</li>
           <li>Email</li>
         </ul>
-        <ul className="ml-44  space-y-3 text-sm text-neutral-800 dark:text-neutral-300">
+        <ul className="space-y-6 text-sm text-neutral-800 dark:text-neutral-300">
           <li>
             <a
               href="https://github.com/thienjs"
@@ -197,65 +196,7 @@ const AboutPage = ({ reviews, currentlyReading }) => {
         </ul>
       </div>
 
-      <div className="mt-10 mb-6 text-sm font-semibold text-gray-800 dark:text-gray-300">
-        Stack
-      </div>
-      <div className="grid grid-cols-2 md:grid-cols-4">
-        <ul className="text-sm text-neutral-500 dark:text-neutral-400 ">
-          <li>Frontend</li>
-        </ul>
-        <ul className="ml-10 text-sm text-neutral-600 dark:text-neutral-300 ">
-          <li className="mb-4 flex flex-col text-neutral-800 dark:text-neutral-300 ">
-            <p>React</p>
-            <span className="text-xs text-neutral-500 dark:text-neutral-700">
-              3 years
-            </span>
-          </li>
-          <li className="mb-4 flex flex-col">
-            <p className="text-neutral-800 dark:text-neutral-300">Nextjs</p>
-            <span className="text-xs text-neutral-500 dark:text-neutral-700">
-              2 years
-            </span>
-          </li>
-          <li className="mb-4 flex flex-col">
-            <p className="text-neutral-800 dark:text-neutral-300">
-              Tailwindcss
-            </p>
-            <span className="text-xs text-neutral-500 dark:text-neutral-700">
-              2 years
-            </span>
-          </li>
-          <li className="mb-4 flex flex-col">
-            <p className="text-neutral-800 dark:text-neutral-300">Typescript</p>
-            <span className="text-xs text-neutral-500 dark:text-neutral-700">
-              1 year
-            </span>
-          </li>
-        </ul>
-        <ul className="text-sm text-neutral-500 dark:text-neutral-400 ">
-          <li>Backend</li>
-        </ul>
-        <ul className="ml-10 text-sm text-neutral-600 dark:text-neutral-300">
-          <li className="mb-4 flex flex-col">
-            <p className="text-neutral-800 dark:text-neutral-300">Postgres</p>
-            <span className="text-xs text-neutral-500 dark:text-neutral-700">
-              1 year
-            </span>
-          </li>
-          <li className="mb-4 flex flex-col">
-            <p className="text-neutral-800 dark:text-neutral-300">MySql</p>
-            <span className="text-xs text-neutral-500 dark:text-neutral-700">
-              1 year
-            </span>
-          </li>
-          <li className="mb-4 flex flex-col">
-            <p className="text-neutral-800 dark:text-neutral-300">MongoDB</p>
-            <span className="text-xs text-neutral-500 dark:text-neutral-700">
-              2 years
-            </span>
-          </li>
-        </ul>
-      </div>
+     
 
       {/*  <TechStack />
       <UnstyledLink href="/music" className="text-2xl font-bold mb-2">

@@ -1,7 +1,6 @@
+import * as React from 'react'
 import { format } from 'date-fns'
 import { useSession } from 'next-auth/react'
-import * as React from 'react'
-
 import { useGuestbookEntries } from '~/lib/hooks/useGuestbookEntries'
 export interface IGuestBookContentProps {
   data: {

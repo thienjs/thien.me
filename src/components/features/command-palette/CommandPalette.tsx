@@ -1,10 +1,10 @@
-import { Combobox, Dialog, Transition } from '@headlessui/react'
+import { Dialog, Combobox, Transition } from '@headlessui/react'
+import { useState, useEffect, Fragment } from 'react'
 import { SearchIcon } from '@heroicons/react/outline'
-import { useRouter } from 'next/router'
-import { Fragment, useEffect, useState } from 'react'
 
-import { CommandIcon } from '~/components/icons'
+import { useRouter } from 'next/router'
 import { navigation } from '~/data/nav'
+import { CommandIcon } from '~/components/icons';
 
 export default function CommandPalette({ navigation }) {
   const router = useRouter()
@@ -26,11 +26,11 @@ export default function CommandPalette({ navigation }) {
     ? navigation.pages.filter((page) =>
         page.name.toLowerCase().includes(query.toLocaleLowerCase())
       )
-    : navigation.pages
+    : navigation.pages;
   return (
     <>
-      <button
-        className="mx-1 flex h-8 w-8 cursor-pointer items-center justify-center rounded-md bg-zinc-300 p-2 ring-neutral-400 transition duration-200 ease-in-out hover:bg-zinc-300 hover:ring-2 dark:bg-zinc-700 dark:hover:bg-zinc-800  "
+     <button
+        className="flex mx-1 h-8 w-8 cursor-pointer items-center justify-center rounded-md bg-zinc-300 p-2 ring-neutral-400 transition duration-200 ease-in-out hover:bg-zinc-300 hover:ring-2 dark:bg-zinc-700 dark:hover:bg-zinc-800  "
         type="button"
         aria-label="Command palette"
         onClick={() => setIsOpen(!isOpen)}
@@ -44,7 +44,7 @@ export default function CommandPalette({ navigation }) {
       >
         <Dialog
           onClose={setIsOpen}
-          className="fixed inset-0 overflow-y-auto bg-zinc-600 p-10 pt-[20vh]"
+          className="fixed inset-0 overflow-y-auto bg-zinc-600 p-12 pt-[20vh] z-20"
         >
           <Dialog.Overlay className="fixed inset-0 bg-zinc-500/75 " />
         </Transition.Child>
@@ -72,28 +72,28 @@ export default function CommandPalette({ navigation }) {
                 router.push(`${page.href}`)
               }}
               as="div"
-              className="relative mx-auto max-h-[50vh] max-w-xl divide-y divide-neutral-300 overflow-hidden overflow-y-scroll rounded-xl bg-zinc-200 shadow-2xl ring-1 ring-black/5 dark:divide-neutral-700 dark:bg-zinc-800"
+              className="relative mx-auto max-w-xl max-h-[50vh] divide-y divide-gray-300 dark:divide-zinc-700 overflow-hidden overflow-y-scroll rounded-xl bg-zinc-200 shadow-2xl ring-1 ring-black/5 dark:bg-zinc-800"
             >
               <div className="flex items-center px-4">
-                <SearchIcon className="h-6 w-6 text-gray-500" />
+                <SearchIcon className="h-6 w-6" />
                 <Combobox.Input
                   onChange={(event) => {
                     setQuery(event.target.value)
                   }}
-                  className="h-12 w-full border-0 bg-transparent text-sm text-gray-800 placeholder-gray-400 focus:ring-0 dark:text-neutral-400"
+                  className="h-12 border-0 bg-transparent  text-sm text-gray-800 placeholder-gray-400 focus:ring-0 dark:text-neutral-400"
                   placeholder="Search..."
                 />
               </div>
               {filterednavigation.length > 0 && (
                 <Combobox.Options
                   static
-                  className="max-h-30 text-s overflow-y-auto py-4 "
+                  className="max-h-30 text-sm overflow-y-auto py-4"
                 >
                   {filterednavigation.map((page) => (
                     <Combobox.Option key={page.name} value={page}>
                       {({ active }) => (
                         <div
-                          className={`cursor-pointer space-x-1 px-12 py-2 text-sm font-semibold ${
+                          className={`space-x-1 px-14 py-2  cursor-pointer  ${
                             active
                               ? 'text-neutral-700 dark:text-neutral-600'
                               : 'text-neutral-500 dark:text-neutral-800'
@@ -102,8 +102,8 @@ export default function CommandPalette({ navigation }) {
                           <span
                             className={`font-medium  ${
                               active
-                                ? 'text-neutral-800 dark:text-neutral-100'
-                                : 'text-neutral-800 dark:text-neutral-200'
+                                ? 'text-neutral-900 dark:text-neutral-200'
+                                : 'text-neutral-900 dark:text-neutral-200'
                             }`}
                           >
                             {page.name}
@@ -124,7 +124,7 @@ export default function CommandPalette({ navigation }) {
                 </Combobox.Options>
               )}
               {query && filterednavigation.length === 0 && (
-                <p className="p-4 text-sm text-gray-500">no results found</p>
+                <p className="py-4 px-12 text-sm text-gray-500 ">no results found</p>
               )}
             </Combobox>
           </Transition.Child>

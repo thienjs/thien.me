@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import classnames from 'classnames'
 import { AnimateSharedLayout, motion } from 'framer-motion'
 =======
@@ -7,15 +8,19 @@ import { motion, AnimateSharedLayout } from 'framer-motion'
 >>>>>>> parent of d8ea6f9 (command palette)
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+=======
+>>>>>>> 20db93724fefc257c08456be964f72db55c73b3c
 import * as React from 'react'
-
+import { motion, AnimateSharedLayout } from 'framer-motion'
 import CommandPalette from '~/components/features/command-palette/CommandPalette'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import classnames from 'classnames'
 import { navigation } from '~/data/nav'
-
+import ThemeSwitch from './ThemeSwitch'
+import DropMenu from './DropMenu'
 import AuthButton from '../auth/AuthButton'
 import { TBoxIcon } from '../icons/t-box'
-import DropMenu from './DropMenu'
-import ThemeSwitch from './ThemeSwitch'
 
 export default function Nav() {
   const { pathname } = useRouter()
