@@ -78,11 +78,11 @@ export default function NowPage() {
         </motion.div>
         <ul className="space-y-5 text-left text-sm font-serif text-neutral-800 dark:text-neutral-300">
           <NowItem>- working on tennis.so</NowItem>
-          <NowItem>- taking more risks</NowItem>
-          <NowItem>- walking Loki - my 10 month old puppy</NowItem>
+          <NowItem>- applying for developer jobs</NowItem>
+          <NowItem>- walking Loki - my 1 year old puppy</NowItem>
 
           <NowItem>- learning spanish (slowly)</NowItem>
-          <NowItem>- playing USTA 3.5 men's tennis</NowItem>
+          <NowItem>- improving my tennis game</NowItem>
           <NowItem>
             - connecting with other developers on github and twitter
           </NowItem>
