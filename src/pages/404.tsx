@@ -5,7 +5,7 @@ export default function FourOhFour() {
     <>
       <Title>404</Title>
       <div className="item-center min-h-screen justify-center">
-        Sorry page is under development
+        page not found
       </div>
     </>
   )
