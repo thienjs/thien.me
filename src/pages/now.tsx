@@ -82,7 +82,7 @@ export default function NowPage() {
           <NowItem>- walking Loki - my 1 year old puppy</NowItem>
 
           <NowItem>- learning spanish (slowly)</NowItem>
-          <NowItem>- improving my tennis game</NowItem>
+          <NowItem>- improving my tennis game, 4.0/4.5</NowItem>
           <NowItem>
             - connecting with other developers on github and twitter
           </NowItem>
@@ -107,7 +107,7 @@ export default function NowPage() {
           <NowItem>
             <p className="ml-6">- snippets: {<TotalSnippets />} </p>
           </NowItem>
-          <NowItem>- reading: Open - Andre Agassi</NowItem>
+          <NowItem>- reading: The Inner Game of Tennis - Timothy Gallway</NowItem>
           <NowItem>
             - listening to:{' '}
             {data?.songUrl ? (
