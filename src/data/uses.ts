@@ -147,6 +147,11 @@ export const uses = [
         title: 'Yonex Ezone 98',
         description: '305g | 16x19 | 98 sq in | 6th gen',
         link: 'https://www.yonex.com/tennis/racquets/ezone/ezone-98-07ez98',
+      },
+      {
+        title: 'Pro Staff 90',
+        description: '340g | 16x19 | 90 sq in | 2nd, 3rd, 4th gen',
+        link: 'https://www.yonex.com/tennis/racquets/ezone/ezone-98-07ez98',
       }
     ]
   }
