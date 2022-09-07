@@ -119,13 +119,13 @@ export const uses = [
     title: 'EDC',
     list: [
       {
-        title: 'Casio G-Shock DW-5600E',
+        title: 'Casio G-Shock GM-S2100',
         description: '',
         link: '',
       },
       {
         title: 'Rotring 600 1st edition',
-        description: 'my favorite pen',
+        description: 'Uni SXR-600 Jetstream Ballpoint Pen Refill',
         link: '',
       },
       {
@@ -145,7 +145,7 @@ export const uses = [
     list: [
       {
         title: 'Yonex Ezone 98',
-        description: '305g | 16x19 | 98 sq in | 6th gen',
+        description: '305g | 16x19 | 98 sq in | 6th gen | lead at 3 & 9 & handle | leather grip | wilson pro overgrip',
         link: 'https://www.yonex.com/tennis/racquets/ezone/ezone-98-07ez98',
       },
       {
