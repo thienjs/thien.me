@@ -61,10 +61,10 @@ export const projects: Project[] = [
     image: placeholderimage,
   },
   {
-    title: 'Tennis Pickup',
+    title: 'tennis social',
     tags: ['typescript', 'front-end', 'HTML & CSS', 'animation'],
     repo: `${myGithub}/tennis-pickup`,
-    live: 'https://social-proof-section-master-nine.netlify.app',
+    live: 'https://tennis.so',
     image: placeholderimage,
   },
   {
