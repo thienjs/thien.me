@@ -81,7 +81,7 @@ export default function NowPage() {
           <NowItem>- applying for developer jobs</NowItem>
           <NowItem>- walking Loki - my best friend</NowItem>
 
-          <NowItem>- learning spanish (slowly)</NowItem>
+          <NowItem>- working out daily</NowItem>
           <NowItem>- improving my tennis game, usta 3.5 district champs</NowItem>
           <NowItem>
             - connecting with other developers on github and twitter
