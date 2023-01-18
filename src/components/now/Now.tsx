@@ -28,18 +28,10 @@ export default function Now() {
         </h3>
         <ul className="space-y-3 text-left font-serif text-sm text-neutral-800 dark:text-neutral-300">
           <li>- applying for my first tech job</li>
-          <li>- taking more risks</li>
-          <li>- walking Loki - my 8 month old puppy</li>
+          <li>- walking Loki - my 15 month old puppy</li>
 
-          <li>
-            - focusing on getting better at React, Nextjs, Typescript, and
-            communicating with backends
-          </li>
-          <li>- solidifying my fudamentals of javascript, css, and html</li>
-          <li>- learning spanish (slowly)</li>
-          <li>- reading/listening to books when I can</li>
-          <li>- staying active by working on my tennis game</li>
-          <li>- starting to write meaningful and helpful blog posts</li>
+          <li>- staying active by working on my tennis game and weight lifting</li>
+
           <li>
             - listening to :{' '}
             {data?.songUrl ? (
@@ -52,7 +44,7 @@ export default function Now() {
                 {data.title}
               </a>
             ) : (
-              <span className="">a lot of 70's music</span>
+              <span className="">pop and jazz</span>
             )}
           </li>
         </ul>

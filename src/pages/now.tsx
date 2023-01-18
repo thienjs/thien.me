@@ -79,10 +79,10 @@ export default function NowPage() {
         <ul className="space-y-5 text-left text-sm font-serif text-neutral-800 dark:text-neutral-300">
           <NowItem>- working on tennis.so</NowItem>
           <NowItem>- applying for developer jobs</NowItem>
-          <NowItem>- walking Loki - my best friend</NowItem>
+          <NowItem>- walking Loki - my {age} year old doodle best friend</NowItem>
 
-          <NowItem>- working out daily</NowItem>
-          <NowItem>- improving my tennis game, usta 3.5 district champs</NowItem>
+          <NowItem>- weight lifting daily</NowItem>
+          <NowItem>- improving my tennis game</NowItem>
           <NowItem>
             - connecting with other developers on github and twitter
           </NowItem>
