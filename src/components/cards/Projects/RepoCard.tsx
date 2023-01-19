@@ -22,7 +22,7 @@ type Props = {
 const RepoCard = (props: Props) => (
   <div className="my-2 w-full rounded-md border border-gray-100 bg-white px-4 py-4 text-sm  shadow-sm  shadow-gray-300 hover:bg-zinc-100 dark:border-zinc-900 dark:bg-zinc-900 dark:shadow-none dark:hover:bg-zinc-800">
     <a
-      className="text-lg font-semibold animated-underline "
+      className="animated-underline text-lg font-semibold "
       href={props.url}
       target="_blank"
       rel="noopener noreferrer"
@@ -45,7 +45,7 @@ const RepoCard = (props: Props) => (
       </div>
     )}
 
-    <div className="flex flex-wrap text-gray-600 dark:text-gray-400 ">
+    <div className="flex  text-gray-600 dark:text-gray-400 ">
       {props.language && (
         <div className="mr-2 flex text-xs">
           <span className="mr-2 block h-3 w-3 rounded-full">
@@ -80,7 +80,7 @@ const RepoCard = (props: Props) => (
       )}
 
       {props.forks > 0 && (
-        <div className="text-xs">
+        <div className=" ">
           <a
             href={`${props.url}/network/members`}
             title={`${props.forks.toLocaleString('en-US')} ${
@@ -88,8 +88,12 @@ const RepoCard = (props: Props) => (
             }`}
             target="_blank"
             rel="noopener noreferrer"
+            className="mr-2 flex flex-row pb-0 text-xs font-light  "
           >
-            <GoRepoForked fill="currentColor" className="mr-1 h-3 w-3  " />
+            <GoRepoForked
+              fill="currentColor"
+              className=" mr-1 h-4 w-4 align-text-bottom font-light hover:fill-blue-400 "
+            />
             <span>{props.forks.toLocaleString('en-US')}</span>
           </a>
         </div>
