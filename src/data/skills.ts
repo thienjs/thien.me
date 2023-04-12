@@ -1,14 +1,14 @@
 export const skills = [
   {
-    exp: '3 years',
+    exp: '4 years',
     skill: `React`,
   },
   {
-    exp: '3 years',
+    exp: '4 years',
     skill: `Javascript`,
   },
   {
-    exp: '1 year',
+    exp: '2 year',
     skill: `Typescript`,
   },
   {
@@ -16,7 +16,7 @@ export const skills = [
     skill: `Tailwind CSS`,
   },
   {
-    exp: '5 years',
+    exp: '6 years',
     skill: `HTML`,
   },
   {
