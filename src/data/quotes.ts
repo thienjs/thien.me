@@ -1,7 +1,7 @@
 export const quotes = [
   {
-    author: 'Steve Jobs',
-    quote: `Your time is limited, so don't waste it living someone else's life.`,
+    author: 'Billie Jead King',
+    quote: `Pressure is a privilege.`,
   },
   {
     author: 'Rafael Nadal',
