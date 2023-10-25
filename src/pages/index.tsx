@@ -10,8 +10,6 @@ import { getCurrentlyReading, getReviews } from '../lib/goodreads'
 import { setContext } from '@apollo/client/link/context'
 import Hero from '~/components/ui/Hero'
 import { AboutSection } from '../components/about/AboutSection'
-import Tweet from '~/components/cards/Tweet'
-import { getTweets } from 'lib/twitter'
 import classNames from '~/lib/classNames'
 import Link from 'next/link'
 import {
@@ -39,14 +37,13 @@ export type HomePageProps = {
   recentArticles: any
   tabArticles: any
   tabTwoArticles: any
-  tweets: any
+
   repos: any
   reviews: Awaited<ReturnType<typeof getReviews>>
   currentlyReading: Awaited<ReturnType<typeof getReviews>>
 }
 export default function HomePage({
   recentArticles,
-  tweets,
   tabArticles,
   tabTwoArticles,
   repos,
@@ -199,10 +196,7 @@ export default function HomePage({
           </Tab.Panel>
         </Tab.Panels>
       </Tab.Group>
-      <Title>Status</Title>
-      {tweets.map((tweet) => (
-        <Tweet key={tweet.id} {...tweet} />
-      ))}
+
 
       <div className="my-8"></div>
 
@@ -223,7 +217,7 @@ export const getStaticProps: GetStaticProps = async () => {
   const currentlyReading = await getCurrentlyReading({ limit: 2 })
   const notiondata = await getPublishedArticles(process.env.NOTION_DATABASE_ID)
 
-  const tweets = await getTweets(['1494760832651210754'])
+
   const { articles } = convertToArticleList(notiondata)
 
   const httpLink = createHttpLink({
@@ -289,7 +283,7 @@ export const getStaticProps: GetStaticProps = async () => {
       recentArticles: articles.slice(0, 3),
       tabArticles: articles.slice(3, 6),
       tabTwoArticles: articles.slice(6, 9),
-      tweets,
+
       repos,
       reviews,
       currentlyReading,
