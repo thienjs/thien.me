@@ -60,17 +60,7 @@ export default function Hero() {
             }}
             className="mb-4 "
           >
-            Hello! I am a self taught web developer currently focused on
-            typescript, nextjs, and tailwind. Most of my work is open source and
-            publicly available on{' '}
-            <Link href="https://github.com/thienjs">
-              <a className="relative before:absolute before:bottom-0 before:left-0 before:h-full before:w-full before:origin-bottom before:scale-y-[0.35] before:bg-cyan-500 before:opacity-50 before:transition-transform before:duration-500 before:ease-in-out hover:before:scale-y-100">
-                <span className="relative hover:text-gray-800 hover:dark:text-gray-200">
-                  github
-                </span>
-              </a>
-            </Link>
-            .
+            Hello! Welcome to my little slice of the internet. 
           </motion.div>
           <motion.div
             initial="hidden"
@@ -121,7 +111,7 @@ export default function Hero() {
               },
             }}
           >
-            I'm open for work or just a chat. Email me at{' '}
+            If you want to chat, email me at{' '}
             <a
               href="mailto:hi@thien.me"
               className="relative before:absolute before:bottom-0 before:left-0 before:h-full before:w-full before:origin-bottom before:scale-y-[0.35] before:bg-cyan-500 before:opacity-50 before:transition-transform before:duration-500 before:ease-in-out hover:before:scale-y-100"
