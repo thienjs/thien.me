@@ -60,7 +60,7 @@ export default function Hero() {
             }}
             className="mb-4 "
           >
-            Hello! Welcome to my little slice of the internet. 
+            Hello! You've discovered my little slice of the internet. 
           </motion.div>
           <motion.div
             initial="hidden"
@@ -78,15 +78,15 @@ export default function Hero() {
             }}
             className="mb-4 "
           >
-            Get to know what I'm all{' '}
+            Get to know {' '}
             <Link href="/about">
               <a className="relative before:absolute before:bottom-0 before:left-0 before:h-full before:w-full before:origin-bottom before:scale-y-[0.35] before:bg-cyan-500 before:opacity-50 before:transition-transform before:duration-500 before:ease-in-out hover:before:scale-y-100">
                 <span className="relative hover:text-gray-800 hover:dark:text-gray-200">
-                  about
+                  me
                 </span>
               </a>
             </Link>{' '}
-            or what I'm doing{' '}
+            and what I'm doing{' '}
             <Link href="/now">
               <a className="relative before:absolute before:bottom-0 before:left-0 before:h-full before:w-full before:origin-bottom before:scale-y-[0.35] before:bg-cyan-500 before:opacity-50 before:transition-transform before:duration-500 before:ease-in-out hover:before:scale-y-100">
                 <span className="relative hover:text-gray-800 hover:dark:text-gray-200">

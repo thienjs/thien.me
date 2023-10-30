@@ -1,6 +1,6 @@
 export const quotes = [
   {
-    author: 'Billie Jead King',
+    author: 'Billie Jean King',
     quote: `Pressure is a privilege.`,
   },
   {

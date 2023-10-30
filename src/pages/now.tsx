@@ -77,23 +77,19 @@ export default function NowPage() {
           <Description>what I'm up to:</Description>
         </motion.div>
         <ul className="space-y-5 text-left text-sm font-serif text-neutral-800 dark:text-neutral-300">
-          <NowItem>- working on tennis.so</NowItem>
+          <NowItem>- getting back into coding</NowItem>
           <NowItem>- applying for entry level developer jobs</NowItem>
           <NowItem>- walking Loki - my {age} year old doodle best friend</NowItem>
-
-          <NowItem>- weight lifting daily</NowItem>
+          <NowItem>- collecting trading cards</NowItem>
           <NowItem>- improving my tennis game</NowItem>
           <NowItem>
-            - connecting with other developers on github and twitter
+            - connecting with other developers on github
           </NowItem>
           <NowItem>
             <p className="ml-6">- github followers: {<GithubFollowers />}</p>
           </NowItem>
           <NowItem>
             <p className="ml-6">- github stars: {<GithubStars />}</p>
-          </NowItem>
-          <NowItem>
-            <p className="ml-6">- twitter followers: {<TwitterFollowers />}</p>
           </NowItem>
           <NowItem>
             - attempting to write more meaningful and helpful blog posts

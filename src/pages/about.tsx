@@ -101,7 +101,7 @@ const AboutPage = ({ reviews, currentlyReading }) => {
             }}
             className="text-sm text-gray-600 dark:text-neutral-400"
           >
-            Web Developer from Connecticut, USA
+            Designer, Developer, Dreamer
           </motion.div>
           <motion.div
             initial="hidden"
@@ -140,16 +140,12 @@ const AboutPage = ({ reviews, currentlyReading }) => {
         className=" mb-12 rounded-lg border border-neutral-300 bg-zinc-300 p-5 font-serif dark:border-neutral-700 dark:bg-zinc-900 dark:text-gray-200"
       >
         <p className=" mb-2 text-neutral-600 dark:text-neutral-400">
-          I'm a self taught developer looking for my first job in tech. I have a
-          passion for creating elegant, user friendly solutions using my problem
-          solving abilities and design skills.
+          I'm a self taught web developer and designer.
         </p>
+
         <p className="mb-2 text-neutral-600 dark:text-neutral-400">
-          I want to create tools that will help users solve problems.
-        </p>
-        <p className="mb-2 text-neutral-600 dark:text-neutral-400">
-          Outside of tech, I love tennis, guitar, skating, movies, and
-          collecting gadgets.
+          My favorite hobbies are tennis, pickleball, movies, and
+          collecting pokemon/sports cards.
         </p>
       </motion.div>
 
@@ -160,7 +156,7 @@ const AboutPage = ({ reviews, currentlyReading }) => {
         <ul className="space-y-6 text-sm text-neutral-500 dark:text-neutral-400">
           <li>Github</li>
           <li>Linkedin</li>
-          <li>Twitter</li>
+          <li>Discord</li>
           <li>Email</li>
         </ul>
         <ul className="space-y-6 text-sm text-neutral-800 dark:text-neutral-300">
@@ -182,10 +178,10 @@ const AboutPage = ({ reviews, currentlyReading }) => {
           </li>
           <li>
             <a
-              href="https://twitter.com/thientsx"
+              href="https://discord.com/thientran"
               className="hover:text-cyan-500"
             >
-              thientsx
+              thien.tran
             </a>
           </li>
           <li>

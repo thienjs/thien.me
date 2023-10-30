@@ -2,7 +2,7 @@ import { quotes } from '~/data'
 import { Title, Description } from '~/components/ui/typography'
 import { motion } from 'framer-motion'
 const title = `Quotes`
-const description = `some of my favorite quotes`
+const description = `Some of my favorite quotes.`
 
 export default function QuotesPage() {
   return (
