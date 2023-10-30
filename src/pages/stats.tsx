@@ -18,7 +18,6 @@ export default function Stats() {
         <TotalSnippets />
         <GithubFollowers />
         <GithubStars />
-        <TwitterFollowers />
       </div>
     </>
   )
