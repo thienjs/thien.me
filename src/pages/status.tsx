@@ -7,17 +7,20 @@ import axios from 'axios'
 import { Title, Description } from '~/components/ui/typography'
 
 const StatusPage = ({ statuses }) => {
-
   return (
-    <>
+    <p >
       <Title>Status</Title>
-
-
-
-      <pre>{statuses.map((status) => <p>{status.title}</p>)}</pre>
-
-
-    </>
+      <p className=''>
+        {statuses.map((status) => (
+          <p className='flex py-2'>
+            <p className='mx-2 text-sm'>
+            {status.date}
+            </p>
+             <p className='text-lg'>{status.title}</p>
+          </p>
+        ))}
+      </p>
+    </p>
   )
 }
 
@@ -27,8 +30,8 @@ export const getStaticProps: GetStaticProps = async () => {
   const statuses = statusdata.map((status: any) => ({
     id: status.id,
     title: status.properties.Title.title[0].plain_text,
+    date: status.properties.Date.date.start,
   }))
-
 
   return {
     props: {
