@@ -38,7 +38,10 @@ export const getStaticProps: GetStaticProps = async () => {
 
   const movies = moviesdata.map((movie: any) => ({
     id: movie.id,
-    title: movie.properties.Title.title[0],
+    title: movie.properties.Title.title[0].plain_text,
+    genre: movie.properties.Genre.multi_select.map(
+      (genre) => genre.name
+    )
   }))
   return {
     props: {

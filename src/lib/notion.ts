@@ -78,6 +78,19 @@ export const getMovies = async (databaseId) => {
 
   return response.results
 }
+export const getStatus = async (databaseId) => {
+  const response = await notion.databases.query({
+    database_id: databaseId,
+    filter: {
+      property: 'Posted',
+      checkbox: {
+        equals: true,
+      },
+    },
+  })
+
+  return response.results
+}
 export const getPublishedSnippets = async (databaseId) => {
   const response = await notion.databases.query({
     database_id: databaseId,
