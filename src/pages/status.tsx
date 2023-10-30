@@ -13,10 +13,10 @@ const StatusPage = ({ statuses }) => {
       <p className=''>
         {statuses.map((status) => (
           <p className='flex py-2'>
-            <p className='mx-2 text-sm'>
+            <p className='mr-6 text-xs pt-1'>
             {status.date}
             </p>
-             <p className='text-lg'>{status.title}</p>
+             <p className=''>{status.title}</p>
           </p>
         ))}
       </p>
