@@ -12,11 +12,15 @@ import {
   StopwatchIcon,
   PersonIcon,
   DiscIcon,
+  PaperPlaneIcon,
   BackpackIcon,
   LightningBoltIcon,
+  QuoteIcon,
+  DrawingPinIcon,
   Half2Icon,
   HamburgerMenuIcon,
   Cross1Icon,
+  Crosshair2Icon,
   TwitterLogoIcon,
   GitHubLogoIcon,
   NotionLogoIcon,
@@ -189,7 +193,7 @@ export default function DropMenu() {
                     )}
                   >
                     <div className="flex flex-row">
-                      <DiscIcon className="mr-4 mt-0.5" /> Now
+                      <Crosshair2Icon className="mr-4 mt-0.5" /> Now
                     </div>
                   </a>
                 </Link>
@@ -207,7 +211,7 @@ export default function DropMenu() {
                     )}
                   >
                     <div className="flex flex-row">
-                      <DiscIcon className="mr-4 mt-0.5" /> Status
+                      <RocketIcon className="mr-4 mt-0.5" /> Status
                     </div>
                   </a>
                 </Link>
@@ -243,7 +247,7 @@ export default function DropMenu() {
                     )}
                   >
                     <div className="flex flex-row">
-                      <Half2Icon className="mr-4 mt-0.5" /> Quotes
+                      <QuoteIcon className="mr-4 mt-0.5" /> Quotes
                     </div>
                   </a>
                 </Link>
@@ -261,7 +265,7 @@ export default function DropMenu() {
                     )}
                   >
                     <div className="flex flex-row">
-                      <RocketIcon className="mr-4 mt-0.5" /> Todo
+                      <DrawingPinIcon className="mr-4 mt-0.5" /> Todo
                     </div>
                   </a>
                 </Link>
@@ -281,6 +285,24 @@ export default function DropMenu() {
                   >
                     <div className="flex flex-row">
                       <LightningBoltIcon className="mr-4 mt-0.5" /> Stats
+                    </div>
+                  </a>
+                </Link>
+              )}
+            </Menu.Item>
+            <Menu.Item>
+              {({ active }) => (
+                <Link href="/contact">
+                  <a
+                    className={classNames(
+                      active
+                        ? 'bg-green-100 text-red-900 dark:bg-cyan-600 dark:text-gray-300'
+                        : 'bg-white text-zinc-700 hover:bg-gray-300 dark:bg-zinc-800 dark:text-gray-200 dark:hover:bg-zinc-700',
+                      'block px-4 py-2 text-sm'
+                    )}
+                  >
+                    <div className="flex flex-row">
+                      <PaperPlaneIcon className="mr-4 mt-0.5" /> Contact
                     </div>
                   </a>
                 </Link>

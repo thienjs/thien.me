@@ -7,9 +7,9 @@ const Contact = () => {
       <Title>Contact</Title>
       <ul className="font-semi-bold flex flex-col ">
         <ContactLink
-          href="mailto:thienjsx@gmail.com"
-          title="gmail"
-          icon="thienjsx"
+          href="mailto:hi@thien.me"
+          title="thien.me"
+          icon="hi"
         />
         <ContactLink
           href="https://github.com/thienjs"
@@ -17,9 +17,9 @@ const Contact = () => {
           icon="thienjs"
         />
         <ContactLink
-          href="https://twitter.com/thientsx"
-          title="twitter"
-          icon="thientsx"
+          href="https://discord.gg/thien.tran"
+          title="discord"
+          icon="thien.tran"
         />
       </ul>
     </>

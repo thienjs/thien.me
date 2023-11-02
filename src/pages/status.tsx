@@ -12,9 +12,9 @@ const StatusPage = ({ statuses }) => {
       <Title>Status</Title>
       <p className="">
         {statuses.map((status) => (
-          <p className="flex py-2">
-            <p className="mr-6 pt-1 text-xs">{status.date}</p>
-            <p className="">{status.title}</p>
+          <p className="flex p-1">
+            <p className="flex-none text-xs mt-1.5 pr-4">{status.time}</p>
+            <p className="flex">{status.title}</p>
           </p>
         ))}
       </p>
@@ -28,7 +28,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
   const statuses = statusdata.map((status: any) => ({
     id: status.id,
     title: status.properties.Title.title[0].plain_text,
-    date: status.properties.Date.date.start,
+    time: status.properties.Time.created_time.slice(5, 10),
   }))
 
   return {
