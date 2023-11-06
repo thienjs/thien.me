@@ -144,55 +144,60 @@ const AboutPage = ({ reviews, currentlyReading }) => {
         </p>
 
         <p className="mb-2 text-neutral-600 dark:text-neutral-400">
-          My favorite hobbies are tennis, pickleball, movies, and
-          collecting pokemon/sports cards.
+          My favorite hobbies are tennis, pickleball, movies, and collecting
+          pokemon/sports cards.
         </p>
       </motion.div>
 
-      <H2>
-        Contact
-      </H2>
-      <div className="mt-6 grid grid-cols-2 max-w-full">
+      <H2>Contact</H2>
+      <div className="mt-6 grid max-w-full grid-cols-2">
         <ul className="space-y-6 text-sm text-neutral-500 dark:text-neutral-400">
+          <li>Email</li>
           <li>Github</li>
           <li>Linkedin</li>
           <li>Discord</li>
-          <li>Email</li>
+          <li>Insta/Threads</li>
+          <li>Telegram</li>
         </ul>
         <ul className="space-y-6 text-sm text-neutral-800 dark:text-neutral-300">
-          <li>
-            <a
-              href="https://github.com/thienjs"
-              className="hover:text-cyan-500"
-            >
-              thienjs
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://linkedin.com/in/thienjs"
-              className="hover:text-cyan-500"
-            >
-              thienjs
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://discord.com/thientran"
-              className="hover:text-cyan-500"
-            >
-              thien.tran
-            </a>
-          </li>
           <li>
             <a href="mailto:hi@thien.me" className="hover:text-cyan-500">
               hi@thien.me
             </a>
           </li>
+          <li>
+            <a
+              href="https://github.com/thienjs"
+              className="hover:text-cyan-500"
+            >
+              @thienjs
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://linkedin.com/in/thienio"
+              className="hover:text-cyan-500"
+            >
+              @thienio
+            </a>
+          </li>
+          <li>
+            <a href="https://discordapp.com//users/thien.io" className="hover:text-cyan-500">
+              @thien.io
+            </a>
+          </li>
+          <li>
+            <a href="https://instagram.com/thien.io" className="hover:text-cyan-500">
+              @thien.io
+            </a>
+          </li>
+          <li>
+            <a href="https://t.me/thienio" className="hover:text-cyan-500">
+              @thienio
+            </a>
+          </li>
         </ul>
       </div>
-
-     
 
       {/*  <TechStack />
       <UnstyledLink href="/music" className="text-2xl font-bold mb-2">
