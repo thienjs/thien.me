@@ -140,12 +140,15 @@ const AboutPage = ({ reviews, currentlyReading }) => {
         className=" mb-12 rounded-lg border border-neutral-300 bg-zinc-300 p-5 font-serif dark:border-neutral-700 dark:bg-zinc-900 dark:text-gray-200"
       >
         <p className=" mb-2 text-neutral-600 dark:text-neutral-400">
-          I'm a self taught web developer and designer.
+          Hello world! I'm a self-driven freelance developer and designer,
+          passionately crafting unique and user-friendly experiences.
         </p>
 
         <p className="mb-2 text-neutral-600 dark:text-neutral-400">
-          My favorite hobbies are tennis, pickleball, movies, and collecting
-          pokemon/sports cards.
+          Beyond the pixels, you'll find me on the tennis court, tinkering with
+          mechanical keyboards, trading pokemon cards, or indulging in the magic
+          of movies. I thrive on the joy of learning, always seeking new
+          challenges to fuel my creative appetite.
         </p>
       </motion.div>
 
@@ -182,12 +185,18 @@ const AboutPage = ({ reviews, currentlyReading }) => {
             </a>
           </li>
           <li>
-            <a href="https://discordapp.com//users/thien.io" className="hover:text-cyan-500">
+            <a
+              href="https://discordapp.com//users/thien.io"
+              className="hover:text-cyan-500"
+            >
               @thien.io
             </a>
           </li>
           <li>
-            <a href="https://instagram.com/thien.io" className="hover:text-cyan-500">
+            <a
+              href="https://instagram.com/thien.io"
+              className="hover:text-cyan-500"
+            >
               @thien.io
             </a>
           </li>

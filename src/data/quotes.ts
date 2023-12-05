@@ -44,6 +44,10 @@ export const quotes = [
     quote: `limits, like fears, are often just illusions`,
   },
   {
+    author: 'arnold schwarzenegger',
+    quote: `Be useful.`,
+  },
+  {
     author: 'Pete Sampras',
     quote: `It’s one-on-one out there, man. There ain’t no hiding. I can’t pass the ball.`,
   },
