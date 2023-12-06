@@ -259,7 +259,6 @@ const ArticlePage = ({
                       •
                     </p>
                     <ViewCounter slug={slug} />
-                    <LikeButton slug={slug} />
                   </div>
                   {publishedOn !== modifiedDate && (
                     <p className="mt-0 text-xs text-slate-500  dark:text-slate-500">
