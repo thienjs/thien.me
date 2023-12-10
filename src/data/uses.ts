@@ -8,14 +8,14 @@ export const uses = [
         link: 'https://apple.com',
       },
       {
-        title: 'Custom PC',
-        description: '32GB ram | Dual Acer monitors',
+        title: 'Custom Windows PC',
+        description: '32GB ram | Intel i5-8400 ',
         link: '',
       },
       {
-        title: 'Keychron K6',
+        title: 'Custom Tofu 60',
         description: '',
-        link: 'https://www.keychron.com/products/keychron-k6-wireless-mechanical-keyboard',
+        link: 'https://www.kbdfans.com/tofu65',
       },
       {
         title: 'Logitech MX Ergo Plus',
@@ -23,9 +23,9 @@ export const uses = [
         link: 'https://www.logitech.com/en-us/products/mice/mx-ergo-wireless-trackball-mouse.910-005178.html',
       },
       {
-        title: 'Stream Deck',
+        title: 'Adafruit Macropad - RP2040',
         description: '',
-        link: 'https://streamdeck.com',
+        link: 'https://adafruit.com',
       },
       {
         title: 'Airpod Pro',
@@ -94,7 +94,7 @@ export const uses = [
       },
     ],
   },
- 
+
   {
     title: 'Browsing',
     list: [
@@ -106,7 +106,7 @@ export const uses = [
     ],
   },
   {
-    title: 'iOS',
+    title: 'Apps',
     list: [
       {
         title: 'Notion',
@@ -116,26 +116,21 @@ export const uses = [
     ],
   },
   {
-    title: 'EDC',
+    title: 'Every Day Carry (EDC)',
     list: [
       {
-        title: 'Casio G-Shock GM-S2100',
+        title: 'Apple Watch',
         description: '',
         link: '',
       },
       {
         title: 'Rotring 600 1st edition',
-        description: 'Uni SXR-600 Jetstream Ballpoint Pen Refill',
-        link: '',
-      },
-      {
-        title: 'Benchmade Bugout',
-        description: 'desert sand gray',
+        description: 'Uni SXR-600 Jetstream Ballpoint Refill',
         link: '',
       },
       {
         title: 'Moleskin pocket notebook',
-        description: 'dotted',
+        description: '3.5 x 5.5 - dotted',
         link: '',
       },
     ],
@@ -144,17 +139,11 @@ export const uses = [
     title: 'Tennis',
     list: [
       {
-        title: 'Yonex Ezone 98',
-        description: '305g | 16x19 | 98 sq in | 6th gen | lead at 3 & 9 & handle | leather grip | wilson pro overgrip',
-        link: 'https://www.yonex.com/tennis/racquets/ezone/ezone-98-07ez98',
+        title: 'Yonex Percept 97',
+        description:
+          '310g | 16x19 | 97 sq in | 6th gen | lead at 3 & 9 & 12 | leather grip | wilson pro overgrip',
+        link: 'https://www.yonex.com/tennis/racquets/percept',
       },
-      {
-        title: 'Pro Staff 90',
-        description: '340g | 16x19 | 90 sq in | 2nd, 3rd, 4th gen',
-        link: 'https://www.yonex.com/tennis/racquets/ezone/ezone-98-07ez98',
-      }
-    ]
-  }
-  
-  
+    ],
+  },
 ]
