@@ -77,11 +77,10 @@ export default function NowPage() {
           <Description>what I'm up to:</Description>
         </motion.div>
         <ul className="space-y-5 text-left text-sm font-serif text-neutral-800 dark:text-neutral-300">
-          <NowItem>- getting back into coding</NowItem>
-          <NowItem>- applying for entry level developer jobs</NowItem>
+          <NowItem>- looking for entry level front end developer position</NowItem>
           <NowItem>- walking Loki - my {age} year old doodle best friend</NowItem>
-          <NowItem>- collecting trading cards</NowItem>
-          <NowItem>- improving my tennis game</NowItem>
+          <NowItem>- coaching beginner/intermediate tennis</NowItem>
+          <NowItem>- building a custom mechanical keyboard</NowItem>
           <NowItem>
             - connecting with other developers on github
           </NowItem>
@@ -103,7 +102,7 @@ export default function NowPage() {
           <NowItem>
             <p className="ml-6">- snippets: {<TotalSnippets />} </p>
           </NowItem>
-          <NowItem>- reading: The Inner Game of Tennis - Timothy Gallway</NowItem>
+          <NowItem>- reading: Be Useful - Arnold Schwarzenegger</NowItem>
           <NowItem>
             - listening to:{' '}
             {data?.songUrl ? (
