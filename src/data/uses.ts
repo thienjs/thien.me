@@ -9,13 +9,13 @@ export const uses = [
       },
       {
         title: 'Custom Windows PC',
-        description: '32GB ram | Intel i5-8400 ',
+        description: 'Z370 | Intel i5-8400 | 32GB ram  ',
         link: '',
       },
       {
-        title: 'Custom Tofu 60',
-        description: '',
-        link: 'https://www.kbdfans.com/tofu65',
+        title: 'Custom Tofu 65',
+        description: 'GMK Hanami Dango',
+        link: 'https://thien.me/blog/tofu65',
       },
       {
         title: 'Logitech MX Ergo Plus',
