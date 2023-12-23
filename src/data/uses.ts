@@ -3,13 +3,8 @@ export const uses = [
     title: 'Hardware',
     list: [
       {
-        title: 'Macbook Air 2018',
-        description: '',
-        link: 'https://apple.com',
-      },
-      {
         title: 'Custom Windows PC',
-        description: 'Z370 | Intel i5-8400 | 32GB ram  ',
+        description: 'Z370 Motherboard | Intel i7-9700K | Noctua NH-U12S Redux Cooler | 32 Gig RAM ',
         link: '',
       },
       {
@@ -29,6 +24,11 @@ export const uses = [
       },
       {
         title: 'Airpod Pro',
+        description: '',
+        link: 'https://apple.com',
+      },
+      {
+        title: 'Macbook Air 2018',
         description: '',
         link: 'https://apple.com',
       },
