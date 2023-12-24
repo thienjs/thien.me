@@ -20,7 +20,7 @@ export const uses = [
       {
         title: 'Adafruit Macropad - RP2040',
         description: '',
-        link: 'https://adafruit.com',
+        link: 'https://github.com/thienjs/macropad-RP2040',
       },
       {
         title: 'Airpod Pro',
