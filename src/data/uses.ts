@@ -8,9 +8,9 @@ export const uses = [
         link: '',
       },
       {
-        title: 'Custom Tofu 65',
-        description: 'GMK Hanami Dango',
-        link: 'https://thien.me/blog/tofu65',
+        title: 'HHKB Tofu60',
+        description: 'Gateron Oil Kings + GMK Fundamentals',
+        link: 'https://thien.me/blog/hhkb-tofu60',
       },
       {
         title: 'Logitech MX Ergo Plus',
