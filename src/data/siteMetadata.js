@@ -11,10 +11,10 @@ const siteMetadata = {
   socialBanner: '/static/images/twitter-card.png',
   email: 'hi@thien.me',
   github: 'https://github.com/thienjs',
-  twitter: 'https://twitter.com/thientsx',
+  twitter: 'https://twitter.com/thien_io',
   facebook: 'https://facebook.com',
   youtube: 'https://youtube.com',
-  linkedin: 'https://www.linkedin.com/thienjs',
+  linkedin: 'https://www.linkedin.com/thienio',
   locale: 'en-US',
   analytics: {
     // supports plausible, simpleAnalytics or googleAnalytics

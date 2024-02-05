@@ -27,7 +27,7 @@ export default function Now() {
           what I'm doing to now:
         </h3>
         <ul className="space-y-3 text-left font-serif text-sm text-neutral-800 dark:text-neutral-300">
-          <li>- applying for my first tech job</li>
+          <li>- coaching tennis</li>
           <li>- walking Loki - my 15 month old puppy</li>
 
           <li>- staying active by working on my tennis game and weight lifting</li>

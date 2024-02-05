@@ -1,11 +1,11 @@
-import type { InferGetStaticPropsType } from 'next'
+import type { InferGetServerSidePropsType } from 'next'
 import { ContentPopover } from '~/components/guestbook'
 import { fetchGuestbookEntries } from '~/lib/queries'
 import { GuestbookContent } from '~/components/guestbook'
 import { Title, Description } from '~/components/ui/typography'
 import { motion } from 'framer-motion'
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const data = await fetchGuestbookEntries()
 
   const entries = data.map((entry) => ({
@@ -21,7 +21,7 @@ export const getStaticProps = async () => {
 
 const GuestBookPage = ({
   entries,
-}: InferGetStaticPropsType<typeof getStaticProps>) => {
+}: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   return (
     <>
       <Title>Guestbook</Title>

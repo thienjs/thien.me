@@ -77,10 +77,8 @@ export default function NowPage() {
           <Description>what I'm up to:</Description>
         </motion.div>
         <ul className="space-y-5 text-left text-sm font-serif text-neutral-800 dark:text-neutral-300">
-          <NowItem>- looking for entry level front end developer position</NowItem>
+          <NowItem>- coaching tennis</NowItem>
           <NowItem>- walking Loki - my {age} year old doodle best friend</NowItem>
-          <NowItem>- coaching beginner/intermediate tennis</NowItem>
-          <NowItem>- building a custom mechanical keyboard</NowItem>
           <NowItem>
             - connecting with other developers on github
           </NowItem>
