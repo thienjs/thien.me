@@ -39,10 +39,6 @@ export const navigation = {
     {
       path: '/blog',
       label: 'blog',
-    },
-    {
-      path: '/guestbook',
-      label: 'guestbook',
-    },
+    }
   ],
 }
