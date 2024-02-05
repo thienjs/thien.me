@@ -25,7 +25,7 @@ export default function UnstyledLink({
 
   if (!isNewTab) {
     return (
-      <Link href={href} {...nextLinkProps}>
+      <Link legacyBehavior href={href} {...nextLinkProps}>
         <a {...rest} className={className}>
           {children}
         </a>

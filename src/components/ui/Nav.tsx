@@ -34,7 +34,7 @@ export default function Nav() {
                   key={index}
                   onHoverStart={() => setActiveIndex(index)}
                 >
-                  <Link href={item.path}>
+                  <Link legacyBehavior href={item.path}>
                     <a
                       className={classnames(
                         'relative block px-2 py-2',

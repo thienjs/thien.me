@@ -16,8 +16,8 @@ const NextLink: React.FC<Props> = ({
   ...rest
 }: Props) => {
   return (
-    <Link href={href} locale={locale}>
-      <a {...rest}>{children}</a>
+    <Link legacyBehavior href={href} locale={locale}>
+      <p {...rest}>{children}</p>
     </Link>
   )
 }

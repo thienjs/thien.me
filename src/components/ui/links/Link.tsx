@@ -21,7 +21,7 @@ export function Link({
 
   return (
     <NextLink href={href} {...rest}>
-      <a className={currentClassName}>{children({ isActive })}</a>
+      <p className={currentClassName}>{children({ isActive })}</p>
     </NextLink>
   )
 }

@@ -72,7 +72,7 @@ export default function DropMenu() {
           <div className="py-1">
             <Menu.Item>
               {({ active }) => (
-                <Link href="/">
+                <Link legacyBehavior href="/">
                   <a
                     className={classNames(
                       active
@@ -91,7 +91,7 @@ export default function DropMenu() {
 
             <Menu.Item>
               {({ active }) => (
-                <Link href="/blog">
+                <Link legacyBehavior href="/blog">
                   <a
                     className={classNames(
                       active
@@ -109,7 +109,7 @@ export default function DropMenu() {
             </Menu.Item>
             <Menu.Item>
               {({ active }) => (
-                <Link href="/about">
+                <Link legacyBehavior href="/about">
                   <a
                     className={classNames(
                       active
@@ -127,7 +127,7 @@ export default function DropMenu() {
             </Menu.Item>
             <Menu.Item>
               {({ active }) => (
-                <Link href="/snippets">
+                <Link legacyBehavior href="/snippets">
                   <a
                     className={classNames(
                       active
@@ -145,7 +145,7 @@ export default function DropMenu() {
             </Menu.Item>
             <Menu.Item>
               {({ active }) => (
-                <Link href="/projects">
+                <Link legacyBehavior href="/projects">
                   <a
                     className={classNames(
                       active
@@ -165,7 +165,7 @@ export default function DropMenu() {
           <div className="py-1">
             <Menu.Item>
               {({ active }) => (
-                <Link href="/guestbook">
+                <Link legacyBehavior href="/guestbook">
                   <a
                     className={classNames(
                       active
@@ -183,7 +183,7 @@ export default function DropMenu() {
             </Menu.Item>
             <Menu.Item>
               {({ active }) => (
-                <Link href="/now">
+                <Link legacyBehavior href="/now">
                   <a
                     className={classNames(
                       active
@@ -201,7 +201,7 @@ export default function DropMenu() {
             </Menu.Item>
             <Menu.Item>
               {({ active }) => (
-                <Link href="/status">
+                <Link legacyBehavior href="/status">
                   <a
                     className={classNames(
                       active
@@ -219,7 +219,7 @@ export default function DropMenu() {
             </Menu.Item>
             <Menu.Item>
               {({ active }) => (
-                <Link href="/bookmarks">
+                <Link legacyBehavior href="/bookmarks">
                   <a
                     className={classNames(
                       active
@@ -237,7 +237,7 @@ export default function DropMenu() {
             </Menu.Item>
             <Menu.Item>
               {({ active }) => (
-                <Link href="/quotes">
+                <Link legacyBehavior href="/quotes">
                   <a
                     className={classNames(
                       active
@@ -255,7 +255,7 @@ export default function DropMenu() {
             </Menu.Item>
             <Menu.Item>
               {({ active }) => (
-                <Link href="/todo">
+                <Link legacyBehavior href="/todo">
                   <a
                     className={classNames(
                       active
@@ -274,7 +274,7 @@ export default function DropMenu() {
 
             <Menu.Item>
               {({ active }) => (
-                <Link href="/stats">
+                <Link legacyBehavior href="/stats">
                   <a
                     className={classNames(
                       active
@@ -292,7 +292,7 @@ export default function DropMenu() {
             </Menu.Item>
             <Menu.Item>
               {({ active }) => (
-                <Link href="/contact">
+                <Link legacyBehavior href="/contact">
                   <a
                     className={classNames(
                       active

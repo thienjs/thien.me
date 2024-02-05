@@ -1,4 +1,4 @@
-import type { InferGetStaticPropsType, GetStaticProps } from 'next'
+import type { InferGetStaticPropsType } from 'next'
 import { ContentPopover } from '~/components/guestbook'
 import { fetchGuestbookEntries } from '~/lib/queries'
 import { GuestbookContent } from '~/components/guestbook'

@@ -79,7 +79,7 @@ export default function Hero() {
             className="mb-4 "
           >
             Get to know {' '}
-            <Link href="/about">
+            <Link legacyBehavior href="/about">
               <a className="relative before:absolute before:bottom-0 before:left-0 before:h-full before:w-full before:origin-bottom before:scale-y-[0.35] before:bg-cyan-500 before:opacity-50 before:transition-transform before:duration-500 before:ease-in-out hover:before:scale-y-100">
                 <span className="relative hover:text-gray-800 hover:dark:text-gray-200">
                   me
@@ -87,11 +87,11 @@ export default function Hero() {
               </a>
             </Link>{' '}
             and what I'm doing{' '}
-            <Link href="/now">
+            <Link legacyBehavior href="/now">
               <a className="relative before:absolute before:bottom-0 before:left-0 before:h-full before:w-full before:origin-bottom before:scale-y-[0.35] before:bg-cyan-500 before:opacity-50 before:transition-transform before:duration-500 before:ease-in-out hover:before:scale-y-100">
-                <span className="relative hover:text-gray-800 hover:dark:text-gray-200">
+                <s className="relative hover:text-gray-800 hover:dark:text-gray-200">
                   now
-                </span>
+                </s>
               </a>
             </Link>
             .
