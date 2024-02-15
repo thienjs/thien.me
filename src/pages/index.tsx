@@ -32,6 +32,14 @@ import { ArticleCard } from '~/components/blog/ArticleCard'
 import { NowReading } from '~/components/hobby/NowReading'
 import { FaStar } from 'react-icons/fa'
 import Title from '~/components/ui/typography/Title'
+import { Card, CardContent } from '~/components/ui/card'
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from '~/components/ui/carousel'
 
 export type HomePageProps = {
   recentArticles: any
@@ -132,15 +140,25 @@ export default function HomePage({
       </Tab.Group>
       <Title>Projects</Title>
       <div className="">
-        <div className="">
-          <div className=" w-full border-0 ">
+        <Carousel className="">
+          <CarouselContent className="">
             {repos.map((repo) => (
-              <div key={repo.name} className="border-0">
-                <RepoCard {...repo} />
-              </div>
+              <CarouselItem key={repo.name} className="">
+                <div className="">
+                  <Card className="border-none">
+                    <CardContent className="flex items-center justify-center p-6">
+                      <RepoCard {...repo} />
+                    </CardContent>
+                  </Card>
+                  
+                </div>
+              </CarouselItem>
             ))}
-          </div>
-        </div>
+
+          </CarouselContent>
+          <CarouselPrevious />
+            <CarouselNext />
+        </Carousel>
         <div className="mt-4 mr-2 mb-12 flex justify-end">
           <ArrowLink href="/repo" className="">
             all repos
@@ -196,7 +214,6 @@ export default function HomePage({
           </Tab.Panel>
         </Tab.Panels>
       </Tab.Group>
-
 
       <div className="my-8"></div>
 

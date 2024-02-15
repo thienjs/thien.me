@@ -89,9 +89,9 @@ export default function Hero() {
             and what I'm doing{' '}
             <Link legacyBehavior href="/now">
               <a className="relative before:absolute before:bottom-0 before:left-0 before:h-full before:w-full before:origin-bottom before:scale-y-[0.35] before:bg-cyan-500 before:opacity-50 before:transition-transform before:duration-500 before:ease-in-out hover:before:scale-y-100">
-                <s className="relative hover:text-gray-800 hover:dark:text-gray-200">
+                <span className="relative hover:text-gray-800 hover:dark:text-gray-200">
                   now
-                </s>
+                </span>
               </a>
             </Link>
             .

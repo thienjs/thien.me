@@ -17,7 +17,7 @@ import { Title, Description } from '~/components/ui/typography'
 
 const StatusPage = ({ statuses }) => {
   return (
-    <div>
+    <>
       <Title>Status</Title>
       <div className="">
         {statuses.map((status) => (
@@ -44,7 +44,7 @@ const StatusPage = ({ statuses }) => {
       <CarouselPrevious />
       <CarouselNext />
     </Carousel>
-    </div>
+    </>
   )
 }
 
