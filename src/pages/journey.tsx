@@ -6,7 +6,7 @@ export default function JourneyPage() {
     <>
       <Title>My coding journey</Title>
       <Description>
-        'dont compare yourself to others. make progress everyday.'
+        'dont compare yourself to others. make'
       </Description>
       <Timeline />
     </>
