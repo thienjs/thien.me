@@ -1,6 +1,15 @@
 import React from 'react'
 import type { GetStaticProps, GetServerSideProps } from 'next'
 import { useState } from 'react'
+import { Card, CardContent } from "~/components/ui/card"
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "~/components/ui/carousel"
+ 
 
 import { getStatus } from '~/lib/notion'
 import axios from 'axios'
@@ -8,17 +17,34 @@ import { Title, Description } from '~/components/ui/typography'
 
 const StatusPage = ({ statuses }) => {
   return (
-    <p>
+    <div>
       <Title>Status</Title>
-      <p className="">
+      <div className="">
         {statuses.map((status) => (
           <p className="flex p-1">
             <p className="flex-none text-xs mt-1.5 pr-4">{status.time}</p>
             <p className="flex">{status.title}</p>
           </p>
         ))}
-      </p>
-    </p>
+      </div>
+      <Carousel className="w-full max-w-xs">
+      <CarouselContent>
+        {Array.from({ length: 5 }).map((_, index) => (
+          <CarouselItem key={index}>
+            <div className="p-1">
+              <Card>
+                <CardContent className="flex aspect-square items-center justify-center p-6">
+                  <span className="text-4xl font-semibold">{index + 1}</span>
+                </CardContent>
+              </Card>
+            </div>
+          </CarouselItem>
+        ))}
+      </CarouselContent>
+      <CarouselPrevious />
+      <CarouselNext />
+    </Carousel>
+    </div>
   )
 }
 
