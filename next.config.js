@@ -2,6 +2,11 @@
  * @type {import('next').NextConfig}
  */
 module.exports = {
+  future: {
+    // by default, if you customize webpack config, they switch back to version 4.
+    // Looks like backward compatibility approach.
+    webpack5: true,
+  },
   swcMinify: true,
   reactStrictMode: true,
   images: {
@@ -21,14 +26,13 @@ module.exports = {
       'res.cloudinary.com', // Twitter Profile Picture
     ],
   },
-  webpack: (config, { dev, isServer }) => {
-    // Replace React with Preact only in client production build
-    if (!dev && !isServer) {
-      Object.assign(config.resolve.alias, {
-        react: 'preact/compat',
-        'react-dom/test-utils': 'preact/test-utils',
-        'react-dom': 'preact/compat',
-      })
+  webpack(config) {
+    config.resolve.fallback = {
+      // if you miss it, all the other options in fallback, specified
+      // by next.js will be dropped.
+      ...config.resolve.fallback,
+
+      fs: false, // the solution
     }
 
     return config
