@@ -61,8 +61,7 @@
     "rss-parser": "^3.12.0",
     "slugify": "^1.6.3",
     "swr": "^1.1.1",
-    "tailwind-merge": "^1.1.1",
-    "thien-ui": "^0.2.0",
+    "tailwind-merge": "^2.2.1",
     "zod": "^3.12.0"
   },
   "devDependencies": {
