@@ -1,4 +1,5 @@
 import placeholderimage from '/public/nsk.png'
+import { StaticImageData } from "next/image"
 // Frontend Mentor challenges repository
 const myGithub = 'https://github.com/thienjs'
 
