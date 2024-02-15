@@ -145,10 +145,11 @@ const AboutPage = ({ reviews, currentlyReading }) => {
         </p>
 
         <p className="mb-2 text-neutral-600 dark:text-neutral-400">
-          Beyond the pixels, you'll find me on the tennis court, tinkering with
-          mechanical keyboards, trading pokemon cards, or indulging in the magic
-          of movies. I thrive on the joy of learning, always seeking new
-          challenges to fuel my creative appetite.
+          Beyond the pixels, you'll find me coaching on the tennis and
+          pickleball courts. Outside the court, you'll find me tinkering with
+          mechanical keyboards, collecting cards, or indulging in the magic of
+          movies. I thrive on the joy of learning, always seeking new challenges
+          to fuel my creative appetite.
         </p>
       </motion.div>
 

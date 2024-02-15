@@ -8,9 +8,9 @@ export const uses = [
         link: '',
       },
       {
-        title: 'Arc 60 HHKB',
-        description: 'Gateron Baby Kangaroo + GMK Fundamentals',
-        link: 'https://thien.me/keebs',
+        title: 'HHKB Tofu60',
+        description: 'Gateron Oil Kings + GMK Fundamentals',
+        link: 'https://thien.me/blog/hhkb-tofu60',
       },
       {
         title: 'Logitech MX Ergo Plus',

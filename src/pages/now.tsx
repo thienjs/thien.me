@@ -89,7 +89,7 @@ export default function NowPage() {
             <p className="ml-6">- github stars: {<GithubStars />}</p>
           </NowItem>
           <NowItem>
-            - attempting to write more meaningful and helpful blog posts
+            - writing blog posts
           </NowItem>
           <NowItem>
             <p className="ml-6">- blog posts: {<TotalPosts />}</p>
