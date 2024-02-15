@@ -1,7 +1,6 @@
 import NextAuth from 'next-auth'
 import GithubProvider from 'next-auth/providers/github'
 import GoogleProvider from 'next-auth/providers/google'
-import BattleNetProvider from 'next-auth/providers/battlenet'
 import TwitterProvider from 'next-auth/providers/twitter'
 import RedditProvider from 'next-auth/providers/reddit'
 import DiscordProvider from 'next-auth/providers/discord'
@@ -30,11 +29,6 @@ export default NextAuth({
     GithubProvider({
       clientId: process.env.GITHUB_CLIENT_ID,
       clientSecret: process.env.GITHUB_CLIENT_SECRET,
-    }),
-    BattleNetProvider({
-      clientId: process.env.BATTLENET_CLIENT_ID,
-      clientSecret: process.env.BATTLENET_CLIENT_SECRET,
-      region: process.env.BATTLENET_REGION,
     }),
     TwitterProvider({
       clientId: process.env.TWITTER_CLIENT_ID,
