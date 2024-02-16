@@ -75,10 +75,16 @@ export default function Nav() {
           </motion.ul>
         </AnimateSharedLayout>
         <div className="flex ">
-          <CommandPalette navigation={navigation} />
           <ThemeSwitch />
-          <DropMenu />
-          <DrawerMenu />
+          <div className=''>
+            <DropMenu />
+          </div>
+          <div className="hidden lg:block">
+            <CommandPalette navigation={navigation} />
+          </div>
+          <div className="lg:hidden">
+            <DrawerMenu />
+          </div>
         </div>
       </div>
     </nav>
