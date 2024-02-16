@@ -79,11 +79,11 @@ export default function Nav() {
           <div className=''>
             <DropMenu />
           </div>
-          <div className="hidden lg:block">
-            <CommandPalette navigation={navigation} />
-          </div>
           <div className="lg:hidden">
             <DrawerMenu />
+          </div>
+          <div className="hidden lg:block">
+            <CommandPalette navigation={navigation} />
           </div>
         </div>
       </div>
