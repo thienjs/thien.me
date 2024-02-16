@@ -115,7 +115,19 @@ export const DrawerMenu = () => {
                   <Link href="/quotes">Quotes</Link>
                 </Button>
                 <Button>
-                  <Link href="/stats">Stats</Link>
+                  <Link href="/uses">Uses</Link>
+                </Button>
+                <Button>
+                  <Link href="/keebs">Keebs</Link>
+                </Button>
+                <Button>
+                  <Link href="/dashboard">Dashboard</Link>
+                </Button>
+                <Button>
+                  <Link href="/movies">Movies</Link>
+                </Button>
+                <Button>
+                  <Link href="/music">Music</Link>
                 </Button>
               </div>
             </div>
