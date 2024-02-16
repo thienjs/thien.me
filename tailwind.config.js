@@ -8,7 +8,17 @@ module.exports = {
   ],
   darkMode: 'class',
   theme: {
+    screens: {
+      xs: '390px',
+      sm: '435px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1280px'
+    },
     extend: {
+      animation: {
+        reveal: 'reveal 0.7s ease-in-out'
+      },
       fontFamily: {
         mono: ['JetBrains Mono Web', ...fontFamily.mono],
         sans: ['IBM Plex Sans', ...fontFamily.sans],

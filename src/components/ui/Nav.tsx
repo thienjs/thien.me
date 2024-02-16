@@ -9,6 +9,8 @@ import ThemeSwitch from './ThemeSwitch'
 import DropMenu from './DropMenu'
 import AuthButton from '../auth/AuthButton'
 import { TBoxIcon } from '../icons/t-box'
+import SheetMenu from './SheetMenu'
+import { DrawerMenu } from './DrawerMenu'
 
 export default function Nav() {
   const { pathname } = useRouter()
@@ -76,6 +78,7 @@ export default function Nav() {
           <CommandPalette navigation={navigation} />
           <ThemeSwitch />
           <DropMenu />
+          <DrawerMenu />
         </div>
       </div>
     </nav>
