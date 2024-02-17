@@ -76,10 +76,11 @@ export default function Nav() {
         </AnimateSharedLayout>
         <div className="flex ">
           <ThemeSwitch />
+          <DropMenu />
           <span className="lg:hidden">
-            <DrawerMenu />
+            <DrawerMenu  />
           </span>
-          <span className="">
+          <span className="hidden lg:block">
             <CommandPalette navigation={navigation} />
           </span>
         </div>

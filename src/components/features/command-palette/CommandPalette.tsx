@@ -1,7 +1,6 @@
 import { Dialog, Combobox, Transition } from '@headlessui/react'
 import { useState, useEffect, Fragment } from 'react'
 import { SearchIcon } from '@heroicons/react/outline'
-
 import { useRouter } from 'next/router'
 import { navigation } from '~/data/nav'
 import { CommandIcon } from '~/components/icons';
