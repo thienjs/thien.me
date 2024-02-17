@@ -13,7 +13,7 @@ export default function CommandPalette({ navigation }) {
 
   useEffect(() => {
     const handleKeyDown = (event) => {
-      if (event.key === 'k' && (event.metaKey || event.ctrlKey)) {
+      if (event.key === 'b' && (event.metaKey || event.ctrlKey)) {
         setIsOpen(!isOpen)
       }
     }

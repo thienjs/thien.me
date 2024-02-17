@@ -56,10 +56,14 @@ import {
 
 export const DrawerMenu = () => {
   return (
-    <Drawer shouldScaleBackground>
-      <DrawerTrigger asChild>
-        <Button variant="ghost" size="icon" className=' mx-1 h-8 w-8 cursor-pointer items-center justify-center rounded-md bg-zinc-300 p-2 ring-neutral-400 transition duration-200 ease-in-out hover:bg-zinc-300 hover:ring-2 dark:bg-zinc-700 dark:hover:bg-zinc-800'>
-          <CommandIcon className='h-4 w-4 ' />
+    <Drawer>
+      <DrawerTrigger>
+        <Button
+          variant="ghost"
+          size="icon"
+          className=" mx-1 h-8 w-8 cursor-pointer items-center justify-center rounded-md bg-zinc-300 p-2 ring-neutral-400 transition duration-200 ease-in-out hover:bg-zinc-300 hover:ring-2 dark:bg-zinc-700 dark:hover:bg-zinc-800"
+        >
+          <CommandIcon className="h-4 w-4 " />
         </Button>
       </DrawerTrigger>
       <DrawerContent className="fixed bottom-0 left-0 right-0  flex h-[60%] flex-col rounded-t-lg border-none bg-gray-100 dark:bg-zinc-800">
@@ -131,10 +135,7 @@ export const DrawerMenu = () => {
                 </Button>
               </div>
             </div>
-
- 
           </div>
-
         </ScrollArea>
       </DrawerContent>
     </Drawer>
