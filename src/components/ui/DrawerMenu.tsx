@@ -62,31 +62,12 @@ export const DrawerMenu = () => {
           <CommandIcon />
         </div>
       </DrawerTrigger>
-      <DrawerContent className="fixed bottom-0 left-0 right-0  flex h-[90%] flex-col rounded-t-lg border-none bg-gray-100 dark:bg-zinc-800">
+      <DrawerContent className="fixed bottom-0 left-0 right-0  flex h-[70%] flex-col rounded-t-lg border-none bg-gray-100 dark:bg-zinc-800">
         <div className="mx-auto mb-6 h-1 w-16 shrink-0 rounded-full bg-zinc-300" />
         <ScrollArea className="h-60% flex flex-col">
           <div className="flex w-full flex-col text-sm">
             <div className="flex flex-col ">
-              <Link
-                href="/"
-                className="link-card inline-flex items-center gap-2 p-2 pl-6"
-              >
-                <img
-                  src="https://github.com/thienjs.png"
-                  alt="Thien Tran"
-                  width={40}
-                  height={40}
-                  loading="lazy"
-                  className="rounded-full border shadow-sm"
-                />
-                <div className="flex flex-col ">
-                  <span className="font-semibold tracking-tight">
-                    Thien Tran
-                  </span>
-                  <span className="text-gray-600">Designer, Developer</span>
-                </div>
-              </Link>
-              <div className="border-1 flex flex-col items-center gap-y-3  py-12">
+              <div className="border-1 flex flex-col items-start gap-y-2 py-12  pl-12 font-sans text-4xl font-semibold ">
                 <Link href="/">Home</Link>
 
                 <Link href="/about">About</Link>
@@ -107,13 +88,14 @@ export const DrawerMenu = () => {
 
                 <Link href="/uses">Uses</Link>
 
-                <Link href="/keebs">Keebs</Link>
+                <Link href="/keyboards">Keyboards</Link>
 
                 <Link href="/dashboard">Dashboard</Link>
 
                 <Link href="/movies">Movies</Link>
 
                 <Link href="/music">Music</Link>
+                <Link href="/contact">Contact</Link>
               </div>
             </div>
           </div>

@@ -17,7 +17,7 @@ export default function Nav() {
   const [activeIndex, setActiveIndex] = React.useState(null)
   const [isOpen, setisOpen] = React.useState()
   return (
-    <nav className="mt-4 flex  w-full max-w-sm  flex-col pb-4 pt-2 md:max-w-2xl ">
+    <nav className="mt-4 flex  w-full   flex-col pb-4 pt-2  ">
       <div className="flex flex-row justify-between ">
         {/* <Link href="/">
           <a>

@@ -1,13 +1,24 @@
-import { Title, Description, H2 } from '~/components/ui/typography'
-
-import Link from 'next/link'
-
-const DashboardPage = () => (
-  <>
-    <Title>Dashboard</Title>
-    <Description>what i use</Description>
- 
-  </>
-)
-
-export default DashboardPage
+import {
+  TotalArticles,
+  GithubFollowers,
+  Visitors,
+  TwitterFollowers,
+  GithubStars,
+  BlogViews,
+  TotalSnippets,
+} from '~/components/stats/'
+import { Title } from '~/components/ui/typography'
+export default function DashboardPage() {
+  return (
+    <>
+      <Title>Dashboard </Title>
+      <div className="flex flex-col">
+        <TotalArticles />
+        <BlogViews />
+        <TotalSnippets />
+        <GithubFollowers />
+        <GithubStars />
+      </div>
+    </>
+  )
+}
