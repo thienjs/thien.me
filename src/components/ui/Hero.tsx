@@ -6,7 +6,7 @@ import Link from 'next/link'
 export default function Hero() {
   return (
     <div>
-      <div className="flex flex-col min-h-screen justify-center lg:mt-12 lg:px-4 pb-[25vh]">
+      <div className="flex flex-col min-h-screen justify-center lg:mt-6 lg:px-4 pb-[25vh]">
         <div className=''>
           <motion.div
             initial="hidden"
@@ -22,7 +22,7 @@ export default function Hero() {
                 y: 0,
               },
             }}
-            className=" text-xl font-bold text-gray-900 dark:text-neutral-200 lg:text-4xl tracking-wider"
+            className=" text-4xl font-bold text-gray-900 dark:text-neutral-200 lg:text-4xl"
           >
             Thien Tran
           </motion.div>
