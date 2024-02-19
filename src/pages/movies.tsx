@@ -26,7 +26,10 @@ const MoviesPage = ({ movies }) => {
     <>
       <Title>Movies</Title>
       <button onClick={chooseMovie}>choose movie</button>
-      {movie && <pre>{JSON.stringify(movie, null, 2)}</pre>}
+      <pre>
+        
+        {movie && movie.title}
+        </pre>
 
       <button onClick={handleUpdate}>Watch!</button>
     </>
