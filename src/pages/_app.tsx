@@ -1,18 +1,24 @@
 import '~/styles/globals.css'
 import '~/styles/codeblocks.css'
+import '~/styles/theme.css'
 import 'styles/nprogress.css'
 import React from 'react'
 import { AppProps } from 'next/app'
 import Head from 'next/head'
 import { DefaultSeo } from 'next-seo'
-import { Layout } from '~/components/ui'
+import Layout from '~/components/Layout/Layout'
 import Progress from '~/components/ui/NProgress'
 import { SessionProvider } from 'next-auth/react'
 import { useEffect } from 'react'
+import { AnimatePresence } from 'framer-motion'
 
 import SEO from '../../next-seo.config'
 
-import { ThemeProvider } from 'next-themes'
+import PreferenceProvider from '~/context/Preference/PreferenceContext'
+import CommandPalette from '~/components/CommandPalette/CommandPalette'
+
+import { MdClose } from 'react-icons/md'
+import commands from '~/data/commands'
 
 export default function App({
   Component,
@@ -23,19 +29,16 @@ export default function App({
   const pageSEO = { ...SEO, ...pageMeta }
 
   return (
-    <>
-      <Head>
-        <meta content="width=device-width, initial-scale=1" name="viewport" />
-      </Head>
-      <DefaultSeo {...pageSEO} />
+    <PreferenceProvider>
+      <CommandPalette data={commands} />
       <SessionProvider session={session}>
-        <ThemeProvider attribute="class">
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
-          <Progress />
-        </ThemeProvider>
+        <Layout>
+          <AnimatePresence exitBeforeEnter>
+            <Component {...pageProps} key={router.route} />
+          </AnimatePresence>
+        </Layout>
+        <Progress />
       </SessionProvider>
-    </>
+    </PreferenceProvider>
   )
 }

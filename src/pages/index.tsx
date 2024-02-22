@@ -75,7 +75,7 @@ export default function HomePage({
     <NowReading key={r.url} title={r.title} subtitle={r.author} url={r.url} />
   ))
   return (
-    <>
+    <div className='layout'>
       <Hero />
       <div className="mt-6 mb-20"></div>
       <Title>Blog</Title>
@@ -191,7 +191,7 @@ export default function HomePage({
 
       <div className="my-8"></div>
 
-    </>
+    </div>
   )
 }
 

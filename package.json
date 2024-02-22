@@ -18,6 +18,7 @@
   },
   "dependencies": {
     "@apollo/client": "^3.5.6",
+    "@faker-js/faker": "^8.4.1",
     "@headlessui/react": "^1.7.18",
     "@heroicons/react": "^1.0.5",
     "@next-auth/prisma-adapter": "^1.0.7",
@@ -52,6 +53,7 @@
     "next-auth": "^4.24.6",
     "next-seo": "^4.28.1",
     "next-themes": "^0.0.15",
+    "nextjs-progressbar": "^0.0.16",
     "nprogress": "^0.2.0",
     "octokit": "^3.1.2",
     "prism-react-renderer": "^1.2.1",
@@ -66,6 +68,7 @@
     "react-query": "^3.34.8",
     "react-timeago": "^6.2.1",
     "react-tippy": "^1.4.0",
+    "react-toastify": "^10.0.4",
     "react-use-lanyard": "^0.1.0",
     "reading-time": "^1.5.0",
     "rss-parser": "^3.12.0",

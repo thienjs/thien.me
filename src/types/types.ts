@@ -173,3 +173,23 @@ export type ProjectCard = {
   github?: string
   youtube?: string
 }
+
+export interface Theme {
+  name: string;
+  background: {
+    primary: string;
+    secondary: string;
+  };
+  text: {
+    primary: string;
+    secondary: string;
+    title: string;
+  };
+}
+
+
+export interface AccuracyMetrics {
+  correctChars: number;
+  incorrectChars: number;
+  accuracy: number;
+}
