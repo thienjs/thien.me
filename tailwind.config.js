@@ -13,15 +13,15 @@ module.exports = {
       sm: '435px',
       md: '768px',
       lg: '1024px',
-      xl: '1280px'
+      xl: '1280px',
     },
     extend: {
       animation: {
-        reveal: 'reveal 0.7s ease-in-out'
+        reveal: 'reveal 0.7s ease-in-out',
       },
       fontFamily: {
         mono: ['JetBrains Mono Web', ...fontFamily.mono],
-        sans: ['IBM Plex Sans', ...fontFamily.sans],
+        sans: ['Inter', ...fontFamily.sans],
         serif: ['Newsreader', ...fontFamily.serif],
       },
       typography: (theme) => ({

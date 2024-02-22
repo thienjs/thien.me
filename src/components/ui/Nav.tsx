@@ -98,11 +98,11 @@ export default function Nav() {
           <span className="hidden lg:block">
             <CommandPalette navigation={navigation} />
           </span>
-          <Drawer>
-            <DrawerTrigger className="mx-1 flex h-8 w-8 cursor-pointer items-center justify-center rounded-md bg-zinc-300 p-2 ring-neutral-400 transition duration-200 ease-in-out hover:bg-zinc-300 hover:ring-2 dark:bg-zinc-700 dark:hover:bg-zinc-800  ">
+          <Drawer >
+            <DrawerTrigger className="ring-0 mx-1 flex h-8 w-8 cursor-pointer items-center justify-center rounded-md bg-zinc-300 p-2 ring-neutral-400 transition duration-200 ease-in-out hover:bg-zinc-300 hover:ring-2 dark:bg-zinc-700 dark:hover:bg-zinc-800  ">
               <CommandIcon className="" />
             </DrawerTrigger>
-            <DrawerContent className="fixed bottom-0 left-0 right-0  flex h-[70%] flex-col rounded-t-lg border-none bg-gray-100 dark:bg-zinc-800">
+            <DrawerContent className="ring-0 fixed bottom-0 left-0 right-0  flex h-[70%] flex-col rounded-t-lg border-none bg-gray-100 dark:bg-zinc-800">
               <div className="mx-auto mb-6 h-1 w-16 shrink-0 rounded-full bg-zinc-300" />
               <ScrollArea className="h-60% flex flex-col">
                 <AnimateSharedLayout>

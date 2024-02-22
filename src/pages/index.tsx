@@ -138,33 +138,7 @@ export default function HomePage({
           </ArrowLink>
         </div>
       </Tab.Group>
-      <Title>Projects</Title>
-      <div className="">
-        <Carousel className="">
-          <CarouselContent className="">
-            {repos.map((repo) => (
-              <CarouselItem key={repo.name} className="">
-                <div className="">
-                  <Card className="border-none">
-                    <CardContent className="flex items-center justify-center p-6">
-                      <RepoCard {...repo} />
-                    </CardContent>
-                  </Card>
-                  
-                </div>
-              </CarouselItem>
-            ))}
-
-          </CarouselContent>
-          <CarouselPrevious />
-            <CarouselNext />
-        </Carousel>
-        <div className="mt-4 mr-2 mb-12 flex justify-end">
-          <ArrowLink href="/repo" className="">
-            all repos
-          </ArrowLink>
-        </div>
-      </div>
+     
 
       <Title>Hobbies</Title>
       <Tab.Group>
@@ -217,14 +191,6 @@ export default function HomePage({
 
       <div className="my-8"></div>
 
-      <Title>Guestbook</Title>
-
-      <Entry />
-      <div className="mt-4 mr-2 flex justify-end">
-        <ArrowLink href="/guestbook" className="">
-          see what others wrote
-        </ArrowLink>
-      </div>
     </>
   )
 }
