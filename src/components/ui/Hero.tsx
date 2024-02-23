@@ -22,7 +22,7 @@ export default function Hero() {
                 y: 0,
               },
             }}
-            className=" text-4xl font-bold text-gray-900 dark:text-neutral-200 lg:text-4xl"
+            className=" text-4xl font-bold lg:text-4xl"
           >
             Thien Tran
           </motion.div>
