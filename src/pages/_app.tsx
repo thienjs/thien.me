@@ -14,8 +14,8 @@ import { AnimatePresence } from 'framer-motion'
 
 import SEO from '../../next-seo.config'
 
-import PreferenceProvider from '~/context/Preference/PreferenceContext'
-import CommandPalette from '~/components/CommandPalette/CommandPalette'
+
+
 import ThemeProvider from '~/context/ThemeContext';
 
 import { MdClose } from 'react-icons/md'
