@@ -109,20 +109,40 @@ export default function Nav() {
           </span>
           <Drawer>
             <DrawerTrigger
-              className="mx-1 flex px-1.5 cursor-pointer items-center justify-center rounded-md  transition duration-200 ease-in-out lg:hidden "
+              className="mx-1 flex cursor-pointer items-center justify-center rounded-md px-1.5  ring-0 transition duration-200 ease-in-out lg:hidden"
               style={{
-                backgroundColor: systemTheme.background.secondary,
+                backgroundColor: systemTheme.background.primary,
                 border: systemTheme.text.primary,
               }}
             >
               <CommandIcon className="" />
             </DrawerTrigger>
-            <DrawerContent className="fixed bottom-0 left-0 right-0 flex  h-[70%] flex-col rounded-t-lg border-none bg-gray-100 ring-0 dark:bg-zinc-800">
-              <div className="mx-auto mb-6 h-1 w-16 shrink-0 rounded-full bg-zinc-300" />
-              <ScrollArea className="h-60% flex flex-col">
+            <DrawerContent
+              className="fixed bottom-0 left-0 right-0 flex  h-[70%] flex-col rounded-t-lg border-none ring-0"
+              style={{
+                backgroundColor: systemTheme.background.primary,
+                color: systemTheme.text.primary,
+              }}
+            >
+              <div
+                className="mx-auto mb-6 h-1 w-16 shrink-0 rounded-full bg-zinc-300"
+                style={{
+                  backgroundColor: systemTheme.text.secondary,
+                }}
+              />
+              <ScrollArea
+                className="h-60% flex flex-col"
+                style={{
+                  backgroundColor: systemTheme.background.primary,
+                }}
+              >
                 <AnimateSharedLayout>
                   <motion.ul
-                    className="flex flex-col gap-y-1 font-serif text-sm  dark:text-gray-300 md:gap-x-4 "
+                    className="flex flex-col gap-y-1 font-serif text-sm  md:gap-x-4 "
+                    style={{
+                      backgroundColor: systemTheme.background.primary,
+                      border: systemTheme.text.primary,
+                    }}
                     onHoverEnd={() => setActiveIndex(null)}
                   >
                     {navigation.pages.map((item, index) => {
@@ -130,6 +150,10 @@ export default function Nav() {
                       return (
                         <motion.li
                           className="px-6 font-sans text-xl font-semibold "
+                          style={{
+                            backgroundColor: systemTheme.background.primary,
+                            color: systemTheme.text.primary,
+                          }}
                           key={index}
                           onHoverStart={() => setActiveIndex(index)}
                         >
@@ -143,6 +167,10 @@ export default function Nav() {
                               aria-current={
                                 pathname === item.href ? 'page' : null
                               }
+                              style={{
+                                backgroundColor: systemTheme.background.primary,
+                                color: systemTheme.text.primary
+                              }}
                             >
                               <span
                                 className={`relative z-50 ${
@@ -161,9 +189,11 @@ export default function Nav() {
                                   }}
                                   className={classnames(
                                     'pointer-events-none absolute inset-0 z-0 rounded-md',
-                                    ['bg-zinc-300'],
-                                    ['dark:bg-zinc-900']
                                   )}
+                                  style={{
+                                    backgroundColor: systemTheme.background.secondary,
+                                    color: systemTheme.text.primary
+                                  }}
                                 />
                               )}
                             </div>

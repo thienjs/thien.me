@@ -83,6 +83,7 @@ export const theme = {
       primary: '#6DEAFF',
       secondary: '#FFCEFB',
       title: '#6DEAFF',
+      accent: '#E14C94',
     },
   },
   aurora: {
@@ -95,6 +96,7 @@ export const theme = {
       primary: '#235A68',
       secondary: '#00E980',
       title: '#00E980',
+      accent: '#E14C94',
     },
   },
   paper: {
@@ -102,11 +104,13 @@ export const theme = {
     background: {
       primary: '#EEEEEE',
       secondary: '#DDDDDD',
+      accent: '#648GHF',
     },
     text: {
       primary: '#B4B4B4',
       secondary: '#444444',
       title: '#444444',
+      accent: '#E14C94',
     },
   },
   cyberspace: {
@@ -119,6 +123,7 @@ export const theme = {
       primary: '#9578D3',
       secondary: '#04AF6A',
       title: '#9578D3',
+      accent: '#E14C94',
     },
   },
   cheesecake: {
@@ -131,6 +136,7 @@ export const theme = {
       primary: '#E14C94',
       secondary: '#3A3335',
       title: '#E14C94',
+      accent: '#DBE0D2',
     },
   },
   bouquet: {
@@ -143,6 +149,7 @@ export const theme = {
       primary: '#408E7B',
       secondary: '#DBE0D2',
       title: '#DBE0D2',
+      accent: '#E14C94',
     },
   },
 };

@@ -53,8 +53,10 @@ import {
   CubeIcon,
   BookmarkIcon,
 } from '@radix-ui/react-icons'
+import { useThemeContext } from '~/hooks/useTheme'
 
 export const DrawerMenu = () => {
+  const { systemTheme, setTheme } = useThemeContext()
   return (
     <Drawer>
       <DrawerTrigger>
@@ -62,8 +64,20 @@ export const DrawerMenu = () => {
           <CommandIcon />
         </div>
       </DrawerTrigger>
-      <DrawerContent className="fixed bottom-0 left-0 right-0  flex h-[70%] flex-col rounded-t-lg border-none bg-gray-100 dark:bg-zinc-800">
-        <div className="mx-auto mb-6 h-1 w-16 shrink-0 rounded-full bg-zinc-300" />
+      <DrawerContent
+        className="fixed bottom-0 left-0 right-0  flex h-[70%] flex-col rounded-t-lg border-none"
+        style={{
+          backgroundColor: systemTheme.background.secondary,
+          border: systemTheme.text.primary,
+        }}
+      >
+        <div
+          className="mx-auto mb-6 h-1 w-16 shrink-0 rounded-full"
+          style={{
+            backgroundColor: systemTheme.background.secondary,
+            border: systemTheme.text.primary,
+          }}
+        />
         <ScrollArea className="h-60% flex flex-col">
           <div className="flex w-full flex-col text-sm">
             <div className="flex flex-col ">

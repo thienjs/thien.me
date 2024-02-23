@@ -9,9 +9,7 @@ export default function Hero() {
   return (
     <div>
       <div className="flex min-h-screen flex-col justify-center pb-[25vh] lg:mt-6 lg:px-4">
-        <div
-          
-        >
+        <div>
           <motion.div
             initial="hidden"
             animate="visible"
@@ -27,7 +25,10 @@ export default function Hero() {
               },
             }}
             className=" text-4xl font-bold lg:text-4xl"
-            style={{ backgroundColor: systemTheme.background.primary }}
+            style={{
+              backgroundColor: systemTheme.background.primary,
+              color: systemTheme.text.title,
+            }}
           >
             Thien Tran
           </motion.div>
@@ -44,11 +45,15 @@ export default function Hero() {
               },
             }}
             className="mb-2 text-sm text-gray-500 dark:text-neutral-400"
+            style={{ color: systemTheme.text.accent }}
           >
             (tee-en)
           </motion.div>
         </div>
-        <div className="text-md mt-8 font-serif text-gray-800 dark:text-neutral-400  ">
+        <div
+          className="text-md mt-8   "
+          style={{ color: systemTheme.text.secondary }}
+        >
           <motion.div
             initial="hidden"
             animate="visible"
