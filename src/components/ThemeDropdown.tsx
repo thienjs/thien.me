@@ -31,7 +31,7 @@ const ThemeDropdown = () => {
           </button>
 
           <div
-            className='absolute right-0 z-10 mt-1 w-56 origin-top-right rounded-md shadow-lg'
+            className='absolute right-0 z-10 mt-1 w-56 origin-top-right rounded-md shadow-lg '
             style={{
               backgroundColor: systemTheme.background.secondary,
               border: ` ${systemTheme.text.primary}`,

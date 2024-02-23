@@ -104,7 +104,9 @@ export default function Nav() {
           */}
           <div className="lg:hidden"></div>
           <ThemeDropdown />
-          <span className="hidden lg:block">
+          <span
+            className="hidden lg:block"
+          >
             <CommandPalette navigation={navigation} />
           </span>
           <Drawer>
@@ -169,7 +171,7 @@ export default function Nav() {
                               }
                               style={{
                                 backgroundColor: systemTheme.background.primary,
-                                color: systemTheme.text.primary
+                                color: systemTheme.text.primary,
                               }}
                             >
                               <span
@@ -188,11 +190,12 @@ export default function Nav() {
                                     duration: 0.2,
                                   }}
                                   className={classnames(
-                                    'pointer-events-none absolute inset-0 z-0 rounded-md',
+                                    'pointer-events-none absolute inset-0 z-0 rounded-md'
                                   )}
                                   style={{
-                                    backgroundColor: systemTheme.background.secondary,
-                                    color: systemTheme.text.primary
+                                    backgroundColor:
+                                      systemTheme.background.secondary,
+                                    color: systemTheme.text.primary,
                                   }}
                                 />
                               )}

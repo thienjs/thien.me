@@ -73,8 +73,8 @@ export const calculateErrorPercentage = (accuracy: number) => {
 };
 
 export const theme = {
-  blueDolphin: {
-    name: 'Blue Dolphin',
+  bow: {
+    name: 'Black on White',
     background: {
       primary: '#003950',
       secondary: '#014961',
@@ -104,7 +104,6 @@ export const theme = {
     background: {
       primary: '#EEEEEE',
       secondary: '#DDDDDD',
-      accent: '#648GHF',
     },
     text: {
       primary: '#B4B4B4',

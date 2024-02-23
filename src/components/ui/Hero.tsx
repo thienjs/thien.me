@@ -44,7 +44,7 @@ export default function Hero() {
                 opacity: 1,
               },
             }}
-            className="mb-2 text-sm text-gray-500 dark:text-neutral-400"
+            className="mb-2 text-sm"
             style={{ color: systemTheme.text.accent }}
           >
             (tee-en)
