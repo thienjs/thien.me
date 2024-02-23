@@ -7,38 +7,34 @@ import Footer from '~/components/ui/Footer'
 import Header from '~/components/ui/header'
 import Seo from '~/components/Seo';
 
-import { usePreferenceContext } from '~/context/Preference/PreferenceContext';
+
+import { useThemeContext } from '~/hooks/useTheme'
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-  const {
-    preferences: { theme, fontFamily },
-  } = usePreferenceContext();
-
-  const [isClient, setIsClient] = React.useState(true);
+  const { systemTheme } = useThemeContext()
+  const [isClient, setIsClient] = React.useState(true)
 
   React.useEffect(() => {
-    setTimeout(() => setIsClient(false), 500);
-  }, []);
+    setTimeout(() => setIsClient(false), 500)
+  }, [])
 
   return (
     <>
       {isClient ? (
         <>
-          <Seo title='Thien' />
+          <Seo title="Thien" />
           <div
-            className={clsx(
-              theme,
-              fontFamily,
-              'fixed inset-0 flex h-screen w-screen items-center justify-center bg-bg'
-            )}
+            className="h-screen w-full overflow-y-auto"
+            style={{
+              backgroundColor: systemTheme.background.primary,
+              color: systemTheme.text.primary,
+            }}
           >
-            <div className='flex max-w-[500px] flex-wrap items-center justify-center gap-x-8'>
-              <div className='flex flex-col items-center gap-4'>
-                <CgSpinner className='animate-spin text-[3rem] text-fg' />
-                <p className='hidden'>
-                  Thien
-                </p>
-                <div className='loading font-primary text-fg'>
+            <div className="flex max-w-[500px] flex-wrap items-center justify-center gap-x-8">
+              <div className="flex flex-col items-center gap-4">
+                <CgSpinner className="animate-spin text-[3rem] text-fg" />
+                <p className="hidden">Thien</p>
+                <div className="loading font-primary text-fg">
                   Preparing the page for you...
                 </div>
               </div>
@@ -47,20 +43,13 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         </>
       ) : (
         <div
-          className={clsx(
-            theme,
-            fontFamily,
-            'sm:scrollbar h-screen w-full overflow-y-auto bg-bg transition-colors duration-300'
-          )}
+          className="h-screen w-full overflow-y-auto"
+          style={{
+            backgroundColor: systemTheme.background.primary,
+            color: systemTheme.text.primary,
+          }}
         >
-          <div className='layout flex h-full flex-col bg-transparent'>
-            <NextNProgress
-              color={`rgb(${progressColors[theme as ProgressColorType]})`}
-              startPosition={0.3}
-              stopDelayMs={200}
-              height={2}
-              showOnShallow={true}
-            />
+          <div className="layout flex h-full flex-col bg-transparent">
             <Header />
             {children}
             <Footer />
@@ -68,7 +57,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         </div>
       )}
     </>
-  );
+  )
 }
 
 const progressColors = {

@@ -16,6 +16,7 @@ import SEO from '../../next-seo.config'
 
 import PreferenceProvider from '~/context/Preference/PreferenceContext'
 import CommandPalette from '~/components/CommandPalette/CommandPalette'
+import ThemeProvider from '~/context/ThemeContext';
 
 import { MdClose } from 'react-icons/md'
 import commands from '~/data/commands'
@@ -29,16 +30,16 @@ export default function App({
   const pageSEO = { ...SEO, ...pageMeta }
 
   return (
-    <PreferenceProvider>
-      <CommandPalette data={commands} />
+    <ThemeProvider>
+
       <SessionProvider session={session}>
         <Layout>
-          <AnimatePresence exitBeforeEnter>
+
             <Component {...pageProps} key={router.route} />
-          </AnimatePresence>
+
         </Layout>
         <Progress />
       </SessionProvider>
-    </PreferenceProvider>
+    </ThemeProvider>
   )
 }

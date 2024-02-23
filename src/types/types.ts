@@ -174,6 +174,24 @@ export type ProjectCard = {
   youtube?: string
 }
 
+export interface Results {
+  accuracy: number;
+  cpm: number;
+  wpm: number;
+  error: number;
+}
+
+export interface AccuracyMetrics {
+  correctChars: number;
+  incorrectChars: number;
+  accuracy: number;
+}
+
+export interface HistoryType {
+  wordHistory: string;
+  typedHistory: string;
+}
+
 export interface Theme {
   name: string;
   background: {
@@ -185,11 +203,4 @@ export interface Theme {
     secondary: string;
     title: string;
   };
-}
-
-
-export interface AccuracyMetrics {
-  correctChars: number;
-  incorrectChars: number;
-  accuracy: number;
 }

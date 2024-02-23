@@ -24,6 +24,7 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from '~/components/ui/drawer'
+import ThemeDropdown from '../ThemeDropdown'
 import { ScrollArea } from '~/components/ui/scroll-area'
 export default function Nav() {
   const { pathname } = useRouter()
@@ -98,6 +99,7 @@ export default function Nav() {
           <span className="hidden lg:block">
             <CommandPalette navigation={navigation} />
           </span>
+          <ThemeDropdown />
           <Drawer  >
             <DrawerTrigger className="ring-0 mx-1 flex h-8 w-8 cursor-pointer items-center justify-center rounded-md bg-zinc-300 p-2 ring-neutral-400 transition duration-200 ease-in-out hover:bg-zinc-300 hover:ring-2 dark:bg-zinc-700 dark:hover:bg-zinc-800 lg:hidden ">
               <CommandIcon className="" />
