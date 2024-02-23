@@ -25,8 +25,10 @@ import {
   DrawerTrigger,
 } from '~/components/ui/drawer'
 import ThemeDropdown from '../ThemeDropdown'
+import { useThemeContext } from '~/hooks/useTheme'
 import { ScrollArea } from '~/components/ui/scroll-area'
 export default function Nav() {
+  const { systemTheme, setTheme } = useThemeContext()
   const { pathname } = useRouter()
   const [activeIndex, setActiveIndex] = React.useState(null)
   const [isOpen, setisOpen] = React.useState()
@@ -56,6 +58,7 @@ export default function Nav() {
                         ['text-gray-600 hover:text-gray-700'],
                         ['dark:text-gray-300 dark:hover:text-white']
                       )}
+                      style={{ color: systemTheme.text.primary }}
                       aria-current={pathname === item.path ? 'page' : null}
                     >
                       <span
@@ -64,6 +67,7 @@ export default function Nav() {
                             ? 'font-semibold  text-gray-900 underline decoration-cyan-500 decoration-2 underline-offset-1 dark:text-gray-300 '
                             : 'font-normal text-gray-700 dark:text-gray-400'
                         }`}
+                        style={{ color: systemTheme.text.secondary }}
                       >
                         {item.label}
                       </span>
@@ -78,6 +82,9 @@ export default function Nav() {
                             ['bg-zinc-300'],
                             ['dark:bg-zinc-800']
                           )}
+                          style={{
+                            backgroundColor: systemTheme.background.secondary,
+                          }}
                         />
                       )}
                     </a>
@@ -101,7 +108,13 @@ export default function Nav() {
             <CommandPalette navigation={navigation} />
           </span>
           <Drawer>
-            <DrawerTrigger className="mx-1 flex h-8 w-8 cursor-pointer items-center justify-center rounded-md bg-zinc-300 p-2 ring-0 ring-neutral-400 transition duration-200 ease-in-out hover:bg-zinc-300 hover:ring-2 dark:bg-zinc-700 dark:hover:bg-zinc-800 lg:hidden ">
+            <DrawerTrigger
+              className="mx-1 flex px-1.5 cursor-pointer items-center justify-center rounded-md  transition duration-200 ease-in-out lg:hidden "
+              style={{
+                backgroundColor: systemTheme.background.secondary,
+                border: systemTheme.text.primary,
+              }}
+            >
               <CommandIcon className="" />
             </DrawerTrigger>
             <DrawerContent className="fixed bottom-0 left-0 right-0 flex  h-[70%] flex-col rounded-t-lg border-none bg-gray-100 ring-0 dark:bg-zinc-800">

@@ -40,6 +40,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from '~/components/ui/carousel'
+import { useThemeContext } from '~/hooks/useTheme';
 
 export type HomePageProps = {
   recentArticles: any
@@ -74,6 +75,7 @@ export default function HomePage({
   const currentlyReadingList = currentlyReading.map((r) => (
     <NowReading key={r.url} title={r.title} subtitle={r.author} url={r.url} />
   ))
+  const { systemTheme, setTheme } = useThemeContext();
   return (
     <div className='layout'>
       <Hero />
