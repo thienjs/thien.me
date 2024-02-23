@@ -14,6 +14,7 @@ import { Tag } from './Tag'
 import { fetcher } from 'lib/fetcher'
 import LikeButton from '~/components/features/LikeButton'
 import { Views } from 'lib/types'
+import { useThemeContext } from '~/hooks/useTheme';
 
 type Props = {
   article: Article
@@ -26,17 +27,18 @@ export function BlogCard({ article }: Props) {
   const views = data?.total
   const [hasRead] = useIsArticleRead(slug)
   const readingTimeStats = readingTime(article.summary)
+  const { systemTheme, setTheme } = useThemeContext();
 
   return (
     <button
-      className="my-2 mb-12 w-full border-b px-4  py-4 text-sm    hover:bg-zinc-300 dark:hover:bg-zinc-800"
+      className="my-2 mb-12 w-full border-b px-4  py-4 text-sm    "
       onClick={() => handleArticleClicked(slug)}
     >
       <div className="flex flex-col">
         <div className="text-md mb-1 flex justify-between text-left font-semibold ">
           {article.title}
           {hasRead && (
-            <span className="ml-6 inline-flex items-center text-sm text-gray-800 opacity-75  dark:text-gray-400">
+            <span className="ml-6 inline-flex items-center text-sm ">
               <svg width="16" height="16" fill="none" viewBox="0 0 24 24">
                 <path
                   stroke="currentColor"

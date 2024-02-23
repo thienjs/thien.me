@@ -16,7 +16,7 @@ const ThemeDropdown = () => {
             className={`inline-flex h-full items-center justify-center rounded-md border-0 px-2 outline-0`}
             style={{
               backgroundColor: systemTheme.background.secondary,
-              border: `1px solid ${systemTheme.text.secondary}`,
+              border: `1px solid ${systemTheme.text.primary}`,
             }}
             onClick={() => toggleDropdown()}
           >
@@ -54,7 +54,7 @@ const ThemeDropdown = () => {
             className='absolute right-0 z-10 mt-1 w-56 origin-top-right rounded-md shadow-lg'
             style={{
               backgroundColor: systemTheme.background.secondary,
-              border: `1px solid ${systemTheme.text.secondary}`,
+              border: `1px solid ${systemTheme.text.primary}`,
               display: isOpen ? 'block' : 'none',
             }}
           >

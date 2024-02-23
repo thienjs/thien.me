@@ -2,12 +2,16 @@ import Image from 'next/image'
 import profile from '../../public/notion-me.png'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import { useThemeContext } from '~/hooks/useTheme';
 
 export default function Hero() {
+  const { systemTheme, setTheme } = useThemeContext();
   return (
     <div>
-      <div className="flex flex-col min-h-screen justify-center lg:mt-6 lg:px-4 pb-[25vh]">
-        <div className=''>
+      <div className="flex min-h-screen flex-col justify-center pb-[25vh] lg:mt-6 lg:px-4">
+        <div
+          
+        >
           <motion.div
             initial="hidden"
             animate="visible"
@@ -23,6 +27,7 @@ export default function Hero() {
               },
             }}
             className=" text-4xl font-bold lg:text-4xl"
+            style={{ backgroundColor: systemTheme.background.primary }}
           >
             Thien Tran
           </motion.div>
@@ -60,7 +65,7 @@ export default function Hero() {
             }}
             className="mb-4 "
           >
-            Hello! You've discovered my little slice of the internet. 
+            Hello! You've discovered my little slice of the internet.
           </motion.div>
           <motion.div
             initial="hidden"
@@ -78,7 +83,7 @@ export default function Hero() {
             }}
             className="mb-4 "
           >
-            Get to know {' '}
+            Get to know{' '}
             <Link legacyBehavior href="/about">
               <a className="relative before:absolute before:bottom-0 before:left-0 before:h-full before:w-full before:origin-bottom before:scale-y-[0.35] before:bg-cyan-500 before:opacity-50 before:transition-transform before:duration-500 before:ease-in-out hover:before:scale-y-100">
                 <span className="relative hover:text-gray-800 hover:dark:text-gray-200">

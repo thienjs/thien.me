@@ -11,13 +11,14 @@ import TechStack from '~/components/about/TechStack'
 import Link from 'next/link'
 import { Title, H2 } from '~/components/ui/typography'
 import { motion } from 'framer-motion'
-
+import { useThemeContext } from '~/hooks/useTheme';
 export type AboutProps = {
   reviews: Awaited<ReturnType<typeof getReviews>>
   currentlyReading: Awaited<ReturnType<typeof getReviews>>
 }
 
 const AboutPage = ({ reviews, currentlyReading }) => {
+  const { systemTheme, setTheme } = useThemeContext();
   const reviewList = reviews.map((r) => (
     <AboutListElement
       key={r.url}
@@ -137,7 +138,8 @@ const AboutPage = ({ reviews, currentlyReading }) => {
             y: 0,
           },
         }}
-        className=" mb-12 rounded-lg border border-neutral-300 bg-zinc-300 p-5 font-serif dark:border-neutral-700 dark:bg-zinc-900 dark:text-gray-200"
+        className=" mb-12 rounded-lg  p-5 font-serif "
+        style={{ backgroundColor: systemTheme.background.secondary }}
       >
         <p className=" mb-2 text-neutral-600 dark:text-neutral-400">
           Hello world! I'm a self-driven freelance developer and designer,

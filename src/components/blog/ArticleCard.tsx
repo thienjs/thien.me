@@ -14,12 +14,14 @@ import { Tag } from './Tag'
 import { fetcher } from 'lib/fetcher'
 import LikeButton from '~/components/features/LikeButton'
 import { Views } from 'lib/types'
+import { useThemeContext } from '~/hooks/useTheme';
 
 type Props = {
   article: Article
 }
 
 export function ArticleCard({ article }: Props) {
+  const { systemTheme, setTheme } = useThemeContext();
   const router = useRouter()
   const slug = slugify(article.title).toLowerCase()
   const { data } = useSWR<Views>(`/api/views/${slug}`, fetcher)
@@ -29,7 +31,8 @@ export function ArticleCard({ article }: Props) {
 
   return (
     <button
-      className="mb- my-2 w-full rounded-md border border-gray-100 bg-white px-4 py-4 text-sm shadow-sm  shadow-gray-300 hover:bg-zinc-300 dark:border-zinc-900 dark:bg-zinc-900 dark:shadow-none dark:hover:bg-zinc-800"
+      className="mb- my-2 w-full rounded-md  px-4 py-4 text-sm  "
+      style={{ backgroundColor: systemTheme.background.secondary }}
       onClick={() => handleArticleClicked(slug)}
     >
       <div className="flex flex-col">
