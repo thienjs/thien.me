@@ -11,7 +11,7 @@ export const useTheme = () => {
 
   const [systemTheme, setSystemTheme] = useState<Theme>(() => {
     const localTheme = getLocalStorageValue('theme');
-    return localTheme ? localTheme : theme.aurora;
+    return localTheme ? localTheme : theme.wob;
   });
 
   const setTheme = useCallback(

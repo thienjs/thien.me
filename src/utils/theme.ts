@@ -74,29 +74,29 @@ export const calculateErrorPercentage = (accuracy: number) => {
 
 export const theme = {
   bow: {
-    name: 'Black on White',
+    name: 'light',
     background: {
-      primary: '#003950',
-      secondary: '#014961',
+      primary: '#ffffff',
+      secondary: '#F6F6F6',
     },
     text: {
-      primary: '#6DEAFF',
-      secondary: '#FFCEFB',
-      title: '#6DEAFF',
-      accent: '#E14C94',
+      primary: '#000000',
+      secondary: '#434343',
+      title: '#000000',
+      accent: '#525252',
     },
   },
-  aurora: {
-    name: 'Aurora',
+  wob: {
+    name: 'dark',
     background: {
-      primary: '#011926',
-      secondary: '#000C13',
+      primary: '#000000',
+      secondary: '#434343',
     },
     text: {
-      primary: '#235A68',
-      secondary: '#00E980',
-      title: '#00E980',
-      accent: '#E14C94',
+      primary: '#ffffff',
+      secondary: '#F6F6F6',
+      title: '#ffffff',
+      accent: '#BCBCBC',
     },
   },
   paper: {
@@ -151,4 +151,4 @@ export const theme = {
       accent: '#E14C94',
     },
   },
-};
+}

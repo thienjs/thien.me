@@ -39,7 +39,7 @@ const ThemeDropdown = () => {
             }}
           >
             <ul
-              className={`divide-y divide-slate-400`}
+              className={``}
               style={{ color: systemTheme.text.secondary }}
             >
               {Object.keys(theme).map((key) => (
