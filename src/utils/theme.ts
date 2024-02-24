@@ -104,29 +104,29 @@ export const theme = {
   panels: {
     name: 'panels',
     background: {
-      primary: '#EEEEEE',
-      secondary: '#DDDDDD',
+      primary: '#ffce49',
+      secondary: '#1d4b84',
     },
     text: {
-      primary: '#B4B4B4',
-      secondary: '#444444',
-      title: '#444444',
-      accent: '#E14C94',
-      accent2: '#00627a',
+      primary: '#ffffff',
+      secondary: '#ffffff',
+      title: '#cf1817',
+      accent: '#44acb6',
+      accent2: '#cf1817',
     },
   },
   oblivion: {
     name: 'oblivion',
     background: {
-      primary: '#EEEEEE',
-      secondary: '#DDDDDD',
+      primary: '#63696a',
+      secondary: '#464746',
     },
     text: {
-      primary: '#B4B4B4',
-      secondary: '#444444',
-      title: '#444444',
-      accent: '#E14C94',
-      accent2: '#00627a',
+      primary: '#ccc6c0',
+      secondary: 'ea4221',
+      title: '#a698c5',
+      accent: '#ffac00',
+      accent2: '#1a8ab7',
     },
   },
   fundamental: {
@@ -171,8 +171,8 @@ export const theme = {
       accent2: '#00627a',
     },
   },
-  cyberspace: {
-    name: 'Cyberspace',
+  dracula: {
+    name: 'dracula',
     background: {
       primary: '#181C18',
       secondary: '#131613',
@@ -185,21 +185,21 @@ export const theme = {
       accent2: '#00627a',
     },
   },
-  cheesecake: {
-    name: 'Cheesecake',
+  hanamiDango: {
+    name: 'hanami dango',
     background: {
-      primary: '#FDF0D5',
+      primary: '#fdf4e3',
       secondary: '#F3E2BF',
     },
     text: {
       primary: '#E14C94',
       secondary: '#3A3335',
-      title: '#E14C94',
-      accent: '#DBE0D2',
+      title: '#E63244',
+      accent: '#587246',
       accent2: '#00627a',
     },
   },
-  bouquet: {
+  dots: {
     name: 'Bouquet',
     background: {
       primary: '#173F35',
@@ -211,6 +211,34 @@ export const theme = {
       title: '#DBE0D2',
       accent: '#E14C94',
       accent2: '#00627a',
+    },
+  },
+  bontanical: {
+    name: 'botanical',
+    background: {
+      primary: '#173F35',
+      secondary: '#1F4E43',
+    },
+    text: {
+      primary: '#408E7B',
+      secondary: '#DBE0D2',
+      title: '#DBE0D2',
+      accent: '#E14C94',
+      accent2: '#00627a',
+    },
+  },
+  metropolis: {
+    name: 'metropolis',
+    background: {
+      primary: '#081F2C',
+      secondary: '#00627a',
+    },
+    text: {
+      primary: '#ccc6c0',
+      secondary: '#fdf4e3',
+      title: '081F2C',
+      accent: '#F1BE48',
+      accent2: '#E03C31',
     },
   },
 }

@@ -65,7 +65,7 @@ export function ArticleCard({ article }: Props) {
           {article.tags.map((tag) => (
             <div className="mt-0.5 rounded-sm bg-zinc-200 px-3 text-xs text-gray-700 opacity-80 dark:bg-zinc-700 dark:text-gray-300"
             style={{
-              color: systemTheme.background.seondary,
+              color: systemTheme.background.secondary,
               backgroundColor: systemTheme.text.accent2,
               borderColor: systemTheme.text.secondary,
             }}>
