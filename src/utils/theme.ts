@@ -194,7 +194,7 @@ export const theme = {
     text: {
       primary: '#E14C94',
       secondary: '#3A3335',
-      title: '#E63244',
+      title: '#E14C94',
       accent: '#587246',
       accent2: '#00627a',
     },
