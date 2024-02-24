@@ -82,17 +82,19 @@ export default function HomePage({
       <div className="mt-6 mb-20"></div>
       <Title>Blog</Title>
       <Tab.Group>
-        <Tab.List className="mb-3 flex space-x-1   p-1  py-2">
+        <Tab.List className="mb-3 flex space-x-1   p-1  py-2"
+        >
           <Tab
             className={({ selected }) =>
               classNames(
                 'w-full py-2.5 text-sm leading-5 text-gray-700 dark:text-gray-200',
                 'focus:outline-none',
                 selected
-                  ? ' border-b border-neutral-400  font-medium dark:border-neutral-700 dark:text-gray-100'
-                  : 'text-neutral-500 hover:text-neutral-700  dark:text-neutral-600 dark:hover:text-neutral-400'
+                  ? ' border-b border-neutral-400  font-medium '
+                  : ''
               )
             }
+            style={{ color: systemTheme.text.accent }}
           >
             Recent
           </Tab>
@@ -102,10 +104,11 @@ export default function HomePage({
                 'w-full py-2.5 text-sm leading-5 text-gray-700 dark:text-gray-200',
                 'focus:outline-none',
                 selected
-                  ? ' border-b border-neutral-400  font-medium dark:border-neutral-700 dark:text-gray-100'
-                  : 'text-neutral-500 hover:text-neutral-700  dark:text-neutral-600 dark:hover:text-neutral-400'
+                  ? ' border-b border-neutral-400  font-medium'
+                  : ''
               )
             }
+            style={{ color: systemTheme.text.accent }}
           >
             Featured
           </Tab>
@@ -116,9 +119,10 @@ export default function HomePage({
                 'focus:outline-none',
                 selected
                   ? ' border-b border-neutral-400  font-medium dark:border-neutral-700 dark:text-gray-100'
-                  : 'text-neutral-500 hover:text-neutral-700  dark:text-neutral-600 dark:hover:text-neutral-400'
+                  : ''
               )
             }
+            style={{ color: systemTheme.text.accent }}
           >
             Popular
           </Tab>
@@ -148,26 +152,28 @@ export default function HomePage({
           <Tab
             className={({ selected }) =>
               classNames(
-                'w-full py-2.5 text-sm leading-5 text-gray-700 dark:text-gray-200',
+                'w-full py-2.5 text-sm leading-5 ',
                 'focus:outline-none',
                 selected
-                  ? ' border-b border-neutral-400  font-medium dark:border-neutral-700 dark:text-gray-100'
-                  : 'text-neutral-500 hover:text-neutral-700  dark:text-neutral-600 dark:hover:text-neutral-400'
+                  ? ' border-b border-neutral-400  font-medium'
+                  : ''
               )
             }
+            style={{ color: systemTheme.text.accent }}
           >
             Music
           </Tab>
           <Tab
             className={({ selected }) =>
               classNames(
-                'w-full py-2.5 text-sm leading-5 text-gray-700 dark:text-gray-200',
+                'w-full py-2.5 text-sm leading-5 ',
                 'focus:outline-none',
                 selected
-                  ? ' border-b border-neutral-400  font-medium dark:border-neutral-700 dark:text-gray-100'
-                  : 'text-neutral-500 hover:text-neutral-700  dark:text-neutral-600 dark:hover:text-neutral-400'
+                  ? ' border-b border-neutral-400  font-medium'
+                  : ''
               )
             }
+            style={{ color: systemTheme.text.accent }}
           >
             Books
           </Tab>

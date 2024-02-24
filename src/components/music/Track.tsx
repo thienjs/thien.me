@@ -1,7 +1,20 @@
+import { useThemeContext } from '~/hooks/useTheme'
+
 export default function Track(track) {
+  const { systemTheme, setTheme } = useThemeContext()
   return (
-    <div className="mt-4 flex w-full max-w-3xl flex-row border-b border-zinc-300 dark:border-gray-800">
-      <p className="mr-3 text-sm font-bold text-gray-400 dark:text-gray-600">
+    <div
+      className="mt-4 flex w-full max-w-3xl flex-row border-b "
+      style={{
+        borderColor: systemTheme.background.secondary,
+      }}
+    >
+      <p
+        className="mr-3 text-sm font-bold text-gray-400 dark:text-gray-600"
+        style={{
+          color: systemTheme.text.accent2,
+        }}
+      >
         {track.ranking}
       </p>
       <img
@@ -15,12 +28,17 @@ export default function Track(track) {
           href={track.songUrl}
           target="_blank"
           rel="noopener noreferrer"
+          style={{
+            color: systemTheme.text.primary,
+          }}
         >
           {track.title}
         </a>
         <p
           className="mb-4 w-60 truncate text-sm text-gray-500 sm:w-96 md:w-full"
-          color="gray.500"
+          style={{
+            color: systemTheme.text.accent,
+          }}
         >
           {track.artist}
         </p>

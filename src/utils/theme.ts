@@ -84,6 +84,7 @@ export const theme = {
       secondary: '#434343',
       title: '#000000',
       accent: '#525252',
+      accent2: '#00627a',
     },
   },
   wob: {
@@ -97,6 +98,7 @@ export const theme = {
       secondary: '#F6F6F6',
       title: '#ffffff',
       accent: '#BCBCBC',
+      accent2: '#00627a',
     },
   },
   panels: {
@@ -110,6 +112,7 @@ export const theme = {
       secondary: '#444444',
       title: '#444444',
       accent: '#E14C94',
+      accent2: '#00627a',
     },
   },
   oblivion: {
@@ -123,6 +126,21 @@ export const theme = {
       secondary: '#444444',
       title: '#444444',
       accent: '#E14C94',
+      accent2: '#00627a',
+    },
+  },
+  fundamental: {
+    name: 'fundamental',
+    background: {
+      primary: '#ccc6c0',
+      secondary: '#727474',
+    },
+    text: {
+      primary: '#171718',
+      secondary: '#171718',
+      title: '#7fa580',
+      accent: '#5d437e',
+      accent2: '#00627a',
     },
   },
   rudy: {
@@ -136,6 +154,7 @@ export const theme = {
       secondary: '#444444',
       title: '#444444',
       accent: '#E14C94',
+      accent2: '#00627a',
     },
   },
   paper: {
@@ -149,6 +168,7 @@ export const theme = {
       secondary: '#444444',
       title: '#444444',
       accent: '#E14C94',
+      accent2: '#00627a',
     },
   },
   cyberspace: {
@@ -162,6 +182,7 @@ export const theme = {
       secondary: '#04AF6A',
       title: '#9578D3',
       accent: '#E14C94',
+      accent2: '#00627a',
     },
   },
   cheesecake: {
@@ -175,6 +196,7 @@ export const theme = {
       secondary: '#3A3335',
       title: '#E14C94',
       accent: '#DBE0D2',
+      accent2: '#00627a',
     },
   },
   bouquet: {
@@ -188,6 +210,7 @@ export const theme = {
       secondary: '#DBE0D2',
       title: '#DBE0D2',
       accent: '#E14C94',
+      accent2: '#00627a',
     },
   },
 }

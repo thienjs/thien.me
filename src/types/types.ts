@@ -203,5 +203,6 @@ export interface Theme {
     secondary: string;
     title: string;
     accent: string;
+    accent2: string;
   };
 }

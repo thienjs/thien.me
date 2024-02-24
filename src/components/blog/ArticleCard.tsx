@@ -63,7 +63,12 @@ export function ArticleCard({ article }: Props) {
         </p>
         <div className="mb-1 flex flex-row flex-wrap gap-x-3 gap-y-1">
           {article.tags.map((tag) => (
-            <div className="mt-0.5 rounded-sm bg-zinc-200 px-3 text-xs text-gray-700 opacity-80 dark:bg-zinc-700 dark:text-gray-300">
+            <div className="mt-0.5 rounded-sm bg-zinc-200 px-3 text-xs text-gray-700 opacity-80 dark:bg-zinc-700 dark:text-gray-300"
+            style={{
+              color: systemTheme.background.seondary,
+              backgroundColor: systemTheme.text.accent2,
+              borderColor: systemTheme.text.secondary,
+            }}>
               #{tag.name}
             </div>
           ))}

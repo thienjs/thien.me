@@ -5,6 +5,7 @@ import { animate } from 'motion'
 
 import { fetcher } from '~/lib/fetcher'
 import { NowPlayingSong } from '~/lib/types'
+import { useThemeContext } from '~/hooks/useTheme'
 
 function AnimatedBars() {
   useEffect(() => {
@@ -77,9 +78,16 @@ function AnimatedBars() {
 
 export default function NowPlaying() {
   const { data } = useSWR<NowPlayingSong>('/api/now-playing', fetcher)
+  const { systemTheme, setTheme } = useThemeContext()
 
   return (
-    <div className="mb-8 flex w-full cursor-pointer flex-row-reverse items-center space-x-0  rounded-md border  border-zinc-200 bg-white px-4 py-4 text-sm shadow-sm dark:border-zinc-900 dark:bg-zinc-900 dark:shadow-none sm:flex-row  sm:space-x-2">
+    <div
+      className="mb-8 flex w-full cursor-pointer flex-row-reverse items-center space-x-0  rounded-md border px-4 py-4 text-sm  shadow-none sm:flex-row  sm:space-x-2"
+      style={{
+        backgroundColor: systemTheme.background.secondary,
+        border: systemTheme.text.secondary,
+      }}
+    >
       {data?.songUrl ? (
         <AnimatedBars />
       ) : (
@@ -93,22 +101,39 @@ export default function NowPlaying() {
       <div className="inline-flex w-full max-w-full flex-col truncate sm:flex-row">
         {data?.songUrl ? (
           <a
-            className="capsize max-w-max truncate font-medium  text-gray-800 dark:text-gray-200"
+            className="capsize max-w-max truncate font-medium "
             href={data.songUrl}
             target="_blank"
             rel="noopener noreferrer"
+            style={{
+              backgroundColor: systemTheme.background.secondary,
+              color: systemTheme.text.secondary,
+            }}
           >
             {data.title}
           </a>
         ) : (
-          <p className="capsize font-medium text-gray-800 dark:text-gray-200">
+          <p
+            className="capsize font-medium"
+            style={{
+              color: systemTheme.text.secondary,
+            }}
+          >
             Not Playing
           </p>
         )}
-        <span className="capsize mx-2 hidden text-gray-500 dark:text-gray-300 sm:block">
+        <span className="capsize mx-2 hidden  sm:block"
+                    style={{
+                      color: systemTheme.text.secondary,
+                    }}>
           {' – '}
         </span>
-        <p className="capsize max-w-max truncate text-gray-500 dark:text-gray-300">
+        <p
+          className="capsize max-w-max truncate "
+          style={{
+            color: systemTheme.text.accent,
+          }}
+        >
           {data?.artist ?? 'Spotify'}
         </p>
       </div>
