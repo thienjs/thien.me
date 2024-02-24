@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,500;0,600;1,400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -12,7 +12,7 @@
   --font-color: 82 82 82;
   --hl-color: 178 177 185;
   --fg-color: 58 163 193;
-  --font-family: 'Poppins';
+  --font-family: 'Inter';
 
   /* #endregion  /**======== Default Color =========== */
 }
