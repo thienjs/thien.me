@@ -99,6 +99,45 @@ export const theme = {
       accent: '#BCBCBC',
     },
   },
+  panels: {
+    name: 'panels',
+    background: {
+      primary: '#EEEEEE',
+      secondary: '#DDDDDD',
+    },
+    text: {
+      primary: '#B4B4B4',
+      secondary: '#444444',
+      title: '#444444',
+      accent: '#E14C94',
+    },
+  },
+  oblivion: {
+    name: 'oblivion',
+    background: {
+      primary: '#EEEEEE',
+      secondary: '#DDDDDD',
+    },
+    text: {
+      primary: '#B4B4B4',
+      secondary: '#444444',
+      title: '#444444',
+      accent: '#E14C94',
+    },
+  },
+  rudy: {
+    name: 'rudy',
+    background: {
+      primary: '#EEEEEE',
+      secondary: '#DDDDDD',
+    },
+    text: {
+      primary: '#B4B4B4',
+      secondary: '#444444',
+      title: '#444444',
+      accent: '#E14C94',
+    },
+  },
   paper: {
     name: 'Paper',
     background: {
