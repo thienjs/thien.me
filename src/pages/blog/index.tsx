@@ -5,10 +5,11 @@ import { Tag } from '~/components/blog/Tag'
 import { ArticleList } from '~/components/blog/ArticleList'
 import { Title, Description } from '~/components/ui/typography'
 import { motion } from 'framer-motion'
-
+import { useThemeContext } from '~/hooks/useTheme';
 export default function Blog({ articles, tags }) {
   const [selectedTag, setSelectedTag] = useState<string>('')
   const [searchValue, setSearchValue] = useState('')
+  const { systemTheme, setTheme } = useThemeContext();
 
   const filteredArticles = articles
     .sort((a, b) => Number(new Date(b.publishedDate)))
@@ -46,16 +47,19 @@ export default function Blog({ articles, tags }) {
           },
         }}
         className="relative mb-4 w-full"
+
       >
         <input
           aria-label="Search articles"
           type="text"
           onChange={(e) => setSearchValue(e.target.value)}
           placeholder="Search articles"
-          className="block w-full rounded-md border border-gray-200 bg-white px-4 py-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-cyan-500 dark:border-gray-900 dark:bg-zinc-800 dark:text-gray-100"
+          className="block w-full rounded-md border  px-4 py-2 text-sm  focus:border-blue-500 focus:ring-cyan-500 "
+          style={{ color: systemTheme.text.primary, backgroundColor: systemTheme.background.secondary }}
         />
         <svg
-          className="absolute right-3 top-3 h-4 w-4 text-gray-400 dark:text-gray-300"
+          className="absolute right-3 top-3 h-4 w-4 "
+          style={{ color: systemTheme.text.accent, backgroundColor: systemTheme.background.secondary }}
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
@@ -86,7 +90,8 @@ export default function Blog({ articles, tags }) {
         }}
         className=" no-scrollbar flex w-full items-center   justify-start"
       >
-        <ul className=" mt-4 rounded-md bg-zinc-100 py-2 dark:bg-zinc-800">
+        <ul className=" mt-4 rounded-md  py-2 "
+                style={{ color: systemTheme.text.accent, backgroundColor: systemTheme.background.secondary }}>
           {/* Initial tag for all topics */}
           <Tag activeTag={selectedTag} tag="" cb={() => setSelectedTag('')} />
           {tags &&

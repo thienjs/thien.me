@@ -58,30 +58,35 @@ export function ArticleCard({ article }: Props) {
         {/*JSON.stringify(article) */}
         {/* <p>{article.summary}</p> */}
 
-        <p className="my-1 pb-2 text-left text-sm text-gray-600  dark:text-gray-400">
+        <p className="my-1 pb-2 text-left text-sm " style={{ color: systemTheme.text.secondary }}>
           {article.summary}
         </p>
         <div className="mb-1 flex flex-row flex-wrap gap-x-3 gap-y-1">
           {article.tags.map((tag) => (
-            <div className="mt-0.5 rounded-sm bg-zinc-200 px-3 text-xs text-gray-700 opacity-80 dark:bg-zinc-700 dark:text-gray-300"
-            style={{
-              color: systemTheme.background.secondary,
-              backgroundColor: systemTheme.text.accent2,
-              borderColor: systemTheme.text.secondary,
-            }}>
+            <div
+              className="mt-0.5 rounded-sm bg-zinc-200 px-3 text-xs text-gray-700 opacity-80 dark:bg-zinc-700 dark:text-gray-300"
+              style={{
+                color: systemTheme.background.primary,
+                backgroundColor: systemTheme.text.accent2,
+                borderColor: systemTheme.text.secondary,
+              }}
+            >
               #{tag.name}
             </div>
           ))}
         </div>
         <span className="flex justify-end space-x-4 text-xs text-gray-600 dark:text-gray-400 ">
           <div className="capsize  flex items-center text-xs text-gray-800 dark:text-gray-200 ">
-            <span className=" text-xs text-gray-800 dark:text-gray-400 ">
+            <span className=" text-xs  " style={{ color: systemTheme.text.accent }}>
               {views ? new Number(views).toLocaleString() : '–––'} views.
             </span>
           </div>
 
-          <div className="  ">{/* {readingTimeStats.words} mins. */}</div>
-          <div>
+          <div className="  " style={{ color: systemTheme.text.accent }}>
+            {' '}
+            {readingTimeStats.words} min{' '}
+          </div>
+          <div style={{ color: systemTheme.text.accent }}>
             {new Date(article.publishedDate).toLocaleDateString('de-AT', {
               year: 'numeric',
               month: '2-digit',

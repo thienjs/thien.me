@@ -5,8 +5,9 @@ import { Tag } from '~/components/blog/Tag'
 import { SnippetList } from '~/components/snippets/SnippetList'
 import { Title, Description } from '~/components/ui/typography'
 import { motion } from 'framer-motion'
-
+import { useThemeContext } from '~/hooks/useTheme'
 export default function SnippetsPage({ snippets, tags }) {
+  const { systemTheme, setTheme } = useThemeContext()
   const [selectedTag, setSelectedTag] = useState<string>('')
   const [searchValue, setSearchValue] = useState('')
 
@@ -33,10 +34,18 @@ export default function SnippetsPage({ snippets, tags }) {
           type="text"
           onChange={(e) => setSearchValue(e.target.value)}
           placeholder="Search snippets"
-          className="block w-full rounded-md border border-gray-200 bg-white px-4 py-2 text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-900 dark:bg-zinc-800 dark:text-gray-100"
+          className="block w-full rounded-md border  px-4 py-2 text-sm  focus:border-blue-500 focus:ring-cyan-500 "
+          style={{
+            color: systemTheme.text.primary,
+            backgroundColor: systemTheme.background.secondary,
+          }}
         />
         <svg
-          className="absolute right-3 top-3 h-5 w-5 text-gray-400 dark:text-gray-300"
+          style={{
+            color: systemTheme.text.accent,
+            backgroundColor: systemTheme.background.secondary,
+          }}
+          className="absolute right-3 top-2.5 h-5 w-5 "
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
@@ -50,8 +59,8 @@ export default function SnippetsPage({ snippets, tags }) {
           />
         </svg>
       </div>
-      <div className="no-scrollbar my-1 mb-2 overflow-x-auto border-gray-200 py-3 dark:border-gray-600">
-        <ul className="no-scrollbar flex w-full items-center justify-start">
+      <div className="no-scrollbar flex w-full items-center   justify-start">
+        <ul className="my-4">
           {/* Initial tag for all topics */}
           <Tag activeTag={selectedTag} tag="" cb={() => setSelectedTag('')} />
           {tags &&
