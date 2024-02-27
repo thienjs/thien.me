@@ -53,6 +53,7 @@ export default function NowPage() {
   var lokimonth = birthDate.getMonth() - month
 
   const { data } = useSWR<NowPlayingSong>('/api/now-playing', fetcher)
+  const { systemTheme, setTheme } = useThemeContext()
 
   return (
     <>
@@ -71,7 +72,7 @@ export default function NowPage() {
               y: 0,
             },
           }}
-          className="mt-20 mb-10 text-sm font-semibold text-neutral-900 dark:text-neutral-300"
+          className="mt-20 mb-10 text-sm font-semibold "
         >
           <Title>
 
@@ -79,7 +80,8 @@ export default function NowPage() {
           </Title>
           <Description>what I'm up to:</Description>
         </motion.div>
-        <ul className="space-y-5 text-left text-sm font-serif text-neutral-800 dark:text-neutral-300">
+        <ul className="space-y-5 text-left text-sm  "
+        style={{ color: systemTheme.text.primary }}>
           <NowItem>- coaching tennis</NowItem>
           <NowItem>- walking Loki - my {age} year old doodle best friend</NowItem>
           <NowItem>
@@ -120,7 +122,9 @@ export default function NowPage() {
             )}
           </NowItem>
         </ul>
-        <div className="mt-32 text-xs text-neutral-700 dark:text-neutral-400">
+        <div className="mt-32 text-xs"
+                style={{ color: systemTheme.text.accent2 }}
+        >
           this page was automatically updated @ {month}.{date}.{year}.{'   '}{' '}
           {hour}:{minute}:{second}
         </div>

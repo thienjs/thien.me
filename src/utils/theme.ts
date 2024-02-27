@@ -109,7 +109,7 @@ export const theme = {
     },
     text: {
       primary: '#ffffff',
-      secondary: '#ffffff',
+      secondary: '#d72638',
       title: '#cf1817',
       accent: '#44acb6',
       accent2: '#cf1817',
@@ -123,7 +123,7 @@ export const theme = {
     },
     text: {
       primary: '#ccc6c0',
-      secondary: 'ea4221',
+      secondary: '#E6E6E6',
       title: '#a698c5',
       accent: '#ffac00',
       accent2: '#1a8ab7',
@@ -145,20 +145,6 @@ export const theme = {
   },
   rudy: {
     name: 'rudy',
-    background: {
-      primary: '#EEEEEE',
-      secondary: '#DDDDDD',
-    },
-    text: {
-      primary: '#B4B4B4',
-      secondary: '#444444',
-      title: '#444444',
-      accent: '#E14C94',
-      accent2: '#00627a',
-    },
-  },
-  paper: {
-    name: 'Paper',
     background: {
       primary: '#EEEEEE',
       secondary: '#DDDDDD',
@@ -200,17 +186,17 @@ export const theme = {
     },
   },
   dots: {
-    name: 'Bouquet',
+    name: 'dots',
     background: {
-      primary: '#173F35',
-      secondary: '#1F4E43',
+      primary: '#E6E6EA',
+      secondary: '#AD5D4E',
     },
     text: {
       primary: '#408E7B',
-      secondary: '#DBE0D2',
-      title: '#DBE0D2',
-      accent: '#E14C94',
-      accent2: '#00627a',
+      secondary: '#FAA613',
+      title: '#F44708',
+      accent: '#A10702',
+      accent2: '#688E26',
     },
   },
   bontanical: {
@@ -223,7 +209,7 @@ export const theme = {
       primary: '#408E7B',
       secondary: '#DBE0D2',
       title: '#DBE0D2',
-      accent: '#E14C94',
+      accent: '#43b929',
       accent2: '#00627a',
     },
   },
