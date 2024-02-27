@@ -11,11 +11,14 @@ import {
 } from '~/components/now'
 import useSWR from 'swr'
 import { Description, H2, Title } from '~/components/ui/typography'
+import { useThemeContext } from '~/hooks/useTheme'
 
 export const NowItem = ({ children }) => {
+  const { systemTheme, setTheme } = useThemeContext()
   return (
     <motion.div
-    className='text-neutral-800 dark:text-neutral-300'
+      style={{ color: systemTheme.text.primary }}
+      className=""
       initial="hidden"
       animate="visible"
       transition={{ delay: 0.3, duration: 0.7 }}

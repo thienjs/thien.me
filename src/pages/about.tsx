@@ -82,7 +82,8 @@ const AboutPage = ({ reviews, currentlyReading }) => {
                 y: 0,
               },
             }}
-            className="text-lg font-semibold text-neutral-800 dark:text-gray-300"
+            className="text-lg font-semibold "
+            style={{ color: systemTheme.text.title }}
           >
             Thien Tran
           </motion.div>
@@ -100,7 +101,8 @@ const AboutPage = ({ reviews, currentlyReading }) => {
                 y: 0,
               },
             }}
-            className="text-sm text-gray-600 dark:text-neutral-400"
+            className="text-sm "
+            style={{ color: systemTheme.text.secondary }}
           >
             Designer, Developer, Dreamer
           </motion.div>
@@ -118,7 +120,8 @@ const AboutPage = ({ reviews, currentlyReading }) => {
                 y: 0,
               },
             }}
-            className="text-sm text-gray-500 dark:text-neutral-500"
+            className="text-sm "
+            style={{ color: systemTheme.text.accent }}
           >
             hi@thien.me
           </motion.div>
@@ -141,12 +144,12 @@ const AboutPage = ({ reviews, currentlyReading }) => {
         className=" mb-12 rounded-lg  p-5 font-serif "
         style={{ backgroundColor: systemTheme.background.secondary }}
       >
-        <p className=" mb-2 text-neutral-600 dark:text-neutral-400">
+        <p className=" mb-2 " style={{ color: systemTheme.text.secondary }}>
           Hello world! I'm a self-driven freelance developer and designer,
           passionately crafting unique and user-friendly experiences.
         </p>
 
-        <p className="mb-2 text-neutral-600 dark:text-neutral-400">
+        <p className="mb-2 " style={{ color: systemTheme.text.secondary }}>
           Beyond the pixels, you'll find me coaching on the tennis and
           pickleball courts. Outside the court, you'll find me tinkering with
           mechanical keyboards, collecting cards, or indulging in the magic of
@@ -157,7 +160,10 @@ const AboutPage = ({ reviews, currentlyReading }) => {
 
       <H2>Contact</H2>
       <div className="mt-6 grid max-w-full grid-cols-2">
-        <ul className="space-y-6 text-sm text-neutral-500 dark:text-neutral-400">
+        <ul
+          className="space-y-6 text-sm "
+          style={{ color: systemTheme.text.primary }}
+        >
           <li>Email</li>
           <li>Github</li>
           <li>Linkedin</li>
@@ -165,7 +171,10 @@ const AboutPage = ({ reviews, currentlyReading }) => {
           <li>Insta/Threads</li>
           <li>Telegram</li>
         </ul>
-        <ul className="space-y-6 text-sm text-neutral-800 dark:text-neutral-300">
+        <ul
+          className="space-y-6 text-sm "
+          style={{ color: systemTheme.text.primary }}
+        >
           <li>
             <a href="mailto:hi@thien.me" className="hover:text-cyan-500">
               hi@thien.me

@@ -14,14 +14,16 @@ import { navigation } from '~/data/nav'
 import UnstyledLink from './links/UnstyledLink'
 import { useRouter } from 'next/router'
 import ThemeSwitch from './ThemeSwitch'
+import { useThemeContext } from '~/hooks/useTheme';
 
 const Footer = () => {
   const year = new Date().getFullYear()
+  const { systemTheme, setTheme } = useThemeContext();
   const router = useRouter()
   return (
-    <div className="mt-32 mb-12 w-full max-w-sm md:max-w-2xl">
-      <div className="flex flex-row  justify-between ">
-        <div className=" font-serif text-sm text-gray-600 dark:text-gray-500">
+    <div className="mt-32 mb-18 w-full max-w-sm md:max-w-2xl">
+      <div className="flex flex-row  justify-between font-mono">
+        <div className=" " style={{ color: systemTheme.text.accent2 }}>
           Thien © {year}
         </div>
 

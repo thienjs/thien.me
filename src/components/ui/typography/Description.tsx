@@ -1,13 +1,16 @@
 import { ReactChildren, FunctionComponent } from 'react'
 import { motion } from 'framer-motion'
+import { useThemeContext } from '~/hooks/useTheme'
 
 export const Description: FunctionComponent = ({
   children,
 }: {
   children: ReactChildren
 }) => {
+  const { systemTheme, setTheme } = useThemeContext()
   return (
     <motion.div
+      style={{ color: systemTheme.text.primary }}
       initial="hidden"
       animate="visible"
       transition={{ delay: 0.2, duration: 0.8 }}
@@ -21,7 +24,7 @@ export const Description: FunctionComponent = ({
           y: 0,
         },
       }}
-      className="mb-8 text-sm text-neutral-800 dark:text-gray-300 font-serif"
+      className="mb-8"
     >
       {children}
     </motion.div>

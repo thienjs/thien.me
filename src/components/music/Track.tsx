@@ -4,13 +4,13 @@ export default function Track(track) {
   const { systemTheme, setTheme } = useThemeContext()
   return (
     <div
-      className="mt-4 flex w-full max-w-3xl flex-row border-b "
+      className="mt-4 flex w-full max-w-5xl flex-row border-b "
       style={{
         borderColor: systemTheme.background.secondary,
       }}
     >
       <p
-        className="mr-3 text-sm font-bold text-gray-400 dark:text-gray-600"
+        className="mr-3 text-sm font-bold "
         style={{
           color: systemTheme.text.accent2,
         }}

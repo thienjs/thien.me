@@ -1,11 +1,13 @@
 import { ReactChildren, FunctionComponent } from 'react'
 import { motion } from 'framer-motion'
+import { useThemeContext } from '~/hooks/useTheme';
 
 export const H2: FunctionComponent = ({
   children,
 }: {
   children: ReactChildren
 }) => {
+  const { systemTheme, setTheme } = useThemeContext();
   return (
     <motion.div
       initial="hidden"
@@ -21,7 +23,7 @@ export const H2: FunctionComponent = ({
           y: 0,
         },
       }}
-      className="text-sm pb-2 font-semibold text-neutral-800 dark:text-neutral-200 mb-3 border-b border-neutral-300 dark:border-neutral-700 w-full"
+      className="text-sm pb-2 font-semibold  mb-3 border-b  w-full"             style={{ color: systemTheme.text.primary, borderColor: systemTheme.text.secondary }}
     >
       {children}
     </motion.div>
