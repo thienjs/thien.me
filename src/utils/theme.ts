@@ -222,9 +222,37 @@ export const theme = {
     text: {
       primary: '#ccc6c0',
       secondary: '#fdf4e3',
-      title: '081F2C',
+      title: '#081F2C',
       accent: '#F1BE48',
       accent2: '#E03C31',
+    },
+  },
+  wimbeldon: {
+    name: 'wimbeldon',
+    background: {
+      primary: '#046A38',
+      secondary: '#582C83',
+    },
+    text: {
+      primary: '#ffffff',
+      secondary: '#ffffff',
+      title: '#ffffff',
+      accent: '#582C83',
+      accent2: '#582C83',
+    },
+  },
+  french: {
+    name: 'rolland garros',
+    background: {
+      primary: '#D96236',
+      secondary: '#025939',
+    },
+    text: {
+      primary: '#ffffff',
+      secondary: '#ffffff',
+      title: '#ffffff',
+      accent: '#02734A',
+      accent2: '#0D0D0D',
     },
   },
 }
