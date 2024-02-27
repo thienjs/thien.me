@@ -163,22 +163,25 @@ export default function Nav() {
                             <div
                               className={classnames(
                                 'relative block px-2 py-1',
-                                ['text-gray-600 hover:text-gray-700'],
-                                ['dark:text-gray-300 dark:hover:text-white']
+                                [' '],
+                                [' ']
                               )}
                               aria-current={
                                 pathname === item.href ? 'page' : null
                               }
                               style={{
-                                backgroundColor: systemTheme.background.primary,
-                                color: systemTheme.text.primary,
+
                               }}
                             >
                               <span
+                                style={{
+
+                                  color: systemTheme.text.primary,
+                                }}
                                 className={`relative z-50 ${
                                   pathname === item.href
-                                    ? 'font-semibold  text-gray-900 underline decoration-cyan-500 decoration-2 underline-offset-1 dark:text-gray-300 '
-                                    : 'font-normal text-gray-700 dark:text-gray-400'
+                                    ? 'font-semibold   underline decoration-cyan-500 decoration-2 underline-offset-1 '
+                                    : 'font-normal'
                                 }`}
                               >
                                 {item.name}
@@ -195,7 +198,6 @@ export default function Nav() {
                                   style={{
                                     backgroundColor:
                                       systemTheme.background.secondary,
-                                    color: systemTheme.text.primary,
                                   }}
                                 />
                               )}
