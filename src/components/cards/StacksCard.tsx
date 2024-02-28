@@ -1,61 +1,137 @@
-'use client'
-
+import { cn } from '~/lib/utils'
+import React from 'react'
 import {
-  SiCloudflare,
-  SiCss3,
-  SiFigma,
-  SiFirebase,
-  SiGit,
-  SiHtml5,
-  SiJavascript,
-  SiJest,
-  SiMarkdown,
-  SiMysql,
-  SiNextdotjs,
-  SiNodedotjs,
-  SiPostgresql,
-  SiPrisma,
-  SiPython,
-  SiReact,
-  SiTailwindcss,
-  SiTypescript,
-  SiVisualstudiocode,
-  SiVite
-} from '@icons-pack/react-simple-icons'
-import { ZapIcon } from 'lucide-react'
-import * as React from 'react'
+  IconCloudflare,
+  IconFigma,
+  IconFirebase,
+  IconGit,
+  IconJest,
+  IconMySQL,
+  IconNextJS,
+  IconNodeJS,
+  IconPostgres,
+  IconPrisma,
+  IconPython,
+  IconReactJS,
+  IconTailwindcss,
+  IconTypescript,
+  IconVite,
+  LogosArchlinux,
+  SkillIconsDocker,
+  DeviconElixir,
+  VscodeIconsFileTypeCpp3,
+  SkillIconsGraphqlDark,
+  SkillIconsGodotLight,
+  SkillIconsGolang,
+} from '~/components/icons'
 
-const StacksCard = () => {
+type MarqueeProps = {
+  children: React.ReactNode
+  direction?: 'left' | 'up'
+  pauseOnHover?: boolean
+  reverse?: boolean
+  fade?: boolean
+  className?: string
+}
+
+const range = (start: number, end: number): number[] =>
+  Array.from({ length: end - start }, (_, k) => k + start)
+
+const Marquee = (props: MarqueeProps) => {
+  const {
+    children,
+    direction = 'left',
+    pauseOnHover = false,
+    reverse = false,
+    fade = false,
+    className,
+  } = props
+
+  const ifToRightOrToBottom = (direction: string) => {
+    if (direction === 'left') {
+      return 'to right'
+    } else {
+      return 'to bottom'
+    }
+  }
+
   return (
-    <div className='flex flex-col'>
-      <div className='flex items-center gap-2'>
-        <ZapIcon className='size-[18px]' />
-        <h2 className='text-sm font-light'>Stacks</h2>
-      </div>
-      <div className='py-4 flex'  >
-        <SiHtml5 className='size-10' />
-        <SiCss3 className='size-10' />
-        <SiJavascript className='size-10' />
-        <SiTypescript className='size-10' />
-        <SiFigma className='size-10' />
-        <SiTailwindcss className='size-10' />
-        <SiNextdotjs className='size-10' />
-        <SiReact className='size-10' />
-        <SiPython className='size-10' />
-        <SiPostgresql className='size-10' />
-      </div>
-      <div className='flex'>
-        <SiPrisma className='size-10' />
-        <SiMysql className='size-10' />
-        <SiFirebase className='size-10' />
-        <SiGit className='size-10' />
-        <SiVite className='size-10' />
-        <SiVisualstudiocode className='size-10' />
-        <SiCloudflare className='size-10' />
-        <SiMarkdown className='size-10' />
-        <SiJest className='size-10' />
-        <SiNodedotjs className='size-10' />
-      </div>
+    <div
+      className={cn(
+        'group flex gap-4 overflow-hidden',
+        direction === 'left' ? 'flex-row' : 'flex-col',
+        className
+      )}
+      data-testid="marquee"
+      style={{
+        maskImage: fade
+          ? `linear-gradient(${
+              ifToRightOrToBottom(direction)
+              // direction === "left" ? "to right" : "to bottom"
+            }, transparent 0%, rgba(0, 0, 0, 1.0) 10%, rgba(0, 0, 0, 1.0) 90%, transparent 100%)`
+          : undefined,
+        WebkitMaskImage: fade
+          ? `linear-gradient(${
+              ifToRightOrToBottom(direction)
+              // direction === "left" ? "to right" : "to bottom"
+            }, transparent 0%, rgba(0, 0, 0, 1.0) 10%, rgba(0, 0, 0, 1.0) 90%, transparent 100%)`
+          : undefined,
+      }}
+    >
+      {range(0, 2).map((i) => (
+        <div
+          key={i}
+          className={cn(
+            'flex shrink-0 justify-around gap-4 [--gap:1rem]',
+            direction === 'left'
+              ? 'animate-marquee-left flex-row'
+              : 'animate-marquee-up flex-col',
+            pauseOnHover && 'group-hover:[animation-play-state:paused]',
+            reverse && 'direction-reverse'
+          )}
+          data-testid={`marquee-child-${i + 1}`}
+        >
+          {children}
+        </div>
+      ))}
+    </div>
+  )
+}
+
+export const StacksCard = () => {
+  return (
+    <div className="flex h-36 flex-col gap-2 overflow-hidden rounded-xl border bg-[#f7f2f2] p-1 dark:bg-inherit">
+      <p className="flex justify-center font-mono text-sm  text-zinc-600 dark:text-zinc-400">
+        fun things
+      </p>
+      <Marquee className="" fade pauseOnHover>
+        <IconTypescript width="40" height="40" />
+        <IconTailwindcss width="40" height="40" />
+        <IconNextJS width="40" height="40" />
+        <IconReactJS width="40" height="40" />
+        <IconPython width="40" height="40" />
+        <IconPostgres width="40" height="40" />
+        <VscodeIconsFileTypeCpp3 width="40" height="40" />
+
+        <SkillIconsGolang width="40" height="40" />
+        <SkillIconsGraphqlDark width="40" height="40" />
+      </Marquee>
+      <Marquee className="mt-2" reverse fade pauseOnHover>
+        <DeviconElixir width="40" height="40" />
+        <SkillIconsDocker width="40" height="40" />
+        <LogosArchlinux width="40" height="40" />
+        <SkillIconsGodotLight width="40" height="40" />
+
+        <IconPrisma width="40" height="40" />
+        <IconMySQL width="40" height="40" />
+        <IconFirebase width="40" height="40" />
+        <IconFigma width="40" height="40" />
+        <IconGit width="40" height="40" />
+        <IconVite width="40" height="40" />
+        <IconCloudflare width="40" height="40" />
+        <IconJest width="40" height="40" />
+        <IconNodeJS width="40" height="40" />
+      </Marquee>
     </div>
   )
 }

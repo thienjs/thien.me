@@ -195,7 +195,9 @@ export default function HomePage({
       </div>
       <Lanyard />
       <RetrieveIP />
-      <StacksCard/>
+      <div className="col-span-2">
+        <StacksCard />
+      </div>
 
       <div className="my-8"></div>
     </div>

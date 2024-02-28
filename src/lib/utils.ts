@@ -39,3 +39,13 @@ export async function fetcher<JSON = any>(
   const res = await fetch(input, init)
   return res.json()
 }
+export const extractDate = (dateString: string | number | Date) =>
+  new Date(dateString).toLocaleDateString("en-US", {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+  });
+
+export function capitalize(string: string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
