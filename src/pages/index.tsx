@@ -40,8 +40,12 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from '~/components/ui/carousel'
-import { useThemeContext } from '~/hooks/useTheme';
-
+import { GithubStatsCard } from '~/components/cards/GithubStatsCard'
+import { useThemeContext } from '~/hooks/useTheme'
+import LocationCard from '~/components/cards/LocationCard'
+import Lanyard from '~/components/lanyard'
+import RetrieveIP from '~/components/retrieve-ip'
+import StacksCard from '~/components/cards/StacksCard'
 export type HomePageProps = {
   recentArticles: any
   tabArticles: any
@@ -75,23 +79,20 @@ export default function HomePage({
   const currentlyReadingList = currentlyReading.map((r) => (
     <NowReading key={r.url} title={r.title} subtitle={r.author} url={r.url} />
   ))
-  const { systemTheme, setTheme } = useThemeContext();
+  const { systemTheme, setTheme } = useThemeContext()
   return (
-    <div className='layout'>
+    <div className="layout">
       <Hero />
       <div className="mt-6 mb-20"></div>
       <Title>Blog</Title>
       <Tab.Group>
-        <Tab.List className="mb-3 flex space-x-1   p-1  py-2"
-        >
+        <Tab.List className="mb-3 flex space-x-1   p-1  py-2">
           <Tab
             className={({ selected }) =>
               classNames(
                 'w-full py-2.5 text-sm leading-5 text-gray-700 dark:text-gray-200',
                 'focus:outline-none',
-                selected
-                  ? ' border-b border-neutral-400  font-medium '
-                  : ''
+                selected ? ' border-b border-neutral-400  font-medium ' : ''
               )
             }
             style={{ color: systemTheme.text.accent }}
@@ -103,9 +104,7 @@ export default function HomePage({
               classNames(
                 'w-full py-2.5 text-sm leading-5 text-gray-700 dark:text-gray-200',
                 'focus:outline-none',
-                selected
-                  ? ' border-b border-neutral-400  font-medium'
-                  : ''
+                selected ? ' border-b border-neutral-400  font-medium' : ''
               )
             }
             style={{ color: systemTheme.text.accent }}
@@ -144,7 +143,6 @@ export default function HomePage({
           </ArrowLink>
         </div>
       </Tab.Group>
-     
 
       <Title>Hobbies</Title>
       <Tab.Group>
@@ -154,9 +152,7 @@ export default function HomePage({
               classNames(
                 'w-full py-2.5 text-sm leading-5 ',
                 'focus:outline-none',
-                selected
-                  ? ' border-b border-neutral-400  font-medium'
-                  : ''
+                selected ? ' border-b border-neutral-400  font-medium' : ''
               )
             }
             style={{ color: systemTheme.text.accent }}
@@ -168,9 +164,7 @@ export default function HomePage({
               classNames(
                 'w-full py-2.5 text-sm leading-5 ',
                 'focus:outline-none',
-                selected
-                  ? ' border-b border-neutral-400  font-medium'
-                  : ''
+                selected ? ' border-b border-neutral-400  font-medium' : ''
               )
             }
             style={{ color: systemTheme.text.accent }}
@@ -196,9 +190,14 @@ export default function HomePage({
           </Tab.Panel>
         </Tab.Panels>
       </Tab.Group>
+      <div>
+        <LocationCard />
+      </div>
+      <Lanyard />
+      <RetrieveIP />
+      <StacksCard/>
 
       <div className="my-8"></div>
-
     </div>
   )
 }
