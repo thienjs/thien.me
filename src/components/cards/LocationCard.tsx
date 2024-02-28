@@ -38,11 +38,11 @@ const LocationCard = () => {
       devicePixelRatio: 2,
       width: width * 2,
       height: width * 2,
-      phi: 0,
-      theta: 0,
+      phi: 1,
+      theta: 0.4,
       dark: 1,
       diffuse: 2,
-      mapSamples: 36_000,
+      mapSamples: 30_000,
       mapBrightness: 2,
       baseColor: [0.8, 0.8, 0.8],
       markerColor: [235 / 255, 35 / 255, 35 / 255],
@@ -50,13 +50,11 @@ const LocationCard = () => {
       markers: [{ location: [36.7955, -76.7711], size: 0.1 }],
       scale: 1,
       onRender: (state) => {
-        state.phi = 2.75 + r.get()
+        state.phi = +r.get()
         state.width = width * 2
         state.height = width * 2
-      }
+      },
     })
-
-    
 
     return () => {
       globe.destroy()
@@ -64,12 +62,12 @@ const LocationCard = () => {
   }, [r])
 
   return (
-    <div className='relative flex h-60 flex-col gap-6 overflow-hidden rounded-xl p-4 shadow-feature-card dark:shadow-feature-card-dark lg:p-6'>
-      <div className='flex items-center gap-2'>
-        <MapPinIcon className='size-[18px]' />
-        <h2 className='text-sm font-light'>Connecticut</h2>
+    <div className="shadow-feature-card dark:shadow-feature-card-dark relative flex h-96 flex-col gap-6 overflow-hidden rounded-xl p-4 lg:p-6">
+      <div className="flex items-center gap-2">
+        <MapPinIcon className="size-[18px]" />
+        <h2 className="text-sm font-light">Connecticut</h2>
       </div>
-      <div className='absolute inset-x-0 bottom-[-190px] mx-auto aspect-square h-[388px] [@media(max-width:420px)]:bottom-[-140px] [@media(max-width:420px)]:h-[320px] [@media(min-width:768px)_and_(max-width:858px)]:h-[350px]'>
+      <div className="[@media(max-width:420px)]:bottom-[-140px] [@media(max-width:420px)]:h-[420px] [@media(min-width:768px)_and_(max-width:858px)]:h-[350px] absolute inset-x-0 bottom-[-10px] mx-auto aspect-square h-[388px]">
         <div
           style={{
             width: '100%',
@@ -77,7 +75,7 @@ const LocationCard = () => {
             display: 'flex',
             placeItems: 'center',
             placeContent: 'center',
-            overflow: 'visible'
+            overflow: 'visible',
           }}
         >
           <div
@@ -86,7 +84,7 @@ const LocationCard = () => {
               aspectRatio: '1/1',
               maxWidth: 800,
               WebkitMaskImage: fadeMask,
-              maskImage: fadeMask
+              maskImage: fadeMask,
             }}
           >
             <canvas
@@ -110,7 +108,7 @@ const LocationCard = () => {
                   const delta = e.clientX - pointerInteracting.current
                   pointerInteractionMovement.current = delta
                   api.start({
-                    r: delta / 200
+                    r: delta / 200,
                   })
                 }
               }}
@@ -120,7 +118,7 @@ const LocationCard = () => {
                     e.touches[0].clientX - pointerInteracting.current
                   pointerInteractionMovement.current = delta
                   api.start({
-                    r: delta / 100
+                    r: delta / 100,
                   })
                 }
               }}
@@ -129,7 +127,7 @@ const LocationCard = () => {
                 height: '100%',
                 contain: 'layout paint size',
                 cursor: 'auto',
-                userSelect: 'none'
+                userSelect: 'none',
               }}
             />
           </div>
