@@ -1,5 +1,5 @@
 export default function Age() {
-  const birthday = new Date(1999, 8, 25); // September 25, 1999
+  const birthday = new Date(1990, 6, 6); // September 25, 1999
   const currentDate = new Date();
   let age = currentDate.getFullYear() - birthday.getFullYear();
 

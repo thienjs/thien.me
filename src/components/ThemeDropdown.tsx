@@ -38,7 +38,7 @@ const ThemeDropdown = () => {
               display: isOpen ? 'block' : 'none',
             }}
           >
-            <ul className={``} style={{ color: systemTheme.text.secondary }}>
+            <ul className={``} style={{ color: systemTheme.text.accent }}>
               {Object.keys(theme).map((key) => (
                 <li
                   key={key}

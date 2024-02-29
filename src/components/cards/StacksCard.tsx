@@ -102,7 +102,7 @@ export const StacksCard = () => {
   return (
     <div className="flex h-36 flex-col gap-2 overflow-hidden rounded-xl border bg-[#f7f2f2] p-1 dark:bg-inherit">
       <p className="flex justify-center font-mono text-sm  text-zinc-600 dark:text-zinc-400">
-        fun things
+        stack
       </p>
       <Marquee className="" fade pauseOnHover>
         <IconTypescript width="40" height="40" />
