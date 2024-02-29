@@ -1,6 +1,6 @@
 'use server'
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { getServerSession } from "next-auth"
+import { getSession } from 'next-auth/react'
 import { prisma } from '~/lib/prisma'
 import { z } from 'zod'
 
@@ -21,7 +21,7 @@ export default async function handler(
   res: NextApiResponse
 ) {
   if (req.method === 'POST') {
-    const session = await getServerSession({ req })
+    const session = await getSession({ req })
     if (!session) {
       return
     }
