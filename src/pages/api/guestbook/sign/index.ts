@@ -1,6 +1,6 @@
 'use server'
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { getSession } from 'next-auth/react'
+import { getServerSession } from "next-auth"
 import { prisma } from '~/lib/prisma'
 import { z } from 'zod'
 
@@ -21,7 +21,7 @@ export default async function handler(
   res: NextApiResponse
 ) {
   if (req.method === 'POST') {
-    const session = await getSession({ req })
+    const session = await getServerSession({ req })
     if (!session) {
       return
     }
@@ -35,7 +35,6 @@ export default async function handler(
         .status(400)
         .json({ success: false, message: 'an error occured' })
     }
-
     try {
       const emailOrName = email ?? name
       const newEntry = await prisma.guestbook.create({
