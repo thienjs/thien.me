@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import NextNProgress from 'nextjs-progressbar';
 import * as React from 'react';
-import { CgSpinner } from 'react-icons/cg';
+import { GiTennisBall } from 'react-icons/gi';
 
 import Footer from '~/components/ui/Footer'
 import Header from '~/components/ui/header'
@@ -24,19 +24,16 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <>
           <Seo title="Thien" />
           <div
-            className="h-screen w-full overflow-y-auto"
+            className="h-screen"
             style={{
               backgroundColor: systemTheme.background.primary,
               color: systemTheme.text.primary,
             }}
           >
-            <div className="flex max-w-[500px] flex-wrap items-center justify-center gap-x-8">
-              <div className="flex flex-col items-center gap-4">
-                <CgSpinner className="animate-spin text-[3rem] text-fg" />
+            <div className="">
+              <div className="flex h-screen items-center justify-center flex-col">
+                <GiTennisBall className=" animate-bounce text-[3rem] text-fg" />
                 <p className="hidden">Thien</p>
-                <div className="loading font-primary text-fg">
-                  Preparing the page for you...
-                </div>
               </div>
             </div>
           </div>

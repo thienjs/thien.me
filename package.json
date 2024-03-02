@@ -4,14 +4,15 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "prisma generate && next build",
     "start": "next start",
     "type-check": "tsc --project tsconfig.json --pretty --noEmit",
     "lint": "eslint --ext js,jsx,ts,tsx --fix --ignore-path .gitignore .",
     "prettier": "prettier --ignore-path .gitignore --write \"**/*.+(js|json|ts|tsx)\"",
     "format": "npm run prettier -- --write",
     "format-check": "npm run prettier -- --list-different",
-    "validate": "npm-run-all --parallel type-check format-check lint build"
+    "validate": "npm-run-all --parallel type-check format-check lint build",
+    "postinstall": "prisma generate"
   },
   "prisma": {
     "seed": "ts-node -O {\"module\":\"CommonJS\"} prisma/seed.ts"
