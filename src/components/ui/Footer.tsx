@@ -21,35 +21,30 @@ const Footer = () => {
   const { systemTheme, setTheme } = useThemeContext();
   const router = useRouter()
   return (
-    <div className="mt-32 mb-18 w-full max-w-sm md:max-w-2xl">
-      <div className="flex flex-row  justify-between font-mono">
+    <div className="mb-18 mt-32 w-full ">
+      <div className="flex flex-row  justify-between font-mono font-semibold">
         <div className=" " style={{ color: systemTheme.text.accent2 }}>
           Thien © {year}
         </div>
 
-        {/* <div className="flex space-x-2 mt-0 text-gray-700 dark:text-gray-400 ">
+        <div
+          className="mb-10 flex space-x-2 align-center"
+          style={{ color: systemTheme.text.accent2 }}
+        >
           <a href="https://github.com/thienjs" rel="noopener noreferrer">
-            <GithubIcon className="h-5 w-5  hover:text-purple-400" />
+            <GithubIcon className="h-6 w-6  hover:text-purple-400" />
           </a>
-          <a href="https://discord.com/thien#0601 " rel="noopener noreferrer">
-            <DiscordIcon className="h-5 w-5  hover:text-blue-400" />
-          </a>
-          <a href="https://twitter.com/thientsx" rel="noopener noreferrer">
-            <TwitterIcon className="h-5 w-5  hover:text-cyan-400" />
+          <a href="https://discord.com/thienio " rel="noopener noreferrer">
+            <DiscordIcon className="h-6 w-6  hover:text-blue-400" />
           </a>
           <a href="mailto:hi@thien.me" rel="noopener noreferrer">
-            <EmailIcon className="h-5 w-5  hover:text-emerald-400" />
+            <EmailIcon className="h-6 w-6  hover:text-emerald-400" />
           </a>
-          <a href="https://linkedin.com/in/thienjs" rel="noopener noreferrer">
-            <LinkedinIcon className="h-5 w-5  hover:text-blue-400" />
+          <a href="https://linkedin.com/in/thienio" rel="noopener noreferrer">
+            <LinkedinIcon className="h-6 w-6  hover:text-blue-400" />
           </a>
-          <a
-            href="https://www.buymeacoffee.com/thien"
-            rel="noopener noreferrer"
-          >
-            <SiBuymeacoffee className="h-4 w-4 hover:text-yellow-400" />
-          </a>
-  </div>*/}
+
+        </div>
       </div>
     </div>
   )

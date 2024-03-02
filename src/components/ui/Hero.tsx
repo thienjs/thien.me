@@ -4,8 +4,9 @@ import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { useThemeContext } from '~/hooks/useTheme';
 
+
 export default function Hero() {
-  const { systemTheme, setTheme } = useThemeContext();
+  const { systemTheme, setTheme } = useThemeContext()
   return (
     <div>
       <div className="flex min-h-screen flex-col justify-center pb-[25vh] lg:mt-6 lg:px-4">
@@ -24,13 +25,18 @@ export default function Hero() {
                 y: 0,
               },
             }}
-            className=" text-4xl font-bold lg:text-4xl"
+            className=" text-4xl font-bold lg:text-4xl mb-2"
             style={{
               backgroundColor: systemTheme.background.primary,
               color: systemTheme.text.title,
             }}
           >
-            Thien Tran
+            <Image
+              src="/thien-bauhaus-logo.png"
+              width={250}
+              height={250}
+              alt="Picture of the author"
+            />
           </motion.div>
           <motion.div
             initial="hidden"

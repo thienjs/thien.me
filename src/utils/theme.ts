@@ -222,7 +222,7 @@ export const theme = {
     text: {
       primary: '#ccc6c0',
       secondary: '#fdf4e3',
-      title: '#081F2C',
+      title: '#ccc6c0',
       accent: '#F1BE48',
       accent2: '#E03C31',
     },
