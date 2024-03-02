@@ -2,11 +2,6 @@
  * @type {import('next').NextConfig}
  */
 module.exports = {
-  future: {
-    // by default, if you customize webpack config, they switch back to version 4.
-    // Looks like backward compatibility approach.
-    webpack5: true,
-  },
   swcMinify: true,
   reactStrictMode: true,
   images: {
@@ -24,6 +19,7 @@ module.exports = {
       'cdn.hashnode.com',
       'res.craft.do',
       'res.cloudinary.com', // Twitter Profile Picture
+      'prod-files-secure.s3.us-west-2.amazonaws.com', //images from notion
     ],
   },
   webpack(config) {
