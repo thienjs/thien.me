@@ -21,7 +21,7 @@ const SEO = {
     ],
   },
   twitter: {
-    handle: '@thientsx',
+    handle: '@thien_io',
     site: '@thienjs',
     cardType: 'summary_large_image',
   },
