@@ -36,7 +36,7 @@ export function ArticleCard({ article }: Props) {
       onClick={() => handleArticleClicked(slug)}
     >
       <div className="flex flex-col">
-        <div className="text-md mb-1 flex justify-between text-left font-semibold ">
+        <div className="text-md mb-1 flex justify-between text-left font-semibold " style={{ color: systemTheme.text.title }}>
           {article.title}
           {hasRead && (
             <span className="ml-6 inline-flex items-center text-sm text-gray-800 opacity-75  dark:text-gray-400">
@@ -64,7 +64,7 @@ export function ArticleCard({ article }: Props) {
         <div className="mb-1 flex flex-row flex-wrap gap-x-3 gap-y-1">
           {article.tags.map((tag) => (
             <div
-              className="mt-0.5 rounded-sm bg-zinc-200 px-3 text-xs text-gray-700 opacity-80 dark:bg-zinc-700 dark:text-gray-300"
+              className="mt-0.5 rounded-sm bg-zinc-200 px-3 text-xs "
               style={{
                 color: systemTheme.background.primary,
                 backgroundColor: systemTheme.text.accent2,

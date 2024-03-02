@@ -22,7 +22,7 @@ const SEO = {
   },
   twitter: {
     handle: '@thien_io',
-    site: '@thienjs',
+    site: '@thien_io',
     cardType: 'summary_large_image',
   },
 }

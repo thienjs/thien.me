@@ -1,13 +1,20 @@
 import React from 'react'
 import { useRouter } from 'next/router'
+import { useThemeContext } from '~/hooks/useTheme'
 
 type Props = {}
 
 const CDbutton = (props: Props) => {
   const router = useRouter()
+  const { systemTheme, setTheme } = useThemeContext()
   return (
     <button
-      className="rounded-sm border border-gray-300 bg-gray-100 px-2 py-1 font-mono dark:border-gray-800 dark:bg-zinc-900"
+      className="rounded-sm border px-2 py-1 font-mono "
+      style={{
+        color: systemTheme.background.primary,
+        backgroundColor: systemTheme.text.accent2,
+        borderColor: systemTheme.text.accent,
+      }}
       onClick={() => router.back()}
     >
       cd ..

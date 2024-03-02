@@ -100,7 +100,7 @@ const Marquee = (props: MarqueeProps) => {
 
 export const StacksCard = () => {
   return (
-    <div className="flex h-36 flex-col gap-2 overflow-hidden rounded-xl border bg-[#f7f2f2] p-1 dark:bg-inherit">
+    <div className="flex h-36 flex-col gap-2 overflow-hidden rounded-xl ">
       <p className="flex justify-center font-mono text-sm  text-zinc-600 dark:text-zinc-400">
         stack
       </p>

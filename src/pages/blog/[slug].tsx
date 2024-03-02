@@ -15,6 +15,8 @@ import {Title} from '~/components/ui/typography'
 import ScrollIndicator from '~/components/ui/ScrollIndicator'
 import CDbutton from '~/components/ui/CDbutton'
 import Link from 'next/link'
+import { useThemeContext } from '~/hooks/useTheme'
+
 export const Text = ({ text }) => {
   if (!text) {
     return null
@@ -47,17 +49,29 @@ export const Text = ({ text }) => {
 export function renderBlocks(block) {
   const { type, id } = block
   const value = block[type]
-
+  const { systemTheme } = useThemeContext()
   switch (type) {
     case 'paragraph':
       return (
-        <p className="text-sm text-neutral-800 dark:text-neutral-300">
+        <p
+          className="text-sm "
+          style={{
+            backgroundColor: systemTheme.background.primary,
+            color: systemTheme.text.primary,
+          }}
+        >
           <Text text={value.text} />
         </p>
       )
     case 'heading_1':
       return (
-        <h1 className="mb-2 text-3xl font-bold text-neutral-800 dark:text-neutral-300">
+        <h1
+          className="mb-2 text-3xl font-bold"
+          style={{
+            backgroundColor: systemTheme.background.primary,
+            color: systemTheme.text.title,
+          }}
+        >
           <AnchorLink text={value.text[0].text.content}>
             <Text text={value.text} />
           </AnchorLink>
@@ -65,7 +79,13 @@ export function renderBlocks(block) {
       )
     case 'heading_2':
       return (
-        <h2 className="pb-6 text-lg font-semibold text-neutral-800 dark:text-neutral-300">
+        <h2
+          className="pb-6 text-lg font-semibold "
+          style={{
+            backgroundColor: systemTheme.background.primary,
+            color: systemTheme.text.title,
+          }}
+        >
           <AnchorLink text={value.text[0].text.content}>
             <Text text={value.text} />
           </AnchorLink>
@@ -73,7 +93,13 @@ export function renderBlocks(block) {
       )
     case 'heading_3':
       return (
-        <h3 className="mb-2 text-xl font-semibold text-neutral-800 dark:text-neutral-300">
+        <h3
+          className="mb-2 text-xl font-semibold "
+          style={{
+            backgroundColor: systemTheme.background.primary,
+            color: systemTheme.text.title,
+          }}
+        >
           <AnchorLink text={value.text[0].text.content}>
             <Text text={value.text} />
           </AnchorLink>
@@ -81,7 +107,13 @@ export function renderBlocks(block) {
       )
     case 'bulleted_list_item':
       return (
-        <li className="ml-4 text-sm text-neutral-800 dark:text-neutral-300">
+        <li
+          className="ml-4 text-sm "
+          style={{
+            backgroundColor: systemTheme.background.primary,
+            color: systemTheme.text.primary,
+          }}
+        >
           <Text text={value.text} />
         </li>
       )
@@ -241,27 +273,57 @@ const ArticlePage = ({
       day: 'numeric',
     }
   )
-
+  const { systemTheme } = useThemeContext()
   return (
     <>
       <ScrollIndicator>
-        <div className="text-neutral-800 dark:text-neutral-400">
+        <div className="">
           <article className="col-span-9 mt-12">
             <div className="">
-              <div className="">
+              <div
+                className=""
+                style={{
+                  backgroundColor: systemTheme.background.primary,
+                  color: systemTheme.text.title,
+                }}
+              >
                 <Title>{title}</Title>
                 <div className="mb-10 text-left">
-                  <div className="mb-2 flex space-x-2 text-sm text-slate-500  dark:text-slate-500">
-                    <p className="tx-sm m-0 text-slate-500  dark:text-slate-500">
+                  <div
+                    className="mb-2 flex space-x-2 text-sm "
+                    style={{
+                      backgroundColor: systemTheme.background.primary,
+                      color: systemTheme.text.accent,
+                    }}
+                  >
+                    <p
+                      className="tx-sm m-0 "
+                      style={{
+                        backgroundColor: systemTheme.background.primary,
+                        color: systemTheme.text.accent,
+                      }}
+                    >
                       {publishedOn}
                     </p>
-                    <p className="m-0  text-sm text-slate-500  dark:text-slate-500">
+                    <p
+                      className="m-0  text-sm "
+                      style={{
+                        backgroundColor: systemTheme.background.primary,
+                        color: systemTheme.text.accent,
+                      }}
+                    >
                       •
                     </p>
                     <ViewCounter slug={slug} />
                   </div>
                   {publishedOn !== modifiedDate && (
-                    <p className="mt-0 text-xs text-slate-500  dark:text-slate-500">
+                    <p
+                      className="mt-0 text-xs "
+                      style={{
+                        backgroundColor: systemTheme.background.primary,
+                        color: systemTheme.text.accent2,
+                      }}
+                    >
                       (Updated on {modifiedDate})
                     </p>
                   )}
