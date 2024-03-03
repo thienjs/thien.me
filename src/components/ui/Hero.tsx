@@ -3,7 +3,7 @@ import profile from '../../public/notion-me.png'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { useThemeContext } from '~/hooks/useTheme';
-
+import TypewriterEffect from '../Typewriter'
 
 export default function Hero() {
   const { systemTheme, setTheme } = useThemeContext()
@@ -25,7 +25,7 @@ export default function Hero() {
                 y: 0,
               },
             }}
-            className=" text-4xl font-bold lg:text-4xl mb-2"
+            className=" mb-2 text-4xl font-bold lg:text-4xl"
             style={{
               backgroundColor: systemTheme.background.primary,
               color: systemTheme.text.title,
@@ -36,7 +36,7 @@ export default function Hero() {
               width={250}
               height={250}
               alt="Picture of the author"
-              className='hover:opacity-80'
+              className="hover:opacity-80"
             />
           </motion.div>
           <motion.div
@@ -57,6 +57,7 @@ export default function Hero() {
             (tee-en)
           </motion.div>
         </div>
+
         <div
           className="text-md mt-8   "
           style={{ color: systemTheme.text.secondary }}
@@ -64,7 +65,7 @@ export default function Hero() {
           <motion.div
             initial="hidden"
             animate="visible"
-            transition={{ delay: 0.4, duration: 0.8 }}
+            transition={{ delay: 0.2, duration: 0.6 }}
             variants={{
               hidden: {
                 opacity: 0,
@@ -77,7 +78,9 @@ export default function Hero() {
             }}
             className="mb-4 "
           >
-            Hello! You've discovered my little slice of the internet.
+            <TypewriterEffect
+              string={`Hello! You've discovered my little slice of the internet.`}
+            />
           </motion.div>
           <motion.div
             initial="hidden"

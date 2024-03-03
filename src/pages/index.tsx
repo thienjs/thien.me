@@ -193,9 +193,8 @@ export default function HomePage({
       <div>
         <LocationCard />
       </div>
-      <Lanyard />
-      <RetrieveIP />
-      <div className="col-span-2">
+
+      <div className=" my-8">
         <StacksCard />
       </div>
 
