@@ -48,6 +48,7 @@ import RetrieveIP from '~/components/retrieve-ip'
 import StacksCard from '~/components/cards/StacksCard'
 import QuotesSlider from '~/components/quotes-slider'
 import MoviesSection from '~/components/movies-section'
+import UsesSection from '~/components/uses-section'
 
 export type HomePageProps = {
   recentArticles: any
@@ -202,7 +203,9 @@ export default function HomePage({
         </div>
         <LocationCard />
       </div>
-
+      <div className=" my-8">
+        <UsesSection />
+      </div>
       <div className=" my-8">
         <StacksCard />
       </div>
