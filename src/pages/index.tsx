@@ -212,8 +212,22 @@ export default function HomePage({
           <CarouselContent>
             {statuses.map((status) => (
               <CarouselItem className="mx-auto my-auto max-w-7xl px-8 text-center">
-                <p className="">{status.title}</p>
-                <p className="p-6">{status.time}</p>
+                <p
+                  className="text-4xl font-sans"
+                  style={{
+                    color: systemTheme.text.secondary,
+                  }}
+                >
+                  {status.title}
+                </p>
+                <p
+                  className="p-6 font-mono"
+                  style={{
+                    color: systemTheme.text.accent,
+                  }}
+                >
+                  {status.time}
+                </p>
               </CarouselItem>
             ))}
           </CarouselContent>

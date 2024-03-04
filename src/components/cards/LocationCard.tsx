@@ -4,8 +4,9 @@ import createGlobe from 'cobe'
 import { MapPinIcon } from 'lucide-react'
 import * as React from 'react'
 import { useSpring } from 'react-spring'
-
+import { useThemeContext } from '~/hooks/useTheme'
 const LocationCard = () => {
+  const { systemTheme, setTheme } = useThemeContext()
   const canvasRef = React.useRef<HTMLCanvasElement>(null)
   const pointerInteracting = React.useRef<number | null>(null)
   const pointerInteractionMovement = React.useRef(0)
@@ -18,8 +19,8 @@ const LocationCard = () => {
       mass: 1,
       tension: 280,
       friction: 40,
-      precision: 0.001
-    }
+      precision: 0.001,
+    },
   }))
 
   React.useEffect(() => {
@@ -63,11 +64,23 @@ const LocationCard = () => {
 
   return (
     <div className="shadow-feature-card dark:shadow-feature-card-dark relative flex h-96 flex-col gap-6 overflow-hidden rounded-xl p-4 lg:p-6">
-      <div className="flex items-center gap-2">
-        <MapPinIcon className="size-[18px]" />
-        <h2 className="text-sm font-light">Connecticut</h2>
+      <div className="flex items-center gap-2  ">
+        <MapPinIcon
+          className="size-[18px]"
+          style={{
+            color: systemTheme.text.accent2,
+          }}
+        />
+        <h2
+          className="text-sm font-light"
+          style={{
+            color: systemTheme.text.accent,
+          }}
+        >
+          Connecticut
+        </h2>
       </div>
-      <div className="[@media(max-width:420px)]:bottom-[-140px] [@media(max-width:420px)]:h-[420px] [@media(min-width:768px)_and_(max-width:858px)]:h-[350px] absolute inset-x-0 bottom-[-10px] mx-auto aspect-square h-[388px]">
+      <div className="[@media(max-width:420px)]:bottom-[-140px] [@media(max-width:420px)]:h-[420px] [@media(min-width:768px)_and_(max-width:858px)]:h-[450px] absolute inset-x-0 bottom-[-10px] mx-auto aspect-square h-[350px]">
         <div
           style={{
             width: '100%',

@@ -23,7 +23,11 @@ export const H2: FunctionComponent = ({
           y: 0,
         },
       }}
-      className="text-sm pb-2 font-semibold  mb-3 border-b  w-full"             style={{ color: systemTheme.text.primary, borderColor: systemTheme.text.secondary }}
+      className="text-2xl font-semibold"
+      style={{
+        color: systemTheme.text.title,
+        borderColor: systemTheme.text.secondary,
+      }}
     >
       {children}
     </motion.div>

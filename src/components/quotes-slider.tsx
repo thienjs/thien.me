@@ -12,7 +12,7 @@ export default function QuotesSlider() {
         rewind: true,
         autoplay: true,
         interval: 7000,
-        arrows: true,
+        arrows: false,
         height: '28vh',
       }}
       aria-label="Slider"
@@ -27,21 +27,21 @@ export default function QuotesSlider() {
           }}
         >
           <blockquote
-            className="mx-auto my-auto max-w-7xl px-8 text-center"
+            className="mx-auto my-auto max-w-7xl px-8 text-center "
             style={{
               color: systemTheme.text.secondary,
             }}
           >
             <p className="text-lg">{item.quote}</p>
-          </blockquote>
           <p
-            className="absolute bottom-6  left-60"
+            className=""
             style={{
               color: systemTheme.text.accent,
             }}
           >
             - {item.author}
           </p>
+          </blockquote>
         </SplideSlide>
       ))}
     </Splide>

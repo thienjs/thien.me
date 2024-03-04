@@ -1,12 +1,27 @@
 import { Separator } from '~/components/ui/separator'
 import { useThemeContext } from '~/hooks/useTheme'
+import { H2 } from './ui/typography'
 export default function UsesSection() {
   const { systemTheme, setTheme } = useThemeContext()
   const UsesItem = ({ title, description }: any) => {
     return (
       <div>
-        <h3>{title}</h3>
-        <p className="text-muted-foreground text-sm">{description}</p>
+        <h3
+          className=""
+          style={{
+            color: systemTheme.text.accent,
+          }}
+        >
+          {title}
+        </h3>
+        <p
+          className=" text-sm"
+          style={{
+            color: systemTheme.text.accent2,
+          }}
+        >
+          {description}
+        </p>
       </div>
     )
   }
@@ -14,8 +29,13 @@ export default function UsesSection() {
   return (
     <>
       <div className="space-y-8">
-        <div className="w-full grid-cols-2 gap-12 space-y-4 border-b pb-12 md:grid md:space-y-0">
-          <h2 className="text-2xl font-semibold">Office</h2>
+        <div
+          className="w-full grid-cols-2 gap-12 space-y-4 border-b pb-12 md:grid md:space-y-0"
+          style={{
+            borderColor: systemTheme.text.accent2,
+          }}
+        >
+          <H2>Office</H2>
           <div className="grid w-full grid-cols-2 gap-4 sm:grid-cols-3">
             <UsesItem
               title="Custom Desktop PC"
@@ -37,8 +57,13 @@ export default function UsesSection() {
           </div>
         </div>
 
-        <div className="w-full grid-cols-2 gap-12 space-y-4 border-b pb-12 md:grid md:space-y-0">
-          <h2 className="text-2xl font-semibold">Programming</h2>
+        <div
+          className="w-full grid-cols-2 gap-12 space-y-4 border-b pb-12 md:grid md:space-y-0"
+          style={{
+            borderColor: systemTheme.text.accent2,
+          }}
+        >
+          <H2>Programming</H2>
           <div className="grid w-full grid-cols-2 gap-4 sm:grid-cols-3">
             <UsesItem
               title="Visual Studio Code"
@@ -53,8 +78,13 @@ export default function UsesSection() {
           </div>
         </div>
 
-        <div className="w-full grid-cols-2 gap-12 space-y-4 border-b pb-12 md:grid md:space-y-0">
-          <h2 className="text-2xl font-semibold">Tennis</h2>
+        <div
+          className="w-full grid-cols-2 gap-12 space-y-4 border-b pb-12 md:grid md:space-y-0"
+          style={{
+            borderColor: systemTheme.text.accent2,
+          }}
+        >
+          <H2>Tennis</H2>
           <div className="grid w-full grid-cols-2 gap-4 sm:grid-cols-3">
             <UsesItem
               title="Yonex Percept 97"
@@ -63,13 +93,15 @@ export default function UsesSection() {
           </div>
         </div>
 
-        <Separator />
-
-        <div className="w-full grid-cols-2 gap-12 space-y-4 md:grid md:space-y-0 border-b pb-12">
-          <h2 className="text-2xl font-semibold">Every Day Carry</h2>
+        <div
+          className="w-full grid-cols-2 gap-12 space-y-4  pb-12 md:grid md:space-y-0"
+          style={{
+            borderColor: systemTheme.text.accent2,
+          }}
+        >
+          <H2>Every Day Carry</H2>
           <div className="grid w-full grid-cols-2  gap-4 sm:grid-cols-3">
             <UsesItem title="Seiko 62Mas" description="37mm diver watch" />
-
           </div>
         </div>
       </div>
