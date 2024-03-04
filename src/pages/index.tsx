@@ -90,6 +90,37 @@ export default function HomePage({
     <div className="layout">
       <Hero />
       <div className="mt-6 mb-20"></div>
+      <Title>Status</Title>
+      <Carousel
+        className=" flex h-60 w-full items-center justify-center rounded-md"
+        style={{
+          backgroundColor: systemTheme.background.secondary,
+          borderColor: systemTheme.text.accent2,
+        }}
+      >
+        <CarouselContent>
+          {statuses.map((status) => (
+            <CarouselItem className="text-start mx-auto my-auto max-w-7xl px-12">
+              <p
+                className="text-4xl font-bold leading-none tracking-tight sm:text-5xl md:text-6xl"
+                style={{
+                  color: systemTheme.text.secondary,
+                }}
+              >
+                {status.title}
+              </p>
+              <p
+                className="pl-100 py-2 font-mono"
+                style={{
+                  color: systemTheme.text.accent,
+                }}
+              >
+                {status.time}
+              </p>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+      </Carousel>
       <Title>Blog</Title>
       <Tab.Group>
         <Tab.List className="mb-3 flex space-x-1   p-1  py-2">
@@ -201,37 +232,7 @@ export default function HomePage({
         <div className="my-12">
           <MoviesSection speed="fast" />
         </div>
-        <Title>Status</Title>
-        <Carousel
-          className=" flex h-60 w-full items-center justify-center rounded-md"
-          style={{
-            backgroundColor: systemTheme.background.secondary,
-            borderColor: systemTheme.text.accent2,
-          }}
-        >
-          <CarouselContent>
-            {statuses.map((status) => (
-              <CarouselItem className="mx-auto my-auto max-w-7xl px-8 text-center">
-                <p
-                  className="text-4xl font-sans"
-                  style={{
-                    color: systemTheme.text.secondary,
-                  }}
-                >
-                  {status.title}
-                </p>
-                <p
-                  className="p-6 font-mono"
-                  style={{
-                    color: systemTheme.text.accent,
-                  }}
-                >
-                  {status.time}
-                </p>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-        </Carousel>
+
         <Title>Quotes</Title>
         <div className="my-12">
           <QuotesSlider />
