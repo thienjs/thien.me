@@ -101,9 +101,7 @@ const Marquee = (props: MarqueeProps) => {
 export const StacksCard = () => {
   return (
     <div className="flex h-36 flex-col gap-2 overflow-hidden rounded-xl ">
-      <p className="flex justify-center font-mono text-sm  text-zinc-600 dark:text-zinc-400">
-        stack
-      </p>
+
       <Marquee className="" fade pauseOnHover>
         <IconTypescript width="40" height="40" />
         <IconTailwindcss width="40" height="40" />

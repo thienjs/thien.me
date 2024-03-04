@@ -9,41 +9,33 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "~/components/ui/carousel"
- 
+import { useThemeContext } from '~/hooks/useTheme'
 
 import { getStatus } from '~/lib/notion'
 import axios from 'axios'
 import { Title, Description } from '~/components/ui/typography'
 
 const StatusPage = ({ statuses }) => {
+  const { systemTheme, setTheme } = useThemeContext()
   return (
     <>
       <Title>Status</Title>
-      <div className="">
-        {statuses.map((status) => (
-          <p className="flex p-1">
-            <p className="flex-none text-xs mt-1.5 pr-4">{status.time}</p>
-            <p className="flex">{status.title}</p>
-          </p>
-        ))}
-      </div>
-      <Carousel className="w-full max-w-xs">
-      <CarouselContent>
-        {Array.from({ length: 5 }).map((_, index) => (
-          <CarouselItem key={index}>
-            <div className="p-1">
-              <Card>
-                <CardContent className="flex aspect-square items-center justify-center p-6">
-                  <span className="text-4xl font-semibold">{index + 1}</span>
-                </CardContent>
-              </Card>
-            </div>
-          </CarouselItem>
-        ))}
-      </CarouselContent>
-      <CarouselPrevious />
-      <CarouselNext />
-    </Carousel>
+      <Carousel
+        className=" flex h-60 w-full items-center justify-center rounded-md"
+        style={{
+          backgroundColor: systemTheme.background.secondary,
+          borderColor: systemTheme.text.accent2,
+        }}
+      >
+        <CarouselContent>
+          {statuses.map((status) => (
+            <CarouselItem className="mx-auto my-auto max-w-7xl px-8 text-center">
+              <p className="">{status.title}</p>
+              <p className="p-6">{status.time}</p>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+      </Carousel>
     </>
   )
 }

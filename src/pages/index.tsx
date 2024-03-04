@@ -49,12 +49,13 @@ import StacksCard from '~/components/cards/StacksCard'
 import QuotesSlider from '~/components/quotes-slider'
 import MoviesSection from '~/components/movies-section'
 import UsesSection from '~/components/uses-section'
+import { getStatus } from '~/lib/notion'
 
 export type HomePageProps = {
   recentArticles: any
   tabArticles: any
   tabTwoArticles: any
-
+  statuses: any
   repos: any
   reviews: Awaited<ReturnType<typeof getReviews>>
   currentlyReading: Awaited<ReturnType<typeof getReviews>>
@@ -64,6 +65,7 @@ export default function HomePage({
   tabArticles,
   tabTwoArticles,
   repos,
+  statuses,
   reviews,
   currentlyReading,
 }: HomePageProps) {
@@ -195,17 +197,39 @@ export default function HomePage({
         </Tab.Panels>
       </Tab.Group>
       <div className="">
+        <Title>Movies</Title>
         <div className="my-12">
-          <MoviesSection />
+          <MoviesSection speed="fast" />
         </div>
+        <Title>Status</Title>
+        <Carousel
+          className=" flex h-60 w-full items-center justify-center rounded-md"
+          style={{
+            backgroundColor: systemTheme.background.secondary,
+            borderColor: systemTheme.text.accent2,
+          }}
+        >
+          <CarouselContent>
+            {statuses.map((status) => (
+              <CarouselItem className="mx-auto my-auto max-w-7xl px-8 text-center">
+                <p className="">{status.title}</p>
+                <p className="p-6">{status.time}</p>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel>
+        <Title>Quotes</Title>
         <div className="my-12">
           <QuotesSlider />
         </div>
+        <Title>Location</Title>
         <LocationCard />
       </div>
+      <Title>Uses</Title>
       <div className=" my-8">
         <UsesSection />
       </div>
+      <Title>Stack</Title>
       <div className=" my-8">
         <StacksCard />
       </div>
@@ -219,9 +243,15 @@ export const getStaticProps: GetStaticProps = async () => {
   const reviews = await getReviews({ limit: 10 })
   const currentlyReading = await getCurrentlyReading({ limit: 2 })
   const notiondata = await getPublishedArticles(process.env.NOTION_DATABASE_ID)
-
+  const statusdata = await getStatus(process.env.NOTION_STATUS_ID)
 
   const { articles } = convertToArticleList(notiondata)
+
+  const statuses = statusdata.map((status: any) => ({
+    id: status.id,
+    title: status.properties.Title.title[0].plain_text,
+    time: status.properties.Time.created_time.slice(5, 10),
+  }))
 
   const httpLink = createHttpLink({
     uri: 'https://api.github.com/graphql',
@@ -289,6 +319,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
       repos,
       reviews,
+      statuses,
       currentlyReading,
     },
     revalidate: 120,

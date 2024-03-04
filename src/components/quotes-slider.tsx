@@ -20,7 +20,7 @@ export default function QuotesSlider() {
       {quotes.map((item) => (
         <SplideSlide
           key={item.quote}
-          className="border-1 flex h-full w-full items-center justify-center rounded-md"
+          className=" flex h-full w-full items-center justify-center rounded-md"
           style={{
             backgroundColor: systemTheme.background.secondary,
             borderColor: systemTheme.text.accent2,

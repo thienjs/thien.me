@@ -14,7 +14,7 @@ export default function UsesSection() {
   return (
     <>
       <div className="space-y-8">
-        <div className="w-full grid-cols-2 gap-12 space-y-4 border-b-2 pb-12 md:grid md:space-y-0">
+        <div className="w-full grid-cols-2 gap-12 space-y-4 border-b pb-12 md:grid md:space-y-0">
           <h2 className="text-2xl font-semibold">Office</h2>
           <div className="grid w-full grid-cols-2 gap-4 sm:grid-cols-3">
             <UsesItem
@@ -32,12 +32,12 @@ export default function UsesSection() {
             />
             <UsesItem
               title="Logitech MX Ergo Plus"
-              description="Tracball Mouse"
+              description="Trackball Mouse"
             />
           </div>
         </div>
 
-        <div className="w-full grid-cols-2 gap-12 space-y-4 border-b-2 pb-12 md:grid md:space-y-0">
+        <div className="w-full grid-cols-2 gap-12 space-y-4 border-b pb-12 md:grid md:space-y-0">
           <h2 className="text-2xl font-semibold">Programming</h2>
           <div className="grid w-full grid-cols-2 gap-4 sm:grid-cols-3">
             <UsesItem
@@ -53,7 +53,7 @@ export default function UsesSection() {
           </div>
         </div>
 
-        <div className="w-full grid-cols-2 gap-12 space-y-4 border-b-2 pb-12 md:grid md:space-y-0">
+        <div className="w-full grid-cols-2 gap-12 space-y-4 border-b pb-12 md:grid md:space-y-0">
           <h2 className="text-2xl font-semibold">Tennis</h2>
           <div className="grid w-full grid-cols-2 gap-4 sm:grid-cols-3">
             <UsesItem
@@ -65,11 +65,11 @@ export default function UsesSection() {
 
         <Separator />
 
-        <div className="w-full grid-cols-2 gap-12 space-y-4 md:grid md:space-y-0">
+        <div className="w-full grid-cols-2 gap-12 space-y-4 md:grid md:space-y-0 border-b pb-12">
           <h2 className="text-2xl font-semibold">Every Day Carry</h2>
           <div className="grid w-full grid-cols-2  gap-4 sm:grid-cols-3">
             <UsesItem title="Seiko 62Mas" description="37mm diver watch" />
-            <UsesItem title="ASUS Zenbook" description={`14.5" OLED laptop`} />
+
           </div>
         </div>
       </div>
