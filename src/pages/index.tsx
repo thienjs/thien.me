@@ -46,6 +46,9 @@ import LocationCard from '~/components/cards/LocationCard'
 import Lanyard from '~/components/lanyard'
 import RetrieveIP from '~/components/retrieve-ip'
 import StacksCard from '~/components/cards/StacksCard'
+import QuotesSlider from '~/components/quotes-slider'
+import MoviesSection from '~/components/movies-section'
+
 export type HomePageProps = {
   recentArticles: any
   tabArticles: any
@@ -190,7 +193,13 @@ export default function HomePage({
           </Tab.Panel>
         </Tab.Panels>
       </Tab.Group>
-      <div>
+      <div className="">
+        <div className="my-12">
+          <MoviesSection />
+        </div>
+        <div className="my-12">
+          <QuotesSlider />
+        </div>
         <LocationCard />
       </div>
 

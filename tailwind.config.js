@@ -23,40 +23,28 @@ module.exports = {
         fg: 'rgb(var(--fg-color) / <alpha-value>)',
       },
       keyframes: {
-        blink: {
-          '0%, 100%': {
-            opacity: 1,
-          },
-          '50%': {
-            opacity: 0,
-          },
-        },
-        flicker: {
-          '0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100%': {
-            opacity: 0.99,
-            filter:
-              'drop-shadow(0 0 1px rgba(252, 211, 77)) drop-shadow(0 0 15px rgba(245, 158, 11)) drop-shadow(0 0 1px rgba(252, 211, 77))',
-          },
-          '20%, 21.999%, 63%, 63.999%, 65%, 69.999%': {
-            opacity: 0.4,
-            filter: 'none',
-          },
-        },
         'accordion-down': {
-          from: { height: '0' },
+          from: { height: 0 },
           to: { height: 'var(--radix-accordion-content-height)' },
         },
         'accordion-up': {
           from: { height: 'var(--radix-accordion-content-height)' },
-          to: { height: '0' },
+          to: { height: 0 },
         },
-        'marquee-left': {
-          from: { transform: 'translateX(0)' },
-          to: { transform: 'translateX(calc(-100% - var(--gap)))' },
+        scroll: {
+          to: {
+            transform: 'translate(calc(-50% - 0.5rem))',
+          },
         },
-        'marquee-up': {
-          from: { transform: 'translateY(0)' },
-          to: { transform: 'translateY(calc(-100% - var(--gap)))' },
+        spotlight: {
+          '0%': {
+            opacity: 0,
+            transform: 'translate(-72%, -62%) scale(0.5)',
+          },
+          '100%': {
+            opacity: 1,
+            transform: 'translate(-50%,-40%) scale(1)',
+          },
         },
       },
       animation: {
@@ -66,6 +54,9 @@ module.exports = {
         'accordion-up': 'accordion-up 0.2s ease-out',
         'marquee-left': 'marquee-left var(--duration, 30s) linear infinite',
         'marquee-up': 'marquee-up var(--duration, 30s) linear infinite',
+        spotlight: 'spotlight 2s ease .75s 1 forwards',
+        scroll:
+          'scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite',
       },
     },
   },
