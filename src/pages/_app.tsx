@@ -32,7 +32,7 @@ export default function App({
   return (
     <ThemeProvider>
 
-      <SessionProvider session={session}>
+      <SessionProvider basePath={"/auth"} session={session}>
         <Layout>
 
             <Component {...pageProps} key={router.route} />

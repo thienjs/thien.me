@@ -51,7 +51,7 @@ export default function Hero() {
                 opacity: 1,
               },
             }}
-            className="mb-2 text-sm"
+            className="mb-2 text-lg"
             style={{ color: systemTheme.text.accent }}
           >
             (tee-en)
@@ -76,7 +76,7 @@ export default function Hero() {
                 y: 0,
               },
             }}
-            className="mb-4 "
+            className="mb-4 text-xl tracking-tight  "
           >
             <TypewriterEffect
               string={`Hello! You've discovered my little slice of the internet.`}
@@ -96,7 +96,7 @@ export default function Hero() {
                 y: 0,
               },
             }}
-            className="mb-4 "
+            className="mb-4 text-xl tracking-tight "
           >
             Get to know{' '}
             <Link legacyBehavior href="/about">
@@ -118,6 +118,7 @@ export default function Hero() {
           </motion.div>
           <motion.div
             initial="hidden"
+            className='text-xl tracking-tight'
             animate="visible"
             transition={{ delay: 0.6, duration: 0.7 }}
             variants={{

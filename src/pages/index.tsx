@@ -40,6 +40,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from '~/components/ui/carousel'
+import GithubCalendar from '~/components/GithubCalender'
 import { GithubStatsCard } from '~/components/cards/GithubStatsCard'
 import { useThemeContext } from '~/hooks/useTheme'
 import LocationCard from '~/components/cards/LocationCard'
@@ -248,6 +249,7 @@ export default function HomePage({
       <div className=" my-8">
         <StacksCard />
       </div>
+      <GithubCalendar/>
 
       <div className="my-8"></div>
     </div>
