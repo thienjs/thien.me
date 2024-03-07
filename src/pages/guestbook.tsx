@@ -26,7 +26,7 @@ const GuestBookPage = ({
     <>
       <Title>Guestbook</Title>
       <div>
-        <Description>Thank you for visiting. Say hi!</Description>
+        <Description>Sorry guestbook is currently down.</Description>
       </div>
       <motion.div
         initial="hidden"
