@@ -1,7 +1,7 @@
 import { NextAuthOptions } from 'next-auth'
 import GithubProvider from 'next-auth/providers/github'
 
-import SpotifyProvider from 'next-auth/providers/Spotify'
+
 import GoogleProvider from 'next-auth/providers/google'
 import NextAuth from 'next-auth'
 
@@ -17,12 +17,7 @@ export const authOptions: NextAuthOptions = {
       clientId: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     }),
-    SpotifyProvider({
-      authorization:
-        'https://accounts.spotify.com/authorize?scope=user-read-email,playlist-read-private',
-      clientId: process.env.SPOTIFY_CLIENT_ID,
-      clientSecret: process.env.SPOTIFY_CLIENT_SECRET,
-    }),
+
   ],
 }
 

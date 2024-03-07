@@ -83,8 +83,8 @@ export const theme = {
       primary: '#000000',
       secondary: '#434343',
       title: '#000000',
-      accent: '#525252',
-      accent2: '#00627a',
+      accent: '#00A7A9',
+      accent2: '#00A7A9',
     },
   },
   wob: {
@@ -97,8 +97,8 @@ export const theme = {
       primary: '#ffffff',
       secondary: '#F6F6F6',
       title: '#ffffff',
-      accent: '#BCBCBC',
-      accent2: '#00627a',
+      accent: '#00FBFF',
+      accent2: '#00FBFF',
     },
   },
   panels: {
@@ -126,7 +126,7 @@ export const theme = {
       secondary: '#E6E6E6',
       title: '#a698c5',
       accent: '#ffac00',
-      accent2: '#1a8ab7',
+      accent2: '#00FCFF',
     },
   },
   fundamental: {
@@ -152,7 +152,7 @@ export const theme = {
     text: {
       primary: '#FBA834',
       secondary: '#FE7A36',
-      title: '#1B3C73',
+      title: '#A79F15',
       accent: '#DAC0A3',
       accent2: '#DAC0A3',
     },
@@ -210,7 +210,7 @@ export const theme = {
       secondary: '#DBE0D2',
       title: '#DBE0D2',
       accent: '#43b929',
-      accent2: '#00627a',
+      accent2: '#0CFF70',
     },
   },
   metropolis: {
