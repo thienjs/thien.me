@@ -8,7 +8,7 @@ import Head from 'next/head'
 import { DefaultSeo } from 'next-seo'
 import Layout from '~/components/Layout/Layout'
 import Progress from '~/components/ui/NProgress'
-import { SessionProvider } from 'next-auth/react'
+import { Providers } from '~/lib/providers' 
 import { useEffect } from 'react'
 import { AnimatePresence } from 'framer-motion'
 
@@ -32,14 +32,14 @@ export default function App({
   return (
     <ThemeProvider>
 
-      <SessionProvider basePath={"/auth"} session={session}>
+      <Providers>
         <Layout>
 
             <Component {...pageProps} key={router.route} />
 
         </Layout>
         <Progress />
-      </SessionProvider>
+      </Providers>
     </ThemeProvider>
   )
 }
