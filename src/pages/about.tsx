@@ -9,7 +9,7 @@ import UnstyledLink from '~/components/ui/links/UnstyledLink'
 import NowPlaying from '~/components/music/NowPlaying'
 import TechStack from '~/components/about/TechStack'
 import Link from 'next/link'
-import { Title, H2 } from '~/components/ui/typography'
+import { Title, H2, Description  } from '~/components/ui/typography'
 import { motion } from 'framer-motion'
 import { useThemeContext } from '~/hooks/useTheme';
 export type AboutProps = {
@@ -40,10 +40,13 @@ const AboutPage = ({ reviews, currentlyReading }) => {
       url={r.url}
     />
   ))
-
+  const title = `About`
+  const description = ``
   return (
     <>
-      <div className="mb-5 mt-20   flex text-left ">
+
+
+      <div className="mb-5 mt-40 pt-20  flex text-left ">
         <motion.div
           initial="hidden"
           animate="visible"
