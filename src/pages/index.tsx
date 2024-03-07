@@ -181,6 +181,23 @@ export default function HomePage({
           </ArrowLink>
         </div>
       </Tab.Group>
+      <Title>Projects</Title>
+      <div className="">
+        <div className="">
+          <div className=" w-full border-0 ">
+            {repos.map((repo) => (
+              <div key={repo.name} className="border-0">
+                <RepoCard {...repo} />
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="mt-4 mr-2 mb-12 flex justify-end">
+          <ArrowLink href="/repo" className="">
+            all repos
+          </ArrowLink>
+        </div>
+      </div>
 
       <Title>Hobbies</Title>
       <Tab.Group>
@@ -291,7 +308,7 @@ export const getStaticProps: GetStaticProps = async () => {
     query: gql`
       {
         user(login: "thienjs") {
-          pinnedItems(first: 6) {
+          pinnedItems(first: 1) {
             edges {
               node {
                 ... on Repository {

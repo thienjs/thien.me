@@ -118,7 +118,7 @@ export default function Hero() {
           </motion.div>
           <motion.div
             initial="hidden"
-            className='text-xl tracking-tight'
+            className="text-xl tracking-tight"
             animate="visible"
             transition={{ delay: 0.6, duration: 0.7 }}
             variants={{
@@ -143,10 +143,16 @@ export default function Hero() {
             </a>
             .
           </motion.div>
-          <p className=""></p>
+          <div className="mt-8 gap-x-6 hidden">
+            <Link href="/" className="border px-4 py-0.5">
+              github
+            </Link>
+            <div>linkedin</div>
+            <div>email</div>
+          </div>
         </div>
       </div>
-      <div className="mb-10 hidden  flex-shrink-0 lg:mt-12">
+      <div className="mb-10 hidden flex-shrink-0 lg:mt-12">
         <Image
           src="https://github.com/thienjs.png"
           alt="Profile"
