@@ -198,6 +198,10 @@ export default function HomePage({
           </ArrowLink>
         </div>
       </div>
+      <div className=" my-8">
+        <StacksCard />
+      </div>
+      <GithubCalendar />
 
       <Title>Hobbies</Title>
       <Tab.Group>
@@ -262,11 +266,6 @@ export default function HomePage({
       <div className=" my-8">
         <UsesSection />
       </div>
-      <Title>Stack</Title>
-      <div className=" my-8">
-        <StacksCard />
-      </div>
-      <GithubCalendar/>
 
       <div className="my-8"></div>
     </div>

@@ -3,9 +3,9 @@ import { Title } from '~/components/ui/typography'
 export default function FourOhFour() {
   return (
     <>
-      <Title>404</Title>
-      <div className="item-center min-h-screen justify-center">
-        page not found
+
+      <div className="item-center animateglitch min-h-full justify-center content-center mx-auto px-auto text-4xl mt-60 pt-80 ">
+        404
       </div>
     </>
   )

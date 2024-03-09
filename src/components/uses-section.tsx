@@ -42,10 +42,7 @@ export default function UsesSection() {
               description="
               Intel i7-9700K | 32 Gig RAM"
             />
-            <UsesItem
-              title="Focusrite Scarlett 2i2"
-              description="2nd generation"
-            />
+
             <UsesItem
               title="Rama Works Thermal"
               description="Gateron Quinn, GMK WoB"
@@ -79,7 +76,7 @@ export default function UsesSection() {
         </div>
 
         <div
-          className="w-full grid-cols-2 gap-12 space-y-4 border-b pb-12 md:grid md:space-y-0"
+          className="w-full grid-cols-2 gap-12 space-y-4  pb-12 md:grid md:space-y-0"
           style={{
             borderColor: systemTheme.text.accent2,
           }}
@@ -88,7 +85,7 @@ export default function UsesSection() {
           <div className="grid w-full grid-cols-2 gap-4 sm:grid-cols-3">
             <UsesItem
               title="Yonex Percept 97"
-              description="310g | 16x19 | 97 sq in | 6th gen | lead at 3 & 9 & 12 | leather grip | wilson pro overgrip"
+              description="Poly Tour Pro @50lbs"
             />
           </div>
         </div>
@@ -99,10 +96,7 @@ export default function UsesSection() {
             borderColor: systemTheme.text.accent2,
           }}
         >
-          <H2>Every Day Carry</H2>
-          <div className="grid w-full grid-cols-2  gap-4 sm:grid-cols-3">
-            <UsesItem title="Seiko 62Mas" description="37mm diver watch" />
-          </div>
+
         </div>
       </div>
     </>

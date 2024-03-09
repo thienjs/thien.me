@@ -15,6 +15,8 @@ module.exports = {
       },
       fontFamily: {
         primary: ['var(--font-family)', ...fontFamily.sans],
+        mono: ['Roboto Mono', ...fontFamily.mono],
+        serif: ['Newsreader', ...fontFamily.serif],
       },
       colors: {
         bg: 'rgb(var(--bg-color) / <alpha-value>)',

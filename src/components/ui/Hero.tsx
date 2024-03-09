@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { useThemeContext } from '~/hooks/useTheme';
 import TypewriterEffect from '../Typewriter'
+import TextScrambler from './TextScrambler'
 
 export default function Hero() {
   const { systemTheme, setTheme } = useThemeContext()
@@ -11,34 +12,19 @@ export default function Hero() {
     <div>
       <div className="flex min-h-screen flex-col justify-center pb-[25vh] lg:mt-6 lg:px-4">
         <div>
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            transition={{ delay: 0.1, duration: 1 }}
-            variants={{
-              hidden: {
-                opacity: 0,
-                y: 100,
-              },
-              visible: {
-                opacity: 1,
-                y: 0,
-              },
-            }}
+          <div
             className=" mb-2 text-4xl font-bold lg:text-4xl"
             style={{
               backgroundColor: systemTheme.background.primary,
               color: systemTheme.text.title,
             }}
           >
-            <Image
-              src="/thien-bauhaus-logo.png"
-              width={250}
-              height={250}
-              alt="Picture of the author"
-              className="hover:opacity-80"
-            />
-          </motion.div>
+            <p className="mt-20 pt-20 text-6xl"> <TextScrambler>
+              
+            THIEN TRAN
+            </TextScrambler>
+            </p>
+          </div>
           <motion.div
             initial="hidden"
             animate="visible"
@@ -51,7 +37,7 @@ export default function Hero() {
                 opacity: 1,
               },
             }}
-            className="mb-2 text-lg"
+            className="mb-2 font-mono text-lg"
             style={{ color: systemTheme.text.accent }}
           >
             (tee-en)
@@ -143,7 +129,7 @@ export default function Hero() {
             </a>
             .
           </motion.div>
-          <div className="mt-8 gap-x-6 hidden">
+          <div className="mt-8 hidden gap-x-6">
             <Link href="/" className="border px-4 py-0.5">
               github
             </Link>
