@@ -259,12 +259,12 @@ export default function HomePage({
         <div className="my-12">
           <QuotesSlider />
         </div>
-        <Title>Location</Title>
-        <LocationCard />
       </div>
       <Title>Uses</Title>
       <div className=" my-8">
         <UsesSection />
+        <Title>Location</Title>
+        <LocationCard />
       </div>
 
       <div className="my-8"></div>

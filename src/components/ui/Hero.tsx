@@ -19,10 +19,9 @@ export default function Hero() {
               color: systemTheme.text.title,
             }}
           >
-            <p className="mt-20 pt-20 text-6xl"> <TextScrambler>
-              
-            THIEN TRAN
-            </TextScrambler>
+            <p className="mt-20 pt-20 text-6xl">
+              {' '}
+              <TextScrambler>THIEN TRAN</TextScrambler>
             </p>
           </div>
           <motion.div
@@ -62,7 +61,7 @@ export default function Hero() {
                 y: 0,
               },
             }}
-            className="mb-4 text-xl tracking-tight  "
+            className="mb-4 text-md tracking-tight  "
           >
             <TypewriterEffect
               string={`Hello! You've discovered my little slice of the internet.`}
@@ -82,7 +81,7 @@ export default function Hero() {
                 y: 0,
               },
             }}
-            className="mb-4 text-xl tracking-tight "
+            className="mb-4 text-me tracking-tight "
           >
             Get to know{' '}
             <Link legacyBehavior href="/about">
@@ -104,7 +103,7 @@ export default function Hero() {
           </motion.div>
           <motion.div
             initial="hidden"
-            className="text-xl tracking-tight"
+            className="text-md tracking-tight"
             animate="visible"
             transition={{ delay: 0.6, duration: 0.7 }}
             variants={{
@@ -129,12 +128,42 @@ export default function Hero() {
             </a>
             .
           </motion.div>
-          <div className="mt-8 hidden gap-x-6">
-            <Link href="/" className="border px-4 py-0.5">
+          <div className="mt-8  flex flex-row gap-x-6 gap-y-4 ">
+            <Link href="mailto:hi@thien.me" className="hover:text-cyan-500">
+              email
+            </Link>
+
+            <Link
+              href="https://github.com/thienjs"
+              className="hover:text-cyan-500"
+            >
               github
             </Link>
-            <div>linkedin</div>
-            <div>email</div>
+
+            <Link
+              href="https://linkedin.com/in/thienio"
+              className="hover:text-cyan-500"
+            >
+              linkedin
+            </Link>
+
+            <Link
+              href="https://discordapp.com//users/thien.io"
+              className="hover:text-cyan-500"
+            >
+              discord
+            </Link>
+
+            <Link
+              href="https://instagram.com/thien.io"
+              className="hover:text-cyan-500"
+            >
+              instagram
+            </Link>
+
+            <Link href="https://t.me/thienio" className="hover:text-cyan-500">
+              telegram
+            </Link>
           </div>
         </div>
       </div>
