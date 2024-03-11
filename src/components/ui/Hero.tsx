@@ -131,7 +131,7 @@ export default function Hero() {
           <div className="mt-8  flex flex-row gap-x-2 gap-y-4 ">
             <Link
               href="mailto:hi@thien.me"
-              className="border py-1 px-4"
+              className="border py-1 px-4 font-mono"
               style={{
                 color: systemTheme.text.secondary,
                 borderColor: systemTheme.text.accent,
@@ -142,7 +142,7 @@ export default function Hero() {
 
             <Link
               href="https://github.com/thienjs"
-              className="border py-1 px-4"
+              className="border py-1 px-4 font-mono"
               style={{
                 color: systemTheme.text.secondary,
                 borderColor: systemTheme.text.accent,
@@ -153,7 +153,7 @@ export default function Hero() {
 
             <Link
               href="https://linkedin.com/in/thienio"
-              className="border py-1 px-4"
+              className="border py-1 px-4 font-mono"
               style={{
                 color: systemTheme.text.secondary,
                 borderColor: systemTheme.text.accent,
@@ -164,7 +164,7 @@ export default function Hero() {
 
             <Link
               href="https://discordapp.com//users/thien.io"
-              className="border py-1 px-4"
+              className="border py-1 px-4 font-mono"
               style={{
                 color: systemTheme.text.secondary,
                 borderColor: systemTheme.text.accent,
