@@ -1,3 +1,4 @@
+'use server'
 import type { InferGetStaticPropsType } from 'next'
 import { ContentPopover } from '~/components/guestbook'
 import { fetchGuestbookEntries } from '~/lib/queries'

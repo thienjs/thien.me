@@ -19,7 +19,7 @@ export default function Hero() {
               color: systemTheme.text.title,
             }}
           >
-            <p className="mt-20 pt-20 text-6xl">
+            <p className="mt-20 pt-20 text-6xl tracking-widest font-black">
               {' '}
               <TextScrambler>THIEN TRAN</TextScrambler>
             </p>
@@ -61,7 +61,7 @@ export default function Hero() {
                 y: 0,
               },
             }}
-            className="mb-4 text-md tracking-tight  "
+            className="text-md mb-4 tracking-tight  "
           >
             <TypewriterEffect
               string={`Hello! You've discovered my little slice of the internet.`}
@@ -81,7 +81,7 @@ export default function Hero() {
                 y: 0,
               },
             }}
-            className="mb-4 text-me tracking-tight "
+            className="text-me mb-4 tracking-tight "
           >
             Get to know{' '}
             <Link legacyBehavior href="/about">
@@ -128,41 +128,49 @@ export default function Hero() {
             </a>
             .
           </motion.div>
-          <div className="mt-8  flex flex-row gap-x-6 gap-y-4 ">
-            <Link href="mailto:hi@thien.me" className="hover:text-cyan-500">
+          <div className="mt-8  flex flex-row gap-x-2 gap-y-4 ">
+            <Link
+              href="mailto:hi@thien.me"
+              className="border py-1 px-4"
+              style={{
+                color: systemTheme.text.secondary,
+                borderColor: systemTheme.text.accent,
+              }}
+            >
               email
             </Link>
 
             <Link
               href="https://github.com/thienjs"
-              className="hover:text-cyan-500"
+              className="border py-1 px-4"
+              style={{
+                color: systemTheme.text.secondary,
+                borderColor: systemTheme.text.accent,
+              }}
             >
               github
             </Link>
 
             <Link
               href="https://linkedin.com/in/thienio"
-              className="hover:text-cyan-500"
+              className="border py-1 px-4"
+              style={{
+                color: systemTheme.text.secondary,
+                borderColor: systemTheme.text.accent,
+              }}
             >
               linkedin
             </Link>
 
             <Link
               href="https://discordapp.com//users/thien.io"
-              className="hover:text-cyan-500"
+              className="border py-1 px-4"
+              style={{
+                color: systemTheme.text.secondary,
+                borderColor: systemTheme.text.accent,
+              }}
             >
               discord
-            </Link>
-
-            <Link
-              href="https://instagram.com/thien.io"
-              className="hover:text-cyan-500"
-            >
-              instagram
-            </Link>
-
-            <Link href="https://t.me/thienio" className="hover:text-cyan-500">
-              telegram
             </Link>
           </div>
         </div>
