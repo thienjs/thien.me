@@ -21,12 +21,17 @@ const ThemeDropdown = () => {
             onClick={() => toggleDropdown()}
           >
             <div
-              className="flex items-center gap-2 px-1"
+              className="flex items-center gap-2 px-1 justify-center"
               style={{
                 color: systemTheme.text.accent,
               }}
             >
-              <Palette />
+              <div
+                style={{
+                  backgroundColor: systemTheme.text.title,
+                }}
+                className={`aspect-square w-4 rounded-full`}
+              ></div>
             </div>
           </button>
 
@@ -49,7 +54,7 @@ const ThemeDropdown = () => {
                 >
                   <span>{theme[key as keyof typeof theme].name}</span>
                   <div
-                    className="p-1 rounded-full"
+                    className="rounded-full p-1"
                     style={{
                       backgroundColor:
                         theme[key as keyof typeof theme].background.primary,
