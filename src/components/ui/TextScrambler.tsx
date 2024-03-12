@@ -5,8 +5,7 @@ import { motion } from 'framer-motion'
 
 const CYCLES_PER_LETTER = 2
 const SHUFFLE_TIME = 50
-const CHARS =
-  '!@#$%^;|,.<>/?asdfbtytq!@#$ermb%^&*vczaqwers!@#$daffhkklpo&*():{}iumnvcbnsweqsdfa'
+const CHARS = 'qpornmfytnmgqpoeiwrkzviqrhsdfg'
 
 type Props = {
   children: string
@@ -62,7 +61,7 @@ const TextScrambler: React.FC<Props> = ({ children }) => {
       className="relative overflow-hidden"
     >
       <div className="relative z-10 flex items-center gap-2">
-        <span>{text}</span>
+        <span className="font-mono">{text}</span>
       </div>
     </motion.div>
   )
