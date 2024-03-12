@@ -19,9 +19,8 @@ export default function Hero() {
               color: systemTheme.text.title,
             }}
           >
-            <p className="mt-20 pt-20 text-6xl font-bold tracking-widest">
-              {' '}
-              <TextScrambler>THIEN</TextScrambler>
+            <p className="mt-20 pt-20 text-8xl tracking-wide">
+              <TypewriterEffect string={`THIEN`} />
             </p>
           </div>
           <motion.div
@@ -61,11 +60,9 @@ export default function Hero() {
                 y: 0,
               },
             }}
-            className="text-md mb-4 tracking-tight  "
+            className="text-md mb-4 tracking-normal  "
           >
-            <TypewriterEffect
-              string={`Hello! You've discovered my little slice of the internet.`}
-            />
+            <p>Hello! You've discovered my little slice of the internet.</p>
           </motion.div>
 
           <div className="mt-8  flex flex-row gap-x-2 gap-y-4 ">
