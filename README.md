@@ -22,3 +22,9 @@ This is my personal website and portfolio. I use this to experiment with new tec
 - spotify
 - github
 - goodreads
+
+## Features
+
+- theme selector
+- guestbook
+- stats
