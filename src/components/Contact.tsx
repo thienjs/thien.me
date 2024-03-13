@@ -4,8 +4,9 @@ import { useState } from 'react'
 // For display toasts
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.min.css'
+import { Button } from './ui/button'
 
-import styles from '../styles/Home.module.css'
+import { useThemeContext } from '~/hooks/useTheme'
 
 export default function Contact() {
   // Input states
@@ -29,17 +30,11 @@ export default function Contact() {
   }
 
   return (
-    <div className="">
+    <div className="flex items-center justify-center">
       <ToastContainer />
-      <form
-        className=" flex flex-col items-center justify-center "
-        onSubmit={submitForm}
-      >
-        <div className="  max-w-md px-8 py-6">
-          <label
-            htmlFor="name"
-            className="mb-2 block text-sm font-medium text-gray-700 dark:text-gray-300"
-          >
+      <form className="w-full max-w-xl" onSubmit={submitForm}>
+        <div className=" ">
+          <label htmlFor="name" className="mb-2 block text-sm font-medium ">
             Full Name
           </label>
           <input
@@ -50,14 +45,12 @@ export default function Contact() {
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
+            className="mb-2 block w-full text-sm font-medium "
           />
         </div>
         <div className="">
           <div>
-            <label
-              htmlFor="email"
-              className="mb-2 block text-sm font-medium text-gray-700 dark:text-gray-300"
-            >
+            <label htmlFor="email" className="mb-2 block text-sm font-medium">
               E-Mail Address
             </label>
             <input
@@ -65,33 +58,29 @@ export default function Contact() {
               name="email"
               placeholder="johndoe@example.io"
               value={email}
+              className="mb-2 block w-full text-sm  font-medium"
               onChange={(e) => setEmail(e.target.value)}
               required
             />
           </div>
         </div>
         <div>
-          <label
-            htmlFor="message"
-            className="mb-2 block text-sm font-medium text-gray-700 dark:text-gray-300"
-          >
+          <label htmlFor="message" className="mb-2 block text-sm font-medium ">
             Message
           </label>
           <textarea
             name="message"
             id="message"
+            className="mb-2 block w-full text-sm  font-medium"
             placeholder="Hi there!"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             required
           ></textarea>
         </div>
-        <button
-          className="flex  justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-          type="submit"
-        >
-          Submit
-        </button>
+      <div className="flex items-end justify-end mt-4">
+          <Button variant="outline">Submit</Button>
+        </div>
       </form>
     </div>
   )

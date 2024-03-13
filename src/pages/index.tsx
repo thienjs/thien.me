@@ -267,7 +267,7 @@ export default function HomePage({
         <Title>Location</Title>
         <LocationCard />
       </div>
-
+      <Title>Contact</Title>
       <div className="my-8"><Contact/></div>
     </div>
   )
