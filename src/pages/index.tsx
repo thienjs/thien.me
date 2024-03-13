@@ -51,6 +51,7 @@ import QuotesSlider from '~/components/quotes-slider'
 import MoviesSection from '~/components/movies-section'
 import UsesSection from '~/components/uses-section'
 import { getStatus } from '~/lib/notion'
+import Contact from '~/components/Contact'
 
 export type HomePageProps = {
   recentArticles: any
@@ -267,7 +268,7 @@ export default function HomePage({
         <LocationCard />
       </div>
 
-      <div className="my-8"></div>
+      <div className="my-8"><Contact/></div>
     </div>
   )
 }

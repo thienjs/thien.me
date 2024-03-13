@@ -1,19 +1,47 @@
-import type { NextApiRequest, NextApiResponse } from 'next'
+const { Client } = require('@notionhq/client')
 
-import { PrismaClient, Prisma } from '@prisma/client'
+const notion = new Client({
+  auth: process.env.NOTION_TOKEN,
+})
 
-const prisma = new PrismaClient()
-
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+export default async function handler(req, res) {
   if (req.method !== 'POST') {
-    return res.status(405).json({ message: 'Method not allowed' })
+    return res
+      .status(405)
+      .json({ message: `${req.method} requests are not allowed` })
   }
-
   try {
-    const contact: Prisma.ContactCreateInput = JSON.parse(req.body)
-    const savedContact = await prisma.contact.create({ data: contact })
-    res.status(200).json(savedContact)
-  } catch (err) {
-    res.status(400).json({ message: 'Something went wrong' })
+    const { name, email, message } = JSON.parse(req.body)
+    await notion.pages.create({
+      parent: {
+        database_id: process.env.NOTION_CONTACT_DB_ID,
+      },
+      properties: {
+        Name: {
+          title: [
+            {
+              text: {
+                content: name,
+              },
+            },
+          ],
+        },
+        Email: {
+          email: email,
+        },
+        Message: {
+          rich_text: [
+            {
+              text: {
+                content: message,
+              },
+            },
+          ],
+        },
+      },
+    })
+    res.status(201).json({ msg: 'Success' })
+  } catch (error) {
+    res.status(500).json({ msg: 'There was an error' })
   }
 }
