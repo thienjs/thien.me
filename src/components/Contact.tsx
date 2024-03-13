@@ -9,6 +9,7 @@ import { Button } from './ui/button'
 import { useThemeContext } from '~/hooks/useTheme'
 
 export default function Contact() {
+  const { systemTheme, setTheme } = useThemeContext()
   // Input states
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
@@ -41,11 +42,16 @@ export default function Contact() {
             type="text"
             id="name"
             name="name"
+            style={{
+              backgroundColor: systemTheme.background.secondary,
+              color: systemTheme.text.secondary,
+              borderColor: systemTheme.text.accent,
+            }}
             placeholder="John Doe"
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
-            className="mb-2 block w-full text-sm font-medium "
+            className="mb-2 block w-full text-sm font-medium rounded-md"
           />
         </div>
         <div className="">
@@ -56,9 +62,14 @@ export default function Contact() {
             <input
               type="email"
               name="email"
+              style={{
+                backgroundColor: systemTheme.background.secondary,
+                color: systemTheme.text.secondary,
+                borderColor: systemTheme.text.accent,
+              }}
               placeholder="johndoe@example.io"
               value={email}
-              className="mb-2 block w-full text-sm  font-medium"
+              className="mb-2 block w-full text-sm  font-medium rounded-md"
               onChange={(e) => setEmail(e.target.value)}
               required
             />
@@ -71,15 +82,29 @@ export default function Contact() {
           <textarea
             name="message"
             id="message"
-            className="mb-2 block w-full text-sm  font-medium"
+            style={{
+              backgroundColor: systemTheme.background.secondary,
+              color: systemTheme.text.secondary,
+              borderColor: systemTheme.text.accent,
+            }}
+            className="mb-2 block w-full text-sm  font-medium rounded-md "
             placeholder="Hi there!"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             required
           ></textarea>
         </div>
-      <div className="flex items-end justify-end mt-4">
-          <Button variant="outline">Submit</Button>
+        <div className="mt-4 flex items-end justify-end">
+          <button
+            className="rounded-md border  bg-opacity-60 py-1 px-4 font-mono "
+            style={{
+              backgroundColor: systemTheme.text.accent,
+              color: systemTheme.text.primary,
+              borderColor: systemTheme.text.title,
+            }}
+          >
+            Submit
+          </button>
         </div>
       </form>
     </div>
