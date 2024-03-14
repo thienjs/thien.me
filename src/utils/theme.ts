@@ -83,8 +83,8 @@ export const theme = {
       primary: '#000000',
       secondary: '#434343',
       title: '#000000',
-      accent: '#155E75',
-      accent2: '#A5F3FC',
+      accent: '#94A3B8',
+      accent2: '#F1F5F9',
     },
   },
   wob: {
@@ -97,8 +97,8 @@ export const theme = {
       primary: '#ffffff',
       secondary: '#F6F6F6',
       title: '#ffffff',
-      accent: '#A5F3FC',
-      accent2: '#155E75',
+      accent: '#F1F5F9',
+      accent2: '#94A3B8',
     },
   },
   panels: {
@@ -140,7 +140,7 @@ export const theme = {
       secondary: '#171718',
       title: '#7fa580',
       accent: '#6B21A8',
-      accent2: '#F0ABFC',
+      accent2: '#166534',
     },
   },
   rudy: {
