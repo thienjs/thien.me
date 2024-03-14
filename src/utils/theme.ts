@@ -83,8 +83,8 @@ export const theme = {
       primary: '#000000',
       secondary: '#434343',
       title: '#000000',
-      accent: '#3B3B3B',
-      accent2: '#00A7A9',
+      accent: '#155E75',
+      accent2: '#A5F3FC',
     },
   },
   wob: {
@@ -97,8 +97,8 @@ export const theme = {
       primary: '#ffffff',
       secondary: '#F6F6F6',
       title: '#ffffff',
-      accent: '#DDDDDD',
-      accent2: '#00FBFF',
+      accent: '#A5F3FC',
+      accent2: '#155E75',
     },
   },
   panels: {

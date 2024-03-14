@@ -99,7 +99,7 @@ export default function Contact() {
             className="rounded-md border  bg-opacity-60 py-1 px-4 font-mono "
             style={{
               backgroundColor: systemTheme.text.accent,
-              color: systemTheme.text.primary,
+              color: systemTheme.text.accent2,
               borderColor: systemTheme.text.title,
             }}
           >
