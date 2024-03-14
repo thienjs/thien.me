@@ -78,6 +78,15 @@ export const getMovies = async (databaseId) => {
 
   return response.results
 }
+export const getMessages = async (databaseId) => {
+  const response = await notion.databases.query({
+    database_id: databaseId,
+
+  })
+
+  return response.results
+}
+
 export const getStatus = async (databaseId) => {
   const response = await notion.databases.query({
     database_id: databaseId,
