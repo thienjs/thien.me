@@ -105,14 +105,14 @@ export const theme = {
     name: 'panels',
     background: {
       primary: '#ffce49',
-      secondary: '#1d4b84',
+      secondary: '#0EA5E9',
     },
     text: {
       primary: '#ffffff',
-      secondary: '#d72638',
-      title: '#cf1817',
-      accent: '#44acb6',
-      accent2: '#cf1817',
+      secondary: '#B91C1C',
+      title: '#1D4ED8',
+      accent: '#9A3412',
+      accent2: '#F97316',
     },
   },
   oblivion: {
@@ -139,8 +139,8 @@ export const theme = {
       primary: '#171718',
       secondary: '#171718',
       title: '#7fa580',
-      accent: '#5d437e',
-      accent2: '#00627a',
+      accent: '#6B21A8',
+      accent2: '#F0ABFC',
     },
   },
   rudy: {
@@ -153,7 +153,7 @@ export const theme = {
       primary: '#FBA834',
       secondary: '#FE7A36',
       title: '#A79F15',
-      accent: '#DAC0A3',
+      accent: '#CA8A04',
       accent2: '#DAC0A3',
     },
   },
@@ -168,7 +168,7 @@ export const theme = {
       secondary: '#04AF6A',
       title: '#9578D3',
       accent: '#E14C94',
-      accent2: '#00627a',
+      accent2: '#FAE8FF',
     },
   },
   hanamiDango: {
@@ -182,7 +182,7 @@ export const theme = {
       secondary: '#3A3335',
       title: '#E14C94',
       accent: '#587246',
-      accent2: '#00627a',
+      accent2: '#86EFAC',
     },
   },
   dots: {
@@ -196,7 +196,7 @@ export const theme = {
       secondary: '#FAA613',
       title: '#F44708',
       accent: '#A10702',
-      accent2: '#688E26',
+      accent2: '#FCA5A5',
     },
   },
   bontanical: {
@@ -238,7 +238,7 @@ export const theme = {
       secondary: '#ffffff',
       title: '#ffffff',
       accent: '#ffffff',
-      accent2: '#582C83',
+      accent2: '#A78BFA',
     },
   },
   french: {
