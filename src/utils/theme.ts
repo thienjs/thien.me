@@ -84,7 +84,7 @@ export const theme = {
       secondary: '#434343',
       title: '#000000',
       accent: '#94A3B8',
-      accent2: '#F1F5F9',
+      accent2: '#64748b',
     },
   },
   wob: {

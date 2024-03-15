@@ -51,6 +51,7 @@ import QuotesSlider from '~/components/quotes-slider'
 import MoviesSection from '~/components/movies-section'
 import UsesSection from '~/components/uses-section'
 import { getStatus } from '~/lib/notion'
+import { getMessages } from '~/lib/notion'
 import Contact from '~/components/Contact'
 
 export type HomePageProps = {
@@ -58,6 +59,7 @@ export type HomePageProps = {
   tabArticles: any
   tabTwoArticles: any
   statuses: any
+  guestbooks:any
   repos: any
   reviews: Awaited<ReturnType<typeof getReviews>>
   currentlyReading: Awaited<ReturnType<typeof getReviews>>
@@ -68,6 +70,7 @@ export default function HomePage({
   tabTwoArticles,
   repos,
   statuses,
+  guestbooks,
   reviews,
   currentlyReading,
 }: HomePageProps) {
@@ -118,6 +121,37 @@ export default function HomePage({
                 }}
               >
                 {status.time}
+              </p>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+      </Carousel>
+      <Title>Guestbook</Title>
+      <Carousel
+        className=" flex h-80 w-full items-center justify-center rounded-md"
+        style={{
+          backgroundColor: systemTheme.background.secondary,
+          borderColor: systemTheme.text.accent2,
+        }}
+      >
+        <CarouselContent>
+          {guestbooks.map((guestbook) => (
+            <CarouselItem className="text-start mx-auto my-auto max-w-7xl px-12">
+              <p
+                className="text-xl font-bold leading-none tracking-tight "
+                style={{
+                  color: systemTheme.text.secondary,
+                }}
+              >
+                {guestbook.message}
+              </p>
+              <p
+                className="pl-100 py-2 font-mono"
+                style={{
+                  color: systemTheme.text.accent,
+                }}
+              >
+                {guestbook.name}
               </p>
             </CarouselItem>
           ))}
@@ -268,7 +302,9 @@ export default function HomePage({
         <LocationCard />
       </div>
       <Title>Contact</Title>
-      <div className="my-8"><Contact/></div>
+      <div className="my-8">
+        <Contact />
+      </div>
     </div>
   )
 }
@@ -280,7 +316,13 @@ export const getStaticProps: GetStaticProps = async () => {
   const statusdata = await getStatus(process.env.NOTION_STATUS_ID)
 
   const { articles } = convertToArticleList(notiondata)
+  const guestbooksdata = await getMessages(process.env.NOTION_GUESTBOOK_DB_ID)
 
+  const guestbooks = guestbooksdata.map((guestbook: any) => ({
+    id: guestbook.id,
+    name: guestbook.properties.Name.title[0].plain_text,
+    message: guestbook.properties.Message.rich_text[0]?.plain_text,
+  }))
   const statuses = statusdata.map((status: any) => ({
     id: status.id,
     title: status.properties.Title.title[0].plain_text,
@@ -354,6 +396,7 @@ export const getStaticProps: GetStaticProps = async () => {
       repos,
       reviews,
       statuses,
+      guestbooks,
       currentlyReading,
     },
     revalidate: 120,
