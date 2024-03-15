@@ -44,7 +44,7 @@ export const getStaticProps: GetStaticProps = async () => {
     id: contact.id,
     name: contact.properties.Name.title[0].plain_text,
     email: contact.properties.Email.email,
-    message: contact.properties.Message.message.rich_text.plain_text,
+    message: contact.properties.Message.rich_text[0]?.plain_text,
   }))
   return {
     props: {

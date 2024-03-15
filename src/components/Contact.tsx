@@ -1,11 +1,7 @@
-// For handling input states
+
 import { useState } from 'react'
 
-// For display toasts
 import { ToastContainer, toast } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.min.css'
-import { Button } from './ui/button'
-
 import { useThemeContext } from '~/hooks/useTheme'
 
 export default function Contact() {
