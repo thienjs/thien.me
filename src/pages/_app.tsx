@@ -30,16 +30,21 @@ export default function App({
   const pageSEO = { ...SEO, ...pageMeta }
 
   return (
-    <ThemeProvider>
+    <>
 
-      <Providers>
-        <Layout>
-
+      <Head>
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <link rel="shortcut icon" href="favicon/favicon.ico" />
+      </Head>
+      <DefaultSeo {...pageSEO} />
+      <ThemeProvider>
+        <Providers>
+          <Layout>
             <Component {...pageProps} key={router.route} />
-
-        </Layout>
-        <Progress />
-      </Providers>
-    </ThemeProvider>
+          </Layout>
+          <Progress />
+        </Providers>
+      </ThemeProvider>
+    </>
   )
 }

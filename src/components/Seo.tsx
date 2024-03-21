@@ -3,8 +3,8 @@ import { useRouter } from 'next/router';
 
 // !STARTERCONF Change these default meta
 const defaultMeta = {
-  title: 'Thien Tran',
-  siteName: 'Thien Tran',
+  title: 'thien.me',
+  siteName: 'thien.me',
   description: 'personal website',
   /** Without additional '/' on the end, e.g. https://thien.me */
   url: 'https://thien.me',
