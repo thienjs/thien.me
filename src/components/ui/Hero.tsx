@@ -20,8 +20,15 @@ export default function Hero() {
               color: systemTheme.text.title,
             }}
           >
-            <p className="mt-20 pt-20 text-8xl tracking-wide">
-              <TypewriterEffect string={`THIEN`} />
+            <p
+              className="mt-20 border-8 p-4 pt-10 pb-10 text-8xl tracking-wide"
+              style={{
+                color: systemTheme.text.title,
+                borderColor: systemTheme.text.title,
+              }}
+            >
+              THIEN
+              <span className="flex tracking-widest">TRAN</span>
             </p>
           </div>
           <motion.div
@@ -61,36 +68,52 @@ export default function Hero() {
                 y: 0,
               },
             }}
-            className="text-md mb-4 tracking-normal font-mono "
+            className="text-md mb-4 font-mono tracking-normal "
           >
-            <Description>Hello! You've discovered my little slice of the internet.</Description>
+            <span className="font-mono">
+              <TypewriterEffect
+                string={`Hello! You've discovered my little slice of the internet`}
+              />
+            </span>
           </motion.div>
 
           <div className="mt-8  flex flex-row gap-x-2 gap-y-4 ">
             <Link
               href="mailto:hi@thien.me"
-              className="rounded-md bg-yellow-600 bg-opacity-60 py-1 px-4 font-mono text-yellow-100"
+              className=" bg-yellow-600 bg-opacity-60 py-1 px-4 font-mono text-yellow-100 border-2"
+              style={{
+                borderColor: systemTheme.text.accent2,
+              }}
             >
               <TextScrambler>email</TextScrambler>
             </Link>
 
             <Link
               href="https://github.com/thienjs"
-              className="rounded-md bg-violet-900 bg-opacity-60 py-1 px-4 font-mono text-violet-100"
+              className=" bg-violet-900 bg-opacity-60 py-1 px-4 font-mono text-violet-100 border-2"
+              style={{
+                borderColor: systemTheme.text.accent2,
+              }}
             >
               <TextScrambler>github</TextScrambler>
             </Link>
 
             <Link
               href="https://linkedin.com/in/thienio"
-              className="rounded-md bg-blue-600 bg-opacity-60 py-1 px-4 font-mono text-blue-100"
+              className=" bg-blue-600 bg-opacity-60 py-1 px-4 font-mono text-blue-100 border-2"
+              style={{
+                borderColor: systemTheme.text.accent2,
+              }}
             >
               <TextScrambler>linkedin</TextScrambler>
             </Link>
 
             <Link
               href="https://discordapp.com//users/thien.io"
-              className="rounded-md bg-cyan-800 bg-opacity-60 py-1 px-4 font-mono text-cyan-100"
+              className="  bg-cyan-800 bg-opacity-60 py-1 px-4 font-mono text-cyan-100 border-2"
+              style={{
+                borderColor: systemTheme.text.accent2,
+              }}
             >
               <TextScrambler>discord</TextScrambler>
             </Link>

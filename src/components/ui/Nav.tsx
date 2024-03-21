@@ -33,15 +33,15 @@ export default function Nav() {
   const [activeIndex, setActiveIndex] = React.useState(null)
   const [isOpen, setisOpen] = React.useState()
   return (
-    <nav className="mt-4 flex  w-full   flex-col pb-4 pt-2  ">
-      <div className="flex flex-row justify-between ">
+    <nav className="mt-4 flex  w-full   flex-col pb-4 pt-2 ">
+      <div className="flex flex-row justify-between  ">
         <Link href="/">
           <TBoxIcon className="ml-2 mr-auto h-8 w-8 cursor-pointer" />
         </Link>
 
         <AnimateSharedLayout>
           <motion.ul
-            className="flex gap-y-1 font-serif text-sm  dark:text-gray-300 md:gap-x-4 "
+            className="flex gap-y-1 font-serif text-sm  dark:text-gray-300 md:gap-x-4  "
             onHoverEnd={() => setActiveIndex(null)}
           >
             {navigation.navData.map((item, index) => {
@@ -78,7 +78,7 @@ export default function Nav() {
                             duration: 0.2,
                           }}
                           className={classnames(
-                            'pointer-events-none absolute inset-0 z-0 rounded-md',
+                            'pointer-events-none absolute inset-0 z-0 rounded-md ',
                             ['bg-zinc-300'],
                             ['dark:bg-zinc-800']
                           )}
