@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 
 const CYCLES_PER_LETTER = 2
 const SHUFFLE_TIME = 50
-const CHARS = 'qpornmfytnmgqpoeiwrkzviqrhsdfg'
+const CHARS = 'qpornmtranytnmgqpoethitrasneniwrkzviqrhsthienfg'
 
 type Props = {
   children: string

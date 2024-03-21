@@ -1,6 +1,7 @@
 import { ReactChildren, FunctionComponent } from 'react'
 import { motion } from 'framer-motion'
 import { useThemeContext } from '~/hooks/useTheme';
+import TextScrambler from '../TextScrambler';
 
 export const Title: FunctionComponent = ({
   children,
@@ -27,6 +28,7 @@ export const Title: FunctionComponent = ({
       style={{ color: systemTheme.text.title,
       borderColor: systemTheme.text.title }}
     >
+      
       {children}
     </motion.div>
   )

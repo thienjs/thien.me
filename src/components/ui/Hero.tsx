@@ -80,7 +80,7 @@ export default function Hero() {
           <div className="mt-8  flex flex-row gap-x-2 gap-y-4 ">
             <Link
               href="mailto:hi@thien.me"
-              className=" bg-yellow-600 bg-opacity-60 py-1 px-4 font-mono text-yellow-100 border-2"
+              className=" border-2 bg-yellow-600 bg-opacity-60 py-1 px-4 font-mono text-yellow-100"
               style={{
                 borderColor: systemTheme.text.accent2,
               }}
@@ -90,7 +90,7 @@ export default function Hero() {
 
             <Link
               href="https://github.com/thienjs"
-              className=" bg-violet-900 bg-opacity-60 py-1 px-4 font-mono text-violet-100 border-2"
+              className=" border-2 bg-violet-900 bg-opacity-60 py-1 px-4 font-mono text-violet-100"
               style={{
                 borderColor: systemTheme.text.accent2,
               }}
@@ -100,7 +100,7 @@ export default function Hero() {
 
             <Link
               href="https://linkedin.com/in/thienio"
-              className=" bg-blue-600 bg-opacity-60 py-1 px-4 font-mono text-blue-100 border-2"
+              className=" border-2 bg-blue-600 bg-opacity-60 py-1 px-4 font-mono text-blue-100"
               style={{
                 borderColor: systemTheme.text.accent2,
               }}
@@ -110,7 +110,7 @@ export default function Hero() {
 
             <Link
               href="https://discordapp.com//users/thien.io"
-              className="  bg-cyan-800 bg-opacity-60 py-1 px-4 font-mono text-cyan-100 border-2"
+              className="  border-2 bg-cyan-800 bg-opacity-60 py-1 px-4 font-mono text-cyan-100"
               style={{
                 borderColor: systemTheme.text.accent2,
               }}

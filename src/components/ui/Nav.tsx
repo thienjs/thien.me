@@ -38,6 +38,7 @@ export default function Nav() {
         <Link href="/">
           <TBoxIcon className="ml-2 mr-auto h-8 w-8 cursor-pointer" />
         </Link>
+        {/* 
 
         <AnimateSharedLayout>
           <motion.ul
@@ -64,10 +65,13 @@ export default function Nav() {
                       <span
                         className={`relative z-50 ${
                           pathname === item.path
-                            ? 'font-semibold  text-gray-900 underline decoration-cyan-500 decoration-2 underline-offset-1 dark:text-gray-300 '
-                            : 'font-normal text-gray-700 dark:text-gray-400'
+                            ? 'font-semibold  text-gray-900 border-2 px-2 py-1  '
+                            : 'font-normal '
                         }`}
-                        style={{ color: systemTheme.text.secondary }}
+                        style={{
+                          color: systemTheme.text.secondary,
+                          borderColor: systemTheme.text.accent,
+                        }}
                       >
                         {item.label}
                       </span>
@@ -94,6 +98,7 @@ export default function Nav() {
             })}
           </motion.ul>
         </AnimateSharedLayout>
+*/}
 
         <div className="flex ">
           {/*
@@ -104,9 +109,7 @@ export default function Nav() {
           */}
           <div className="lg:hidden"></div>
           <ThemeDropdown />
-          <span
-            className="hidden lg:block"
-          >
+          <span className="hidden lg:block">
             <CommandPalette navigation={navigation} />
           </span>
           <Drawer>
@@ -169,13 +172,10 @@ export default function Nav() {
                               aria-current={
                                 pathname === item.href ? 'page' : null
                               }
-                              style={{
-
-                              }}
+                              style={{}}
                             >
                               <span
                                 style={{
-
                                   color: systemTheme.text.primary,
                                 }}
                                 className={`relative z-50 ${
