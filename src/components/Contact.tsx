@@ -20,7 +20,7 @@ export default function Contact() {
     })
     // Success if status code is 201
     if (res.status === 201) {
-      toast('Thank you for contacting us!', { type: 'success' })
+      toast('Thank you for your message. I will get back to you ASAP.', { type: 'success' })
     } else {
       toast('Please re-check your inputs.', { type: 'error' })
     }

@@ -31,7 +31,7 @@ import TopTracks from '~/components/music/TopTracks'
 import { ArticleCard } from '~/components/blog/ArticleCard'
 import { NowReading } from '~/components/hobby/NowReading'
 import { FaStar } from 'react-icons/fa'
-import Title from '~/components/ui/typography/Title'
+import { Title, Description } from '~/components/ui/typography'
 import { Card, CardContent } from '~/components/ui/card'
 import {
   Carousel,
@@ -96,6 +96,7 @@ export default function HomePage({
       <Hero />
       <div className="mt-6 mb-20"></div>
       <Title>Status</Title>
+      <Description>what i'm currently up to.</Description>
       <Carousel
         className=" flex h-60 w-full items-center justify-center rounded-md"
         style={{
@@ -127,6 +128,7 @@ export default function HomePage({
         </CarouselContent>
       </Carousel>
       <Title>Guestbook</Title>
+      <Description>Thank you for visting. Leave a message. </Description>
       <Carousel
         className=" flex h-80 w-full items-center justify-center rounded-md"
         style={{
@@ -158,6 +160,7 @@ export default function HomePage({
         </CarouselContent>
       </Carousel>
       <Title>Blog</Title>
+      <Description>I sometimes write to clear the mind.</Description>
       <Tab.Group>
         <Tab.List className="mb-3 flex space-x-1   p-1  py-2">
           <Tab
@@ -217,6 +220,7 @@ export default function HomePage({
         </div>
       </Tab.Group>
       <Title>Projects</Title>
+      <Description>selected web development projects and stack.</Description>
       <div className="">
         <div className="">
           <div className=" w-full border-0 ">
@@ -239,6 +243,7 @@ export default function HomePage({
       <GithubCalendar />
 
       <Title>Hobbies</Title>
+      <Description>what i'm currently reading, watching, and listening to.</Description>
       <Tab.Group>
         <Tab.List className="mb-3 flex space-x-1  p-1  py-2">
           <Tab
@@ -286,22 +291,26 @@ export default function HomePage({
       </Tab.Group>
       <div className="">
         <Title>Movies</Title>
+        <Description>favorite films, update soon.</Description>
         <div className="my-12">
           <MoviesSection speed="fast" />
         </div>
 
         <Title>Quotes</Title>
+        <Description>- micheal scott</Description>
         <div className="my-12">
           <QuotesSlider />
         </div>
       </div>
       <Title>Uses</Title>
+      <Description>everyday tools</Description>
       <div className=" my-8">
         <UsesSection />
         <Title>Location</Title>
         <LocationCard />
       </div>
       <Title>Contact</Title>
+      <Description>I'm always up for a chat. Send a message and I'll respond to ASAP.</Description>
       <div className="my-8">
         <Contact />
       </div>

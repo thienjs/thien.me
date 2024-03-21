@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { useThemeContext } from '~/hooks/useTheme';
 import TypewriterEffect from '../Typewriter'
 import TextScrambler from './TextScrambler'
+import { Description } from './typography';
 
 export default function Hero() {
   const { systemTheme, setTheme } = useThemeContext()
@@ -60,9 +61,9 @@ export default function Hero() {
                 y: 0,
               },
             }}
-            className="text-md mb-4 tracking-normal  "
+            className="text-md mb-4 tracking-normal font-mono "
           >
-            <p>Hello! You've discovered my little slice of the internet.</p>
+            <Description>Hello! You've discovered my little slice of the internet.</Description>
           </motion.div>
 
           <div className="mt-8  flex flex-row gap-x-2 gap-y-4 ">

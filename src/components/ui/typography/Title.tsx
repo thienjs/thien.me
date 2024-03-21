@@ -23,7 +23,7 @@ export const Title: FunctionComponent = ({
           y: 0,
         },
       }}
-      className="text-6xl mt-40 mb-10 font-bold tracking-tight"
+      className="text-5xl mt-40 mb-10 font-bold tracking-tight uppercase"
       style={{ color: systemTheme.text.title }}
     >
       {children}

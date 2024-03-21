@@ -24,7 +24,7 @@ export const Description: FunctionComponent = ({
           y: 0,
         },
       }}
-      className="mb-8"
+      className="mb-8 font-mono"
     >
       {children}
     </motion.div>
