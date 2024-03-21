@@ -1,7 +1,7 @@
 import React from 'react'
 import { GetServerSideProps } from 'next'
 
-import Layout from '../../components/ui/Layout'
+import Layout from '../../components/Layout/Layout'
 import Router from 'next/router'
 import { TodoProps } from '../../components/todo/Todo'
 import { prisma } from '../../lib/prisma'
