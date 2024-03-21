@@ -1,4 +1,4 @@
-import Layout from 'components/ui/Layout'
+import Layout from 'components/Layout/Layout'
 import Title from 'components/ui/typography/Title'
 import { fetcher } from '~/lib/fetcher'
 import { NowPlayingSong } from '~/lib/types'
