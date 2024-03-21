@@ -22,7 +22,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <>
       {isClient ? (
         <>
-          <Seo title="Thien" />
+          <Seo title="thien.me"  />
           <div
             className="h-screen"
             style={{

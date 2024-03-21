@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 const defaultMeta = {
   title: 'Thien Tran',
   siteName: 'Thien Tran',
-  description: 'A typeracer app based on Monkeytype',
+  description: 'personal website',
   /** Without additional '/' on the end, e.g. https://thien.me */
   url: 'https://thien.me',
   type: 'website',
@@ -15,7 +15,7 @@ const defaultMeta = {
    * If you wish to use a normal image, just specify the path below
    */
   image: 'https://',
-};
+}
 
 type SeoProps = {
   date?: string;
