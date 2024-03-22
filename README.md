@@ -13,8 +13,7 @@ This is my personal website and portfolio. I use this to experiment with new tec
 - **Notion**: as CMS
 - **Prisma ORM**: simple typed communication with database
 - **Framer-Motion**: animation library
-- **Apollo**: communication with graphql github DB
-- **NextAuth**: simple authetication with nextjs
+- **Apollo**: communication with graphql github api
 
 ## API
 
