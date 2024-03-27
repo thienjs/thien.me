@@ -34,7 +34,7 @@ export default function App({
 
       <Head>
         <meta content="width=device-width, initial-scale=1" name="viewport" />
-        <link rel="shortcut icon" href="favicon/favicon.ico" />
+        <link rel="shortcut icon" href="favicon.ico" />
       </Head>
       <DefaultSeo {...pageSEO} />
       <ThemeProvider>
