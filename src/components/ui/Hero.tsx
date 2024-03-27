@@ -6,13 +6,14 @@ import { useThemeContext } from '~/hooks/useTheme';
 import TypewriterEffect from '../Typewriter'
 import TextScrambler from './TextScrambler'
 import { Description } from './typography';
+import TextLoop from './TextLoop'
 
 export default function Hero() {
   const { systemTheme, setTheme } = useThemeContext()
   return (
     <div>
       <div className="flex min-h-screen flex-col justify-center pb-[25vh] lg:mt-6 lg:px-4">
-        <div>
+        <div className="relative">
           <div
             className=" mb-2 text-4xl font-bold lg:text-4xl"
             style={{
@@ -21,33 +22,18 @@ export default function Hero() {
             }}
           >
             <p
-              className="mt-20 border-8 p-4 pt-10 pb-10 text-8xl tracking-wide"
+              className="mt-20 border-8 p-4 pt-10 pb-20 text-8xl "
               style={{
                 color: systemTheme.text.title,
                 borderColor: systemTheme.text.title,
               }}
             >
               THIEN
-              <span className="flex tracking-widest">TRAN</span>
+              <span className="flex tracking-wider">TRAN.</span>
+              <TextLoop />
             </p>
           </div>
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            transition={{ delay: 1.3, duration: 0.8 }}
-            variants={{
-              hidden: {
-                opacity: 0,
-              },
-              visible: {
-                opacity: 1,
-              },
-            }}
-            className="mb-2 font-mono text-lg"
-            style={{ color: systemTheme.text.accent }}
-          >
-            (tee-en)
-          </motion.div>
+
         </div>
 
         <div
