@@ -255,4 +255,18 @@ export const theme = {
       accent2: '#0D0D0D',
     },
   },
+  shibuya: {
+    name: 'shibuya',
+    background: {
+      primary: '#00ccfd',
+      secondary: '#201148',
+    },
+    text: {
+      primary: '#2011a2',
+      secondary: '#ffffff',
+      title: '	#55e7ff',
+      accent: '#ff34b3',
+      accent2: 'FF3EA5',
+    },
+  },
 }
