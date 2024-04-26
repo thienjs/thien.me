@@ -58,7 +58,7 @@ export default function Hero() {
           >
             <span className="font-mono">
               <TypewriterEffect
-                string={`Hello! You've discovered my little slice of the internet`}
+                string={`Hello! You've discovered my little slice of the internet.`}
               />
             </span>
           </motion.div>

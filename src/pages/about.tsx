@@ -154,9 +154,7 @@ const AboutPage = ({ reviews, currentlyReading }) => {
 
         <p className="mb-2 " style={{ color: systemTheme.text.secondary }}>
           Beyond the pixels, you'll find me coaching on the tennis and
-          pickleball courts. Outside the court, you'll find me tinkering with
-          mechanical keyboards, collecting cards, or indulging in the magic of
-          movies. I thrive on the joy of learning, always seeking new challenges
+          pickleball courts. I thrive on the joy of learning, always seeking new challenges
           to fuel my creative appetite.
         </p>
       </motion.div>

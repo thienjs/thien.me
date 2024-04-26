@@ -127,7 +127,7 @@ export default function HomePage({
           ))}
         </CarouselContent>
       </Carousel>
-      <Title>Guestbook</Title>
+      <Title><Link href="/guestbook">Guestbook</Link></Title>
       <Description>Thank you for visting. Leave a message. </Description>
       <Carousel
         className=" flex h-80 w-full items-center justify-center rounded-md"
@@ -159,7 +159,7 @@ export default function HomePage({
           ))}
         </CarouselContent>
       </Carousel>
-      <Title>Blog</Title>
+      <Title><Link href="/blog">Blog</Link></Title>
       <Description>I sometimes write to clear the mind.</Description>
       <Tab.Group>
         <Tab.List className="mb-3 flex space-x-1   p-1  py-2">
@@ -242,8 +242,12 @@ export default function HomePage({
       </div>
       <GithubCalendar />
 
-      <Title>Hobbies</Title>
-      <Description>what i'm currently reading, watching, and listening to.</Description>
+      <Title>
+        Hobbies
+      </Title>
+      <Description>
+        what i'm currently reading, watching, and listening to.
+      </Description>
       <Tab.Group>
         <Tab.List className="mb-3 flex space-x-1  p-1  py-2">
           <Tab
@@ -310,7 +314,9 @@ export default function HomePage({
         <LocationCard />
       </div>
       <Title>Contact</Title>
-      <Description>I'm always up for a chat. Send a message and I'll respond to ASAP.</Description>
+      <Description>
+        I'm always up for a chat. Send a message and I'll respond to ASAP.
+      </Description>
       <div className="my-8">
         <Contact />
       </div>
