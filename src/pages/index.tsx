@@ -315,7 +315,7 @@ export default function HomePage({
       </div>
       <Title>Contact</Title>
       <Description>
-        I'm always up for a chat. Send a message and I'll respond to ASAP.
+        Feel free to contact me if you're looking for a new website, tennis coaching, or just to say hi. 
       </Description>
       <div className="my-8">
         <Contact />
