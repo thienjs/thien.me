@@ -118,7 +118,7 @@ export default function NowPage() {
                 {data.title} - {data?.artist}
               </a>
             ) : (
-              <span className="">a lot of 70's music</span>
+              <span className="">japanese city pop</span>
             )}
           </NowItem>
         </ul>

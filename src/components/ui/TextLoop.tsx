@@ -22,7 +22,7 @@ export default function TextLoop() {
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: 50 }}
         transition={{ duration: 0.5 }}
-        className="absolute text-6xl tracking-wide"
+        className="absolute text-4xl tracking-wide"
       >
         {words[index]}
       </motion.h1>
