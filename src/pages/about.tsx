@@ -107,7 +107,7 @@ const AboutPage = ({ reviews, currentlyReading }) => {
             className="text-sm "
             style={{ color: systemTheme.text.secondary }}
           >
-            Designer, Developer, Dreamer
+            Coach, Designer, Developer
           </motion.div>
           <motion.div
             initial="hidden"
