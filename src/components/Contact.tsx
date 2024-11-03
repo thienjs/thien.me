@@ -28,82 +28,91 @@ export default function Contact() {
 
   return (
     <div className="flex items-center justify-center">
-      <ToastContainer>
-        <form className="w-full max-w-xl" onSubmit={submitForm}>
-          <div className=" ">
-            <label htmlFor="name" className="mb-2 block text-sm font-medium ">
-              Full Name
+      <ToastContainer position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+        transition:Bounce />
+      <form className="w-full max-w-xl" onSubmit={submitForm}>
+        <div className=" ">
+          <label htmlFor="name" className="mb-2 block text-sm font-medium ">
+            Full Name
+          </label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            style={{
+              backgroundColor: systemTheme.background.secondary,
+              color: systemTheme.text.secondary,
+              borderColor: systemTheme.text.accent,
+            }}
+            placeholder="John Doe"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+            className="mb-2 block w-full text-sm font-medium rounded-md"
+          />
+        </div>
+        <div className="">
+          <div>
+            <label htmlFor="email" className="mb-2 block text-sm font-medium">
+              E-Mail Address
             </label>
             <input
-              type="text"
-              id="name"
-              name="name"
+              type="email"
+              name="email"
               style={{
                 backgroundColor: systemTheme.background.secondary,
                 color: systemTheme.text.secondary,
                 borderColor: systemTheme.text.accent,
               }}
-              placeholder="John Doe"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
+              placeholder="johndoe@example.io"
+              value={email}
+              className="mb-2 block w-full text-sm  font-medium rounded-md"
+              onChange={(e) => setEmail(e.target.value)}
               required
-              className="mb-2 block w-full text-sm font-medium rounded-md"
             />
           </div>
-          <div className="">
-            <div>
-              <label htmlFor="email" className="mb-2 block text-sm font-medium">
-                E-Mail Address
-              </label>
-              <input
-                type="email"
-                name="email"
-                style={{
-                  backgroundColor: systemTheme.background.secondary,
-                  color: systemTheme.text.secondary,
-                  borderColor: systemTheme.text.accent,
-                }}
-                placeholder="johndoe@example.io"
-                value={email}
-                className="mb-2 block w-full text-sm  font-medium rounded-md"
-                onChange={(e) => setEmail(e.target.value)}
-                required
-              />
-            </div>
-          </div>
-          <div>
-            <label htmlFor="message" className="mb-2 block text-sm font-medium ">
-              Message
-            </label>
-            <textarea
-              name="message"
-              id="message"
-              style={{
-                backgroundColor: systemTheme.background.secondary,
-                color: systemTheme.text.secondary,
-                borderColor: systemTheme.text.accent,
-              }}
-              className="mb-2 block w-full text-sm  font-medium rounded-md "
-              placeholder="Hi there!"
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-              required
-            ></textarea>
-          </div>
-          <div className="mt-4 flex items-end justify-end">
-            <button
-              className="rounded-md border  bg-opacity-60 py-1 px-4 font-mono "
-              style={{
-                backgroundColor: systemTheme.text.accent,
-                color: systemTheme.text.accent2,
-                borderColor: systemTheme.text.title,
-              }}
-            >
-              Submit
-            </button>
-          </div>
-        </form>
-      </ToastContainer>
+        </div>
+        <div>
+          <label htmlFor="message" className="mb-2 block text-sm font-medium ">
+            Message
+          </label>
+          <textarea
+            name="message"
+            id="message"
+            style={{
+              backgroundColor: systemTheme.background.secondary,
+              color: systemTheme.text.secondary,
+              borderColor: systemTheme.text.accent,
+            }}
+            className="mb-2 block w-full text-sm  font-medium rounded-md "
+            placeholder="Hi there!"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            required
+          ></textarea>
+        </div>
+        <div className="mt-4 flex items-end justify-end">
+          <button
+            className="rounded-md border  bg-opacity-60 py-1 px-4 font-mono "
+            style={{
+              backgroundColor: systemTheme.text.accent,
+              color: systemTheme.text.accent2,
+              borderColor: systemTheme.text.title,
+            }}
+          >
+            Submit
+          </button>
+        </div>
+      </form>
     </div>
   )
 }
