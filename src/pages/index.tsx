@@ -159,6 +159,11 @@ export default function HomePage({
           ))}
         </CarouselContent>
       </Carousel>
+      <div className="mt-4 mr-2 flex justify-end">
+          <ArrowLink href="/guestbook" className="mb-12">
+            sign guestbook
+          </ArrowLink>
+        </div>
       <Title><Link href="/blog">Blog</Link></Title>
       <Description>I sometimes write to clear the mind.</Description>
       <Tab.Group>
