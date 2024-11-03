@@ -9,7 +9,7 @@ import UnstyledLink from '~/components/ui/links/UnstyledLink'
 import NowPlaying from '~/components/music/NowPlaying'
 import TechStack from '~/components/about/TechStack'
 import Link from 'next/link'
-import { Title, H2, Description  } from '~/components/ui/typography'
+import { Title, H2, Description } from '~/components/ui/typography'
 import { motion } from 'framer-motion'
 import { useThemeContext } from '~/hooks/useTheme';
 export type AboutProps = {
@@ -148,14 +148,14 @@ const AboutPage = ({ reviews, currentlyReading }) => {
         style={{ backgroundColor: systemTheme.background.secondary }}
       >
         <p className=" mb-2 " style={{ color: systemTheme.text.secondary }}>
-          Hello world! I'm a self-driven freelance developer and designer,
-          passionately crafting unique and user-friendly experiences.
+          Hello! I'm a USPTA certified tennis coach and a passionate web developer and designer. With over 20 of experience on the court, I love helping players of all levels improve their skills, build confidence, and enjoy the game. My coaching philosophy emphasizes personalized training, making sure each player reaches their full potential while having fun.
         </p>
 
         <p className="mb-2 " style={{ color: systemTheme.text.secondary }}>
-          Beyond the pixels, you'll find me coaching on the tennis and
-          pickleball courts. I thrive on the joy of learning, always seeking new challenges
-          to fuel my creative appetite.
+          In addition to my coaching, I have a strong background in web development and design. I specialize in creating dynamic, user-friendly websites that enhance the online presence of businesses and individuals. My technical skills, combined with my creative vision, allow me to craft engaging digital experiences.
+        </p>
+        <p className="mb-2 " style={{ color: systemTheme.text.secondary }}>
+          Whether I'm on the court or behind the screen, I thrive on challenges and enjoy connecting with people. Let’s elevate your game and your online presence together!
         </p>
       </motion.div>
 
