@@ -37,8 +37,8 @@ export default function Contact() {
         pauseOnFocusLoss
         draggable
         pauseOnHover
-        theme="light"
-        transition:Bounce />
+        theme="dark"
+      />
       <form className="w-full max-w-xl" onSubmit={submitForm}>
         <div className=" ">
           <label htmlFor="name" className="mb-2 block text-sm font-medium ">
