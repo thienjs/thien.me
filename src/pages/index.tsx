@@ -219,28 +219,7 @@ export default function HomePage({
           </ArrowLink>
         </div>
       </Tab.Group>
-      <Title>Projects</Title>
-      <Description>selected web development projects and stack.</Description>
-      <div className="">
-        <div className="">
-          <div className=" w-full border-0 ">
-            {repos.map((repo) => (
-              <div key={repo.name} className="border-0">
-                <RepoCard {...repo} />
-              </div>
-            ))}
-          </div>
-        </div>
-        <div className="mt-4 mr-2 mb-12 flex justify-end">
-          <ArrowLink href="/repo" className="">
-            all repos
-          </ArrowLink>
-        </div>
-      </div>
-      <div className=" my-8">
-        <StacksCard />
-      </div>
-      <GithubCalendar />
+
 
       <Title>
         Hobbies
